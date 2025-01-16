@@ -2402,6 +2402,7 @@ g\left(x\right)=x^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0\in \mathbb{K}\left[x\right]
 \end{brown}
 \begin{red}
     \begin{remark}
+        \cref{ex:全空间分解}和\cref{ex:全空间分解2}都是关于全空间的分解,但是
         \cref{ex:全空间分解}是关于同一个线性变换而\cref{ex:全空间分解2}不是.
     \end{remark}
 \end{red}
@@ -2461,3 +2462,209 @@ g\left(x\right)=x^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0\in \mathbb{K}\left[x\right]
         \end{enumerate}
     \end{corollary}
 \end{green}
+\newpage
+\section{矩阵函数}
+\subsection{级数相关知识}
+\begin{red}
+    \begin{remark}
+        定义矩阵函数至少有三种方法：其一,将函数作幂级数展开并利用\textup{Jordan}标准型理论定义；其二,利用多项式定义；其三,利用\textup{Cauchy}积分定理定义.这里采用第一种定义.
+    \end{remark}
+\end{red}
+\begin{formal}
+    \begin{definition}[级数收敛的定义]\label{def:级数收敛的定义}
+        无穷级数$\displaystyle \sum_{n=1}^{\infty}a_n$收敛当且仅当部分和数列$\left\{s_n\right\}$收敛,其中$s_n=a_1+a_2+\cdots+a_n.$若\[
+        \lim_{n\to \infty}s_n=S
+        \]则记级数$\displaystyle \sum_{n=1}^{\infty}a_n=S$.
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[Cauchy审敛法]\label{thm:Cauchy审敛法}
+        考虑正项级数$\displaystyle \sum_{n=1}^{\infty}a_n$,令$\displaystyle r=\overline{\lim_{n\to\infty}}\sqrt[n]{a_n}$则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\displaystyle \sum_{n=1}^{\infty}a_n$收敛当且仅当$r<1$
+            \item $\displaystyle \sum_{n=1}^{\infty}a_n$发散当且仅当$r>1$
+            \item 当$r=1$时无法判断
+        \end{enumerate}
+    \end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{definition}[幂级数的收敛半径的定义]\label{def:幂级数的收敛半径的定义}
+        考虑幂级数$\displaystyle \sum_{n=0}^{\infty}a_nx^n$,令$\displaystyle A=\overline{\lim_{n\to\infty}}\sqrt[n]{\left|a_n\right|}$,定义该幂级数收敛半径\[
+        R=\begin{cases*}
+            +\infty&,$A=0$\\
+            \dfrac{1}{A}&,$0<A<+\infty$\\
+            0&,$A=+\infty$
+        \end{cases*}
+        \]
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[Cauchy-Hadamard定理]\label{thm:Cauchy-Hadamard定理}
+        在\cref{def:幂级数的收敛半径的定义}的基础上,幂级数$\displaystyle \sum_{n=0}^{\infty}a_nx^n$的敛散性为\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\left|x\right|<R$时,$\displaystyle \sum_{n=0}^{\infty}a_nx^n$绝对收敛
+            \item $\left|x\right|>R$时,$\displaystyle \sum_{n=0}^{\infty}a_nx^n$发散
+            \item $\left|x\right|=R$时,敛散性不确定
+        \end{enumerate}
+    \end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[逐项可导性]\label{thm:逐项可导性}
+        幂级数$\displaystyle f\left(x\right)=\sum_{n=0}^{\infty}a_nx^n$在$\left|x\right|<R$时逐项可导即\[
+        f'\left(x\right)=\frac{\mathrm{d}}{\mathrm{d}x}\left(
+            \sum_{n=0}^{\infty}a_nx^n
+        \right)=\sum_{n=0}^{\infty}\frac{
+            \mathrm{d}
+        }{\mathrm{d}x}\left(
+            a_nx^n
+        \right)=\sum_{n=0}^{\infty}na_nx^{n-1}
+        \]并且$\displaystyle f'\left(x\right)=
+        \sum_{n=0}^{\infty}na_nx^{n-1}
+         $的收敛半径也是$R$.
+    \end{theorem}
+\end{formal}
+\begin{red}
+\begin{remark}
+    下面考虑复幂级数
+    \[
+    f\left(z\right)=\sum_{n=0}^{\infty}a_nz^n
+    ,a_i\in\mathbb{C},z\in\mathbb{C}
+    \]值得注意的是$\left|z\right|$表示复数的模长而不是实数的绝对值.其余表述与实幂级数类似.
+\end{remark}
+\end{red}
+\begin{formal}
+    \begin{proposition}[常见复幂级数及其收敛半径]\label{prop:常见复幂级数及其收敛半径}
+        \,
+
+        \begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\displaystyle \mathrm{e}^z=1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\cdots,R=+\infty$
+            \item $\displaystyle \sin z=z-\frac{z^3}{3!}
+            +\frac{z^5}{5!}-\frac{z^7}{7!}+\cdots,R=+\infty
+            $
+            \item $\displaystyle \cos z=1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\cdots,R=+\infty$
+            \item $\ln \left(1+z\right)=
+            z-\frac{z^2}{2}+\frac{z^3}{3}-\frac{z^4}{4}+\cdots,R=1
+            $
+        \end{enumerate}
+    \end{proposition}
+\end{formal}
+\subsection{矩阵函数}
+考虑$f\left(z\right)=a_0+a_1z+\cdots+a_pz^p\in \mathbb{C}\left[z\right]$,矩阵$\bm{A}\in M_n\left(\mathbb{C}\right)$则\[
+f\left(\bm{A}\right):=a_0\bm{I}_n+a_1\bm{A}+\cdots+a_p\bm{A}^p
+\]
+
+设非异阵$\bm{P}$使得\[
+\bm{P}^{-1}\bm{A}\bm{P}=\bm{J}= \mathrm{diag}\,\left\{
+    \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+\right\}
+\]并且$f\left(\bm{A}\right)=\bm{P}f\left(\bm{J}\right)\bm{P}^{-1}=\bm{P}\mathrm{diag}\,\left\{
+    f\left(
+      \bm{J}_{r_1}\left(\lambda_1\right)
+    \right),f\left(
+        \bm{J}_{r_2}\left(\lambda_2\right)
+    \right),\cdots,f\left(
+        \bm{J}_{r_k}\left(\lambda_k\right)
+    \right)
+\right\}\bm{P}^{-1}$.
+
+于是考虑每一个Jordan块,由\cref{thm:Jordan-Chevalley分解定理}知有分解$\bm{J}_{r_i}\left(\lambda_i\right)=\lambda_i\bm{I}+\bm{N}$,其中$\bm{N}=\bm{J}_{r_i}\left(0\right),\bm{N}^{r_i}=\bm{O}$ .
+
+考虑$f\left(z\right)$在$\lambda_i$处的Taylor展开\[
+f\left(z\right)=f\left(\lambda_i\right)+\frac{f'\left(\lambda_i\right)}{1!}\left(z-\lambda_i\right)+\frac{f''\left(\lambda_i\right)}{2!}\left(z-\lambda_i\right)^2+\cdots+\frac{
+    f^{\left(p\right)}\left(\lambda_i\right)
+}{p!}\left(z-\lambda_i\right)^p
+\]代入$\bm{J}_{r_i}\left(\lambda_i\right)=\lambda_i\bm{I}+\bm{N}$得到\begin{align*}
+    f\left(
+        \bm{J}_{r_i}\left(
+        \lambda_i
+        \right)
+    \right)&=f\left(\lambda_i\right)\bm{I}+\frac{f'\left(\lambda_i\right)}{1!}\bm{N}+\frac{f''\left(\lambda_i\right)}{2!}\bm{N}^2+\cdots+\frac{
+        f^{\left(r_i-1\right)}\left(\lambda_i\right)
+    }{\left(r_i-1\right)!}\bm{N}^{r_i-1}\\
+    &=\begin{pmatrix}
+        f\left(\lambda_i\right)&\cfrac{f'\left(\lambda_i\right)}{1!}&\cfrac{f''\left(\lambda_i\right)}{2!}&\cdots&\cfrac{f^{\left(r_i-1\right)}\left(\lambda_i\right)}{\left(r_i-1\right)!}\\
+        &f\left(\lambda_i\right)&\cfrac{f'\left(\lambda_i\right)}{1!}&\cdots&\cfrac{f^{\left(r_i-2\right)}\left(\lambda_i\right)}{\left(r_i-2\right)!}\\
+        &&f\left(\lambda_i\right)&\cdots&\cfrac{f^{\left(r_i-3\right)}\left(\lambda_i\right)}{\left(r_i-3\right)!}\\
+        &&&\ddots&\vdots\\
+        &&&&f\left(\lambda_i\right)
+    \end{pmatrix}
+\end{align*}
+下面给出矩阵幂级数的收敛\begin{formal}
+    \begin{definition}[矩阵幂级数收敛的定义]\label{def:矩阵幂级数收敛的定义}
+        设矩阵序列$\left\{\bm{A}_p\right\}$,其中\[
+        \bm{A}_p=\begin{pmatrix}
+            a_{11}^{\left(p\right)}&a_{12}^{\left(p\right)}&\cdots&a_{1n}^{\left(p\right)}\\
+            a_{21}^{\left(p\right)}&a_{22}^{\left(p\right)}&\cdots&a_{2n}^{\left(p\right)}\\
+            \vdots&\vdots&&\vdots\\
+            a_{n1}^{\left(p\right)}&a_{n2}^{\left(p\right)}&\cdots&a_{nn}^{\left(p\right)}
+        \end{pmatrix}
+        \]和矩阵$\bm{B}=\left(b_{ij}\right)_{n\times n}.$若$\forall 1\leqslant i,j\leqslant n,$数列$\left\{
+            a_{ij}^{\left(p\right)}
+        \right\}$收敛到$b_{ij}$即$\displaystyle \lim_{p\to\infty}a_{ij}^{\left(p\right)}=b_{ij},$则称矩阵序列$\left\{\bm{A}_p\right\}$收敛到矩阵$\bm{B}$,记作$\displaystyle \lim_{p\to\infty}\bm{A}_p=\bm{B},$否则称矩阵序列$\left\{\bm{A}_p\right\}$发散.
+    \end{definition}
+\end{formal}
+\begin{brown}
+    \begin{example}
+        \[
+        \bm{A}_p=\begin{pmatrix}
+            1+\cfrac{1}{p}&\cfrac{1}{p^2}\\
+            2&3
+        \end{pmatrix}
+        \]收敛于\[
+        \bm{B}=\begin{pmatrix}
+            1&0\\
+            2&3
+        \end{pmatrix}
+        \]
+    \end{example}
+\end{brown}
+\begin{formal}
+    \begin{definition}[部分和定义收敛]\label{def:部分和定义收敛}
+        设复幂级数$\displaystyle f\left(z\right)=\sum_{i=0}^{\infty}a_iz^i,$其部分和\[
+        f_p\left(z\right)=a_0+a_1z+\cdots+a_pz^p
+        \]设$\bm{A}\in M_n\left(\mathbb{C}\right)$得到矩阵序列$\displaystyle \left\{
+            f_p\left(\bm{A}\right)
+        \right\}_{p=0}^{\infty}$.若该矩阵序列收敛到矩阵$\bm{B}$,则矩阵幂级数\[
+        \sum_{i=0}^{\infty}a_i\bm{A}^i=a_0\bm{I}_n+a_1\bm{A}+a_2\bm{A}^2+\cdots
+        \]收敛到$\bm{B}$,记作$f\left(\bm{A}\right)=\bm{B}.$
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{definition}[矩阵函数的定义]\label{def:矩阵函数的定义}
+        将\cref{def:部分和定义收敛}中取未定元$\bm{X}$则得到一般的矩阵函数\[
+        f\left(\bm{X}\right)=\sum_{i=0}^{\infty}a_i\bm{X}^i=a_0\bm{I}_n+a_1\bm{X}+a_2\bm{X}^2+\cdots
+        \]
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[矩阵幂级数的收敛判定]\label{thm:矩阵幂级数的收敛判定}
+        设复幂级数$\displaystyle f\left(z\right)=\sum_{i=0}^{\infty}a_iz^i$,收敛半径$R$,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $f\left(\bm{X}\right)$收敛当且仅当对于任意非异阵$\bm{P}$,$f\left(
+                \bm{P}^{-1}\bm{X}\bm{P}
+            \right)$都收敛
+            \item 设\[\bm{X}=\mathrm{diag}\,\left\{
+                \bm{X}_1,\bm{X}_2,\cdots,\bm{X}_k
+            \right\}\],则$f\left(\bm{X}\right)$收敛当且仅当$f\left(
+                \bm{X}_1
+            \right),f\left(
+                \bm{X}_2
+            \right),\cdots,f\left(
+                \bm{X}_k
+            \right)$收敛
+            \item 对\textup{Jordan}块$\bm{J}_{r_i}\left(\lambda_i\right)$,若$\left|\lambda_i\right|<R$,则$f\left(
+                \bm{J}_{r_i}\left(\lambda_i\right)
+            \right)$收敛到\[
+            f\left(
+                \bm{J}_{r_i}\left(\lambda_i\right)
+            \right)=\begin{pmatrix}
+                f\left(\lambda_i\right)&\cfrac{f'\left(\lambda_i\right)}{1!}&\cfrac{f''\left(\lambda_i\right)}{2!}&\cdots&\cfrac{f^{\left(r_i-1\right)}\left(\lambda_i\right)}{\left(r_i-1\right)!}\\
+                &f\left(\lambda_i\right)&\cfrac{f'\left(\lambda_i\right)}{1!}&\cdots&\cfrac{f^{\left(r_i-2\right)}\left(\lambda_i\right)}{\left(r_i-2\right)!}\\
+                &&f\left(\lambda_i\right)&\cdots&\cfrac{f^{\left(r_i-3\right)}\left(\lambda_i\right)}{\left(r_i-3\right)!}\\
+                &&&\ddots&\vdots\\
+                &&&&f\left(\lambda_i\right)
+            \end{pmatrix}
+            \]
+        \end{enumerate}
+    \end{theorem}
+    \begin{Proof}
+        
+    \end{Proof}
+\end{formal}
