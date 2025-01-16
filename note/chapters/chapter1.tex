@@ -1,0 +1,1985 @@
+\newpage
+\chapter{行列式}
+\section{\texorpdfstring{$n$}{n}阶行列式}
+\subsection{行列式的几何意义}
+关于行列式的几何意义,通常来说有两种角度的看法：一种角度是行列式的值是行列式中的
+行向量或列向量所构成的超平行多面体的有向面积或有向体积；另一种角度是方阵$\bm{T}\left(\bm{\varphi}\right)=
+\bm{A}$
+的行列式$\det\,\left(\bm{A}\right)$就是该线性变换$\bm{\varphi}$下图形面积或体积的伸缩因子.
+
+这两个解释一个是静态的,
+一个是动态的.
+
+以二阶行列式$\begin{bmatrix}
+    a & b\\
+    c & d
+\end{bmatrix}$为例
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,2120); %set diagram left start at 0, and has height of 2120
+
+%Shape: Rectangle [id:dp14391003010967185] 
+\draw   (26,1031.56) -- (225.96,1031.56) -- (225.96,1131.64) -- (26,1131.64) -- cycle ;
+%Shape: Rectangle [id:dp08258084726106563] 
+\draw   (409,1031.56) -- (608.96,1031.56) -- (608.96,1131.64) -- (409,1131.64) -- cycle ;
+%Straight Lines [id:da7115155340265156] 
+\draw    (236.96,1082.64) -- (391.96,1082.64) ;
+\draw [shift={(393.96,1082.64)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Parallelogram [id:dp7882664501118628] 
+\draw  [fill={rgb, 255:red, 48; green, 41; blue, 41 }  ,fill opacity=1 ] (508.25,1055.72) -- (608.98,1031.56) -- (509.73,1107.48) -- (409,1131.64) -- cycle ;
+%Shape: Right Angle [id:dp041745423953331695] 
+\draw   (507.96,1032.08) -- (507.96,1056.08) -- (408.96,1056.08) ;
+%Shape: Right Angle [id:dp5748753578221728] 
+\draw   (509.96,1131.64) -- (509.96,1107.64) -- (608.96,1107.64) ;
+
+% Text Node
+\draw (100,1150.44) node [anchor=north west][inner sep=0.75pt]    {$\det\left(\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}\right) =(a+b)(c+d)-ac-bd-2bc=ad-bc$};
+% Text Node
+\draw (260,1020) node [anchor=north west][inner sep=0.75pt]   {$\mathbf{A} =\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}$};
+% Text Node
+\draw (445,1038) node [anchor=north west][inner sep=0.75pt]    {$bc$};
+% Text Node
+\draw (550,1115) node [anchor=north west][inner sep=0.75pt]    {$bc$};
+% Text Node
+\draw (418,1074) node [anchor=north west][inner sep=0.75pt] [font=\Large]   {$\frac{bd}{2}$};
+% Text Node
+\draw (579,1065) node [anchor=north west][inner sep=0.75pt] [font=\Large]   {$\frac{bd}{2}$};
+% Text Node
+\draw (514,1030.24) node [anchor=north west][inner sep=0.75pt]    {$ac/2$};
+% Text Node
+\draw (467,1114.24) node [anchor=north west][inner sep=0.75pt]    {$ac/2$};
+% Text Node
+\draw (390,1032.24) node [anchor=north west][inner sep=0.75pt]    {$c$};
+% Text Node
+\draw (616,1111.24) node [anchor=north west][inner sep=0.75pt]    {$c$};
+% Text Node
+\draw (466,1135.24) node [anchor=north west][inner sep=0.75pt]    {$a$};
+% Text Node
+\draw (556,1138.24) node [anchor=north west][inner sep=0.75pt]    {$b$};
+% Text Node
+\draw (546,1007.24) node [anchor=north west][inner sep=0.75pt]    {$a$};
+% Text Node
+\draw (456,1003.24) node [anchor=north west][inner sep=0.75pt]    {$b$};
+% Text Node
+\draw (389,1094.24) node [anchor=north west][inner sep=0.75pt]    {$d$};
+% Text Node
+\draw (616,1059.24) node [anchor=north west][inner sep=0.75pt]    {$d$};
+
+\end{tikzpicture}
+\begin{red}
+    \begin{remark}
+        后续我们将会提到,行列式更多的是在刻画线性映射的性质,它本身的意义在高等代数中并不显得像在线性代数中贯穿始终且“意义重大”.
+    \end{remark}
+\end{red}
+\subsection{相关定义}
+\begin{formal}
+\begin{definition}[行列式的形式]\label{def:行列式的形式}
+    用两条竖线围成的$n$行$n$列元素构成的式子（数值）称为一个$n$阶行列式,如
+    \[
+    \left|\bm{A}\right|=\begin{vmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+    \end{vmatrix}
+    \]一般记作$\left|\bm{A}\right|=\left(a_{ij}\right)_{n\times n}$,有时也记作$\det\,\left(\bm{A}\right)$.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[对角线]\label{def:对角线}
+    在$n$阶行列式中,所有由左上到右下的元素构成的线段称为主对角线,所有由左下到右上的元素构成的线段称为副对角线.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[余子式与代数余子式]\label{def:余子式与代数余子式}
+    在$n$阶行列式中,去掉第$i$行第$j$列元素后,剩下的$n-1$阶行列式称为元素$a_{ij}$的余子式,记作$M_{ij}$.
+
+    余子式$M_{ij}$乘以$(-1)^{i+j}$得到元素$a_{ij}$的代数余子式,记作$\displaystyle
+    A_{ij}=\left(-1\right)^{i+j}M_{ij}$.
+\end{definition}
+\end{formal}
+\subsection{递归定义}
+\begin{formal}
+\begin{definition}[行列式的递归定义]\label{def:行列式的递归定义}
+    采用数学归纳法来定义.
+    $n=1$时$1$阶行列式$\left|a_{11}\right|=a_{11}.$假设所有的$n-1$阶行列式已经定义好,特别地$M_{ij}$已经定义好了,下面定义$n$阶行列式：
+    \[
+    \left|\bm{A}\right|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}
+    \]
+    特别地,使用\cref{def:余子式与代数余子式}中代数余子式定义则可以定义$n$阶行列式为
+    \[
+    \left|\bm{A}\right|=a_{11}A_{11}+a_{21}A_{21}+\cdots+(-1)^{n+1}a_{n1}A_{n1}=\sum_{i=1}^{n}a_{i1}A_{i1}
+    \]
+\end{definition}
+\end{formal}
+\begin{red}
+    \begin{remark}
+        \cref{def:行列式的递归定义}为递归定义的列展开方式.同样也可以使用行展开.
+        
+        后续我们将会否定掉该定义中第一列这种看似独特的地位.
+    \end{remark}
+\end{red}
+\begin{formal}
+\begin{definition}[三角行列式]\label{def:三角行列式}
+设行列式$\left|\bm{A}\right|=\left(a_{ij}\right)_{n\times n}$
+    \begin{enumerate}[label = {\textup{(\arabic*)}}]
+        \item 若$a_{ij}=0,\forall i>j$即该行列式位于主对角线下方的元素全为零,则称该行列式为上三角行列式.
+        \item 若$a_{ij}=0,\forall i<j$即该行列式位于主对角线上方的元素全为零,则称该行列式为下三角行列式.
+    \end{enumerate}
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    三角行列式的值等于主对角线上的元素的乘积.
+\end{remark}
+\end{red}
+\subsection{性质}
+\begin{formal}
+\begin{proposition}[行列式的性质]\label{prop:行列式的性质}
+    设$\bm{A}$为$n$阶行列式,则
+    \begin{enumerate}[label = {\textup{(\arabic*)}}]
+        \item 三角行列式的值等于主对角线上的元素的乘积
+        \item 如果行列式某一行（列）元素全为零,那么这个行列式值为零
+        \item 将行列式$\left|\bm{A}\right|$某一行（列）乘上常数$c$得到的新行列式$\left|\bm{B}\right|=c\left|\bm{A}\right|$
+        \item 对换行列式$\left|\bm{A}\right|$的两行（列）得到的新行列式$\left|\bm{B}\right|=-\left|\bm{A}\right|$
+        \item 如果行列式的两行（列）成比例（特别地,它们相等）,则行列式值为零
+        \item 如果行列式某一行（列）元素均是两数之和,那么这个行列式可以分解成两个行列式之和即\begin{align*}
+            \begin{vmatrix}
+                a_{11}&a_{12}&\cdots&a_{1n}\\
+                \vdots&\vdots& &\vdots\\
+                a_{r1}+b_{r1}&a_{r2}+b_{r2}&\cdots&a_{rn}+b_{rn}\\
+                \vdots&\vdots& &\vdots\\
+                a_{n1}&a_{n2}&\cdots&a_{nn}
+            \end{vmatrix}=
+            \begin{vmatrix}
+                a_{11}&a_{12}&\cdots&a_{1n}\\
+                \vdots&\vdots& &\vdots\\
+                a_{r1}&a_{r2}&\cdots&a_{rn}\\
+                \vdots&\vdots& &\vdots\\
+                a_{n1}&a_{n2}&\cdots&a_{nn}
+            \end{vmatrix}+
+            \begin{vmatrix}
+                a_{11}&a_{12}&\cdots&a_{1n}\\
+                \vdots&\vdots& &\vdots\\
+                b_{r1}&b_{r2}&\cdots&b_{rn}\\
+                \vdots&\vdots& &\vdots\\
+                a_{n1}&a_{n2}&\cdots&a_{nn}
+            \end{vmatrix}
+        \end{align*}
+        \item 行列式的某一行（列）乘以一个常数加到另一行（列）上去,行列式的值不改变即\newpage\[
+        \begin{vmatrix}
+            a_{11}&a_{12}&\cdots&a_{1n}\\
+            \vdots&\vdots& &\vdots\\
+            a_{i1}&a_{i2}&\cdots&a_{in}\\
+            \vdots&\vdots& &\vdots\\
+            a_{j1}+ca_{i1}&a_{j2}+ca_{i2}&\cdots&a_{jn}+ca_{in}\\
+            \vdots&\vdots& &\vdots\\
+            a_{n1}&a_{n2}&\cdots&a_{nn}
+        \end{vmatrix}=
+        \begin{vmatrix}
+            a_{11}&a_{12}&\cdots&a_{1n}\\
+            \vdots&\vdots& &\vdots\\
+            a_{i1}&a_{i2}&\cdots&a_{in}\\
+            \vdots&\vdots& &\vdots\\
+            a_{j1}&a_{j2}&\cdots&a_{jn}\\
+            \vdots&\vdots& &\vdots\\
+            a_{n1}&a_{n2}&\cdots&a_{nn}
+        \end{vmatrix}
+        \]
+    \end{enumerate}
+\end{proposition}
+\begin{Proof}
+\begin{enumerate}[label = {\textup{(\arabic*)}}]
+    \item 考虑数学归纳法证明,$n=1$时显然成立.假设结论对阶数为$n-1$时成立,即$n-1$阶三角行列式的值等于主对角线上的元素的乘积.下面来证明$n$阶的情况,先考虑上三角行列式.设\[
+    \left|\bm{A}\right|=\begin{vmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        0 & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots &  & \vdots \\
+        0 & 0 & \cdots & a_{nn}
+    \end{vmatrix}
+    \]做展开有\[
+    \left|\bm{A}\right|=a_{11}\begin{vmatrix}
+        a_{22} & \cdots & a_{2n} \\
+        \vdots &  & \vdots \\
+        0& \cdots & a_{nn}
+    \end{vmatrix}
+    \]而后者是一个$n-1$阶的上三角行列式,由归纳假设$\left|\bm{A}\right|=a_{11}a_{22}\cdots a_{nn}$,证毕.
+    
+    然后考虑下三角行列式,设\[
+    \left|\bm{A}\right|= \begin{vmatrix}
+        a_{11} & 0 & \cdots & 0 \\
+        a_{21} & a_{22} & \cdots & 0 \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+    \end{vmatrix}
+    \]由\cref{def:行列式的递归定义}有\[
+    \left|\bm{A}\right|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}
+    \]然后考虑$M_{k1}=\left(
+        b_{ij}
+    \right)_{\left(n-1\right)\times \left(n-1\right)},1\leqslant k\leqslant n$,其中\[
+    b_{ij}=
+    \begin{cases*}
+        a_{i,j+1} &$,1\leqslant i\leqslant k-1;$\\
+        a_{i+1,j+1} &$,k\leqslant i\leqslant   n-1.$
+    \end{cases*}
+    \]因为$\left|\bm{A}\right|$是下三角行列式即$a_{ij}=0,\forall i<j$,所以$M_{k1},\forall 1\leqslant k\leqslant n$均是下三角行列式并且断言$k\geqslant 2$时$M_{k1}$必定有零主对角元.事实上,$b_{k-1,k-1}=a_{k-1,k}=0$即得.于是由归纳假设$M_{k1}=0,\forall k\geqslant 2,M_{11}=a_{22}\cdots a_{nn}\Longrightarrow \left|\bm{A}\right|=a_{11}a_{22}\cdots a_{nn}.$于是证毕.
+    \item 由下一条性质立得
+    \item 考虑数学归纳法,$n=1$时显然成立,下设结论对$n-1$阶成立,下面证明$n$阶的情形.先证明行的情形,设
+    \[
+    \left|\bm{B}\right|=\begin{vmatrix}
+       a_{11}&a_{12}&\cdots&a_{1n}\\
+         \vdots&\vdots& &\vdots\\
+            ca_{i1}&ca_{i2}&\cdots&ca_{in}\\
+            \vdots&\vdots& &\vdots\\
+            a_{n1}&a_{n2}&\cdots&a_{nn}
+    \end{vmatrix}
+    \]做展开（约定$\left|\bm{A}\right|$的余子式使用记号$M_{ij}$,$\left|\bm{B}\right|$的余子式使用记号$N_{ij}$）即得\[
+    \left|\bm{B}\right|=a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{i+1}ca_{i1}N_{i1}+\cdots+(-1)^{n+1}a_{n1}N_{n1}
+    \]注意到,$k\neq i$时$N_{k1}$均由$M_{k1}$的某一行乘上非零常数$c$得到,由归纳假设$N_{k1}=cM_{k1},\forall k\neq i$；而当$k=i$时$N_{i1}=M_{i1}$,于是\[
+    \left|\bm{B}\right|=ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1}=c\left|\bm{A}\right|
+    \]
+
+然后考虑列的情形,一方面,如果乘上常数$c$的是第一列,做展开显然成立.另一方面,若乘上常数$c$的是第$j\geqslant 2$列,做展开即得\[
+\left|\bm{B}\right|=a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{n+1}a_{n1}N_{n1}
+\]注意到$N_{i1}$是$M_{i1}$的某一列乘上常数$c$得到,于是由归纳假设$N_{i1}=cM_{i1},\forall 1\leqslant i\leqslant n.$于是\[
+\left|\bm{B}\right|=ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1}=c\left|\bm{A}\right|
+\]于是证毕.
+
+\item 考虑数学归纳法,$n=2$时容易证明成立.
+
+设结论对$n-1$阶的情形成立,下面证明$n$阶的情形.
+先证明相邻行即第$i$行和第$i+1$行的情形.此时\newpage
+\begin{align*}
+\left|\bm{B}\right|&=\begin{vmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}\\
+    \vdots&\vdots& &\vdots\\
+    a_{i+1,1}&a_{i+1,2}&\cdots&a_{i+1,n}\\
+    a_{i,1}&a_{i,2}&\cdots&a_{i,n}\\
+    \vdots&\vdots& &\vdots\\
+    a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{vmatrix}\\
+&=a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{i+1}a_{i+1,1}N_{i1}+(-1)^{i+2}a_{i,1}N_{i+1,1}\\
+&+\cdots+(-1)^{n+1}a_{n1}N_{n1}
+\end{align*}
+其中$k\neq i,i+1$时$N_{k1}$由$M_{k1}$对换两行得到,由归纳假设得$N_{k1}=-M_{k1},\forall k\neq i,i+1.$另一方面,$N_{i1}=M_{i+1,1},N_{i+1,1}=M_{i1}.$代入得到$\left|\bm{B}\right|=-\left|\bm{A}\right|.$
+
+再来考虑一般的情况,即对换任意$i<j$两行.事实上,这可以看做$\left(j-i\right)+\left(j-i-1\right)$次相邻对换的复合,考虑系数立得.
+
+\item 提出公因子得到某两行（列）相等的行列式\begin{align*}
+    \left|\bm{A}\right|&=\begin{vmatrix}
+        a_{11}&a_{12}&\cdots&a_{1n}\\
+        \vdots&\vdots& &\vdots\\
+        a_{i1}&a_{i2}&\cdots&a_{in}\\
+        \vdots&\vdots& &\vdots\\
+        ca_{i1}&ca_{i2}&\cdots&ca_{in}\\
+        \vdots&\vdots& &\vdots\\
+        a_{n1}&a_{n2}&\cdots&a_{nn}
+    \end{vmatrix}\\
+    &=c\begin{vmatrix}
+        a_{11}&a_{12}&\cdots&a_{1n}\\
+        \vdots&\vdots& &\vdots\\
+        a_{i1}&a_{i2}&\cdots&a_{in}\\
+        \vdots&\vdots& &\vdots\\
+        a_{i1}&a_{i2}&\cdots&a_{in}\\
+        \vdots&\vdots& &\vdots\\
+        a_{n1}&a_{n2}&\cdots&a_{nn}
+    \end{vmatrix}
+\end{align*}然后对换之后得到$\left|\bm{A}\right|=-\left|\bm{A}\right|$立得.
+
+列的情况同理.证毕.
+\item 考虑数学归纳法,$n=1$时$\left|a_{11}+b_{11}\right|=\left|a_{11}\right|+\left|b_{11}\right|$成立.设结论对$n-1$阶成立,下面证明$n$阶的情形.
+
+将欲证式子记作$\left|\bm{C}\right|=\left|\bm{A}\right|+\left|\bm{B}\right|$,它们的余子式分别用$Q_{ij},M_{ij},N_{ij}$表示.将$\left|\bm{C}\right|$展开
+\[
+\left|\bm{C}\right|=a_{11}Q_{11}-a_{21}Q_{21}+\cdots+\left(-1\right)^{r+1}\left(a_{r1}+b_{r1}\right)Q_{r1}+\cdots+\left(-1\right)^{n+1}a_{n1}Q_{n1}
+\]其中,$k\neq r$时由归纳假设有$Q_{k1}=M_{k1}+N_{k1},\forall k\neq r$；当$k=r$,$Q_{r1}=M_{r1}=N_{r1}.$代入,$\left|\bm{C}\right|=\left|\bm{A}\right|+\left|\bm{B}\right|$得证.
+
+\item 拆分行列式即证,展开亦可证.\qedhere
+\end{enumerate}
+\end{Proof}
+\end{formal}
+% \begin{red}
+% \begin{remark}
+%     上述证明部分未给出列的情形证明,同时第一列似乎处于一种特殊的地位,下面将解决这个问题.
+% \end{remark}
+% \end{red}
+\begin{green}
+\begin{corollary}[列情形]\label{cor:列情形}
+    \,
+
+    $(4)$对换行列式的两列得到的新行列式值为原行列式值的相反数即
+    $\left|\bm{B}\right|=-\left|\bm{A}\right|$
+
+    $(5)$若行列式的两列成比例（特别地,它们相等）,则行列式值为零.
+
+    $(6)$若行列式的某一列所有元素均是两个元素的和,那么可对行列式进行拆分即\[
+    \begin{vmatrix}
+        a_{11}&\cdots&a_{1r}+b_{1r}&\cdots&a_{1n}\\
+        a_{21}&\cdots&a_{2r}+b_{2r}&\cdots&a_{2n}\\
+        \vdots& &\vdots& &\vdots\\
+        a_{n1}&\cdots&a_{nr}+b_{nr}&\cdots&a_{nn}
+    \end{vmatrix}=
+    \begin{vmatrix}
+        a_{11}&\cdots&a_{1r}&\cdots&a_{1n}\\
+        a_{21}&\cdots&a_{2r}&\cdots&a_{2n}\\
+        \vdots& &\vdots& &\vdots\\
+        a_{n1}&\cdots&a_{nr}&\cdots&a_{nn}
+    \end{vmatrix}+
+    \begin{vmatrix}
+        a_{11}&\cdots&b_{1r}&\cdots&a_{1n}\\
+        a_{21}&\cdots&b_{2r}&\cdots&a_{2n}\\
+        \vdots& &\vdots& &\vdots\\
+        a_{n1}&\cdots&b_{nr}&\cdots&a_{nn}
+    \end{vmatrix}
+    \]
+
+    $(7)$行列式的某一列乘上一个常数加到另一列上去,行列式的值不改变即\[
+    \begin{vmatrix}
+       a_{11}&\cdots&a_{1r}&\cdots&a_{1s}+ca_{1r}&\cdots&a_{1n}\\
+         a_{21}&\cdots&a_{2r}&\cdots&a_{2s}+ca_{2r}&\cdots&a_{2n}\\
+            \vdots& &\vdots& &\vdots& &\vdots\\
+            a_{n1}&\cdots&a_{nr}&\cdots&a_{ns}+ca_{nr}&\cdots&a_{nn}
+    \end{vmatrix}=
+    \begin{vmatrix}
+        a_{11}&\cdots&a_{1r}&\cdots&a_{1s}&\cdots&a_{1n}\\
+        a_{21}&\cdots&a_{2r}&\cdots&a_{2s}&\cdots&a_{2n}\\
+        \vdots& &\vdots& &\vdots& &\vdots\\
+        a_{n1}&\cdots&a_{nr}&\cdots&a_{ns}&\cdots&a_{nn}
+    \end{vmatrix}
+    \]
+\end{corollary}
+\begin{Proof}
+    $(4)$设行列式$\left|\bm{B}\right|$是对换行列式$\left|\bm{A}\right|$的$r,s$两列得到
+    \[
+    \left|\bm{A}\right|=\begin{vmatrix}
+        a_{11}&\cdots&a_{1r}&\cdots&a_{1s}&\cdots&a_{1n}\\
+        a_{21}&\cdots&a_{2r}&\cdots&a_{2s}&\cdots&a_{2n}\\
+        \vdots& &\vdots& &\vdots& &\vdots\\
+        a_{n1}&\cdots&a_{nr}&\cdots&a_{ns}&\cdots&a_{nn}
+    \end{vmatrix},\left|\bm{B}\right|=\begin{vmatrix}
+        a_{11}&\cdots&a_{1s}&\cdots&a_{1r}&\cdots&a_{1n}\\
+        a_{21}&\cdots&a_{2s}&\cdots&a_{2r}&\cdots&a_{2n}\\
+        \vdots& &\vdots& &\vdots& &\vdots\\
+        a_{n1}&\cdots&a_{ns}&\cdots&a_{nr}&\cdots&a_{nn}
+    \end{vmatrix}
+    \]构造\[
+    \left|\bm{C}\right|=\begin{vmatrix}
+        a_{11}&\cdots&a_{1r}+a_{1s}&\cdots&a_{1s}+a_{1r}&\cdots&a_{1n}\\
+        a_{21}&\cdots&a_{2r}+a_{2s}&\cdots&a_{2s}+a_{2r}&\cdots&a_{2n}\\
+        \vdots& &\vdots& &\vdots& &\vdots\\
+        a_{n1}&\cdots&a_{nr}+a_{ns}&\cdots&a_{ns}+a_{nr}&\cdots&a_{nn}
+    \end{vmatrix}=0
+    \]拆分得到
+    \begin{align*}
+        0&=\left|\bm{A}\right|+\left|\bm{B}\right|\\
+        &+\begin{vmatrix}
+            a_{11}&\cdots&a_{1r}&\cdots&a_{1r}&\cdots&a_{1n}\\
+            a_{21}&\cdots&a_{2r}&\cdots&a_{2r}&\cdots&a_{2n}\\
+            \vdots& &\vdots& &\vdots& &\vdots\\
+            a_{n1}&\cdots&a_{nr}&\cdots&a_{nr}&\cdots&a_{nn}
+        \end{vmatrix}+\begin{vmatrix}
+            a_{11}&\cdots&a_{1s}&\cdots&a_{1s}&\cdots&a_{1n}\\
+            a_{21}&\cdots&a_{2s}&\cdots&a_{2s}&\cdots&a_{2n}\\
+            \vdots& &\vdots& &\vdots& &\vdots\\
+            a_{n1}&\cdots&a_{ns}&\cdots&a_{ns}&\cdots&a_{nn}
+        \end{vmatrix}
+    \end{align*}于是$\left|\bm{B}\right|=-\left|\bm{A}\right|.$
+
+    $(5)$我们直接考虑相等的情况,成比例可由\cref{prop:行列式的性质}的$(3)$保证一致.
+    
+    考虑数学归纳法,对阶数$n$归纳,$n=2$时显然成立.设结论对$n-1$阶成立,下面证明$n$阶的情形.
+
+    若两列均不是第一列,即\[
+    \left|\bm{A}\right|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}
+    \]注意到,$\forall 1\leqslant i\leqslant n$,$M_{i1}$均有两列是相同的,由归纳假设$M_{i1}=0,\forall 1\leqslant i\leqslant n$,于是$\left|\bm{A}\right|=0.$
+
+    若两列中有一列是第一列,一方面,如果第一列元素均为零,显然成立.另一方面,进一步设第一列元素不全为零,如$a_{s1}\neq 0$并设第$r$列与第一列相等.则\begin{align*}
+        \left|\bm{A}\right|&=\begin{vmatrix}
+            a_{11}&\cdots&a_{11}&\cdots&a_{1n}\\
+            \vdots& &\vdots& &\vdots\\
+            a_{s1}&\cdots&a_{s1}&\cdots&a_{sn}\\
+            \vdots& &\vdots& &\vdots\\
+            a_{n1}&\cdots&a_{n1}&\cdots&a_{nn}
+        \end{vmatrix}
+    \end{align*}因为$a_{s1}\neq 0$,利用\cref{prop:行列式的性质}的$(6)$将第一列其他元素均变为零,并且注意到新行列式\newpage
+    \[
+    \left|\bm{C}\right|=\begin{vmatrix}
+        0&\cdots&0&\cdots&*\\
+        \vdots& &\vdots& &\vdots\\
+        a_{s1}&\cdots&a_{s1}&\cdots&a_{sn}\\
+        \vdots& &\vdots& &\vdots\\
+        0&\cdots&0&\cdots&*
+    \end{vmatrix}
+    \]由\cref{prop:行列式的性质}的$(7)$知它们的行列式值相等,而后者显然为$\displaystyle
+    \left(-1\right)^{s+1}a_{s1}Q_{s1}$.注意到$Q_{s1}$有一列全为零,于是行列式为零.证毕.
+
+    $(6)$考虑数学归纳法,$n=1$时显然成立.设结论对$n-1$阶成立,下面证明$n$阶的情形.
+
+    将欲证式子记作$\left|\bm{C}\right|=\left|\bm{A}\right|+\left|\bm{B}\right|$,它们的余子式分别用$Q_{ij},M_{ij},N_{ij}$表示.一方面,如果是第一列,展开是显然成立的.另一方面,如果是第$r\geqslant 2$列,展开得\[
+    \left|\bm{C}\right|=a_{11}Q_{11}-a_{21}Q_{21}+\cdots+(-1)^{n+1}a_{n1}Q_{n1}
+    \]注意到$Q_{i1},M_{i1},N_{i1}$满足条件,由归纳假设$Q_{i1}=M_{i1}+N_{i1},\forall 1\leqslant i\leqslant n$,得证.
+
+    $(7)$拆分即证,展开亦可证.\qedhere
+\end{Proof}
+\end{green}
+\newpage
+\section{行列式的展开与转置}
+\subsection{展开}
+\begin{formal}
+\begin{proposition}[任意展开]\label{prop:任意展开}
+    行列式可以按照任意一列展开.
+\end{proposition}
+\begin{Proof}
+设将$\left|\bm{A}\right|$按第$r$列展开,首先考虑经过$r-1$次相邻对换将第$r$列移到第一列的情形得到行列式$\left|\bm{B}\right|$,由\cref{cor:列情形}的$(4)$知$\left|\bm{B}\right|=\left(-1\right)^{r-1}\left|\bm{A}\right|.$展开得\[
+\left|\bm{B}\right|=a_{1r}N_{11}-a_{2r}N_{21}+\cdots+(-1)^{n+1}a_{nr}N_{n1}
+\]注意到$N_{i1}=M_{ir}$,于是
+\begin{align*}
+    \left|\bm{A}\right|&=\left(-1\right)^{r-1}\left|\bm{B}\right|\\
+    &=\left(-1\right)^{r-1}\left(a_{1r}N_{11}-a_{2r}N_{21}+\cdots+(-1)^{n+1}a_{nr}N_{n1}\right)\\
+    &=a_{1r}A_{1r}+a_{2r}A_{2r}+\cdots+(-1)^{n+1}a_{nr}A_{nr}
+\end{align*}于是证明了$\left|\bm{A}\right|$可以对任何一列展开.
+\end{Proof}
+\end{formal}
+\begin{formal}
+\begin{definition}[Kronecken符号]\label{def:Kronecken符号}
+    定义\textup{Kronecken符号}$\delta_{ij}$为\[
+    \delta_{ij}=
+    \begin{cases*}
+        1 &$,i=j;$\\
+        0 &$,i\neq j.$
+    \end{cases*}
+    \]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[异乘变零定理]\label{thm:异乘变零定理}
+    设$n$阶行列式$\left|\bm{A}\right|$且$1\leqslant r,s\leqslant n$,则
+    \[
+    a_{1r}A_{1s}+a_{2r}A_{2s}+\cdots+a_{nr}A_{ns}=\delta_{rs}\left|\bm{A}\right|
+    \]
+\end{theorem}
+\begin{Proof}
+$r=s$显然成立.
+
+$r\neq s$时,不妨设$r<s$,构造\newpage
+\[
+\begin{vmatrix}
+    a_{11}&\cdots&a_{1r}&\cdots&a_{1r}&\cdots&a_{1n}\\
+    a_{21}&\cdots&a_{2r}&\cdots&a_{2r}&\cdots&a_{2n}\\
+    \vdots& &\vdots& &\vdots& &\vdots\\
+    a_{s1}&\cdots&a_{sr}&\cdots&a_{ss}&\cdots&a_{sn}\\
+\end{vmatrix}=0
+\]按第$s$列展开\[
+a_{1r}A_{1s}+a_{2r}A_{2s}+\cdots+a_{nr}A_{ns}=0\qedhere
+\]
+\end{Proof}
+\end{formal}
+\begin{green}
+\begin{lemma}[单元行展开]\label{lemma:单元行展开}
+    \[
+    \left|\bm{A}\right|=\begin{vmatrix}
+        a_{11}&\cdots&a_{1r}&\cdots&a_{1n}\\
+        \vdots& &\vdots&&\vdots\\
+        0&\cdots&a_{sr}&\cdots&0\\
+        \vdots& &\vdots&&\vdots\\
+        a_{n1}&\cdots&a_{sr}&\cdots&a_{nn}
+    \end{vmatrix}=a_{sr}A_{sr}
+    \]
+\end{lemma}
+\begin{Proof}
+按第$r$列展开\[
+\left|\bm{A}\right|=a_{1r}A_{1r}+\cdots+a_{nr}A_{nr}
+\]因为$\forall i\neq s,A_{ir}$至少有一列全为零,于是$A_{ir}=0,\forall i\neq s.$证毕.
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{lemma}[行展开]\label{lemma:行展开}
+    行列式可以按任意一行展开
+    \[
+    \left|\bm{A}\right|=a_{r1}A_{r1}+a_{r2}A_{r2}+\cdots+a_{rn}A_{rn}
+    \]
+\end{lemma}
+\begin{Proof}
+进行拆分,$a_{r1}=a_{r1}+0+\cdots+0,a_{r2}=0+a_{r2}+\cdots+0,\cdots,a_{rn}=0+0+\cdots+a_{rn}$.于是
+\[
+\left|\bm{A}\right|=\begin{vmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}\\
+    \vdots&\vdots& &\vdots\\
+    a_{r1}&0&\cdots&0\\
+    \vdots&\vdots& &\vdots\\
+    a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{vmatrix}+
+\begin{vmatrix}
+    0&a_{12}&\cdots&0\\
+    \vdots&\vdots& &\vdots\\
+    0&a_{r2}&\cdots&0\\
+    \vdots&\vdots& &\vdots\\
+    a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{vmatrix}+\cdots+\begin{vmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}\\
+    \vdots&\vdots& &\vdots\\
+    0&0&\cdots&a_{rn}\\
+    \vdots&\vdots& &\vdots\\
+    a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{vmatrix}
+\]由\cref{lemma:单元行展开}知\[
+\left|\bm{A}\right|=a_{r1}A_{r1}+a_{r2}A_{r2}+\cdots+a_{rn}A_{rn}\qedhere
+\]
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{corollary}[异乘变零定理]\label{cor:异乘变零定理}
+    设$n$阶行列式$\left|\bm{A}\right|$且$1\leqslant r,s\leqslant n$,则\[
+    a_{r1}A_{s1}+a_{r2}A_{s2}+\cdots+a_{rn}A_{sn}=\delta_{rs}\left|\bm{A}\right|
+    \]
+\end{corollary}
+\begin{Proof}
+    类似于列形式的\cref{thm:异乘变零定理},此行形式
+$r=s$显然成立,$r\neq s$时,不妨设$r<s$,构造\[
+\left|\bm{C}\right|=\begin{vmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}\\
+    \vdots&\vdots& &\vdots\\
+    a_{r1}&a_{r2}&\cdots&a_{rn}\\
+    \vdots&\vdots& &\vdots\\
+    a_{r1}&a_{r2}&\cdots&a_{rn}\\
+    \vdots&\vdots& &\vdots\\
+    a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{vmatrix}
+\]由\cref{lemma:行展开},按第$s$行展开即可.
+\end{Proof}
+\end{green}
+\begin{red}
+    \begin{remark}
+        以上所有定理、推论等都让行列显得十分割裂,下面我们将通过研究转置来消除这种割裂感.
+    \end{remark}
+\end{red}
+\begin{red}
+    \begin{remark}
+        事实上,行列式（包括矩阵）的行与列都是等性的或者说地位等同的,它们没有哪一个具有更特殊的地位.
+    \end{remark}
+\end{red}
+\begin{red}
+    \begin{remark}
+        一个容易证明的结论是,$n$阶行列式展开式共有$n!$项.
+    \end{remark}
+\end{red}
+\subsection{转置}
+\begin{red}
+    \begin{remark}
+        转置将联系起行列式的行与列.
+    \end{remark}
+\end{red}
+\begin{formal}
+\begin{definition}[转置]\label{def:转置}
+    设行列式\[
+    \left|\bm{A}\right|=\begin{vmatrix}
+        a_{11}&a_{12}&\cdots&a_{1n}\\
+        a_{21}&a_{22}&\cdots&a_{2n}\\
+        \vdots&\vdots& &\vdots\\
+        a_{n1}&a_{n2}&\cdots&a_{nn}
+    \end{vmatrix}
+    \]定义其转置\[
+    \left|\bm{A}'\right|=\left|\bm{A}^{\prime}\right|=\begin{vmatrix}
+        a_{11}&a_{21}&\cdots&a_{n1}\\
+        a_{12}&a_{22}&\cdots&a_{n2}\\
+        \vdots&\vdots& &\vdots\\
+        a_{1n}&a_{2n}&\cdots&a_{nn}
+    \end{vmatrix}
+    \]即$\left|\bm{A}\right|$的第$i$行就是$\left|\bm{A}'\right|$的第$i$列（$\forall 1\leqslant i\leqslant n$）.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[转置不变]\label{thm:转置不变}
+    行列式转置后值不变即$\left|\bm{A}'\right|=\left|\bm{A}\right|$.
+\end{theorem}
+\begin{Proof}
+考虑数学归纳法,$n=1$时显然成立.设结论对$n-1$阶成立,下面证明$n$阶的情形.事实上,根据\cref{prop:任意展开}和\cref{lemma:行展开},只要将$\left|\bm{A}\right|$和$\left|\bm{A}'\right|$分别按某一列（行）、行（列）展开即证.
+\end{Proof}
+\end{formal}
+\subsection{Cramer法则}
+设线性方程组:
+\[
+\left\{
+    \begin{lgathered}
+        a_{11}x_1 + a_{12}x_2 + \cdots +a_{1n}x_n = b_1\\
+        a_{21}x_1 + a_{22}x_2 + \cdots +a_{2n}x_n = b_2\\
+        \qquad\qquad\cdots\cdots\cdots\cdots\\
+        a_{n1}x_1 + a_{n2}x_2 + \cdots +a_{nn}x_n = b_n   
+    \end{lgathered}
+\right.
+\]
+一般记系数行列式
+\[
+\left|\bm{A}\right|=\begin{vmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}\\
+    a_{21}&a_{22}&\cdots&a_{2n}\\
+    \vdots&\vdots& &\vdots\\
+    a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{vmatrix}
+\]
+\begin{formal}
+\begin{theorem}[Cramer法则]\label{thm:Cramer法则}
+当如上线性方程组的系数行列式$ \det\left(\bm{A}\right) \neq 0$时,该方程组有且仅
+有一组解:
+\[
+x_i = \frac{ \det\left(\bm{A}_i\right)}
+{ \det\left(\bm{A}\right)}\quad\left(
+    i = 1,2,\ldots,n
+\right)
+\]
+其中的$ \det\left(\bm{A}_i\right)$
+为$ \det\left(\bm{A}\right)$用$\left(
+    b_1,\ldots,b_n
+\right)^{\prime}$换掉第$i$列得到的行列式.
+\end{theorem}
+
+\begin{Proof}
+容易证明
+\begin{align*}
+\left|\bm{A}_i\right|
+& =
+\begin{vmatrix}
+    a_{11} & \cdots & a_{1\left(i - 1\right)} & b_1 & a_{1\left(i + 1\right)} & \cdots & a_{1n} \\
+    \vdots &        & \vdots                  &     & \vdots                  &        & \vdots \\
+    a_{n1} & \cdots & a_{n\left(i - 1\right)} & b_n & a_{n\left(i + 1\right)} & \cdots & a_{nn}
+\end{vmatrix}\\
+& =\begin{vmatrix}
+    a_{11} & \cdots & a_{1\left(i - 1\right)} & a_{11}x_1 + \cdots +a_{1n}x_n & a_{1\left(i + 1\right)} & \cdots & a_{1n} \\
+    \vdots &        & \vdots                  &                               & \vdots                  &        & \vdots \\
+    a_{n1} & \cdots & a_{n\left(i - 1\right)} & a_{n1}x_1 + \cdots +a_{nn}x_n & a_{n\left(i + 1\right)} & \cdots & a_{nn}
+\end{vmatrix}
+\\
+& = x_i 
+\begin{vmatrix}
+    a_{11} & \cdots & a_{1n} \\
+    \vdots & \ddots & \vdots \\
+    a_{n1} & \cdots & a_{nn}
+\end{vmatrix}
+= x_i \left|\bm{A}\right|
+\end{align*}
+从而
+\[
+x_j = \frac{1}{\left|\bm{A}\right|}
+\left(
+    b_1A_{1j}+\cdots
+    +b_nA_{nj}
+\right),j = 1,\cdots,n
+\]
+因此$\forall 1\leqslant i
+\leqslant n$
+\begin{align*}
+    & a_{i1}x_1+\cdots+a_{in}x_n\\
+  = & \frac{a_{i1}}{\left|\bm{A}\right|}
+  \left(b_1A_{11}+\cdots
+  +b_nA_{n1}\right)\\
+  &+\cdots+\frac{a_{in}}{\left|\bm{A}\right|}
+  \left(
+    b_1A_{1n}+\cdots+
+    b_nA_{nn}
+  \right)\\
+  =&\frac{b_1}{\left|\bm{A}\right|}
+  \left(a_{i1}A_{11}+
+  \cdots+
+  a_{in}A_{1n}\right)\\
+  &+\cdots+\frac{b_n}{\left|\bm{A}\right|}
+  \left(
+    a_{i1}A_{n1}+\cdots+
+    a_{in}A_{nn}
+  \right)\\
+  =&\frac{b_1}{\left|\bm{A}\right|}
+  \cdot 0+\cdots+
+  \frac{b_i}{\left|\bm{A}\right|}
+  \cdot \left|\bm{A}\right|+\cdots+
+  \frac{b_n}{\left|\bm{A}\right|}
+  \cdot 0 = b_i
+\end{align*}
+是原方程的解.
+\end{Proof}
+\end{formal}
+\newpage
+\section{特别的行列式}
+\subsection{Vandermonde行列式}
+\begin{brown}
+\begin{example}
+\textup{Vandermonde}行列式是指这样的行列式:
+\[
+V_n = \begin{vmatrix}
+    1 & x_1 & \cdots & x_1^{n - 1} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    1 & x_n & \cdots & x_n^{n - 1} 
+\end{vmatrix}
+\]
+\end{example}
+\begin{solution}
+不难得出其递推式:
+\[
+V_n = \prod _{ i  = 1 }^{n - 1}\left(x_n  - x_i\right) V_{n - 1}
+\]
+故:
+\[
+V_n  = \prod _{1 \leqslant i < j \leqslant n}
+\left(x _j - x_i\right)
+\]
+\end{solution}
+\end{brown}
+\begin{red}
+\begin{remark}
+    \textup{Vandermonde}行列式是重要的特殊行列式,在后续学习中经常在意想不到的地方出现.
+\end{remark}
+\end{red}
+\subsection{一个含组合数的行列式}
+\begin{brown}
+\begin{example}
+\[
+\begin{vmatrix}
+    1 & 1 & \cdots & 1\\
+    1 & \binom{2}{1} & \cdots & \binom{n}{1} \\
+    1 & \binom{3}{2} & \cdots & \binom{n + 1}{2} \\
+    \vdots & \vdots & & \vdots \\
+    1 & \binom{n }{n - 1} & \cdots & \binom{2n - 2}{ n - 1}   
+\end{vmatrix}
+\]
+\end{example}
+\begin{solution}
+因为有
+\[
+ \binom{n}{m}  - \binom{n - 1}{m - 1} = \binom{n - 1}{m}   
+\]
+故重复用每一行减去上一行得到
+\begin{align*}
+	\left|\bm{D}\right|
+	=
+	\begin{vmatrix}
+    1 & 1 & \cdots & 1\\
+    1 & \binom{2}{1} & \cdots & \binom{n}{1} \\
+    1 & \binom{3}{2} & \cdots & \binom{n + 1}{2} \\
+    \vdots & \vdots & & \vdots \\
+    1 & \binom{n }{n - 1} & \cdots & \binom{2n - 2}{ n - 1}   
+\end{vmatrix}
+&= \begin{vmatrix}
+	\binom{1}{1} &\binom{2}{1}& \cdots & \binom{n - 1}{1}\\
+	\binom{2}{2} & \binom{3}{2}&\cdots & \binom{n}{2}\\
+	\vdots &\vdots& &\vdots\\
+	\binom{n -1}{n -1}&\binom{n}{n - 1}&\cdots&\binom{2 n  -3}{n - 1}
+\end{vmatrix}\\
+&=\begin{vmatrix}
+	\binom{2}{2} & \cdots & \binom{n-1}{2}\\
+	\vdots &&\vdots\\
+	\binom{n-1}{n-1}&\cdots&\binom{2n-4}{n-1}
+\end{vmatrix}
+=\cdots=\begin{vmatrix}
+	1&\binom{n-1}{n-2}\\
+	1&\binom{n}{n-1}
+\end{vmatrix}
+=1
+\end{align*}
+\end{solution}
+\end{brown}
+\subsection{爪型行列式}
+\begin{brown}
+\begin{example}
+  求形如
+\[
+\left|\bm{A}\right|
+=
+\begin{vmatrix}
+    a_1 & b_2 & b_3 &\cdots& b_n\\
+    c_2 & a_2 &0 &\cdots & 0\\
+    c_3 & 0 & a_3 & \cdots & 0\\
+    \vdots &\vdots&\vdots&&\vdots\\
+    c_n & 0&0&\cdots& a_n
+\end{vmatrix}
+\]
+的行列式的值$\left(a_i\neq 0,\forall 2 \leqslant 
+i\leqslant n\right)$
+\end{example}
+\begin{solution}
+\begin{align*}
+    \left|\bm{A}\right|&=
+    \begin{vmatrix}
+        a_1-\sum\limits_{i = 2}
+    ^{n}\cfrac{b_ic_i}{a_i}&b_2&b_3&\cdots&b_n\\
+    0&a_2&0&\cdots&0\\
+    0&0&a_3&\cdots&0\\
+    \vdots&\vdots&\vdots&&\vdots\\
+    0&0&0&\cdots&a_n
+    \end{vmatrix}\\
+    &=
+    \left(a_1-\sum_{i = 2}
+    ^{n}\frac{b_ic_i}{a_i}\right)a_2a_3\cdots a_n\\
+&=a_1a_2\cdots a_n-
+\sum_{i = 2}^{n}a_2\cdots\widehat{a}_i\cdots
+a_nb_ic_i
+\end{align*}
+\end{solution}
+\end{brown}
+\subsection{加和}
+\begin{brown}
+    \begin{example}\label{example:加和}
+	证明：设
+	\[
+	\left|\bm{A}\right|
+	=\begin{vmatrix}
+	a_{11} & \cdots & a_{1n}\\
+	\vdots &\ddots&\vdots\\
+	a_{n1}&\cdots &a_{nn}
+\end{vmatrix}
+	\]
+	则
+	\[
+	\left|\bm{A}\left(
+		t_1,t_2,\cdots,t_n
+	\right)\right|
+	=\begin{vmatrix}
+	a_{11}+t_1 & a_{12}+t_2&
+	\cdots & a_{1n}+t_n\\
+	a_{21}+t_1 & a_{22}+t_2&
+	\cdots & a_{2n}+t_n\\
+	\vdots &\vdots&&\vdots\\
+	a_{n1}+t_1&a_{n2}+t_2&
+	\cdots &a_{nn}+t_n
+\end{vmatrix}
+=\left|\bm{A}\right|
++\sum_{j=1}^{n}\left(
+	t_j\sum_{i=1}^{n}
+	A_{ij}
+\right)
+	\]
+    其中$A_{ij}$是$a_{ij}$的代数余子式.
+
+特别地$
+t_1 = t_2 = \cdots = t_n = t
+$时
+得到
+\[
+\left|\bm{A}\left(t\right)\right|
+=\left|\bm{A}\left(0\right)\right|
++t\sum_{i,j=1}^{n}A_{ij}
+\]
+其中$A_{ij}$为$a_{ij}$在
+$\left|\bm{A}\left(0\right)\right|$中的
+代数余子式.\end{example}
+    \begin{Proof}
+	将上式第一列拆开
+	\begin{align*}
+		\left|\bm{A}\left(
+		t_1,t_2,\cdots,t_n
+	\right)\right|
+	&=\begin{vmatrix}
+	a_{11}+t_1 & a_{12}+t_2&
+	\cdots & a_{1n}+t_n\\
+	a_{21}+t_1 & a_{22}+t_2&
+	\cdots & a_{2n}+t_n\\
+	\vdots &\vdots&&\vdots\\
+	a_{n1}+t_1&a_{n2}+t_2&
+	\cdots &a_{nn}+t_n
+\end{vmatrix}\\
+&=\begin{vmatrix}
+	a_{11} & a_{12}+t_2&
+	\cdots & a_{1n}+t_n\\
+	a_{21} & a_{22}+t_2&
+	\cdots & a_{2n}+t_n\\
+	\vdots &\vdots&&\vdots\\
+	a_{n1}&a_{n2}+t_2&
+	\cdots &a_{nn}+t_n
+\end{vmatrix}+
+\begin{vmatrix}
+	t_1 & a_{12}+t_2&
+	\cdots & a_{1n}+t_n\\
+	t_1 & a_{22}+t_2&
+	\cdots & a_{2n}+t_n\\
+	\vdots &\vdots&&\vdots\\
+	t_1&a_{n2}+t_2&
+	\cdots &a_{nn}+t_n
+\end{vmatrix}\\
+&=\cdots=
+\left|\bm{A}\right|
++\sum_{j=1}^{n}\left(
+	t_j\sum_{i=1}^{n}
+	A_{ij}
+	\right)
+	\end{align*}
+如此得证.
+	\qedhere
+\end{Proof}
+\end{brown}
+\begin{brown}
+\begin{example}
+    \cref{example:加和}这一形式对形如
+\[
+\left|\bm{A}\right|=
+\begin{vmatrix}
+    x_1&a&\cdots&a&a\\
+    -a&x_2&\cdots&a&a\\
+    \vdots&\vdots&&\vdots&\vdots\\
+    -a&-a&\cdots&-a&x_n
+\end{vmatrix}
+\]
+的行列式极其方便,考虑$t=\pm a$,
+容易得到
+\[
+\left|\bm{A}\right|=\frac{1}{2}
+\left(\prod_{i=1}^{n}\left(x_i+a\right)+
+\prod_{i=1}^{n}\left(x_i-a\right)\right)
+\]
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+设行列式
+$\left|\bm{A}\right|
+=\left(a_{ij}\right)_n$,证明：
+\[
+\begin{vmatrix}
+	a_{11} & a_{12}&\cdots & a_{1n}&x_1\\
+    a_{21}& a_{22}&\cdots&a_{2n}&x_2\\
+	\vdots &\vdots&&\vdots&\vdots\\
+	a_{n1}&a_{n2}&\cdots &a_{nn}&x_n\\
+    y_1&y_2&\cdots&y_n&z
+\end{vmatrix}=
+z\left|\bm{A}\right|
+-\sum_{i=1}^{n}\sum_{j=1}^{n}A_{ij}x_iy_j
+\]
+\end{example}
+\begin{Proof}
+将行列式按最后一列展开,
+容易证明第$i$项$\left(1\leqslant i\leqslant n\right)$
+为$\displaystyle -\sum_{j=1}^{n}A_{ij}x_iy_j$,且最后一项为
+$z\left|\bm{A}\right|$,证毕.
+\end{Proof}
+\end{brown}
+\subsection{Cauchy行列式}
+\begin{brown}
+\begin{example}
+\[
+\left|\bm{A}\right|
+=
+\begin{vmatrix}
+    \left(a_1+b_1\right)^{-1}
+    &\left(a_1+b_2\right)^{-1}
+    &\cdots&
+    \left(a_1+b_n\right)^{-1}\\
+    \left(a_2+b_1\right)^{-1}&
+    \left(a_2+b_2\right)^{-1}&\cdots
+    &\left(a_2+b_n\right)^{-1}\\
+    \vdots&\vdots&&\vdots\\
+    \left(a_n+b_1\right)^{-1}&
+    \left(a_n+b_2\right)^{-1}&
+    \cdots&\left(a_n+b_n\right)^{-1}
+\end{vmatrix}
+\]
+\end{example}
+    \begin{solution}
+记$D_n=\left|\bm{A}\right|$
+,
+用其余列减去第$n$列,提公因子后
+其余行减去第$n$行,再提公因子
+\newpage
+\begin{align*}
+    D_n&=
+    \begin{vmatrix}
+        \dfrac{1}{a_1+b_1}&\cdots
+        &\dfrac{1}{a_1+b_{n-1}}
+        &\dfrac{1}{a_1+b_n}\\
+        \vdots&&\vdots&\vdots\\
+        \dfrac{1}{a_{n-1}+b_1}&
+        \cdots&\dfrac{1}{a_{n-1}+b_{n-1}}&
+        \dfrac{1}{a_{n-1}+b_n}\\[1em]
+        \dfrac{1}{a_n+b_1}&\cdots
+        &\dfrac{1}{a_n+b_{n-1}}
+        &\dfrac{1}{a_n+b_n}
+    \end{vmatrix}\\
+    &=
+    \begin{vmatrix}
+        \dfrac{b_n-b_1}{\left(a_1+b_1\right)
+        \left(a_1+b_n\right)}
+        &\cdots&
+        \dfrac{b_n-b_{n-1}}{\left(a_1+b_{n-1}\right)
+        \left(a_1+b_n\right)}&
+        \dfrac{1}{a_1+b_n}\\
+        \vdots&&\vdots&\vdots\\
+        \dfrac{b_n-b_1}{\left(
+            a_{n-1}+b_1
+        \right)\left(
+            a_{n-1}+b_n
+        \right)}&\cdots
+        &\dfrac{b_n-b_{n-1}}{\left(
+            a_{n-1}+b_{n-1}
+        \right)\left(
+            a_{n-1}+b_n
+        \right)}&\dfrac{1}{a_{n-1}+b_n}\\[1em]
+        \dfrac{b_n-b_1}{\left(
+            a_n+b_1
+        \right)\left(a_n+b_n\right)}
+        &\cdots&\dfrac{b_n-b_{n-1}}{
+            \left(a_n+b_{n-1}\right)
+        \left(
+            a_n+b_n
+        \right)}&\dfrac{1}{a_n+b_n}
+    \end{vmatrix}\\
+    &=
+    \frac{
+        \prod\limits_{i=1}^{n-1}
+        \left(b_n-b_i\right)
+    }{\prod\limits_{j=1}^{n}
+    \left(a_j+b_n\right)}
+    \begin{vmatrix}
+        \dfrac{1}{a_1+b_1}&\cdots&\dfrac{1}{a_1+b_{n-1}}&1\\
+        \vdots&&\vdots&\vdots\\
+        \dfrac{1}{a_{n-1}+b_1}&\cdots&
+        \dfrac{1}{a_{n-1}+b_{n-1}}&1\\[1em]
+        \dfrac{1}{a_n+b_1}&\cdots&
+        \dfrac{1}{a_n+b_{n-1}}&1
+    \end{vmatrix}\\
+    &=
+    \frac{
+        \prod\limits_{i=1}^{n-1}
+        \left(b_n-b_i\right)
+    }{\prod\limits_{j=1}^{n}
+    \left(a_j+b_n\right)}
+    \begin{vmatrix}
+        \dfrac{a_n-a_1}{\left(a_1+b_1\right)
+        \left(a_n+b_1\right)}&\cdots&
+        \dfrac{a_n-a_1}{\left(
+            a_1+b_{n-1}
+        \right)\left(
+            a_n+b_{n-1}
+        \right)}&0\\
+        \vdots&&\vdots&\vdots\\
+        \dfrac{a_n-a_{n-1}}{\left(
+            a_{n-1}+b_1
+        \right)\left(
+            a_n+b_1
+        \right)}&\cdots&
+        \dfrac{a_n-a_{n-1}}{\left(
+            a_{n-1}+b_{n-1}
+        \right)\left(
+            a_n+b_{n-1}
+        \right)}&0\\[1em]
+        \dfrac{1}{a_n+b_1}&
+        \cdots&\dfrac{1}{a_n+b_n}&1
+    \end{vmatrix}\\
+    &=
+    \frac{
+        \prod\limits_{i=1}^{n-1}
+        \left(a_n-a_i\right)\left(
+            b_n-b_i
+        \right)
+    }{\prod\limits_{j=1}^{n}
+    \left(a_j+b_n\right)\prod\limits_{k=1}^{n-1}\left(
+        a_n+b_k
+    \right)}D_{n-1}
+\end{align*}
+因此
+\[
+\left|\bm{A}\right|
+=
+\prod_{1\leqslant i < j\leqslant n}
+\left(a_j-a_i\right)\left(
+b_j-b_i
+\right)
+\Bigg/
+\prod_{i,j=1}^{n}\left(a_i+b_j
+\right)
+\]
+\end{solution}
+\end{brown}
+\subsection{三对角行列式}
+\begin{brown}
+\begin{example}
+\[
+D_n=\begin{vmatrix}
+    a_1 & b_1 & & & & \\
+    c_1 & a_2 & b_2 &&&\\
+    &c_2&a_3&\ddots&&\\
+    &&\ddots&\ddots&\ddots&\\
+    &&&\ddots&a_{n-1}&b_{n-1}\\
+    &&&&c_{n-1}&a_n
+\end{vmatrix}
+\]
+按最后一列展开
+\[
+D_n=a_nD_{n-1}-b_{n-1}c_{n-1}
+D_{n-2}\left(n\geqslant 2\right)
+,D_0=1,D_1=a_1
+\]
+令$b_i=1,c_j=-1\left(
+  1\leqslant i,j\leqslant n-1
+\right)$得到的行列式与连分数相关,
+记
+\[
+\left(a_1a_2\cdots a_n\right)=
+\begin{vmatrix}
+    a_1 & 1 & & & & \\
+    -1 & a_2 & 1 &&&\\
+    &-1&a_3&\ddots&&\\
+    &&\ddots&\ddots&\ddots&\\
+    &&&\ddots&a_{n-1}&1\\
+    &&&&-1&a_n
+\end{vmatrix}
+\]
+易证
+\[
+a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cfrac{1}{\cdots+\cfrac{1}{a_{n-1}+\cfrac{1}{a_n}}}}}
+=
+\frac{\left(a_1a_2
+\cdots a_n\right)}{\left(
+    a_2a_3\cdots a_n\right)}
+\]
+进一步令$a_k=1\left(
+    1\leqslant k\leqslant n
+\right)$得到斐波拉契数列.
+\[
+F\left(n\right) = F\left(n-1\right)+F\left(n-2\right)
+\]\end{example}
+\end{brown}
+\subsection{行列式函数的导数}
+\begin{brown}
+    \begin{problem}
+设$f_{ij}\left(x\right)$是可导函数,记
+\[
+F\left(x\right)=
+\begin{vmatrix}
+    f_{11}\left(x\right)&f_{12}\left(x\right)&\cdots&f_{1n}\left(x\right)\\
+    f_{21}\left(x\right)&f_{22}\left(x\right)&\cdots&f_{2n}\left(x\right)\\
+    \vdots&\vdots&&\vdots\\
+    f_{n1}\left(x\right)&f_{n2}\left(x\right)&\cdots&f_{nn}\left(x\right)
+\end{vmatrix}
+\]
+证明：
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}F\left(x\right)
+=
+\sum_{i=1}^{n}F_i\left(x\right)
+\]
+其中
+\[
+F_i\left(x\right)
+=
+\begin{vmatrix}
+    f_{11}\left(x\right)&f_{12}\left(x\right)&\cdots&\dfrac{\mathrm{d}}{\mathrm{d}x}f_{1i}\left(x\right)&\cdots&f_{1n}\left(x\right)\\[1em]
+    f_{21}\left(x\right)&f_{22}\left(x\right)&\cdots&\dfrac{\mathrm{d}}{\mathrm{d}x}f_{2i}\left(x\right)&\cdots&f_{2n}\left(x\right)\\
+    \vdots&\vdots&&\vdots&&\vdots\\
+    f_{n1}\left(x\right)&f_{n2}\left(x\right)&\cdots&\dfrac{\mathrm{d}}{\mathrm{d}x}f_{ni}\left(x\right)&\cdots&f_{nn}\left(x\right)
+\end{vmatrix}
+\]
+\end{problem}
+\begin{Proof}
+考虑数学归纳法
+,对阶数$n$归纳,$n=1$时显然成立.
+设结论对$n-1$阶行列式成立
+,将行列式展开
+\[
+F\left(x\right)
+=
+f_{11}\left(x\right)
+A_{11}\left(x\right)
++f_{21}\left(x\right)A_{21}\left(x\right)+
+\cdots+f_{n1}\left(x\right)A_{n1}\left(x\right)
+\]
+其中$A_{i1}$是$f_{i1}\left(x\right)$的代数余子式,
+两端求导并记$A_{ij}^k\left(x\right)$
+是对$A_{ij}\left(x\right)$第$k$列元素求导后得到的行列式
+,则
+\begin{align*}
+    \frac{\mathrm{d}}{\mathrm{d}x}F\left(x\right)
+    &=\frac{\mathrm{d}}{\mathrm{d}x}\left(
+        \sum_{i=1}^{n}f_{i1}\left(x\right)A_{i1}\left(x\right)
+    \right)
+    =\sum_{i=1}^{n}f'_{i1}\left(x\right)A_{i1}\left(x\right)
+    +\sum_{i=1}^{n}f_{i1}\left(x\right)A'_{i1}\left(x\right)\\
+    &=F_1\left(x\right)+\sum_{i=1}^{n}f_{i1}\left(x\right)
+    \left(\sum_{k=1}^{n-1}A^k_{i1}\left(x
+    \right)\right)=F_1\left(x\right)+
+    \sum_{k=1}^{n-1}\sum_{i=1}^{n}
+    f_{i1}\left(x\right)A^k_{i1}\left(x\right)
+\end{align*}
+又$\displaystyle
+\sum_{i=1}^{n}f_{i1}\left(x\right)A_{i1}^k\left(x
+\right)=F_{k+1}\left(x\right)\left(
+    1\leqslant k\leqslant n-1
+\right)$,故
+\[
+\frac{\mathrm{d}}{\mathrm{d}x}F\left(x\right)
+=
+F_{1}\left(x\right)+F_2\left(x
+\right)+\cdots+F_n\left(x\right)
+\qedhere
+\]
+\end{Proof}
+利用组合定义也可证明.
+\[
+F\left(x\right)=
+\sum_{\left(k_1,k_2,\cdots,k_n\right)\in
+S_n}\left(-1\right)^{N\left(k_1,k_2,\cdots,k_n\right)}
+f_{k_11}\left(x\right)f_{k_22}\left(x\right)\cdots
+f_{k_nn}\left(x\right).
+\]
+\end{brown}
+\subsection{含有三角函数的行列式}
+\begin{brown}
+    \begin{problem}
+求
+\[
+\left|\bm{A}\right|
+=
+\begin{vmatrix}
+    1&\cos \theta_1&\cos2\theta_1&\cdots&\cos\left(n-1\right)\theta_1
+\\
+    1&\cos \theta_2&\cos2\theta_2&\cdots&\cos\left(n-1\right)\theta_2
+\\
+\vdots&\vdots&\vdots&&\vdots\\
+    1&\cos \theta_n&\cos2\theta_n&\cdots&\cos\left(n-1\right)\theta_n
+\end{vmatrix}
+\]
+\end{problem}
+\begin{solution}
+由\textup{De Moivre}公式
+\[
+\cos k\theta +\mathrm{i}\sin k\theta = 
+\left(\cos \theta + \mathrm{i}\sin \theta\right)^k
+\]及二项式定理并作三角恒等变换得
+\begin{align*}
+    \left|\bm{A}\right|
+&=
+2^{\frac{1}{2}\left(n-1\right)\left(n-2\right)}
+\begin{vmatrix}
+    1&\cos \theta_1&\cos^2\theta_1&\cdots&\cos^{n-1}\theta_1
+\\
+    1&\cos \theta_2&\cos^2\theta_2&\cdots&\cos^{n-1}\theta_2
+\\
+\vdots&\vdots&\vdots&&\vdots\\
+    1&\cos \theta_n&\cos^2\theta_n&\cdots&\cos^{n-1}\theta_n
+\end{vmatrix}\\
+&=2^{\frac{1}{2}\left(n-1\right)\left(n-2\right)}
+\prod_{1\leqslant i<j
+\leqslant n}\left(\cos \theta_j-\cos \theta_i\right)
+\end{align*}
+\end{solution}
+同时利用和差化积容易证明
+\begin{align*}
+    &\begin{vmatrix}
+        \sin \theta_1 & \sin 2\theta_1 & \cdots&\sin n\theta_1\\
+        \sin \theta_2&\sin 2\theta_2&\cdots&    \sin n\theta_2\\
+        \vdots&\vdots&&\vdots\\
+        \sin \theta_n&\sin 2\theta_n&\cdots&\sin n\theta_n
+    \end{vmatrix}\\
+    =&
+    2^{\frac{1}{2}
+    \left(n-1\right)
+    \left(n-2\right)}
+    \prod_{i=1}^{n}\sin \theta_i \cdot
+    \prod_{1\leqslant i<j
+\leqslant n}\left(\cos \theta_j-\cos \theta_i\right)
+\end{align*}
+\end{brown}
+\subsection{其它}
+事实上,需要认识到的是,递推是行列式计算中极为重要的技巧和内容.
+
+\begin{brown}
+    \begin{problem}
+计算
+\[
+D_n=\begin{vmatrix}
+    x_1 & y & y & \cdots &y & y\\
+    z&x_2&y&\cdots&y&y\\
+    z& z&x_3&\cdots&y&y\\
+    \vdots&\vdots&\vdots&&\vdots&\vdots\\\
+    z&z&z&\cdots&x_{n-1}&y\\
+    z&z&z&\cdots&z&x_n
+\end{vmatrix}
+\]
+\end{problem}
+\begin{solution}
+将第$n$列拆分得递推
+\[
+D_n=\left(x_n-y\right)D_{n-1}+y\prod_{i=1}^{n-1}\left(x_i-z\right)
+\]
+其转置同理有
+\[
+D_n=\left(x_n-z\right)D_{n-1}+z\prod_{i=1}^{n-1}\left(x_i-y\right)
+\]
+故
+$y \neq z$时
+\[
+D_n=
+\frac{1}{z-y}\left[
+    x\prod_{i=1}
+    ^{n}\left(x_i-y\right)-y
+    \prod_{i=1}^{n}\left(x_i-z\right)
+    \right]
+\]
+$y=z$使
+\[
+D_n=
+\prod_{i=1}^{n}\left(x_i-y\right)+y\sum_{i=1}^{n}\prod_{i\neq j}
+\left(x_j-y\right)
+\]
+\end{solution}
+\end{brown}
+\newpage
+\section{行列式的组合定义}
+\subsection{逆序与逆序数}
+\begin{formal}
+\begin{definition}[置换]\label{def:置换}
+首先构造一个双射:
+\begin{align*}
+    \sigma :  \left\{1,2,\cdots,n\right\} 
+    & \longrightarrow 
+    \left\{1,2,\cdots,n\right\} \\
+    i & \longmapsto k_i    
+\end{align*}
+这样的$\left(k_1,k_2,\cdots,k_n\right)\left(
+    \forall i \neq j,k_i \neq k_j
+\right)$
+称为对$\left(1,2,\cdots,n\right)$的一个
+全排列,简称排列,或者称为
+对$\left(1,2,\cdots,n\right)$的一个置换.
+\end{definition}
+\end{formal}
+\begin{green}
+\begin{corollary}[置换全体]\label{cor:置换全体}
+    将$\left(1,2,\cdots,n\right)$的置换$\sigma$的
+全体记作$S_n$,易知$S_n$共有$n!$个元即$\#S=n!$.
+\end{corollary}
+\end{green}
+\begin{formal}
+\begin{definition}[逆序与常序]\label{def:逆序与常序}
+    $\forall \sigma\in S$,
+    称排列$\left(1,2,\cdots,n\right)$为常序
+排列,其他都称为逆序.
+\end{definition}
+\end{formal}
+\begin{formal}
+    \begin{definition}[逆序数]\label{def:逆序数}
+我们称$\left(i,j\right)\left(i > j\right)$为一个
+逆序对,称一个排列中逆序对的总数为这个排列的逆序数,记作:
+\[
+N\left(k_1,k_2,\cdots,k_n\right)
+\]
+其中$\left(k_1,k_2,\cdots,k_n\right) \in S_n.$
+\end{definition}
+\end{formal}
+\begin{formal}\begin{definition}[排列的奇偶性]\label{def:排列的奇偶性}
+逆序数的奇偶性将排列分为奇排列和偶排列.
+\end{definition}
+\end{formal}
+\begin{formal}
+    \begin{proposition}[对换]\label{prop:对换}
+将排列中
+任意两个数对换之后它的奇偶性都会改变一次.
+\end{proposition}
+\end{formal}
+\begin{green}
+\begin{corollary}[奇偶排列数量]\label{cor:奇偶排列数量}
+    易知$S_n$中
+奇排列和偶排列各有$n! / 2\left(n\geqslant 2\right)$个
+\end{corollary}
+\end{green}
+\begin{formal}
+\begin{theorem}[逆序数的实际意义]\label{thm:逆序数的实际意义}
+    将一个排列$\left(k_1,k_2,\cdots,k_n\right)$经
+$N\left(k_1,k_2,\cdots,k_n\right)$次\emph{
+    相邻对换}后一定得到
+常序排列.
+\end{theorem}
+\begin{Proof}
+考虑数学归纳法,$n=1$显然,假设对$n-1$成立,
+下面证明对$n$成立.设置换$\left(k_1,k_2,\cdots,k_n\right)$中$k_i=n$.其后的逆序数贡献为$n-i$,作相邻对换$n-i$次将$n$换到最后即\[
+\left(
+    k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n,k_i=n
+\right)
+\]注意到$\left(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)\in S_{n-1}$且\[N\left(k_1,\cdots,k_i,\cdots,k_n\right)=N\left(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)+n-i.\]根据归纳假设$\left(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)$经过$N\left(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)$次的相邻对换得到$\left(1,2,\cdots,n-1\right)$.于是$\left(k_1,k_2,\cdots,k_n\right)\in S_n$经过$N\left(k_1,k_2,\cdots,k_n\right)$次的相邻对换得到$\left(1,2,\cdots,n\right)$.证毕.
+\end{Proof}
+\end{formal}
+\subsection{组合定义}
+这里以列向量为基础展开,也可以使用行向量.
+\begin{formal}
+\begin{definition}[$n$维标准单位列向量]\label{def:n维标准单位列向量}
+首先定义一个列向量:
+\[
+\bm{e}_i = \left(0,0,\cdots,1,\cdots
+,0\right)^{\prime} 
+\]
+$1$位于第$i$个位置.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[标准单位列向量的可能和]\label{thm:标准单位列向量的可能和}
+容易得到:
+\begin{equation*}
+    a\bm{e}_i + b\bm{e}_j = 
+    \begin{cases}
+        \left(0,\cdots,a,\cdots,b,\cdots,0\right)'
+        , & i \neq j;\\
+        \left(0,0,\cdots,a + b,\cdots,0\right)',
+        & i = j.
+    \end{cases}
+\end{equation*}
+\end{theorem}
+\end{formal}
+\begin{green}
+\begin{corollary}[向量表出]\label{cor:向量表出}
+\[
+\bm{\alpha }_i =
+\left(a_{1i},a_{2i},\cdots,a_{ni}\right)' = \sum_{
+    j = 1
+}^{n}a_{ji}\bm{e}_{j}.
+\]
+\end{corollary}
+\end{green}
+\begin{green}
+\begin{corollary}[行列式的向量表示]\label{cor:行列式的向量表示}对于任意行列式$\left|\bm{A}\right|$,根据前文给出的\cref{def:n维标准单位列向量},\cref{thm:标准单位列向量的可能和}和\cref{cor:向量表出}得到：
+    \[
+ \det\left(\bm{A}\right) = 
+\left|\bm{\alpha }_1,\bm{\alpha }_2,
+\cdots,\bm{\alpha }_n \right|
+\]
+\end{corollary}
+\end{green}
+\begin{formal}
+\begin{theorem}[组合定义推导]\label{thm:组合定义推导}
+由上文得:
+\[
+ \det\left(\bm{A}\right) = 
+\left|\bm{\alpha }_1,\bm{\alpha }_2,
+\cdots,\bm{\alpha }_n \right|.
+\]
+故
+\begin{align*}
+ \det\left(\bm{A}\right) & =
+ \left|\sum_{i = 1}^n
+a_{i1}\bm{e}_i,\bm{\alpha }_2,
+\cdots,\bm{\alpha }_n \right|\\
+&=\sum_{i =1}^n a_{i1}\left|\bm{e}_i,
+\bm{\alpha }_2,\cdots,\bm{\alpha }_n\right|\\
+&=\sum_{i,l=1}^n a_{i1}a_{l2} 
+\left|\bm{e}_i,
+\bm{e}_l,\cdots,\bm{\alpha }_n\right|\\
+&=\cdots\\
+&=\sum_{1 \leqslant k_1,
+\cdots,k_n \leqslant n}
+a_{k_{1}1} \cdots a_{k_{n}n}\left|
+    \bm{e}_{k_1},\cdots,\bm{e}_{k_n}
+\right|.
+\end{align*}
+其中,注意到$k_i=k_j\left(i\neq j\right)$时式子为零,那么求和下标$1 \leqslant k_1,\cdots,k_n \leqslant n
+$表示排列$\left(k_1,\cdots,k_n\right)$取遍所有可能,可记作:
+\[
+\left(k_1,\cdots,k_n\right) \in S_n
+\]
+\end{theorem}
+\end{formal}
+
+又因为行列式$\left|\bm{e}_{k_1}
+,\cdots,\bm{e}_{k_n}
+\right|$经过$N\left(k_1,\cdots,k_n\right)$次相邻对换后一定得到
+$\left|\bm{e}_1,\cdots,\bm{e}_n
+\right|\equiv 1.$又由行列式的对换性质知会产生一个由该対换次数
+即逆序数唯一确定的符号项:
+\[
+\left(- 1\right)^{N\left(k_1,\cdots,k_n\right)}
+\]那么我们得到:
+\begin{formal}
+\begin{theorem}[行列式的组合定义]\label{thm:行列式的组合定义}
+\begin{align*}
+     \det\left(\bm{A}\right) = \sum_{\left(
+        k_1,\cdots,k_n
+    \right) \in S_n}\left(-1\right)^{N\left(
+        k_1,\cdots,k_n
+    \right)} a_{k_{1}1} \cdots a_{k_{n}n}.
+\end{align*}
+即为行列式的组合定义.
+\end{theorem}
+\end{formal}
+\begin{formal}
+\begin{definition}[单项与单项符号]\label{def:单项与单项符号}\cref{thm:行列式的组合定义}中
+    \[
+\left(-1\right)^{N\left(k_1,\cdots,k_n\right)}
+\]称为单项符号,而\[
+a_{k_{1}1} \cdots a_{k_{n}n}
+\]称为一个单项.
+\end{definition}
+\end{formal}
+\begin{red}
+    \begin{remark}
+单项符号表明了一个高于一阶的行列式的展开式中必然是正项和负项
+各$n!/2$个,单项则表明了展开式中的每一项的值都是从不同行不同列
+取一个元相乘得到.
+    \end{remark}
+\end{red}
+\begin{red}
+\begin{remark}
+    组合定义与递归定义是等价相容的,不过多数国内工科学生并不十分熟悉组合定义.
+\end{remark}
+\end{red}
+\begin{red}
+    \begin{remark}
+        如果想要从组合定义出发推出\cref{prop:行列式的性质}、\cref{prop:任意展开}、\cref{thm:转置不变}等性质,需要用到下面的引理.
+    \end{remark}
+\end{red}
+\begin{green}
+\begin{lemma}[元素组合为单项]\label{lem:元素组合为单项}
+    设$\left(i_1,i_2,\cdots,i_n\right),\left(j_1,j_2,\cdots,j_n\right)\in S_n$,则
+    \[
+    a_{i_1j_1}a_{i_2j_2}\cdots a_{i_nj_n} 
+    \]在$\left|\bm{A}\right|$中的符号为
+    \[
+    \left(-1\right)^{N\left(i_1,i_2,\cdots,i_n\right)+N\left(j_1,j_2,\cdots,j_n\right)}
+    \]
+\end{lemma}
+\begin{Proof}
+我们这样考虑对$\left(i_1,i_2,\cdots,i_n\right),\left(j_1,j_2,\cdots,j_n\right)$作$N\left(j_1,j_2,\cdots,j_n\right)$相同的相邻对换使得
+\begin{align*}
+    \left(j_1,j_2,\cdots,j_n\right)&\longrightarrow \left(1,2,\cdots,n\right)\\
+    \left(i_1,i_2,\cdots,i_n\right)&\longrightarrow \left(k_1,k_2,\cdots,k_n\right)
+\end{align*}此时
+\[
+a_{i_1j_1}a_{i_2j_2}\cdots a_{i_nj_n} = a_{k_11}a_{k_22}\cdots a_{k_nn}
+\]符号为\[
+\left(-1\right)^{N\left(k_1,k_2,\cdots,k_n\right)}
+\]由\cref{prop:对换}知$N\left(i_1,i_2,\cdots,i_n\right)$的奇偶性经过了$N\left(j_1,j_2,\cdots,j_n\right)$次改变,最后与$N\left(k_1,k_2,\cdots,k_n\right)$的奇偶性相同即
+\[
+N\left(
+    i_1,i_2,\cdots,i_n  
+\right)+N\left(
+    j_1,j_2,\cdots,j_n
+\right) \equiv N\left(
+    k_1,k_2,\cdots,k_n
+\right) \pmod{2}
+\]即\[
+\left(-1\right)^{N\left(i_1,i_2,\cdots,i_n\right)+N\left(j_1,j_2,\cdots,j_n\right)}
+=\left(-1\right)^{N\left(k_1,k_2,\cdots,k_n\right)}\qedhere
+\]
+\end{Proof}
+\end{green}
+\begin{formal}
+\begin{theorem}[行向量表示的组合定义]\label{thm:行向量表示的组合定义}
+\begin{align*}
+     \det\left(\bm{A}\right) = \sum_{\left(
+        k_1,\cdots,k_n
+    \right) \in S_n}\left(-1\right)^{N\left(
+        k_1,\cdots,k_n
+    \right)} a_{1k_{1}} \cdots a_{nk_{n}}.
+\end{align*}
+\end{theorem}
+\begin{Proof}
+只需要确定单项符号即可,由\cref{lem:元素组合为单项}知\[
+\left(-1\right)^{N\left(1,2,\cdots,n\right)+N\left(k_1,\cdots,k_n\right)}=\left(-1\right)^{N\left(k_1,\cdots,k_n\right)}\qedhere
+\]
+\end{Proof}
+\end{formal}
+\newpage
+\section{Laplace定理}.
+\subsection{定义}
+\begin{formal}
+\begin{definition}[$k$阶子式]\label{def:k阶子式}
+有$n$阶行列式$ \det\left(\bm{A}\right)$.任取$2k$个数:
+\begin{align*}
+    1\leqslant i_1 < i_2 <\cdots<i_k\leqslant n;\\
+    1\leqslant j_1 < j_2 <\cdots<j_k\leqslant n.
+\end{align*}
+那么这第$i_1,\cdots,i_k$行和第$j_1,\cdots,j_k$列的交点
+的元列成的新行列式称为$\left|\bm{A}\right|$的一个$k$阶子式,记作:
+\[
+\bm{A}\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k 
+\end{pmatrix}=
+\begin{vmatrix}
+    a_{i_1j_1} & \cdots & a_{i_1j_k} \\
+    \vdots & \ddots & \vdots \\
+    a_{i_kj_1} & \cdots & a_{i_kj_k}
+\end{vmatrix}
+\]
+去掉这些行和列后剩下的元列成它的余子式:
+\[
+M\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix}
+\]
+
+
+记:
+\[
+p = \sum_{x = 1}^k i_x \qquad q= \sum_{y = 1}^k j_y.
+\]
+那么有代数余子式:
+\[
+\widehat{\bm{A}} \begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix} = \left(- 1\right)^{p + q}
+M\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix}
+\]
+\end{definition}
+\end{formal}
+\subsection{引理}
+为了证明\cref{thm:Laplace定理}\textup{Laplace}定理知上式等于,我们首先证明两个引理.
+\begin{green}
+\begin{lemma}[单项保持]\label{lem:单项保持}
+$n$阶行列式$\left|\bm{A}\right|$的任一$k$阶子式与其代数余子式之积的展开式中的
+每一项都属于$\left|\bm{A}\right|$的展开式中的项.即\cref{thm:Laplace定理}中右侧展开式中的单项均为$\left|\bm{A}\right|$展开式中的单项并且符号一致.
+\end{lemma}
+\begin{Proof}
+先考虑特殊情况,$i_1=1,i_2=2,\cdots,
+i_k=k;j_1=1,j_2=2,\cdots,j_k=k$,此时
+\[
+\left|\bm{A}\right|
+=
+\begin{vmatrix}
+    \bm{A}_1 & *\\
+    *&\bm{A}_2
+\end{vmatrix}
+\]
+其中
+\[
+\left|\bm{A}_1\right|
+=
+\bm{A}\begin{pmatrix}
+    1 & 2 &\cdots &k\\
+    1 & 2&\cdots&k
+\end{pmatrix}
+=\begin{vmatrix}
+    a_{11} & \cdots &a_{1k}\\
+    \vdots &&\vdots\\
+    a_{k1}&\cdots&a_{kk}
+\end{vmatrix}
+\]
+\[
+\left|\bm{A}_2\right|
+=
+\widehat{\bm{A}}
+\begin{pmatrix}
+    1 & 2 &\cdots &k\\
+    1 & 2&\cdots&k
+\end{pmatrix}
+=\begin{vmatrix}
+    a_{k+1,k+1} & \cdots &a_{k+1,n}\\
+    \vdots &&\vdots\\
+    a_{n,k+1}&\cdots&a_{nn}
+\end{vmatrix}
+\]
+容易有\[
+\bm{A}\begin{pmatrix}
+    1 & 2 &\cdots &k\\
+    1 & 2&\cdots&k
+\end{pmatrix}
+\widehat{\bm{A}}
+\begin{pmatrix}
+    1 & 2 &\cdots &k\\
+    1 & 2&\cdots&k
+\end{pmatrix}
+\]
+中的任一项有形式
+\[
+\left(-1\right)^{\sigma}
+a_{j_11}a_{j_22}\cdots
+a_{j_kk}a_{j_{k+1},k+1}\cdots
+a_{j_n,n}
+\]
+其中
+$\sigma = 
+N\left(
+    j_1,j_2,\cdots,j_k
+\right)+N\left(
+    j_{k+1},j_{k+2}\cdots,j_n
+\right)$,$\left(j_1,j_2,\cdots,j_k\right)$是
+$\left(1,2,\cdots,k\right)$的一个置换,
+$\left(j_{k + 1},j_{k+2},\cdots,j_n\right)$
+是$\left(k+1,k+2,\cdots,n\right)$的一个置换,
+故有$\left(
+    j_1,j_2,\cdots,j_k,j_{k+1},\cdots,j_n
+\right)$
+是$\left(1,2,\cdots,n\right)$的一个置换且
+\[
+N\left(j_1,\cdots,j_k,j_{k+1},\cdots,j_n\right)
+=N\left(j_1,j_2,\cdots j_k\right)+
+N\left(j_{k+1},j_{k+2},\cdots,j_n\right)
+\]
+说明这是展开中的一项.
+
+再来考虑一般的情况.设
+\[
+1\leqslant i_1<i_2<\cdots <i_k\leqslant n;
+1\leqslant j_1<j_2<\cdots <j_k\leqslant n.
+\]
+显然有,经过$\left(
+    i_1+\cdots+i_k
+\right)+\left(j_1+\cdots+j_k\right)
+-k\left(k+1\right)$
+次行列的对换得到新的行列式
+\[
+\left|\bm{C}\right|
+=
+\begin{vmatrix}
+    \bm{D} &*\\
+    *&\bm{B}
+\end{vmatrix}
+\]
+其中
+\[
+\left|\bm{D}\right|
+=\bm{A}
+\begin{pmatrix}
+    i_1 & i_2 & \cdots & i_k\\
+    j_1 & j_2 & \cdots & j_k
+\end{pmatrix}
+\]
+显然
+$\left|\bm{C}\right|
+=\left(-1\right)^{p+q}
+\left|\bm{A}\right|,p=
+i_1+\cdots+i_k,q=
+j_1+\cdots+j_k$,而$\left|\bm{B}
+\right|$是子式$\left|\bm{D}\right|$
+在$\left|\bm{C}\right|$中的
+余子式（同时也是代数余子式）
+.由上文知,$\left|\bm{D}\right|
+\left|\bm{B}\right|$中任一项均为
+$\left|\bm{C}\right|$中
+的项,又有
+\[
+\widehat{\bm{A}}
+\begin{pmatrix}
+    i_1 & i_2 &\cdots &i_k\\
+    j_1 & j_2 &\cdots &j_k
+\end{pmatrix}
+=
+\left(-1\right)^{p+q}\left|\bm{B}
+\right|
+\]
+故
+\[
+\bm{A}\begin{pmatrix}
+    1 & 2 &\cdots &k\\
+    1 & 2&\cdots&k
+\end{pmatrix}
+\widehat{\bm{A}}
+\begin{pmatrix}
+    1 & 2 &\cdots &k\\
+    1 & 2&\cdots&k
+\end{pmatrix}
+=\left(-1\right)^{p+q}
+\left|\bm{D}\right|
+\left|\bm{B}\right|
+\]
+中的任一项均为$\left(-1\right)
+^{p+q}\left|\bm{C}\right|$
+中的项.
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{lemma}[单项不重复]\label{lem:单项不重复}
+    \cref{thm:Laplace定理}右侧展开中的单项互不相同.
+\end{lemma}
+\begin{Proof}
+我们考虑证明这个引理的逆否命题,即若存在相同的单项,它们的展开方式必定是相同的.
+
+对于给定的行指标$1\leqslant i_1<i_2<\cdots <i_k\leqslant n$,其余指标为$1\leqslant i_{k+1}<i_{k+2}<\cdots<i_n\leqslant n.$
+
+再对于给定两组列$1\leqslant j_1<j_2<\cdots<j_k\leqslant n$和$1\leqslant l_1<l_2<\cdots<l_k\leqslant n$,其余指标分别为$1\leqslant j_{k+1}<j_{k+2}<\cdots<j_n\leqslant n$和$1\leqslant l_{k+1}<l_{k+2}<\cdots<l_n\leqslant n.$
+
+取$\left(j_1,j_2,\cdots,j_k\right)$的一个全排列$\left(r_1,r_2,\cdots,r_k\right)$,其余指标$\left(
+    r_{k+1},r_{k+2},\cdots,r_n
+\right)$也是$\left(
+    j_{k+1},j_{k+2},\cdots,j_n
+\right)$的一个全排列；同理取$\left(l_1,l_2,\cdots,l_k\right)$的一个全排列$\left(s_1,s_2,\cdots,s_k\right)$,其余指标$\left(
+    s_{k+1},s_{k+2},\cdots,s_n
+\right)$也是$\left(
+    l_{k+1},l_{k+2},\cdots,l_n
+\right)$的一个全排列.那么
+\[
+\bm{A}\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix} \widehat{\bm{A}}\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix} 
+\]按$\left(
+    j_1,j_2,\cdots,j_k
+\right)$和$\left(
+    l_1,l_2,\cdots,l_k
+\right)$任取一个单项将分别等于
+\begin{align*}
+    &a_{i_1r_1}a_{i_2r_2}\cdots a_{i_kr_k}a_{i_{k+1}j_{k+1}}\cdots a_{i_nj_n}\\
+    &a_{i_1s_1}a_{i_2s_2}\cdots a_{i_ks_k}a_{i_{k+1}l_{k+1}}\cdots a_{i_nl_n}
+\end{align*}假设二者相等,那么只能是其中每个元素对应相等（并不是“可能数值刚好相等”想法,应当视作未定元一样的相等）即\[
+r_t=s_t,\forall 1\leqslant t\leqslant n\Longrightarrow \left(
+    j_1,j_2,\cdots,j_k
+\right)=
+\left(
+    l_1,l_2,\cdots,l_k
+\right)
+\]于是我们证明了两个相同单项只能来自于同样的展开,这是不可能的,故得证.
+\end{Proof}
+\end{green}
+\subsection{Laplace定理}
+\begin{formal}
+\begin{theorem}[Laplace定理]\label{thm:Laplace定理}
+给定$k$行（列）,则包含于这$k$行（列）的全部$k$阶子式与其
+代数余子式之积的和等于$ \det\left(\bm{A}\right).$
+
+即若取定$k$行$1\leqslant i_1<i_2<
+\cdots<i_k\leqslant n$,则:
+\[
+\left|\bm{A}\right| = \sum_{1
+\leqslant j_1 <j_2< \cdots
+< j_k \leqslant n}\bm{A}\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix} \widehat{\bm{A}}\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix} 
+\]
+若取定$k$列
+$1\leqslant j_1<j_2<\cdots
+<j_k\leqslant n$,则：
+\[
+\left|\bm{A}\right| =
+ \sum_{1\leqslant i_1 <i_2< \cdots
+< i_k \leqslant n}\bm{A}\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix} \widehat{\bm{A}}\begin{pmatrix}
+    i_1 & \cdots & i_k \\
+    j_1 & \cdots & j_k
+\end{pmatrix} 
+\]
+\end{theorem}
+\begin{Proof}
+说明一下证明的思路,容易看出左右两边均有$n!$项,那么只需证明：右侧的单项均是左侧的单项,并且符号一致；右侧的单项均不相同.于是由\cref{lem:单项保持}和\cref{lem:单项不重复}即可得证.
+\end{Proof}
+\end{formal}
+\begin{red}
+\begin{remark}
+    事实上,令$k = 1$,可以看出这就是行列式的递归定义,所以\textup{Laplace}定理
+其实是递归定义的自然推广.
+\end{remark}
+\end{red}
+\begin{green}
+\begin{corollary}[分块行列式]\label{cor:分块行列式}
+    设分块行列式\[
+    \left|\bm{A}\right|=\begin{vmatrix}
+        \bm{B}&\bm{C}\\
+        \bm{O}&\bm{D}
+    \end{vmatrix}
+    \]或
+    \[
+    \left|\bm{A}\right|=
+    \begin{vmatrix}
+        \bm{B}&\bm{O}\\
+        \bm{C}&\bm{D}
+    \end{vmatrix}
+    \]则$\left|\bm{A}\right|=\left|\bm{B}\right|\left|\bm{D}\right|.$
+\end{corollary}
+\begin{Proof}
+进行\textup{Laplace}展开即可.
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{corollary}[矩阵和的行列式]\label{cor:矩阵和的行列式}
+    根据\textup{Laplace}定理,有：
+    \begin{align*}
+    \left|\bm{A}+\bm{B}\right|
+    &=
+    \left|\bm{A}\right|+\left|\bm{B}\right|
+    \\
+    &+
+    \sum_{1\leqslant k\leqslant n-1}
+    \left(
+        \sum_{\substack{1\leqslant i_1< i_2<\cdots<i_k\leqslant n
+        \\
+        1\leqslant j_1<j_2<\cdots<j_k\leqslant n}}
+        \bm{A}\begin{pmatrix}
+            i_1 & i_2 &\cdots&i_k\\
+            j_1 & j_2 & \cdots&j_k
+        \end{pmatrix}\widehat{\bm{B}}\begin{pmatrix}
+            i_1 & i_2 &\cdots&i_k\\
+            j_1 & j_2 & \cdots&j_k
+        \end{pmatrix}
+    \right)
+    \end{align*}
+    \end{corollary}
+    \begin{Proof}
+    列展开即证.
+    \end{Proof}
+\end{green}
+\newpage
+\section{行列式对于函数的几点应用}
+当然,标题所说并不算严谨,这里姑且这样理解.
+\begin{formal}
+\begin{theorem}[零多项式刻画]\label{thm:零多项式刻画}
+如果$\deg\, f\left(x\right) \leqslant  n$,且存在
+$n + 1$个数$b_1,\cdots,b_{n+1}$,使得\[
+f\left(b_i\right)  = 0 \quad \left(i = 1,\cdots 
+,n+ 1\right)
+\]那么有\[
+f\left(x\right)\equiv 0.
+\]
+\end{theorem}
+\end{formal}
+\begin{formal}
+\begin{theorem}[多项式相等刻画]\label{thm:多项式相等刻画}
+如果$\deg\, f\left(x\right) \leqslant  n,
+\deg\, g\left(x\right) \leqslant  n$,且存在
+$n + 1$个数$b_1,\cdots,b_{n+1}$,使得\[
+f\left(b_i\right)  = g\left(b_i\right) \quad \left(i = 1,\cdots 
+,n+ 1\right)
+\]那么有
+\[
+f\left(x\right)\equiv g\left(x\right).
+\]
+\end{theorem}
+\end{formal}
+\begin{formal}
+\begin{theorem}[拉格朗日插值公式]\label{thm:拉格朗日插值公式}
+如果多项式$f\left(x\right)$的次数$\deg\,f\left(x\right) = n$,且存在$n + 1$个
+数$b_1,b_2,\cdots,b_{n + 1}$,并且已知$f\left(b_i\right)
+(i = 1,2,\cdots ,$$n + 1)$,那么函数$f\left(
+    x
+\right)$唯一确定
+\end{theorem}
+\begin{Proof}
+    构造
+\begin{align*}
+   g\left(x\right)  &=
+    \sum_{i = 1}^{n + 1}f\left(b_i\right)
+    \cdot \frac{\left(x - b_1\right)\cdots
+    \left(x - b_{i - 1}\right)\left(
+        x - b_{i + 1}
+    \right)\cdots\left(x - b_{n + 1}\right)}
+    {\left(b_i - b_1\right)\cdots
+    \left(b_i - b_{i - 1}\right)\left(
+        b_i - b_{i + 1}
+    \right)\cdots\left(b_i- b_{n + 1}\right)}\\
+    & =
+    \sum_{i = 1}^{n + 1}f\left(b_i\right)
+    \cdot \frac{\left(x - b_1\right)\cdots
+    \widehat{\left(x - b_{i}\right)}
+    \cdots\left(x - b_{n + 1}\right)}
+    {\left(b_i - b_1\right)\cdots
+    \widehat{\left(b_i - b_{i }\right)}
+    \cdots\left(b_i - b_{n + 1}\right)}.
+\end{align*}
+根据\cref{thm:多项式相等刻画},$f\left(x\right) \equiv g\left(x\right)$.
+\end{Proof}
+\end{formal}
+\begin{red}
+\begin{remark}
+    \cref{thm:拉格朗日插值公式}是一个非常重要的定理,它告诉我们,如果我们知道了一个$n$次多项式在$n+1$个点的取值,那么我们就可以唯一确定这个多项式.
+\end{remark}
+\end{red}

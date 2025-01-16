@@ -1,0 +1,2660 @@
+\newpage
+\chapter{矩阵}
+\setcounter{section}{0}
+\section{从线性映射看矩阵与行列式}
+前面我们并未纠结矩阵的引入问题,这里略引
+线性映射来作解释.二者的深刻关系需要到后期才会被
+解释.下文只考虑实矩阵.
+
+
+我们考虑全体$n$阶方阵的集合为$
+\bm{M}_n\left(\mathbb{R} 
+\right)$,然后构造这样一个映射$det$:
+\begin{align*}
+   \det : \bm{M}_n\left(\mathbb{R} 
+   \right)  & \longrightarrow 
+\mathbb{R} \\
+\bm{A} & \longmapsto 
+\left|\bm{A}\right|
+\end{align*}
+即函数:
+\[
+\left|\bm{A}\right| =  \det\,\left(\bm{A}\right)
+\]
+这样的线性映射就是矩阵和行列式的内在关系.
+
+
+说白了,我们的研究,就是为了回答下面这两个问题:
+\begin{enumerate}[label =\textup{(\arabic*)}]
+\item $\det\,\left(\bm{A}\right)$能够反映出$\bm{A}$的哪些性质？
+\item 映射$\det$本身的性质如何？
+\end{enumerate}
+
+进一步地,我们将要探讨代数与几何二者之间的关系.
+\newpage
+\section{矩阵的基本形式}
+\subsection{矩阵的表示}
+\begin{formal}
+\begin{definition}[矩阵的形式]\label{def:矩阵的形式}
+矩阵是一张\emph{数表},通常用大写英文字母表示,如:
+\[  
+    \bm{A} = \begin{pmatrix}
+        a_{11}  & \dots & a_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        a_{m1}  & \dots & a_{mn}
+    \end{pmatrix}_{m \times n}
+\]
+
+这是一个$\displaystyle m \times n$的矩阵,即它有$\displaystyle 
+m$行$\displaystyle n$列,其中,$\displaystyle a_{ij}$表示
+第$\displaystyle i$行第$\displaystyle j$列的元素.$\forall 1\leqslant i\leqslant m,1\leqslant j\leqslant n,a_{ij}\in \mathbb{R}\left(\mathbb{C}\right)$,则称为一个$m\times n$阶的实（复）矩阵,记作$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)\left(M_{m\times n}\left(\mathbb{C}\right)\right).$
+
+这个矩阵可记作$\displaystyle a_{ij}$或$\displaystyle \left(
+    a_{ij}
+\right)_{m \times n}$或$\displaystyle \bm{A}_{mn}$或$
+\bm{A}_{m \times n}$.一些情况下也会记作
+$\bm{A}^{m\times n}$等形式.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[零矩阵]\label{def:零矩阵}
+特别地,所有元素为$\displaystyle 0$的矩阵称为零矩阵,记作
+$\displaystyle \bm{O}$
+\[
+    \bm{O} = \begin{pmatrix}
+        0 &\cdots &0 \\
+        \vdots& \ddots &\vdots\\
+        0&\dots&0
+    \end{pmatrix}
+\]
+\end{definition}
+\end{formal}
+
+任何一个矩阵中的$\displaystyle 0$都可以用空白代替.
+
+\begin{formal}
+\begin{definition}[负矩阵]\label{def:负矩阵}
+    所谓$\displaystyle \bm{A}$的负矩阵就是把其中每个元素变为相反数:
+\[  \displaystyle
+    \bm{-A} = \begin{pmatrix}
+        -a_{11}  & \dots & -a_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        -a_{m1}  & \dots & -a_{mn}
+    \end{pmatrix}_{m \times n}
+\]
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    负矩阵也可以用\cref{def:数乘}来定义.
+\end{remark}
+\end{red}
+\begin{red}
+    \begin{remark}
+        矩阵不是一个数.
+    \end{remark}
+\end{red}
+\subsection{几种基础矩阵}
+\begin{formal}
+\begin{definition}[方阵]\label{def:方阵}
+一个行数和列数相等的矩阵称为方阵,比如
+\[ 
+    \bm{A}_{n} = \begin{pmatrix}
+        a_{11}  & \dots & a_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        a_{n1}  & \dots & a_{nn}
+    \end{pmatrix}_{n \times n}
+\]
+其中,$a_{11}$到$a_{nn}$这
+一条连线称为主对角线.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[单位阵]\label{def:单位阵}
+如果一个方阵主对角线上全是$1$,其他元素都是$
+ 0$,那么它是一个单位矩阵
+\[
+    \bm{I}_{n}  = \bm{E}_n = \begin{pmatrix}
+        1 & & \\
+        & \ddots &\\
+        &&1
+    \end{pmatrix}
+    _{n}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[常量矩阵]\label{def:常量矩阵}
+如果一个方阵主对角线上全是一个相同的常数$k$,
+其他元素都是零,称为数量矩阵或常量矩阵
+\[
+    \displaystyle
+    \bm{K}_n = \begin{pmatrix}
+        k & & \\
+        & \ddots &\\
+        &&k
+    \end{pmatrix}
+    _n
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[对角矩阵]\label{def:对角矩阵}
+如果一个方阵除了主对角线上其他元素都是零（主对角线上
+不一定没有零）,称为对角矩阵
+\[
+    \bm{\varLambda} _n = \begin{pmatrix}
+        a_{11} & & \\
+        & \ddots &\\
+        &&a_{nn}
+    \end{pmatrix}= \mathrm{diag}\,\left\{
+        a_{11},\cdots,a_{nn}
+    \right\}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[三角矩阵]
+
+如果一个方阵主对角线以上（下）全是$\displaystyle 0$
+,称为下（上）三角阵
+\[
+    \bm{A}_n = \begin{pmatrix}
+        a_{11} & a_{12} &\dots & a_{1n} \\
+        & a_{22} & \dots & a_{2n}\\
+        & & \ddots & \vdots \\
+        & & & a_{nn}
+    \end{pmatrix} 
+\]
+
+\[
+    \displaystyle
+    \bm{B}_n = \begin{pmatrix}
+        b_{11} & & & \\
+        b_{21} & b_{22} & & \\
+        \vdots & \vdots & \ddots & \\
+        b_{n1} & b_{n2} & \dots & b_{nn}
+    \end{pmatrix}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[旋转矩阵]\label{def:旋转矩阵}
+这是一种应用广泛而重要的矩阵,这里给出二阶形式,注意,逆时针为正方向.
+\[
+\bm{A} = \begin{pmatrix}
+    \cos \theta  & -\sin\theta \\
+    \sin\theta & \cos\theta 
+\end{pmatrix}
+= \mathrm{exp}\left(
+    \theta \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{bmatrix}
+\right)
+\]\end{definition}\end{formal}
+\begin{red}
+    \begin{remark}
+        旋转矩阵对于计算机方向有重大意义.
+    \end{remark}
+\end{red}
+\begin{formal}
+\begin{definition}[阶梯形矩阵]\label{def:阶梯形矩阵}
+设$\bm{A}_{mn}$
+为非零矩阵,若所有非零行（即至
+少有一个非零元素的行）全在零行的上
+面,$\bm{A}_{mn}$中各非零行中第一个
+（最后一个）非
+零元素（称为阶
+梯点）前（后）面零元素的个数随行数增
+大而严格增多（减少）,则称为上（下）梯
+形矩阵,简称为上（下）梯形阵,上下梯形阵
+统称为梯形阵.
+\end{definition}
+\end{formal}
+
+\begin{red}
+\begin{remark}
+    一个矩阵有可能同时是上、下梯形阵,也可能都不是,也可能
+只是其中之一！
+\end{remark}
+\end{red}
+\subsection{矩阵的迹}
+\begin{formal}
+\begin{definition}[迹]\label{def:迹}
+方阵
+\[
+\begin{pmatrix}
+       a_{11} & \cdots & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{n1} & \cdots & a_{nn}  
+\end{pmatrix}
+\]
+的主对角线上元素之和称为这个方阵的迹,记作$ \mathrm{tr}\,\bm{A}=
+  a_{11} + a_{22} + \cdots + a_{nn}$.
+\end{definition}
+\end{formal}
+\newpage 
+\section{矩阵的运算}
+\subsection{矩阵的线性运算}
+\begin{formal}
+\begin{definition}[同型]\label{def:同型}
+    矩阵的同型指的是他们的行数和列数分别相等,如$
+\bm{A}_{m\times n}$和$\bm{B}_{m\times n}$.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[加法和减法]\label{def:加法和减法}
+矩阵的加减法只能对同型矩阵做,对应位置相加减即可:
+\[
+    \left(a_{ij}\right)_{m \times n} \pm \left(
+        b_{ij}
+    \right)_{m \times n} = \left(
+        a_{ij} \pm b_{ij}
+    \right)_{m \times n}
+\]
+\[  \displaystyle
+    \begin{pmatrix}
+        a_{11}  & \dots & a_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        a_{m1}  & \dots & a_{mn}
+    \end{pmatrix}_{m \times n}
+    \pm
+    \quad
+    \begin{pmatrix}
+        b_{11}  & \dots & b_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        b_{m1}  & \dots & b_{mn}
+    \end{pmatrix}_{m \times n}
+   = \quad
+    \begin{pmatrix}
+        a_{11} \pm b_{11} & \dots & a_{1n} \pm b_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        a_{m1} \pm b_{m1}  & \dots & a_{mn}  \pm b_{mn}
+    \end{pmatrix}_{m \times n}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{proposition}[加减法性质]\label{prop:加减法性质}
+    矩阵的加减法满足:
+\setcounter{equation}{0}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 交换律：$\bm{A} + \bm{B} = \bm{B} + \bm{A} $
+    \item 结合律：$\left( \bm{A} + \bm{B} \right) + \bm{C} = \bm{A}
+    + \left( \bm{B} + \bm{C}\right)$
+    \item 零元存在：$\bm{A} + \bm{O} = \bm{A}$
+    \item 存在负矩阵：$
+    \bm{A}+\left(-\bm{A}\right) = \bm{O}$
+    \item 移项：$
+    \bm{A} + \bm{B} = \bm{C} \Longleftrightarrow \bm{A}
+    = \bm{C} - \bm{B} $
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{矩阵的数乘}
+\begin{formal}
+\begin{definition}[数乘]\label{def:数乘}
+一个常数$k$乘一个矩阵$ 
+\bm{A}_{mn}$称为数乘运算,所有元素都乘这个常数即可:
+\[
+    k\bm{A}_{mn} = k\left(a_{ij}\right)_{m \times n}
+     =\left(k a_{ij}\right)_{m \times n}
+\]
+\[  
+    k \begin{pmatrix}
+        a_{11}  & \dots & a_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        a_{m1}  & \dots & a_{mn}
+    \end{pmatrix}_{m \times n}
+    = \quad
+     \begin{pmatrix}
+        ka_{11}  & \dots & ka_{1n} \\
+        \vdots & \ddots  & \vdots \\
+        ka_{m1}  & \dots & ka_{mn}
+    \end{pmatrix}_{m \times n}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{proposition}[数乘性质]\label{prop:数乘性质}
+矩阵的数乘满足:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+   \item 数的分配律$k \left(\bm{A} + \bm{B}\right) = k\bm{A} + k\bm{B}$
+   \item 矩阵的分配律$\left(k + l\right)\bm{A} = k\bm{A} + l \bm{B}$
+   \item 结合律$k\left(l\bm{A}\right) = 
+   \left(kl\right) \bm{A} = 
+   l \left(k\bm{A}\right)$
+    \item 单位元存在$1\cdot\bm{A} = \bm{A}$
+    \item 零元存在$0\cdot\bm{A} = \bm{O}$
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{矩阵的乘法}
+矩阵的乘法首先要满足这样的条件:前一个矩阵的列数与后一个矩阵的
+行数相等.而它们相乘的结果是一个行数等于前一个矩阵的行数,列数
+等于后一个矩阵的列数的矩阵,简单说就是:“中间相等,取两头”.
+\[
+    \bm{A}_{m \times n} \bm{B}_{n \times k} = \bm{C}_{m \times k}
+\]
+\begin{formal}
+\begin{definition}[矩阵乘法]\label{def:矩阵乘法}
+    对于矩阵乘法$\bm{A}_{m\times n}\bm{B}_{n\times k}=\bm{C}_{m\times k}$结果矩阵中的元素$c_{ij}$的算法是用矩阵$
+\bm{A}$中的第$i$行$\left(a_{i1},\dots ,a_{in
+}\right)$各元素分别与矩阵$\bm{B}$中的第$
+j$列$\left(b_{1j},\dots,
+b_{nj}\right)$各元素分别相乘,再把结果相加得
+到$c_{ij}$即这两个向量做内积；
+\[
+c_{ij}=
+    \begin{pmatrix}
+        a_{i1} & \dots &a_{in}
+    \end{pmatrix}
+    \cdot 
+    \begin{pmatrix}
+        b_{1j}\\
+        \vdots\\
+        b_{nj}
+    \end{pmatrix}\Longleftrightarrow
+    c_{ij} = \sum _{k=1} ^{n} a_{ik}b_{kj}
+\]
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    矩阵乘法最大的特点就是不能随意交换即
+\[
+ \bm{A}\bm{B}=\bm{B}\bm{A}
+\]
+多数情况下不成立.
+\end{remark}
+\end{red}
+ \begin{formal}
+ \begin{proposition}[矩阵乘法的性质]\label{prop:矩阵乘法的性质}
+    设$\bm{A}_{m \times n} =
+ \left(a_{ij}\right)_{m \times n}$,
+ $\bm{B}_{n \times p} = \left(
+    b_{ij}
+ \right)_{n \times p}$,$\bm{C}
+ _{p \times q} = \left(
+    c_{ij}
+ \right)_{p \times q}$,则
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 结合律：$\left(\bm{A}\bm{B}\right)\bm{C} = \bm{A}\left(\bm{B}\bm{C}\right) $
+    \item 分配律：$\bm{A}\left(\bm{B} + \bm{C}\right) = \bm{A}\bm{B} + \bm{A}\bm{C} $
+    \item 分配律：$\left(\bm{B}+\bm{C}\right)\bm{A}=\bm{B}\bm{A}+\bm{C}\bm{A} $
+    \item 与数乘相容：$k\left(\bm{A}\bm{B}\right) = 
+    \left(k\bm{A}\right)\bm{B}
+     = \bm{A}\left(k\bm{B}\right)$
+    \item 单位元：$
+    \bm{E}_m \bm{A}_{m \times n} =
+     \bm{A}_{m \times n} =
+     \bm{A}_{m \times n}\bm{E}_{n} $
+    \item 注意:$\left(\bm{A}+\bm{B}\right)^2=
+    \bm{A}^2+\bm{A}\bm{B}+\bm{B}
+    \bm{A}+\bm{B}^2.$
+    \item 对于方阵$\bm{A}\text{、}
+    \bm{B}, \det\left(
+        \bm{AB}
+    \right) =  \det\left(\bm{A}\right)
+    \cdot  \det\left(\bm{B}\right)$
+\end{enumerate}
+ \end{proposition}
+ \begin{Proof}
+
+ \begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 因为$\bm{AB}$的$\left(i,j\right)$
+ 元为
+ \[
+ \sum_{k = 1}^{n}a_{ik}b_{kj}
+ \]
+ $\left(\bm{AB}\right)\bm{C}$的$
+ \left(i,j\right)$元为
+ \[
+ \sum_{r = 1}^{p}\left(\sum_{k = 1}
+ ^{n}a_{ik}b_{kr}\right)c_{kj}
+ =
+ \sum_{r = 1}^{p}\sum_{k = 1}
+ ^{n}a_{ik}b_{kr}c_{kj}
+ \]
+ $\bm{A}\left(\bm{BC}\right)$的
+ $\left(i,j\right)$元为
+ \[
+ \sum_{k = 1}^{n}\sum_{r = 1}
+ ^{p}a_{ik}b_{kr}c_{kj}\qedhere
+ \]
+ \end{enumerate}
+ \end{Proof}
+ \end{formal}
+\begin{red}
+\begin{remark}
+    简单说一下左乘和右乘,矩阵$\bm{A}$左乘矩阵$\bm{B}$指的是矩阵$\bm{A}$从左乘矩阵$\bm{B}$即得$\bm{AB}$.
+\end{remark}
+\end{red}
+\begin{red}
+\begin{remark}
+    一般而言,因为整性不成立,矩阵的乘法消去律亦不成立,
+    从线性映射的角度来看,两个非零映射符合得到零映射也并非不可能.
+\end{remark}
+\end{red}
+\subsection{方阵的非负整数次幂}
+\begin{formal}
+\begin{definition}[方阵的幂]\label{def:方阵的幂}
+对于$n$阶方阵$\bm{A}_{n}$,定义它的
+非负整数$k$次幂为:
+\begin{equation*}
+    \left(\bm{A}_n\right)^k = 
+    \begin{cases}
+        \bm{A}\bm{A} \cdots \bm{A} ,& k \in \mathbb{N} ^*;\\
+        \bm{E}_n,&k = 0 .
+    \end{cases}
+\end{equation*}
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{proposition}[幂的性质]\label{prop:幂的性质}
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+    \item$\bm{A}^{k + l} = \bm{A}^k\bm{A}^l$
+    \item$\bm{A}^{kl} = \left(\bm{A}^{k}\right)^{l}$
+    \item 由于矩阵乘法的不可交换,一般有:$\left(
+        \bm{A}\bm{B}
+    \right)^k\neq \bm{A}^k \bm{B}^k$
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\begin{formal}
+\begin{definition}[方阵的多项式]\label{def:方阵的多项式}
+    类似实数的多项式:
+\[
+    f\left(x\right) = a_nx^n + \cdots a_1x+a_0.
+\]
+定义方阵$\bm{A}_n$的多项式:
+\[
+f\left(\bm{A}_n\right) = a_n\left(\bm{A}_n\right)^n + \cdots a_1\bm{A}_n+a_0\bm{E}_n.
+\]
+\end{definition}
+\end{formal}
+\begin{red}
+    \begin{remark}
+        多项式是后续学习的一大重心,它是重要的结构.
+    \end{remark}
+\end{red}
+\newpage
+\section{矩阵的转置}
+\subsection{转置}
+\begin{formal}
+\begin{definition}[转置]
+    矩阵的转置是将它的行和列交换,对\[
+\displaystyle
+     \bm{A} = \begin{pmatrix}
+        a_{11} & \cdots &a_{1n}\\
+        \vdots &\ddots &\vdots\\
+        a_{m1} &\cdots &a_{mn}
+    \end{pmatrix}_{m \times n}
+\]
+其转置
+\[
+    \bm{A}' =
+    \bm{A}^{\prime} = \begin{pmatrix}
+        a_{11} & \cdots &a_{m1}\\
+        \vdots &\ddots &\vdots\\
+        a_{1n} &\cdots &a_{mn}
+    \end{pmatrix}_{n\times m}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{proposition}[转置的性质]\label{prop:转置的性质}矩阵的转置满足：
+
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+    \item$\left(\bm{A}^{\prime}\right)^{\prime} = \bm{A}$
+    \item$\left(\bm{A}+\bm{B}\right)^{\prime} = \bm{A}^{\prime} + \bm{B}^{\prime}$
+    \item $\left(k\bm{A}\right)^{\prime} = k\bm{A}^{\prime}$
+    \item 但是,最重要的是:
+    $\left(\bm{A}\bm{B}\right)^{\prime} = \bm{B}^{\prime}\bm{A}^{\prime}$
+    \item 特别地:$
+    \bm{\varLambda} '= 
+    \bm{\varLambda} $ 
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{对称阵与反对称阵}
+\begin{formal}
+\begin{definition}[对称阵与反对称阵]\label{def:对称阵与反对称阵}
+如果一个方阵满足$\displaystyle \bm{A}^{\prime} = \bm{A}$,那么它是
+一个对称阵；如果满
+足$\displaystyle
+ \bm{A}^{\prime} = -\bm{A}$,那么它是
+ 一个反对称阵
+\begin{align*}
+    & \text{对称阵：}\bm{A}^{\prime} =
+     \bm{A} \Longleftrightarrow   
+    a_{ij}=a_{ji};\\
+    & \text{反对称阵：} 
+    \bm{A}^{\prime} = \bm{A}\Longleftrightarrow 
+     a_{ij}
+    =-a_{ji}\text{且}a_{ii}=0.
+\end{align*}
+\end{definition}
+\end{formal}
+\begin{red}\begin{remark}
+这些方阵一定是对称阵:\[
+    \bm{A}\bm{A}^{\prime},\bm{A}^{\prime}\bm{A},\bm{A}+\bm{A}^{\prime}.
+\]
+\end{remark}
+\end{red}
+\begin{formal}
+\begin{theorem}[矩阵拆分]\label{thm:矩阵拆分}
+    一般地,任何一个方阵都可以分解为一
+    个对称阵和一个反对称阵即
+\[
+    \bm{A} = \dfrac{\bm{A}+\bm{A}^{\prime}}{2}  + \dfrac{\bm{A}
+    -\bm{A}^{\prime}}{2}.
+\]
+\end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{proposition}[对称与反对称刻画]\label{prop:对称与反对称刻画}
+        设$\bm{A}$、$\bm{B}$为$n$阶方阵,则
+        \begin{enumerate}[label=\textup{(\arabic*)}]
+            \item 若$\bm{A},\bm{B}$为对称阵,
+            则$\bm{AB}$为对称阵等价于$\bm{AB}=\bm{BA}$
+            ；$\bm{AB}$为反对称阵等价于
+            $\bm{AB}=-\bm{BA}.$
+            \item 若$\bm{A}$为对称阵,
+            $\bm{B}$为反对称阵,
+            则$\bm{AB}$为反对称阵等价于$\bm{AB}=\bm{BA}$
+            ；$\bm{AB}$为对称阵等价于
+            $\bm{AB}=-\bm{BA}.$
+        \end{enumerate}
+    \end{proposition}
+    \begin{Proof}
+    给出若$\bm{A},\bm{B}$为对称阵,
+            则$\bm{AB}$为对称阵等价于$\bm{AB}=\bm{BA}$的证明,
+            其余同理.
+
+        一方面,因为$\bm{AB}$为对称阵,故
+        \[
+        \bm{AB}=\left(\bm{AB}\right)^{\prime}=\bm{B}^{\prime}\bm{A}^{\prime}=\bm{BA}
+        \]
+        另一方面,因为$\bm{AB}=\bm{BA}$,故
+        \[
+        \left(\bm{AB}\right)^{\prime}=\bm{B}^{\prime}\bm{A}^{\prime}=\bm{BA}=\bm{AB}
+        \qedhere \]
+    \end{Proof}
+\end{formal}
+对于复矩阵,也有一种类似对称的定义.
+\begin{formal}
+\begin{definition}[Hermite矩阵]\label{def:Hermite矩阵}
+    设$n$阶复矩阵满足$\overline{\bm{A}}^{\prime}=\bm{A}$,
+    则称为一个\textup{Hermite}（厄米特）矩阵；
+    若$\overline{\bm{A}}^{\prime}=-\bm{A}$,称为是斜
+    \textup{Hermite}矩阵.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[复矩阵拆分]\label{thm:复矩阵拆分}
+    任一$n$阶复矩阵均可表示为一个
+    \textup{Hermite}矩阵与一个
+    斜\textup{Hermite}矩阵之和即
+    \[
+    \bm{A}=\frac{\bm{A}+\overline{\bm{A}}^{\prime}}{2}+
+    \frac{\bm{A}-\overline{\bm{A}}^{\prime}}{2}
+    \]
+\end{theorem}
+\end{formal}
+\newpage
+\section{复矩阵的共轭}
+\begin{formal}
+\begin{definition}[共轭]\label{def:共轭}
+    对于复矩阵,其矩阵的共轭等于元共轭的矩阵
+\[
+\overline{\bm{A}} =
+\left(\overline{a_{ij}} \right)
+_{m \times n}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{proposition}[共轭的性质]\label{prop:共轭的性质}
+    共轭满足的性质有：
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+    \item $\displaystyle \overline{\left(\overline{\bm{A}}\right)}=\bm{A}$
+    \item $\overline{\bm{A} + \bm{B}} = 
+    \overline{\bm{A}} + 
+    \overline{\bm{B}}  $
+    \item 若$c \in \mathbb{C}$
+        ,则
+    $\overline{c\bm{A}} = \overline{c}
+    \overline{\bm{A}}$
+    \item $\overline{\bm{AB}} =
+    \overline{\bm{A}}
+    \overline{\bm{B}}$
+    \item $\overline{
+        \left(\bm{A}^{\prime}\right)}
+    = \left(\overline{\bm{A}} 
+    \right)^{\prime}$ 
+    \item $\left| \overline{\bm{A}}\right|  =
+    \overline{\left|\bm{A}\right|}$（利用组合定义非常容易证明）
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\newpage
+\section{方阵的逆阵}
+\subsection{定义}
+\begin{formal}
+\begin{definition}[逆阵]\label{def:逆阵}
+    如果对于一个$n$阶方阵$\bm{A}$,存在一个
+    $n$阶方阵$\bm{B}$使得
+    \[
+    \bm{AB} = \bm{BA} = \bm{I}_n
+    \]
+    那么$\bm{B}$称为$\bm{A}$的逆矩阵,记作
+    \[
+    \bm{B} = \bm{A}^{-1}
+    \]
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    只有方阵才具有逆阵.
+\end{remark}
+\end{red}
+\begin{red}
+\begin{remark}
+    并不是所有非零方阵都具有逆阵.
+\end{remark}
+\end{red}
+\begin{formal}
+    \begin{definition}[奇异阵]\label{def:奇异阵}
+称有逆阵的方阵为可逆阵或非奇异阵或非异阵,
+而称无逆阵的方阵为奇异阵.
+\end{definition}
+\end{formal}
+\subsection{性质}
+\begin{formal}
+\begin{proposition}[逆阵的性质]\label{prop:逆阵的性质}
+    逆阵的性质有（以下均默认可逆）：
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 逆阵存在则必定唯一
+    \item $\left(
+        \bm{A}^{-1}
+        \right)^{-1} = \bm{A}$
+    \item $\bm{A}$、$
+    \bm{B}$均可逆则$
+    \bm{AB}$可逆且$
+    \left(\bm{AB}\right)^{-1} = 
+    \bm{B}^{-1}\bm{A}^{-1}$
+    \item 若$0\neq c \in \mathbb{R}
+    $,则
+     $c\bm{A}$可逆且
+     $\left(c\bm{A}\right)^{-1}=
+     c^{-1}\bm{A}^{-1}$
+    \item $\bm{A}$
+    可逆则$\bm{A}^{\prime}$
+    可逆且$
+    \left(\bm{A}^{\prime}\right)^{-1} 
+    = \left(
+    \bm{A}^{-1}
+    \right)^{\prime}$
+    \item 一般$
+    \bm{AB}\neq\bm{BA}$
+        时
+    $\left(
+        \bm{AB}\right)^{-1}
+    \neq\bm{A}^{-1}
+    \bm{B}^{-1}$
+    \item 整性对可逆阵成立
+    \item 对可逆阵,乘法消去律成立
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\begin{green}
+\begin{corollary}[逆阵的积]\label{cor:逆阵的积}
+    设可逆阵$\bm{A}_1,\bm{A}_2,\cdots,\bm{A}_m\in M_n\left(\mathbb{R}\right)$,则$\bm{A}_1\bm{A}_2\cdots\bm{A}_m$也可逆且\[
+    \left(
+        \bm{A}_1\bm{A}_2\cdots\bm{A}_m  
+    \right)^{-1}= \bm{A}_m^{-1}\bm{A}_{m-1}^{-1}\cdots\bm{A}_1^{-1}
+    \]
+\end{corollary}
+\end{green}
+\subsection{伴随阵}
+\begin{formal}
+\begin{definition}[伴随阵]\label{def:伴随阵}
+    $\bm{A}$为$n$阶方阵,$A_{ij}$为$ \det\left(
+        \bm{A}
+    \right)$的$\left(i,j\right)$元的代数余子式
+    ,则$\bm{A}$的伴随阵为
+    \[
+    \bm{A}^* = \begin{pmatrix}
+        A_{11} & \cdots & A_{n1} \\
+        \vdots & \ddots & \vdots \\
+        A_{1n} & \cdots & A_{nn}
+    \end{pmatrix}
+    \]
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+  关于下标,应当以$ \det\left(\bm{A}\right)$
+剩下的元的位置看而不是划去的元的位置.或者也可以说多了一步转置.  
+\end{remark}
+\end{red}
+\begin{red}
+\begin{remark}
+    矩阵的伴随矩阵一定存在.
+\end{remark}
+\end{red}
+\begin{green}
+\begin{lemma}[与伴随阵的积]\label{lem:与伴随阵的积}
+    设$n$阶方阵$\bm{A}$的伴随阵$\bm{A}^*$,则由
+    异乘变零定理可得
+    \[
+    \bm{A}\bm{A}^* =\bm{A}^*\bm{A}
+      = \left|\bm{A}\right|\bm{I}_n
+     =  \det\left(\bm{A}\right)\bm{I}_n
+    \]
+\end{lemma}
+\begin{Proof}
+考虑到\cref{thm:异乘变零定理}异乘变零定理,有
+\begin{align*}
+    \begin{vmatrix}
+        a_{11}&a_{12}&\cdots&a_{1n}\\
+        a_{21}&a_{22}&\cdots&a_{2n}\\
+        \vdots&\vdots&&\vdots\\
+        a_{n1}&a_{n2}&\cdots&a_{nn}
+    \end{vmatrix}\begin{vmatrix}
+        A_{11}&A_{21}&\cdots&A_{n1}\\
+        A_{12}&A_{22}&\cdots&A_{n2}\\
+        \vdots&\vdots&&\vdots\\
+        A_{1n}&A_{2n}&\cdots&A_{nn}
+    \end{vmatrix}=
+    \begin{vmatrix}
+        \left|\bm{A}\right|&0&\cdots&0\\
+        0&\left|\bm{A}\right|&\cdots&0\\
+        \vdots&\vdots&&\vdots\\
+        0&0&\cdots&\left|\bm{A}\right|
+    \end{vmatrix}\qedhere
+\end{align*}
+\end{Proof}
+\end{green}
+\begin{formal}
+\begin{theorem}[逆阵存在性]\label{thm:逆阵存在性}
+    对于矩阵$\bm{A}$
+    \[\det\,\left(\bm{A}\right)
+    \begin{cases*}
+    =0\Longrightarrow \text{不可逆/奇异}\\
+    \neq 0\Longrightarrow \text{可逆/非奇异}
+    \end{cases*}
+    \]
+\end{theorem}
+\end{formal}
+\begin{formal}
+\begin{theorem}[逆阵与伴随]\label{thm:逆阵与伴随}
+    若$\bm{A}$可逆,即$ \det\left(
+        \bm{A}
+    \right) \neq 0$,那么
+    \[
+    \bm{A}^{-1} = \frac{1}{\left|\bm{A}
+    \right|} \bm{A}^*
+    \]
+\end{theorem}
+\begin{Proof}
+$\left|\bm{A}\right| \neq 0$时
+\[
+\bm{A}\left(\frac{1}{\left|\bm{A}\right|}\bm{A}^*\right)=
+\frac{\bm{AA}^*}{\left|\bm{A}\right|}=
+\bm{I}_n \qedhere
+\]
+\end{Proof}
+\end{formal}
+\begin{red}
+\begin{remark}
+    有了这样一套矩阵的逆阵理论,对于\cref{thm:Cramer法则}中的线性方程组
+    \[
+    \begin{cases*}
+    a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1\\
+    a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2\\
+    \qquad\qquad\cdots\cdots\cdots\cdots\\
+    a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=b_n
+    \end{cases*}\Longleftrightarrow \bm{Ax}=\bm{\beta}
+    \]在$\left|\bm{A}\right|\neq 0$时就有解为
+    \[
+    \bm{x}=\bm{A}^{-1}\bm{\beta}
+    \]
+\end{remark}
+\end{red}
+\begin{formal}
+\begin{theorem}[方阵积的行列式]\label{thm:方阵积的行列式}
+    $\bm{A}$、$\bm{B}$为$n$阶方阵则
+    \[
+    \left|\bm{AB}\right|=\left|\bm{A}\right|\left|\bm{B}\right|
+    \]
+\end{theorem}
+\begin{Proof}
+设$\bm{A}=\left(a_{ij}\right)_{n \times n}$,$\bm{B} = 
+\left(b_{ij}\right)_{n \times n}$,构造
+\[
+\bm{C}_{2n \times 2n}=\begin{bmatrix}
+    \bm{A}&\bm{O}\\
+    -\bm{I}_n&\bm{B}
+\end{bmatrix}
+\]
+则
+\begin{align*}
+ \left|\bm{C}\right|   &=
+ \begin{vmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}&0&0&\cdots&0\\
+    a_{21}&a_{22}&\cdots&a_{2n}&0&0&\cdots&0\\
+    \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\
+    a_{n1}&a_{n2}&\cdots&a_{nn}&0&0&\cdots&0\\
+    -1&0&\cdots&0&b_{11}&b_{12}&\cdots&b_{1n}\\
+    0&-1&\cdots&0&b_{21}&b_{22}&\cdots&b_{2n}\\
+    \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\
+    0&0&\cdots&-1&b_{n1}&b_{n2}&\cdots&b_{nn}
+ \end{vmatrix}\\
+ &=
+ \begin{vmatrix}
+    0&0&\cdots&0&\sum\limits_{r}a_{1r}b_{r1}&\sum\limits_{r}a_{1r}b_{r2}&\cdots&\sum\limits_{r}a_{1r}b_{rn}\\
+    0&0&\cdots&0&\sum\limits_{r}a_{2r}b_{r1}&\sum\limits_{r}a_{2r}b_{r2}&\cdots&\sum\limits_{r}a_{2r}b_{rn}\\
+    \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\
+    0&0&\cdots&0&\sum\limits_{r}a_{nr}b_{r1}&\sum\limits_{r}a_{nr}b_{r2}&\cdots&\sum\limits_{r}a_{nr}b_{rn}\\
+    -1&0&\cdots&0&b_{11}&b_{12}&\cdots&b_{1n}\\
+    0&-1&\cdots&0&b_{21}&b_{22}&\cdots&b_{2n}\\
+    \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\
+    0&0&\cdots&-1&b_{n1}&b_{n2}&\cdots&b_{nn}
+ \end{vmatrix}\\
+ &=
+ \begin{vmatrix}
+    \bm{O}&\bm{AB}\\
+    -\bm{I}_n&\bm{B}
+ \end{vmatrix}
+\end{align*}
+接下来用Laplace定理以前$n$行展开,化简前
+\[
+\left|\bm{C}\right|=
+\begin{vmatrix}
+    \bm{A}&\bm{O}\\
+    -\bm{I}_n&\bm{B}
+\end{vmatrix}=\left| \bm{A} \right|
+ \left| \bm{B} \right|
+\]
+化简后
+\begin{align*}
+\left| 
+    \bm{C}
+    \right|
+    &=
+    \left( -1 \right) ^{1+2+\cdots+2n}
+        \left|\bm{AB}\right|
+        \left|-\bm{I}_n\right|\\
+&=\left(-1\right)^{n^2+n}\left|\bm{AB}\right|\\
+&=\left|\bm{AB}\right|
+\qedhere
+\end{align*}
+\end{Proof}
+\end{formal}
+\subsection{方阵可逆的充要条件}
+\begin{formal}
+    \begin{theorem}[矩阵可逆的充要条件]
+对于$\bm{A}$,
+    \begin{equation*}
+         \det\left(\bm{A}\right)
+        \begin{cases*}
+            = 0 \Longrightarrow\text{不可逆}\\
+            \neq 0 \Longrightarrow \text{可逆}
+        \end{cases*}
+    \end{equation*}
+\end{theorem}
+\end{formal}
+\begin{green}
+\begin{corollary}[逆阵的若干推论]\label{cor:逆阵的若干推论}对于逆阵,有：
+
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item $\bm{A}_1,\cdots,\bm{A}_m$
+            均为
+        $n$阶方阵,且存在$\bm{A}_i$是
+        奇异阵,那么$\bm{A}_1
+        \cdots \bm{A}_m$是奇异阵
+        \item $ \bm{A}$
+        可逆$\Longleftrightarrow 
+        \left|\bm{A}\right|^{-1} = \left|
+            \bm{A}^{-1}
+        \right|$
+        \item 对于$n$阶方阵$
+        \bm{A}$、$\bm{B}$,若$
+        \bm{AB}=\bm{I}_n$或$
+        \bm{BA}=\bm{I}_n\Longleftrightarrow 
+        \bm{B} = \bm{A}^{-1}$
+    \end{enumerate}
+\end{corollary}
+\begin{Proof}
+$(1)$计算行列式即证.
+
+$(2)$因为
+\[
+\big|\bm{A}\big|\left|\bm{A}^{-1}\right|=1 
+\Longrightarrow \left| \bm{A}^{-1}\right|=
+\big | \bm{A}\big|^{-1}
+\]
+
+$(3)$仅证$\bm{AB}=\bm{I}_n$,因为
+\[
+1=\left|\bm{I}_n\right|=\left|\bm{A}\right|\left|\bm{B}\right|
+\Longrightarrow \left|\bm{A}\right|\neq 0 \Longrightarrow \bm{A}^{-1}\text{存在}
+\]
+故
+\[
+\bm{B}=\bm{I}_n\bm{B}=\left(\bm{A}^{-1}\bm{A}\right)\bm{B}=\bm{A}^{-1}\bm{I}_n=\bm{A}^{-1}\qedhere
+\]
+\end{Proof}
+\end{green}
+\newpage
+\section{初等变换与初等矩阵}
+\subsection{行列式运算的性质}
+\begin{formal}
+\begin{proposition}[行列式的若干性质]\label{prop:行列式的若干性质}
+下面$\bm{A}$、$\bm{B}$均为$n$阶方阵
+,$c \in \mathbb{R} $
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 一般$ \det\left(\bm{A}
+    + \bm{B}\right) \neq  \det\left(
+        \bm{A}
+    \right) +  \det\left(\bm{B}\right)$而是如\cref{cor:矩阵和的行列式}
+    \item $ \det\left(c\bm{A}\right) = 
+    c^n  \det\left(\bm{A}\right)$
+    \item $ \det\left(\bm{AB}\right) = 
+     \det\left(\bm{A}\right) \cdot
+     \det\left(\bm{B}\right)$
+    \item $ \det\left(\bm{A}^{\prime}\right) = 
+     \det\left(\bm{A}\right)$
+    \item $ \det\left(\overline{\bm{A}} 
+    \right) = \overline{
+         \det\left(\bm{A}\right)}$
+    \item $ \det\left(\bm{A}^{-1}\right)
+    = \left[ \det\left(\bm{A}
+    \right)\right]^{-1}$
+    \item $ \det\left(\bm{A}^*\right) = 
+    det^{n - 1}\left(\bm{A}\right)$
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{矩阵的初等变换}
+\begin{formal}
+\begin{definition}[矩阵的初等变换]\label{def:矩阵的初等变换}
+    对矩阵的第一类、第二类、第三类初等
+    行（列）变换为
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item 对换矩阵中两行（列）的位置
+        \item 用一非零常数$c$乘以某一行（列）
+        \item 将矩阵某一行（列）乘以一常数
+        $c$加到另一行（列）上
+    \end{enumerate}
+\end{definition}
+\end{formal}
+\subsection{相抵/等价}
+\begin{formal}
+\begin{definition}[相抵]\label{def:相抵}
+    若$\bm{A}$经过有限次的初等变换（行列均可）
+    化为$\bm{B}$,则称$\bm{A}$与$\bm{B}$
+    是等价的,或者说$\bm{A}$相抵于$\bm{B}$,
+    记作
+    \[
+    \bm{A} \sim \bm{B}
+    \]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[相抵标准型]\label{thm:相抵标准型}
+    任一$\bm{A}_{m \times n}$一定相抵于
+    它的相抵标准型$\bm{B}$
+    \[
+    \bm{B} = 
+    \begin{pmatrix}
+        \bm{I}_r & \bm{O} \\
+        \bm{O} & \bm{O} 
+    \end{pmatrix}
+    \quad 
+    \left(0 \leqslant 
+    r \leqslant \min \,\left\{
+        m,n
+    \right\},r \in \mathbb{N} \right)
+    \]
+    并且其中的$r$不依赖于初等变换的选取
+    而仅由$\bm{A}$唯一确定.
+\end{theorem}
+\begin{Proof}
+    考虑对$\min\,\left\{m,n\right\}$进行归纳,若$\min\,\left\{m,n\right\}=0$则归纳结束.设$\min\,\left\{m,n\right\}<k$时成立,下面证明$\min,\left\{m,n\right\}=k$的情形.
+
+    显然$\bm{A}=\bm{O}$时成立.下设$\bm{A}\neq\bm{O} $,不妨设$a_{ij}\neq 0.$那么将第$i$行与第$1$行对换,第$j$列与第$1$列对换,那么以下设$a_{11}\neq 0$
+    \[
+    \bm{A}=\begin{pmatrix}
+        a_{11}&a_{12}&\cdots&a_{1n}\\
+        a_{21}&a_{22}&\cdots&a_{2n}\\
+        \vdots&\vdots&&\vdots\\
+        a_{m1}&a_{m2}&\cdots&a_{mn}
+    \end{pmatrix}\longrightarrow
+    \begin{pmatrix}
+        1&0&\cdots&0\\
+        0&b_{22}&\cdots&b_{2n}\\
+        \vdots&\vdots&&\vdots\\
+        0&b_{m2}&\cdots&b_{mn}
+    \end{pmatrix}
+    \]于是根据归纳假设即证.
+\end{Proof}
+\end{formal}
+\begin{formal}
+\begin{definition}[阶梯点]\label{def:阶梯点}
+    设$\bm{A}=\left(a_{ij}\right)_{m\times n}$,$\forall 1\leqslant i\leqslant m$\[
+    k_i=\begin{cases*}
+    +\infty&,若$a_{ij}=0,\forall 1\leqslant j\leqslant n$\\
+    \min\,\left\{j\mid a_{ij}\neq 0\right\}&,若$\exists a_{ij}\neq 0$
+    \end{cases*}
+    \]若$\bm{A}$的第$i$行不全为零,则$a_{ik_i}$是第$i$行从左至右第一个非零元,称为第$i$行的阶梯点.
+\end{definition}
+\end{formal}
+下面给出\cref{def:阶梯形矩阵}的严格定义
+\begin{formal}
+\begin{definition}[阶梯形矩阵]\label{def:阶梯形矩阵2}
+    在\cref{def:阶梯点}基础上,$\bm{A}$是阶梯形矩阵当且仅当存在$0\leqslant r\leqslant m\,\textup{s.t.}$
+    \[
+    k_1<k_2<\cdots<k_r,k_{r+1}=\cdots=k_m=+\infty
+    \]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[相抵于阶梯形]\label{thm:相抵于阶梯形}
+    任一$\bm{A}_{m \times n}$
+    在初等行变换下一定相抵于
+    一个阶梯形矩阵（\cref{def:阶梯形矩阵}）.
+\end{theorem}
+\begin{Proof}
+对列数$n$进行归纳,$n=0$表示归纳结束,设列数小于$n$时成立,下面证明$n$时成立.
+
+一方面,如果$\bm{A}$第一列全为零,由归纳假设得证.另一方面,如果$\bm{A}$第一列不全为零,用行变换将非零元换到$\left(1,1\right)$位置,消去同列其他元素得到一个$\left(m-1\right)\times\left(n-1\right)$阶矩阵,由归纳假设得证.于是证毕.
+\end{Proof}
+\end{formal}
+\subsection{初等矩阵}
+\begin{formal}
+\begin{definition}[初等矩阵]\label{def:初等矩阵}
+    对单位阵$\bm{I}_n$分别施加第一类、第二类
+    、第三类初等变换后得到
+    的矩阵分别称为第一类、第二类、
+    第三类初等矩阵.
+\paragraph{第一类初等矩阵}
+第一类初等矩阵$P_{ij}$表示将单位阵$\bm{I}_n$
+的$i$行与第$j$列（或者是第$i$列与第$j$列）对换得到的
+矩阵
+\[
+\bm{P}_{ij} = 
+\begin{pmatrix}
+    1 & & & & & & \\
+     & \ddots & & &&&\\
+     &&0&\cdots&1&&\\
+    &&\vdots&&\vdots&&\\
+    && 1 & \cdots & 0 &&\\
+    &&&&&\ddots&\\
+    &&&&&&1
+\end{pmatrix}
+\]
+\paragraph{第二类初等矩阵}
+第二类初等矩阵$P_i\left(c\right)$表示
+用常数$c \in \mathbb{R}\left(c \neq 0\right)$
+单位阵第$i$行（或者是第$i$列）得到的矩阵
+\[
+\bm{P}_i\left(c\right) = 
+\begin{pmatrix}
+    1 & & & & \\
+      &\ddots&&&\\
+    &&c&&\\
+    &&&\ddots&\\
+    &&&&1
+\end{pmatrix}
+\]
+\paragraph{第三类初等矩阵}
+第三类初等矩阵$\bm{T}_{ij}\left(c\right)$
+表示将单位阵第$i$行（或者是第$i$列）乘以一常数$c$
+后加到第$j$行（或者是第$j$列）得到的矩阵
+\[
+\bm{T}_{ij} \left(c\right)= 
+\begin{pmatrix}
+    1 & & & & & & \\
+     & \ddots & & &&&\\
+     &&1&\cdots&0&&\\
+    &&\vdots&&\vdots&&\\
+    && c & \cdots & 1 &&\\
+    &&&&&\ddots&\\
+    &&&&&&1
+\end{pmatrix}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[初等变换与初等矩阵]\label{thm:初等变换与初等矩阵}
+    对于$m \times n$矩阵$\bm{A}$
+    ,对$\bm{A}$作一次初等行变换
+    得到的矩阵等于
+    用一个$m$阶对应的初等
+    矩阵左乘$\bm{A}$的积；
+    对$\bm{A}$作一次初等列变换
+    得到的矩阵等于
+    用一个$m$阶对应的初等
+    矩阵右乘$\bm{A}$的积.
+\end{theorem}
+\end{formal}
+\begin{red}
+\begin{remark}
+    初等行（列）变换等价于
+左（右）乘对应的初等矩阵.
+\end{remark}
+\end{red}
+\begin{green}
+\begin{corollary}[初等矩阵的逆阵]\label{cor:初等矩阵的逆阵}
+    初等矩阵均为可逆阵
+    且其逆阵仍为同类初等矩阵
+    \[
+    \bm{P}_{ij}^{-1} = \bm{P}_{ij} \quad
+    \bm{P}_i\left(c\right)^{-1}
+    = \bm{P}_i\left(\frac{1}{c}\right)
+    \quad
+    \bm{T}_{ij}\left(c\right)^{-1}
+    = \bm{T}_{ij}\left(-c\right)
+    \]
+\end{corollary}
+\end{green}
+\begin{green}
+\begin{corollary}[初等矩阵的行列式的值]\label{cor:初等矩阵的行列式的值}
+    \[
+    \left|\bm{P}_{ij}\right|=-1,
+    \left|\bm{P}_i\left(c\right)\right|=c,
+    \left|\bm{T}_{ij}\left(c\right)\right|=1
+    \]
+\end{corollary}
+\end{green}
+\begin{green}
+\begin{corollary}[第三类初等变换]\label{cor:第三类初等变换}
+    由前文\cref{thm:初等变换与初等矩阵},\cref{cor:初等矩阵的行列式的值}和\cref{thm:方阵积的行列式}可知对矩阵施加第三类初等变换不改变其行列式的值.
+\end{corollary}
+\end{green}
+\begin{green}
+\begin{corollary}[初等变换不改变矩阵的奇异性]\label{cor:初等变换不改变矩阵的奇异性}
+    由\cref{cor:第三类初等变换}知初等变换不改变矩阵的奇异与否.
+\end{corollary}
+\end{green}
+\subsection{相抵}
+在说明相抵这一关系的性质前,有必要对
+“关系”作一个简单的说明.
+\begin{formal}
+    \begin{definition}[关系]\label{def:关系}
+考虑集合$A$自身的笛卡尔积
+\[
+A \times A = \left\{
+    \left(a,b\right) | 
+    a,b \in A
+\right\}
+\]
+给定$R \subseteq  A \times A$
+.若$\left(a,b\right) \in R$
+,称$a$,$b$有关系$R$,记作
+\[
+a R b
+\]
+    \end{definition}\end{formal}
+    \begin{formal}
+    \begin{definition}[等价关系]\label{def:等价关系}
+接下来定义满足下列性质的关系为等价关系：
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 自反性： $aRa$
+    \item 对称性：$aRb\Longrightarrow 
+    bRa$
+    \item 传递性：若$aRb$且
+    $bRc$,则$aRc$ 
+\end{enumerate}
+    \end{definition}\end{formal}
+    \begin{formal}
+    \begin{proposition}[相抵的性质]\label{prop:相抵的性质}
+相抵是一种等价关系,即满足上述三条性质
+ \begin{enumerate}[label=\textup{(\arabic*)}]
+   \item 自反性：$ \bm{A} 
+    \sim \bm{A}$
+     \item 对称性：$\bm{A} \sim
+     \bm{B}\Longrightarrow 
+     \bm{B}
+    \sim \bm{A}$
+     \item 传递性：若$\bm{A}\sim
+     \bm{B}$且$
+     \bm{B} \sim \bm{C}
+     $,则$\bm{A} \sim
+    \bm{C}$ 
+\end{enumerate}
+ \end{proposition}
+    \end{formal}
+    \begin{formal}
+    \begin{proposition}[方阵的若干等价结论]\label{prop:方阵的若干等价结论}
+如果$\bm{A}$为$n$阶方阵,则下列是等价的
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item $\bm{A}$是非异阵
+    \item $\bm{A}$ 的相抵标准型为$\bm{I}_n$
+    \item $\bm{A}$仅通过初等行
+    （列）变换就可以化为$\bm{I}_n$
+    \item $\bm{A}$等于若干个初等矩阵的积
+\end{enumerate}
+    \end{proposition}
+    \begin{Proof}
+        $(1)\Longrightarrow (2)$设$\bm{A}$的相抵标准型为$\begin{pmatrix}
+            \bm{I}_r & \bm{O} \\
+            \bm{O} & \bm{O}
+        \end{pmatrix}$,由$\bm{A}$非异及\cref{cor:初等变换不改变矩阵的奇异性}知该相抵标准型非奇异,故$r=n$.
+
+        $(2)\Longrightarrow (3)$设存在初等阵$\bm{P}_1,\bm{P}_2,\cdots,\bm{P}_r,\bm{Q}_1,\bm{Q}_2,\cdots,\bm{Q}_s\,\textup{s.t.}$
+        \[
+        \bm{P}_1\bm{P}_2\cdots\bm{P}_r\bm{A}\bm{Q}_1\bm{Q}_2\cdots\bm{Q}_s=\bm{I}_n
+        \]作逆阵即证.
+
+        $(3)\Longrightarrow (4)$依据上一证明,显然.
+
+        $(4)\Longrightarrow (1)$由\cref{cor:初等矩阵的逆阵}知初等矩阵均非异,故$\bm{A}$非异.
+    \end{Proof}
+    \end{formal}
+    \begin{green}
+    \begin{corollary}[相抵的等价表述]\label{cor:相抵的等价表述}
+        对于$\bm{A}=\left(a_{ij}\right)_{m\times n}\in M_{m\times n}\left(\mathbb{R}\right)$,若存在初等阵$\bm{P}_1,\bm{P}_2,\cdots,\bm{P}_r,\bm{Q}_1,\bm{Q}_2,\cdots,\bm{Q}_s\,\textup{s.t.}$
+        \[
+        \bm{P}_1\bm{P}_2\cdots\bm{P}_r\bm{A}\bm{Q}_1\bm{Q}_2\cdots\bm{Q}_s=\bm{B}
+        \]则称$\bm{A}$与$\bm{B}$相抵.
+    \end{corollary}
+    \begin{Proof}
+    根据\cref{thm:初等变换与初等矩阵}和\cref{thm:相抵标准型}易证.
+    \end{Proof}
+    \end{green}
+\newpage
+\section{矩阵积的行列式与初等变换求逆阵}
+\subsection{$n$阶方阵的积的行列式}
+\begin{formal}
+\begin{theorem}[方阵积的行列式]\label{thm:方阵积的行列式2}
+    设$\bm{A}$、$\bm{B}$均为$n$阶方阵
+    ,则
+    \[
+    \left|\bm{A}\bm{B}\right| = 
+    \left|\bm{A}\right|\left|\bm{B}\right|
+    \]
+\end{theorem}
+\end{formal}
+\subsection{初等变换求逆阵}
+\begin{green}
+\begin{lemma}[相抵标准型]\label{lem:相抵标准型}
+    对于$n$阶方阵$\bm{A}$（不一定可逆）,总存在$n$
+    阶非异阵$\bm{P}$、$\bm{Q}$使得
+    \[
+    \bm{PAQ} = \begin{pmatrix}
+        \bm{I}_r & \bm{O} \\
+        \bm{O} & \bm{O}
+    \end{pmatrix}
+    \]
+\end{lemma}
+\end{green}
+不妨将这个问题用于解方程
+\[
+\bm{A}\bm{X} = \bm{B}
+\]
+显然有
+\[
+\bm{X} = \bm{A}^{-1}\bm{B}
+\]
+只需构造
+\[\qquad\quad
+\left (
+    \begin{array}{c:c}
+        \begin{matrix}
+            \bm{A}
+        \end{matrix}
+        &
+        \begin{matrix}
+            \bm{B}
+        \end{matrix}
+    \end{array}
+\right )_{n \times \left(
+    n + m
+\right)}
+\]
+用初等行变换将$\bm{A}$化为
+$\bm{I}_n$时右边得到
+$\bm{X} = \bm{A}^{-1}\bm{B}$
+
+特别地,求逆阵时构造
+\[\qquad\quad
+\left (
+    \begin{array}{c:c}
+        \begin{matrix}
+            \bm{A}
+        \end{matrix}
+        &
+        \begin{matrix}
+            \bm{I}_n
+        \end{matrix}
+    \end{array}
+\right )_{n \times \left(
+    n + m
+\right)}
+\]
+另外,欲使用初等列变换,应构造
+\[
+\left ( 
+    \begin{array}{c}
+        \bm{A} \\
+        \hdashline
+        \bm{B}
+    \end{array}
+\right )
+\]
+形式.
+\begin{red}
+\begin{remark}
+    该方法本质上就是初等变换.
+\end{remark}
+\end{red}
+\newpage
+\section{分块矩阵}
+\subsection{分块矩阵}
+\begin{formal}
+\begin{definition}[分块矩阵]\label{def:分块矩阵}
+    将矩阵分割为几块,得到一个分块矩阵
+    \[
+    \bm{A} = \left(\bm{A}_{ij}\right)_
+    {r \times s} = 
+    \begin{pmatrix}
+        \bm{A}_{11} & \bm{A}_{12}&\cdots&\bm{A}_{1s}\\
+        \bm{A}_{21} & \bm{A}_{22}&\cdots&\bm{A}_{2s}\\
+        \vdots & \vdots & & \vdots\\
+        \bm{A}_{r1} & \bm{A}_{r2}&\cdots&\bm{A}_{rs}
+    \end{pmatrix}
+    \]
+其中\[
+\bm{A}_{i1},\bm{A}_{i2},\cdots,\bm{A}_{is} 
+\quad \left(i = 1,2,\cdots,r\right)
+\]
+为第$i$分块行.分块$\bm{A}_{ij}=\left(a_{lk}\right)_{m_i\times n_j},\forall 1\leqslant i\leqslant r,1\leqslant j\leqslant n$,其中
+\[
+\left(m_1,m_2,\cdots,m_r\right),\left(
+    n_1,n_2,\cdots,n_s
+\right)
+\]
+分别是$\bm{A}$的行、列分块方式.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[分块矩阵的相等]\label{def:分块矩阵的相等}
+    设$\bm{A} = \left(\bm{A}_{ij}\right)_{
+    r \times s
+}$、$\bm{B} = 
+\left(\bm{B}_{ij}\right)_{
+    k \times l
+}$,二者相等当且仅当
+\begin{equation*}
+    \begin{cases*}
+        r  = k,s = l  \\
+        \bm{A}_{ij} =
+        \bm{B}_{ij}\quad
+        \left(\forall 1 \leqslant 
+        i \leqslant r,1 \leqslant  j
+        \leqslant s\right)
+    \end{cases*}
+\end{equation*}
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    分块矩阵实际上只是一种方便的记号,并没有实质上的变化.
+\end{remark}
+\end{red}
+\subsection{运算}
+\begin{formal}
+\begin{definition}[运算]\label{def:运算}
+定义分块矩阵相关运算为：
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 加法：若$\bm{A} = \left(\bm{A}_{ij}\right)_{
+    r \times s
+}$、$\bm{B} = 
+\left(\bm{B}_{ij}\right)_{
+    r \times s
+}$行、列分块方式相同
+,定义加法
+\[
+\bm{A}+\bm{B} = \left(
+    \bm{A}_{ij} + \bm{B}_{ij}
+\right)_{r \times s}
+\]
+\item 数乘：$\bm{A} = \left(\bm{A}_{ij}\right)_{
+    r \times s
+}$,$c \in \mathbb{R} $
+,数乘
+\[
+c\bm{A} = \left(c\bm{A}_{ij}\right)
+_{r \times s}
+\]
+\item 乘法：设$\bm{A} = \left(\bm{A}_{ij}\right)_{
+    r \times s
+}$、$\bm{B} = 
+\left(\bm{B}_{ij}\right)_{
+    s \times k
+}$,且$\bm{A}$的列分块方式与
+$\bm{B}$的行分块方式相同,那么
+\[
+    \bm{AB} = \left(\bm{C}_{ij}
+    \right)_{r \times k} 
+    = \left(
+        \sum_{l = 1}^{s}\bm{A}_{il}
+        \bm{B}_{lj}
+    \right)_{
+        r \times k
+    }
+\]
+特别地,如果有\cref{def:形式行向量}一样的形式记号即具有行分块
+$\bm{A} = \left(a_{ij}\right)_{
+    m \times n
+} = \left(
+    \bm{\alpha }_1,\cdots
+    ,\bm{\alpha }_m
+\right)^{\prime}$,列分块
+$\bm{B} = \left(b_{ij}\right)_{
+    n \times p
+} = \left(
+    \bm{\beta  }_1,\cdots
+    ,\bm{\beta  }_p
+\right)$,那么
+\[
+\bm{AB} = \left(\bm{\alpha }_1
+\bm{B},\cdots,
+\bm{\alpha }_m\bm{B}\right)^{\prime} =
+\left(
+    \bm{A}\bm{\beta }_1,\cdots
+    ,\bm{A}\bm{\beta }_p
+\right)
+\]
+\item 转置：设$\bm{A} = \left(\bm{A}_{ij}\right)_{
+    r \times s
+}$,转置为
+\[
+\bm{A}^{\prime} = \left(
+    \bm{A}_{ij}
+\right)_{s \times r}
+\]
+\item 共轭：设复矩阵$\bm{A} = \left(\bm{A}_{ij}\right)_{
+    r \times s
+}$,共轭为
+\[
+\overline{\bm{A}} = 
+\left(\overline{\bm{A}_{ij}} \right)
+_{r \times s}
+\]   
+\end{enumerate}
+\end{definition}
+\end{formal}
+\begin{brown}
+\begin{example}
+    若$\bm{A} = \mathrm{diag}\left\{
+        \bm{A}_1,\cdots,\bm{A}_k
+    \right\}$,$
+    \bm{B}= \mathrm{diag}\left\{
+        \bm{B}_1,\cdots,\bm{B}_k
+    \right\}$
+    ,则
+    \[
+    \bm{AB} = \mathrm{diag}\left\{
+        \bm{A}_1\bm{B}_1,\cdots
+        ,\bm{A}_k\bm{B}_k
+    \right\}
+    \]
+\end{example}
+\end{brown}\begin{green}
+\begin{corollary}[分块矩阵的逆阵]\label{cor:分块矩阵的逆阵}
+    若$\bm{A} = \mathrm{diag}\left\{
+        \bm{A}_1,\cdots,\bm{A}_k
+    \right\}$可逆则
+    \[
+    \bm{A}^{-1} = 
+    \mathrm{diag}\left\{
+        \bm{A}_1^{-1},\cdots
+        ,\bm{A}_k^{-1}
+    \right\}
+    \]
+\end{corollary}
+\end{green}
+\subsection{分块初等矩阵}
+\begin{formal}
+\begin{definition}[分块单位阵]\label{def:分块单位阵}
+    分块单位阵为
+\[
+\bm{I} = \mathrm{diag}\left\{
+    \bm{I}_{m_1},\cdots,
+    \bm{I}_{m_n}
+\right\}
+\]
+\end{definition}
+\end{formal}
+
+\begin{formal}
+\begin{definition}[分块初等矩阵]\label{def:分块初等矩阵}
+    三类定义与初等矩阵类似.事
+    实上,分块只是一种写法,并
+    不是什么新奇东西.只是操作的一行或一列变成了几行或几列.
+\paragraph{第一类分块初等矩阵}对换$\bm{I}$的第$i$分块行（列）与第$j$分块行（列）得到.
+\[
+\bm{P}_{ij} = 
+\begin{pmatrix}
+    \bm{I}_{m_{1}} & & & & & & \\
+     & \ddots & & &&&\\
+     &&0&\cdots&\bm{I}_{m_j}&&\\
+    &&\vdots&&\vdots&&\\
+    && \bm{I}_{m_i} & \cdots & 0 &&\\
+    &&&&&\ddots&\\
+    &&&&&&\bm{I}_{m_n}
+\end{pmatrix}
+\]
+\paragraph{第二类分块初等矩阵}
+$ \det\left(\bm{M}\right) \neq 0$下以$\bm{M}$左（右）乘
+$\bm{I}$的第$i$分块行（列）得到.
+\[
+\bm{P}_i\left(\bm{M}\right) = 
+\begin{pmatrix}
+    \bm{I}_{m_1} & & & & \\
+      &\ddots&&&\\
+    &&\bm{M}&&\\
+    &&&\ddots&\\
+    &&&&\bm{I}_{m_n}
+\end{pmatrix}
+\]
+\newpage
+\paragraph{第三类分块初等矩阵}
+以矩阵$\bm{M}$左（右）乘$\bm{I}$的第$i$分块行（列）后加到第
+$j$分块行（列）得到.
+\[
+\bm{T}_{ij} \left(\bm{M}\right)= 
+\begin{pmatrix}
+    \bm{I}_{m_1} & & & & & & \\
+     & \ddots & & &&&\\
+     &&\bm{I}_{m_i}&\cdots&0&&\\
+    &&\vdots&&\vdots&&\\
+    && \bm{M} & \cdots & \bm{I}_{m_j} &&\\
+    &&&&&\ddots&\\
+    &&&&&&\bm{I}_{m_n}
+\end{pmatrix}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[分块初等矩阵的逆阵]\label{thm:分块初等矩阵的逆阵}
+分块初等矩阵均可逆且逆阵为同类分块初等矩阵
+\[
+\bm{P}_{ij}^{-1} = \bm{P}_{ij}^{\prime} \quad
+\bm{P}_i\left(\bm{M}\right)^{-1}
+=\bm{P}_i\left(\bm{M}^{-1}\right) \quad
+\bm{T}_{ij}\left(\bm{M}\right)^{-1}
+= \bm{T}_{ij}\left(-\bm{M}\right)
+\]
+\end{theorem}
+\end{formal}
+\begin{formal}
+\begin{theorem}[分块初等矩阵的行列式]\label{thm:分块初等矩阵的行列式}
+\[
+ \det\left(\bm{P}_{ij}\right) = \left(-1
+\right)^l, \det\left(\bm{P}_i\left(\bm{M}\right)\right)
+=  \det\left(\bm{M}\right),
+ \det\left(\bm{T}_{ij}\left(\bm{M}
+\right)\right) = 1
+\]
+其中
+\[
+l = m_i m_j + \left(m_i + m_j\right)
+\sum_{i < r <j}m_r
+\]
+\end{theorem}
+\end{formal}
+\subsection{分块初等变换}
+\begin{formal}\begin{theorem}[分块初等变换与分块初等矩阵]\label{thm:分块初等变换与分块初等矩阵}
+    类似于\cref{thm:初等变换与初等矩阵},每一种分块初等行（列）变换等价于左（右）
+乘这种变换对应的分块初等矩阵.
+\end{theorem}\end{formal}
+\begin{green}
+\begin{corollary}[分块初等变换与行列式]\label{cor:分块初等变换与行列式}
+    第三类分块初等变换
+不会改变矩阵行列式的值.
+\end{corollary}
+\end{green}
+\subsection{行列式的降阶公式}
+\begin{green}
+\begin{lemma}[分块三角行列式]\label{lem:分块三角行列式}
+    对分块三角行列式有
+    \[
+    \left|\bm{G}\right| = 
+    \begin{vmatrix}
+        \bm{A} & \bm{B} \\
+        \bm{O} & \bm{C} 
+    \end{vmatrix} 
+    = \left|\bm{A}\right|
+    \left|\bm{C}\right|
+    \]
+    \[
+    \left|\bm{H}\right| = 
+    \begin{vmatrix}
+        \bm{A} & \bm{O} \\
+        \bm{B} & \bm{C} 
+    \end{vmatrix} 
+    = \left|\bm{A}\right|
+    \left|\bm{C}\right|
+    \]
+\end{lemma}
+\begin{Proof}
+    即\cref{cor:分块行列式},
+利用Laplace定理是显然的.
+\end{Proof}
+\end{green}
+\begin{formal}
+\begin{theorem}[分块矩阵行列式降阶公式]\label{thm:分块矩阵行列式降阶公式}
+    对于矩阵
+    \[
+    \bm{M} = \begin{pmatrix}
+        \bm{A} & \bm{B} \\
+        \bm{C} & \bm{D} 
+    \end{pmatrix}
+    \]
+$1.$若$\bm{A}$可逆,则
+\[
+\left|\bm{M}\right| = \left|\bm{A}
+\right|\left|\bm{D} - \bm{C}\bm{A}
+^{-1}\bm{B}\right|
+\]
+$2.$若$\bm{D}$可逆,则\[
+\left|\bm{M}\right| = \left|
+    \bm{D}
+\right|\left|
+    \bm{A} - \bm{B}\bm{D}^{-1}
+    \bm{C}
+\right|
+\]
+$3.$若$\bm{A}$、$\bm{D}$均可逆,则
+\[
+\left|\bm{A}
+\right|\left|\bm{D} - \bm{C}\bm{A}
+^{-1}\bm{B}\right|
+=
+\left|
+    \bm{D}
+\right|\left|
+    \bm{A} - \bm{B}\bm{D}^{-1}
+    \bm{C}
+\right|
+\]
+\end{theorem}
+\begin{Proof}
+证明是比较显然的,构造\cref{lem:分块三角行列式}形式即可.
+\end{Proof}
+\end{formal}
+\begin{brown}
+\begin{example}
+    计算下面矩阵的行列式
+    \[
+    \bm{M}=\begin{pmatrix}
+        a_1^2&a_1a_2+1&\cdots&a_1a_n+1\\
+        a_2a_1+1&a_2^2&\cdots&a_2a_n+1\\
+        \vdots&\vdots&&\vdots\\
+        a_na_1+1&a_na_2+1&\cdots&a_n^2
+    \end{pmatrix}
+    \]
+    \begin{solution}
+    考虑
+    \begin{align*}
+    \bm{M}&=\begin{pmatrix}
+        a_1^2+1&a_1a_2+1&\cdots&a_1a_n+1\\
+        a_2a_1+1&a_2^2+1&\cdots&a_2a_n+1\\
+        \vdots&\vdots&&\vdots\\
+        a_na_1+1&a_na_2+1&\cdots&a_n^2+1
+    \end{pmatrix}-\bm{I}_n\\
+    &=-\bm{I}_n+\begin{pmatrix}
+        a_1&1\\
+        a_2&1\\
+        \vdots&\vdots\\
+        a_n&1
+    \end{pmatrix}\begin{pmatrix}
+        a_1&a_2&\cdots&a_n\\
+        1&1&\cdots&1
+    \end{pmatrix}\\
+    &=-\bm{I}_n+\begin{pmatrix}
+        a_1&1\\
+        a_2&1\\
+        \vdots&\vdots\\
+        a_n&1
+    \end{pmatrix}
+    \bm{I}_2^{-1}\begin{pmatrix}
+        a_1&a_2&\cdots&a_n\\
+        1&1&\cdots&1
+    \end{pmatrix}
+\end{align*}
+由降阶公式有
+\begin{align*}
+    \left|\bm{M}\right|&=
+    \left|\bm{I}_2\right|^{-1}\cdot 
+    \left|-\bm{I}_n\right|\cdot
+    \left|
+        \bm{I}_2+\begin{pmatrix}
+        a_1&a_2&\cdots&a_n\\
+        1&1&\cdots&1
+    \end{pmatrix}\left(-\bm{I}_n\right)^{-1}
+    \begin{pmatrix}
+        a_1&1\\
+        a_2&1\\
+        \vdots&\vdots\\
+        a_n&1
+    \end{pmatrix}
+    \right|\\
+    &=\left(-1\right)^n\left|
+        \bm{I}_2-\begin{pmatrix}
+            \sum\limits_{i=1}^{n}a_i^2&\sum\limits_{i=1}^{n}a_i\\
+            \sum\limits_{i=1}^{n}a_i&n
+        \end{pmatrix}
+    \right|\\
+    &=\left(-1\right)^n\left(
+        \left(1-n\right)
+        \left(1-\sum\limits_{i=1}^{n}a_i^2\right)-\left(
+            \sum\limits_{i=1}^{n}a_i
+        \right)^2
+    \right)
+\end{align*}
+    \end{solution}
+\end{example}
+\end{brown}
+\begin{brown}
+    \begin{example}
+        $\bm{A}$、$\bm{D}$均可逆,
+        求分块矩阵的逆阵
+        \[
+        \begin{pmatrix}
+            \bm{A}&\bm{B}\\
+            \bm{O}&\bm{D}
+        \end{pmatrix}
+        \]
+        \newpage
+        \begin{solution}
+        设$\bm{A}$、$\bm{D}$的阶数分别为$m$、$n$,那么
+        \begin{align*}
+        \left (
+        \begin{array}{c:c}
+            \begin{matrix}
+                \bm{A}&\bm{B}\\
+                \bm{O}&\bm{D}
+            \end{matrix}
+            &
+            \begin{matrix}
+                \bm{I}_m&\bm{O}\\
+                \bm{O}&\bm{I}_n
+            \end{matrix}
+        \end{array}
+        \right )
+        &\longrightarrow
+        \left (
+        \begin{array}{c:c}
+            \begin{matrix}
+                \bm{A}&\bm{O}\\
+                \bm{O}&\bm{D}
+            \end{matrix}
+            &
+            \begin{matrix}
+                \bm{I}_m&-\bm{BD}^{-1}\\
+                \bm{O}&\bm{I}_n
+            \end{matrix}
+        \end{array}
+        \right )\\
+        &\longrightarrow
+        \left (
+        \begin{array}{c:c}
+            \begin{matrix}
+                \bm{I}_m&\bm{O}\\
+                \bm{O}&\bm{I}_n
+            \end{matrix}
+            &
+            \begin{matrix}
+                \bm{A}^{-1}&-\bm{A}^{-1}\bm{BD}^{-1}\\
+                \bm{O}&\bm{D}^{-1}
+            \end{matrix}
+        \end{array}
+        \right )
+    \end{align*}
+        \end{solution}
+    \end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设$n$阶方阵$\bm{A}$、$\bm{B}$,求证：
+    \[
+    \begin{vmatrix}
+        \bm{A}&\bm{B}\\
+        \bm{B}&\bm{A}
+    \end{vmatrix}
+    =
+    \left|\bm{A}+\bm{B}\right|
+    \left|\bm{A}-\bm{B}\right|
+    \]
+    \begin{solution}
+        作第三类分块初等变换
+        \begin{align*}
+            \begin{vmatrix}
+        \bm{A}&\bm{B}\\
+        \bm{B}&\bm{A}
+    \end{vmatrix}
+    &=
+    \begin{vmatrix}
+        \bm{A}+\bm{B}&\bm{A}+\bm{B}\\
+        \bm{B}&\bm{A}
+    \end{vmatrix}\\
+    &=\begin{vmatrix}
+        \bm{A}+\bm{B}&\bm{O}\\
+        \bm{B}&\bm{A}-\bm{B}
+    \end{vmatrix}\\
+    &=
+    \left|\bm{A}+\bm{B}\right|
+    \left|\bm{A}-\bm{B}\right|
+        \end{align*}
+    \end{solution}
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}\label{ex:1}
+    设$n$阶复矩阵$\bm{A}$、$\bm{B}$,求证：
+    \[
+    \begin{vmatrix}
+        \bm{A}&-\bm{B}\\
+        \bm{B}&\bm{A}
+    \end{vmatrix}=\left|
+        \bm{A}+\mathrm{i}\bm{B}
+    \right|\left|\bm{A}-\mathrm{i}\bm{B}\right|
+    \]
+    \begin{solution}
+    \begin{align*}
+            \begin{vmatrix}
+        \bm{A}&-\bm{B}\\
+        \bm{B}&\bm{A}
+    \end{vmatrix}
+    &=
+    \begin{vmatrix}
+        \bm{A}+\mathrm{i}\bm{B}&\mathrm{i}\bm{A}-\bm{B}\\
+        \bm{B}&\bm{A}
+    \end{vmatrix}\\
+    &=\begin{vmatrix}
+        \bm{A}+\mathrm{i}\bm{B}&\bm{O}\\
+        \bm{B}&\bm{A}-\mathrm{i}\bm{B}
+    \end{vmatrix}\\
+    &=
+    \left|\bm{A}+\mathrm{i}\bm{B}\right|
+    \left|\bm{A}-\mathrm{i}\bm{B}\right|
+        \end{align*}
+    \end{solution}
+\end{example}
+\end{brown}
+\begin{brown}
+    \begin{example}
+        设$n$阶方阵$\bm{A}$、$\bm{B}$且$\bm{AB}=\bm{BA}$,求证：
+        \[
+        \begin{vmatrix}
+            \bm{A}&-\bm{B}\\
+            \bm{B}&\bm{A}
+        \end{vmatrix}=\left|\bm{A}^2+\bm{B}^ 2\right|
+        \]
+    \end{example}
+    \begin{Proof}
+    由\cref{ex:1}立得.
+    \end{Proof}
+\end{brown}
+\newpage
+\section{Cauchy-Binet公式}
+\begin{red}
+\begin{remark}
+    \textup{Cauchy-Binet}公式研究的是非方阵的矩阵积的行列式.
+\end{remark}
+\end{red}
+\subsection{n阶方阵的积的行列式}
+\begin{formal}
+\begin{theorem}[方阵积的行列式]
+    对于$n$阶方阵$\bm{A}$、$\bm{B}$
+    \[
+    \left|\bm{AB}\right|
+    = 
+    \left|\bm{A}\right|
+    \left|\bm{B}\right|
+    \]
+\end{theorem}
+\end{formal}
+\subsection{Cauchy-Binet公式}
+\setcounter{equation}{0}%重置计数器,方程下计数器为equation
+\begin{formal}
+\begin{theorem}[Cauchy-Binet公式]\label{thm:Cauchy-Binet公式}
+    对于矩阵$\bm{A}_{m \times n}$、$
+    \bm{B}_{n \times m}$
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item $m > n,\left|\bm{AB}\right| = 0;$
+        \item $\displaystyle
+        m \leqslant n,\left|\bm{AB}\right|
+        = \sum_{1\leqslant j_1 < j_2<\cdots
+        < j_m \leqslant n}
+        \bm{A}\begin{pmatrix}
+            1 & 2&\cdots & m \\
+            j_1 & j_2&\cdots & j_m
+        \end{pmatrix}
+        \bm{B}\begin{pmatrix}
+            j_1 & j_2&\cdots & j_m \\
+            1 & 2&\cdots & m 
+        \end{pmatrix}$
+    \end{enumerate}
+\end{theorem}
+\begin{Proof}
+构造如下$m+n$阶方阵
+\[
+\begin{bmatrix}
+    \bm{A}&\bm{O}\\
+    -\bm{I}_n&\bm{B}
+\end{bmatrix}
+\]
+
+主要思路仍然是第三类分块初等变换
+\begin{align*}
+    \begin{vmatrix}
+    \bm{A}&\bm{O}\\
+    -\bm{I}_n&\bm{B}
+\end{vmatrix}=\begin{vmatrix}
+    \bm{O}&\bm{AB}\\
+    -\bm{I}_n&\bm{B}
+\end{vmatrix}
+\end{align*}
+均对前$m$行作\cref{thm:Laplace定理}Laplace展开
+\begin{align*}
+    RHS&=\left|\bm{AB}\right|\left(-1\right)^{
+        1+2+\cdots+m+\left(n+1\right)+\cdots+\left(n+m\right)
+    }\left|-\bm{I}_n\right|\\
+    &=\left(-1\right)^{n\left(m+1\right)}\left|\bm{AB}\right|
+\end{align*}
+
+当$m>n$时,则包含在前$m$行的任一$m$阶子式
+至少有一列全为0即行列式值为0.由\cref{thm:Laplace定理}Laplace定理知
+\[
+LHS = 0
+\]
+故$\left|\bm{AB}\right|=0$.
+
+当$m\leqslant n$时,由\cref{thm:Laplace定理}Laplace定理（代数余子式记作$\bm{C}$）
+\[
+LHS =\sum_{1\leqslant j_1<j_2<\cdots<j_m\leqslant n}\bm{A}\begin{pmatrix}
+    1&2&\cdots&m\\
+    j_1&j_2&\cdots&j_m
+\end{pmatrix}\bm{C}\begin{pmatrix}
+    1&2&\cdots&m\\
+    j_1&j_2&\cdots&j_m
+\end{pmatrix}
+\]
+又代数余子式
+\begin{align*}
+    \bm{C}\begin{pmatrix}
+    1&2&\cdots&m\\
+    j_1&j_2&\cdots&j_m
+\end{pmatrix}=\left(-1
+\right)^{1+2+\cdots+m+j_1
++j_2+\cdots+j_m}\left|-\bm{e}_{i_1},-\bm{e}_{i_2},\cdots,-\bm{e}_{i_{n-m}},\bm{B}\right|
+\end{align*}
+其中,$1\leqslant i_1
+<i_2<\cdots<i_{n-m}
+\leqslant n$为
+$1\leqslant j_1
+<j_2<\cdots<j_m
+\leqslant n$的余指标.$
+\bm{e}_i$为对应的标准单位
+列向量.
+
+记\[
+\bm{N}=\left(-\bm{e}_{i_1},-\bm{e}_{i_2},\cdots,-\bm{e}_{i_{n-m}},\bm{B}\right)
+\]
+对前$n-m$列作\cref{thm:Laplace定理}Laplace展开
+\begin{align*}
+    \left|\bm{N}\right|=\left|-\bm{I}_{n-m}\right|
+    \left(-1\right)^{i_1+i_2+\cdots+i_{n-m}+1+2+\cdots+\left(n-m\right)}\bm{B}\begin{pmatrix}
+        j_1&j_2&\cdots&j_m\\
+        1&2&\cdots&m
+    \end{pmatrix}
+\end{align*}
+于是有
+\[
+LHS = \sum_{1\leqslant j_1<j_2<\cdots<j_m\leqslant n}
+\left(-1\right)^l\bm{A}\begin{pmatrix}
+    1&2&\cdots&m\\
+    j_1&j_2&\cdots&j_m
+\end{pmatrix}\bm{B}\begin{pmatrix}
+    j_1&j_2&\cdots&j_m\\
+    1&2&\cdots&m
+\end{pmatrix}
+\]
+其中$l$为前面一系列指数和.
+只需证明$n\left(m+1\right)$
+和$l$模2同余或者二者之和为偶数.
+因为
+\begin{align*}
+    l+n\left(m+1\right)&=
+    1+2+\cdots+m\\
+    &+i_1+i_2+\cdots+i_{n-m}+j_1+j_2+\cdots+j_m\\
+    &+1+2+\cdots+\left(n-m\right)+\left(n-m\right)
+    \\
+    &+n\left(m+1\right)
+\end{align*}
+因为$1\leqslant i_1
+<i_2<\cdots<i_{n-m}
+\leqslant n$为
+$1\leqslant j_1
+<j_2<\cdots<j_m
+\leqslant n$的余指标,故
+\begin{align*}
+    l+n\left(m+1\right)&=
+    1+2+\cdots+m\\
+    &+1+2+\cdots+n\\
+    &+1+2+\cdots+\left(n-m\right)+\left(n-m\right)
+    \\
+    &+n\left(m+1\right)\\
+    &\equiv \left(m+1\right)+\cdots+n+1+2+\cdots+\left(n-m-1\right)+n\left(m+1\right)\pmod{2}\\
+    &\equiv n\left(m+1\right)+
+    n\left(n-m\right)
+    \pmod{2}\\
+    &\equiv n\left(n+1\right)\pmod{2}\equiv 0
+\end{align*}
+综上,Cauchy-Binet公式证毕.
+\end{Proof}
+\end{formal}
+可以推广求得$\bm{AB}$的$r$阶子式
+\setcounter{equation}{0}%重置计数器,方程下计数器为equation
+\begin{green}
+\begin{corollary}[Cauchy-Binet公式推广到子式]\label{cor:Cauchy-Binet公式推广到子式}
+    对于矩阵$\bm{A}_{m \times n}$、$
+    \bm{B}_{n \times m}$,它们的积的$r\left(
+        1 \leqslant  
+    r \leqslant m\right)$阶子式
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item $r > n$,则$\bm{AB}$
+            任一
+        $r$阶子式为零；
+        \item $ r \leqslant n$,则$\bm{AB}$
+            的
+        $r$阶子式
+        \begin{align*}
+        &\bm{AB}\begin{pmatrix}
+            i_1 &i_2& \cdots & i_r \\
+            j_1 &j_2& \cdots & j_r
+        \end{pmatrix}\\
+        =&
+        \sum_{1 \leqslant  k_1 <k_2
+        < \cdots < k_r \leqslant 
+        n}\bm{A}
+        \begin{pmatrix}
+            i_1 & i_2&\cdots & i_r \\
+            k_1 & k_2&\cdots & k_r
+        \end{pmatrix}
+        \bm{B}\begin{pmatrix}
+            k_1 & k_2&\cdots & k_r \\
+            j_1 & j_2&\cdots & j_r
+        \end{pmatrix}
+    \end{align*}
+    \end{enumerate}
+\end{corollary}
+\begin{Proof}
+设$\bm{C}_{m}=\bm{AB}$,那么
+\begin{align*}
+    \bm{C}\begin{pmatrix}
+        i_1&i_2&\cdots&i_r\\
+        j_1&j_2&\cdots&j_r
+    \end{pmatrix}=\begin{vmatrix}
+        \begin{bmatrix}
+            a_{i_11}&a_{i_12}&\cdots&a_{i_1n}\\
+            a_{i_21}&a_{i_22}&\cdots&a_{i_2n}\\
+            \vdots&\vdots&&\vdots\\
+            a_{i_r1}&a_{i_r2}&\cdots&a_{i_rn}
+        \end{bmatrix}
+        \begin{bmatrix}
+            b_{1j_1}&b_{1j_2}&\cdots&b_{1j_r}\\
+            b_{2j_1}&b_{2j_2}&\cdots&b_{2j_r}\\
+            \vdots&\vdots&&\vdots\\
+            b_{nj_1}&b_{nj_2}&\cdots&b_{nj_r}
+        \end{bmatrix}
+    \end{vmatrix}
+\end{align*}
+由\cref{thm:Cauchy-Binet公式}Cauchy-Binet公式知：
+
+$(1)r > n$时
+\[
+\bm{C}\begin{pmatrix}
+        i_1&i_2&\cdots&i_r\\
+        j_1&j_2&\cdots&j_r
+    \end{pmatrix}=0
+\]
+
+$(2)r\leqslant n$时
+\[
+\bm{C}\begin{pmatrix}
+        i_1&i_2&\cdots&i_r\\
+        j_1&j_2&\cdots&j_r
+    \end{pmatrix}=
+    \sum_{1\leqslant k_1<k_2<\cdots<k_r\leqslant n}\bm{A}\begin{pmatrix}
+        i_1&i_2&\cdots&i_r\\
+        k_1&k_2&\cdots&k_r
+    \end{pmatrix}\bm{B}\begin{pmatrix}
+        k_1&k_2&\cdots&k_r\\
+        j_1&j_2&\cdots&j_r
+    \end{pmatrix}
+\]
+证毕.
+\end{Proof}
+\end{green}
+\subsection{r阶主子式}
+\begin{formal}
+\begin{definition}[主子式]\label{def:主子式}
+    如果
+    \[
+    \bm{A}\begin{pmatrix}
+        i_1 & \cdots & i_r \\
+        j_1 & \cdots & j_r 
+    \end{pmatrix}
+    \]
+    有
+    \[
+    i_k = j_k \qquad
+    \left(k = 1,\cdots ,r\right)
+    \]
+    称为$\bm{A}$的$r$阶主子式。
+\end{definition}
+\end{formal}
+\begin{green}
+\begin{corollary}[主子式非负]\label{cor:主子式非负}
+    $\bm{A}$是一个$m \times n$实矩阵
+    ,则$\bm{A}\bm{A}^{\prime}$的任一主子式均
+    非负.
+\end{corollary}
+\begin{Proof}
+由\cref{thm:Cauchy-Binet公式}Cauchy-Binet公式：$r \leqslant n$时
+\[
+\bm{AA}^{\prime}\begin{pmatrix}
+    i_1&i_2&\cdots&i_r\\
+    i_1&i_2&\cdots&i_r
+\end{pmatrix}=
+\sum_{1\leqslant k_1<k_2<\cdots<k_r\leqslant n}\bm{A}\begin{pmatrix}
+    i_1&i_2&\cdots&i_r\\
+    k_1&k_2&\cdots&k_r
+\end{pmatrix}^2\geqslant 0
+\]
+
+$r > n$时任一$r$阶子式均为0亦满足.
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{corollary}[复矩阵推广]\label{cor:复矩阵推广}
+    事实上,对于$m \times n$复矩阵$\bm{A}$
+    ,$\bm{A}\overline{\bm{A}}^{\prime} $
+    任一主子式均非负
+\end{corollary}
+\end{green}
+\subsection{应用}
+\begin{green}
+\begin{corollary}[方阵的积的伴随阵]
+对于$n$阶方阵$\bm{A}$、
+$\bm{B}$
+\[
+\left(\bm{AB}\right)^* = \bm{B}^*\bm{A}^*
+\]
+\end{corollary}
+\begin{Proof}
+只需比较$\left(i,j\right)$元,因为$\left(\bm{AB}\right)^*$的$
+\left(i,j\right)$元是$\bm{AB}$的$\left(j,i\right)$
+元的代数余子式
+\[
+\left(-1\right)^{i+j}\bm{AB}\begin{pmatrix}
+    1&\cdots&\hat{j}&\cdots&n\\
+    1&\cdots&\hat{i}&\cdots&n
+\end{pmatrix}
+\]
+由\cref{thm:Cauchy-Binet公式}Cauchy-Binet公式知上式为
+\[
+\left(-1\right)^{i+j}\sum_{k=1}^{n}
+\bm{A}\begin{pmatrix}
+    1&\cdots&\hat{j}&\cdots&n\\
+    1&\cdots&\hat{k}&\cdots&n
+\end{pmatrix}\bm{B}\begin{pmatrix}
+    1&\cdots&\hat{k}&\cdots&n\\
+    1&\cdots&\hat{i}&\cdots&n
+\end{pmatrix}=\sum_{k=1}^{n}\bm{A}_{jk}\bm{B}_{ki}
+\]
+这个式子即是$\bm{A}^*$的第$j$列乘上$\bm{B}^*$的第$i$行即
+$\bm{B}^*\bm{A}^*$的$\left(i,j\right)$元.
+\end{Proof}
+\end{green}
+
+\begin{brown}
+\begin{example}[Lagrange恒等式]\label{ex:Lagrange恒等式}
+$n \geqslant  2$时
+\[
+\left(\sum_{i = 1}^{n}a_i^2\right)
+\left(\sum_{i = 1}^{n}b_i^2\right)
+-
+\left(\sum_{i = 1}^{n}a_ib_i\right)^2
+=
+\sum_{1 \leqslant  i < j \leqslant n}
+\left(a_ib_j - a_jb_i\right)^2
+\]
+\end{example}
+\begin{Proof}
+\begin{align*}
+    LHS &= \begin{vmatrix}
+        \sum\limits_{i=1}^{n}a_i^2&\sum\limits_{i=1}^{n}a_ib_i\\
+        \sum\limits_{i=1}^{n}a_ib_i&\sum\limits_{i=1}^{n}b^2_i
+    \end{vmatrix}\\
+    &=\left|\begin{pmatrix}
+        a_1&a_2&\cdots&a_n\\
+        b_1&b_2&\cdots&b_n
+    \end{pmatrix}\begin{pmatrix}
+        a_1&b_1\\
+        a_2&b_2\\
+        \vdots&\vdots\\
+        a_n&b_n
+    \end{pmatrix}\right|
+    \\
+    &\xlongequal{\text{Cauchy-Binet公式}}
+    \sum_{1\leqslant i < j \leqslant n}
+    \begin{vmatrix}
+        a_i&a_j\\
+        b_i&b_j
+    \end{vmatrix}\begin{vmatrix}
+        a_i&b_i\\
+        a_j&b_j
+    \end{vmatrix}\\
+    &=\sum_{1\leqslant i < j\leqslant n}
+    \left(a_ib_j-a_jb_i\right)^2
+    \qedhere
+\end{align*}
+\end{Proof}
+\end{brown}
+同时立刻得到下面的不等式
+\begin{brown}
+\begin{example}[Cauchy-Schwarz不等式]\label{ex:Cauchy-Schwarz不等式}
+有实数形式与复数形式
+    \paragraph{实形式} $ a_i,b_i\in\mathbb{R},n\in\mathbb{N}^+$
+\[
+\left(\sum_{i = 1}^{n}a_i^2\right)
+\left(\sum_{i = 1}^{n}b_i^2\right)
+\geqslant 
+\left(\sum_{i = 1}^{n}a_ib_i\right)^2
+\]
+\paragraph{复形式}$a_i,b_i\in \mathbb{C},n \geqslant 2$
+\[
+\left(\sum_{i = 1}^{n}\left|a_i\right|^2\right)
+\left(\sum_{i = 1}^{n}\left|b_i\right|^2\right)
+\geqslant 
+\left|\sum_{i = 1}^{n}a_i\overline{b_i}\right|^2
+\]
+\end{example}
+\end{brown}
+\newpage
+\section{性质总结}
+%均为$n$阶方阵.
+\subsection{转置}
+\begin{formal}
+\begin{proposition}[转置性质总结]\label{prop:转置性质总结}  
+$\bm{A}$、
+$\bm{B}$均为$n$阶方
+阵,$c \in \mathbb{R}$
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item $\left(\bm{A}^{\prime}\right)^{\prime} = \bm{A}$
+    \item $\left(\bm{AB}\right)^{\prime} = 
+    \bm{B}^{\prime}\bm{A}^{\prime} $
+    \item $\left(c\bm{A}\right)^{\prime} = c\bm{A}^{\prime}$
+    \item $\left|\bm{A}^{\prime}\right|
+    =\left|\bm{A}\right|$
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{逆阵}
+\begin{formal}
+\begin{proposition}[逆阵性质总结]\label{prop:逆阵性质总结}
+$\bm{A}$、
+$\bm{B}$均为$n$阶可逆方
+阵$\left(
+    \left|\bm{A}\right|
+    =\left|\bm{B}\right|
+    \neq 0
+\right)$,$c \in \mathbb{R}$
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 逆阵存在则唯一
+    \item $ \left(\bm{A}^{-1}\right)^{-1}
+    = \bm{A} $
+    \item $\left(\bm{AB}\right)^{-1}
+    = \bm{B}^{-1}\bm{A}^{-1}$
+    \item$\left(c\bm{A}\right)^{-1}
+    =c^{-1}\bm{A}^{-1}$
+    \item $\left|\bm{A}^{-1}\right|
+    = \left|\bm{A}\right|^{-1}$
+    \item $\left(\bm{A}^{\prime}\right)^{-1}
+    = \left(\bm{A}^{-1}\right)^{\prime}$
+    \item 整性对可逆阵成立
+    \item 消去律对可逆阵成立
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{伴随阵}
+\begin{formal}
+\begin{proposition}[伴随阵性质总结]\label{prop:伴随阵性质总结}
+$\bm{A}$、
+$\bm{B}$均为$n$阶方
+阵,$c \in \mathbb{R}$,
+$n \geqslant 2$
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item 伴随阵必定存在
+    \item $\bm{AA}^* = \bm{A}^*\bm{A}
+    = \left|\bm{A}\right|\bm{I}_n$
+   \item  $\left(\bm{A}^*\right)^*=
+    \begin{cases*}
+        \left|\bm{A}\right|
+        ^{n - 2}\bm{A},n\geqslant 3\\
+        \bm{A},n = 2
+    \end{cases*}$
+    \item $\left(\bm{AB}\right)^* = 
+    \bm{B}^*\bm{A}^*$
+    \item $\left(c\bm{A}\right)^*=
+    c^{n - 1}\bm{A}^*$
+    \item $\left|\bm{A}^*\right|
+    =\left|\bm{A}\right|^{n - 1}$
+    \item $\left(\bm{A}^{\prime}\right)^*
+    = \left(\bm{A}^*\right)^{\prime}$
+    \item $\left|\bm{A}\right| \neq 0$
+        时
+    ,$\left(\bm{A}^{-1}\right)^*
+    =\left(\bm{A}^*\right)^{-1}$
+    \item $\begin{pmatrix}
+        \bm{I}_r & \bm{O} \\
+        \bm{O} & \bm{O}
+    \end{pmatrix}
+    ^* = \begin{cases*}
+        \bm{O},r \leqslant n - 2
+        \\
+        \begin{pmatrix}
+          \bm{O}  & \bm{O}\\
+          0  & 1
+        \end{pmatrix},
+        r = n -1
+        \\
+        \bm{I}_n,
+        r = n
+    \end{cases*}\quad
+    \left(0 \leqslant r
+    \leqslant n\right)
+    $
+    \item $r < n$时
+$\displaystyle
+\left|\begin{pmatrix}
+        \bm{I}_r & \bm{O} \\
+        \bm{O} & \bm{O}
+    \end{pmatrix}
+    ^*\right|=0
+$
+\item $\displaystyle
+\left(
+    \begin{pmatrix}
+        \bm{I}_r & \bm{O} \\
+        \bm{O} & \bm{O}
+    \end{pmatrix}
+    ^*
+\right)^*=\begin{cases*}
+\begin{pmatrix}
+    \bm{I}_r&\bm{O}\\
+    \bm{O}&\bm{O}
+\end{pmatrix},n=2,r=1\\
+\bm{I}_n,r=n\\
+\bm{O},\text{其他}
+\end{cases*}
+$
+\end{enumerate}\end{proposition}
+\end{formal}
+\newpage
+\section{一些特别的矩阵}
+介绍一些应用广泛的特殊矩阵.
+\subsection{标准单位向量}
+\begin{formal}
+\begin{definition}[标准单位列向量]\label{def:标准单位列向量}
+    前文已述,$n$维标准单位列向量指
+\[
+\bm{e}_1=\begin{pmatrix}
+    1\\0\\\vdots\\0
+\end{pmatrix},\bm{e}_2=\begin{pmatrix}
+    0\\1\\\vdots\\0
+\end{pmatrix},\cdots,\bm{e}_n=\begin{pmatrix}
+    0\\0\\\vdots\\1
+\end{pmatrix}
+\]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{proposition}[标准单位向量的性质]\label{prop:标准单位向量的性质}
+另设$\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m$为$m$维标准单位列向量,则
+\begin{enumerate}[label={\textup{(\arabic*)}}]
+    \item $\bm{e}_i'\bm{e}_j =0\left(i\neq 0\right),\bm{e}_i'\bm{e}_i=1$
+    \item 设$\bm{A}=\left(a_{ij}\right)_{m\times n}$,则$\bm{Ae}_i$是$\bm{A}$的第$i$个列向量,$\bm{f}_i'\bm{A}$是$\bm{A}$的第$i$个行向量
+    \item 设$\bm{A}=\left(a_{ij}\right)_{m\times n}$,则$\bm{f}_i'\bm{A}\bm{e}_j=a_{ij}$
+    \item 设$\bm{A}=\left(a_{ij}\right)_{m\times n},\bm{B}=\left(b_{ij}\right)_{m\times n}$,则$\bm{A}=\bm{B}$当且仅当$\bm{Ae}_i=\bm{Be}_i\left(\forall 1\leqslant i\leqslant n\right)$,亦当且仅当$\bm{f}_i'\bm{A}=\bm{f}_i'\bm{B}\left(\forall 1\leqslant i\leqslant m\right)$
+\end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{基础矩阵}
+\begin{formal}
+\begin{definition}[基础矩阵/初级矩阵]\label{def:基础矩阵}
+    $n$阶基础矩阵（初级矩阵）是指$n^2$个$n$阶矩阵$\left\{
+        \bm{E}_{ij},1\leqslant i,j\leqslant n
+    \right\}.$此处$\bm{E}_{ij}$是一个除$\left(i,j\right)$元为$1$外其余元素均为$0$的矩阵即
+    \[
+    \bm{E}_{ij}=\bm{e}_i\bm{e}_j'
+    \]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{proposition}[基础矩阵的若干性质]
+    \,
+    \begin{enumerate}[label={\textup{(\arabic*)}}]
+        \item 若$j\neq k$,则$\bm{E}_{ij}\bm{E}_{kl}=\bm{O}$
+        \item 若$j=k$,则$\bm{E}_{ij}\bm{E}_{kl}=\bm{E}_{il}$
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n\times n}$,则
+        \[
+        \bm{A}=\sum_{i,j=1}^{n}a_{ij}\bm{E}_{ij}
+        \]
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n\times n}$,则$\bm{E}_{ij}\bm{A}$的第$i$行是$\bm{A}$的第$j$行,
+        $\bm{E}_{ij}\bm{A}$的其余行全为零
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n
+        \times n}$,则$\bm{A}\bm{E}_{ij}$的第$j$列是$\bm{A}$的第$i$列,
+        $\bm{A}\bm{E}_{ij}$的其余列全为零
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n\times n}$,则$\bm{E}_{ij}\bm{A}\bm{E}_{kl}=a_{jk}\bm{E}_{il}$
+    \end{enumerate}
+\end{proposition}
+\end{formal}
+\subsection{循环矩阵}
+\begin{formal}
+\begin{definition}[循环矩阵定义]\label{def:循环矩阵定义}
+    设数域$\mathbb{K}$上的任意$n$个数$a_1,a_2,\cdots,a_n$,则下面的矩阵称为$\mathbb{K}$上的$n$阶循环矩阵
+    \[
+\bm{A}=\begin{pmatrix}
+    a_1&a_2&a_3&\cdots&a_n\\
+    a_n&a_1&a_2&\cdots&a_{n-1}\\
+    a_{n-1}&a_n&a_1&\cdots&a_{n-2}\\
+    \vdots&\vdots&\vdots&&\vdots\\
+    a_2&a_3&a_4&\cdots&a_{1}
+\end{pmatrix}
+    \]
+    特别地,$a_2=1,a_1=a_3=\cdots=a_n$的循环矩阵为基础循环矩阵
+    \[
+    \bm{J}=\begin{pmatrix}
+        0&1&0&\cdots&0\\
+        0&0&1\cdots&0\\
+        \vdots&\vdots&\vdots&&\vdots\\
+        0&0&0&\cdots&1\\
+        1&0&0&\cdots&0
+    \end{pmatrix}
+    \]
+    任一循环矩阵均可用关于基础矩阵的多项式表出.
+\end{definition}
+\end{formal}
+基础矩阵有非常良好的幂形式,这也是任一循环矩阵可用其的多项式表出的原因,当然,从线性空间的角度也能给出解释.
+\begin{green}
+\begin{lemma}[基础循环矩阵的幂]\label{lem:基础循环矩阵的幂}
+    基础循环矩阵
+    \[
+    \bm{J}=\begin{pmatrix}
+        0&1&0&\cdots&0\\
+        0&0&1\cdots&0\\
+        \vdots&\vdots&\vdots&&\vdots\\
+        0&0&0&\cdots&1\\
+        1&0&0&\cdots&0
+    \end{pmatrix}
+    \]
+    的幂次为
+    \[
+    \bm{J}^k=\begin{pmatrix}
+        \bm{O}&\bm{I}_{n-k}\\
+        \bm{I}_k&\bm{O}
+    \end{pmatrix}
+    \left(1\leqslant k\leqslant n\right)
+    \]
+\end{lemma}
+\end{green}
+\begin{formal}
+\begin{theorem}[循环矩阵关于基础循环矩阵的多项式表示]\label{thm:循环矩阵关于基础循环矩阵的多项式表示}
+    利用基础矩阵的幂,容易有
+    \[
+    \bm{A}=a_1\bm{I}_1+a_2\bm{J}+a_3\bm{J}^2
+    +\cdots+a_n\bm{J}^{n-1}
+    \]
+    令$f\left(x\right)=a_1+a_2x+a_3x^2+\cdots+a_n$是
+    $\mathbb{K}$上次数不高于$n-1$的多项式,使得$\bm{A}=f\left(\bm{J}\right)$,
+    这就是循环矩阵关于基础循环矩阵的多项式表达.
+\end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[全体循环矩阵]\label{thm:全体循环矩阵}
+        记$C_n\left(\mathbb{K}\right)$为$\mathbb{K}$上的所有
+        $n$阶循环矩阵组成的集合,其在矩阵运算
+        下是$\mathbb{K}$上的
+        $n$维线性空间,一组基为$\left\{
+            \bm{I}_n,\bm{J},\cdots,\bm{J}^{n-1}
+        \right\}$.
+    \end{theorem}
+\end{formal}
+\begin{formal}
+\begin{theorem}[基础循环矩阵的特征值]\label{thm:基础循环矩阵的特征值}
+    解特征多项式
+    \[
+    \left|\lambda \bm{I}_n-\bm{J}\right|=\lambda^n-1
+    \]
+    即特征值为$n$次单位根
+    \[
+    \varepsilon_k = \cos\frac{2k\pi}{n}+\mathrm{i}\sin\frac{2k\pi}{n}\left(0\leqslant k\leqslant n - 1\right)
+    \]
+    其中,特征值$\varepsilon_k$的特征向量为
+    \newpage
+    \[
+    \bm{\alpha}_k=
+    \begin{pmatrix}
+        1\\\varepsilon_k\\\varepsilon_k^2\\\vdots\\\varepsilon_k^{n-1}
+    \end{pmatrix}
+    \]
+\end{theorem}
+\end{formal}
+\subsection{幂零Jordan块}
+\begin{formal}
+\begin{definition}[幂零Jordan块]\label{def:幂零Jordan块}
+    跟基础循环矩阵很像
+\[
+\bm{A}=\begin{pmatrix}
+        0&1&0&\cdots&0\\
+        0&0&1\cdots&0\\
+        \vdots&\vdots&\vdots&&\vdots\\
+        0&0&0&\cdots&1\\
+        0&0&0&\cdots&0
+    \end{pmatrix}
+\]
+其幂次
+\[
+\bm{A}^k=\begin{pmatrix}
+    \bm{O}&\bm{I}_{n-k}\\
+    \bm{O}&\bm{O}
+\end{pmatrix}\left(1\leqslant k\leqslant 
+n\right)
+\]
+\end{definition}
+\end{formal}
+\subsection{多项式的友阵与Frobenius块}
+\begin{formal}
+\begin{definition}[定义]\label{def:多项式的友阵与Frobenius块}
+    设首一多项式$f\left(x\right)=x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n$,其友阵为
+    \[
+    \bm{C}\left(f\left(x\right)\right)=\begin{pmatrix}
+        0&0&\cdots&0&-a_n\\
+        1&0&\cdots&0&-a_{n-1}\\
+        0&1&\cdots&0&-a_{n-2}\\
+        \vdots&\vdots&&\vdots&\vdots\\
+        0&0&\cdots&1&-a_1
+    \end{pmatrix}
+    \]
+    其转置$\bm{F}\left(f\left(x\right)\right)=
+    \bm{C}\left(f\left(x\right)\right)$称为$\textup{Frobenius}$块.
+\end{definition}
+\end{formal}
+\newpage
+\begin{formal}
+\begin{proposition}[友阵的性质]\label{prop:友阵的性质}
+    设$\bm{e}_i$是标准单位列向量,则\[
+    \bm{C}\left(f\left(x\right)\right)\bm{e}_i=e_{i+1}\left(\forall 1\leqslant i\leqslant n-1\right),
+    \bm{C}\left(f\left(x\right)\right)\bm{e}_n=-\sum_{i=1}^{n}a_{n-i+1}\bm{e}_i
+    \]
+\end{proposition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[友阵与原多项式关系]\label{thm:友阵与原多项式关系}
+    \[
+    \left|x\bm{I}_n-\bm{C}\left(f\left(x\right)\right)\right|=f\left(x\right)
+    \]
+\end{theorem}
+\begin{Proof}
+考虑行列式
+\[
+F_n=\begin{vmatrix}
+    \lambda&0&0&\cdots&0&a_n\\
+    -1&\lambda&0&\cdots&0&a_{n-1}\\
+    0&-1&\lambda&\cdots&0&a_{n-2}\\
+    \vdots&\vdots&\vdots&&\vdots&\vdots\\
+    0&0&0&\cdots&\lambda&a_2\\
+    0&0&0&\cdots&-1&\lambda+a_1
+\end{vmatrix}
+\]
+按第一行展开,注意到：$a_n$的余子式是上三角,$\lambda$的余子式是更低一阶的类似行列式,即\[
+F_n=\lambda F_{n-1}+\left(-1\right)^{n+1}\left(-1\right)^{n-1}a_n=\lambda F_{n-1}+a_n
+\]
+因此\[
+F_n=\lambda^n+a_1\lambda^{n-1}+a_2\lambda^{n-2}+\cdots+a_n\qedhere
+\]
+\end{Proof}
+\end{formal}
+\begin{red}
+\begin{remark}
+    \textup{Frobenius}块与友阵将在后面的\cref{lemma:友阵}有理标准型学习中出现.
+\end{remark}
+\end{red}
+\subsection{对称阵与反对称阵}
+\begin{formal}
+\begin{proposition}[对对称阵与反对称阵的刻画]
+    \,
+    \begin{enumerate}[label={\textup{(\arabic*)}}]
+        \item 设$n$阶对称阵$\bm{A}$,则$\bm{A}$是零矩阵等价于$\forall \bm{\alpha}\in\mathbb{R}^n$
+        \[
+        \bm{\alpha}'\bm{A\alpha}=0
+        \]
+        \item 设$n$阶方阵$\bm{A}$,则$\bm{A}$是反对称阵等价于$\forall \bm{\alpha}\in\mathbb{R}^n$
+        \[
+        \bm{\alpha}'\bm{A\alpha}=0
+        \]
+    \end{enumerate}
+\end{proposition}
+\end{formal}

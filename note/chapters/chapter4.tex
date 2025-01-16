@@ -1,0 +1,2500 @@
+\newpage
+\chapter{线性映射}
+\setcounter{section}{0}
+\section{线性映射}
+\subsection{映射}
+\begin{formal}
+\begin{definition}[映射]\label{def:映射}
+    对于集合$A$、$B$,定义映射
+    \begin{align*}
+        \bm{f}:
+        A & \longrightarrow B \\
+        \forall a & \longmapsto 
+        \exists b =\bm{f}\left(a\right)
+    \end{align*}
+    且
+    \[
+    \mathrm{Im}\, \bm{f} =\bm{f}
+    \left(A\right)
+    =\left\{\bm{f}\left(a\right)\mid
+    a \in A\right\}
+    \]
+    称为$\bm{f}$的像集.特别地,
+    \[
+    \bm{f}:A \longrightarrow A
+    \]
+    称为一个变换.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[单射、满射、双射]\label{def:单射、满射、双射}
+    \[
+    \text{双射/一一对应}
+    \begin{cases*}
+        \text{满射（\textup{onto}）：}
+        \mathrm{Im}\,\bm{f} = B\\
+        \text{单射（\textup{1-1}）：}a_1 
+        \neq a_2 \Longleftrightarrow
+        \bm{f}\left(a_1\right) \neq
+        \bm{f}\left(a_2\right)
+    \end{cases*}
+    \]
+\end{definition}
+\end{formal}
+\begin{brown}
+    \begin{example}
+        函数是特殊的映射.
+    \end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设\begin{align*}
+        det:M_n\left(\mathbb{R}\right)&\longrightarrow \mathbb{R}\\
+        \bm{A}&\longmapsto \left|\bm{A}\right|
+    \end{align*}
+    是满射,$n\geqslant 2$是不是单射.
+\end{example}
+\end{brown}
+\begin{formal}
+\begin{definition}[恒等映射]\label{def:恒等映射}
+    如果一个变换是一个将任一元素变换为自身的
+双射,称为一个恒等映射,记作$\bm{1}_A$或
+$\bm{I}_A.$
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    恒等映射是特别的变换,
+    后者只是变换到同一集合,前者在双射的基础上
+    还要强调
+    任一元素均变换到自身.这比变换的要求严格得多.
+
+    事实上,在变换的基础上,如果任一元素均映射到自身,
+    就可以确定这是双射了.因此上面的定义其实是
+    有重合的.
+\end{remark}
+\end{red}
+\begin{formal}
+\begin{definition}[映射的相同]\label{def:映射的相同}
+    设两个映射
+    \[
+    \bm{f}\text{、}g:A\longrightarrow
+    B
+    \]
+    则$\bm{f}=\bm{g}$
+    当且仅当$\forall a \in A,\bm{f}
+    \left(a
+    \right) = \bm{g}
+    \left(a\right)$.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[复合映射]\label{def:复合映射}
+    设
+    \[
+    \bm{f}
+    :A \longrightarrow B ,
+    \bm{g}
+    :B \longrightarrow C
+    \]
+    则有复合映射
+    \[
+        \bm{g} \circ \bm{f} : 
+        A \longrightarrow
+        C 
+    \]
+    \[
+        \bm{g} \circ \bm{f}
+        \left(a\right)
+        = \bm{g}
+        \left(\bm{f}
+        \left(a\right)\right)
+    \]
+    若$\bm{h}:
+    C \longrightarrow D$,有结合律：
+    \[
+    \bm{h} 
+    \circ \left(\bm{g}
+     \circ \bm{f}
+     \right)
+    = \left(\bm{h}
+     \circ \bm{g}
+     \right) \circ \bm{f}
+    \]
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[逆映射]\label{def:逆映射}
+    若$\bm{f}:A\longrightarrow B$、
+    $\bm{g} : B \longrightarrow A$
+    使得
+    \[
+    \begin{cases*}
+        \bm{g}\circ\bm{f}=\bm{1}_A\\
+        \bm{f}\circ\bm{g}=\bm{1}_B
+    \end{cases*}
+    \]
+    那么称$\bm{g}$为$\bm{f}$的逆映射,
+    记作$\bm{g} = \bm{f}^{-1}.$
+\end{definition}
+\end{formal}
+\begin{green}
+\begin{lemma}[逆映射存在性]\label{lemma:逆映射存在性}
+    $\bm{f} : A \longrightarrow B$的
+    逆映射存在当且仅当$\bm{f}$为双射.
+\end{lemma}
+\begin{Proof}
+先证充分性,设双射$\bm{f}$,$\forall b\in B$,由满性知
+$\exists a\in A$使得$b=\bm{f}\left(a\right)$,由单性知
+这样的$a$唯一.构造
+\begin{align*}
+    \bm{g}:B&\longrightarrow A\\
+    \forall b&\longmapsto a
+\end{align*}
+此处$a$是唯一满足$\bm{f}\left(a\right)=b$的$a$.
+这是一个映射且
+ \[
+    \begin{cases*}
+        \bm{g}\circ\bm{f}=\bm{1}_A\\
+        \bm{f}\circ\bm{g}=\bm{1}_B
+    \end{cases*}
+    \]
+于是这是符合要求的逆映射.
+
+再证必要性,即有$\bm{g}=\bm{f}^{-1}$.先证明单性,设
+$a_1,a_2\in A$使得$\bm{f}\left(a_1\right)=
+\bm{f}\left(a_2\right)$,两边复合$\bm{g}$即得
+$a_1=a_2.$
+
+考虑满性,$\forall b\in B$,因为
+\[
+\bm{f}\left(\bm{g}\left(b\right)\right)=b
+\]
+故$\bm{g}\left(b\right)$是$b$的原像.
+
+证毕.
+\end{Proof}
+\end{green}
+\subsection{线性映射}
+\begin{formal}
+\begin{definition}[线性映射的定义]\label{def:线性映射的定义}
+    设$\mathbb{K}$上的线性空间$V$、
+    $U$,映射\[
+    \bm{\varphi }:V \longrightarrow
+    U
+    \]
+
+    若$\forall \bm{\alpha}$、$\bm{\beta} \in V$,$\forall k \in \mathbb{K}$
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item $\bm{\varphi}\left(
+            \bm{\alpha}+\bm{\beta}
+        \right)=\bm{\varphi}\left(
+            \bm{\alpha}
+        \right)   +
+        \bm{\varphi}\left(
+            \bm{\beta}
+        \right)$
+        \item $\bm{\varphi}\left(k\bm{\alpha}
+        \right)=k\bm{\varphi}\left(
+            \bm{\alpha}
+        \right)$
+    \end{enumerate}
+    则称为一个线性映射.
+
+    特别地,$\bm{\varphi}:V
+    \longrightarrow V$
+    称为线性变换.
+
+    当$\bm{\varphi}$作为映射是单射或满射时,
+    称为是单或满线性映射.
+    
+    当$
+    \bm{\varphi}$
+    作为映射是双射时,称为（线性）同构
+    （与线性空间之间的同构的定义\cref{def:线性同构}相同）,
+    记作$V\cong U$.
+    
+    $V=U$时$V$自身上的同构称为自同构.
+\end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    在\cref{def:线性同构}定义线性空间之间的同构的时候,我们先要求双射,再要求
+    保持线性组合,\cref{def:线性映射的定义}反过来先要求线性组合再要求双射.
+    两种定义是相同的.
+\end{remark}
+\end{red}
+\begin{brown}
+\begin{example}
+    \[
+    \bm{\varphi}:
+    \forall \bm{\alpha}\in V
+    \longmapsto \bm{0}_U
+    \]
+    这是一个零线性映射$\bm{0}:V\longrightarrow U.$
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    线性空间$V$上的线性变换
+    \begin{align*}
+        \bm{1}_V:
+        V &\longrightarrow V\\
+        \bm{\alpha} & \longmapsto 
+        \bm{\alpha}
+    \end{align*}
+    称为一个恒等映射或者恒等变换,
+    也是一个自同构.
+    记作$\bm{1}_V$或
+    $\bm{I}_V$或
+    $\bm{\mathrm{Id}}_V$或
+    $\bm{I}$.
+\end{example}
+\end{brown}
+\begin{red}
+\begin{remark}
+    需要说明的是,变换并不等于恒等映射,
+变换只强调$V \longrightarrow V$,恒等变换
+还需要$\bm{\alpha} \longmapsto
+\bm{\alpha}$,
+恒等映射是特别的变换.
+\end{remark}
+\end{red}
+\begin{brown}
+\begin{example}\label{ex:2}
+    设线性空间$\displaystyle
+    V = \mathbb{K}^n$,$\displaystyle
+    U = \mathbb{K}^m$,$\bm{A} 
+    \in M_{m \times n}\left(
+        \mathbb{K}
+    \right)$,定义
+    \begin{align*}
+        \bm{\varphi}_{\bm{A}}
+        : \mathbb{K}^n & 
+        \longrightarrow \mathbb{K}^m\\
+        \bm{\alpha}& \longmapsto
+        \bm{A\alpha}
+    \end{align*}
+    是一个线性映射.
+\end{example}
+\end{brown}
+\begin{red}
+\begin{remark}
+    可以看出,线性映射的几何意义就是矩阵乘法.
+    \cref{ex:2}非常重要.
+\end{remark}
+\end{red}
+\begin{brown}
+\begin{example}
+    \begin{align*}
+        \bm{\varphi}:
+        \mathbb{K}_n &
+        \longrightarrow
+        \mathbb{K}^n\\
+        \left(a_1,a_2,\cdots
+        ,a_n\right)&
+        \longmapsto
+        \begin{pmatrix}
+            a_1\\
+            a_2\\
+            \vdots\\
+            a_n
+        \end{pmatrix}
+    \end{align*}
+    是线性同构.
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设$V_{\mathbb{K}}$的一组基为
+    $\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$,则
+    \begin{align*}
+        \bm{\varphi}:
+        V & \longrightarrow \mathbb{K}^n\\
+        \bm{\alpha} = 
+        \sum_{i = 1}^{n}a_i\bm{e}_i
+        & \longmapsto \begin{pmatrix}
+            a_1\\
+            a_2\\
+            \vdots\\
+            a_n
+        \end{pmatrix}
+    \end{align*}
+    是一个线性同构.
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设$\mathbb{K}$上的线性空间$V$,
+    取定$k \in \mathbb{K}$,
+    则\begin{align*}
+        \bm{\varphi}:
+        V & \longrightarrow V \\
+        \bm{\alpha} & \longmapsto
+        k\bm{\alpha}
+    \end{align*}
+    这样一个线性变换称为数量/数乘变换.
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设$\left[0,1\right]$上的实无穷次可微函数
+    全体组成的实线性空间为$\displaystyle
+    C^{\infty}\left[0,1\right]$,则有
+    求导变换
+    \begin{align*}
+        \bm{\varphi}:
+        C^{\infty}\left[0,1\right] & 
+        \longrightarrow
+        C^{\infty}\left[0,1\right]\\
+        f\left(x\right)
+        & \longmapsto
+        \frac{\mathrm{d}}{\mathrm{d}x}
+        f\left(x\right) = f'\left(x\right)
+    \end{align*}
+    是$\displaystyle
+    C^{\infty}\left[0,1\right]$
+    上的线性变换.
+\end{example}
+\end{brown}
+\begin{formal}
+\begin{theorem}[线性映射的若干性质]\label{thm:线性映射的若干性质}
+    设线性映射$\bm{\varphi}:
+    V \longrightarrow U$,则
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item $\bm{\varphi}\left(\bm{0}_V
+        \right)=\bm{0}_U$
+        \item $\forall \bm{\alpha},\bm{\beta}
+         \in V,k,l \in \mathbb{K},$
+            则
+         $\bm{\varphi}\left(
+            k\bm{\alpha} + l\bm{\beta}
+         \right)=k\bm{\varphi}\left(
+            \bm{\alpha}
+         \right)+l\bm{\varphi}\left(
+            \bm{\beta}
+         \right)$即保持线性组合
+         \item 若$\bm{\varphi}$为同构,
+         则$\bm{\varphi}^{-1}$
+            也是同构
+         \item 若$\bm{\varphi}:V\longrightarrow U$
+         和$\bm{\psi}:U \longrightarrow
+         W$均为线性映射或同构,则$\bm{\psi}
+         \circ \bm{\varphi}:
+         V \longrightarrow W$
+        是一个线性
+        映射或同构
+    \end{enumerate}
+\end{theorem}
+\begin{Proof}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+    \item \[
+    \bm{\varphi}\left(\bm{0}_V\right)=
+    \bm{\varphi}\left(\bm{0}_V+\bm{0}_V\right)
+    =\bm{\varphi}\left(\bm{0}_V\right)+\bm{\varphi}\left(\bm{0}_V\right)
+    =\bm{0}_U
+    \]
+    \item 拆分即可.
+    \item 因为$\bm{\varphi}$为双射,则$\bm{\varphi}^{-1}$为双射,只要证
+    $\bm{\varphi}^{-1}$保持线性组合即可.
+    任取$\bm{x},\bm{y}\in U,k,l\in\mathbb{K}$,
+    只需证
+    \[
+    \bm{\varphi}^{-1}\left(k\bm{x}+l\bm{y}\right)=
+    k\bm{\varphi}^{-1}\left(\bm{x}\right)+l
+    \bm{\varphi}^{-1}\left(
+        \bm{y}\right)
+    \]
+作
+\begin{align*}
+    \bm{\varphi}\left(
+        \bm{\varphi}^{-1}\left(
+            k\bm{x}+l\bm{y}\right)-
+    k\bm{\varphi}^{-1}\left(\bm{x}\right)+l
+    \bm{\varphi}^{-1}\left(
+        \bm{y}\right)
+    \right)=k\bm{x}+l\bm{y}-k\bm{x}-l\bm{y}=\bm{0}_U=\bm{\varphi}\left(\bm{0}_
+    V\right)
+\end{align*}
+于是由单性即得.
+
+\item 首先$\bm{\psi}\circ \bm{\varphi}$显然为双射,
+那么
+\begin{align*}
+    \bm{\psi}\circ \bm{\varphi}\left(k\bm{\alpha}+l\bm{\beta}\right)&=\bm{\psi}\left(k\bm{\varphi}\left(\bm{\alpha}\right)+l\bm{\varphi}\left(\bm{\beta}\right)\right)\\
+    &=k\bm{\psi}\circ\bm{\varphi}\left(\bm{\alpha}\right)+l\bm{\psi}\circ\bm{\varphi}\left(\bm{\beta}\right)
+\end{align*}
+保持线性组合.\qedhere
+\end{enumerate}
+\end{Proof}
+\end{formal}
+\begin{green}
+\begin{corollary}[线性同构的存在性]\label{cor:线性同构的存在性}
+事实上,应该说两个线性空间存在线性同构.
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item 线性同构是一种等价关系
+        \item 两个线性空间存在同构当且仅当
+        它们的维数相同
+    \end{enumerate}
+\end{corollary}
+\begin{Proof}
+证明$(2)$,先证必要性,设线性同构$\bm{\varphi}:
+V\longrightarrow U$,任取$V$的基$\left\{\bm{e}_1,
+\bm{e}_2,\cdots,\bm{e}_n\right\}$,从而
+$\left\{\bm{\varphi}\left(\bm{e}_1\right),
+\bm{\varphi}\left(\bm{e}_2\right),\cdots,\bm{\varphi}\left(\bm{e}_n\right)\right\}$
+线性无关.
+
+任取$\bm{x}\in U,\exists \bm{\alpha}\in V$,s.t.
+$\bm{\varphi}\left(\bm{\alpha}\right)=\bm{x}.$
+设$\bm{\alpha}=a_1\bm{e}_1+a_2\bm{e}_2+\cdots
++a_n\bm{e}_n$,那么
+\[
+\bm{x}=a_1\bm{\varphi}\left(\bm{e}_1\right)+
+a_2\bm{\varphi}\left(\bm{e}_2\right)+\cdots+
+a_n\bm{\varphi}\left(\bm{e}_n\right)
+\]
+于是$\left\{\bm{\varphi}\left(\bm{e}_1\right),
+\bm{\varphi}\left(\bm{e}_2\right),\cdots,\bm{\varphi}\left(\bm{e}_n\right)\right\}$
+是$U$的一组基.即$\dim\,V=\dim\,U=n.$
+
+然后是充分性,设$\dim\,V=\dim\,U=n$,取$V$的一组基
+$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$和
+$U$的一组基$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right\}$.
+构造线性同构：
+\begin{align*}
+        \bm{\varphi}_V:
+        V & \longrightarrow \mathbb{K}^n\\
+        \bm{\alpha} = 
+        \sum_{i = 1}^{n}a_i\bm{e}_i
+        & \longmapsto \begin{pmatrix}
+            a_1\\
+            a_2\\
+            \vdots\\
+            a_n
+        \end{pmatrix}
+    \end{align*}
+和
+\begin{align*}
+        \bm{\varphi}_U:
+        U & \longrightarrow \mathbb{K}^n\\
+        \bm{x} = 
+        \sum_{i = 1}^{n}b_i\bm{f}_i
+        & \longmapsto \begin{pmatrix}
+            b_1\\
+            b_2\\
+            \vdots\\
+            b_n
+        \end{pmatrix}
+    \end{align*}
+考虑$\bm{\varphi}_U^{-1}\circ \bm{\varphi}_V$即是线性同构.
+\end{Proof}
+\end{green}
+\begin{red}
+\begin{remark}
+    两个线性空间存在同构时,将存在无数个线性同构,
+    但这并不意味着这两个线性空间之间的
+    任一线性映射均是线性同构.即存在无穷多个并不等于
+    任取一个均满足.
+\end{remark}
+\end{red}
+    \begin{brown}
+    \begin{example}
+        考虑$\bm{I}:V\longrightarrow V$为线性同构,但是零映射
+        $\bm{0}:V\longrightarrow V$不仅不是线性同构,甚至
+        都不是单射.
+    \end{example}
+    \end{brown}
+    \begin{red}
+    \begin{remark}
+        在表达两个线性空间之间的
+        线性同构时,
+        实现这个同构的映射更加关键.
+    \end{remark}
+    \end{red}
+    \begin{red}
+\begin{remark}
+    不同数域上的线性空间之间的映射不是线性映射.
+\end{remark}
+\end{red}
+\newpage
+\section{线性映射的运算}
+\subsection{运算}
+\begin{formal}
+\begin{definition}[线性映射全体]\label{def:线性映射全体}
+    设$V_{\mathbb{K}}$、$U_{\mathbb{K}}$
+    ,记$\mathcal{L} \left(V,U
+    \right)$为$V \longrightarrow U$的
+    线性映射全体.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[加法与数乘]\label{def:加法与数乘}
+    $\forall \bm{\varphi},\bm{\psi}
+    \in \mathcal{L} \left(
+        V,U
+    \right)$
+    ,定义
+    加法
+    \[
+    \left(\bm{\varphi}+\bm{\psi}\right)
+    \left(\bm{\alpha}\right):=\bm{\varphi}\left(\bm{\alpha}
+    \right)+\bm{\psi}\left(\bm{\alpha}
+    \right)
+    \]
+    $\forall k \in \mathbb{K}$,定义数乘
+    \[
+        \left(
+            k\cdot \bm{\varphi}
+        \right)\left(\bm{\alpha}
+        \right) :=
+        k \cdot \bm{\varphi}\left(
+            \bm{\alpha}
+        \right) 
+    \]
+    容易验证二者均是线性映射且
+    $\bm{\varphi}+\bm{\psi} \in \mathcal{L} 
+    \left(V,U\right)$,$k\bm{\varphi} 
+    \in \mathcal{L} \left(V,U\right)$.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[映射全体成为线性空间]\label{thm:映射全体成为线性空间}
+    $\mathcal{L} \left(V,U\right)$
+    在\cref{def:加法与数乘}的加法和数乘运算
+    下是$\mathbb{K}$上的线性空间.
+
+    特别地,$\mathcal{L} \left(
+        V,\mathbb{K}
+    \right)$是$V$上的线性函数全体
+    构成的线性空间,称为$V$的共轭空间,
+    记作$V^*$,当$V$维数有限时,
+    $V^*$也称为$V$的对偶空间.
+    
+    $\mathcal{L} 
+    \left(V,V\right) = \mathcal{L} 
+    \left(V\right)$为$V$上的线性变换
+    全体构成的线性空间,它可以额外将映射
+    的复合定义为乘法运算.
+\end{theorem}
+\end{formal}
+\subsection{代数}
+\begin{formal}
+\begin{definition}[代数]\label{def:代数}
+    设$\mathbb{K}$上的线性空间$A$,如果定义一种
+    乘法运算
+    \begin{align*}
+        \cdot : 
+        A \times A & \longrightarrow A\\
+        \left(a,b\right)&\longmapsto a\cdot b
+    \end{align*}
+    若$\forall a,b,c 
+    \in A,\forall k \in \mathbb{K}$,满足
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+      \item 结合律：$
+      \left(a \cdot b\right) \cdot c = 
+      a \cdot \left(b \cdot c\right)$
+      \item 存在单位元$e \in A $使得
+      $e \cdot a = a \cdot e = a$
+      \item 分配律：
+      $a\cdot\left(b+c\right)
+      = a\cdot b +a\cdot c,
+      \left(b + c\right)\cdot a 
+      =b \cdot a + c \cdot a$
+      \item 与数乘的相容性：
+      $k\left(a\cdot b\right)=
+      \left(ka\right)\cdot b=
+      a\cdot\left(kb\right)
+      $
+    \end{enumerate}
+    那么称$A$为$\mathbb{K}$上的
+    代数即$\bm{A}$是一个$\mathbb{K}$-代数,单位元$e$称为$A$的恒等元.
+\end{definition}
+\end{formal}
+\begin{brown}
+\begin{example}
+    区间$\left[0,1\right]$上的
+    连续函数全体构成的线性空间
+    $V = C\left[0,1\right]/
+    \mathbb{R}$是
+    $\mathbb{R}$上的代数.
+    乘法定义为
+    \[
+    \left(f\cdot g\right)\left(x
+    \right):=
+    f\left(x\right)\cdot g\left(x
+    \right)
+    \]
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    若$\mathbb{K}_1 \subseteq
+    \mathbb{K}_2$,定义$\mathbb{K}_2$
+    中的乘法是数的乘法,则$\mathbb{K}_2$
+    是$\mathbb{K}_1$-代数.
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设线性空间$M_n\left(
+        \mathbb{K}
+    \right)$,定义乘法为矩阵的乘法,
+    则$M_n\left(\mathbb{K}\right)$
+    是$\mathbb{K}$-代数.
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    \cref{def:线性映射全体}提到$\mathcal{L} \left(V
+    _{\mathbb{K}}
+    \right)$是定义有乘法的,那么它是
+    $\mathbb{K}$的代数.
+\end{example}
+\end{brown}
+\subsection{幂}
+\begin{formal}
+\begin{definition}[线性映射的幂]\label{def:线性映射的幂}
+    设$\bm{\varphi}\in \mathcal{L} \left(
+        V
+    \right),\forall n \in \mathbb{Z}^+$
+    ,定义幂
+    \[
+    \bm{\varphi}^n = \bm{\varphi} \circ\bm{\varphi}\circ\cdots \circ \bm{\varphi}
+    \]
+    且
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item $\bm{\varphi}^n \circ
+        \bm{\varphi}^m = \bm{\varphi} ^{
+            n + m
+        } $
+        \item $ \left(\bm{\varphi}^n\right) ^m
+        = \bm{\varphi}^{nm}$
+        \item $\bm{\varphi}$是自同构时
+        $\bm{\varphi}^{-n}:=
+        \left(\bm{\varphi}^{-1}\right) ^n
+        =\left(\bm{\varphi}^n\right)^{-1}$
+        \item 约定$\bm{\varphi}^0=
+        \bm{1}_V$
+    \end{enumerate}
+\end{definition}
+\end{formal}
+\begin{green}
+\begin{corollary}[不可交换性]\label{cor:不可交换性}
+    对于$\bm{\varphi},\bm{\psi}\in
+    \mathcal{L} \left(V\right)$,一般
+    $\bm{\varphi}\circ \bm{\psi} 
+    \neq \bm{\psi} \circ \bm{\varphi}$
+    ,故
+    \[
+    \left(
+        \bm{\varphi}\circ \bm{\psi}
+    \right)^n = 
+    \bm{\varphi}\circ\bm{\psi}\circ\bm{\varphi}
+    \circ\bm{\psi} \cdots
+    \circ\bm{\varphi}\circ\bm{\psi}
+    \neq
+    \bm{\varphi}^n\circ\bm{\psi}^n
+    \]
+\end{corollary}
+\end{green}
+\begin{green}
+\begin{corollary}[同构保持]\label{cor:同构保持}
+    若$\bm{\varphi},\bm{\psi}
+    \in \mathcal{L} \left(
+        V_{\mathbb{K}}
+    \right)$为自同构,
+    则$\bm{\varphi}\circ\bm{\psi}$
+    是自同构,且$\left(\bm{\varphi \circ\psi}\right)
+    ^{-1}= \bm{\psi}^{-1}\circ\bm{\varphi}^{-1}$.
+    特别地,$\forall k\neq 0 \in \mathbb{K}$,则
+    $k\cdot \bm{\varphi}$为自同构且
+    $\left(k\bm{\varphi}\right)^{-1}=
+    k^{-1}\bm{\varphi}^{-1}.$
+\end{corollary}
+\end{green}
+\begin{red}
+\begin{remark}
+    可以看出线性映射与矩阵有极高相似性.
+\end{remark}
+\end{red}
+\newpage
+\section{线性映射与矩阵}
+\subsection{表示矩阵}
+\begin{red}
+\begin{remark}
+    本节将会是高等代数最重要、最深刻的部分.
+\end{remark}
+\end{red}
+\begin{green}
+\begin{lemma}[线性扩张定理]\label{lemma:线性扩张定理}
+    设数域$\mathbb{K}$上的线性空间
+    $V$、$U$,取定$V$的一组基
+    $\left\{\bm{e}_1,\bm{e}_2,\cdots,
+    \bm{e}_n\right\}$,设$U$中的一组向量
+    $\left\{\bm{\beta}_1,\bm{\beta}_2,\cdots
+    ,\bm{\beta}_n\right\}$,
+    则存在唯一一个线性映射$\bm{\varphi}:
+    V\longrightarrow U$满足
+    \[
+    \bm{\varphi}\left(
+        \bm{e}_i
+    \right)=\bm{\beta}_i\left(
+        \forall
+         1\leqslant i\leqslant n
+    \right)
+    \]
+\end{lemma}
+\begin{Proof}
+首先证明存在性,因为$\bm{\varphi}$在基向量上的取值已确定,
+所以可以扩张到整个空间$V$上.
+
+$\forall \bm{\alpha}\in V$,设$\bm{\alpha}=\lambda_1\bm{e}_1
++\lambda_2\bm{e}_2+\cdots+\lambda_n\bm{e}_n.$定义
+$\bm{\varphi}\left(\bm{\alpha}\right)=
+\lambda_1\bm{\beta}_1
++\lambda_2\bm{\beta}_2+\cdots+
+\lambda_n\bm{\beta}_n
+$.首先$\bm{\varphi}:V\longrightarrow U$
+是一个映射,下面验证这是线性映射.
+
+$\forall \bm{\gamma}\in V$,设$\bm{\gamma}=
+b_1\bm{e}_1+b_2\bm{e}_2+\cdots+b_n\bm{e}_n.$则
+（$\bm{\alpha}$指标变一下）
+\[
+\bm{\alpha}+\bm{\gamma}=
+\left(a_1+b_1\right)
+\bm{e}_1+\left(a_2+b_2\right)
+\bm{e}_2+\cdots+\left(a_n+b_n
+\right)\bm{e}_n
+\]
+于是\begin{align*}
+    \bm{\varphi}
+\left(\bm{\alpha}+\bm{\gamma}\right)&=
+\left(a_1+b_1\right)
+\bm{\beta}_1+\left(a_2+b_2\right)
+\bm{\beta}_2+\cdots+\left(a_n+b_n
+\right)\bm{\beta}_n\\
+&=\bm{\varphi}\left(\bm{\alpha}\right)+\bm{\varphi}\left(\bm{\gamma}\right)
+\end{align*}
+又因为$\forall k\in \mathbb{K}$
+\begin{align*}
+   \bm{\varphi}\left(k\bm{\alpha}\right)
+&=k_1a_1\bm{\beta}_1+k_2a_2\bm{\beta}_2+\cdots+
+k_na_n\bm{\beta}_n
+ \\
+ &=
+ k\bm{\varphi}\left(\bm{\alpha}\right)
+\end{align*}
+故保持线性组合.因此是线性组合,存在性证毕.
+
+下面证明唯一性.
+
+设$\bm{\psi}$也满足$\bm{\psi}\left(\bm{e}_i\right)=\bm{\beta}_i$
+.
+因为$\forall \bm{\alpha}\in V$
+\begin{align*}
+\bm{\psi}\left(\bm{\alpha}\right)&=\lambda_1\bm{\psi}\left(\bm{e}_1\right)+\lambda_2\bm{\psi}\left(\bm{e}_2\right)+\cdots+
+\lambda_n\bm{\psi}\left(\bm{e}_n\right)\\
+&=\lambda_1\bm{\beta}_1+\lambda_2\bm{\beta}_2+\cdots+\lambda_n\bm{\beta}_n\\
+&=\bm{\varphi}\left(\bm{\alpha}\right)
+\end{align*}
+故$\bm{\psi}=\bm{\varphi}.$
+\end{Proof}
+\end{green}
+\begin{formal}
+\begin{definition}[表示矩阵]\label{def:表示矩阵}
+    设线性空间$V,U$,线性映射$\bm{\varphi}:
+    V\longrightarrow U$,取定$V$的一组基为
+    $\left\{\bm{e}_1,\bm{e}_2,\cdots,
+    \bm{e}_n\right\}$,取定$U$的一组基为
+    $\left\{\bm{f}_1,\bm{f}_2,\cdots,
+    \bm{f}_n\right\}$,设
+    \begin{align*}
+    &\begin{cases*}
+        \bm{\varphi}\left(\bm{e}_1
+        \right) = a_{11}\bm{f}_1+a_{21}\bm{f}_2
+        +\cdots+a_{m1}\bm{f}_m\\
+        \bm{\varphi}\left(\bm{e}_2
+        \right) = a_{12}\bm{f}_1+a_{22}\bm{f}_2
+        +\cdots+a_{m2}\bm{f}_m\\
+        \qquad\qquad\cdots\cdots\cdots
+        \cdots\cdots\cdots\\
+        \bm{\varphi}\left(\bm{e}_n
+        \right) = a_{1n}\bm{f}_1+a_{2n}\bm{f}_2
+        +\cdots+a_{mn}\bm{f}_m
+    \end{cases*}\\
+    \Longleftrightarrow & 
+    \left(\bm{\varphi}\left(\bm{e}_1
+    \right),\bm{\varphi}\left(\bm{e}_2\right),\cdots,\bm{\varphi}\left(
+        \bm{e}_n
+    \right)\right)=
+    \left(
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m
+    \right)\bm{A}^{m \times n}
+\end{align*}
+    称
+    \[
+    \bm{A}=\begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n}\\
+        a_{21} & a_{22} & \cdots & a_{2n}\\
+        \vdots & \vdots &  & \vdots\\
+        a_{m1} & a_{m2} & \cdots & a_{mn}
+    \end{bmatrix}
+    \]
+    为$\bm{\varphi}$在给定基下的表示矩阵.
+\end{definition}
+\end{formal}
+\begin{green}
+\begin{corollary}[坐标向量的关系]\label{cor:坐标向量的关系}
+    在\cref{def:表示矩阵}的基础上,我们考虑两个空间中
+    原像与像的坐标向量的关系
+    取$\bm{\alpha}=\lambda_1\bm{e}_1+\lambda_2\bm{e}_2
+    +
+    \cdots+\lambda_n\bm{e}_n \in V$,$
+    \left(\lambda_1,\lambda_2,\cdots,\lambda_n
+    \right)^{\prime}\in \mathbb{K}^n$,故$\bm{\varphi}\left(
+        \bm{\alpha}
+    \right)=\mu_1\bm{f}_1+\mu_2\bm{f}_2+
+    \cdots+
+    \mu_m\bm{f}_m\in U$,$\left(
+        \mu_1,\mu_2,\cdots,\mu_m
+    \right)^{\prime}\in \mathbb{K}^m$,那么有
+    \[
+    \begin{pmatrix}
+        \mu_1\\
+        \mu_2\\
+        \vdots\\
+        \mu_m
+    \end{pmatrix}
+    =\bm{A}\begin{pmatrix}
+        \lambda_1\\
+        \lambda_2\\
+        \vdots\\
+        \lambda_n
+    \end{pmatrix}
+    \]
+\end{corollary}
+\end{green}
+\begin{red}
+\begin{remark}
+    过渡矩阵与表示矩阵的区别：
+
+    本质上说,过渡矩阵描述的是同一线性空间选取的不同基之间的关系,
+    表示矩阵描述的是两个线性空间之间的线性映射在给定基下
+    的关系.
+
+    形式上说,过渡矩阵一定是方阵,表示矩阵则不一定是方阵.
+\end{remark}
+\end{red}
+\subsection{矩阵与线性映射}
+\begin{formal}
+\begin{definition}[线性映射与矩阵]\label{def:线性映射与矩阵}
+    经过上述定义,我们得到一个映射
+    \begin{align*}
+    \bm{T}:
+    \mathcal{L}\left(
+        V^n,U^m
+    \right) &\longrightarrow
+    M_{m\times n}\left(\mathbb{K}
+    \right)\\
+    \bm{\varphi} &\longmapsto
+    \bm{A}
+    \end{align*}
+    即该映射$\bm{T}$将两个给定线性空间$V$、$U$
+    之间
+    任一线性映射$\bm{\varphi}$
+    映射为它在这两个给定
+    线性空间在给定基下的表示矩阵.这是一个双射.
+\end{definition}
+\begin{Proof}
+先证明满性,$\forall \bm{A}=\left(a_{ij}\right)_{m\times n}\in M_{m\times n}\left(\mathbb{K}
+\right)$.根据线性扩张定理,只需要考虑基向量上的取值即可
+\[
+\begin{cases*}
+        \bm{\varphi}\left(\bm{e}_1
+        \right) = a_{11}\bm{f}_1+a_{21}\bm{f}_2
+        +\cdots+a_{m1}\bm{f}_m\\
+        \bm{\varphi}\left(\bm{e}_2
+        \right) = a_{12}\bm{f}_1+a_{22}\bm{f}_2
+        +\cdots+a_{m2}\bm{f}_m\\
+        \qquad\qquad\cdots\cdots\cdots
+        \cdots\cdots\cdots\\
+        \bm{\varphi}\left(\bm{e}_n
+        \right) = a_{1n}\bm{f}_1+a_{2n}\bm{f}_2
+        +\cdots+a_{mn}\bm{f}_m
+    \end{cases*}
+\]
+由线性扩张定理知,上述定义可扩张为$\bm{\varphi}:V\longrightarrow U$,
+且表示矩阵为$\bm{A}$.满性证毕.
+
+再来考虑单性.设$\bm{\varphi}$、$\bm{\psi}\in \mathcal{L}\left(V,U\right)$
+且二者表示矩阵均为$\bm{A}$,故二者在基向量上的取值相同,
+由线性扩张定理知二者相同.单性证毕.
+\end{Proof}
+\end{formal}
+\begin{red}
+\begin{remark}
+    首先说明一下记号.设$\mathbb{K}$上的线性空间$
+    V^n$和$U^m$,分别取定$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$和$\left\{
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m
+    \right\}$为基.定义坐标向量的线性同构
+    为
+    \begin{align*}
+     &   \bm{\eta}_V:V^n\longrightarrow \mathbb{K}^n\\
+      &  \bm{\eta}_U:U^m\longrightarrow \mathbb{K}^m
+    \end{align*}
+    设线性映射$\bm{\varphi}\in \mathcal{L}\left(
+        V,U
+    \right)$在给定基下的表示矩阵$\bm{A}\in M_{m \times n}\left(\mathbb{K}
+    \right)$,记线性映射
+    \begin{align*}
+        \bm{\varphi}_{\bm{A}}:
+        \mathbb{K}^n &\longrightarrow
+        \mathbb{K}^m\\
+        \bm{x} &\longmapsto
+        \bm{Ax}
+    \end{align*}
+\end{remark}
+\end{red}
+\begin{formal}
+\begin{theorem}[矩阵与线性映射及交换图]\label{thm:矩阵与线性映射及交换图}
+    对于上述定义的映射$\bm{T}:
+    \mathcal{L}\left(V,U\right)
+    \longrightarrow
+    M_{m \times n}\left(\mathbb{K}\right)$
+    有
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item 该映射为线性同构.
+        \item $\forall \bm{\varphi}\in \mathcal{L}\left(
+            V,U
+        \right),\bm{A} = \bm{T}
+        \left(\bm{\varphi}\right)$
+        \item $\bm{\eta}_U \circ \bm{\varphi} = 
+        \bm{\varphi}_{\bm{A}}\circ \bm{\eta}_V$
+        即交换图
+        \[
+        \begin{tikzcd}
+V^n \arrow[rr, "\bm{\varphi}"] \arrow[dd, "\bm{\eta}_V"] \arrow[rrdd, bend left, shift right] &  & U^m \arrow[dd, "\bm{\eta}_U"] \\
+                                                                                    &  &                          \\
+\mathbb{K}^n \arrow[rr, "\bm{\varphi}_{\bm{A}}"]                                              &  & \mathbb{K}^m            
+\end{tikzcd}
+        \]
+    \end{enumerate}
+\end{theorem}
+\begin{Proof}
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item 设$\bm{\varphi}$、$\bm{\psi}\in \mathcal{L}\left(V,U
+        \right)$,$\bm{T}\left(\bm{\varphi}\right)=\bm{A}=\left(a_{ij}\right)_{m\times n}$,
+        $\bm{T}\left(\bm{\psi}\right)=\bm{B}=\left(
+            b_{ij}
+        \right)_{m\times n}$即
+        \[
+        \bm{\varphi}\left(\bm{e}_j\right)=
+        \sum_{i=1}^{m}a_{ij}\bm{f}_i,
+        \bm{\psi}\left(\bm{e}_j\right)=
+        \sum_{i=1}^{m}b_{ij}\bm{f}_i
+        \]
+
+        因为$\forall 1\leqslant j\leqslant n$,
+        $\left(\bm{\varphi}+\bm{\psi}\right)\left(\bm{e}_j\right)=
+        \bm{\varphi}\left(
+            \bm{e}_j
+        \right)+\bm{\psi}\left(
+            \bm{e}_j
+        \right)$,故
+        $\bm{T}\left(
+            \bm{\varphi}+\bm{\psi}
+        \right)=\bm{A}+\bm{B}=
+        \bm{T}\left(\bm{\varphi}\right)
+        +\bm{T}\left(\bm{\psi}\right)$.
+        
+        $\forall k\in \mathbb{K}$,
+        $\left(k\cdot \bm{\varphi}\right)\left(\bm{e}_j\right)=
+        k\bm{\varphi}\left(\bm{e}_j\right)$,故
+        $\bm{T}\left(k\bm{\varphi}\right)=k\bm{A}=
+        k\bm{T}\left(\bm{\varphi}\right)$.
+
+        \item \[
+        \begin{tikzcd}
+\forall \bm{\alpha} \in V \arrow[rrr, "\bm{\varphi}"] \arrow[ddd, "\bm{\eta}_V"]                                             &  &  & \bm{\varphi}\left(\bm{\alpha}\right)\in U \arrow[ddd, "\bm{\eta}_U"]                                                                                         \\
+                                                                                                              &  &  &                                                                                                                                               \\
+                                                                                                              &  &  &                                                                                                                                               \\
+\begin{pmatrix}\lambda_1\\\lambda_2\\\vdots\\\lambda_n\end{pmatrix} \in \mathbb{K}^n \arrow[rrr, "\bm{\varphi}_A"] &  &  & \bm{A}\begin{pmatrix}\lambda_1\\\lambda_2\\\vdots\\\lambda_n\end{pmatrix}=\begin{pmatrix}\mu_1\\\mu_2\\\vdots\\\mu_n\end{pmatrix} \in \mathbb{K}^m
+\end{tikzcd}
+\qedhere
+    \]
+    \end{enumerate}
+\end{Proof}
+\end{formal}
+\begin{red}
+\begin{remark}
+    该定理联系起了抽象与具体、几何与代数.该交换图
+    也体现了高等代数这门学科的深刻内涵.
+\end{remark}
+\end{red}
+
+\subsection{线性变换}
+\begin{formal}
+\begin{definition}[线性变换的表示矩阵]\label{def:线性变换的表示矩阵}
+    特别地,我们考虑线性变换
+$\bm{\varphi}\in \mathcal{L}\left(
+    V^n_{\mathbb{K}}
+\right)$,在给定的基$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+\right\}$下有
+\begin{align*}
+    &
+\begin{cases*}
+\bm{\varphi}\left(\bm{e}_1
+        \right) = a_{11}\bm{e}_1+
+        a_{21}\bm{e}_2
+        +\cdots+a_{n1}\bm{e}_n\\
+        \bm{\varphi}\left(\bm{e}_2
+        \right) = a_{12}\bm{e}_1+a_{22
+        }\bm{e}_2
+        +\cdots+a_{n2}\bm{e}_n\\
+        \qquad\qquad\cdots\cdots\cdots
+        \cdots\cdots\cdots\\
+        \bm{\varphi}\left(\bm{e}_n
+        \right) = a_{1n}\bm{e}_1
+        +a_{2n}\bm{e}_2
+        +\cdots+a_{nn}\bm{e}_n
+\end{cases*}\\
+\Longleftrightarrow &
+\left(\bm{\varphi}\left(\bm{e}_1\right), \bm{\varphi}\left(\bm{e}_2\right),
+\cdots,\bm{\varphi}\left(
+    \bm{e}_n
+\right)\right)
+=
+\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right)
+\bm{A}
+\end{align*}
+那么
+\[
+\bm{A}=\begin{pmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots &  & \vdots\\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{pmatrix}\in M_n\left(
+    \mathbb{K}
+\right)
+\]
+为线性变换$\bm{\varphi}$在给定基下的表示矩阵.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[线性变换与表示矩阵]\label{thm:线性变换与表示矩阵}
+    容易有
+\begin{align*}
+    \bm{T}:\mathcal{L}\left(V\right)
+    &\longrightarrow M_{n}\left(\mathbb{K}
+    \right)
+    \\
+    \bm{\varphi}&\longmapsto
+    \bm{A}
+\end{align*}
+仍然是一个线性同构.
+\end{theorem}
+\end{formal}
+\subsection{矩阵复合的意义}
+\begin{formal}
+\begin{theorem}[矩阵乘法的几何意义]\label{thm:矩阵乘法的几何意义}
+    设$\mathbb{K}$上线性空间间的
+    线性映射
+    $\bm{\varphi}:V^n\longrightarrow
+    U^m \in \mathcal{L}\left(
+        V,U
+    \right),\bm{\psi}:U^m\longrightarrow
+    W^p
+    \in \mathcal{L}\left(U,W\right)$,则$\bm{\psi}\circ \bm{\varphi}
+    :V^n\longrightarrow W^p \in 
+    \mathcal{L}\left(V,W\right)$
+    也是线性映射且
+    \[
+    \bm{T}\left(\bm{\psi\circ\varphi}\right)
+    =\bm{T}\left(\bm{\psi}\right)\cdot
+    \bm{T}\left(\bm{\varphi}\right)
+    \]
+    也就是说,
+    矩阵乘法的几何意义是
+    线性映射的复合.
+\end{theorem}
+\begin{Proof}
+设$V$的一组基为$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+\right\}$,$U$的一组基为
+$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m
+\right\}$,
+$W$的一组基为$\left\{
+    \bm{g}_1,\bm{g}_2,\cdots,\bm{g}_p
+\right\}$.$\bm{T}\left(\bm{\varphi}\right)=\bm{A}=
+\left(a_{ij}\right)_{m\times n}$,
+$\bm{T}\left(\bm{\psi}\right)=\bm{B}=\left(b_{ij}\right)_{n\times
+ p}$.只要证：$\bm{T}\left(\bm{\psi}\circ
+ \bm{\varphi}\right)=\bm{BA}$即
+ 可.
+
+ 因为$\displaystyle 
+ \forall 1\leqslant j\leqslant n,
+ \bm{\varphi}\left(\bm{e}_j\right)=
+ \sum_{i=1}^{m}a_{ij}\bm{f}_i$,故
+ \begin{align*}
+    \bm{\psi}\left(\bm{\varphi}\left(\bm{e}_j\right)\right)
+    =\bm{\psi}\left(\sum_{i=1}^{m}a_{ij}\bm{f}
+    _i\right)=\sum_{i=1}^{m}a_{ij}\bm{\psi}\left(
+        \bm{f}_i
+    \right)
+ \end{align*}
+ 即
+ \[
+ \left(\bm{\psi}\left(\bm{\varphi}\left(\bm{e}_1\right)\right),
+ \bm{\psi}\left(\bm{\varphi}\left(\bm{e}_2\right)\right),
+ \cdots,\bm{\psi}\left(\bm{\varphi}\left(
+    \bm{e}_n
+ \right)\right)\right)=
+\left(
+    \bm{\psi}\left(\bm{f}_1\right),\bm{\psi}\left(\bm{f}_2\right),\cdots,
+    \bm{\psi}\left(\bm{f}_m\right)
+\right)\bm{A}
+ \]
+ 又因为
+ \[
+ \left(
+    \bm{\psi}\left(\bm{f}_1\right),\bm{\psi}\left(\bm{f}_2\right),\cdots,
+    \bm{\psi}\left(\bm{f}_m\right)
+\right)=\left(\bm{g}_1,\bm{g}_2,\cdots,\bm{g}_p\right)\bm{B}
+ \]
+ 故有
+ \[
+ \left(\bm{\psi}\left(\bm{\varphi}\left(\bm{e}_1\right)\right),
+ \bm{\psi}\left(\bm{\varphi}\left(\bm{e}_2\right)\right),
+ \cdots,\bm{\psi}\left(\bm{\varphi}\left(
+    \bm{e}_n
+ \right)\right)\right)=
+ \left(\bm{g}_1,\bm{g}_2,\cdots,\bm{g}_p\right)\bm{B}
+ \bm{A}
+ \]
+于是$\bm{T}\left(\bm{\psi}\circ \bm{\varphi}\right)=\bm{BA}=\bm{T}\left(\bm{\psi}\right)\cdot\bm{T}\left(\bm{\varphi}\right)$.
+
+证毕.
+\end{Proof}
+\end{formal}
+\begin{red}
+\begin{remark}
+    矩阵乘法的几何意义是
+    线性映射的复合.
+\end{remark}
+\end{red}
+\begin{green}
+\begin{corollary}[代数]\label{cor:代数}
+    $\bm{T}:\mathcal{L}\left(V\right)
+    \longrightarrow M_n\left(\mathbb{K}
+    \right)$是线性同构,且$\forall
+    \bm{\varphi},\bm{\psi}\in \mathcal{L}\left(
+        V
+    \right)$
+    \[
+    \bm{T}\left(\bm{\varphi}\circ \bm{\psi}
+    \right)=
+    \bm{T}\left(\bm{\varphi}\right)
+    \cdot \bm{T}\left(\bm{\psi}\right)
+    \]
+    即保持乘法,则$\bm{T}$是一个$\mathbb{K}
+    $-代数同构.
+\end{corollary}
+\end{green}
+\begin{green}
+\begin{corollary}[对该代数同构的刻画]\label{cor:对该代数同构的刻画}
+    对于上述同构$\bm{T}$,有
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item $\bm{T}\left(
+            \bm{I}_V
+        \right)=\bm{I}_n$
+        \item $\bm{\varphi}$为$V$上的自同构
+        $\Longleftrightarrow \bm{T}\left(
+            \bm{\varphi}
+        \right)$可逆且此时有
+        \[
+        \bm{T}\left(\bm{\varphi}^{-1}
+        \right)=
+        \bm{T}\left(\bm{\varphi
+        }\right)^{-1}
+        \]
+    \end{enumerate}
+\end{corollary}
+\begin{Proof}
+$(1)$显然的,考虑基向量即可.
+
+$(2)$先证必要性.
+
+设自同构$\bm{\varphi}$,$\bm{I}_V=\bm{\varphi}\bm{\varphi}^{-1}=
+\bm{\varphi}^{-1}\bm{\varphi}.$同时作用$\bm{T}$即可.
+
+考虑充分性,设$\bm{T}\left(\bm{\varphi}\right)$可逆即
+$\bm{T}\left(\bm{\varphi}\right)^{-1}$存在.由于
+$\bm{T}$为双射,故存在$\bm{\psi}$使得$\bm{T}\left(\bm{\psi}\right)=
+\bm{T}\left(\bm{\varphi}\right)^{-1}$,复合即得.
+\end{Proof}
+\end{green}
+\subsection{不同基下的表示矩阵}
+\begin{formal}
+\begin{theorem}[不同基下的表示矩阵]\label{thm:不同基下的表示矩阵}
+    设$\bm{\varphi}\in \mathcal{L}\left(
+        V
+    \right)$,$V$是$\mathbb{K}$上的
+    $n$维线性空间,取两组基$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$、$
+    \left\{
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+    \right\}$,
+    两组基的过渡矩阵为
+    $\bm{P}$,$\bm{\varphi}$在两组基下的表示矩阵
+    分别为
+    $\bm{A}$、$\bm{B}$,则
+    \[
+    \bm{B}=\bm{P}^{-1}\bm{AP}
+    \]
+\end{theorem}
+\begin{Proof}
+因为
+\[
+\left(\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right)
+=\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right)
+\bm{P}
+\]
+\[
+\left(
+    \bm{\varphi}\left(\bm{e}_1\right),
+    \bm{\varphi}\left(\bm{e}_2\right),\cdots,
+    \bm{\varphi}\left(\bm{e}_n\right)
+\right)=
+\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right)\bm{A}
+\]
+\[
+\left(
+    \bm{\varphi}\left(\bm{f}_1\right),
+    \bm{\varphi}\left(\bm{f}_2\right),\cdots,
+    \bm{\varphi}\left(\bm{f}_n\right)
+\right)=
+\left(\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right)\bm{B}
+\]
+对第一个式子等式两边同时作用$\bm{\varphi}$得
+\begin{align*}
+   \left(
+    \bm{\varphi}\left(\bm{f}_1\right),
+    \bm{\varphi}\left(\bm{f}_2\right),\cdots,
+    \bm{\varphi}\left(\bm{f}_n\right)
+\right)&=
+\left(\bm{\varphi}\left(\bm{e}_1\right)
+,\bm{\varphi}\left(\bm{e}_2\right)
+,\cdots,\bm{\varphi}\left(\bm{e}_n\right)
+\right)\bm{P} \\
+&=\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right)
+\bm{AP}
+\end{align*}
+同时
+\begin{align*}
+    \left(
+    \bm{\varphi}\left(\bm{f}_1\right),
+    \bm{\varphi}\left(\bm{f}_2\right),\cdots,
+    \bm{\varphi}\left(\bm{f}_n\right)
+\right)&=\left(\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right)
+\bm{B}\\
+&=\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right)
+\bm{PB}\qedhere
+\end{align*}
+\end{Proof}
+\end{formal}
+\begin{formal}
+\begin{definition}[相似]\label{def:相似}
+    设矩阵$\bm{A}$、$\bm{B}\in M_n\left(
+        \mathbb{K}
+    \right)$,若存在非异阵$\bm{P}\in M_n\left(
+        \mathbb{K}
+    \right)$使得
+    \[
+    \bm{B}=\bm{P}^{-1}\bm{AP}
+    \]
+    那么称$\bm{A}$与$\bm{B}$相似,记作
+    $\bm{A}\thickapprox \bm{B}$
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{theorem}[相似关系]\label{thm:相似关系}
+    相似关系是一种等价关系.
+\end{theorem}
+\end{formal}
+\newpage
+\section{线性映射的像与核}
+\begin{red}
+\begin{remark}
+    总设线性映射$\bm{\varphi}:V_{\mathbb{K}}^n\longrightarrow U_{\mathbb{K}}^m \in 
+\mathcal{L}\left(V,U\right)$.
+\end{remark}
+\end{red}
+\subsection{像空间与核空间}
+\begin{formal}
+\begin{definition}[像集与核集]\label{def:像集与核集}
+    线性映射的像集定义为
+    \[
+    \mathrm{Im}\, \bm{\varphi}=\left\{
+        \bm{\varphi}\left(\bm{v}\right)\mid
+        \bm{v} \in V
+    \right\}\subseteq U
+    \]
+    核集定义为
+    \[
+    \mathrm{Ker}\,\bm{\varphi}=
+    \left\{\bm{v}\in V \mid \bm{\varphi}\left(\bm{v}\right)=\bm{0}_{U}\right\}\subseteq V
+    \]
+
+    二者都显然非空.
+\end{definition}
+\end{formal}
+\begin{green}
+\begin{lemma}[像集与核集的子空间性]\label{lemma:像集与核集的子空间性}
+    线性映射$\bm{\varphi}$在上述定义下的像集
+    $\mathrm{Im}\,\bm{\varphi}$是$U$的子空间
+    ,称为像空间；
+    核集$\mathrm{Ker}\,\bm{\varphi}$是$V$的子空间,称为核空间.
+\end{lemma}
+\begin{Proof}
+任取$\bm{\varphi}\left(\bm{v}\right)$、$\bm{\varphi}\left(\bm{u}\right)\in \mathrm{Im}\,\bm{\varphi}$,
+$\bm{v}$、$\bm{u}\in V.$于是
+$\bm{\varphi}\left(\bm{v}\right)+\bm{\varphi}\left(\bm{u}\right)=\bm{\varphi}\left(
+    \bm{v}+\bm{u}
+\right)\in \mathrm{Im}\,\bm{\varphi}$.$\forall k\in \mathbb{K}$,
+则$k\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(k\bm{v}\right)\in\mathrm{Im}\,\bm{\varphi}.
+$
+
+任取$\bm{\varphi}\left(\bm{v}\right)$、$\bm{\varphi}\left(\bm{u}\right)\in \mathrm{Ker}\,\bm{\varphi}$,
+即$\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(\bm{u}\right)=\bm{0}$.
+则$\bm{\varphi}\left(
+    \bm{v}+\bm{u}
+\right)=\bm{\varphi}\left(\bm{v}\right)+\bm{\varphi}\left(
+    \bm{u}
+\right)=\bm{0}\Longrightarrow
+\bm{v}+\bm{u}\in \mathrm{Ker}\,\bm{\varphi}.$
+$\forall k\in\mathbb{K}$,$\bm{\varphi}\left(
+    k\bm{v}
+\right)=k\bm{\varphi}\left(
+    \bm{v}
+\right)=\bm{0}\Longrightarrow
+k\bm{v}\in \mathrm{Ker}\,\bm{\varphi}.
+$
+\end{Proof}
+\end{green}
+\begin{red}
+\begin{remark}
+    一般也称核空间为零空间,记作$\mathrm{Null}\,\left(\bm{T}\left(\bm{\varphi}\right)\right)$.
+\end{remark}
+\end{red}
+\begin{formal}
+\begin{proposition}[像空间和核空间对映射的刻画]\label{prop:像空间和核空间对映射的刻画}
+    \[
+    \begin{cases*}
+    \bm{\varphi}\text{为满射}\Longleftrightarrow \dim \mathrm{Im}\,\bm{\varphi}=\dim U\Longleftrightarrow \mathrm{Im}\,\bm{\varphi}
+    \text{是}U\text{的全子空间}\\
+    \bm{\varphi}\text{为单射}\Longleftrightarrow \mathrm{Ker}\,\bm{\varphi}=0\Longleftrightarrow
+    \dim \mathrm{Ker}\,\bm{\varphi}=0\Longleftrightarrow \mathrm{Ker}\,\bm{\varphi}\text{是}
+    V\text{的零子空间}
+    \end{cases*}\]
+\end{proposition}
+\begin{Proof}
+因为$\bm{\varphi}$满射等价于$U=\mathrm{Im}\,\bm{\varphi}$,
+也等价于$\dim\,U=\dim\,\mathrm{Im}\,\bm{\varphi}$（因为子空间）,
+则为全子空间.
+
+一方面,设$\bm{\varphi}$为单射,任取$\bm{v}\in \mathrm{Ker}\,\bm{\varphi}$,
+即$\bm{\varphi}\left(\bm{v}\right)=\bm{0}_U=
+\bm{\varphi}\left(\bm{0}_V\right)$,则$\bm{v}=\bm{0}$,
+即$\mathrm{Ker}\,\bm{\varphi}=0.$
+
+另一方面,
+设$\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(\bm{u}\right)$,
+$\bm{v}$、$\bm{u}\in V.$移项即有
+$\bm{\varphi}\left(\bm{v}-\bm{u}\right)=
+\bm{0}$即
+$\bm{v}-\bm{u}\in \mathrm{Ker}\,\bm{\varphi}.$故
+$\bm{v}-\bm{u}=\bm{0}$即$\bm{v}=\bm{u}.$
+
+证毕.
+\end{Proof}
+\end{formal}
+\begin{formal}
+\begin{definition}[秩和零度]\label{def:秩和零度}
+    定义$\bm{\varphi}$的秩为$\mathrm{r}\left(\bm{\varphi}\right)=
+    \mathrm{rank}\left(\bm{\varphi}
+    \right)=\dim \mathrm{Im}\,\bm{\varphi}$,零度（或者叫零化度）
+    为$\dim \mathrm{Ker}\,\bm{\varphi}.$
+\end{definition}
+\end{formal}
+\begin{green}
+\begin{lemma}[幂的像空间与核空间]\label{lemma:幂的像空间与核空间}
+    像空间和核空间各自与$V$有如下关系
+    \begin{align*}
+        &V\supseteq \mathrm{Im}\,\bm{\varphi}\supseteq \mathrm{Im}\,\bm{\varphi}^2\supseteq \cdots\\
+        &\mathrm{Ker}\,\bm{\varphi}\subseteq \mathrm{Ker}\,\bm{\varphi}^2\subseteq \cdots\subseteq V
+    \end{align*}
+\end{lemma}
+\begin{Proof}
+只需注意到$\bm{\varphi}^2\left(\bm{v}\right)=\bm{\varphi}\left(\bm{\varphi}\left(\bm{v}\right)\right)\in \mathrm{Im}\,\bm{\varphi},
+\bm{\varphi}^2\left(\bm{v}\right)=\bm{\varphi}\left(\bm{\varphi}\left(\bm{v}\right)\right)=\bm{\varphi}\left(\bm{0}\right)=\bm{0}.$
+\end{Proof}
+\end{green}
+\subsection{限制}
+\begin{formal}
+\begin{definition}[限制]\label{def:限制}
+    设线性映射$\bm{\varphi}:V\longrightarrow U$,且
+    $V'$为$V$的子空间,$U'$为$U$的子空间,满足
+    \[
+    \bm{\varphi}\left(V'\right)\subseteq U'
+    \]
+    则一定可以通过限制定义域得到与$\bm{\varphi}$
+    具有相同映射法则的线性映射
+    \[
+    \bm{\varphi}':V'\longrightarrow U'
+    \]
+    称为$\bm{\varphi}$在$V'$上的一个限制.
+\end{definition}
+\end{formal}
+\begin{green}
+    \begin{lemma}[限制单射的继承]\label{lemma:限制单射的继承}
+        若$\bm{\varphi}$为单射,则其限制
+        $\bm{\varphi}'$也是单射.
+    \end{lemma}
+    \begin{Proof}
+    定义\begin{align*}
+        \bm{\varphi}':V'&\longrightarrow U'\\
+        \bm{v}'&\longmapsto \bm{\varphi}\left(\bm{v}'\right)
+    \end{align*}
+    与$\bm{\varphi}$有
+    相同的映
+    射法则.
+
+    任取$\bm{v}'_1,\bm{v}'_2\in V',k\in \mathbb{K}$,则
+    \begin{align*}
+        \bm{\varphi}'\left(\bm{v}'_1+\bm{v}'_2\right)&=\bm{\varphi}\left(\bm{v}_1'\right)+\bm{\varphi}\left(\bm{v}'_2\right)\\
+&=\bm{\varphi}'\left(\bm{v}'_1\right)+\bm{\varphi}'\left(\bm{v}_2'\right)
+    \end{align*}
+    且
+    \begin{align*}
+        \bm{\varphi}'\left(k\bm{v}_1'\right)=\bm{\varphi}\left(k\bm{v}_1'\right)=k\bm{\varphi}'\left(\bm{v}_1'\right)
+    \end{align*}
+    因此$\bm{\varphi}'$是一个线性映射.
+
+    设$\bm{\varphi}$是单射则
+    $\mathrm{Ker}\,\bm{\varphi}=0.$因为
+\begin{align*}
+    \mathrm{Ker}\,\bm{\varphi}'&=\left\{\bm{v}'\in V'\mid\bm{\varphi}'\left(\bm{v}'\right)=\bm{0}\right\}\\
+    &=\left\{\bm{v}'\in V'\mid\bm{\varphi}\left(\bm{v}'\right)=\bm{0}\right\}\\
+    &=\mathrm{Ker}\,\bm{\varphi}\cap V'=0
+\end{align*}
+因此$\bm{\varphi}'$为单射.
+    \end{Proof}
+\end{green}
+\begin{brown}
+\begin{example}
+    一个简单的例子是考虑$V=\mathbb{R}^2$,定义映射
+    $\bm{\varphi}$为绕原点逆时针旋转$\theta$角,那么
+    \[
+    \left(\bm{\varphi}\left(\bm{e}_1\right),\bm{\varphi}\left(\bm{e}
+    _2\right)\right)=\left(\bm{e}_1,\bm{e}_2\right)\begin{bmatrix}
+        \cos \theta & -\sin \theta\\
+        \sin \theta & \cos\theta
+    \end{bmatrix}
+    \]
+    那么考虑$V'$为$x$轴,$U'$为$\theta$角轴,
+    显然$\bm{\varphi}\left(V'\right)\subseteq U'$,于是得到限制
+    \[
+    \bm{\varphi}'\Big |_{V'}:V'\longrightarrow U'
+    \]
+    容易证明它是双射.
+\end{example}
+\end{brown}
+\subsection{线性映射与矩阵}
+\begin{formal}
+\begin{theorem}[像空间与核空间的维数]\label{thm:像空间与核空间的维数}
+    设线性映射
+    $\bm{\varphi}:V^n\longrightarrow U^m $,设$V$的一组基为
+    $\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$,
+    $U$的一组基为$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m
+    \right\}$,设$\bm{\varphi}$在给定基下的表示矩阵
+    $\bm{A}\in M_{m\times n}\left(\mathbb{K}
+    \right)$,则有
+    \[
+    \dim \mathrm{Im}\,\bm{\varphi}=\mathrm{r}\left(\bm{A}\right)
+    ,
+    \dim \mathrm{Ker}\,\bm{\varphi}=n-\mathrm{r}\left(\bm{A}\right)
+    \]
+    第二个式子也叫作秩-零化度定理,它表明任何矩阵的秩
+    与其零化度之和等于这个矩阵的列向量个数.
+\end{theorem}
+\begin{Proof}
+首先给出交换图
+ \[
+        \begin{tikzcd}
+V^n \arrow[rr, "\bm{\varphi}"] \arrow[dd, "\bm{\eta}_V"] \arrow[rrdd, bend left, shift right] &  & U^m \arrow[dd, "\bm{\eta}_U"] \\
+                                                                                    &  &                          \\
+\mathbb{K}^n \arrow[rr, "\bm{\varphi}_{\bm{A}}"]                                              &  & \mathbb{K}^m            
+\end{tikzcd}
+\qquad
+\bm{\eta}_U\circ \bm{\varphi}=\bm{\varphi}_{\bm{A}}\circ \bm{\eta}_V
+\]
+
+总的来说,需要证明
+\[
+\mathrm{Ker}\,\bm{\varphi}\cong \mathrm{Ker}\,\bm{\varphi}_{\bm{A}},
+\mathrm{Im}\,\bm{\varphi}\cong \mathrm{Im}\,\bm{\varphi}_{\bm{A}}
+\]
+
+即构造线性映射并证明是线性同构.
+
+第一步,证明：
+\[
+\bm{\eta}_V\left(\mathrm{Ker}\,\bm{\varphi}
+\right)\subseteq \mathrm{Ker}\,\bm{\varphi}_{\bm{A}},
+\bm{\eta}_U\left(\mathrm{Im}\,\bm{\varphi}
+\right)\subseteq \mathrm{Im}\,\bm{\varphi}_{\bm{A}}
+\]
+
+一方面,证明$\bm{\eta}_V\left(\mathrm{Ker}\,\bm{\varphi}
+\right)\subseteq \mathrm{Ker}\,\bm{\varphi}_{\bm{A}}$
+.任取$\bm{v}\in \mathrm{Ker}\,\bm{\varphi}$,
+要证$\bm{\eta}_V\left(
+    \mathrm{Ker}\,\bm{\varphi}
+\right)\in \mathrm{Ker}\,\bm{\varphi}
+_{\bm{A}}$.因为$\bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)=
+\bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=\bm{\varphi}_U\left(\bm{0}\right)=\bm{0}.$
+得证.另一方面,证明
+$\bm{\eta}_U\left(\mathrm{Im}\,\bm{\varphi}
+\right)\subseteq \mathrm{Im}\,\bm{\varphi}_{\bm{A}}
+$,
+任取$\bm{\varphi}\left(\bm{v}\right)\in \mathrm{Im}\,\bm{\varphi},
+\bm{v}\in V$,要证$ \bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)\in \mathrm{Im}\,\bm{\varphi}_{\bm{A}}.
+$因为$\bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=
+\bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)\in \mathrm{Im}\,\bm{\varphi}_{\bm{A}}
+.$得证.
+
+第二步,做限制.
+\begin{align*}
+    &\bm{\eta}_V:\mathrm{Ker}\,\bm{\varphi}\longrightarrow \mathrm{Ker}\,\bm{\varphi}_{\bm{A}}\\
+    &\bm{\eta}_U:\mathrm{Im}\,\bm{\varphi}\longrightarrow \mathrm{Im}\,\bm{\varphi}_{\bm{A}}
+\end{align*}
+都是单的线性映射.再证满性即可证明同构.
+
+先证$\bm{\eta}_V:\mathrm{Ker}\,\bm{\varphi}\longrightarrow \mathrm{Ker}\,
+\bm{\varphi}_{\bm{A}}$是满的.任取$\bm{x}\in \mathrm{Ker}\,\bm{\varphi}_{\bm{A}}$
+,即$\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)=\bm{0}$.因为
+$\mathrm{Ker}\,\bm{\varphi}_{\bm{A}}\subseteq \mathbb{K}^n$且
+$\bm{\eta}_V:V\longrightarrow \mathbb{K}^n$是满射.故$\exists \bm{v}\in V$,
+s.t.$\bm{\eta}_V\left(\bm{v}\right)=\bm{x}$,只需证$\bm{v}\in \mathrm{Ker}\,\bm{\varphi}$即证明
+$\bm{\varphi}\left(\bm{v}\right)=\bm{0}.$由交换图$\bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=
+\bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)=\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)=\bm{0}=\bm{\eta}_U\left(\bm{0}\right)$,故
+$\bm{\varphi}\left(\bm{v}\right)=\bm{0}$.证毕.
+
+再证$\bm{\eta}_U:\mathrm{Im}\,\bm{\varphi}\longrightarrow \mathrm{Im}\,
+\bm{\varphi}_{\bm{A}}$是满的.任取$\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)\in \mathrm{Im}\,\bm{\varphi}_{\bm{A}},\bm{x}\in \mathbb{K}^n$.
+因为$\exists \bm{v}\in V$,s.t.$\bm{\eta}_V\left(\bm{v}\right)=\bm{x}.$于是
+$\bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=\bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)=\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)$.得证.
+
+同构得证.
+
+第三步.因为
+\[
+\mathrm{Ker}\,\bm{\varphi}_{\bm{A}}
+=\left\{\bm{x}\in \mathbb{K}^n\mid\bm{Ax}=\bm{0}
+\right\}
+\]
+即$\bm{Ax}=\bm{0}$的解空间$V_{\bm{A}}$.因为
+上面已证同构$\mathrm{Ker}\,\bm{\varphi}\cong \mathrm{Ker}\,\bm{\varphi}_{\bm{A}}$,故
+\[
+\dim\,\mathrm{Ker}\,\bm{\varphi}=\dim\,\mathrm{Ker}\,\bm{\varphi}_{\bm{A}}=\dim\,V_{\bm{A}}=n-\mathrm{r}\left(\bm{A}
+\right)
+\]
+然后作列分块$\bm{A}=\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right),\bm{\alpha}_i\in \mathbb{K}^n.$
+故
+\begin{align*}
+\mathrm{Im}\,\bm{\varphi}_{\bm{A}}&=\left\{
+    \bm{Ax}\mid\bm{x}=\left(x_1,x_2,\cdots,x_n\right)'\in \mathbb{K}^n
+\right\}\\
+&=\left\{x_1\bm{\alpha}_1+x_2\bm{\alpha}_2+\cdots+
+x_n\bm{\alpha}_n\mid x_i\in \mathbb{K}\right\}\\
+&=L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right)
+\end{align*}
+因为$\mathrm{Im}\,\bm{\varphi}\cong \mathrm{Im}\,\bm{\varphi}_{\bm{A}}$,
+于是
+\begin{align*}
+    \mathrm{r}\left(\bm{\varphi}\right)&=\dim\,\mathrm{Im}\,\bm{\varphi}=\dim\,\mathrm{Im}\,\bm{\varphi}_{\bm{A}}\\
+&=\dim\,L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right)
+\\
+&=\mathrm{rank}\left(\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right\}\right)\\
+&=\mathrm{r}\left(\bm{A}\right)
+\end{align*}
+
+于是本定理证毕.
+\end{Proof}
+\end{formal}
+\begin{green}
+\begin{corollary}[线性映射维数公式]\label{cor:线性映射维数公式}
+    设$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$,则
+    \[\dim \mathrm{Im}\,\bm{\varphi}+\dim
+     \mathrm{Ker}\,\bm{\varphi}=\dim\,V=n
+     \]
+\end{corollary}
+\end{green}
+\begin{green}
+\begin{corollary}[秩对线性映射的刻画]\label{cor:秩对线性映射的刻画}
+        设$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$,则
+    \[
+    \begin{cases*}
+    \bm{\varphi}\text{为满射}\Longleftrightarrow
+    \bm{A}\text{行满秩},\mathrm{r}\left(\bm{A}\right)=m\\
+    \bm{\varphi}\text{为单射}\Longleftrightarrow
+    \bm{A}\text{列满秩},\mathrm{r}\left(\bm{A}\right)=n
+    \end{cases*}
+    \]
+\end{corollary}
+\begin{Proof}
+因为$\bm{\varphi}$为满射等价于$\dim\,\mathrm{Im}\,\bm{\varphi}=\dim\,U$,$\bm{\varphi}$为单射等价于
+$\dim\,\mathrm{Ker}\,\bm{\varphi}=0.$于是得证.
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{corollary}[同维的统一]\label{coro:同维的统一}
+    设线性映射$\bm{\varphi}:V^n\longrightarrow U^n$且
+    $\dim V=\dim U = n$,则
+    \[
+    \bm{\varphi}\text{是同构}\Longleftrightarrow
+    \bm{\varphi}\text{是满射}\Longleftrightarrow
+    \bm{\varphi}\text{是单射}
+    \]
+    特别地,线性变换$\bm{\varphi}\in \mathcal{L}\left(
+        V^n
+    \right)$,则$\bm{\varphi}$是自同构等价于$\bm{\varphi}$
+    是单射也等价于$\bm{\varphi}$是满射.
+\end{corollary}
+\begin{Proof}
+利用\cref{cor:线性映射维数公式}维数公式易得.
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{corollary}[线性变换]\label{coro:线性变换}
+    设线性变换$\bm{\varphi}\in \mathcal{L}\left(
+        V^n
+    \right)$,则$\bm{\varphi}$为单射或满射等价于
+    $\bm{\varphi}$在任意基下的表示矩阵均可逆（满秩）.
+\end{corollary}
+\end{green}
+\subsection{像空间和核空间的计算}
+\begin{red}
+\begin{remark}
+    先说明记号,设有映射$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$,分别取定线性空间$V$和$U$的一组基为
+    $\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$和$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m\right\}$
+    ,$\bm{T}\left(\bm{\varphi}\right)=\bm{A}$
+    ,且有线性同构
+    \begin{align*}
+        \bm{\eta}_V:\mathrm{Ker}\,\bm{\varphi}&\longrightarrow \mathrm{Ker}\,\bm{\varphi}_{\bm{A}}\\
+        \bm{v}&\longmapsto \begin{pmatrix}
+            x_1\\x_2\\\vdots\\x_n
+        \end{pmatrix}
+    \end{align*}
+    \begin{align*}
+        \bm{\eta}_U:\mathrm{Im}\,\bm{\varphi}&\longrightarrow \mathrm{Im}\,\bm{\varphi}_{\bm{A}}\\
+        \bm{u}&\longmapsto \begin{pmatrix}
+            y_1\\y_2\\\vdots\\y_m
+        \end{pmatrix}
+    \end{align*}
+    及对应逆映射
+    %\newpage
+    \begin{align*}
+    \bm{\eta}_V^{-1}:\mathrm{Ker}\,\bm{\varphi}_{\bm{A}}&\longrightarrow \mathrm{Ker}\,\bm{\varphi}\\
+    \begin{pmatrix}
+        x_1\\x_2\\\vdots\\x_n
+    \end{pmatrix}&\longmapsto
+    x_1\bm{e}_1+x_2\bm{e}_2+\cdots+x_n\bm{e}_n
+\end{align*}
+    \begin{align*}
+        \bm{\eta}_U^{-1}:\mathrm{Im}\,\bm{\varphi}_{\bm{A}}&\longrightarrow \mathrm{Im}\,\bm{\varphi}\\
+        \begin{pmatrix}
+            y_1\\y_2\\\vdots\\y_m
+        \end{pmatrix}&\longmapsto
+        y_1\bm{f}_1+y_2\bm{f}_2+\cdots+y_m\bm{f}_m
+    \end{align*}
+\end{remark}
+\end{red}
+考虑如何计算得到像空间与核空间.
+\begin{red}
+\begin{remark}
+    $\mathrm{Ker}\,\bm{\varphi}_{\bm{A}}$是$\bm{Ax}=\bm{0}$的解空间,
+    $\mathrm{Im}\,\bm{\varphi}_{\bm{A}}$是$\bm{A}$的列向量
+    张成的子空间.
+\end{remark}
+\end{red}
+那么首先对表示矩阵$\bm{A}$作初等行变换（必要时用列对换
+）,得到列向量组的极大无关组$\left\{
+    \bm{\alpha}_{i_1},\bm{\alpha}_{i_2},\cdots,\bm{\alpha}_{i_r}
+\right\}$,$r=\mathrm{r}\left(\bm{A}\right)$,得到
+方程$\bm{Ax}=\bm{0}$的基础解系$\bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\eta}_{n-r}$；
+最后得出
+\[
+\mathrm{Ker}\,\bm{\varphi}=k_1\bm{\eta}_V^{-1}\left(\bm{\beta}_1\right)+
+k_2\bm{\eta}_V^{-1}\left(\bm{\beta}_2\right)+\cdots+
+k_{n-r}\bm{\eta}_V^{-1}\left(\bm{\beta}_{n-r}\right),k_i \in \mathbb{K}
+\]
+\[
+\mathrm{Im}\,\bm{\varphi}=l_1\bm{\eta}_U^{-1}\left(\bm{\alpha}_{i_1}\right)+
+l_2\bm{\eta}_U^{-1}\left(\bm{\alpha}_{i_2}\right)
++\cdots+
+l_r\bm{\eta}_U^{-1}\left(\bm{\alpha}_{i_r}\right),l_j \in \mathbb{K}
+\]
+\begin{brown}
+\begin{example}
+    设线性映射$\bm{\varphi}:V^5\longrightarrow U^4$,其在给定基$V:\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_5
+    \right\}$和$U:\left\{
+        \bm{f}_1,\bm{f}_2,\bm{f}_3,\bm{f}_4
+    \right\}$下的表示矩阵为
+    \begin{align*}
+        \bm{A}&=\begin{pmatrix}
+        1&2&1&-3&2\\
+        2&1&1&1&-3\\
+        1&1&2&2&-2\\
+        2&3&-5&-17&10
+    \end{pmatrix}\\
+    &\longrightarrow
+    \begin{pmatrix}
+        1&0&0&1&-\cfrac{9}{4}\\
+        0&1&0&-3&\cfrac{11}{4}\\
+        0&0&1&2&-\cfrac{5}{4}\\
+        0&0&0&0&0
+    \end{pmatrix}
+\end{align*}则$\bm{\alpha}_1=\left(1,2,1,2\right)',\left(2,1,1,3\right)',\left(1,1,2,-5\right)'.$于是\[
+\mathrm{Im}\,\bm{\varphi}=k_1\left(
+    \bm{f}_1+2\bm{f}_2+\bm{f}_3+2\bm{f}_4
+\right)+k_2\left(
+    2\bm{f}_1+\bm{f}_2+\bm{f}_3+3\bm{f}_4
+\right)+k_3\left(
+    \bm{f}_1+\bm{f}_2+2\bm{f}_3-5\bm{f}_4
+\right)
+\]又因为基础解系
+\[
+\bm{\beta}_1=\begin{pmatrix}
+    -1\\3\\-2\\1\\0
+\end{pmatrix},\bm{\beta}_2=\begin{pmatrix}
+    9\\-11\\5\\0\\4
+\end{pmatrix}
+\]于是\[
+\mathrm{Ker}\,\bm{\varphi}=l_1\left(
+    -\bm{e}_1+3\bm{e}_2-2\bm{e}_3+\bm{e}_4
+\right)+l_2\left(
+    9\bm{e}_1-11\bm{e}_2+5\bm{e}_3+4\bm{e}_5
+\right)
+\]
+\end{example}
+\end{brown}
+\newpage
+\section{不变子空间}
+\subsection{定义}
+\begin{formal}
+\begin{definition}[不变子空间]\label{def:不变子空间}
+    设线性映射$\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{K}}\right)$,
+    $U$是$V$的子空间.若
+    \[
+    \bm{\varphi}\left(U\right)\subseteq U
+    \]
+    则称$U$为线性变换
+    $\bm{\varphi}
+    $的不变子空间,或称为$\bm
+    {\varphi}$-不变子空间.
+\end{definition}
+\end{formal}
+\begin{formal}
+\begin{definition}[线性变换的限制]\label{def:线性变换的限制}
+    已知$U$为$\bm{\varphi}$-不变子空间,
+    若进一步将$\bm{\varphi}$的定义域限制在$U$上,则这个$\bm{\varphi}$
+    称为$U$上的一个线性变换,称为$\bm{\varphi}$诱导出的
+    线性变换或者是$\bm{\varphi}$在$U$上的限制,记作
+    \[
+    \bm{\varphi}\Big |_U:U\longrightarrow U
+    \]
+\end{definition}
+\end{formal}
+\begin{brown}
+\begin{example}
+    设$\bm{\varphi}\in \mathcal{L}\left(V
+    \right)$,则一定有两个平凡的$\bm{\varphi}$-不变子空间
+    即零子空间$0$和全子空间$V$.此外,核空
+    间$\mathrm{Ker}\,\bm{\varphi}$和像空间$\mathrm{Im}\,\bm{\varphi}$
+    存在时也一定是$\bm{\varphi}$-不变子空间.
+\end{example}
+\end{brown}
+\begin{red}
+\begin{remark}
+    在此定义的线性变换在$V$不是$0$时一定是非零映射.
+\end{remark}
+\end{red}
+\begin{red}
+\begin{remark}
+    事实上,像空间和核空间都是必定存在的,但是当映射是恒等变换时,
+    像空间即全子空间,零空间即零子空间.因此上面应该说是像空间和核空间非平凡或者是
+    非平凡的像空间和核空间存在时.
+\end{remark}
+\end{red}
+\begin{red}
+\begin{remark}
+    零子空间$0$指的是只含有零向量的线性子空间,零空间是核空间$\mathrm{Ker}\,\bm{\varphi}$.
+显然\[
+0\subseteq \mathrm{Ker}\,\bm{\varphi}
+\]
+\end{remark}
+\end{red}
+\begin{brown}
+\begin{example}
+    考虑$V=\mathbb{R}^2$,线性变换$\bm{\varphi}$为绕原点逆时针旋转$\theta$角,
+    其在标准基下的表示矩阵为
+    \[
+    \bm{A}=\begin{bmatrix}
+        \cos \theta&-\sin \theta\\
+        \sin \theta&\cos \theta
+    \end{bmatrix}
+    \]
+    设$L$为一维$\bm{\varphi}$-不变子空间即$\bm{\varphi}\left(
+        L
+    \right)\subseteq L$,容易知道
+    $\theta \neq k\pi\left(k\in \mathbb{Z}\right)$
+    时这样的$L$不存在即此时$\bm{\varphi}$没有
+    非平凡的不变子空间.
+\end{example}
+\end{brown}
+\begin{brown}
+\begin{example}
+    考虑$\bm{\varphi}:\bm{\alpha}\longmapsto k\bm{\alpha}
+    \left(k\in \mathbb{K}\text{固定}\right)$,则
+    $V$的任一子空间均为$\bm{\varphi}$-不变子空间.
+\end{example}
+\end{brown}
+\begin{green}
+\begin{lemma}[张成的子空间为不变子空间]\label{lem:张成的子空间为不变子空间}
+    设线性变换$\bm{\varphi}\in \mathcal{L}\left(V
+    \right)$,子空间$U=L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots
+    ,\bm{\alpha}_m\right)$,其中$\bm{\alpha}_i\in V$,则
+    $U$为$\bm{\varphi}$-不变子空间等价于
+    \[
+    \bm{\varphi}\left(\bm{\alpha}_i\right)
+    \in U\left(\forall 1 \leqslant i \leqslant m \right)
+    \]
+\end{lemma}
+\begin{Proof}
+必要性显然.下证充分性.
+
+设$\bm{\varphi}\left(\bm{\alpha}_i\right)\in U\left(1\leqslant i\leqslant m\right)$,任取$\bm{\alpha}
+\in U.$故有
+\[
+\bm{\alpha}=\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m
+\]
+则两边作用$\bm{\varphi}$即证.
+\end{Proof}
+\end{green}
+\subsection{表示矩阵}
+\begin{formal}
+\begin{theorem}[不变子空间诱导的线性变换的表示矩阵]\label{thm:不变子空间诱导的线性变换的表示矩阵}
+    设线性变换$\bm{\varphi}\in \mathcal{L}\left(V^n\right)$
+    ,且$U$为$\bm{\varphi}$-不变子空间,取$U$的一组基
+    为$\left\{\bm{e}_1,\bm{e}_2,
+    \cdots,\bm{e}_r\right\}$,将其扩张为
+    $V$的一组基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r,\bm{e}_{r+1},\cdots,
+    \bm{e}_n\right\}$,则$\bm{\varphi}$在这一组基下的表示矩阵的形式为
+    \[
+    \begin{pmatrix}
+        \bm{A}^r&\bm{B}\quad\,\\
+        \bm{O}&\bm{D}^{n-r}
+    \end{pmatrix}
+    \]
+\end{theorem}
+\begin{Proof}
+因为$\bm{\varphi}\left(\bm{e}_i\right)\in U\left(1\leqslant i\leqslant r\right)$,即有
+\newpage
+\[
+\begin{cases*}
+\bm{\varphi}\left(\bm{e}_1\right)=a_{11}\bm{e}_1+a_{21}\bm{e}_2+\cdots+a_{r1}\bm{e}_r\\
+\bm{\varphi}\left(\bm{e}_2\right)=a_{12}\bm{e}_1+a_{22}\bm{e}_2+\cdots+a_{r2}\bm{e}_r\\
+\qquad\qquad\cdots\cdots\cdots\cdots\cdots\\
+\bm{\varphi}\left(\bm{e}_r\right)=a_{1r}\bm{e}_1+a_{2r}\bm{e}_2+\cdots+a_{rr}\bm{e}_r
+\end{cases*}
+\]
+于是
+\begin{align*}
+   & \left(\bm{\varphi}\left(\bm{e}_1\right),
+\bm{\varphi}\left(\bm{e}_2\right),
+\cdots,\bm{\varphi}\left(\bm{e}_r\right),
+\bm{\varphi}\left(\bm{e}_{r+1}\right),
+\cdots,\bm{\varphi}\left(\bm{e}_n\right)\right)
+\\
+=&
+\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r,\bm{e}_{r+1},\cdots,\bm{e}_n\right)
+\begin{bmatrix}
+    \bm{A}^r&\bm{B}\quad\,\\
+    \bm{O}&\bm{D}^{n-r}
+\end{bmatrix}
+\qedhere
+\end{align*}
+\end{Proof}
+\end{formal}
+该定理的逆命题也是成立的,即
+\begin{formal}
+\begin{theorem}[逆命题]\label{thm:逆命题}
+    设线性变换$\bm{\varphi}\in \mathcal{L}\left(
+        V^n\right)$,且$\bm{\varphi}$在$V$的一组基
+        $\left\{\bm{e}_1,\bm{e}_2,\cdots,
+        \bm{e}_n\right\}$下的表示矩阵具有形式
+        \[
+    \begin{pmatrix}
+        \bm{A}^r&\bm{B}\quad\,\\
+        \bm{O}&\bm{D}^{n-r}
+    \end{pmatrix}
+    \]
+    那么$U=L\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r\right)$
+是$\bm{\varphi}$-不变子空间.
+\end{theorem}
+\end{formal}
+\begin{green}
+\begin{corollary}[两个不变子空间]\label{cor:两个不变子空间}
+    设线性变换$\bm{\varphi}\in \mathcal{L}\left(V^n\right)$
+    ,且$V=V_1\oplus V_2$（$V_1$、$V_2$均为$\bm{\varphi}$-不变子空间）,
+    那么一定可以分别取$V_1$、$V_2$的一组基来拼成$V$的一组基,使得
+    $\bm{\varphi}$在这组基下的表示矩阵为
+    \[
+    \begin{pmatrix}
+        \bm{A}^r&\bm{O}\quad\,\\
+        \bm{O}&\bm{D}^{n-r}
+    \end{pmatrix}
+    \]
+\end{corollary}
+\begin{Proof}
+取$V_1$的基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r\right\}$,
+$V_2$的基$\left\{\bm{e}_{r+1},\cdots,\bm{e}_n\right\}$.因为
+$\bm{\varphi}\left(\bm{e}_i\right)\in V_1\left(\forall 1\leqslant i\leqslant r\right)$
+,$\bm{\varphi}\left(\bm{e}_i\right)\in V_2\left(\forall r+1\leqslant i\leqslant n\right)$
+.仿照\cref{thm:不变子空间诱导的线性变换的表示矩阵}即得.
+\end{Proof}
+\end{green}
+\begin{green}
+\begin{corollary}[多个不变子空间]\label{cor:多个不变子空间}
+    设线性变换$\bm{\varphi}\in \mathcal{L}\left(
+        V^n
+    \right)$,且$V=V_1\oplus V_2\oplus \cdots \oplus V_m$（$V_i$均为
+    $\bm{\varphi}$-不变子空间）,分别取$V_i$的基,设$\bm{\varphi}\big |_{V_i}$在
+    给定基下的表示矩阵为$\bm{A}_i\left(1\leqslant i \leqslant m\right)$,
+    则将这些$V_i$的基拼成$V$的一组基后,
+    $\bm{\varphi}$在这组基下的表示矩阵为\[\bm{A}=
+    \mathrm{diag}\left\{
+        \bm{A}_1,\bm{A}_2,\cdots,\bm{A}_m
+    \right\}\]
+\end{corollary}
+\end{green}
+\subsection{例子}
+\begin{brown}
+\begin{example}
+    设$V^3$的一组基为$\left\{\bm{e}_1,\bm{e}_2,\bm{e}_3\right\}$,
+    线性变换$\bm{\varphi}\in \mathcal{L}\left(V\right)$在这组基下的表示矩阵为
+    \[\bm{A}=
+    \begin{pmatrix}
+        3&1&-1\\
+        2&2&-1\\
+        2&2&0
+    \end{pmatrix}
+    \]
+    求证：$U=L\left(\bm{e}_3,\bm{e}_1+\bm{e}_2+2\bm{e}_3\right)$为$\bm{\varphi}$-不变子空间.
+\end{example}
+\begin{Proof}
+只需证
+\[
+\bm{\varphi}\left(\bm{e}_3\right)\in U,
+\bm{\varphi}\left(\bm{e}_1+\bm{e}_2+2\bm{e}_3\right)\in U
+\]
+通过线性同构
+\[
+\bm{\eta}:V\longrightarrow \mathbb{K}^3
+\]
+我们仅需要验证坐标向量即可
+\[
+\bm{e}_3 \longmapsto \begin{pmatrix}
+    0\\
+    0\\
+    1
+\end{pmatrix},\bm{e}_1+\bm{e}_2+2\bm{e}_3\longmapsto
+\begin{pmatrix}
+    1\\1\\2
+\end{pmatrix}
+\]
+作线性变换
+\[
+\bm{\varphi}\left(\bm{e}_3\right)=\bm{A}\begin{pmatrix}
+    0\\0\\1
+\end{pmatrix}=\begin{pmatrix}
+    -1\\-1\\0
+\end{pmatrix},\bm{\varphi}\left(\bm{e}_1+\bm{e}_2+2\bm{e}_3\right)=
+\bm{A}\begin{pmatrix}
+    1\\1\\2
+\end{pmatrix}=\begin{pmatrix}
+    2\\2\\4
+\end{pmatrix}
+\]
+只需要证明$\bm{\varphi}\left(\bm{e}_3\right)$和
+$\bm{\varphi}\left(\bm{e}_1+\bm{e}_2+2
+\bm{e}_3\right)$是$\bm{e}_3$、$\bm{e}_1
++\bm{e}_2+2\bm{e}_3$的线性组合即可.一般地,这就是解线性方程组
+\[
+\begin{pmatrix}
+    0&1\\0&1\\1&2
+\end{pmatrix}\bm{x}=\bm{\varphi}\left(\bm{e}_3\right)
+,
+\begin{pmatrix}
+    0&1\\0&1\\1&2
+\end{pmatrix}\bm{x}=\bm{\varphi}\left(\bm{e}_1+\bm{e}_2+2\bm{e}_3\right)
+\]
+进一步地,只需要证明线性方程组
+有解即系数矩阵与增广矩阵的秩相等即可.
+\newpage
+\[
+\mathrm{rank}\begin{pmatrix}
+    0&1\\0&1\\1&2
+\end{pmatrix}=\mathrm{rank}\begin{pmatrix}
+    0&1&-1\\0&1&-1\\1&2&0
+\end{pmatrix}=2
+\]
+\[
+\mathrm{rank}\begin{pmatrix}
+    0&1\\0&1\\1&2
+\end{pmatrix}=\mathrm{rank}\begin{pmatrix}
+    0&1&2\\0&1&2\\1&2&4
+\end{pmatrix}=2
+\qedhere
+\]
+\end{Proof}
+\end{brown}
+\begin{red}
+\begin{remark}
+  从上例可以看出,交换图的思想或者说
+  代数与几何、具体与抽象的转化
+极其重要.  
+\[
+        \begin{tikzcd}
+V^n \arrow[rr, "\bm{\varphi}"] \arrow[dd, "\bm{\eta}_V"] \arrow[rrdd, bend left, shift right] &  & U^m \arrow[dd, "\bm{\eta}_U"] \\
+                                                                                    &  &                          \\
+\mathbb{K}^n \arrow[rr, "\bm{\varphi}_{\bm{A}}"]                                              &  & \mathbb{K}^m            
+\end{tikzcd}
+%\quad
+\Longrightarrow
+\bm{\eta}_U\circ \bm{\varphi}=\bm{\varphi}_{\bm{A}}\circ \bm{\eta}_V
+\]
+\end{remark}
+\end{red}
+\subsection{代数与几何}
+\begin{brown}
+\begin{example}
+    设线性映射$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$,
+    $\mathrm{r}\left(\bm{\varphi}\right)=r\geqslant 1$,证明：
+    $\exists \bm{\varphi}_i\in \mathcal{L}\left(V,U\right)$,满足
+    $\mathrm{r}\left(\bm{\varphi}_i\right)=1$且$\bm{\varphi}=\bm{\varphi}_1+\bm{\varphi}_2+\cdots+\bm{\varphi}_r$.
+\end{example}
+\begin{Proof}
+代数角度看：设$\bm{A}\in M_{m\times n}\left(\mathbb{K}\right)$,且
+$\mathrm{r}\left(\bm{A}\right)=r\geqslant 1$,求证：
+$\exists \bm{A}_i\in M_{m\times n}\left(\mathbb{K}\right)$,满足
+$\mathrm{r}\left(\bm{A}\right)=1$且$\bm{A}=\bm{A}_1+\bm{A}_2+\cdots+\bm{A}_r$
+.
+
+事实上,根据相抵标准型,
+一定存在非异阵$\bm{P}$、$\bm{Q}$使得
+\[
+\bm{A}=\bm{P}\begin{pmatrix}
+    \bm{I}_r&\bm{O}\\
+    \bm{O}&\bm{O}
+\end{pmatrix}
+\]
+则取
+\[
+\bm{A}_i=\bm{P}\begin{bmatrix}
+0&&&&\\
+&\ddots&&&\\
+&&1&&\\
+&&&\ddots&\\
+&&&&0
+\end{bmatrix}\bm{Q}\left(1\leqslant i \leqslant r\right)
+\]
+即可（其中$1$在主对角线第$i$位）.
+\end{Proof}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设$\bm{\varphi}\in \mathcal{L}\left(V^n\right)$,
+    且$\bm{\varphi}^m=\bm{0}$,$n=mq+1$,证明：
+    $\mathrm{r}\left(\bm{\varphi}\right)\leqslant n - q - 1$.
+\end{example}
+\begin{Proof}
+同样从代数角度看：设$\bm{A}\in M_{n}\left(\mathbb{K}\right)$,
+且$\bm{A}^m=\bm{O}$,$n=mq+1$,证明：
+$\mathrm{r}\left(\bm{A}\right)\leqslant n-q-1.$
+
+采用反证法,设$\mathrm{r}\left(\bm{A}\right)\geqslant n-q$,
+由Sylvesler不等式知：
+\begin{align*}
+    0&=\mathrm{r}\left(\bm{A}^m\right)\\
+    &=\mathrm{r}\left(\bm{AA}^{m-1}\right)\\
+    &\geqslant \mathrm{r}\left(\bm{A}\right)+\mathrm{r}
+    \left(\bm{A}^{m-1}\right)-n\\
+    &\geqslant \mathrm{r}\left(\bm{A}^{m-1}\right)-q\\
+    &\Longrightarrow \mathrm{r}\left(\bm{A}^{m-1}\right)
+    \leqslant q
+\end{align*}
+不断做下去即有\[
+\left(m-1\right)q\geqslant \mathrm{r}\left(\bm{A}\right)\geqslant n-q = \left(m-1\right)q+1
+\]
+矛盾,故假设不成立,证毕.
+\end{Proof}
+\end{brown}
+\begin{brown}
+\begin{example}\label{ex:像空间与核空间稳定}
+    设$\bm{A}\in M_n\left(\mathbb{K}\right)$,
+    求证：$\bm{A}$的幂次超过$n$时其秩的值将稳定即
+    \[
+    \mathrm{r}\left(\bm{A}^n\right)=\mathrm{r}\left(
+        \bm{A}^{n+1}
+    \right)=\cdots
+    \]
+\end{example}
+\begin{Proof}
+我们从几何角度给出一个更强的结论：
+设$\bm{\varphi}\in \mathcal{L}
+\left(V^n\right)$,则$\exists m \in \left[
+    0,n
+\right]$,使得
+\begin{align*}
+    &\mathrm{Im}\,\bm{\varphi}^m=\mathrm{Im}\,\bm{\varphi}^{m+1}=\cdots\\
+    &\mathrm{Ker}\,\bm{\varphi}^m=\mathrm{Ker}\,\bm{\varphi}^{m+1}=\cdots
+\end{align*}
+且\[
+V=\mathrm{Ker}\,\bm{\varphi}^m\oplus \mathrm{Im}\,\bm{\varphi}^m
+\]
+
+首先因为
+\begin{align*}
+        &V\supseteq \mathrm{Im}\,\bm{\varphi}\supseteq \mathrm{Im}\,\bm{\varphi}^2\supseteq \cdots\\
+        &\mathrm{Ker}\,\bm{\varphi}\subseteq \mathrm{Ker}\,\bm{\varphi}^2\subseteq \cdots\subseteq V
+    \end{align*}
+    取定$n$,有
+    \[
+    V\supseteq \mathrm{Im}\,\bm{\varphi}\supseteq \mathrm{Im}\,\bm{\varphi}^2\supseteq \cdots \supseteq \mathrm{Im}\,\bm{\varphi}^n\supseteq \mathrm{Im}\,\bm{\varphi}^{n+1}
+    \]
+    它们都是$V$的子空间
+    ,故
+    \[
+    n = \dim V\geqslant \dim 
+    \mathrm{Im}\,\bm{\varphi}\geqslant\dim
+     \mathrm{Im}\,\bm{\varphi}^2\geqslant 
+      \cdots \geqslant\dim
+       \mathrm{Im}\,\bm{\varphi}^n\geqslant\dim
+        \mathrm{Im}\,\bm{\varphi}^{n+1}
+    \]
+    $n+2$个空间的维数分布于
+    $n+1$个抽屉中,由抽屉原理知
+    ,$\exists m \in \left[0,n\right]$,使得
+    \[
+    \dim \mathrm{Im}\,\bm{\varphi}^m=\dim \mathrm{Im}\,\bm{\varphi}^{m+1}
+    \]
+    又因为$\mathrm{Im}\,\bm{\varphi}^{m+1}$是$\mathrm{Im}\,\bm{\varphi}^m$的子空间,
+    于是有$\mathrm{Im}\,\bm{\varphi}^m=\mathrm{Im}\,\bm{\varphi}^{m+1}.$
+
+    再来证明：$\forall k \geqslant m,\mathrm{Im}\,\bm{\varphi}^k=\mathrm{Im}\,\bm{\varphi}^{k+1}$.因为
+    \[
+    \mathrm{Im}\,\bm{\varphi}^{k+1}\subseteq \mathrm{Im}\,\bm{\varphi}^k
+    \]
+    任取$\bm{\varphi}^k\left(\bm{v}\right)\in \mathrm{Im}\,
+    \bm{\varphi}^k$.首先注意到
+    $\bm{\varphi}^m\left(\bm{v}\right)\in \mathrm{Im}\,\bm{\varphi}^m = \mathrm{Im}\,\bm{\varphi}^{m+1}$,于是
+    $\exists \bm{u}\in V$,使得\[
+    \bm{\varphi}^m\left(\bm{v}\right)=\bm{\varphi}^{m+1}\left(\bm{u}\right)
+    \]
+    因为$k \geqslant m$,故
+    \[
+    \mathrm{Im}\,\bm{\varphi}^k\ni 
+    \bm{\varphi}^k\left(\bm{v}\right)=
+    \bm{\varphi}^{k-m}\left(\bm{\varphi}^m\left(\bm{v}\right)\right)=
+    \bm{\varphi}^{m+1}\left(\bm{v}\right)\in \mathrm{Im}\,\bm{\varphi}^{k+1}
+    \]
+    因为任意性,得证.
+
+    考察核空间则简单了许多,由维数公式
+    \[
+    \dim \mathrm{Ker}\,\bm{\varphi}^k + \dim 
+    \mathrm{Im}\,\bm{\varphi}^k = \dim V =n
+    \]
+    立刻得证.
+    
+    维数的稳定证毕,下面证明直和.
+
+    接下来先证明
+    $\mathrm{Im}\,\bm{\varphi}^m
+    \bigcap \mathrm{Ker}\,\bm{\varphi}^m = 0$（零子空间）.任取
+    $\bm{\alpha}\in \mathrm{Im}\,\bm{\varphi}^m\bigcap \mathrm{Ker}\,\bm{\varphi}^m$即
+    \[
+    \bm{\varphi}^m\left(\bm{\alpha}\right)=\bm{0},
+    \bm{\alpha}=\bm{\varphi}^m\left(\bm{\beta}\right)
+    \]
+    于是$\bm{\varphi}^{2m}\left(\bm{\beta}\right)=
+    \bm{\varphi}^m\left(\bm{\alpha}\right)=\bm{0}$即$\bm{\beta}\in 
+    \mathrm{Ker}\,\bm{\varphi}^{2m}=\mathrm{Ker}\,\bm{\varphi}^m$,故
+    $\bm{\alpha}=\bm{\varphi}^m\left(\bm{\beta}\right)=\bm{0}$.
+
+    然后证明$V=\mathrm{Im}\,\bm{\varphi}^m + \mathrm{Ker}\,\bm{\varphi}^m$（可以用维数公式证明）.
+    任取
+    $\bm{\alpha}\in V$,因$\bm{\varphi}^m\left(
+        \bm{\alpha}
+    \right)\in \mathrm{Im}\,
+    \bm{\varphi}^m=\mathrm{Im}\,
+    \bm{\varphi}^{2m}$,故$\exists \bm{\beta}\in V$
+    ,使得$\bm{\varphi}^{m}\left(\bm{\alpha}
+    \right)=\bm{\varphi}^{2m}\left(\bm{\beta}
+    \right)$,则由线性映射的性质有
+    $\bm{\varphi}^m\left(\bm{\alpha}-\bm{\varphi}^m\left(\bm{\beta}
+    \right)\right)=\bm{0}$,即
+    $\bm{\gamma}=\bm{\alpha}-\bm{\varphi}^m\left(\bm{\beta}\right)\in \mathrm{Ker}\,\bm{\varphi}^m$,从而有
+    \[
+    \bm{\alpha}=\bm{\gamma}+\bm{\varphi}^m\left(\bm{\beta}\right)
+    \]
+    由任意性得到
+    \[
+    V=\mathrm{Ker}\,\bm{\varphi}^m+\mathrm{Im}\,\bm{\varphi}^m
+    \]
+    于是有直和
+    \[
+    V=\mathrm{Ker}\,\bm{\varphi}^m\oplus\mathrm{Im}\,\bm{\varphi}^m
+    \]
+    综合以上证明过程,我们证明了一个更强的结论.
+\end{Proof}
+\end{brown}
+\begin{brown}
+    \begin{problem}
+我们还可以给出线性映射维数公式的一种不分别
+证明像空间和核空间维数的证明方法（实际上上一节我们
+分别证明了
+像空间和核空间各自的维数\cref{thm:像空间与核空间的维数}
+而将维数公式\cref{cor:线性映射维数公式}作为推论给出）.
+    \end{problem}
+\begin{Proof}
+设$\dim \mathrm{Ker}\,\bm{\varphi}=k$,只需证
+$\dim \mathrm{Im}\,\bm{\varphi}=n-k$.
+
+首先任取$\mathrm{Ker}\,\bm{\varphi}$的一组基$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k
+\right\}$
+,扩张为$V$的一组基\[\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k,\bm{e}_{k+1},\cdots,\bm{e}_n
+\right\}\]
+接下来$\forall \bm{\alpha}\in V$,设$\displaystyle
+\bm{\alpha}=\sum_{i=1}^n\lambda_i\bm{e}_i$,
+注意到\[
+\bm{\varphi}\left(\bm{e}_j\right)=\bm{0}\left(\forall 1\leqslant j\leqslant k\right)
+\]
+于是
+\begin{align*}
+    \bm{\varphi}\left(\bm{\alpha}\right)&=\sum_{i=1}^{n}\lambda_i\bm{\varphi}\left(\bm{e}_i\right)\\
+    &=\lambda_{k+1}\bm{\varphi}\left(\bm{e}_{k+1}\right)+
+    \lambda_{k+2}\bm{\varphi}\left(\bm{e}_{k+2}\right)+\cdots+
+    \lambda_n\bm{\varphi}\left(\bm{e}_n\right)
+\end{align*}
+即\[
+\mathrm{Im}\,\bm{\varphi}=L\left(
+    \bm{\varphi}\left(\bm{e}_{k+1}\right),
+    \bm{\varphi}\left(\bm{e}_{k+2}\right),
+    \cdots,
+    \bm{\varphi}\left(\bm{e}_{n}\right)
+\right)
+\]
+于是只需要证明$\bm{\varphi}\left(\bm{e}_{k+1}\right),
+    \bm{\varphi}\left(\bm{e}_{k+2}\right),
+    \cdots,
+    \bm{\varphi}\left(\bm{e}_{n}\right)$线性无关即可.
+
+设
+\[
+c_{k+1}\bm{\varphi}\left(\bm{e}_{k+1}\right)+c_{k+2}
+    \bm{\varphi}\left(\bm{e}_{k+2}\right)+
+    \cdots+c_n
+    \bm{\varphi}\left(\bm{e}_{n}\right)=\bm{0}
+\]
+即
+\[
+\bm{\varphi}\left(
+    c_{k+1}\bm{e}_{k+1}+c_{k+2}\bm{e}_{k+2}+\cdots
+    +c_n\bm{e}_n
+\right)=\bm{0}
+\]
+于是
+\[
+ c_{k+1}\bm{e}_{k+1}+c_{k+2}\bm{e}_{k+2}+\cdots
+    +c_n\bm{e}_n\in \mathrm{Ker}\,\bm{\varphi}
+\]
+因为$\mathrm{Ker}\,\bm{\varphi}$的一组基为$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k
+\right\}$,故得到（符号只是为了方便说明）
+\[
+c_{k+1}\bm{e}_{k+1}+c_{k+2}\bm{e}_{k+2}+\cdots
+    +c_n\bm{e}_n=-c_1\bm{e}_1-c_2\bm{e}_2-\cdots-c_k\bm{e}_k
+\]
+即
+\[
+c_1\bm{e}_1+c_2\bm{e}_2+\cdots
++c_k\bm{e}_k+c_{k+1}\bm{e}_{k+1}+c_{k+2}\bm{e}_{k+2}+\cdots
+    +c_n\bm{e}_n=\bm{0}
+\]
+由于$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k,\bm{e}_{k+1},\bm{e}_{k+2},\cdots,
+\bm{e}_n$是一组基,那么
+\[
+c_1=c_2=\cdots=c_{k}=c_{k+1}=c_{k+2}=\cdots=c_n=0
+\]
+得证.
+\end{Proof}
+\end{brown}
+\begin{brown}
+\begin{example}
+    设$\bm{A}$、$\bm{B}\in M_{m\times n}\left(\mathbb{K}\right)$
+    ,证明：$\bm{Ax}=\bm{0}$与$\bm{Bx}=\bm{0}$同解等价于
+    存在$m$阶非异阵$\bm{P}$使得$\bm{B}=\bm{PA}$
+\end{example}
+\begin{Proof}
+    即证：已知$\bm{\varphi}$、$\bm{\psi}\in \mathcal{L}\left(V^n,U^m\right)$,
+    那么$\mathrm{Ker}\,\bm{\varphi}=\mathrm{Ker}\,\bm{\psi}$等价于
+    存在自同构$\bm{\xi}\in \mathcal{L}
+    \left(U\right)$,s.t.
+    $\bm{\psi}=\bm{\xi}\circ \bm{\varphi}$.
+
+    下面考虑必要性,我们用下面的图说明这一思想过程,以三维欧式空间为例.
+
+
+\newpage
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,1062); %set diagram left start at 0, and has height of 1062
+
+%Shape: Rectangle [id:dp9382981572230111] 
+\draw   (535.54,368.12) -- (543.64,736.17) -- (428.44,546.4) -- (420.34,178.35) -- cycle ;
+%Straight Lines [id:da9173224766009822] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (486.18,443.1) -- (589.96,445.16) ;
+\draw [shift={(591.96,445.2)}, rotate = 181.14] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3573746854597686] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (486.18,443.1) -- (515.54,531.57) ;
+\draw [shift={(516.17,533.47)}, rotate = 251.64] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7535575433827122] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (486.18,443.1) -- (463.56,525.7) ;
+\draw [shift={(463.03,527.63)}, rotate = 285.31] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da3736320730925162] 
+\draw    (583.96,556.08) .. controls (580.02,567.9) and (571.23,597.18) .. (591.04,629.6) ;
+\draw [shift={(591.96,631.08)}, rotate = 237.53] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Parallelogram [id:dp23115662096896306] 
+\draw   (266.07,125.16) -- (265.96,341.08) -- (97.36,248.46) -- (97.47,32.54) -- cycle ;
+%Curve Lines [id:da43989729025717605] 
+\draw    (400.96,238.2) .. controls (384.04,205.37) and (373.07,179.46) .. (298.1,152.6) ;
+\draw [shift={(296.96,152.2)}, rotate = 19.56] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5773137810745681] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (172,166.12) -- (286.96,167.18) ;
+\draw [shift={(288.96,167.2)}, rotate = 180.53] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da559466096982491] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (172,166.12) -- (193.42,242.27) ;
+\draw [shift={(193.96,244.2)}, rotate = 254.29] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9952580971372045] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (172,166.12) -- (130.33,210.74) ;
+\draw [shift={(128.96,212.2)}, rotate = 313.05] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Parallelogram [id:dp3190851762383169] 
+\draw   (261.07,644.42) -- (260.96,860.33) -- (92.36,767.71) -- (92.47,551.79) -- cycle ;
+%Curve Lines [id:da1363750440006346] 
+\draw    (431.96,611.08) .. controls (421.01,641.93) and (368.49,697.89) .. (293.1,671.85) ;
+\draw [shift={(291.96,671.45)}, rotate = 19.56] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9573308854986908] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (167,685.37) -- (285.96,686.19) ;
+\draw [shift={(287.96,686.2)}, rotate = 180.39] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3547013463521882] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (167,685.37) -- (188.42,761.53) ;
+\draw [shift={(188.96,763.45)}, rotate = 254.29] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da17834442969202446] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (167,685.37) -- (125.33,729.99) ;
+\draw [shift={(123.96,731.45)}, rotate = 313.05] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da26092380362896805] 
+\draw    (198.96,314.96) -- (200.95,585.96) ;
+\draw [shift={(200.96,587.96)}, rotate = 269.58] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da09926079003691468] 
+\draw    (618.96,822.2) .. controls (608.02,863.99) and (517.87,905.78) .. (445.06,837.24) ;
+\draw [shift={(443.96,836.2)}, rotate = 43.8] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (597.53,416.55) node [anchor=north west][inner sep=0.75pt]  [rotate=-88.74]  {$e_{3}$};
+% Text Node
+\draw (604.54,454.54) node [anchor=north west][inner sep=0.75pt]  [rotate=-88.74]  {$Ker\varphi =Ker\psi $};
+% Text Node
+\draw (498.55,410.86) node [anchor=north west][inner sep=0.75pt]  [rotate=-88.74]  {$O$};
+% Text Node
+\draw (479.53,546.31) node [anchor=north west][inner sep=0.75pt]  [rotate=-88.74]  {$e_{1}$};
+% Text Node
+\draw (526.71,554.28) node [anchor=north west][inner sep=0.75pt]  [rotate=-88.74]  {$e_{2}$};
+% Text Node
+\draw (537,593) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$V=U=\mathbb{R}^{3}$};
+% Text Node
+\draw (626.5,605.5) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\dim Ker\varphi =\dim Ker\psi =1$};
+% Text Node
+\draw (371.5,150.62) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\varphi $};
+% Text Node
+\draw (189,138.12) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$O$};
+% Text Node
+\draw (262,144.12) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$f_{3}$};
+% Text Node
+\draw (158,213.12) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\varphi ( e_{1})$};
+% Text Node
+\draw (225,236.12) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\varphi ( e_{2})$};
+% Text Node
+\draw (256,283.12) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$Im\varphi $};
+% Text Node
+\draw (184,657.37) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$O$};
+% Text Node
+\draw (259,667.37) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$g_{3}$};
+% Text Node
+\draw (153,732.37) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\psi ( e_{1})$};
+% Text Node
+\draw (220,755.37) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\psi ( e_{2})$};
+% Text Node
+\draw (251,802.37) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$Im\psi $};
+% Text Node
+\draw (406.5,674.62) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\psi $};
+% Text Node
+\draw (249,438.88) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\xi $};
+% Text Node
+\draw (426.5,734.62) node [anchor=north west][inner sep=0.75pt]  [rotate=-90]  {$\dim Im\varphi =\dim Im\psi =2$};
+
+
+\end{tikzpicture}
+\newpage
+其中,只需要保证基的变化即可
+\begin{align*}
+    \bm{\xi}:\bm{\varphi}\left(\bm{e}_1\right)&\longmapsto \bm{\psi}\left(\bm{e}_1\right)\\
+    \bm{\varphi}\left(\bm{e}_2\right)&\longmapsto \bm{\psi}\left(\bm{e}_2\right) \\
+    \bm{f}_3&\longmapsto \bm{g}_3
+\end{align*}
+一组基映射到另一组基,保证了这是线性同构.
+即满足\[
+\bm{\psi}\left(\bm{e}_i\right)=\bm{\xi}\bm{\varphi}\left(\bm{e}_i\right)\left(1\leqslant i\leqslant 3\right)
+\]
+的$\bm{\xi}$为所求.
+\end{Proof}
+\end{brown}
