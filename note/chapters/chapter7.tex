@@ -1096,7 +1096,7 @@ m_{\bm{A}}\left(\lambda\right)=\left[
 \end{green}
 \begin{formal}
 \begin{theorem}[初等因子确定不变因子]\label{thm:初等因子确定不变因子}
-    给出$\bm{A}$的初等因子组,设其中涉及到的不可约多项式为$p_1\left(\lambda\right),p_2\left(\lambda\right),\cdots,p_t\left(\lambda\right)$,在添加一些不可约多项式的零次幂后，将同一不可约多项式的幂次降幂排列：
+    给出$\bm{A}$的初等因子组,设其中涉及到的不可约多项式为$p_1\left(\lambda\right),p_2\left(\lambda\right),\cdots,p_t\left(\lambda\right)$,在添加一些不可约多项式的零次幂后,将同一不可约多项式的幂次降幂排列：
     \[
     \begin{matrix}
         p_1\left(\lambda\right)^{e_{k1}}&p_1\left(\lambda\right)^{e_{k-1,1}}&\cdots&p_1\left(\lambda\right)^{e_{11}}\\
@@ -1129,7 +1129,7 @@ m_{\bm{A}}\left(\lambda\right)=\left[
 \end{formal}
 \begin{red}
 \begin{remark}
-    初等因子依赖于因式分解,后者严重依赖于基域的选取，于是初等因子是依赖于基域的.
+    初等因子依赖于因式分解,后者严重依赖于基域的选取,于是初等因子是依赖于基域的.
 \end{remark}
 \end{red}
 \begin{brown}
@@ -1186,10 +1186,10 @@ p_1\left(\lambda\right)^{e_1},p_2\left(\lambda\right)^{e_2},\cdots,p_m\left(\lam
 \bm{J}=\mathrm{diag}\,\left\{
     \bm{J}_1\left(p_1\left(\lambda\right)^{e_1}\right),\bm{J}_2\left(p_2\left(\lambda\right)^{e_2}\right),\cdots,\bm{J}_m\left(p_m\left(\lambda\right)^{e_m}\right)  
 \right\}
-\]然后验证其相似于$\bm{A}$，这就是下一节需要讨论的问题.
+\]然后验证其相似于$\bm{A}$,这就是下一节需要讨论的问题.
 \begin{red}
 \begin{remark}
-    上述问题在一般数域上是超出本门课的内容的，于是我们只会讨论在复数域$\mathbb{C}$上的情况.
+    上述问题在一般数域上是超出本门课的内容的,于是我们只会讨论在复数域$\mathbb{C}$上的情况.
 \end{remark}
 \end{red}
 \newpage
@@ -1226,7 +1226,7 @@ p_1\left(\lambda\right)^{e_1},p_2\left(\lambda\right)^{e_2},\cdots,p_m\left(\lam
             D_r\left(\lambda\right)=\left|\lambda\bm{I}-\bm{J}\right|=\left(\lambda-\lambda_0\right)^r
         \end{align*}并且$\forall 1\leqslant k<r$,存在$k$阶子式的值为$\left(-1\right)^k\Longrightarrow D_k\left(\lambda\right)=1,\forall 1\leqslant k<r.$于是行列式因子组为\[
         1,\cdots,1,\left(\lambda-\lambda_0\right)^r
-        \]不变因子组相同，初等因子组为\[
+        \]不变因子组相同,初等因子组为\[
         \left(\lambda-\lambda_0\right)^r\qedhere
         \]
     \end{Proof}
@@ -1241,7 +1241,7 @@ p_1\left(\lambda\right)^{e_1},p_2\left(\lambda\right)^{e_2},\cdots,p_m\left(\lam
     \]其中$f_i\left(\lambda\right)$为首一多项式.则$f_1\left(\lambda\right),f_2\left(\lambda\right),\cdots,f_n\left(\lambda\right)$的准素因子全体即为$\bm{A}$的初等因子组.
 \end{lemma}
 \begin{Proof}
-第一步，$\forall 1\leqslant i<j\leqslant n,\left(
+第一步,$\forall 1\leqslant i<j\leqslant n,\left(
     f_i\left(\lambda\right),f_j\left(\lambda\right)
 \right)=g\left(\lambda\right),\left[
     f_i\left(\lambda\right),f_j\left(\lambda\right)
@@ -2470,6 +2470,16 @@ g\left(x\right)=x^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0\in \mathbb{K}\left[x\right]
         定义矩阵函数至少有三种方法：其一,将函数作幂级数展开并利用\textup{Jordan}标准型理论定义；其二,利用多项式定义；其三,利用\textup{Cauchy}积分定理定义.这里采用第一种定义.
     \end{remark}
 \end{red}
+\begin{red}
+    \begin{remark}
+        这里我们主要讨论级数（无穷）,这与多项式（有限多项）有些许相似但并不相同.
+    \end{remark}
+\end{red}
+\begin{red}
+    \begin{remark}
+        下面先给出一些级数相关的定义和定理.
+    \end{remark}
+\end{red}
 \begin{formal}
     \begin{definition}[级数收敛的定义]\label{def:级数收敛的定义}
         无穷级数$\displaystyle \sum_{n=1}^{\infty}a_n$收敛当且仅当部分和数列$\left\{s_n\right\}$收敛,其中$s_n=a_1+a_2+\cdots+a_n.$若\[
@@ -2546,7 +2556,7 @@ g\left(x\right)=x^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0\in \mathbb{K}\left[x\right]
         \end{enumerate}
     \end{proposition}
 \end{formal}
-\subsection{矩阵函数}
+\subsection{矩阵幂级数}
 考虑$f\left(z\right)=a_0+a_1z+\cdots+a_pz^p\in \mathbb{C}\left[z\right]$,矩阵$\bm{A}\in M_n\left(\mathbb{C}\right)$则\[
 f\left(\bm{A}\right):=a_0\bm{I}_n+a_1\bm{A}+\cdots+a_p\bm{A}^p
 \]
@@ -2627,6 +2637,11 @@ f\left(z\right)=f\left(\lambda_i\right)+\frac{f'\left(\lambda_i\right)}{1!}\left
         \]收敛到$\bm{B}$,记作$f\left(\bm{A}\right)=\bm{B}.$
     \end{definition}
 \end{formal}
+\begin{red}
+    \begin{remark}
+        这与多项式十分相似但并不相同.
+    \end{remark}
+\end{red}
 \begin{formal}
     \begin{definition}[矩阵函数的定义]\label{def:矩阵函数的定义}
         将\cref{def:部分和定义收敛}中取未定元$\bm{X}$则得到一般的矩阵函数\[
@@ -2635,20 +2650,35 @@ f\left(z\right)=f\left(\lambda_i\right)+\frac{f'\left(\lambda_i\right)}{1!}\left
     \end{definition}
 \end{formal}
 \begin{formal}
-    \begin{theorem}[矩阵幂级数的收敛判定]\label{thm:矩阵幂级数的收敛判定}
+    \begin{theorem}[矩阵幂级数收敛的等价命题]\label{thm:矩阵幂级数收敛的等价命题}
         设复幂级数$\displaystyle f\left(z\right)=\sum_{i=0}^{\infty}a_iz^i$,收敛半径$R$,则\begin{enumerate}[label={\textup{(\arabic*)}}]
             \item $f\left(\bm{X}\right)$收敛当且仅当对于任意非异阵$\bm{P}$,$f\left(
                 \bm{P}^{-1}\bm{X}\bm{P}
-            \right)$都收敛
+            \right)$都收敛并且有\[
+            f\left(\bm{P}^{-1}\bm{X}\bm{P}\right)=\bm{P}^{-1}f\left(\bm{X}\right)\bm{P}
+            \Longrightarrow f\left(\bm{X}\right)=\bm{P}f\left(
+                \bm{P}^{-1}\bm{X}\bm{P}
+            \right)\bm{P}^{-1}
+            \]
             \item 设\[\bm{X}=\mathrm{diag}\,\left\{
                 \bm{X}_1,\bm{X}_2,\cdots,\bm{X}_k
-            \right\}\],则$f\left(\bm{X}\right)$收敛当且仅当$f\left(
+            \right\}\]则$f\left(\bm{X}\right)$收敛当且仅当$f\left(
                 \bm{X}_1
             \right),f\left(
                 \bm{X}_2
             \right),\cdots,f\left(
                 \bm{X}_k
-            \right)$收敛
+            \right)$收敛并且\[
+            f\left(\bm{X}\right)=\mathrm{diag}\,\left\{
+                f\left(
+                    \bm{X}_1
+                \right),f\left(
+                    \bm{X}_2
+                \right),\cdots,f\left(
+                    \bm{X}_k
+                \right)
+            \right\}
+            \]
             \item 对\textup{Jordan}块$\bm{J}_{r_i}\left(\lambda_i\right)$,若$\left|\lambda_i\right|<R$,则$f\left(
                 \bm{J}_{r_i}\left(\lambda_i\right)
             \right)$收敛到\[
@@ -2665,6 +2695,248 @@ f\left(z\right)=f\left(\lambda_i\right)+\frac{f'\left(\lambda_i\right)}{1!}\left
         \end{enumerate}
     \end{theorem}
     \begin{Proof}
+        设部分和\[
+        f_p\left(z\right)=a_0+a_1z+\cdots+a_pz^p
+        \]
         
+        \begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 因为$f\left(
+                \bm{P}^{-1}\bm{X}\bm{P}
+            \right)=
+            \bm{P}^{-1}f\left(\bm{X}\right)\bm{P}
+            $而$f\left(\bm{X}\right)$收敛当且仅当$\displaystyle \lim_{p\to\infty}f_p\left(\bm{X}\right)$存在,于是这又当且仅当$\displaystyle \lim_{p\to\infty}\bm{P}^{-1}f_p\left(\bm{X}\right)\bm{P}$存在即$f\left(
+                \bm{P}^{-1}\bm{X}\bm{P}
+            \right)$收敛并且\begin{align*}
+                f\left(
+                    \bm{P}^{-1}\bm{X}\bm{P}
+                \right)=\lim_{p\to\infty}\bm{P}^{-1}f_p\left(\bm{X}\right)\bm{P}=\bm{P}^{-1}\lim_{p\to\infty}f_p\left(\bm{X}\right)\bm{P}=\bm{P}^{-1}f\left(\bm{X}\right)\bm{P}
+            \end{align*}
+            \item 首先\[
+            f_p\left(\bm{X}\right)=\mathrm{diag}\,\left\{
+                f_p\left(
+                    \bm{X}_1
+                \right),f_p\left(
+                    \bm{X}_2
+                \right),\cdots,f_p\left(
+                    \bm{X}_k
+                \right)
+            \right\}
+            \]因为$f\left(\bm{X}\right)$收敛当且仅当$\displaystyle \lim_{p\to\infty}f_p\left(\bm{X}\right)$存在当且仅当$\displaystyle \lim_{p\to\infty}f_p\left(
+                \bm{X}_i
+                \right)$存在$\left(\forall 
+                    1\leqslant i\leqslant k
+                \right)$即$f\left(
+                    \bm{X}_1
+                \right),f\left(
+                    \bm{X}_2
+                \right),\cdots,f\left(
+                    \bm{X}_k
+                \right)$收敛并且\begin{align*}
+                    f\left(\bm{X}\right)&=\lim_{p\to\infty}f_p\left(\bm{X}\right)\\
+                    &=\lim_{p\to\infty}\mathrm{diag}\,\left\{
+                        f_p\left(
+                            \bm{X}_1
+                        \right),f_p\left(
+                            \bm{X}_2
+                        \right),\cdots,f_p\left(
+                            \bm{X}_k
+                        \right)
+                    \right\}\\
+                    &=\mathrm{diag}\,\left\{
+                        \lim_{p\to\infty}f_p\left(
+                            \bm{X}_1
+                        \right),\lim_{p\to\infty}f_p\left(
+                            \bm{X}_2
+                        \right),\cdots,\lim_{p\to\infty}f_p\left(
+                            \bm{X}_k
+                        \right)
+                    \right\}\\
+                    &=\mathrm{diag}\,\left\{
+                        f\left(
+                            \bm{X}_1
+                        \right),f\left(
+                            \bm{X}_2
+                        \right),\cdots,f\left(
+                            \bm{X}_k
+                        \right)
+                    \right\}
+                \end{align*}
+                \item 由上文计算结果知\[
+                f_p\left(
+                    \bm{J}_{r_i}\left(\lambda_i\right)
+                \right)=\begin{pmatrix}
+        f_p\left(\lambda_i\right)&\cfrac{f_p'\left(\lambda_i\right)}{1!}&\cfrac{f_p''\left(\lambda_i\right)}{2!}&\cdots&\cfrac{f_p^{\left(r_i-1\right)}\left(\lambda_i\right)}{\left(r_i-1\right)!}\\
+        &f_p\left(\lambda_i\right)&\cfrac{f_p'\left(\lambda_i\right)}{1!}&\cdots&\cfrac{f_p^{\left(r_i-2\right)}\left(\lambda_i\right)}{\left(r_i-2\right)!}\\
+        &&f_p\left(\lambda_i\right)&\cdots&\cfrac{f_p^{\left(r_i-3\right)}\left(\lambda_i\right)}{\left(r_i-3\right)!}\\
+        &&&\ddots&\vdots\\
+        &&&&f_p\left(\lambda_i\right)
+    \end{pmatrix}
+                \]因为$f\left(\bm{J}_{r_i}\left(\lambda_i\right)\right)$收敛当且仅当$\displaystyle
+                \lim_{p\to\infty}f_p\left(
+                    \bm{J}_{r_i}\left(\lambda_i\right)
+                    \right)$存在,即等价于\[
+                    \lim_{p\to\infty}f_p\left(
+                       \lambda_i
+                        \right),\lim_{p\to\infty}f_p'\left(
+                            \lambda_i
+                        \right),\cdots,\lim_{p\to\infty}f_p^{\left(r_i-1\right)}\left(
+                            \lambda_i
+                        \right)
+                    \]均存在,因为$\left|\lambda_i\right|<R$,则\[
+                    \lim_{p\to\infty}f_p\left(\lambda_i\right)=f\left(\lambda_i\right)
+                    \]根据\cref{thm:逐项可导性}知\begin{align*}
+                        &\lim_{p\to\infty}f_p'\left(\lambda_i\right)=f'\left(\lambda_i\right)\\
+                        &\lim_{p\to\infty}f_p''\left(\lambda_i\right)=f''\left(\lambda_i\right)\\
+                        &\cdots\cdots\cdots\cdots\\
+                        &\lim_{p\to\infty}f_p^{\left(r_i-1\right)}\left(\lambda_i\right)=f^{\left(r_i-1\right)}\left(\lambda_i\right)
+                    \end{align*}于是\begin{align*}
+                        f\left(
+                             \bm{J}_{r_i}\left(\lambda_i\right)
+                        \right)=\lim_{p\to\infty}f_p\left(
+                            \bm{J}_{r_i}\left(\lambda_i\right)
+                        \right)&=\begin{pmatrix}
+                            f\left(\lambda_i\right)&\cfrac{f'\left(\lambda_i\right)}{1!}&\cfrac{f''\left(\lambda_i\right)}{2!}&\cdots&\cfrac{f^{\left(r_i-1\right)}\left(\lambda_i\right)}{\left(r_i-1\right)!}\\
+                            &f\left(\lambda_i\right)&\cfrac{f'\left(\lambda_i\right)}{1!}&\cdots&\cfrac{f^{\left(r_i-2\right)}\left(\lambda_i\right)}{\left(r_i-2\right)!}\\
+                            &&f\left(\lambda_i\right)&\cdots&\cfrac{f^{\left(r_i-3\right)}\left(\lambda_i\right)}{\left(r_i-3\right)!}\\
+                            &&&\ddots&\vdots\\
+                            &&&&f\left(\lambda_i\right)
+                        \end{pmatrix}\qedhere
+                    \end{align*}
+        \end{enumerate}
     \end{Proof}
 \end{formal}
+\begin{formal}
+    \begin{theorem}[审敛法]\label{thm:审敛法}
+        设复幂级数$\displaystyle f\left(z\right)=\sum_{i=0}^{\infty}a_iz^i$的收敛半径为$R$,$\bm{A}\in M_n\left(\mathbb{C}\right),$其谱集$\sigma\left(\bm{A}\right)=\left\{
+            \lambda_1,\lambda_2,\cdots,\lambda_n
+            \right\}$,其中$\lambda_i$为$\bm{A}$的特征值.定义谱半径$\displaystyle \rho\left(\bm{A}\right)=\max_{
+                1\leqslant i\leqslant n
+            }\left|\lambda_i\right|$.则
+            \begin{enumerate}[label={\textup{(\arabic*)}}]
+                \item 若$\rho\left(\bm{A}\right)<R$,则$f\left(\bm{A}\right)$收敛
+                \item 若$\rho\left(\bm{A}\right)>R$,则$f\left(\bm{A}\right)$发散
+                \item 若$\rho\left(\bm{A}\right)=R$,$\forall\left|\lambda_i\right|=R,$设属于$\lambda_i$的初等因子的最大幂次为$n_i$,则$f\left(\bm{A}\right)$收敛当且仅当\[
+                f\left(\lambda_i\right),
+                f'\left(\lambda_i\right),
+                \cdots,
+                f^{\left(n_i-1\right)}\left(\lambda_i\right)
+                \]收敛（$\forall i$）
+                \item 若$f\left(\bm{A}\right)$收敛,则$f\left(\bm{A}\right)$的特征值为\[
+                f\left(\lambda_1\right),f\left(\lambda_2\right),\cdots,f\left(\lambda_n\right)
+                \]
+            \end{enumerate}
+    \end{theorem}
+    \begin{Proof}
+        首先存在非异阵$\bm{P}$使得\[
+        \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=\mathrm{diag}\,\left\{
+            \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+        \right\}
+        \]根据\cref{thm:矩阵幂级数收敛的等价命题}知$f\left(\bm{A}\right)$收敛当且仅当$f\left(\bm{J}\right)$收敛当且仅当$f\left(
+            \bm{J}_{r_i}\left(\lambda_i\right)
+        \right)\left(
+            \forall 1\leqslant i\leqslant k
+        \right)$都收敛,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 若$\rho\left(\bm{A}\right)<R$,\cref{thm:矩阵幂级数收敛的等价命题}知$f\left(
+                \bm{J}_{r_i}\left(\lambda_i\right)
+            \right)$收敛
+            \item 若$\rho\left(\bm{A}\right)>R$,即$\exists \lambda_i,\left|\lambda_i\right|>R$,根据\cref{thm:Cauchy-Hadamard定理}知$f\left(\lambda_i\right)$发散,则根据\cref{thm:矩阵幂级数收敛的等价命题}知$f\left(
+                \bm{J}_{r_i}\left(\lambda_i\right)
+            \right)$发散,则$f\left(\bm{A}\right)$发散
+            \item 若$\rho\left(\bm{A}\right)=R$,则其中$\left|\lambda_i\right|<R$的部分收敛.于是考虑模长等于$R$的特征值,考虑到$n_i$为最大值,于是\cref{thm:矩阵幂级数收敛的等价命题}中取得更精细的结论即$f\left(
+                \bm{J}_{n_i}\left(\lambda_i\right)
+            \right)$收敛当且仅当\[
+            \lim_{p\to\infty}f_p\left(\lambda_i\right),\lim_{p\to\infty}f_p'\left(\lambda_i\right),\cdots,\lim_{p\to\infty}f_p^{\left(n_i-1\right)}\left(\lambda_i\right)
+            \]均存在,即$f_p\left(\lambda_i\right),f_p'\left(\lambda_i\right),\cdots,f_p^{\left(n_i-1\right)}\left(\lambda_i\right)$收敛.
+
+            \item 因为\begin{align*}f\left(\bm{A}\right)&=f\left(\bm{PJP}^{-1}\right)=
+            \bm{P}f\left(\bm{J}\right)\bm{P}^{-1}\\
+            &=\bm{P}\mathrm{diag}\,\left\{
+                f\left(
+                    \bm{J}_{r_1}\left(\lambda_1\right)
+                \right),f\left(
+                    \bm{J}_{r_2}\left(\lambda_2\right)
+                \right),\cdots,f\left(
+                    \bm{J}_{r_k}\left(\lambda_k\right)
+                \right)
+                \right\}\bm{P}^{-1}
+            \end{align*}于是$f\left(\bm{A}\right)$的特征值与该对角阵的特征值相同,即\[
+            f\left(\lambda_1\right),f\left(\lambda_2\right),\cdots,f\left(\lambda_n\right)\qedhere
+            \]
+        \end{enumerate}
+    \end{Proof}
+\end{formal}
+\subsection{矩阵函数}
+\begin{formal}
+    \begin{definition}[简单矩阵函数的定义]\label{def:简单矩阵函数的定义}
+        设$\bm{A}\in M_n\left(\bm{A}\right)$,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\displaystyle \mathrm{e}^{\bm{A}}=\bm{I}_n+\frac{\bm{A}}{1!}+\frac{\bm{A}^2}{2!}+\frac{\bm{A}^3}{3!}+\cdots$
+            \item $\displaystyle
+            \sin \bm{A}= \bm{A}-\frac{\bm{A}^3}{3!}+\frac{\bm{A}^5}{5!}-\frac{\bm{A}^7}{7!}+\cdots
+            $
+            \item $\displaystyle
+            \cos \bm{A}=\bm{I}_n-\frac{\bm{A}^2}{2!}+\frac{\bm{A}^4}{4!}-\frac{\bm{A}^6}{6!}+\cdots
+            $
+            \item $\displaystyle
+            \ln\left(
+                \bm{I}_n+\bm{A}
+            \right)=\bm{A}-\frac{\bm{A}^2}{2}+\frac{\bm{A}^3}{3}-\frac{\bm{A}^4}{4}+\cdots,\rho\left(\bm{A}\right)<1
+            $
+        \end{enumerate}
+    \end{definition}
+\end{formal}
+\begin{red}
+\begin{remark}
+    矩阵函数不能随意套用数值函数的性质.例如\[
+    \mathrm{e}^x\cdot \mathrm{e}^y=
+    \mathrm{e}^y\cdot \mathrm{e}^x
+    =\mathrm{e}^{x+y}
+    \]但\[
+    \mathrm{e}^{\bm{A}+\bm{B}}
+    \neq
+    \mathrm{e}^{\bm{A}}\cdot \mathrm{e}^{\bm{B}}\neq \mathrm{e}^{\bm{A}}\cdot \mathrm{e}^{\bm{B}}
+    \]其中\[
+    \bm{A}=\begin{bmatrix}
+        1&1\\0&0
+    \end{bmatrix},\bm{B}=\begin{bmatrix}
+        0&0\\1&1
+    \end{bmatrix}
+    \]特别地,$\bm{A},\bm{B}$可交换即$\bm{AB}=\bm{BA}$时才有$\mathrm{e}^{\bm{A}+\bm{B}}=\mathrm{e}^{\bm{A}}\cdot \mathrm{e}^{\bm{B} }=\mathrm{e}^{\bm{B}}\cdot \mathrm{e}^{\bm{A}}$（第一个等号证明需要引入范数）.
+\end{remark}
+\end{red}
+\begin{brown}
+    \begin{example}
+        设$\bm{A}\in M_n\left(\mathbb{C}\right)$,求$\mathrm{e}^{t\bm{A}},t$为变量.
+    \end{example}
+    \begin{solution}
+        复幂级数$f\left(z\right)=\mathrm{e}^{tz}$,$f^{\left(i\right)}\left(z\right)=t^i\mathrm{e}^{tz}$,设\[
+        \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=\mathrm{diag}\,\left\{
+            \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+        \right\}
+        \]于是\begin{align*}
+            \mathrm{e}^{t\bm{A}}=f\left(\bm{A}\right)=\bm{P}\mathrm{diag}\,\left\{
+                f\left(
+                    \bm{J}_{r_1}\left(\lambda_1\right)
+                \right),f\left(
+                    \bm{J}_{r_2}\left(\lambda_2\right)
+                \right),\cdots,f\left(
+                    \bm{J}_{r_k}\left(\lambda_k\right)
+                \right)
+            \right\}\bm{P}^{-1}
+        \end{align*}其中\begin{align*}
+            \mathrm{e}^{t\bm{J}_{r_i}\left(\lambda_i\right)}&=\begin{pmatrix}
+                \mathrm{e}^{t\lambda_i}&\cfrac{t\mathrm{e}^{t\lambda_i}}{1!}&\cfrac{t^2\mathrm{e}^{t\lambda_i}}{2!}&\cdots&\cfrac{t^{r_i-1}\mathrm{e}^{t\lambda_i}}{\left(r_i-1\right)!}\\
+                &\mathrm{e}^{t\lambda_i}&\cfrac{t\mathrm{e}^{t\lambda_i}}{1!}&\cdots&\cfrac{t^{r_i-2}\mathrm{e}^{t\lambda_i}}{\left(r_i-2\right)!}\\
+                &&\mathrm{e}^{t\lambda_i}&\cdots&\cfrac{t^{r_i-3}\mathrm{e}^{t\lambda_i}}{\left(r_i-3\right)!}\\
+                &&&\ddots&\vdots\\
+                &&&&\mathrm{e}^{t\lambda_i}
+            \end{pmatrix}\\
+            &=\mathrm{e}^{t\lambda_i}\begin{pmatrix}
+                1&t&\cfrac{t^2}{2!}&\cdots&\cfrac{t^{r_i-1}}{\left(r_i-1\right)!}\\
+                &1&t&\cdots&\cfrac{t^{r_i-2}}{\left(r_i-2\right)!}\\
+                &&1&\cdots&\cfrac{t^{r_i-3}}{\left(r_i-3 \right)!}\\
+                &&&\ddots&\vdots\\
+                &&&&1
+            \end{pmatrix}
+        \end{align*}
+    \end{solution}
+\end{brown}

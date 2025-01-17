@@ -205,7 +205,7 @@ $\displaystyle
 \end{solution}
 
 3.设$b_{ij}=\left(a_{i1}+\cdots
-+a_{in}\right)-a_{ij}$，求证
++a_{in}\right)-a_{ij}$,求证
 \[
 \begin{vmatrix}
 	b_{11} & \cdots & b_{1n}\\
@@ -286,7 +286,7 @@ $\displaystyle
 			+a_{nn}\right)-a_{nn}
 		\end{vmatrix}
 	\end{align*}
-	再用后几列分别减去第一列，然后其余列加到
+	再用后几列分别减去第一列,然后其余列加到
 	第一列
 	\begin{align*}
 		&\left(n-1\right)
@@ -328,7 +328,7 @@ $\displaystyle
 \end{vmatrix}
 \]
 \begin{solution}
-	明显地，若$a_i\neq 0\left(
+	明显地,若$a_i\neq 0\left(
 		1\leqslant 
 		i \leqslant n
 	\right)$
@@ -370,17 +370,17 @@ $\displaystyle
 	< j \leqslant n}
 	\left(a_ib_j-a_jb_i\right)
 \end{align*}
-若只有一个$a_i=0$，按第$i$行展开
+若只有一个$a_i=0$,按第$i$行展开
 得到的行列式具有相同类型；
-若至少有两个$a_i=a_j=0$，则行列式为零，
-容易证明，后两种情况是与第一
+若至少有两个$a_i=a_j=0$,则行列式为零,
+容易证明,后两种情况是与第一
 种情况统一的.
 \end{solution}
 
 5.设$f_i\left(x\right)\left(
 	i=1,2,\cdots,n
-\right)$均为次数不超过$n-2$的关于$x$的多项式，求证：
-对任意$n$个数$a_1,a_2,\cdots,a_n$，均有
+\right)$均为次数不超过$n-2$的关于$x$的多项式,求证：
+对任意$n$个数$a_1,a_2,\cdots,a_n$,均有
 \[
 \begin{vmatrix}
 	f_1\left(a_1\right) & 
@@ -435,28 +435,28 @@ $\displaystyle
 	；$a_i\neq a_j\left(2\leqslant i\neq j\leqslant 
 	n\right)$时$g\left(a_i\right)
 	=0\left(2\leqslant i
-	\leqslant n\right)$，又$\mathrm{deg}f_i\left(
+	\leqslant n\right)$,又$\mathrm{deg}f_i\left(
 		x
-	\right)\leqslant n-2$，故
+	\right)\leqslant n-2$,故
 	$g\left(x\right)\equiv 0$.得证.
 	\qedhere
 \end{Proof}
 另一种更自然的证法如下
 \begin{Proof}
 	因为$f_k\left(x\right)$均为次数不超过
-	$n-2$的多项式，
+	$n-2$的多项式,
 	所以按照单项式
 	一直做行列式的
 	拆分一定可以使得
 	原行列式等于若干个元素均为
-	单项式的行列式之和，根据抽屉原理，
+	单项式的行列式之和,根据抽屉原理,
 	每个行列式中
-	至少有两列元素共用同一个单项式，
-	于是这些行列式值均为零，得证.
+	至少有两列元素共用同一个单项式,
+	于是这些行列式值均为零,得证.
 	\qedhere
 \end{Proof}
 
-6.设$t$为参数，
+6.设$t$为参数,
 \[
 \left|\bm{A}\left(t\right)\right|
 =\begin{vmatrix}
@@ -477,7 +477,7 @@ $\displaystyle
 $\left|\bm{A}\left(0\right)\right|$中的
 代数余子式.
 \begin{Proof}
-	我们证明更强的结论，设
+	我们证明更强的结论,设
 	\[
 	\left|\bm{A}\right|
 	=\begin{vmatrix}
@@ -550,7 +550,7 @@ $\left|\bm{A}\left(0\right)\right|$中的
 \end{Proof}
 \section{行列式的等价定义}
 4.若一个$n$阶行列式中零元素个数超过
-$n^2-n$，证明：该行列式值为零.
+$n^2-n$,证明：该行列式值为零.
 \begin{Proof}
 	由组合定义
 	\[
@@ -560,17 +560,17 @@ $n^2-n$，证明：该行列式值为零.
 	a_{nk_n}
 	\]
 	由于行列式$\left|\bm{A}\right|$中零元素的个数超过
-$n^2-n$个，故$a_{1k_1},a_{2k_2},\cdots,
-	a_{nk_n}$中至少一个为零，于是$a_{1k_1}a_{2k_2}\cdots
-	a_{nk_n}=0$，故$\left|\bm{A}\right|=0.$或者考虑抽屉原理，至少有
+$n^2-n$个,故$a_{1k_1},a_{2k_2},\cdots,
+	a_{nk_n}$中至少一个为零,于是$a_{1k_1}a_{2k_2}\cdots
+	a_{nk_n}=0$,故$\left|\bm{A}\right|=0.$或者考虑抽屉原理,至少有
 	一列其零元素个数不少于
 	\[
 	\left[\frac{n^2-n}{n}\right]+1=n
 	\]
-	于是至少有一列元素全为零，故$\left|\bm{A}\right|=0.$
+	于是至少有一列元素全为零,故$\left|\bm{A}\right|=0.$
 \end{Proof}
 
-5.设$f_{ij}\left(x\right)$是可导函数，记
+5.设$f_{ij}\left(x\right)$是可导函数,记
 \[
 F\left(x\right)=
 \begin{vmatrix}
@@ -599,9 +599,9 @@ F_i\left(x\right)
 \]
 \begin{Proof}
 考虑数学归纳法
-，对阶数$n$归纳，$n=1$时显然成立.
+,对阶数$n$归纳,$n=1$时显然成立.
 设结论对$n-1$阶行列式成立
-，将行列式展开
+,将行列式展开
 \[
 F\left(x\right)
 =
@@ -610,10 +610,10 @@ A_{11}\left(x\right)
 +f_{21}\left(x\right)A_{21}\left(x\right)+
 \cdots+f_{n1}\left(x\right)A_{n1}\left(x\right)
 \]
-其中$A_{i1}$是$f_{i1}\left(x\right)$的代数余子式，
+其中$A_{i1}$是$f_{i1}\left(x\right)$的代数余子式,
 两端求导并记$A_{ij}^k\left(x\right)$
 是对$A_{ij}\left(x\right)$第$k$列元素求导后得到的行列式
-，则
+,则
 \begin{align*}
     \frac{\mathrm{d}}{\mathrm{d}x}F\left(x\right)
     &=\frac{\mathrm{d}}{\mathrm{d}x}\left(
@@ -631,7 +631,7 @@ A_{11}\left(x\right)
 \sum_{i=1}^{n}f_{i1}\left(x\right)A_{i1}^k\left(x
 \right)=F_{k+1}\left(x\right)\left(
     1\leqslant k\leqslant n-1
-\right)$，故
+\right)$,故
 \[
 \frac{\mathrm{d}}{\mathrm{d}x}F\left(x\right)
 =
@@ -658,14 +658,14 @@ f\left(x\right)=\begin{vmatrix}
 	\vdots&\vdots&&\vdots\\
 	-a_{n1}&-a_{n2}&\cdots&x-a_{nn}
 \end{vmatrix}
-\]其中$x$为未定元，$a_{ij}$为常数.证明：
+\]其中$x$为未定元,$a_{ij}$为常数.证明：
 $f\left(x\right)$是一个最高次项系数为1的$n$次多项式
-，且其$n-1$次项的系数为$-\left(a_{11}+a_{22}+\cdots+a_{nn}\right).$
+,且其$n-1$次项的系数为$-\left(a_{11}+a_{22}+\cdots+a_{nn}\right).$
 \begin{Proof}
-由组合定义，$f\left(x\right)$的最高次项出现于$\left(x-a_{11}\right)\left(x-a_{22}
-\right)\cdots\left(x-a_{nn}\right)$单项，且其他单项对整体仅贡献不高于$n-2$次的项，
+由组合定义,$f\left(x\right)$的最高次项出现于$\left(x-a_{11}\right)\left(x-a_{22}
+\right)\cdots\left(x-a_{nn}\right)$单项,且其他单项对整体仅贡献不高于$n-2$次的项,
 于是$f\left(x\right)$是一个最高次项系数为1的$n$次多项式
-，且其$n-1$次项的系数为$-\left(a_{11}+a_{22}+\cdots+a_{nn}\right).$
+,且其$n-1$次项的系数为$-\left(a_{11}+a_{22}+\cdots+a_{nn}\right).$
 \end{Proof}
 \section{Laplace定理}
 2.设$\omega$为三次单位根
@@ -684,8 +684,8 @@ $f\left(x\right)$是一个最高次项系数为1的$n$次多项式
 \end{vmatrix}
 \]
 \begin{solution}
-	取定\textup{1、2、6}行列，注意到只有$j_1=1,j_2=2,j_3=5$的子式
-	不为零，于是
+	取定\textup{1、2、6}行列,注意到只有$j_1=1,j_2=2,j_3=5$的子式
+	不为零,于是
 	\begin{align*}
 		\begin{vmatrix}
 	1&1&0&0&1&0\\
@@ -740,7 +740,7 @@ $f\left(x\right)$是一个最高次项系数为1的$n$次多项式
 \end{solution}
 
 3.证明：
-	确定代数余子式的符号时，无需利用该子式的行列号码和，
+	确定代数余子式的符号时,无需利用该子式的行列号码和,
 	利用余子式行列号码和即可.
 	\begin{Proof}
 		两组号码和之和为$2\left(1+2+\cdots+n\right)$为偶数.
@@ -780,9 +780,91 @@ $f\left(x\right)$是一个最高次项系数为1的$n$次多项式
 \]
 \begin{solution}
 	对第一行及最后一行不断用\textup{Laplace}定理：
-	明显每次只能取第一行、第一列、最后一行、最后一列，
-	且号码和均为偶数，那么结果为
+	明显每次只能取第一行、第一列、最后一行、最后一列,
+	且号码和均为偶数,那么结果为
 	\[
 	\left(a^2-b^2\right)^n
 	\]
+\end{solution}
+\section{复习题一}
+7.求证：$n$阶行列式\[\left|\bm{A}\right|=
+\begin{vmatrix}
+    \cos x&1&0&0&\cdots&0&0&0\\
+    1&2\cos x&1&0&\cdots&0&0&0\\
+    0&1&2\cos x&1&\cdots&0&0&0\\
+    \vdots&\vdots&\vdots&\vdots&&\vdots&\vdots&\vdots\\
+    0&0&0&0&\cdots&1&2\cos x&1\\
+    0&0&0&0&\cdots&0&1&2\cos x
+\end{vmatrix}=\cos nx
+\]
+\begin{Proof}
+    因为\begin{align*}
+        \left|\bm{A}\right|&=\begin{vmatrix}
+    2\cos x&1&0&0&\cdots&0&0&0\\
+    1&2\cos x&1&0&\cdots&0&0&0\\
+    0&1&2\cos x&1&\cdots&0&0&0\\
+    \vdots&\vdots&\vdots&\vdots&&\vdots&\vdots&\vdots\\
+    0&0&0&0&\cdots&1&2\cos x&1\\
+    0&0&0&0&\cdots&0&1&2\cos x
+\end{vmatrix}\\
+&-\begin{vmatrix}
+    \cos x&1&0&0&\cdots&0&0&0\\
+    0&2\cos x&1&0&\cdots&0&0&0\\
+    0&1&2\cos x&1&\cdots&0&0&0\\
+    \vdots&\vdots&\vdots&\vdots&&\vdots&\vdots&\vdots\\
+    0&0&0&0&\cdots&1&2\cos x&1\\
+    0&0&0&0&\cdots&0&1&2\cos x
+\end{vmatrix}\\
+&=D_n-\cos xD_{n-1}
+    \end{align*}其中$D_n$是$a_1=a_2=\cdots=a_n=2\cos x,b_1=b_2=\cdots=b_{n-1}=c_1=c_2=\cdots=c_{n-1}=1$的三对角行列式,于是\[
+    D_n=2\cos xD_{n-1}-D_{n-2},D_0=1,D_1=2\cos x
+    \]即\[
+    \frac{D_n-\alpha D_{n-1}}{D_{n-1}-\alpha D_{n-2}}=\beta
+    \]其中$\alpha=\cos x+\mathrm{i}\sin x,\beta=\cos x-\mathrm{i}\sin x.$于是$x\neq k\pi,k\in\mathbb{Z}\Longrightarrow\alpha\neq\beta$时\begin{align*}
+        D_n&=\frac{
+            \alpha^{n+1}-\beta^{n+1}
+        }{
+            \alpha-\beta
+        }\\
+        &=\frac{
+            \sin\left(n+1\right)x
+        }{\sin x}
+    \end{align*}则\begin{align*}
+        \left|\bm{A}\right|&=D_n-\cos xD_{n-1}\\
+        &=\cos nx
+    \end{align*}而$x=k\pi,k\in\mathbb{Z}\Longrightarrow\alpha=\beta$时\begin{align*}
+        D_n=\left(n+1\right)\cos^{n}x=\left(n+1\right)\left(-1\right)^{kn},k\in\mathbb{Z}
+    \end{align*}于是\begin{align*}
+        \left|\bm{A}\right|&=D_n-\cos xD_{n-1}\\
+        &=\left(n+1\right)\left(-1\right)^{kn}-\left(-1\right)^kn\left(-1\right)^{k\left(n-1\right)}\\
+        &=\left(-1\right)^{kn}=\cos nx\qedhere
+    \end{align*}
+\end{Proof}
+8.计算行列式\[
+\left|\bm{A}\right|=\begin{vmatrix}
+    x_1&y&y&\cdots&y&y\\
+    z&x_2&y&\cdots&y&y\\
+    z&z&x_3&\cdots&y&y\\
+    \vdots&\vdots&\vdots&&\vdots&\vdots\\
+    z&z&z&\cdots&x_{n-1}&y\\
+    z&z&z&\cdots&z&x_n
+\end{vmatrix}
+\]\begin{solution}
+    因为\begin{align*}
+        \left|\bm{A}\left(t\right)\right|&=\begin{vmatrix}
+            a_{11}+t&a_{12}+t&a_{13}+t&\cdots&a_{1n}+t\\
+            a_{21}+t&a_{22}+t&a_{23}+t&\cdots&a_{2n}+t\\
+            \vdots&\vdots&\vdots&&\vdots\\
+            a_{n1}+t&a_{n2}+t&a_{n3}+t&\cdots&a_{nn}+t
+        \end{vmatrix}\\
+        &=\left|\bm{A}\left(0\right)\right|+t\sum_{i, j=1}^{n}A_{ij}
+    \end{align*}则由题有 $y\neq z$时\[
+    \left|\bm{A}\right|=\frac{1}{y-z}\left[
+        y\prod_{i=1}^{n}\left(x_i-z\right)-z\prod_{i=1}^{n}\left(x_i-y\right)
+    \right]
+    \]$y=z$时由递推\[
+    D_n=\left(x_n-y\right)D_{n-1}+y\prod_{i=1}^{n-1}\left(x_i-y\right)
+    \]得到\[
+    D_n=\prod_{i=1}^{n}\left(x_i-y\right)+y\sum_{i=1}^{n}\prod_{i\neq j}\left(x_j-y\right)
+    \]
 \end{solution}
