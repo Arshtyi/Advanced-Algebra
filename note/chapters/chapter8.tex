@@ -1117,3 +1117,247 @@ f=z_1^2+z_2^2+\cdots+z_r^2
         \end{align*}则$\bm{A\alpha}=\bm{C}'\bm{C\alpha}=\bm{0}.$
     \end{Proof}
 \end{formal}
+\newpage\section{Hermite型}
+\subsection{Hermite型与Hermite阵}
+考虑将这套理论推广到复数域,即
+\[
+f\left(
+    x_1,x_2,\cdots,x_n
+\right)=d_1x_1^2+d_2x_2^2+\cdots+d_rx_r^2
+\]其中$d_1,d_2,\cdots,d_r\in\mathbb{C},x_1,x_2,\cdots,x_r$为复变元.
+\begin{red}
+    \begin{remark}
+        由于复数运算的特殊性,很难直接平行地做推广.因而必须做一些调整.
+        \begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $d_1,d_2,\cdots,d_r\in\mathbb{R}$
+            \item 考虑模长的平方而不是复数的平方
+        \end{enumerate}
+    \end{remark}
+\end{red}
+\begin{formal}
+    \begin{definition}[Hermite型的定义]\label{def:Hermite型的定义}
+        复数域上的$n$元二次齐次函数\[
+        f\left(
+            x_1,x_2,\cdots,x_n
+        \right)=\sum_{j=1}^{n}\sum_{i=1}^{n}a_{ij}\overline{x_i}x_j
+        \]其中$\overline{a}_{ij}=a_{ji},\forall 1\leqslant i,j\leqslant n.$
+    \end{definition}
+\end{formal}
+\begin{red}
+    \begin{remark}
+        \cref{def:Hermite型的定义}\textup{Hermite}型不是一个多项式,多项式的形式必须是平方,而是一个函数.并且取共轭容易发现,它是一个实值函数.
+    \end{remark}
+\end{red}
+\begin{formal}
+    \begin{definition}[Hermite矩阵的定义]\label{def:Hermite矩阵的定义}
+        取\cref{def:Hermite型的定义}中系数组成复矩阵\[
+        \bm{A}=\begin{pmatrix}
+               a_{11}&a_{12}&\cdots&a_{1n}\\
+                a_{21}&a_{22}&\cdots&a_{2n}\\
+                \vdots&\vdots&&\vdots\\
+                a_{n1}&a_{n2}&\cdots&a_{nn}  
+        \end{pmatrix}
+        \]即\[
+        f\left(
+            x_1,x_2,\cdots,x_n
+        \right)=\sum_{j=1}^{n}\sum_{i=1}^{n}a_{ij}\overline{x_i}x_j=\overline{\bm{x}}'\bm{A}\bm{x}
+        \]满足$\overline{\bm{A}}'=\bm{A}$（\cref{def:Hermite矩阵}）,称为\textup{Hermite}矩阵.
+    \end{definition}
+\end{formal}
+\begin{green}
+    \begin{corollary}[Hermite阵的主对角元]\label{cor:Hermite阵的主对角元}
+        \textup{Hermite}阵的主对角元必定是实数.
+    \end{corollary}
+\end{green}
+\begin{formal}
+    \begin{theorem}[Hermite型与Hermite阵]\label{thm:Hermite型与Hermite阵}
+        因为\[
+        f\left(
+            x_1,x_2,\cdots,x_n
+        \right)=\sum_{j=1}^{n}\sum_{i=1}^{n}a_{ij}\overline{x_i}x_j=\overline{\bm{x}}'\bm{A}\bm{x}
+        \]其中$\bm{x}=\begin{pmatrix}
+            x_1\\x_2\\\vdots\\x_n
+        \end{pmatrix}$,$\bm{A}$是一个\textup{Hermite}阵.
+
+        构造映射\begin{align*}
+            \bm{\varphi}:\left\{
+                n\textup{阶Hermite阵}\right\}&\longrightarrow \left\{n\textup{元Hermite型}\right\}\\
+                \bm{A}&\longmapsto f\left(
+                    x_1,x_2,\cdots,x_n
+                \right)=\overline{\bm{x}}'\bm{A}\bm{x}
+        \end{align*}这是一个一一对应.
+    \end{theorem}
+    \begin{Proof}
+        首先这是满射,然后证明这是单射.设Hermite阵$\bm{A},\bm{B}$满足$\overline{\bm{x}}'\bm{Ax}=\overline{\bm{x}}'\bm{Bx}$于是$\overline{\bm{x}}\left(\bm{A}-\bm{B}\right)\bm{x}=0\Longrightarrow\bm{A}=\bm{B},$这通过赋值即可证.
+    \end{Proof}
+\end{formal}
+作非异线性变换$\bm{x}=\bm{Cy},\bm{C}$为非异复矩阵,则得到的\[
+f=\left(\overline{\bm{Cy}}\right)'\bm{A}\left(\bm{Cy}\right)=\overline{\bm{y}}'\left(
+    \overline{\bm{C}}'\bm{AC}
+\right)\bm{y}
+\]中的$\overline{\bm{C}}'\bm{AC}$仍然是Hermite阵.
+\subsection{复相合}
+\begin{formal}
+    \begin{definition}[复相合的定义]\label{def:复相合的定义}
+        设$\bm{A},\bm{B}$是两个\textup{Hermite}型,若存在非异复矩阵$\bm{C}$使得\[
+        \bm{B}=\overline{\bm{C}}'\bm{AC}
+        \]则称$\bm{A},\bm{B}$是复相合的.
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[复相合关系]\label{thm:复相合关系}
+        复相合关系是一种等价关系.
+    \end{theorem}
+\end{formal}
+\begin{red}
+    \begin{remark}
+        于是接下来的问题与实二次型类似,即对于任意一个\textup{Hermite}阵$\bm{A}$,是否存在非异复矩阵$\bm{C}$使得$\overline{\bm{C}}'\bm{AC}$为一个对角阵.
+    \end{remark}
+\end{red}
+\begin{formal}
+    \begin{definition}[共轭对称初等变换的定义]\label{def:共轭对称初等变换的定义}
+        共轭对阵初等变换是复相合变换\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 对换第$i$行与第$j$行,再对换第$i$列与第$j$列\[
+            \bm{P}_{ij}\bm{AP}_{ij},\overline{\bm{P}}_{ij}'=\bm{P}_{ij}        
+             \]
+             \item 第$i$行乘上$0\neq c\in\mathbb{C}$,再第$i$列乘上$\overline{c}$\[
+             \bm{P}_i\left(c\right)\bm{AP}_i\left(\overline{c}\right),\overline{\bm{P}}_i'\left(c\right)=\bm{P}_i\left(\overline{c}\right)
+                \]
+                \item 第$i$行乘上$0\neq c\in\mathbb{C}$加到第$j$行,再第$i$列乘上$\overline{c}$加到第$j$列\[
+                \bm{T}_{ij}\left(c\right)\bm{AT}_{ji}\left(\overline{c}\right),\overline{\bm{T}}'_{ij}\left(c\right)=\bm{T}_{ij}\left(\overline{c}\right)
+                \]
+        \end{enumerate}
+    \end{definition}
+\end{formal}
+\subsection{惯性定理}
+\begin{formal}
+    \begin{definition}[标准型的定义]\label{def:标准型的定义}
+        \textup{Hermite}型\[
+        f\left(
+            x_1,x_2,\cdots,x_n
+        \right)=d_1\overline{x}_1x_1+d_2\overline{x}_2x_2+\cdots+d_n\overline{x}_rx_r
+        \]其中$d_1,d_2,\cdots,d_r\in\mathbb{R}$称为标准型.
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[Hermite阵对角化]\label{thm:Hermite阵对角化}
+        设$\bm{A}$是一个\textup{Hermite}阵,则存在非异阵$\bm{C}$使得$\overline{\bm{C}}\bm{AC}$为实对角阵.
+    \end{theorem}
+    \begin{Proof}
+        类似于\cref{lem:首元非零},\cref{thm:必定合同于对角阵}。
+    \end{Proof}
+\end{formal}
+\begin{formal}
+    \begin{definition}[规范标准型的定义]\label{def:规范标准型的定义}
+        \textup{Hermite}型总可以化为\[
+       g\left(
+        y_1,y_2,\cdots,y_n
+       \right)=y_1\overline{y}_1+y_2\overline{y}_2+\cdots+y_p\overline{y}_p-
+         y_{p+1}\overline{y}_{p+1}-\cdots-y_r\overline{y}_r
+        \]的规范标准型.
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[Hermite型的惯性定理]\label{thm:Hermite型的惯性定理}
+        设\textup{Hermite}型$f\left(x_1,x_2,\cdots,x_n\right)$的两个规范标准型为\begin{align*}
+            &\overline{y}_1y_1+\overline{y}_2y_2+\cdots+\overline{y}_py_p-\overline{y}_{p+1}y_{p+1}-\cdots-\overline{y}_ry_r\\
+            &\overline{z}_1z_1+\overline{z}_2z_2+\cdots+\overline{z}_kz_k-\overline{z}_{k+1}z_{k+1}-\cdots-\overline{z}_rz_r
+        \end{align*}则$p=k.$
+    \end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{definition}[惯性指数的定义]\label{def:惯性指数的定义2}
+        设规范标准型\[
+        g\left(
+            y_1,y_2,\cdots,y_n
+        \right)=y_1\overline{y}_1+y_2\overline{y}_2+\cdots+y_p\overline{y}_p-
+        y_{p+1}\overline{y}_{p+1}-\cdots-y_r\overline{y}_r
+        \]其中,$r$称为\textup{Hermite}型的秩,而$p$称为\textup{Hermite}型的正惯性指数,而$q=r-p$称为\textup{Hermite}型的负惯性指数,$s=p-q$称为\textup{Hermite}型的符号差.
+    \end{definition}
+\end{formal}
+\begin{red}
+    \begin{remark}
+        \cref{def:惯性指数的定义2}对于\textup{Hermite}阵也适用.同样也是四者知其二即可全推知.
+    \end{remark}
+\end{red}
+\begin{formal}
+    \begin{theorem}[全系不变量]\label{thm:全系不变量2}
+        \cref{def:惯性指数的定义2}中秩与符号差（或正负惯性指数）是复相合关系下的全系不变量.
+    \end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[复相合标准型]\label{thm:复相合标准型}
+        任意\textup{Hermite}阵在复相合关系下的标准型为\newpage\[
+        \begin{pmatrix}
+            \bm{I}_p&&\\
+            &-\bm{I}_q&\\
+            &&\bm{O}
+        \end{pmatrix}
+        \]这与\cref{def:合同标准型的定义}是相同的.
+    \end{theorem}
+\end{formal}
+\subsection{正定Hermite型}
+\begin{formal}
+    \begin{definition}[正定Hermite型的定义]\label{def:正定Hermite型的定义}
+        设\textup{Hermite}型$f\left(x_1,x_2,\cdots,x_n\right)=\overline{\bm{x}}'\bm{Ax}$\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 若$\forall \bm{0}\neq\bm{\alpha}\in\mathbb{C}^n,\overline{\bm{\alpha}}'\bm{A\alpha}>0$,则称$f$为正定\textup{Hermite}型,$\bm{A}$为正定\textup{Hermite}阵.
+            \item 若$\forall \bm{0}\neq\bm{\alpha}\in\mathbb{C}^n,\overline{\bm{\alpha}}'\bm{A\alpha}\geqslant 0$,则称$f$为半正定\textup{Hermite}型,$\bm{A}$为半正定\textup{Hermite}阵.
+            \item 若$\forall \bm{0}\neq\bm{\alpha}\in\mathbb{C}^n,\overline{\bm{\alpha}}'\bm{A\alpha}<0$,则称$f$为负定\textup{Hermite}型,$\bm{A}$为负定\textup{Hermite}阵.
+            \item 若$\forall \bm{0}\neq\bm{\alpha}\in\mathbb{C}^n,\overline{\bm{\alpha}}'\bm{A\alpha}\leqslant 0$,则称$f$为半负定\textup{Hermite}型,$\bm{A}$为半负定\textup{Hermite}阵.
+            \item 若$\exists \bm{\alpha},\bm{\beta}\in\mathbb{C}^n$使得$\overline{\bm{\alpha}}'\bm{A\alpha}>0,\overline{\bm{\beta}}'\bm{A\beta}<0$,则称$f$为不定\textup{Hermite}型,$\bm{A}$为不定\textup{Hermite}阵.
+        \end{enumerate}
+    \end{definition}
+\end{formal}
+\begin{brown}
+    \begin{example}
+        \[
+        f=\overline{x}_1x_1+\overline{x}_2x_2+\cdots+\overline{x}_nx_n
+        \]正定\[
+        f=\overline{x}_1x_1+\overline{x}_2x_2+\cdots+\overline{x}_rx_r
+        \]半正定
+    \end{example}
+\end{brown}
+\begin{formal}
+    \begin{theorem}[正定的判定]\label{thm:正定的判定2}
+        设\textup{Hermite}型$f=\overline{\bm{x}}'\bm{Ax}$的秩为$r$,正负惯性指数$p,q$,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $f$正定当且仅当$p=n$,当且仅当复相合标准型为$\bm{I}_n$
+            \item $f$半正定当且仅当$p=r$,当且仅当复相合标准型为$\begin{pmatrix}
+                \bm{I}_r&\bm{O}\\
+                \bm{O}&\bm{O}
+            \end{pmatrix}$
+            \item $f$负定当且仅当$q=n$,当且仅当复相合标准型为$-\bm{I}_n$
+            \item $f$半负定当且仅当$q=r$,当且仅当复相合标准型为$\begin{pmatrix}
+                -\bm{I}_r&\bm{O}\\
+                \bm{O}&\bm{O}
+            \end{pmatrix}$
+            \item $f$不定当且仅当$p,q>0$
+        \end{enumerate}
+    \end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{proposition}[正定的等价结论]\label{prop:正定的等价结论2}
+        设$n$阶\textup{Hermite}阵$\bm{A}$,则下列结论等价\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\bm{A}$正定
+            \item $\bm{A}$复相合于$\bm{I}_n$
+            \item 存在非异复矩阵$\bm{C}$使得$\bm{A}=\overline{\bm{C}}'\bm{C}$
+            \item $\bm{A}$的所有主子式均大于$0$
+            \item $\bm{A}$的所有顺序主子式均大于$0$
+            \item $\bm{A}$的特征值均大于$0$
+        \end{enumerate}
+    \end{proposition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[半正定的等价结论]\label{thm:半正定的等价结论2}
+        设$n$阶\textup{Hermite}阵$\bm{A}$,则下列结论等价\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\bm{A}$半正定
+            \item $\bm{A}$复相合于$\begin{pmatrix}
+                \bm{I}_r&\bm{O}\\
+                \bm{O}&\bm{O}
+            \end{pmatrix}$
+            \item $\exists \bm{C}\in M_n\left(\mathbb{C}\right)$使得$\bm{A}=\overline{\bm{C}}'\bm{C}$
+            \item $\bm{A}$的所有主子式均大于等于$0$
+            \item $\bm{A}$的所有顺序主子式均大于等于$0$
+            \item $\bm{A}$的特征值均大于等于$0$
+        \end{enumerate}
+    \end{theorem}
+\end{formal}
