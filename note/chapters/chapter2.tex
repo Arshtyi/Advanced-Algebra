@@ -225,14 +225,22 @@ $\displaystyle \bm{O}$
 方阵
 \[
 \begin{pmatrix}
-       a_{11} & \cdots & a_{1n} \\
-        \vdots & \ddots & \vdots \\
-        a_{n1} & \cdots & a_{nn}  
+       a_{11} &a_{12}&\cdots&a_{1n}\\
+         a_{21} &a_{22}&\cdots&a_{2n}\\
+            \vdots&\vdots&&\vdots\\
+            a_{n1}&a_{n2}&\cdots&a_{nn} 
 \end{pmatrix}
 \]
-的主对角线上元素之和称为这个方阵的迹,记作$ \mathrm{tr}\,\bm{A}=
+的主对角线上元素之和称为这个方阵的迹,记作$ \mathrm{tr}\,\bm{A}=\mathrm{Tr}\,\left(\bm{A}\right)=
   a_{11} + a_{22} + \cdots + a_{nn}$.
 \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[迹的交换性]\label{thm:迹的交换性}
+        设$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right),\bm{B}\in M_{n\times m}\left(\mathbb{R}\right)$,则\[
+        \mathrm{Tr}\,\left(\bm{AB}\right)=\mathrm{Tr}\,\left(\bm{BA}\right)
+        \]
+    \end{theorem}
 \end{formal}
 \newpage 
 \section{矩阵的运算}

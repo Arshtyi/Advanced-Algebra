@@ -622,7 +622,7 @@ d\left(
 \end{green}
 \begin{formal}
     \begin{theorem}[Gram-Schmidt正交化方法]\label{thm:Gram-Schmidt正交化方法}
-        设$V$为$n$维内积空间,$\bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m$是其中线性无关的向量,则存在两两正交的非零向量$\bm{v}_1,bm{v}_2,\cdots,\bm{v}_m$使得\[
+        设$V$为$n$维内积空间,$\bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m$是其中线性无关的向量,则存在两两正交的非零向量$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m$使得\[
         L\left(
             \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m
         \right)=L\left(
@@ -1095,3 +1095,220 @@ L\left(
     \]即左侧正项级数收敛.特别地,若等号成立,则称该空间为完备的内积空间,也叫作\textup{Hilbert}空间.
 \end{remark}
 \end{red}
+\newpage
+\section{伴随}
+\begin{red}
+    \begin{remark}
+        从泛函分析的角度,变换也称为算子.
+    \end{remark}
+\end{red}
+\subsection{伴随算子}
+设$n$维酉空间（欧式空间）$V$,取标准正交基$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+\right\}$,线性算子$\bm{\varphi}\in \mathcal{L}\left(V\right)$,表示阵$\displaystyle\bm{A}=\left(a_{ij}\right)_{n\times n}\in M_n\left(\mathbb{C}\right)$.任取$\displaystyle\bm{\alpha}=\sum_{i=1}^{n}a_i\bm{e}_i,$其坐标向量为$\bm{x}=\begin{pmatrix}
+    a_1\\a_2\\\vdots\\a_n
+    \end{pmatrix},
+    \bm{\beta}=\sum_{i=1}^{n}b_i\bm{e}_i
+    $,其坐标向量为$\bm{y}=\begin{pmatrix}
+        b_1\\b_2\\\vdots\\b_n
+        \end{pmatrix}$.容易知道\[
+        \bm{\varphi}\left(\bm{\alpha}\right)=\bm{Ax},\bm{\varphi}\left(\bm{\beta}\right)=\bm{Ay}
+        \]
+
+        下面考虑\begin{align*}
+            \left(
+                \bm{\varphi}\left(\bm{\alpha}\right),\bm{\beta}
+            \right)&=\left(\bm{Ax}\right)'\overline{\bm{y}}\\
+            &=\bm{x}'\bm{A}'\overline{\bm{y}}\\
+            &=\bm{x}'\overline{\left(
+                \overline{\bm{A}}'\bm{y}
+            \right)}
+        \end{align*}
+        定义$\bm{\psi}\in\mathcal{L}\left(V\right)$,由\cref{thm:线性变换与表示矩阵}知一定存在表示矩阵为$\overline{\bm{A}}'$的$\bm{\psi}$.考虑\begin{align*}
+            \left(
+                \bm{\alpha},\bm{\psi}\left(\bm{\beta}\right)
+            \right)=\bm{x}'\overline{\left(
+                \overline{\bm{A}}'\bm{y}
+            \right)}
+        \end{align*}即\[
+        \left(
+            \bm{\varphi}\left(\bm{\alpha}\right),\bm{\beta}
+        \right)=\left(
+            \bm{\alpha},\bm{\psi}\left(\bm{\beta}\right)
+        \right)
+        \]其中$\bm{\psi}$只依赖于$\bm{\varphi}$,于是该式对$\forall\bm{\alpha},\bm{\beta}\in V$成立.
+        \begin{red}
+            \begin{remark}
+                欧式空间下$\bm{\psi}$的表示矩阵即为$\bm{A}'.$
+            \end{remark}
+        \end{red}
+        \begin{formal}
+            \begin{definition}[伴随算子的定义]\label{def:伴随算子的定义}
+                设$\bm{\varphi}$是内积空间$V$上的一个线性算子,若存在线性算子$\bm{\varphi}^*,\forall\bm{\alpha},\bm{\beta}\in V:$\[
+                \left(
+                    \bm{\varphi}\left(\bm{\alpha}\right),\bm{\beta}
+                \right)=\left(
+                    \bm{\alpha},\bm{\varphi}^*\left(\bm{\beta}\right)
+                \right)
+                \]则称$\bm{\varphi}^*$是$\bm{\varphi}$的伴随算子,简称伴随.
+            \end{definition}
+        \end{formal}
+\begin{formal}
+    \begin{theorem}[伴随算子的存在性]\label{thm:伴随算子的存在性}
+        \,
+
+        \begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 伴随算子如果存在,则一定是唯一的
+            \item 有限维内积空间上的任一线性算子一定有伴随算子
+        \end{enumerate}
+    \end{theorem}
+    \begin{Proof}
+        \begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 设$\bm{\varphi}^*,\bm{\varphi}^{\#}$都是$\bm{\varphi}$的伴随算子,即\[
+            \left(
+                \bm{\varphi}\left(\bm{\alpha}\right),\bm{\beta}
+            \right)=\left(
+                \bm{\alpha},\bm{\varphi}^*\left(\bm{\beta}\right)
+            \right)=\left(
+                \bm{\alpha},\bm{\varphi}^{\#}\left(\bm{\beta}\right)
+            \right)
+            \]于是$\forall\bm{\alpha}\in V:$\[
+            \left(\bm{\alpha},\bm{\varphi}^*\left(\bm{\beta}\right)-\bm{\varphi}^{\#}\left(\bm{\beta}\right)\right)=0
+            \]特别地\[
+            \left(
+                \bm{\varphi}^*\left(\bm{\beta}\right)-\bm{\varphi}^{\#}\left(\bm{\beta}\right),\bm{\varphi}^*\left(\bm{\beta}\right)-\bm{\varphi}^{\#}\left(\bm{\beta}\right)
+            \right)=0\Longrightarrow\bm{\varphi}^*\left(\bm{\beta}\right)=\bm{\varphi}^{\#}\left(\bm{\beta}\right)
+            \]于是$\bm{\varphi}^*=\bm{\varphi}^{\#}.$
+
+            \item 由伴随的构造和\cref{thm:线性变换与表示矩阵}即得\qedhere
+        \end{enumerate}
+    \end{Proof}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[伴随算子的表示矩阵]\label{thm:伴随算子的表示矩阵}
+        设$V$是$n$维内积空间,一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$,线性算子$\bm{\varphi}\in\mathcal{L}\left(V\right)$在这组基下的表示矩阵为$\bm{A}$,则$\bm{\varphi}$的伴随$\bm{\varphi}^*$在这组基下的表示矩阵为\[
+            \begin{cases*}
+                \bm{A}^*&,$V$是欧式空间\\
+                \overline{\bm{A}}'&,$V$是酉空间
+            \end{cases*}
+            \]
+    \end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{proposition}[伴随算子的运算]\label{prop:伴随算子的运算}
+        设$V$为内积空间,$\bm{\varphi},\bm{\psi}\in\mathcal{L}\left(V\right)$且$\bm{\varphi}^*,\bm{\psi}^*$存在,$c$为常数,则有\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\left(\bm{\varphi}+\bm{\psi}\right)^*=\bm{\varphi}^*+\bm{\psi}^*$
+            \item $\left(c\bm{\varphi}\right)^*=\overline{c}\bm{\varphi}^*$
+            \item $\left(\bm{\varphi\psi}\right)^*=\bm{\psi}^*\bm{\varphi}^*$
+            \item $\left(\bm{\varphi}^*\right)^*=\bm{\varphi}$
+            \item 若$\bm{\varphi}$是可逆的,则$\bm{\varphi}^*$也是可逆的,且$\left(\bm{\varphi}^{-1}\right)^*=\left(\bm{\varphi}^*\right)^{-1}$
+        \end{enumerate}
+    \end{proposition}
+    \begin{Proof}
+        若$V$是有限维内积空间,设一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$,且$\bm{\varphi},\bm{\psi}$在这组基下的表示矩阵分别为$\bm{A},\bm{B}$,于是容易证明.
+
+            若$V$是无限维内积空间,考虑\begin{align*}
+                \left(
+                    \bm{\varphi}\bm{\psi}\left(\bm{\alpha}\right),\bm{\beta}
+                \right)&=\left(
+                    \bm{\psi}\left(\bm{\alpha}\right),\bm{\varphi}^*\left(\bm{\beta}\right)
+                \right)\\
+                &=\left(
+                    \bm{\alpha},\bm{\psi}^*\bm{\varphi}^*\left(\bm{\beta}\right)
+                \right)
+            \end{align*}由\cref{def:伴随算子的定义},\cref{thm:伴随算子的存在性}知\[
+            \left(
+                \bm{\varphi}\bm{\psi}
+            \right)^*=\bm{\psi}^*\bm{\varphi}^*
+            \]其余证明较为简单.\qedhere
+    \end{Proof}
+\end{formal}
+\begin{formal}
+    \begin{proposition}[伴随的不变子空间与特征值]\label{prop:伴随的不变子空间与特征值}
+        设$\bm{\varphi}$是$n$维内积空间$V$上的一个线性算子,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 若$U$是$\bm{\varphi}$的不变子空间,则$U^{\perp}$是$\bm{\varphi}^*$的不变子空间
+            \item 若$\bm{\varphi}$的全体特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$,则$\bm{\varphi}^*$的全体特征值为$\overline{\lambda}_1,\overline{\lambda}_2,\cdots,\overline{\lambda}_n$
+        \end{enumerate}
+    \end{proposition}
+    \begin{Proof}
+        \begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\forall\bm{u}\in U,\bm{w}\in U^{\perp}$,考虑\begin{align*}
+                \left(
+                    0=\bm{\varphi}\left(
+                        \bm{u}
+                    \right),\bm{w}
+                \right)=\left(
+                    \bm{u},\bm{\varphi}^*\left(
+                        \bm{w}
+                    \right)
+                \right)
+            \end{align*}于是$\forall\bm{w}\in U^{\perp}:\bm{\varphi}^*\left(\bm{w}\right)\in U^{\perp}$即$\bm{U}^{\perp}$是$\bm{\varphi}^*$-不变子空间
+            \item 取标准正交基$\left\{
+                \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$,$\bm{\varphi}$的表示矩阵为$\bm{A}$,则$\bm{\varphi}^*$的表示矩阵为$\overline{\bm{A}}'$,设\[
+            \left|
+                \lambda\bm{I}-\bm{A}
+            \right|=\left(
+                \lambda-\lambda_1
+            \right)\left(
+                \lambda-\lambda_2
+            \right)\cdots\left(
+                \lambda-\lambda_n
+            \right)
+            \]考虑\begin{align*}
+                \left|
+                    \lambda\bm{I}-\overline{\bm{A}}'
+                \right|&=\left|
+                    \lambda\bm{I}-\overline{\bm{A}}
+                \right|\\
+                &\xlongequal{\lambda=\overline{\mu}}\left|
+                    \overline{\mu}\bm{I}-\overline{\bm{A}}
+                \right|\\
+                &=\overline{
+                    \left|
+                        \mu\bm{I}-\bm{A}
+                    \right|
+                }\\
+                &=\left(
+                    \lambda-\overline{\lambda}_1
+                \right)\left(
+                    \lambda-\overline{\lambda}_2
+                \right)\cdots\left(
+                    \lambda-\overline{\lambda}_n
+                \right)
+            \end{align*}于是$\bm{\varphi}^*$的全体特征值为$\overline{\lambda}_1,\overline{\lambda}_2,\cdots,\overline{\lambda}_n$.\qedhere
+        \end{enumerate}
+    \end{Proof}
+\end{formal}
+\begin{brown}
+    \begin{example}
+        设$V=U\perp U^{\perp}$,$\bm{E}$是从$V$到$U$的正交投影：$\left(\bm{E}\left(\bm{\alpha}\right),\bm{\beta}\right)=\left(\bm{\alpha},\bm{E}\left(\bm{\beta}\right)\right)$即$\bm{E}^*=\bm{E}$,这样的算子称为自伴随算子.
+    \end{example}
+\end{brown}
+\begin{brown}
+    \begin{example}
+        设$V=M_n\left(\mathbb{R}\right)$,取\textup{Forbenius}内积,线性算子$\bm{\varphi}\in\mathcal{L}\left(V\right),\bm{\varphi}\left(\bm{A}\right)=\bm{PAQ},\bm{P},\bm{Q}\in M_n\left(\mathbb{R}\right)$,因为\begin{align*}
+            \left(
+                \bm{\varphi}\left(\bm{A}\right),\bm{B}
+            \right)&=\mathrm{Tr}\left(
+                \bm{\varphi}\left(\bm{A}\right)\bm{B}'
+            \right)\\
+            &=\mathrm{Tr}\left(
+                \bm{PAQ}\bm{B}'
+            \right)\\
+            &\xlongequal{\cref{thm:迹的交换性}}\mathrm{Tr}\,\left(
+                \bm{AQB}'\bm{P}
+            \right)\\
+            &=\mathrm{Tr}\,\left(\bm{A}\left(\bm{P}'\bm{B}\bm{Q}'\right)'\right)\\
+            &=\left(
+                \bm{A},\left(
+                    \bm{P}'\bm{B}\bm{Q}'
+                \right)'
+            \right)
+        \end{align*}于是$\bm{\varphi}^*\left(\bm{B}\right)=\bm{P}'\bm{BQ}'$.
+    \end{example}
+\end{brown}
