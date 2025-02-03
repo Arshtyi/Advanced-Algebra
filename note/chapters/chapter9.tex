@@ -1744,3 +1744,153 @@ L\left(
         \]
     \end{Proof}
 \end{formal}
+\newpage
+\section{自伴随算子}
+\subsection{正交相似与酉相似}
+\begin{green}
+    \begin{lemma}[标准正交基之间的过渡矩阵]\label{lemma:标准正交基之间的过渡矩阵}
+        内积空间$V$中两组标准正交基之间的过渡矩阵是正交阵或酉阵.
+    \end{lemma}
+    \begin{Proof}
+        设$V$是欧式空间.取两组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$和$\left\{
+            \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+            \right\}$,过渡矩阵为$\bm{P}=\left(a_{ij}\right)_{n\times n}$,于是\[
+            \left(
+                \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+            \right)=\left(
+                \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right)\bm{P}\Longrightarrow \bm{f}_j = \sum_{i=1}^{n}a_{ij}\bm{e}_i
+            \]于是\begin{align*}
+                \delta_{jk}&=\left(
+                    \bm{f}_j,\bm{f}_k
+                \right)\\
+                &=\left(
+                    \sum_{i=1}^{n}a_{ij}\bm{e}_i,\sum_{i=1}^{n}a_{ik}\bm{e}_i
+                \right)\\
+                &=\sum_{i=1}^{n}a_{ij}a_{ik}
+            \end{align*}于是$\bm{P}$的$n$个列向量是$\mathbb{R}^n$（标准内积）的一组标准正交基,根据\cref{thm:正交阵的判定},$\bm{P}$是正交阵.
+            
+            同理,若$V$是酉空间,则$\bm{P}$是酉阵.
+    \end{Proof}
+\end{green}
+事实上,若设$\bm{\varphi}\in\mathcal{L}\left(V\right)$在基$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+\right\}$和$\left\{
+    \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+\right\}$下的矩阵分别为$\bm{A}$和$\bm{B}$,根据\cref{thm:不同基下的表示矩阵}即得\[
+\bm{B}=\bm{P}^{-1}\bm{A}\bm{P}\xlongequal{\cref{def:正交矩阵、酉矩阵的定义}}\begin{cases*}
+    \bm{P}'\bm{A}\bm{P}&,$V$是欧式空间\\
+    \overline{\bm{P}}'\bm{A}\bm{P}&,$V$是酉空间
+\end{cases*}
+\]
+\begin{formal}
+    \begin{definition}[正交相似与酉相似的定义]\label{def:正交相似与酉相似的定义}正交相似与酉相似是特殊的相似关系.
+
+        \begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item 设$\bm{A},\bm{B}\in M_n\left(\mathbb{R}\right)$,若存在正交阵$\bm{P}$使得$\bm{B}=\bm{P}'\bm{AP}$,则称$\bm{A},\bm{B}$正交相似.
+            \item 设$\bm{A},\bm{B}\in M_n\left(\mathbb{C}\right)$,若存在酉阵$\bm{P}$使得$\bm{B}=\overline{\bm{P}}'\bm{AP}$,则称$\bm{A},\bm{B}$酉相似.
+        \end{enumerate}
+    \end{definition}
+\end{formal}
+\begin{red}
+    \begin{remark}
+        \cref{def:正交相似与酉相似的定义}正交相似与酉相似是特殊的相似关系,因而也是等价关系.
+    \end{remark}
+\end{red}
+\begin{red}
+    \begin{remark}
+        剩余几节内容,我们主要考虑这样一个问题：是否可以找到一组标准正交基,使得某个线性算子在这组基下的表示矩阵尽可能地简单.一般来说这个问题是比较困难的,所以我们主要考虑三类相对简单的线性算子：自伴随算子、复正规算子、实正规算子.
+    \end{remark}
+\end{red}
+\subsection{自伴随算子}
+\begin{formal}
+    \begin{definition}[自伴随算子的定义]\label{def:自伴随算子的定义}
+        设$\bm{\varphi}$是内积空间$V$上的线性算子,若$\bm{\varphi}^*=\bm{\varphi}$,则称$\bm{\varphi}$为自伴随算子.特别地,若$V$是欧式空间,则称$\bm{\varphi}$为对称算子；若$V$是酉空间,则称$\bm{\varphi}$为\textup{Hermite}算子.
+    \end{definition}
+\end{formal}
+\begin{brown}
+    \begin{example}
+        设$n$维内积空间$V$的子空间为$U$,则$V=U\oplus U^{\perp}$.设$\bm{E}$为$V$到$U$的正交投影算子,则$\forall\bm{\alpha},\bm{\beta}\in V:$\[
+        \left(
+            \bm{E}\left(
+                \bm{\alpha}
+            \right),\bm{\beta}
+        \right)=\left(
+            \bm{\alpha},\bm{E}\left(
+                \bm{\beta}
+            \right)
+        \right)
+        \]即$\bm{E}^*=\bm{E}$,故$\bm{E}$是自伴随算子.
+    \end{example}
+\end{brown}
+\begin{green}
+    \begin{lemma}[自伴随算子的判定]\label{lemma:自伴随算子的判定}
+        设$\bm{\varphi}$是$n$维内积空间上的线性算子,则$\bm{\varphi}$是自伴随算子当且仅当$\bm{\varphi}$在任一组（或者某一组）基下的表示矩阵是\[\begin{cases*}
+            \text{实对称阵}&,$V$是欧式空间\\
+            \textup{Hermite}\text{阵}&,$V$是酉空间
+        \end{cases*}\]
+    \end{lemma}
+    \begin{Proof}
+        任取一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$,设$\bm{\varphi}$在这组基下的表示矩阵为$\bm{A}$,根据\cref{thm:伴随算子的表示矩阵},$\bm{\varphi}^*$在这组基下的表示矩阵为$\bm{A}'/\overline{\bm{A}}'$.那么因为$\bm{\varphi}^*=\bm{\varphi}$,于是\[
+            \bm{A}=\begin{cases*}
+                \bm{A}'&,$V$是欧式空间\\
+                \overline{\bm{A}}'&,$V$是酉空间
+            \end{cases*}\qedhere
+            \]
+    \end{Proof}
+\end{green}
+\begin{green}
+    \begin{lemma}[自伴随算子的特征值与特征向量]\label{lemma:自伴随算子的特征值与特征向量}
+        设$\bm{\varphi}$为酉空间$V$上的自伴随算子,则$\bm{\varphi}$的特征值都是实数,且对应不同特征值的特征向量相互正交.
+    \end{lemma}
+    \begin{Proof}
+        任取$\bm{\varphi}$的特征值$\lambda$和对应的特征向量$\bm{\alpha}$即$\bm{\varphi}\left(\bm{\alpha}\right)=\lambda\bm{\alpha}$.容易有\[
+        \lambda\left(
+            \bm{\alpha},\bm{\alpha}
+        \right)=\left(
+            \bm{\varphi}\left(\bm{\alpha}\right),\bm{\alpha}
+        \right)=\left(
+            \bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right)
+        \right)=\overline{\lambda}\left(
+            \bm{\alpha},\bm{\alpha}
+        \right)
+        \]于是$\lambda=\overline{\lambda}\Longrightarrow\lambda\in\mathbb{R}$.
+
+        另取不同特征值$\mu$,对应的特征向量$\bm{\beta}$,于是\begin{align*}
+            \lambda\left(
+                \bm{\alpha},\bm{\beta}
+            \right)&=\left(
+                \bm{\alpha},\bm{\varphi}\left(\bm{\beta}\right)
+            \right)\\
+            &=\mu\left(
+                \bm{\alpha},\bm{\beta}
+            \right)
+        \end{align*}考虑到$\lambda\neq\mu\Longrightarrow\bm{\alpha}\perp\bm{\beta}.$
+    \end{Proof}
+\end{green}
+\begin{green}
+    \begin{corollary}[Hermite阵的特征值与特征向量]\label{coro:Hermite阵的特征值与特征向量}
+        将\cref{lemma:自伴随算子的特征值与特征向量}推到代数角度即得：\textup{Hermite}阵的特征值都是实数,且对应不同特征值的特征向量相互正交.
+    \end{corollary}
+\end{green}
+\begin{green}
+    \begin{corollary}[实对称阵的特征值与特征向量]\label{coro:实对称阵的特征值与特征向量}
+        因为实对称阵都是特殊的\textup{Hermite}阵,故根据\cref{coro:Hermite阵的特征值与特征向量}即得：实对称阵的特征值都是实数,且对应不同特征值的特征向量相互正交.
+    \end{corollary}
+\end{green}
+\begin{green}
+    \begin{corollary}[欧式空间的自伴随算子的特征值与特征向量]\label{coro:欧式空间的自伴随算子的特征值与特征向量}
+        根据\cref{coro:实对称阵的特征值与特征向量},设$\bm{\varphi}$是欧式空间$V$上的自伴随算子,则$\bm{\varphi}$的特征值都是实数,且对应不同特征值的特征向量相互正交.
+    \end{corollary}
+\end{green}
+\begin{formal}
+    \begin{theorem}[实对角阵表示矩阵的存在性]\label{thm:实对角阵表示矩阵的存在性}
+        设$n$维内积空间$V$上的线性算子$\bm{\varphi}$是自伴随算子,则一定存在一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$,使得$\bm{\varphi}$在这组基下的表示矩阵是实对角阵.
+    \end{theorem}
+\end{formal}
