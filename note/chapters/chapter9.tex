@@ -1893,4 +1893,278 @@ L\left(
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
         \right\}$,使得$\bm{\varphi}$在这组基下的表示矩阵是实对角阵.
     \end{theorem}
+    \begin{Proof}
+        取$\bm{\varphi}$的一个特征值$\lambda_1$和对应的特征向量$\bm{\alpha}\in V$,令$\displaystyle\bm{e}_1=\frac{\bm{\alpha}}{\left\lVert\bm{\alpha}\right\rVert}$即单位特征向量.
+
+        下面对维数进行归纳,$n=1$显然.设维数$\dim V<n$成立,证明$\dim V=n$的情形.令$U=L\left(\bm{e}_1\right)^{\perp},\dim U=n-1$.因为$\bm{e}_1$是特征向量,由\cref{lem:特征子空间}知$L\left(\bm{e}_1\right)$是$\bm{\varphi}$-不变子空间,由$\cref{prop:伴随的不变子空间与特征值}$知$U$是$\bm{\varphi}^*=\bm{\varphi}$-不变子空间.做限制$\bm{\varphi}\mid_{U},\forall\bm{u},\bm{v}\in U\subseteq V:$\[
+        \left(
+            \bm{\varphi}\left(\bm{u}\right),\bm{v}
+        \right)=\left(
+            \bm{u},\bm{\varphi}\left(\bm{v}\right)
+        \right)
+        \]即\[
+        \left(
+            \bm{\varphi}\mid_U\left(
+                \bm{u}
+            \right),\bm{v}
+        \right)=\left(
+            \bm{u},\bm{\varphi}\mid_U\left(
+                \bm{v}
+            \right)
+        \right)
+        \]于是$\bm{\varphi}\mid_U$为自伴随,根据归纳假设,存在$U$的一组标准正交基$\left\{
+            \bm{e}_2,\bm{e}_3,\cdots,\bm{e}_n
+            \right\}$,使得$\bm{\varphi}\mid_U$在这组基下的表示矩阵是实对角阵$\mathrm{diag}\,\left\{\lambda_2,\lambda_3,\cdots,\lambda_n\right\}$.因为\[
+            V=L\left(
+                \bm{e}_1
+            \right)\oplus U
+            \]故$\left\{
+                \bm{e}_1,\bm{e}_2,\bm{e}_3,\cdots,\bm{e}_n
+            \right\}$是$V$的一组标准正交基,且$\bm{\varphi}$在这组基下的表示矩阵是\[
+            \begin{pmatrix}
+                \lambda_1&&&\\
+                &\lambda_2&&\\
+                &&\ddots&\\
+                &&&\lambda_n
+            \end{pmatrix}\qedhere
+            \]
+    \end{Proof}
 \end{formal}
+\begin{formal}
+    \begin{theorem}[化归实对角阵]\label{thm:化归实对角阵}
+        设$\bm{A}$为$n$阶实对称阵（\textup{Hermite}阵）,则存在正交阵（酉阵）$\bm{P}$,使得$\bm{P}'\bm{AP}\left(\overline{\bm{P}}'\bm{AP}\right)$是实对角阵.
+    \end{theorem}
+    \begin{Proof}
+        构造$\bm{\varphi}\in\mathcal{L}\left(\mathbb{C}^n\right):\bm{\alpha}\longmapsto\bm{A\alpha}$,取标准内积,这是一个线性算子.注意到$\bm{\varphi}$在标准单位列向量组$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$下的表示矩阵为$\bm{A}$,是一个\textup{Hermite}阵,于是$\bm{\varphi}$自伴随.根据\cref{thm:实对角阵表示矩阵的存在性},存在$\mathbb{C}^n$的另外一组标准正交基$\left\{
+            \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
+        \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为实对角阵$\bm{\varLambda}$即\[
+        \left(
+            \bm{\varphi}\left(
+                \bm{\alpha}_1
+            \right),\bm{\varphi}\left(
+                \bm{\alpha}_2
+            \right),\cdots,\bm{\varphi}\left(
+                \bm{\alpha}_n
+            \right)
+        \right)=\left(
+            \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
+        \right)\bm{\varLambda}
+        \]即\[
+        \bm{A}\left(
+            \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
+        \right)=\left(
+            \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
+        \right)\bm{\varLambda}
+        \]令$\bm{P}=\left(
+            \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
+        \right)$,根据\cref{thm:酉矩阵的判定},$\bm{P}$为酉阵,于是\[
+        \overline{\bm{P}}'\bm{AP}=\bm{\varLambda}\qedhere
+        \]
+    \end{Proof}
+\end{formal}
+\begin{green}
+    \begin{corollary}[正交相似和酉相似的全系不变量]\label{cor:正交相似和酉相似的全系不变量}
+        实对称阵（\textup{Hermite}阵）在正交相似（酉相似）下的全系不变量是全体特征值,正交相似（酉相似）标准型就是全体特征值构成的对角阵.
+    \end{corollary}
+    \begin{Proof}
+        证明实对称阵.首先一定是不变量,下证是全系不变量.
+
+        设实对称阵$\bm{A},\bm{B}$的特征值均为$\lambda_1,\lambda_2,\cdots,\lambda_n$.根据\cref{thm:化归实对角阵},存在正交阵$\bm{P},\bm{Q}$使得\[
+        \bm{P}'\bm{AP}=\begin{pmatrix}
+            \lambda_1&&&\\
+            &\lambda_2&&\\
+            &&\ddots&\\
+            &&&\lambda_n
+        \end{pmatrix},\bm{Q}'\bm{BQ}=\begin{pmatrix}
+            \lambda_{i_1}&&&\\
+            &\lambda_{i_2}&&\\
+            &&\ddots&\\
+            &&&\lambda_{i_n}
+        \end{pmatrix}
+        \]只要证明这两个对角阵正交相似即可（$\left(i_1,i_2,\cdots,i_n\right)$是$\left(1,2,\cdots,n\right)$的全排列）.注意到合同变换\[
+        \bm{P}_{ij}\mathrm{diag}\,\left\{
+            \lambda_1,\lambda_2,\cdots,\lambda_i,\cdots,\lambda_j,\cdots,\lambda_n
+        \right\}\bm{P}_{ij}= \mathrm{diag}\,\left\{
+            \lambda_1,\lambda_2,\cdots,\lambda_j,\cdots,\lambda_i,\cdots,\lambda_n
+        \right\}
+        \]也是正交相似变换$\left(\bm{P}_{ij}'\bm{P}_{ij}=\bm{I}_n\right)$.于是若干个这样正交相似变换的复合即将\[\mathrm{diag}\,\left\{
+            \lambda_{i_1},\lambda_{i_2},\cdots,\lambda_{i_n}
+        \right\}\]变为\[\mathrm{diag}\,\left\{
+            \lambda_1,\lambda_2,\cdots,\lambda_n
+        \right\}\]于是$\bm{A},\bm{B}$正交相似.进一步地,正交相似标准型即\[
+        \begin{pmatrix}
+            \lambda_1&&&\\
+            &\lambda_2&&\\
+            &&\ddots&\\
+            &&&\lambda_n
+        \end{pmatrix}
+        \]
+        
+        酉相似同理.
+    \end{Proof}
+\end{green}
+\begin{red}
+    \begin{remark}
+        因为正交相似本身\[
+        \bm{B}= \bm{P}'\bm{AP}= \bm{P}^{-1}\bm{AP}
+        \]所以它既是合同变换,也是相似变换.
+
+        几何地看,$f=\bm{x}'\bm{Ax}$作$\bm{x}=\bm{Cy}$时要保持度量,注意到$\bm{C}$其实是基向量之间的过渡矩阵：\[
+        \left(
+            \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right)=\left(
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\bm{C}
+        \]这要求$\left\{
+            \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right\}$应当也是一组标准正交基,根据\cref{lemma:标准正交基之间的过渡矩阵},标准正交基之间的过渡矩阵是正交阵,所以$\bm{C}$是正交阵,这就是一种正交相似变换.
+    \end{remark}
+\end{red}
+\begin{green}
+    \begin{corollary}[实二次型的正交相似变换]\label{cor:实二次型的正交相似变换}
+        设实二次型$f=\bm{x}'\bm{Ax},$实对称阵$\bm{A}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$,则存在正交相似变换$\bm{x}=\bm{Py}$使得$f$化为\[
+        \lambda_1y_1^2+\lambda_2y_2^2+\cdots+\lambda_ny_n^2
+        \]它的正惯性指数即正特征值的个数,负惯性指数即负特征值的个数,秩等于非零特征值的个数.
+    \end{corollary}
+\end{green}
+\begin{green}
+    \begin{corollary}[半正定与半负定的确定]\label{cor:半正定与半负定的确定}
+        设$n$阶实对称阵$\bm{A}$,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\bm{A}$正定当且仅当$\bm{A}$的全体特征值都大于$0$
+            \item $\bm{A}$半正定当且仅当$\bm{A}$的全体特征值都大于等于$0$
+            \item $\bm{A}$负定当且仅当$\bm{A}$的全体特征值都小于$0$
+            \item $\bm{A}$半负定当且仅当$\bm{A}$的全体特征值都小于等于$0$
+        \end{enumerate}
+    \end{corollary}
+\end{green}
+\begin{brown}
+    \begin{example}
+        \[\bm{A}=
+        \begin{pmatrix}
+            4&2&2\\
+            2&4&2\\
+            2&2&4
+        \end{pmatrix}
+        \]求$\bm{P}$使得$\bm{P}'\bm{AP}$是实对角阵.
+    \end{example}
+    \begin{solution}
+        \begin{align*}
+            \left|
+                \lambda\bm{I}-\bm{A}
+            \right|&=\left|
+                \left(\lambda-2\right)\bm{I}_3-\begin{pmatrix}
+                    2\\2\\2
+                \end{pmatrix}\left(1,1,1\right)
+            \right|\\
+            &\xlongequal{\cref{thm:特征多项式的降阶公式}}\left(\lambda-2\right)^2\left|\lambda-2-\left(1,1,1\right)\begin{pmatrix}
+                2\\2\\2
+            \end{pmatrix}\right|\\
+            &=\left(
+                \lambda-2
+            \right)^2\left(
+                \lambda-8
+            \right)
+        \end{align*}于是$\lambda_1=\lambda_2=2,\lambda_3=8$,$\lambda_3=8$对应特征向量$\bm{\alpha}_1=\begin{pmatrix}
+            1\\1\\1
+        \end{pmatrix}$,而$\lambda_1=\lambda_2=2$代入得到线性无关但相互不正交的\[
+        \bm{\alpha}_2=\begin{pmatrix}
+            -1\\1\\0
+        \end{pmatrix},\bm{\alpha}_3=\begin{pmatrix}
+            -1\\0\\1
+        \end{pmatrix}
+        \]那么对这两个特征向量作正交化得到\begin{align*}
+        \bm{\alpha}_3'&=\bm{\alpha}_3-\frac{\left(
+            \bm{\alpha}_3,\bm{\alpha}_2
+        \right)}{\left\lVert\bm{\alpha}_2\right\rVert^2}\bm{\alpha}_2\\
+        &=\begin{pmatrix}
+            -\cfrac{1}{2}\\-\cfrac{1}{2}\\1
+        \end{pmatrix}
+    \end{align*}对所得向量均作单位化\newpage\begin{align*}
+            \bm{\alpha}_1=\begin{pmatrix}
+                 1\\1\\1
+            \end{pmatrix}&\longrightarrow\bm{e}_1=\begin{pmatrix}
+                \cfrac{1}{\sqrt{3}}\\\cfrac{1}{\sqrt{3}}\\\cfrac{1}{\sqrt{3}}
+            \end{pmatrix}\\
+            \bm{\alpha}_2=\begin{pmatrix}
+                -1\\1\\0
+            \end{pmatrix}&\longrightarrow\bm{e}_2=\begin{pmatrix}
+                -\cfrac{1}{\sqrt{2}}\\\cfrac{1}{\sqrt{2}}\\0
+            \end{pmatrix}\\
+            \bm{\alpha}_3'=\begin{pmatrix}
+                -\cfrac{1}{2}\\-\cfrac{1}{2}\\1
+            \end{pmatrix}&\longrightarrow\bm{e}_3=\begin{pmatrix}
+                -\cfrac{1}{\sqrt{6}}\\-\cfrac{1}{\sqrt{6}}\\\cfrac{2}{\sqrt{6}}
+            \end{pmatrix}
+        \end{align*}所求$\bm{P}=\left(\bm{e}_1,\bm{e}_2,\bm{e}_3\right)$使得\[
+        \bm{P}'\bm{AP}=\begin{pmatrix}
+            8&&\\
+            &2&\\
+            &&2
+        \end{pmatrix}
+        \]
+    \end{solution}
+\end{brown}
+\begin{brown}
+    \begin{example}
+        $\bm{A}$的特征值为$0,3,3$,$0$对应的特征向量为$\bm{v}_1=\left(1,1,1\right)',3$对应的其中一个特征向量为$\bm{v}_2=\left(-1,1,0\right)'$,求$\bm{A}$.
+    \end{example}
+    \begin{solution}
+        设$3$对应的另一个特征向量为$\bm{v}_3=\begin{pmatrix}
+            x_1\\x_2\\x_3
+        \end{pmatrix}$且$\left\{
+            \bm{v}_1,\bm{v}_2,\bm{v}_3
+        \right\}$两两正交：\[
+        \begin{cases*}
+            x_1+x_2+x_3=0\\
+            -x_1+x_2=0
+        \end{cases*}\Longrightarrow\bm{v}_3=\begin{pmatrix}
+            1\\1\\-2
+        \end{pmatrix}
+        \]将他们单位化得到
+        
+        \begin{align*}
+            \bm{e}_1=\begin{pmatrix}
+                \cfrac{1}{\sqrt{3}}\\\cfrac{1}{\sqrt{3}}\\\cfrac{1}{\sqrt{3}}
+            \end{pmatrix},\bm{e}_2=\begin{pmatrix}
+                -\cfrac{1}{\sqrt{2}}\\\cfrac{1}{\sqrt{2}}\\0
+            \end{pmatrix},\bm{e}_3=\begin{pmatrix}
+                \cfrac{1}{\sqrt{6}}\\\cfrac{1}{\sqrt{6}}\\-\cfrac{2}{\sqrt{6}}
+            \end{pmatrix}
+        \end{align*}于是\[
+        \bm{P}=\begin{pmatrix}
+            \cfrac{1}{\sqrt{3}}&-\cfrac{1}{\sqrt{2}}&\cfrac{1}{\sqrt{6}}\\
+            \cfrac{1}{\sqrt{3}}&\cfrac{1}{\sqrt{2}}&\cfrac{1}{\sqrt{6}}\\
+            \cfrac{1}{\sqrt{3}}&0&-\cfrac{2}{\sqrt{6}}  
+        \end{pmatrix}
+        \]使得\[
+        \bm{P}'\bm{AP}=\begin{pmatrix}
+            0&&\\
+            &3&\\
+            &&3
+        \end{pmatrix}
+        \]然后反求出\[
+        \bm{A}=\begin{pmatrix}
+            -2&-1&1\\
+            1&-2&1\\
+            1&1&-2  
+        \end{pmatrix}
+        \]
+    \end{solution}
+\end{brown}
+\begin{brown}
+    \begin{example}
+        设$n$阶实对称阵$\bm{A}:\bm{A}^3=\bm{I}_n$,求证：$\bm{A}=\bm{I}_n$.
+    \end{example}
+    \begin{Proof}
+        任取$\bm{A}$的特征值$\lambda\in\mathbb{R}:\lambda^3=1\Longrightarrow\lambda=1$于是存在正交阵$\bm{P}$使得$\bm{P}'\bm{AP}=\bm{I}_n\Longrightarrow\bm{A}=\bm{I}_n$.
+    \end{Proof}
+    事实上,只要给出特征值均为实数即可证明:\[
+    \left(
+        \bm{A}-a\bm{I}_n
+    \right)\left(
+        \bm{A}^2+\bm{A}+\bm{I}_n
+    \right)=\bm{O}
+    \]而$\bm{A}^2+\bm{A}+\bm{I}_n$非异于是$\bm{A}=\bm{I}_n$.
+\end{brown}
