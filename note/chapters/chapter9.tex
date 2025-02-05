@@ -2168,3 +2168,185 @@ L\left(
     \right)=\bm{O}
     \]而$\bm{A}^2+\bm{A}+\bm{I}_n$非异于是$\bm{A}=\bm{I}_n$.
 \end{brown}
+\newpage
+\section{复正规算子}
+设$V$为酉空间,$\bm{\varphi}\in\mathcal{L}\left(V\right)$,$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+\right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为复对角阵$\bm{\varLambda}=\mathrm{diag}\,\left\{
+    \lambda_1,\lambda_2,\cdots,\lambda_n
+\right\}$.来考虑$\bm{\varphi}$的性质.首先\[
+\left(
+    \bm{\varphi}\left(
+        \bm{e}_1
+        \right),\bm{\varphi}\left(
+            \bm{e}_2
+        \right),\cdots,\bm{\varphi}\left(
+            \bm{e}_n
+            \right)\right)=\left(
+                \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right)\bm{\varLambda}     
+\]即$\forall 1\leqslant i\leqslant n:$\[
+\bm{\varphi}\left(
+    \bm{e}_i
+\right)=\lambda_i\bm{e}_i
+\]同时$\bm{\varphi}^*$在这组基下的表示矩阵为$\overline{\bm{\varLambda}}'=\mathrm{diag}\,\left\{
+    \overline{\lambda}_1,\overline{\lambda}_2,\cdots,\overline{\lambda}_n
+\right\}$且$\forall 1\leqslant i\leqslant n:$\[
+\bm{\varphi}^*\left(
+    \bm{e}_i
+\right)=\overline{\lambda}_i\bm{e}_i
+\]容易知道\[
+\bm{\varphi}\bm{\varphi}^*\left(
+    \bm{e}_i
+    \right)=\bm{\varphi}^*\bm{\varphi}\left(
+        \bm{e}_i
+    \right)\Longrightarrow\bm{\varphi\varphi}^*=\bm{\varphi}^*\bm{\varphi}
+\]且\[
+\overline{\bm{A}}'\bm{A}=\bm{A}\overline{\bm{A}}'
+\]
+\begin{formal}
+    \begin{definition}[正规算子的定义]\label{def:正规算子的定义}
+        设有限维内积空间$V$,线性算子$\bm{\varphi}\in\mathcal{L}\left(V\right)$.若$\bm{\varphi\varphi}^*=\bm{\varphi}^*\bm{\varphi}$,则称$\bm{\varphi}$是$V$上的正规算子.
+    \end{definition}
+\end{formal}
+\begin{formal}
+    \begin{definition}[正规矩阵的定义]\label{def:正规矩阵的定义}
+        设$\bm{A}\in M_n\left(\mathbb{R}\right)$,若$\bm{A}'\bm{A}=\bm{AA}'$,则称$\bm{A}$是一个实正规矩阵；若$\bm{A}\in M_n\left(\mathbb{C}\right)$,若$\overline{\bm{A}}'\bm{A}=\bm{A}\overline{\bm{A}}'$,则称$\bm{A}$是一个复正规矩阵.
+    \end{definition}
+\end{formal}
+\begin{brown}
+    \begin{example}
+        自伴随算子$\bm{\varphi}^*=\bm{\varphi}$一定是正规算子.
+    \end{example}
+\end{brown}
+\begin{brown}
+    \begin{example}
+        正交算子和酉算子$\bm{\varphi}^*=\bm{\varphi}^{-1}$一定是正规算子.
+    \end{example}
+\end{brown}
+\begin{brown}
+    \begin{example}
+        \textup{Hermite}阵、酉阵都是复正规矩阵；实对称阵、正交阵都是实正规矩阵.
+    \end{example}
+\end{brown}
+\begin{green}
+    \begin{lemma}[正规算子与正规阵]\label{lem:正规算子与正规阵}
+        设$V$为欧式空间（酉空间）,$\bm{\varphi}\in\mathcal{L}\left(V\right)$,则$\bm{\varphi}$是实（复）正规算子当且仅当$\bm{\varphi}$在任一组（或者某一组）标准正交基下的表示矩阵是实（复）正规矩阵.
+    \end{lemma}
+    \begin{Proof}
+        任取一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$,设$\bm{\varphi}$在这组基下的表示矩阵为$\bm{A}$,根据\cref{thm:伴随算子的表示矩阵},$\bm{\varphi}^*$在这组基下的表示矩阵为$\bm{A}'/\overline{\bm{A}}'$.那么$\bm{\varphi}$是实（复）正规算子当且仅当$\bm{\varphi\varphi}^*=\bm{\varphi}^*\bm{\varphi}$,即$\bm{\varphi\varphi}^*,\bm{\varphi}^*\bm{\varphi}$在任一组（或者某一组）标准正交基下的表示矩阵相等,即$\bm{AA}'=\bm{A}'\bm{A}\left(\bm{A}\overline{\bm{A}}'=
+            \overline{\bm{A}}'\bm{A}
+            \right)$,于是$\bm{A}$是实（复）正规矩阵.
+    \end{Proof}
+\end{green}
+\begin{green}
+    \begin{lemma}[正规算子的范数、特征值、特征向量]\label{lem:正规算子的范数、特征值、特征向量}
+        设$\bm{\varphi}$是酉空间$V$上的正规算子,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $\forall\bm{\alpha}\in V:\left\lVert\bm{\varphi}\left(\bm{\alpha}\right)\right\rVert=\left\lVert\bm{\varphi}^*\left(\bm{\alpha}\right)\right\rVert$
+            \item $\bm{\alpha}$是$\bm{\varphi}$关于特征值$\lambda$的特征向量当且仅当$\bm{\alpha}$是$\bm{\varphi}^*$关于特征值$\overline{\lambda}$的特征向量
+            \item 属于$\bm{\varphi}$的不同特征值的特征向量相互正交
+        \end{enumerate}
+    \end{lemma}
+    \begin{Proof}
+        $(1)$考虑\begin{align*}
+            \left(
+                \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\alpha}\right)
+            \right)&=\left(
+                \bm{\alpha},\bm{\varphi}^*\bm{\varphi}\left(\bm{\alpha}\right)
+            \right)\\
+            &=\left(
+                \bm{\alpha},\bm{\varphi}\bm{\varphi}^*\left(\bm{\alpha}\right)
+            \right)\\
+            &=\left(
+                \bm{\varphi}^*\left(\bm{\alpha}\right),\bm{\varphi}^*\left(\bm{\alpha}\right)
+            \right)
+        \end{align*}
+
+        $(2)$先证明$\lambda\bm{I}-\bm{\varphi}$也是正规算子.根据\cref{prop:伴随算子的运算},$\left(
+            \lambda\bm{I}-\bm{\varphi}
+        \right)^*=\overline{\lambda}\bm{I}-\bm{\varphi}^*.$由$(1)$知$\forall\bm{\alpha}\in V$\[
+        \left\lVert\left(
+            \lambda\bm{I}-\bm{\varphi}\right)\left(\bm{\alpha}\right)\right\rVert=\left\lVert\left(
+            \overline{\lambda}\bm{I}-\bm{\varphi}^*\right)\left(\bm{\alpha}\right)\right\rVert
+        \]设$\bm{0}\neq\bm{\alpha}\in V$是$\bm{\varphi}$关于特征值$\lambda$的特征向量\[\bm{\varphi}\left(\bm{\alpha}\right)=\lambda\bm{\alpha}\Longleftrightarrow\left(
+            \lambda\bm{I}-\bm{\varphi}
+        \right)\left(\bm{\alpha}\right)=\bm{0}=\left(
+            \overline{\lambda}\bm{I}-\bm{\varphi}^*
+        \right)\left(
+            \bm{\alpha}
+        \right)=\bm{0}\Longleftrightarrow\bm{\varphi}^*\left(\bm{\alpha}\right)=\overline{\lambda}\bm{\alpha}\]
+
+        $(3)$设$\lambda\neq\mu:\bm{\varphi}\left(\bm{\alpha}\right)=\lambda\bm{\alpha},\bm{\varphi}\left(\bm{\beta}\right)=\mu\bm{\beta}\Longleftrightarrow\bm{\varphi}^*\left(\bm{\beta}\right)=\overline{\mu}\bm{\beta}$,作\begin{align*}
+            \lambda\left(
+                \bm{\alpha},\bm{\beta}
+            \right)&=\left(
+                \bm{\varphi}\left(\bm{\alpha}\right),\bm{\beta}
+            \right)\\
+            &=\left(
+                \bm{\alpha},\bm{\varphi}^*\left(\bm{\beta}\right)
+            \right)\\
+            &=\left(
+                \bm{\alpha},\overline{\mu}\bm{\beta}
+            \right)\\
+            &=\mu\left(
+                \bm{\alpha},\bm{\beta}
+            \right)
+        \end{align*}于是$\left(
+            \bm{\alpha},\bm{\beta}
+        \right)=0.$
+    \end{Proof}
+\end{green}
+\begin{green}
+    \begin{lemma}[Schur定理]\label{lem:Schur定理}
+        设$\bm{\varphi}$是酉空间$V$上的线性算子,则一定存在一组标准正交基,使得$\bm{\varphi}$在这组基下的表示矩阵是上三角阵.
+    \end{lemma}
+    \begin{Proof}
+        对维数$n=\dim V$进行归纳,$n=1$显然,设$\dim V<n$成立,证明$\dim V=n$的情形.
+
+        取$\bm{\varphi}^*$的一个特征值$\lambda$及对应的特征向量$\bm{\alpha}$,单位化$\displaystyle\bm{e}_n=\frac{\bm{\alpha}}{\left\lVert\bm{\alpha}\right\rVert}:\bm{\varphi}^*\left(\bm{e}_n\right)=\lambda\bm{e}_n$,令$U=L\left(\bm{e}_n\right)^{\perp}:\dim U=n-1.$因为$L\left(\bm{e}_n\right)$是$\bm{\varphi}^*$-不变子空间,故$U$是$\left(
+            \bm{\varphi}^*
+        \right)^*=\bm{\varphi}$-不变子空间.做限制$\bm{\varphi}\mid_U$,根据归纳假设,存在$U$的一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_{n-1}
+            \right\}$,使得$\bm{\varphi}\mid_U$在这组基下的表示矩阵是上三角阵,于是得到$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_{n-1},\bm{e}_n
+            \right\}$是$V$的一组标准正交基,并且\[
+            \left(
+                \bm{\varphi}\left(
+                    \bm{e}_1
+                \right),\bm{\varphi}\left(
+                    \bm{e}_2
+                \right),\cdots,\bm{\varphi}\left(
+                    \bm{e}_n
+                \right)
+            \right)=\left(
+                \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right)\begin{pmatrix}
+                a_{11}&*&*&*&*\\
+                &a_{22}&*&*&*\\
+                &&\ddots&*&*\\
+                &&&a_{n-1,n-1}&*\\
+                &&&&a_{nn}
+            \end{pmatrix}\qedhere
+            \]
+    \end{Proof}
+\end{green}
+\begin{green}
+    \begin{corollary}[Schur定理]\label{cor:Schur定理}
+        设$\bm{A}\in M_n\left(\mathbb{C}\right)$,则一定存在酉阵$\bm{P}$,使得$\overline{\bm{P}}'\bm{A}\bm{P}$是上三角阵.
+    \end{corollary}
+\end{green}
+\begin{red}
+    \begin{remark}
+        \cref{cor:Schur定理}是\cref{thm:必定复相似},\cref{lem:Schur定理}的推广.
+    \end{remark}
+\end{red}
+\begin{formal}
+    \begin{theorem}[正规的判定]\label{thm:正规的判定}
+        设酉空间$V$上的线性算子$\bm{\varphi}$,则$\bm{\varphi}$正规当且仅当$\bm{\varphi}$在某一组标准正交基下的表示矩阵是复对角阵.
+    \end{theorem}
+    \begin{Proof}
+        充分性由\cref{lem:正规算子与正规阵}给出.
+    \end{Proof}
+\end{formal}
