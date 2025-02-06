@@ -2170,6 +2170,7 @@ L\left(
 \end{brown}
 \newpage
 \section{复正规算子}
+\subsection{复正规算子}
 设$V$为酉空间,$\bm{\varphi}\in\mathcal{L}\left(V\right)$,$\left\{
     \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
 \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为复对角阵$\bm{\varLambda}=\mathrm{diag}\,\left\{
@@ -2298,6 +2299,7 @@ L\left(
         \right)=0.$
     \end{Proof}
 \end{green}
+\subsection{Schur定理}
 \begin{green}
     \begin{lemma}[Schur定理]\label{lem:Schur定理}
         设$\bm{\varphi}$是酉空间$V$上的线性算子,则一定存在一组标准正交基,使得$\bm{\varphi}$在这组基下的表示矩阵是上三角阵.
@@ -2347,6 +2349,182 @@ L\left(
         设酉空间$V$上的线性算子$\bm{\varphi}$,则$\bm{\varphi}$正规当且仅当$\bm{\varphi}$在某一组标准正交基下的表示矩阵是复对角阵.
     \end{theorem}
     \begin{Proof}
-        充分性由\cref{lem:正规算子与正规阵}给出.
+        充分性由\cref{lem:正规算子与正规阵}给出.下证必要性.
+
+        由\cref{lem:Schur定理},存在一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵是上三角阵$\bm{A}=\left(
+            a_{ij}
+        \right)_{
+            n\times n
+        }$,$\bm{\varphi}^*$在这组基下的表示矩阵为下三角阵$\overline{\bm{A}}'$.
+
+        由\[
+        \left(
+            \bm{\varphi}\left(
+                \bm{e}_1
+              \right),\bm{\varphi}\left(
+                  \bm{e}_2
+                \right),\cdots,\bm{\varphi}\left(
+                    \bm{e}_n
+                    \right)                
+        \right)=\left(
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\begin{pmatrix}
+           a_{11}&a_{12}&\cdots&a_{1n}\\
+              &a_{22}&\cdots&a_{2n}\\
+                &&\ddots&\vdots\\
+                &&&a_{nn}
+        \end{pmatrix}
+        \]\[
+        \left(
+            \bm{\varphi}^*\left(
+                \bm{e}_1
+              \right),\bm{\varphi}^*\left(
+                  \bm{e}_2
+                \right),\cdots,\bm{\varphi}^*\left(
+                    \bm{e}_n
+                    \right)
+        \right)=\left(
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\begin{pmatrix}
+            \overline{a}_{11}&&&\\
+            \overline{a}_{12}&\overline{a}_{22}&&\\
+            \vdots&\vdots&\ddots&\\
+            \overline{a}_{1n}&\overline{a}_{2n}&\cdots&\overline{a}_{nn}
+        \end{pmatrix}
+        \]注意到\[
+        \bm{\varphi}\left(
+            \bm{e}_1
+        \right)=a_{11}\bm{e}_1\xLongleftrightarrow{\cref{lem:正规算子的范数、特征值、特征向量}}\bm{\varphi}^*\left(
+            \bm{e}_1
+        \right)=\overline{a}_{11}\bm{e}_1=\overline{a}_{11}\bm{e}_1+\overline{a}_{12}\bm{e}_2+\cdots+\overline{a}_{1n}\bm{e}_n
+        \]即\[
+        a_{12}=a_{13}=\cdots=a_{1n}=0
+        \]如此继续,得到$\forall 1\leqslant i<j\leqslant n:a_{ij}=0\Longrightarrow\bm{A}$是复对角阵.
     \end{Proof}
+\end{formal}
+\begin{green}
+    \begin{corollary}[正规必定对角]\label{cor:正规必定对角}
+        设复正规阵$\bm{A}$,则存在酉阵$\bm{P}$使得$\overline{\bm{P}}'\bm{A}\bm{P}$是复对角阵.
+    \end{corollary}
+\end{green}
+\begin{green}
+    \begin{corollary}[复正规阵在酉相似下的全系不变量]\label{cor:复正规阵在酉相似下的全系不变量}
+        复正规阵在酉相似下的全系不变量是其全体特征值,且其酉相似标准型即为全体特征值构成的对角阵.
+    \end{corollary}
+\end{green}
+\begin{green}
+    \begin{corollary}[酉阵的酉相似标准型]\label{cor:酉阵的酉相似标准型}
+        设$\bm{U}$为酉阵,则存在酉阵$\bm{P}$使得\[
+        \overline{\bm{P}}'\bm{UP}= \mathrm{diag}\,\left\{
+            c_1,c_2,\cdots,c_n
+        \right\}
+        \]其中$\forall 1\leqslant i\leqslant n:\left|c_i\right|=1.$
+    \end{corollary}
+    \begin{Proof}
+  由      \cref{cor:正规必定对角},必定存在酉阵$\bm{P}$使得\[
+        \overline{\bm{P}}'\bm{UP}= \mathrm{diag}\,\left\{
+            c_1,c_2,\cdots,c_n
+        \right\}    
+  \]其中$c_i\in\mathbb{C}$.这是一个酉阵,于是与其共轭转置之积为单位阵,因此$\forall1\leqslant i\leqslant n:\left|c_i\right|=1.$
+    \end{Proof}
+\end{green}
+\begin{formal}
+    \begin{theorem}[特征子空间确定的正规算子]\label{thm:特征子空间确定的正规算子}
+        设$\bm{\varphi}$是酉空间$V$上的线性算子,其全体不同特征值为$\lambda_1,\lambda_2,\cdots,\lambda_k$,对应特征子空间为$V_1,V_2,\cdots,V_k$,则$\bm{\varphi}$正规当且仅当\[
+        V=V_1\perp V_2\perp\cdots\perp V_k
+        \]
+    \end{theorem}
+    \begin{Proof}
+        先考虑必要性,设$\bm{\varphi}$正规,由\cref{thm:正规的判定},其必可对角化,于是\[
+        V=V_1\oplus V_2\oplus\cdots\oplus V_k
+        \],根据\cref{lem:正规算子的范数、特征值、特征向量},$\forall i\neq j:V_i\perp V_j$,于是\[
+        V=V_1\perp V_2\perp\cdots\perp V_k
+        \]
+
+        下面证明充分性.不妨取$V_i$的标准正交基,拼成$V$的一组标准正交基.注意到基向量都是特征向量,于是$\bm{\varphi}$在这组基下的表示矩阵是对角阵,故$\bm{\varphi}$正规.
+    \end{Proof}
+\end{formal}
+\begin{green}
+    \begin{corollary}[自伴随算子的特征子空间]\label{cor:自伴随算子的特征子空间}
+        设$\bm{\varphi}$为欧式空间上的自伴随算子,其全体不同特征值为$\lambda_1,\lambda_2,\cdots,\lambda_k$,对应特征子空间为$V_1,V_2,\cdots,V_k$,则\[
+        V=V_1\perp V_2\perp\cdots\perp V_k
+        \]
+    \end{corollary}
+\end{green}
+\subsection{实对称矩阵关于特征值的估计}
+设$n$阶实对称阵$\bm{A}$,将其特征值升序排列（\cref{coro:实对称阵的特征值与特征向量}告诉我们一定是实数）为：$\lambda_1\leqslant\lambda_2\leqslant\cdots\leqslant\lambda_n$,于是存在正交阵$\bm{P}$使得$\bm{P}'\bm{AP}=\mathrm{diag}\,\left\{
+    \lambda_1,\lambda_2,\cdots,\lambda_n
+    \right\}$.做列分块$\bm{P}=\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right)$,其中$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$是$\mathbb{R}^n$在标准内积下的一组标准正交基.因为\[
+    \bm{A}\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right)=\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right)\begin{pmatrix}
+        \lambda_1&&&\\
+        &\lambda_2&&\\
+        &&\ddots&\\
+        &&&\lambda_n
+    \end{pmatrix}
+    \]即$\bm{Ae}_i=\lambda_i\bm{e}_i$.
+
+    $\forall\bm{x}=x_1\bm{e}_1+x_2\bm{e}_2+\cdots+x_n\bm{e}_n\in\mathbb{R}^n$,作\begin{align*}
+        \bm{Ax}&=\bm{A}\left(
+            x_1\bm{e}_1+x_2\bm{e}_2+\cdots+x_n\bm{e}_n
+        \right)\\
+        &=\sum_{i=1}^{n}\lambda_ix_i\bm{e}_i
+    \end{align*}又\begin{align*}
+        \bm{x}'\bm{Ax}&=\left(
+            \sum_{i=1}^{n}x_i\bm{e}_i,\sum_{i=1}^{n}\lambda_ix_i\bm{e}_i
+        \right)\\
+        &=\sum_{i=1}^{n}\lambda_ix_i^2
+    \end{align*}于是\[
+    \lambda_1\bm{x}'\bm{x}=\lambda_1\sum_{i=1}^{n}x_i^2\leqslant\bm{x}'\bm{Ax}\leqslant\lambda_n\sum_{i=1}^{n}x_i^2=\lambda_n\bm{x}'\bm{x}
+    \]等号分别必定在$\bm{x}=\bm{e}_1,\bm{e}_n$处取得.于是\[
+    \lambda_n=\max_{\forall\bm{0}\neq\bm{x}\in\mathbb{R}^n}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}},\lambda_1=\min_{\forall\bm{0}\neq\bm{x}\in\mathbb{R}^n}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}
+    \]即\[
+    \min_{\forall\bm{x}\in\mathbb{R}^n}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}\leqslant\lambda\leqslant\max_{\forall\bm{x}\in\mathbb{R}^n}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}
+    \]
+\begin{formal}
+    \begin{theorem}[Courant-Fischer定理/极小极大定理]\label{thm:Courant-Fischer定理}
+        \begin{align*}
+        \lambda_i&=\min_{V_i}\max_{\forall\bm{0}\neq\bm{x}\in V_i}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}} \\
+        &=\max_{V_{n+1-i}}\min_{\forall\bm{0}\neq\bm{x}\in V_{n+1-i}}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}
+        \end{align*}其中$V_i$为$\mathbb{R}^n$的$i$维子空间.
+    \end{theorem}
+    \begin{Proof}
+        先取定一个$V_i\subseteq\mathbb{R}^n$,取$U=L\left(
+            \bm{e}_i,\bm{e}_{i+1},\cdots,\bm{e}_n
+        \right)\Longrightarrow\dim U=n+1-i$,则$V_i\cap U\neq 0$（否则,二者为直和,即有$\mathbb{R}^n\supseteq V_i\oplus U$,后者维数为$n+1$维,矛盾）.取$\bm{0}\neq\bm{x}_0=x_i\bm{e}_i+x_{i+1}\bm{e}_{i+1}+\cdots+x_n\bm{e}_n\in V_i\cap U$.作\begin{align*}
+            \bm{x}_0'\bm{Ax}_0=\sum_{j=i}^{n}\lambda_jx_j^2,\bm{x}'_0\bm{x}_0=\sum_{j=i}^{n}x_j^2
+        \end{align*}于是\[
+        \lambda_i\leqslant\frac{\bm{x}_0'\bm{Ax}_0}{\bm{x}_0'\bm{x}_0}\Longrightarrow\lambda_i\leqslant\max_{\forall\bm{0}\neq\bm{x}\in V_i}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}\Longrightarrow\lambda_i\leqslant\min_{V_i}\max_{\forall\bm{0}\neq\bm{x}\in V_i}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}
+        \]任取$W=L\left(
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_i
+        \right)$,考虑\begin{align*}
+            \max_{\forall\bm{0}\neq\bm{x}=\sum\limits_{j=1}^{i}x_j\bm{e}_j\in W}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}\leqslant\lambda_i
+        \end{align*}并且等号在$\bm{x}=\bm{e}_i$处取得.于是\[
+        \max_{\forall\bm{0}\neq\bm{x}=\sum\limits_{j=1}^{i}x_j\bm{e}_j\in W}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}=\lambda_i\]因此\[
+        \lambda_i=\min_{V_i}\max_{\forall\bm{0}\neq\bm{x}\in V_i}\frac{\bm{x}'\bm{Ax}}{\bm{x}'\bm{x}}\qedhere
+        \]
+    \end{Proof}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[Cauchy交错定理]\label{thm:Cauchy交错定理}
+        设$n$阶实对称阵$\bm{A}$,特征值$\lambda_1\leqslant\lambda_2\leqslant\cdots\leqslant\lambda_n$,$\bm{A}_m$是一个$m$阶主子阵,特征值$\mu_1\leqslant\mu_2\leqslant\cdots\leqslant\mu_m$,则$\forall i:$\[
+        \lambda_i\leqslant\mu_i,\lambda_{n+1-i}\geqslant\mu_{m+1-i}
+        \]
+    \end{theorem}
+\end{formal}
+\begin{formal}
+    \begin{theorem}[Weyl摄动定理]\label{thm:Weyl摄动定理}
+        设$n$阶实对称阵$\bm{A},\bm{B}$,特征值分别为$\lambda_1\leqslant\lambda_2\leqslant\cdots\leqslant\lambda_n,\mu_1\leqslant\mu_2\leqslant\cdots\leqslant\mu_n$,他们的和$\bm{A}+\bm{B}$也是实对称阵,其特征值为$\gamma_1\leqslant\gamma_2\leqslant\cdots\leqslant\gamma_n$,则$\forall 1\leqslant i\leqslant n:$\[
+        \lambda_i+\mu_1\leqslant\gamma_i\leqslant\lambda_i+\mu_n
+        \]
+    \end{theorem}
 \end{formal}
