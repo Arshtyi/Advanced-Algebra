@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,UTF8,oneside]{ctexbook}
+\documentclass[12pt,a4paper,UTF8,twoside]{ctexbook}
 \usepackage[tbtags]{amsmath}
 \usepackage{extarrows}
 \usepackage{amsthm}
@@ -25,6 +25,7 @@
 \usepackage{mathtools}
 \usepackage{multirow}
 \usepackage{newtxtext}
+\usepackage{fancyhdr}
 \usepackage{threeparttable}
 \usepackage{tikz-cd}
 \usepackage{stmaryrd}
@@ -217,7 +218,12 @@
 \newpage
 \setcounter{page}{1}
 \pagenumbering{arabic}
-\pagestyle{plain}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{\rightmark}
+\fancyhead[C]{Advanced Algebra}
+\fancyfoot[LO,RE]{\thepage}
+\fancyfoot[C]{By \textit{机笑理运/Arshtyi}}
 \input{chapters/chapter1.tex}
 \input{chapters/chapter2.tex}
 \input{chapters/chapter3.tex}

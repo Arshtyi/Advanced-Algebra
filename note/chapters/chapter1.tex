@@ -1,5 +1,6 @@
 \newpage
 \chapter{行列式}
+\thispagestyle{fancy}
 \section{\texorpdfstring{$n$}{n}阶行列式}
 \subsection{行列式的几何意义}
 关于行列式的几何意义,通常来说有两种角度的看法：一种角度是行列式的值是行列式中的
@@ -78,6 +79,11 @@ c & d
         后续我们将会提到,行列式更多的是在刻画线性映射的性质,它本身的意义在高等代数中并不显得像在线性代数中贯穿始终且“意义重大”.
     \end{remark}
 \end{red}
+\begin{red}
+    \begin{remark}
+        首先给出行列式的一些相关定义.
+    \end{remark}
+\end{red}
 \subsection{相关定义}
 \begin{formal}
 \begin{definition}[行列式的形式]\label{def:行列式的形式}
@@ -98,25 +104,28 @@ c & d
 \end{definition}
 \end{formal}
 \begin{formal}
-\begin{definition}[余子式与代数余子式]\label{def:余子式与代数余子式}
-    在$n$阶行列式中,去掉第$i$行第$j$列元素后,剩下的$n-1$阶行列式称为元素$a_{ij}$的余子式,记作$M_{ij}$.
-
+\begin{definition}[余子式与代数余子式]\label{def:余子式与代数余子式}\,
+    \begin{enumerate}[label = {\textup{(\arabic*)}}]
+        \item 在$n$阶行列式中,去掉第$i$行第$j$列元素后,剩下的$n-1$阶行列式称为元素$a_{ij}$的余子式,记作$M_{ij}$.
+        \item 
     余子式$M_{ij}$乘以$(-1)^{i+j}$得到元素$a_{ij}$的代数余子式,记作$\displaystyle
     A_{ij}=\left(-1\right)^{i+j}M_{ij}$.
+    \end{enumerate}
 \end{definition}
 \end{formal}
 \subsection{递归定义}
 \begin{formal}
 \begin{definition}[行列式的递归定义]\label{def:行列式的递归定义}
     采用数学归纳法来定义.
-    $n=1$时$1$阶行列式$\left|a_{11}\right|=a_{11}.$假设所有的$n-1$阶行列式已经定义好,特别地$M_{ij}$已经定义好了,下面定义$n$阶行列式：
+    $n=1$时$1$阶行列式$\left|a_{11}\right|=a_{11}.$假设所有的$n-1$阶行列式已经定义好,特别地,$M_{ij}$已经定义好了,下面定义$n$阶行列式：
     \[
     \left|\bm{A}\right|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}
     \]
-    特别地,使用\cref{def:余子式与代数余子式}中代数余子式定义则可以定义$n$阶行列式为
-    \[
-    \left|\bm{A}\right|=a_{11}A_{11}+a_{21}A_{21}+\cdots+(-1)^{n+1}a_{n1}A_{n1}=\sum_{i=1}^{n}a_{i1}A_{i1}
-    \]
+    特别地,使用\cref{def:余子式与代数余子式}代数余子式定义则可以定义$n$阶行列式为
+    \begin{align*}
+         \left|\bm{A}\right|&=a_{11}A_{11}+a_{21}A_{21}+\cdots+(-1)^{n+1}a_{n1}A_{n1}\\
+         &=\sum_{i=1}^{n}a_{i1}A_{i1}
+    \end{align*}
 \end{definition}
 \end{formal}
 \begin{red}
@@ -135,11 +144,6 @@ c & d
     \end{enumerate}
 \end{definition}
 \end{formal}
-\begin{red}
-\begin{remark}
-    三角行列式的值等于主对角线上的元素的乘积.
-\end{remark}
-\end{red}
 \subsection{性质}
 \begin{formal}
 \begin{proposition}[行列式的性质]\label{prop:行列式的性质}
@@ -149,8 +153,8 @@ c & d
         \item 如果行列式某一行（列）元素全为零,那么这个行列式值为零
         \item 将行列式$\left|\bm{A}\right|$某一行（列）乘上常数$c$得到的新行列式$\left|\bm{B}\right|=c\left|\bm{A}\right|$
         \item 对换行列式$\left|\bm{A}\right|$的两行（列）得到的新行列式$\left|\bm{B}\right|=-\left|\bm{A}\right|$
-        \item 如果行列式的两行（列）成比例（特别地,它们相等）,则行列式值为零
-        \item 如果行列式某一行（列）元素均是两数之和,那么这个行列式可以分解成两个行列式之和即\begin{align*}
+        \item 如果行列式的两行（列）元素对应成比例（特别地,这两行（列）元素对应相等）,则行列式值为零
+        \item 如果行列式某一行（列）元素均可分解为另外两个数之和,那么这个行列式可以分解按照这样的形式成如下两个行列式之和即\begin{align*}
             \begin{vmatrix}
                 a_{11}&a_{12}&\cdots&a_{1n}\\
                 \vdots&\vdots& &\vdots\\
@@ -173,7 +177,7 @@ c & d
                 a_{n1}&a_{n2}&\cdots&a_{nn}
             \end{vmatrix}
         \end{align*}
-        \item 行列式的某一行（列）乘以一个常数加到另一行（列）上去,行列式的值不改变即\newpage\[
+        \item 行列式的某一行（列）乘以一个常数加到另一行（列）上去,行列式的值不发生改变即有\[
         \begin{vmatrix}
             a_{11}&a_{12}&\cdots&a_{1n}\\
             \vdots&\vdots& &\vdots\\
@@ -230,8 +234,10 @@ c & d
         a_{i+1,j+1} &$,k\leqslant i\leqslant   n-1.$
     \end{cases*}
     \]因为$\left|\bm{A}\right|$是下三角行列式即$a_{ij}=0,\forall i<j$,所以$M_{k1},\forall 1\leqslant k\leqslant n$均是下三角行列式并且断言$k\geqslant 2$时$M_{k1}$必定有零主对角元.事实上,$b_{k-1,k-1}=a_{k-1,k}=0$即得.于是由归纳假设$M_{k1}=0,\forall k\geqslant 2,M_{11}=a_{22}\cdots a_{nn}\Longrightarrow \left|\bm{A}\right|=a_{11}a_{22}\cdots a_{nn}.$于是证毕.
-    \item 由下一条性质立得
-    \item 考虑数学归纳法,$n=1$时显然成立,下设结论对$n-1$阶成立,下面证明$n$阶的情形.先证明行的情形,设
+    \item 由下一条性质立得.
+    \item 考虑数学归纳法,$n=1$时显然成立.
+    
+    下设结论对$n-1$阶成立,下面证明$n$阶的情形.先证明行的情形,设
     \[
     \left|\bm{B}\right|=\begin{vmatrix}
        a_{11}&a_{12}&\cdots&a_{1n}\\
@@ -242,20 +248,25 @@ c & d
     \end{vmatrix}
     \]做展开（约定$\left|\bm{A}\right|$的余子式使用记号$M_{ij}$,$\left|\bm{B}\right|$的余子式使用记号$N_{ij}$）即得\[
     \left|\bm{B}\right|=a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{i+1}ca_{i1}N_{i1}+\cdots+(-1)^{n+1}a_{n1}N_{n1}
-    \]注意到,$k\neq i$时$N_{k1}$均由$M_{k1}$的某一行乘上非零常数$c$得到,由归纳假设$N_{k1}=cM_{k1},\forall k\neq i$；而当$k=i$时$N_{i1}=M_{i1}$,于是\[
-    \left|\bm{B}\right|=ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1}=c\left|\bm{A}\right|
-    \]
+    \]注意到,$k\neq i$时$N_{k1}$均由$M_{k1}$的某一行乘上非零常数$c$得到,由归纳假设\[N_{k1}=cM_{k1},\forall k\neq i\]而当$k=i$时$N_{i1}=M_{i1}$,于是\begin{align*}
+    \left|\bm{B}\right|&=ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1}\\
+    &=c\left|\bm{A}\right|
+    \end{align*}
 
-然后考虑列的情形,一方面,如果乘上常数$c$的是第一列,做展开显然成立.另一方面,若乘上常数$c$的是第$j\geqslant 2$列,做展开即得\[
+然后考虑列的情形,一方面,如果乘上常数$c$的是第一列,做展开显然成立.
+
+另一方面,若乘上常数$c$的是第$j\geqslant 2$列,做展开即得\[
 \left|\bm{B}\right|=a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{n+1}a_{n1}N_{n1}
-\]注意到$N_{i1}$是$M_{i1}$的某一列乘上常数$c$得到,于是由归纳假设$N_{i1}=cM_{i1},\forall 1\leqslant i\leqslant n.$于是\[
-\left|\bm{B}\right|=ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1}=c\left|\bm{A}\right|
-\]于是证毕.
+\]注意到$N_{i1}$是$M_{i1}$的某一列乘上常数$c$得到,于是由归纳假设$N_{i1}=cM_{i1},\forall 1\leqslant i\leqslant n.$于是\begin{align*}
+\left|\bm{B}\right|&=ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1}\\
+&=c\left|\bm{A}\right|
+\end{align*}于是证毕.
 
 \item 考虑数学归纳法,$n=2$时容易证明成立.
 
 设结论对$n-1$阶的情形成立,下面证明$n$阶的情形.
-先证明相邻行即第$i$行和第$i+1$行的情形.此时\newpage
+
+先证明相邻行即第$i$行和第$i+1$行的情形.此时
 \begin{align*}
 \left|\bm{B}\right|&=\begin{vmatrix}
     a_{11}&a_{12}&\cdots&a_{1n}\\
@@ -305,11 +316,6 @@ c & d
 \end{enumerate}
 \end{Proof}
 \end{formal}
-% \begin{red}
-% \begin{remark}
-%     上述证明部分未给出列的情形证明,同时第一列似乎处于一种特殊的地位,下面将解决这个问题.
-% \end{remark}
-% \end{red}
 \begin{green}
 \begin{corollary}[列情形]\label{cor:列情形}
     \,
@@ -384,7 +390,8 @@ c & d
             a_{21}&\cdots&a_{2r}&\cdots&a_{2r}&\cdots&a_{2n}\\
             \vdots& &\vdots& &\vdots& &\vdots\\
             a_{n1}&\cdots&a_{nr}&\cdots&a_{nr}&\cdots&a_{nn}
-        \end{vmatrix}+\begin{vmatrix}
+        \end{vmatrix}\\
+        &+\begin{vmatrix}
             a_{11}&\cdots&a_{1s}&\cdots&a_{1s}&\cdots&a_{1n}\\
             a_{21}&\cdots&a_{2s}&\cdots&a_{2s}&\cdots&a_{2n}\\
             \vdots& &\vdots& &\vdots& &\vdots\\
@@ -392,7 +399,7 @@ c & d
         \end{vmatrix}
     \end{align*}于是$\left|\bm{B}\right|=-\left|\bm{A}\right|.$
 
-    $(5)$我们直接考虑相等的情况,成比例可由\cref{prop:行列式的性质}的$(3)$保证一致.
+    $(5)$我们直接考虑相等的情况,因为其中成比例的情形可由\cref{prop:行列式的性质}的$(3)$保证一致.
     
     考虑数学归纳法,对阶数$n$归纳,$n=2$时显然成立.设结论对$n-1$阶成立,下面证明$n$阶的情形.
 
@@ -408,7 +415,7 @@ c & d
             \vdots& &\vdots& &\vdots\\
             a_{n1}&\cdots&a_{n1}&\cdots&a_{nn}
         \end{vmatrix}
-    \end{align*}因为$a_{s1}\neq 0$,利用\cref{prop:行列式的性质}的$(6)$将第一列其他元素均变为零,并且注意到新行列式\newpage
+    \end{align*}因为$a_{s1}\neq 0$,利用\cref{prop:行列式的性质}的$(6)$将第一列其他元素均变为零,并且注意到新行列式
     \[
     \left|\bm{C}\right|=\begin{vmatrix}
         0&\cdots&0&\cdots&*\\
@@ -447,6 +454,11 @@ c & d
 \end{align*}于是证明了$\left|\bm{A}\right|$可以对任何一列展开.
 \end{Proof}
 \end{formal}
+\begin{red}
+    \begin{remark}
+        后续也会证明行展开的任意性.
+    \end{remark}
+\end{red}
 \begin{formal}
 \begin{definition}[Kronecken符号]\label{def:Kronecken符号}
     定义\textup{Kronecken符号}$\delta_{ij}$为\[
@@ -458,6 +470,12 @@ c & d
     \]
 \end{definition}
 \end{formal}
+\begin{red}
+    \begin{remark}
+        \cref{def:Kronecken符号}\textup{Kronecken符号}是一个非常重要的符号,在多个数学领域都常见,在高等代数后续内容中,我们也会多次用到它.
+    \end{remark}
+\end{red}
+在证明行展开的任意性之前,首先要考虑展开项的关系,于是先证明下面的定理.
 \begin{formal}
 \begin{theorem}[异乘变零定理]\label{thm:异乘变零定理}
     设$n$阶行列式$\left|\bm{A}\right|$且$1\leqslant r,s\leqslant n$,则
@@ -468,7 +486,7 @@ c & d
 \begin{Proof}
 $r=s$显然成立.
 
-$r\neq s$时,不妨设$r<s$,构造\newpage
+$r\neq s$时,不妨设$r<s$,构造
 \[
 \begin{vmatrix}
     a_{11}&\cdots&a_{1r}&\cdots&a_{1r}&\cdots&a_{1n}\\
@@ -932,7 +950,7 @@ $\left|\bm{A}\left(0\right)\right|$中的
 \end{example}
 \end{brown}
 \begin{brown}
-\begin{example}
+\begin{example}\label{ex:加和}
 设行列式
 $\left|\bm{A}\right|
 =\left(a_{ij}\right)_n$,证明：

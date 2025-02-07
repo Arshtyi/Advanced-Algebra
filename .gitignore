@@ -7,5 +7,6 @@
 *.gz
 *.synctex
 *.blg
+*.tex
 *.synctex(busy)
 list.txt
