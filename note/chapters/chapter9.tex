@@ -2528,3 +2528,205 @@ L\left(
         \]
     \end{theorem}
 \end{formal}
+\newpage
+\section{实正规矩阵}
+\subsection{极小多项式的不可约分解}
+\begin{green}
+    \begin{lemma}[正规与多项式相容]\label{lem:正规与多项式相容}
+        设$V$为$n$维欧式空间,$\bm{\varphi}$是$V$上的正规算子,则$\forall f\left(x\right)\in\mathbb{R}\left[x\right],f\left(\bm{\varphi}\right)$也是$V$上的正规算子.
+    \end{lemma}
+    \begin{Proof}
+        设$f\left(x\right)=a_mx^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0$,于是\[
+        f\left(
+            \bm{\varphi}
+        \right)=a_m\bm{\varphi}^m+a_{m-1}\bm{\varphi}^{m-1}+\cdots+a_1\bm{\varphi}+a_0\bm{I}
+        \]容易有\[
+        f\left(\bm{\varphi}\right)^*=a_m\bm{\varphi}^{*m}+a_{m-1}\bm{\varphi}^{*m-1}+\cdots+a_1\bm{\varphi}^*+a_0\bm{I}=f\left(
+            \bm{\varphi}^*
+        \right)
+        \]因为$\bm{\varphi\varphi}^*=\bm{\varphi}^*\bm{\varphi}$,于是\[
+        f\left(
+            \bm{\varphi}
+        \right)f\left(
+            \bm{\varphi}
+        \right)^*=f\left(
+            \bm{\varphi}
+        \right)^*f\left(
+            \bm{\varphi}
+        \right)\qedhere
+        \]
+    \end{Proof}
+\end{green}
+\begin{green}
+    \begin{lemma}[互素的延拓]\label{lem:互素的延拓}
+        设欧式空间$V$上的实正规算子$\bm{\varphi}$,$f\left(x\right),g\left(x\right)$是互素的实系数多项式,则$\forall\bm{\alpha}\in\mathrm{Ker}\,f\left(\bm{\varphi}\right),\bm{\beta}\in\mathrm{Ker}\,g\left(\bm{\varphi}\right):$\[
+        \left(
+            \bm{\alpha},\bm{\beta}
+        \right)=0
+        \]
+    \end{lemma}
+    \begin{Proof}
+        因为$\left(
+            f\left(x\right),g\left(x\right)
+        \right)=1$,则$\exists u\left(x\right),v\left(x\right)\in\mathbb{R}\left[x\right]:$\[
+        f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)=1
+        \]即\[
+        f\left(
+            \bm{\varphi}
+        \right)u\left(
+            \bm{\varphi}
+        \right)+g\left(
+            \bm{\varphi}
+        \right)v\left(
+            \bm{\varphi}
+        \right)=\bm{I}_V
+        \]两边作用$\forall\bm{\alpha}\in\mathrm{Ker}\,f\left(\bm{\varphi}\right):$\[
+        \bm{\alpha}=f\left(
+            \bm{\varphi}
+        \right)u\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)+g\left(
+                \bm{\varphi}
+            \right)v\left(
+                \bm{\varphi}
+            \right)\left(
+                \bm{\alpha}
+            \right)=g\left(
+                \bm{\varphi}
+            \right)v\left(
+                \bm{\varphi}
+            \right)\left(
+                \bm{\alpha}
+            \right)
+        \]作\begin{align*}
+            \left(
+                \bm{\alpha},\bm{\beta}
+            \right)&=\left(
+                g\left(
+                    \bm{\varphi}
+                \right)v\left(
+                    \bm{\varphi}
+                \right)\left(
+                    \bm{\alpha}
+                \right),\bm{\beta}
+            \right)\\
+            &=\left(
+                v\left(
+                    \bm{\varphi}
+                \right)\left(
+                    \bm{\alpha}
+                \right),g\left(
+                    \bm{\varphi}
+                \right)^*\left(
+                    \bm{\beta}
+                \right)
+            \right)
+        \end{align*}因为$g\left(\bm{\varphi}\right)\left(\bm{\beta}\right)=\bm{0}$,考虑到$\bm{\varphi}$是正规算子,即$\forall\bm{v}\in V:\left\lVert\bm{\varphi}\left(\bm{v}\right)\right\rVert=\left\lVert\bm{\varphi}^*\left(\bm{v}\right)\right\rVert$,于是容易导出$g\left(\bm{\varphi}\right)^*\left(\bm{\beta}\right)=\bm{0}$,于是\[
+        \left(
+            \bm{\alpha},\bm{\beta}
+        \right)=0\qedhere
+        \]
+    \end{Proof}
+\end{green}
+\begin{formal}
+    \begin{theorem}[极小多项式不可约分解引出的正交直和分解]\label{thm:极小多项式不可约分解引出的正交直和分解}
+        设$n$维欧式空间$V$上的实正规算子$\bm{\varphi}$的极小多项式为$g\left(x\right)$,设$g_1\left(x\right),g_2\left(x\right),\cdots,g_k\left(x\right)$是$g\left(x\right)$所有互不相同的首一不可约多项式,$\forall1\leqslant i\leqslant k:W_i:=\mathrm{Ker}\,g_i\left(\bm{\varphi}\right)$,则\begin{enumerate}[label={\textup{(\arabic*)}}]
+            \item $g\left(x\right)=g_1\left(x\right)g_2\left(x\right)\cdots g_k\left(x\right)$,其中$\forall1\leqslant i\leqslant k:\deg g_i\left(x\right)\leqslant 2$
+            \item $V=W_1\perp W_2\perp \cdots\perp W_k$
+            \item $W_i$是$\bm{\varphi}$-不变子空间,$\displaystyle\bm{\varphi}\mid_{W_i}$是$W_i$上的实正规算子且$g_i\left(x\right)$是$\displaystyle\bm{\varphi}\mid_{W_i}$的极小多项式
+        \end{enumerate}
+    \end{theorem}
+    \begin{Proof}
+        $(1)$任取$V$的一组标准正交基,$\bm{\varphi}$在这组基下的表示矩阵为$\bm{A}$,则$\bm{A}$实正规（$\bm{AA}'=\bm{A}'\bm{A}$）亦是复正规（$\bm{A}\overline{\bm{A}}'=\overline{\bm{A}}'\bm{A}$）,由\cref{cor:正规必定对角},$\bm{A}$作为复正规阵必定可对角化,根据\cref{cor:可对角化等价条件},$\bm{A}$的极小多项式$g\left(x\right)$在复数域$\mathbb{C}$上无重根,那么$g\left(x\right)$在实数域$\mathbb{R}$上没有重因式（若不然,必定在复数域上有重根）,于是$g\left(x\right)$等于其所有互异的首一不可约多项式的乘积即\[
+        g\left(x\right)=g_1\left(x\right)g_2\left(x\right)\cdots g_k\left(x\right)
+        \]并且根据实数域$\mathbb{R}$上的不可约多项式的性质,每个$g_i\left(x\right)$的次数$\deg g_i\left(x\right)\leqslant 2$.
+
+        $(2)$作\[
+        f_i\left(x\right)=\frac{g\left(x\right)}{g_i\left(x\right)}=g_1\left(x\right)g_2\left(x\right)\cdots\widehat{g_i\left(x\right)}\cdots g_k\left(x\right)\Longrightarrow\left(
+            f_1\left(\bm{\varphi}\right),f_2\left(\bm{\varphi}\right),\cdots, f_k\left(\bm{\varphi}\right)
+        \right)=1
+        \]即$\exists u_i\left(x\right):$\[
+        f_1\left(x\right)u_1\left(x\right)+f_2\left(x\right)u_2\left(x\right)+\cdots+f_k\left(x\right)u_k\left(x\right)=1
+        \]即\[
+        f_1\left(\bm{\varphi}\right)u_1\left(\bm{\varphi}\right)+f_2\left(\bm{\varphi}\right)u_2\left(\bm{\varphi}\right)+\cdots+f_k\left(\bm{\varphi}\right)u_k\left(\bm{\varphi}\right)=\bm{I}_V
+        \]$\forall\bm{\alpha}\in V:$\[
+        \bm{\alpha}=f_1\left(\bm{\varphi}\right)u_1\left(\bm{\varphi}\right)\left(\bm{\alpha}\right)+f_2\left(\bm{\varphi}\right)u_2\left(\bm{\varphi}\right)\left(\bm{\alpha}\right)+\cdots+f_k\left(\bm{\varphi}\right)u_k\left(\bm{\varphi}\right)\left(\bm{\alpha}\right)
+        \]考虑\[
+        g_i\left(
+            \bm{\varphi}
+        \right)f_i\left(
+            \bm{\varphi}
+        \right)u_i\left(
+            \bm{\varphi}
+        \right)\left(
+            \bm{\alpha}
+        \right)=g\left(
+            \bm{\varphi}
+        \right)u_i\left(
+            \bm{\varphi}
+        \right)\left(
+            \bm{\alpha}
+        \right)=\bm{0}u_i\left(
+            \bm{\varphi}
+        \right)\left(\bm{\alpha}\right)=\bm{0}
+        \]于是\[
+        f_i\left(
+            \bm{\varphi}
+        \right)u_i\left(
+            \bm{\varphi}
+        \right)\left(
+            \bm{\alpha}
+            \right)\in \mathrm{Ker}\,g_i\left(
+                \bm{\varphi}
+            \right)=W_i
+        \]于是\[
+        V=W_1+W_2+\cdots+W_k
+        \]
+        注意到$\forall1\leqslant i\neq j\leqslant k:\left(g_i\left(x\right),g_j\left(x\right)\right)=1$,由\cref{lem:互素的延拓},$W_i\perp W_j$,于是\[
+        V=W_1\perp W_2\perp\cdots\perp W_k
+        \]
+
+        $(3)$先证明$W_i$是$\bm{\varphi}$-不变子空间且是$\bm{\varphi}^*$-不变子空间.任取$\bm{w}\in W_i=\mathrm{Ker}\,g_i\left(\bm{\varphi}\right)\Longrightarrow g_i\left(\bm{\varphi}\right)\left(\bm{w}\right)=\bm{0}$,那么\[
+        g_i\left(
+            \bm{\varphi}
+        \right)\bm{\varphi}\left(\bm{w}\right)=\bm{\varphi}\left(\bm{0}\right)=\bm{0}\Longrightarrow\bm{\varphi}\left(\bm{w}\right)\in W_i=\mathrm{Ker}\,g_i\left(\bm{\varphi}\right)
+        \]于是$W_i$是$\bm{\varphi}$-不变子空间,而因为正规\[
+        g_i\left(\bm{\varphi}\right)\left(
+            \bm{\varphi}^*\left(\bm{w}\right)
+        \right)=\bm{\varphi}^*g\left(
+            \bm{\varphi}
+        \right)\left(\bm{w}\right)=\bm{0}
+        \]即$W_i$是$\bm{\varphi}^*$-不变子空间.
+        做限制$\bm{\varphi}\mid_{W_i},\bm{\varphi}^*\mid_{W_i}$,下面证明二者就是限制关系,$\forall\bm{\alpha},\bm{\beta}\in W_i:$\[
+        \left(
+            \bm{\varphi}\left(
+                \bm{\alpha}
+            \right),\bm{\beta}
+        \right)=\left(
+            \bm{\alpha},\bm{\varphi}^*\left(
+                \bm{\beta}
+            \right)
+        \right)
+        \]自然地视作限制,于是\[
+        \left(
+            \bm{\varphi}\mid_{W_i}
+        \right)^*=\bm{\varphi}^*\mid_{W_i}
+        \]考虑是否正规:\[
+        \bm{\varphi}\mid_{W_i}\bm{\varphi}^*\mid_{W_i}=\left(
+            \bm{\varphi}\bm{\varphi}^*
+        \right)_{W_i}=\left(
+            \bm{\varphi}^*\bm{\varphi}
+        \right)_{W_i}=\bm{\varphi}^*\mid_{W_i}\bm{\varphi}\mid_{W_i}
+        \]因为$W_i=\mathrm{Ker}\,g_i\left(\bm{\varphi}\right)$,那么$\bm{\varphi}\mid_{W_i}$适合$g_i\left(x\right)$（即$g_i\left(\bm{\varphi}\mid_{W_i}\right)=\bm{0}\in\mathcal{L}\left(W_i\right)$）,于是$\bm{\varphi}\mid_{W_i}$的极小多项式整除$g_i\left(x\right)$,但是$g_i\left(x\right)$是次数大于等于$1$的不可约多项式,于是$\bm{\varphi}\mid_{W_i}$的极小多项式为$g_i\left(x\right)$.
+    \end{Proof}
+\end{formal}
+\subsection{极小多项式为二次不可约多项式的正规算子的结构}
+\begin{red}
+    \begin{remark}
+        一般地,二次不可约多项式\[
+        g\left(x\right)=\left(x-a\right)^2+b^2
+        \]其中$a,b\neq0\in\mathbb{R}$.特别地,考虑$a=0,b=1:g\left(x\right)=x^2+1.$
+    \end{remark}
+\end{red}

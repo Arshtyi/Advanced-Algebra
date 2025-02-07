@@ -1,40 +1,12 @@
 # 项目简介
-作者个人的高等代数笔记及习题答案,主要参考书目为复旦大学《高等代数学（第四版）》.
-# 仓库结构
-```
-│   .gitattributes
-│   .gitignore
-│   list.txt
-│   README.md
-│   
-├───additional
-│       复旦大学高等代数习题集.pdf
-│       
-├───answer
-│   │   answer.tex
-│   │   
-│   └───chapters
-│           chapter1.tex
-│           chapter2.tex
-│           
-├───book
-│       《高等代数.第四版》学习指导书 .pdf
-│       高等代数学(第4版).pdf
-│       
-└───note
-    │   Advanced Algebra.pdf
-    │   Advanced Algebra.tex
-    │   References.bib
-    │   
-    └───chapters
-            chapter1.tex
-            chapter2.tex
-            chapter3.tex
-            chapter4.tex
-            chapter5.tex
-            chapter6.tex
-            chapter7.tex
-```
+这是作者自己的高等代数笔记,
+主要参考教材为复旦大学《高等代数学（第四版）》,欢迎任何有价值的问题探讨与交流.
+
+作者全网名称一般是机笑或者Arshtyi,同时欢迎关注作者的微信公众号：机笑理运.作者的常用联系方式包括 QQ:640006128.
+
+值得一提的是,作者并非数学系出身,同时由于个人能力问题,难免有谬误存在,这也欢迎大家的指正.另外,本文并不适合完全意义上的初学者使用,如果必要,可以参考其他资料进行理解.
+# 转载相关
+允许个人预习、复习等其他个人用途或转载但禁止未经作者本人同意的商业相关用途.
 # 更新
 因为作者非数学系的原因,更新只能尽己所能.
 # 联系我
