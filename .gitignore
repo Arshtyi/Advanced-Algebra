@@ -8,5 +8,5 @@
 *.synctex
 *.blg
 *.tex
+*.bib
 *.synctex(busy)
-list.txt
