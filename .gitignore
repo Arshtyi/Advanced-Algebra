@@ -7,7 +7,5 @@
 *.gz
 *.synctex
 *.blg
-*.tex
 *.bib
 *.synctex(busy)
-answer.pdf
