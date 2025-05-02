@@ -1,0 +1,307 @@
+\newpage
+\section{Laplace定理}.
+\subsection{定义}
+\dfn{$k$阶子式}{k阶子式}{
+    有$n$阶行列式$ \det\left(\bm{A}\right)$.任取$2k$个数:
+    \begin{align*}
+         & 1\leqslant i_1 < i_2 <\cdots<i_k\leqslant n \\
+         & 1\leqslant j_1 < j_2 <\cdots<j_k\leqslant n
+    \end{align*}
+    那么这第$i_1,\cdots,i_k$行和第$j_1,\cdots,j_k$列的交点的元列成的新行列式称为$\left|\bm{A}\right|$的一个$k$阶子式，记作:
+    \[
+        \bm{A}\begin{pmatrix}
+            i_1 & i_2 & \cdots & i_k \\
+            j_1 & j_2 & \cdots & j_k
+        \end{pmatrix}=
+        \begin{vmatrix}
+            a_{i_1j_1} & a_{i_1j_2} & \cdots & a_{i_1j_k} \\
+            a_{i_2j_1} & a_{i_2j_2} & \cdots & a_{i_2j_k} \\
+            \vdots     & \vdots     &        & \vdots     \\
+            a_{i_kj_1} & a_{i_kj_2} & \cdots & a_{i_kj_k}
+        \end{vmatrix}
+    \]
+    去掉这些行和列后剩下的元列成它的余子式:
+    \[
+        M\begin{pmatrix}
+            i_1 & i_2 & \cdots & i_k \\
+            j_1 & j_2 & \cdots & j_k
+        \end{pmatrix}
+    \]
+    记:
+    \[
+        p = \sum_{x = 1}^k i_x \qquad q= \sum_{y = 1}^k j_y.
+    \]
+    那么有代数余子式:
+    \[
+        \widehat{\bm{A}} \begin{pmatrix}
+            i_1 & \cdots & i_k \\
+            j_1 & \cdots & j_k
+        \end{pmatrix} = \left(- 1\right)^{p + q}
+        M\begin{pmatrix}
+            i_1 & \cdots & i_k \\
+            j_1 & \cdots & j_k
+        \end{pmatrix}
+    \]
+}
+\subsection{Laplace定理}
+我们首先证明两个引理：
+\lem{}{单项保持}{
+    $n$阶行列式$\left|\bm{A}\right|$的任一$k$阶子式与其代数余子式之积的展开式中的每一项都属于$\left|\bm{A}\right|$的展开式中的项.即\cref{thm:Laplace定理}中右侧展开式中的单项均为$\left|\bm{A}\right|$展开式中的单项并且符号一致.
+    \begin{proof}
+        先考虑特殊情况，$i_1=1,i_2=2,\cdots,i_k=k;j_1=1,j_2=2,\cdots,j_k=k$，此时
+        \[
+            \left|\bm{A}\right|
+            =
+            \begin{vmatrix}
+                \bm{A}_1 & *        \\
+                *        & \bm{A}_2
+            \end{vmatrix}
+        \]
+        其中
+        \[
+            \left|\bm{A}_1\right|
+            =
+            \bm{A}\begin{pmatrix}
+                1 & 2 & \cdots & k \\
+                1 & 2 & \cdots & k
+            \end{pmatrix}
+            =\begin{vmatrix}
+                a_{11} & \cdots & a_{1k} \\
+                \vdots &        & \vdots \\
+                a_{k1} & \cdots & a_{kk}
+            \end{vmatrix}
+        \]
+        \[
+            \left|\bm{A}_2\right|
+            =
+            \widehat{\bm{A}}
+            \begin{pmatrix}
+                1 & 2 & \cdots & k \\
+                1 & 2 & \cdots & k
+            \end{pmatrix}
+            =\begin{vmatrix}
+                a_{k+1,k+1} & \cdots & a_{k+1,n} \\
+                \vdots      &        & \vdots    \\
+                a_{n,k+1}   & \cdots & a_{nn}
+            \end{vmatrix}
+        \]
+        容易有\[
+            \bm{A}\begin{pmatrix}
+                1 & 2 & \cdots & k \\
+                1 & 2 & \cdots & k
+            \end{pmatrix}
+            \widehat{\bm{A}}
+            \begin{pmatrix}
+                1 & 2 & \cdots & k \\
+                1 & 2 & \cdots & k
+            \end{pmatrix}
+        \]
+        中的任一项有形式
+        \[
+            \left(-1\right)^{\sigma}
+            a_{j_11}a_{j_22}\cdots
+            a_{j_kk}a_{j_{k+1},k+1}\cdots
+            a_{j_n,n}
+        \]
+        其中
+        $\sigma =N\left(
+            j_1,j_2,\cdots,j_k
+            \right)+N\left(
+            j_{k+1},j_{k+2},\cdots,j_n
+            \right)$，而$\left(j_1,j_2,\cdots,j_k\right)$是$\left(1,2,\cdots,k\right)$的一个置换，$\left(j_{k + 1},j_{k+2},\cdots,j_n\right)$是$\left(k+1,k+2,\cdots,n\right)$的一个置换，故有$\left(
+            j_1,j_2,\cdots,j_k,j_{k+1},\cdots,j_n
+            \right)$是$\left(1,2,\cdots,n\right)$的一个置换且
+        \[
+            N\left(j_1,\cdots,j_k,j_{k+1},\cdots,j_n\right)
+            =N\left(j_1,j_2,\cdots,j_k\right)+
+            N\left(j_{k+1},j_{k+2},\cdots,j_n\right)
+        \]
+        说明这是展开中的一项.
+
+        再来考虑一般的情况.设
+        \[
+            1\leqslant i_1<i_2<\cdots <i_k\leqslant n;
+            1\leqslant j_1<j_2<\cdots <j_k\leqslant n.
+        \]
+        显然有，经过$\left(
+            i_1+\cdots+i_k
+            \right)+\left(j_1+\cdots+j_k\right)
+            -k\left(k+1\right)$
+        次行列的对换得到新的行列式
+        \[
+            \left|\bm{C}\right|
+            =
+            \begin{vmatrix}
+                \bm{D} & *      \\
+                *      & \bm{B}
+            \end{vmatrix}
+        \]
+        其中
+        \[
+            \left|\bm{D}\right|
+            =\bm{A}
+            \begin{pmatrix}
+                i_1 & i_2 & \cdots & i_k \\
+                j_1 & j_2 & \cdots & j_k
+            \end{pmatrix}
+        \]
+        显然
+        $\left|\bm{C}\right|
+            =\left(-1\right)^{p+q}
+            \left|\bm{A}\right|,p=
+            i_1+\cdots+i_k,q=
+            j_1+\cdots+j_k$,而$\left|\bm{B}
+            \right|$是子式$\left|\bm{D}\right|$
+        在$\left|\bm{C}\right|$中的
+        余子式（同时也是代数余子式）
+        .由上文知,$\left|\bm{D}\right|
+            \left|\bm{B}\right|$中任一项均为
+        $\left|\bm{C}\right|$中的项，又有
+        \[
+            \widehat{\bm{A}}
+            \begin{pmatrix}
+                i_1 & i_2 & \cdots & i_k \\
+                j_1 & j_2 & \cdots & j_k
+            \end{pmatrix}
+            =
+            \left(-1\right)^{p+q}\left|\bm{B}
+            \right|
+        \]
+        故
+        \[
+            \bm{A}\begin{pmatrix}
+                1 & 2 & \cdots & k \\
+                1 & 2 & \cdots & k
+            \end{pmatrix}
+            \widehat{\bm{A}}
+            \begin{pmatrix}
+                1 & 2 & \cdots & k \\
+                1 & 2 & \cdots & k
+            \end{pmatrix}
+            =\left(-1\right)^{p+q}
+            \left|\bm{D}\right|
+            \left|\bm{B}\right|
+        \]
+        中的任一项均为$\left(-1\right)
+            ^{p+q}\left|\bm{C}\right|$
+        中的项.
+    \end{proof}
+}
+\lem{}{单项不重复}{
+    \cref{thm:Laplace定理}右侧展开中的单项互不相同.
+    \begin{proof}
+        我们考虑证明这个引理的逆否命题，即若存在相同的单项，它们的展开方式必定是相同的.
+
+        对于给定的行指标$1\leqslant i_1<i_2<\cdots <i_k\leqslant n$，其余指标为$1\leqslant i_{k+1}<i_{k+2}<\cdots<i_n\leqslant n$.
+
+        再对于给定两组列指标$1\leqslant j_1<j_2<\cdots<j_k\leqslant n$和$1\leqslant l_1<l_2<\cdots<l_k\leqslant n$，其余指标分别为$1\leqslant j_{k+1}<j_{k+2}<\cdots<j_n\leqslant n$和$1\leqslant l_{k+1}<l_{k+2}<\cdots<l_n\leqslant n.$
+
+        取指标$\left(j_1,j_2,\cdots,j_k\right)$的一个全排列$\left(r_1,r_2,\cdots,r_k\right)$，那么其余指标$\left(
+            r_{k+1},r_{k+2},\cdots,r_n
+            \right)$也是$\left(
+            j_{k+1},j_{k+2},\cdots,j_n
+            \right)$的一个全排列；同理取$\left(l_1,l_2,\cdots,l_k\right)$的一个全排列$\left(s_1,s_2,\cdots,s_k\right)$，其余指标$\left(
+            s_{k+1},s_{k+2},\cdots,s_n
+            \right)$也是$\left(
+            l_{k+1},l_{k+2},\cdots,l_n
+            \right)$的一个全排列.那么
+        \[
+            \bm{A}\begin{pmatrix}
+                i_1 & \cdots & i_k \\
+                j_1 & \cdots & j_k
+            \end{pmatrix} \widehat{\bm{A}}\begin{pmatrix}
+                i_1 & \cdots & i_k \\
+                j_1 & \cdots & j_k
+            \end{pmatrix}
+        \]按$\left(
+            j_1,j_2,\cdots,j_k
+            \right)$和$\left(
+            l_1,l_2,\cdots,l_k
+            \right)$任取一个单项将分别等于
+        \begin{align*}
+             & a_{i_1r_1}a_{i_2r_2}\cdots a_{i_kr_k}a_{i_{k+1}j_{k+1}}\cdots a_{i_nj_n} \\
+             & a_{i_1s_1}a_{i_2s_2}\cdots a_{i_ks_k}a_{i_{k+1}l_{k+1}}\cdots a_{i_nl_n}
+        \end{align*}假设二者相等，那么只能是其中每个元素对应相等（并不是“可能数值刚好相等”想法，应当视作未定元一样的相等）即\[
+            r_t=s_t,\forall 1\leqslant t\leqslant n\Longrightarrow \left(
+            j_1,j_2,\cdots,j_k
+            \right)=
+            \left(
+            l_1,l_2,\cdots,l_k
+            \right)
+        \]于是我们证明了两个相同单项只能来自于同样的展开.
+    \end{proof}
+}
+\thm{Laplace定理}{Laplace定理}{
+    给定$k$行（列），则包含于这$k$行（列）的全部$k$阶子式与其
+    代数余子式之积的和等于$ \det\left(\bm{A}\right).$
+
+    即若取定$k$行$1\leqslant i_1<i_2<
+        \cdots<i_k\leqslant n$，则:
+    \[
+        \left|\bm{A}\right| = \sum_{1
+            \leqslant j_1 <j_2< \cdots
+            < j_k \leqslant n}\bm{A}\begin{pmatrix}
+            i_1 & i_2 & \cdots & i_k \\
+            j_1 & j_2 & \cdots & j_k
+        \end{pmatrix} \widehat{\bm{A}}\begin{pmatrix}
+            i_1 & i_2 & \cdots & i_k \\
+            j_1 & j_2 & \cdots & j_k
+        \end{pmatrix}
+    \]
+    若取定$k$列，$1\leqslant j_1<j_2<\cdots<j_k\leqslant n$，则：
+    \[
+        \left|\bm{A}\right| =
+        \sum_{1\leqslant i_1 <i_2< \cdots
+            < i_k \leqslant n}\bm{A}\begin{pmatrix}
+            i_1 & i_2 & \cdots & i_k \\
+            j_1 & j_2 & \cdots & j_k
+        \end{pmatrix} \widehat{\bm{A}}\begin{pmatrix}
+            i_1 & i_2 & \cdots & i_k \\
+            j_1 & j_2 & \cdots & j_k
+        \end{pmatrix}
+    \]
+    \begin{proof}
+        证明思路:容易看出左右两边均有$n!$项，那么只需证明：右侧的单项均是左侧的单项，并且符号一致；右侧的单项均不相同.于是由\cref{lem:单项保持}和\cref{lem:单项不重复}即可得证.
+    \end{proof}
+}
+\rem{}{}{
+    事实上，令$k = 1$，可以看出\cref{thm:Laplace定理}就是行列式的递归定义，所以\textup{Laplace}定理其实是递归定义的自然推广.
+}
+\cor{}{分块行列式}{
+    设分块行列式$
+        \left|\bm{A}\right|=\begin{vmatrix}
+            \bm{B} & \bm{C} \\
+            \bm{O} & \bm{D}
+        \end{vmatrix}$或$
+        \left|\bm{A}\right|=
+        \begin{vmatrix}
+            \bm{B} & \bm{O} \\
+            \bm{C} & \bm{D}
+        \end{vmatrix}$则$\left|\bm{A}\right|=\left|\bm{B}\right|\left|\bm{D}\right|.$
+}
+\cor{矩阵和的行列式}{矩阵和的行列式}{
+    根据\cref{thm:Laplace定理}，有：
+    \begin{align*}
+        \left|\bm{A}+\bm{B}\right|
+         & =
+        \left|\bm{A}\right|+\left|\bm{B}\right|
+        \\
+         & +
+        \sum_{1\leqslant k\leqslant n-1}
+        \left(
+        \sum_{\substack{1\leqslant i_1< i_2<\cdots<i_k\leqslant n
+        \\
+                1\leqslant j_1<j_2<\cdots<j_k\leqslant n}}
+        \bm{A}\begin{pmatrix}
+                  i_1 & i_2 & \cdots & i_k \\
+                  j_1 & j_2 & \cdots & j_k
+              \end{pmatrix}\widehat{\bm{B}}\begin{pmatrix}
+                                               i_1 & i_2 & \cdots & i_k \\
+                                               j_1 & j_2 & \cdots & j_k
+                                           \end{pmatrix}
+        \right)
+    \end{align*}
+}
+\rem{}{}{
+    矩阵积的行列式见\cref{thm:Cauchy-Binet公式}.
+}

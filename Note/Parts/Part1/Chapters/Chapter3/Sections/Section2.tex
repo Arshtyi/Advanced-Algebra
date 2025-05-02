@@ -1,0 +1,73 @@
+\newpage
+\section{向量}
+\subsection{定义}
+\dfn{向量}{向量}{
+    设数域$\bb{K}$，$a_1,a_2,\cdots,a_n \in \bb{K}$，则$1 \times n$矩阵
+    \[
+        \left(a_1,a_2,\cdots,a_n\right)
+    \]
+    为$\bb{K}$上的$n$维行向量；
+    $n \times 1$矩阵\[
+        \begin{pmatrix}
+            a_1    \\
+            a_2    \\
+            \vdots \\
+            a_n
+        \end{pmatrix}
+    \]
+    为$\bb{K}$上的$n$维列向量.
+}
+\subsection{\texorpdfstring{$n$}{n}维行（列）向量空间}
+\dfn{$n$维行（列）向量空间}{n维行（列）向量空间}{
+    \[
+        \bb{K}_n = \left\{
+        \left(a_1,a_2,\cdots,a_n\right)
+        | a_i \in \bb{K},
+        1\leqslant i\leqslant n
+        \right\}
+    \]
+    称为$\bb{K}$上的$n$维行向量空间；
+    \[
+        \bb{K}^n = \left\{
+        \left(a_1,a_2,\cdots,a_n\right)^{\prime}
+        | a_i \in \bb{K},
+        1\leqslant i\leqslant n
+        \right\}
+    \]
+    称为$\bb{K}$上的$n$维列向量空间.
+}
+\subsection{向量的运算}
+\pro{$n$维行（列）向量空间的性质}{n维行（列）向量空间的性质}{
+    设$\bm{\alpha} $、$\bm{\beta} $、$\bm{
+            \gamma} \in
+        \bb{K}^n$,$k$、$l\in \bb{K}$
+    \begin{enumerate}[label=\arabic*）]
+        \item 加法交换律：$\bm{\alpha } + \bm{\beta} =\bm{\beta} +\bm{\alpha }$
+        \item 加法结合律：$\left(\bm{\alpha} +\bm{ \beta}
+                  \right) +
+                  \bm{\gamma} =\left(
+                  \bm{\alpha} + \bm{\gamma }
+                  \right) + \bm{\beta}  = \bm{\alpha
+                  } +
+                  \left(\bm{\beta} + \bm{\gamma}
+                  \right)
+              $
+        \item 零元存在：$\bm{\alpha }+ \bm{0} = \bm{\alpha }
+              $
+        \item 负元存在：$\bm{\alpha }+\left(-\bm{\alpha }
+                  \right) = \bm{0}
+              $
+        \item 单位元存在：$1\cdot\bm{\alpha } = \bm{\alpha }
+              $
+        \item 数乘的数分配律$ \left(k + l\right)\bm{\alpha }
+                  =k\bm{\alpha }+l\bm{\alpha }
+              $
+        \item 数乘的向量分配律：$k\left(\bm{\alpha }+
+                  \bm{\beta }\right) =
+                  k\bm{\alpha }+ k\bm{\beta }
+              $
+        \item 数乘结合律：$\left(kl\right)\bm{\alpha }
+                  =l\left(k\bm{\alpha }\right)
+                  =k\left(l\bm{\alpha }\right)$
+    \end{enumerate}
+}

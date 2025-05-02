@@ -1,0 +1,107 @@
+\newpage
+\section{矩阵的性质总结}
+\subsection{转置}
+\pro{转置的性质总结}{转置的性质总结}{
+    $\bm{A}$、$\bm{B}$均为$n$阶方阵，$c \in \bb{R}$
+    \begin{enumerate}[label=\arabic*）]
+        \item $\left(\bm{A}^{\prime}\right)^{\prime} = \bm{A}$
+        \item $\left(\bm{AB}\right)^{\prime} =
+                  \bm{B}^{\prime}\bm{A}^{\prime} $
+        \item $\left(c\bm{A}\right)^{\prime} = c\bm{A}^{\prime}$
+        \item $\left|\bm{A}^{\prime}\right|
+                  =\left|\bm{A}\right|$
+    \end{enumerate}
+}
+\subsection{逆阵}
+\pro{逆阵的性质总结}{逆阵的性质总结}{
+    $\bm{A}$、$\bm{B}$均为$n$阶可逆方阵$\left(
+        \left|\bm{A}\right|
+        =\left|\bm{B}\right|
+        \neq 0
+        \right)$，$c \in \bb{R}$
+    \begin{enumerate}[label=\arabic*）]
+        \item 逆阵存在则唯一
+        \item $ \left(\bm{A}^{-1}\right)^{-1}
+                  = \bm{A} $
+        \item $\left(\bm{AB}\right)^{-1}
+                  = \bm{B}^{-1}\bm{A}^{-1}$
+        \item$\left(c\bm{A}\right)^{-1}
+                  =c^{-1}\bm{A}^{-1}$
+        \item $\left|\bm{A}^{-1}\right|
+                  = \left|\bm{A}\right|^{-1}$
+        \item $\left(\bm{A}^{\prime}\right)^{-1}
+                  = \left(\bm{A}^{-1}\right)^{\prime}$
+        \item 整性对可逆阵成立
+        \item 消去律对可逆阵成立
+    \end{enumerate}
+}
+\subsection{伴随阵}
+\pro{伴随阵的性质总结}{伴随阵的性质总结}{
+    $\bm{A}$、$\bm{B}$均为$n$阶方阵，$c \in \bb{R}$，$n \geqslant 2$
+    \begin{enumerate}[label=\textup{(\arabic*)}]
+        \item 伴随阵必定存在
+        \item $\bm{AA}^* = \bm{A}^*\bm{A}
+                  = \left|\bm{A}\right|\bm{I}_n$
+        \item  $\left(\bm{A}^*\right)^*=
+                  \begin{cases*}
+                      \left|\bm{A}\right|
+                      ^{n - 2}\bm{A},n\geqslant 3 \\
+                      \bm{A},n = 2
+                  \end{cases*}$
+        \item $\left(\bm{AB}\right)^* =
+                  \bm{B}^*\bm{A}^*$
+        \item $\left(c\bm{A}\right)^*=
+                  c^{n - 1}\bm{A}^*$
+        \item $\left|\bm{A}^*\right|
+                  =\left|\bm{A}\right|^{n - 1}$
+        \item $\left(\bm{A}^{\prime}\right)^*
+                  = \left(\bm{A}^*\right)^{\prime}$
+        \item $\left|\bm{A}\right| \neq 0$
+              时
+              ,$\left(\bm{A}^{-1}\right)^*
+                  =\left(\bm{A}^*\right)^{-1}$
+        \item $\begin{pmatrix}
+                      \bm{I}_r & \bm{O} \\
+                      \bm{O}   & \bm{O}
+                  \end{pmatrix}
+                  ^* = \begin{cases*}
+                      \bm{O},r \leqslant n - 2
+                      \\
+                      \begin{pmatrix}
+                          \bm{O} & \bm{O} \\
+                          0      & 1
+                      \end{pmatrix},
+                      r = n -1
+                      \\
+                      \bm{I}_n,
+                      r = n
+                  \end{cases*}\quad
+                  \left(0 \leqslant r
+                  \leqslant n\right)
+              $
+        \item $r < n$时
+              $\displaystyle
+                  \left|\begin{pmatrix}
+                      \bm{I}_r & \bm{O} \\
+                      \bm{O}   & \bm{O}
+                  \end{pmatrix}
+                  ^*\right|=0
+              $
+        \item $\displaystyle
+                  \left(
+                  \begin{pmatrix}
+                      \bm{I}_r & \bm{O} \\
+                      \bm{O}   & \bm{O}
+                  \end{pmatrix}
+                  ^*
+                  \right)^*=\begin{cases*}
+                      \begin{pmatrix}
+                          \bm{I}_r & \bm{O} \\
+                          \bm{O}   & \bm{O}
+                      \end{pmatrix},n=2,r=1 \\
+                      \bm{I}_n,r=n          \\
+                      \bm{O},\text{其他}
+                  \end{cases*}
+              $
+    \end{enumerate}
+}

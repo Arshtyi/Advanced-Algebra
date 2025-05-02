@@ -1,0 +1,351 @@
+\section{\texorpdfstring{$n$}{n}阶行列式}
+\subsection{行列式的几何意义}
+关于行列式的几何意义,通常来说有两种角度的看法：\begin{itemize}
+    \item 行列式的值是行列式中的行向量或列向量所构成的超平行多面体的有向面积或有向体积
+    \item 方阵$\bm{T}\left(\bm{\varphi}\right)=\bm{A}$的行列式$\det\left(\bm{A}\right)$就是该线性变换$\bm{\varphi}$下图形面积或体积的伸缩因子
+\end{itemize}
+以二阶行列式$\begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}$为例
+
+\incfig[scale=0.9,caption=行列式的伸缩含义]{DeterminantAsScalingFactor}
+
+\rem{}{}{
+    后续我们将会提到,行列式更多的是在刻画线性映射的性质，它本身的意义在高等代数中并不显得像在线性代数中贯穿始终且“意义重大”.
+}
+\subsection{定义}
+\dfn{行列式的形式}{行列式的形式}{
+    用两条竖线围成的$n$行$n$列元素构成的式子（数值）称为一个$n$阶行列式，如
+    \[
+        \left|\bm{A}\right|=\begin{vmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots &        & \vdots \\
+            a_{n1} & a_{n2} & \cdots & a_{nn}
+        \end{vmatrix}
+    \]一般记作$\left|\bm{A}\right|=\left(a_{ij}\right)_{n\times n}$，有时也记作$\det\left(\bm{A}\right)$.
+}
+\dfn{余子式与代数余子式}{余子式与代数余子式}{
+    \begin{enumerate}[label = {\textup{(\arabic*)}}]
+        \item 在$n$阶行列式中,去掉第$i$行第$j$列元素后，剩下的$n-1$阶行列式称为元素$a_{ij}$的余子式，记作$M_{ij}$
+        \item 余子式$M_{ij}$乘以$(-1)^{i+j}$得到元素$a_{ij}$的代数余子式，记作$\displaystyle
+                  A_{ij}=\left(-1\right)^{i+j}M_{ij}$
+    \end{enumerate}
+}
+\subsection{递归定义}
+\dfn{行列式的递归定义}{行列式的递归定义}{
+采用数学归纳法来定义.
+$n=1$时$1$阶行列式$\left|a_{11}\right|=a_{11}.$假设所有的$n-1$阶行列式已经定义好，特别地，$M_{ij}$已经定义好了，下面定义$n$阶行列式：
+\[
+    \left|\bm{A}\right|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}
+\]
+特别地，使用\cref{def:余子式与代数余子式}代数余子式定义则可以定义$n$阶行列式为
+\begin{align*}
+    \left|\bm{A}\right| & =a_{11}A_{11}+a_{21}A_{21}+\cdots+(-1)^{n+1}a_{n1}A_{n1} \\
+                        & =\sum_{i=1}^{n}a_{i1}A_{i1}
+\end{align*}
+}
+\rem{}{}{
+    \cref{def:行列式的递归定义}为递归定义的列展开方式，同样也可以使用行展开，后续我们将会否定掉该定义中第一列这种看似独特的地位.
+}
+\cor{}{三角行列式}{
+    设行列式$\left|\bm{A}\right|=\left(a_{ij}\right)_{n\times n}$
+    \begin{enumerate}[label = {\textup{(\arabic*)}}]
+        \item 若$a_{ij}=0,\forall i>j$即该行列式位于主对角线下方的元素全为零，则称该行列式为上三角行列式
+        \item 若$a_{ij}=0,\forall i<j$即该行列式位于主对角线上方的元素全为零，则称该行列式为下三角行列式
+    \end{enumerate}
+}
+\subsection{性质}
+\pro{}{行列式的若干基础性质}{
+    设$\bm{A}$为$n$阶行列式，则
+    \begin{enumerate}[label = {\textup{(\arabic*)}}]
+        \item 三角行列式的值等于主对角线上的元素的乘积
+        \item 如果行列式某一行（列）元素全为零，那么这个行列式值为零
+        \item \label{1:3}将行列式$\left|\bm{A}\right|$某一行（列）乘上常数$c$得到的新行列式$\left|\bm{B}\right|=c\left|\bm{A}\right|$
+        \item 对换行列式$\left|\bm{A}\right|$的两行（列）得到的新行列式$\left|\bm{B}\right|=-\left|\bm{A}\right|$
+        \item 如果行列式的两行（列）元素对应成比例（特别地，这两行（列）元素对应相等），则行列式值为零
+        \item 如果行列式某一行（列）元素均可分解为另外两个数之和，那么这个行列式可以分解按照这样的形式成如下两个行列式之和即\begin{align*}
+                  \begin{vmatrix}
+                      a_{11}        & a_{12}        & \cdots & a_{1n}        \\
+                      \vdots        & \vdots        &        & \vdots        \\
+                      a_{r1}+b_{r1} & a_{r2}+b_{r2} & \cdots & a_{rn}+b_{rn} \\
+                      \vdots        & \vdots        &        & \vdots        \\
+                      a_{n1}        & a_{n2}        & \cdots & a_{nn}
+                  \end{vmatrix}=
+                  \begin{vmatrix}
+                      a_{11} & a_{12} & \cdots & a_{1n} \\
+                      \vdots & \vdots &        & \vdots \\
+                      a_{r1} & a_{r2} & \cdots & a_{rn} \\
+                      \vdots & \vdots &        & \vdots \\
+                      a_{n1} & a_{n2} & \cdots & a_{nn}
+                  \end{vmatrix}+
+                  \begin{vmatrix}
+                      a_{11} & a_{12} & \cdots & a_{1n} \\
+                      \vdots & \vdots &        & \vdots \\
+                      b_{r1} & b_{r2} & \cdots & b_{rn} \\
+                      \vdots & \vdots &        & \vdots \\
+                      a_{n1} & a_{n2} & \cdots & a_{nn}
+                  \end{vmatrix}
+              \end{align*}
+        \item 行列式的某一行（列）乘以一个常数加到另一行（列）上去，行列式的值不改变
+              \[
+                  \begin{vmatrix}
+                      a_{11}         & a_{12}         & \cdots & a_{1n}         \\
+                      \vdots         & \vdots         &        & \vdots         \\
+                      a_{i1}         & a_{i2}         & \cdots & a_{in}         \\
+                      \vdots         & \vdots         &        & \vdots         \\
+                      a_{j1}+ca_{i1} & a_{j2}+ca_{i2} & \cdots & a_{jn}+ca_{in} \\
+                      \vdots         & \vdots         &        & \vdots         \\
+                      a_{n1}         & a_{n2}         & \cdots & a_{nn}
+                  \end{vmatrix}=
+                  \begin{vmatrix}
+                      a_{11} & a_{12} & \cdots & a_{1n} \\
+                      \vdots & \vdots &        & \vdots \\
+                      a_{i1} & a_{i2} & \cdots & a_{in} \\
+                      \vdots & \vdots &        & \vdots \\
+                      a_{j1} & a_{j2} & \cdots & a_{jn} \\
+                      \vdots & \vdots &        & \vdots \\
+                      a_{n1} & a_{n2} & \cdots & a_{nn}
+                  \end{vmatrix}
+              \]
+    \end{enumerate}
+    \begin{proof}
+        \begin{enumerate}[label = {\textup{(\arabic*)}}]
+            \item 考虑数学归纳法证明，$n=1$时显然成立.假设结论对阶数为$n-1$时成立，即$n-1$阶三角行列式的值等于主对角线上的元素的乘积.下面来证明$n$阶的情况，先考虑上三角行列式.设\[
+                      \left|\bm{A}\right|=\begin{vmatrix}
+                          a_{11} & a_{12} & \cdots & a_{1n} \\
+                          0      & a_{22} & \cdots & a_{2n} \\
+                          \vdots & \vdots &        & \vdots \\
+                          0      & 0      & \cdots & a_{nn}
+                      \end{vmatrix}
+                  \]做展开有\[
+                      \left|\bm{A}\right|=a_{11}\begin{vmatrix}
+                          a_{22} & \cdots & a_{2n} \\
+                          \vdots &        & \vdots \\
+                          0      & \cdots & a_{nn}
+                      \end{vmatrix}
+                  \]而后者是一个$n-1$阶的上三角行列式，由归纳假设$\left|\bm{A}\right|=a_{11}a_{22}\cdots a_{nn}$，证毕.
+
+                  然后考虑下三角行列式，设\[
+                      \left|\bm{A}\right|= \begin{vmatrix}
+                          a_{11} & 0      & \cdots & 0      \\
+                          a_{21} & a_{22} & \cdots & 0      \\
+                          \vdots & \vdots &        & \vdots \\
+                          a_{n1} & a_{n2} & \cdots & a_{nn}
+                      \end{vmatrix}
+                  \]由\cref{def:行列式的递归定义}有\[
+                      \left|\bm{A}\right|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}
+                  \]然后考虑$M_{k1}=\left(
+                      b_{ij}
+                      \right)_{\left(n-1\right)\times \left(n-1\right)},1\leqslant k\leqslant n$,其中\[
+                      b_{ij}=
+                      \begin{cases*}
+                          a_{i,j+1}   & $,1\leqslant i\leqslant k-1;$   \\
+                          a_{i+1,j+1} & $,k\leqslant i\leqslant   n-1.$
+                      \end{cases*}
+                  \]
+
+                  因为$\left|\bm{A}\right|$是下三角行列式即$a_{ij}=0,\forall i<j$，所以$M_{k1},\forall 1\leqslant k\leqslant n$均是下三角行列式并且断言$k\geqslant 2$时$M_{k1}$必定有零主对角元.事实上，$b_{k-1,k-1}=a_{k-1,k}=0$即得.于是由归纳假设$M_{k1}=0,\forall k\geqslant 2,M_{11}=a_{22}\cdots a_{nn}\Longrightarrow \left|\bm{A}\right|=a_{11}a_{22}\cdots a_{nn}.$证毕.
+            \item 由\ref{1:3}立得.
+            \item 考虑数学归纳法，$n=1$时显然成立.
+                  下设结论对$n-1$阶成立，下面证明$n$阶的情形.先证明行的情形，设
+                  \[
+                      \left|\bm{B}\right|=\begin{vmatrix}
+                          a_{11}  & a_{12}  & \cdots & a_{1n}  \\
+                          \vdots  & \vdots  &        & \vdots  \\
+                          ca_{i1} & ca_{i2} & \cdots & ca_{in} \\
+                          \vdots  & \vdots  &        & \vdots  \\
+                          a_{n1}  & a_{n2}  & \cdots & a_{nn}
+                      \end{vmatrix}
+                  \]做展开（约定$\left|\bm{A}\right|$的余子式使用记号$M_{ij}$,$\left|\bm{B}\right|$的余子式使用记号$N_{ij}$）即得\[
+                      \left|\bm{B}\right|=a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{i+1}ca_{i1}N_{i1}+\cdots+(-1)^{n+1}a_{n1}N_{n1}
+                  \]注意到，$k\neq i$时$N_{k1}$均由$M_{k1}$的某一行乘上非零常数$c$得到，由归纳假设\[N_{k1}=cM_{k1},\forall k\neq i\]而当$k=i$时$N_{i1}=M_{i1}$，于是\begin{align*}
+                      \left|\bm{B}\right| & =ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1} \\
+                                          & =c\left|\bm{A}\right|
+                  \end{align*}
+
+                  然后考虑列的情形，一方面，如果乘上常数$c$的是第一列，做展开显然成立.
+
+                  另一方面，若乘上常数$c$的是第$j\geqslant 2$列，做展开即得\[
+                      \left|\bm{B}\right|=a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{n+1}a_{n1}N_{n1}
+                  \]注意到，$N_{i1}$是$M_{i1}$的某一列乘上常数$c$得到，于是由归纳假设$N_{i1}=cM_{i1},\forall 1\leqslant i\leqslant n.$于是\begin{align*}
+                      \left|\bm{B}\right| & =ca_{11}M_{11}-ca_{21}M_{21}+\cdots+c(-1)^{n+1}a_{n1}M_{n1} \\
+                                          & =c\left|\bm{A}\right|
+                  \end{align*}
+
+            \item 考虑数学归纳法，$n=2$时容易证明成立。
+
+                  设结论对$n-1$阶的情形成立，下面证明$n$阶的情形。
+
+                  先证明相邻行即第$i$行和第$i+1$行的情形.此时
+                  \begin{align*}
+                      \left|\bm{B}\right| & =\begin{vmatrix}
+                                                 a_{11}    & a_{12}    & \cdots & a_{1n}    \\
+                                                 \vdots    & \vdots    &        & \vdots    \\
+                                                 a_{i+1,1} & a_{i+1,2} & \cdots & a_{i+1,n} \\
+                                                 a_{i,1}   & a_{i,2}   & \cdots & a_{i,n}   \\
+                                                 \vdots    & \vdots    &        & \vdots    \\
+                                                 a_{n1}    & a_{n2}    & \cdots & a_{nn}
+                                             \end{vmatrix}                                            \\
+                                          & =a_{11}N_{11}-a_{21}N_{21}+\cdots+(-1)^{i+1}a_{i+1,1}N_{i1}+(-1)^{i+2}a_{i,1}N_{i+1,1} \\
+                                          & +\cdots+(-1)^{n+1}a_{n1}N_{n1}
+                  \end{align*}
+                  其中$k\neq i,i+1$时$N_{k1}$由$M_{k1}$对换两行得到，由归纳假设得$N_{k1}=-M_{k1},\forall k\neq i,i+1.$另一方面，$N_{i1}=M_{i+1,1},N_{i+1,1}=M_{i1}.$代入得到$\left|\bm{B}\right|=-\left|\bm{A}\right|.$
+
+                  再来考虑一般的情况，即对换任意$i<j$两行.事实上，这可以看做$\left(j-i\right)+\left(j-i-1\right)$次相邻对换的复合，考虑系数立得.
+
+            \item 提出公因子得到某两行（列）相等的行列式\begin{align*}
+                      \left|\bm{A}\right| & =\begin{vmatrix}
+                                                 a_{11}  & a_{12}  & \cdots & a_{1n}  \\
+                                                 \vdots  & \vdots  &        & \vdots  \\
+                                                 a_{i1}  & a_{i2}  & \cdots & a_{in}  \\
+                                                 \vdots  & \vdots  &        & \vdots  \\
+                                                 ca_{i1} & ca_{i2} & \cdots & ca_{in} \\
+                                                 \vdots  & \vdots  &        & \vdots  \\
+                                                 a_{n1}  & a_{n2}  & \cdots & a_{nn}
+                                             \end{vmatrix} \\
+                                          & =c\begin{vmatrix}
+                                                  a_{11} & a_{12} & \cdots & a_{1n} \\
+                                                  \vdots & \vdots &        & \vdots \\
+                                                  a_{i1} & a_{i2} & \cdots & a_{in} \\
+                                                  \vdots & \vdots &        & \vdots \\
+                                                  a_{i1} & a_{i2} & \cdots & a_{in} \\
+                                                  \vdots & \vdots &        & \vdots \\
+                                                  a_{n1} & a_{n2} & \cdots & a_{nn}
+                                              \end{vmatrix}
+                  \end{align*}
+
+                  然后对换之后得到$\left|\bm{A}\right|=-\left|\bm{A}\right|$立得.
+
+                  列的情况同理.证毕.
+            \item 考虑数学归纳法，$n=1$时$\left|a_{11}+b_{11}\right|=\left|a_{11}\right|+\left|b_{11}\right|$成立.设结论对$n-1$阶成立，下面证明$n$阶的情形.
+
+                  将欲证式子记作$\left|\bm{C}\right|=\left|\bm{A}\right|+\left|\bm{B}\right|$，它们的余子式分别用$Q_{ij},M_{ij},N_{ij}$表示.将$\left|\bm{C}\right|$展开
+                  \[
+                      \left|\bm{C}\right|=a_{11}Q_{11}-a_{21}Q_{21}+\cdots+\left(-1\right)^{r+1}\left(a_{r1}+b_{r1}\right)Q_{r1}+\cdots+\left(-1\right)^{n+1}a_{n1}Q_{n1}
+                  \]其中,$k\neq r$时由归纳假设有$Q_{k1}=M_{k1}+N_{k1},\forall k\neq r$；当$k=r$,$Q_{r1}=M_{r1}=N_{r1}.$代入，$\left|\bm{C}\right|=\left|\bm{A}\right|+\left|\bm{B}\right|$得证.
+
+            \item 拆分行列式即证，展开亦可证.\qedhere
+        \end{enumerate}
+    \end{proof}
+}
+\cor{}{列形式的行列式的基础性质}{
+    $(4)$对换行列式的两列得到的新行列式值为原行列式值的相反数即
+    $\left|\bm{B}\right|=-\left|\bm{A}\right|$
+
+    $(5)$若行列式的两列成比例（特别地,它们相等），则行列式值为零.
+
+    $(6)$若行列式的某一列所有元素均是两个元素的和，那么可对行列式进行拆分即\[
+        \begin{vmatrix}
+            a_{11} & \cdots & a_{1r}+b_{1r} & \cdots & a_{1n} \\
+            a_{21} & \cdots & a_{2r}+b_{2r} & \cdots & a_{2n} \\
+            \vdots &        & \vdots        &        & \vdots \\
+            a_{n1} & \cdots & a_{nr}+b_{nr} & \cdots & a_{nn}
+        \end{vmatrix}=
+        \begin{vmatrix}
+            a_{11} & \cdots & a_{1r} & \cdots & a_{1n} \\
+            a_{21} & \cdots & a_{2r} & \cdots & a_{2n} \\
+            \vdots &        & \vdots &        & \vdots \\
+            a_{n1} & \cdots & a_{nr} & \cdots & a_{nn}
+        \end{vmatrix}+
+        \begin{vmatrix}
+            a_{11} & \cdots & b_{1r} & \cdots & a_{1n} \\
+            a_{21} & \cdots & b_{2r} & \cdots & a_{2n} \\
+            \vdots &        & \vdots &        & \vdots \\
+            a_{n1} & \cdots & b_{nr} & \cdots & a_{nn}
+        \end{vmatrix}
+    \]
+
+    $(7)$行列式的某一列乘上一个常数加到另一列上去，行列式的值不改变即\[
+        \begin{vmatrix}
+            a_{11} & \cdots & a_{1r} & \cdots & a_{1s}+ca_{1r} & \cdots & a_{1n} \\
+            a_{21} & \cdots & a_{2r} & \cdots & a_{2s}+ca_{2r} & \cdots & a_{2n} \\
+            \vdots &        & \vdots &        & \vdots         &        & \vdots \\
+            a_{n1} & \cdots & a_{nr} & \cdots & a_{ns}+ca_{nr} & \cdots & a_{nn}
+        \end{vmatrix}=
+        \begin{vmatrix}
+            a_{11} & \cdots & a_{1r} & \cdots & a_{1s} & \cdots & a_{1n} \\
+            a_{21} & \cdots & a_{2r} & \cdots & a_{2s} & \cdots & a_{2n} \\
+            \vdots &        & \vdots &        & \vdots &        & \vdots \\
+            a_{n1} & \cdots & a_{nr} & \cdots & a_{ns} & \cdots & a_{nn}
+        \end{vmatrix}
+    \]\begin{proof}
+        $(4)$设行列式$\left|\bm{B}\right|$是对换行列式$\left|\bm{A}\right|$的$r,s$两列得到
+        \[
+            \left|\bm{A}\right|=\begin{vmatrix}
+                a_{11} & \cdots & a_{1r} & \cdots & a_{1s} & \cdots & a_{1n} \\
+                a_{21} & \cdots & a_{2r} & \cdots & a_{2s} & \cdots & a_{2n} \\
+                \vdots &        & \vdots &        & \vdots &        & \vdots \\
+                a_{n1} & \cdots & a_{nr} & \cdots & a_{ns} & \cdots & a_{nn}
+            \end{vmatrix},\left|\bm{B}\right|=\begin{vmatrix}
+                a_{11} & \cdots & a_{1s} & \cdots & a_{1r} & \cdots & a_{1n} \\
+                a_{21} & \cdots & a_{2s} & \cdots & a_{2r} & \cdots & a_{2n} \\
+                \vdots &        & \vdots &        & \vdots &        & \vdots \\
+                a_{n1} & \cdots & a_{ns} & \cdots & a_{nr} & \cdots & a_{nn}
+            \end{vmatrix}
+        \]
+
+        构造\[
+            \left|\bm{C}\right|=\begin{vmatrix}
+                a_{11} & \cdots & a_{1r}+a_{1s} & \cdots & a_{1s}+a_{1r} & \cdots & a_{1n} \\
+                a_{21} & \cdots & a_{2r}+a_{2s} & \cdots & a_{2s}+a_{2r} & \cdots & a_{2n} \\
+                \vdots &        & \vdots        &        & \vdots        &        & \vdots \\
+                a_{n1} & \cdots & a_{nr}+a_{ns} & \cdots & a_{ns}+a_{nr} & \cdots & a_{nn}
+            \end{vmatrix}=0
+        \]拆分得到
+        \begin{align*}
+            0 & =\left|\bm{A}\right|+\left|\bm{B}\right|                      \\
+              & +\begin{vmatrix}
+                     a_{11} & \cdots & a_{1r} & \cdots & a_{1r} & \cdots & a_{1n} \\
+                     a_{21} & \cdots & a_{2r} & \cdots & a_{2r} & \cdots & a_{2n} \\
+                     \vdots &        & \vdots &        & \vdots &        & \vdots \\
+                     a_{n1} & \cdots & a_{nr} & \cdots & a_{nr} & \cdots & a_{nn}
+                 \end{vmatrix} \\
+              & +\begin{vmatrix}
+                     a_{11} & \cdots & a_{1s} & \cdots & a_{1s} & \cdots & a_{1n} \\
+                     a_{21} & \cdots & a_{2s} & \cdots & a_{2s} & \cdots & a_{2n} \\
+                     \vdots &        & \vdots &        & \vdots &        & \vdots \\
+                     a_{n1} & \cdots & a_{ns} & \cdots & a_{ns} & \cdots & a_{nn}
+                 \end{vmatrix}
+        \end{align*}于是$\left|\bm{B}\right|=-\left|\bm{A}\right|.$
+
+        $(5)$我们直接考虑相等的情况,因为其中成比例的情形可由\cref{prop:行列式的若干基础性质}的$(3)$保证一致.
+
+        考虑数学归纳法，对阶数$n$归纳，$n=2$时显然成立.设结论对$n-1$阶成立，下面证明$n$阶的情形.
+
+        若两列均不是第一列，即\[
+            \left|\bm{A}\right|=a_{11}M_{11}-a_{21}M_{21}+\cdots+(-1)^{n+1}a_{n1}M_{n1}
+        \]注意到,$\forall 1\leqslant i\leqslant n$,$M_{i1}$均有两列是相同的，由归纳假设$M_{i1}=0,\forall 1\leqslant i\leqslant n$，于是$\left|\bm{A}\right|=0.$
+
+        若两列中有一列是第一列，一方面，如果第一列元素均为零，显然成立.另一方面，进一步设第一列元素不全为零，如$a_{s1}\neq 0$并设第$r$列与第一列相等.则\begin{align*}
+            \left|\bm{A}\right| & =\begin{vmatrix}
+                                       a_{11} & \cdots & a_{11} & \cdots & a_{1n} \\
+                                       \vdots &        & \vdots &        & \vdots \\
+                                       a_{s1} & \cdots & a_{s1} & \cdots & a_{sn} \\
+                                       \vdots &        & \vdots &        & \vdots \\
+                                       a_{n1} & \cdots & a_{n1} & \cdots & a_{nn}
+                                   \end{vmatrix}
+        \end{align*}
+
+        因为$a_{s1}\neq 0$,利用\cref{prop:行列式的若干基础性质}的$(6)$将第一列其他元素均变为零，并且注意到新行列式
+        \[
+            \left|\bm{C}\right|=\begin{vmatrix}
+                0      & \cdots & 0      & \cdots & *      \\
+                \vdots &        & \vdots &        & \vdots \\
+                a_{s1} & \cdots & a_{s1} & \cdots & a_{sn} \\
+                \vdots &        & \vdots &        & \vdots \\
+                0      & \cdots & 0      & \cdots & *
+            \end{vmatrix}
+        \]由\cref{prop:行列式的若干基础性质}的$(7)$知它们的行列式值相等，而后者显然为$\displaystyle
+            \left(-1\right)^{s+1}a_{s1}Q_{s1}$.注意到$Q_{s1}$有一列全为零，于是行列式为零.
+
+        $(6)$考虑数学归纳法，$n=1$时显然成立.设结论对$n-1$阶成立，下面证明$n$阶的情形.
+
+        将欲证式子记作$\left|\bm{C}\right|=\left|\bm{A}\right|+\left|\bm{B}\right|$，它们的余子式分别用$Q_{ij},M_{ij},N_{ij}$表示.一方面，如果是第一列，展开是显然成立的.另一方面，如果是第$r\geqslant 2$列，展开得\[
+            \left|\bm{C}\right|=a_{11}Q_{11}-a_{21}Q_{21}+\cdots+(-1)^{n+1}a_{n1}Q_{n1}
+        \]注意到$Q_{i1},M_{i1},N_{i1}$满足条件，由归纳假设$Q_{i1}=M_{i1}+N_{i1},\forall 1\leqslant i\leqslant n$，得证.
+
+        $(7)$拆分即证，展开亦可证.\qedhere
+    \end{proof}
+}

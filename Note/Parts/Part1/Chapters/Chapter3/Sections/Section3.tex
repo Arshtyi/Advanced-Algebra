@@ -1,0 +1,158 @@
+\newpage
+\section{线性空间}
+\subsection{定义}
+\dfn{线性空间/向量空间}{线性空间}{
+    设有数域$\bb{K}$，$V$是一个非空集合，在$V$上定义有加法运算：
+    \begin{align*}
+        + :
+        V \times V & \longrightarrow V        \\
+        \left(\bm{\alpha},\bm{\beta}
+        \right)    & \longmapsto \bm{\alpha}+
+        \bm{\beta}
+    \end{align*}
+    $\bb{K}$关于$V$定义有数乘运算
+    \begin{align*}
+        \cdot :
+        \bb{K} \times V
+         &
+        \longrightarrow V           \\
+        \left(k,\bm{\alpha}\right)
+         & \longmapsto k\bm{\alpha}
+    \end{align*}
+    且满足下面的$8$条性质
+    \begin{enumerate}[label=\arabic*）]
+        \item 加法交换律：$\bm{\alpha}+\bm{\beta}
+                  =\bm{\beta}+\bm{\alpha}
+              $
+        \item 加法结合律：$
+                  \left(\bm{\alpha}+
+                  \bm{\beta}\right)+\bm{\gamma}
+                  = \bm{\alpha}+
+                  \left(\bm{\beta}+\bm{\gamma}\right)
+              $
+        \item 存在零向量$\bm{0}
+                  \in V$，使得$
+                  \forall \bm{\alpha} \in V$，
+              均有$\bm{0}+\bm{\alpha}
+                  =\bm{\alpha}$
+        \item $\forall \bm{\alpha}\in V
+              $，存在其负向量$\bm{\beta}\in V$
+              ，使得
+              $\bm{\alpha} + \bm{\beta} = \bm{0}
+              $
+        \item 存在数乘的单位元$1\in\bb{K}
+              $，使得$\forall\bm{\alpha}\in V
+              $，均有$1\cdot\bm{\alpha} =
+                  \bm{\alpha}$
+        \item 数乘对向量的分配律：$k
+                  \left(\bm{\alpha}+\bm{\beta}\right)=
+                  k\bm{\alpha}+k\bm{\beta}
+              $
+        \item 数乘对数的分配律：$
+                  \left(k+l\right)\bm{\alpha}=
+                  k\bm{\alpha}+l\bm{\alpha}
+              $
+        \item 数乘的结合律：$
+                  k\left(l\bm{\alpha}\right)
+                  =
+                  \left(kl\right)\bm{\alpha}
+              $
+    \end{enumerate}
+    则$V$称为数域$\bb{K}$上的线性空间或向量空间，记作$V_{\bb{K}}$.
+}
+\exa{}{}{
+    \cref{def:n维行（列）向量空间}中的$\bb{K}^n$、$\bb{K}_n$
+    均为$\bb{K}$上的线性空间，这两种线性空间具有普遍的代表性.
+}
+\exa{}{}{
+    $\bb{K}$上的一元多项式全体
+    \[
+        \bb{K}\left[x\right]
+        = \left\{a_nx^n+\cdots+
+        a_1x+a_0\Bigg|\begin{matrix}
+            x\text{为未定元}\qquad\quad \\
+            a_i \in \bb{K},0\leqslant
+            i\leqslant n
+        \end{matrix}\right\}
+    \]
+    是$\bb{K}$上的线性空间.其中运算按照寻常的运算定义，即两个多项式的加法定义为同次项系数相加，一个数与一个多项式的数乘定义为这个数乘以多项式的每个系数.
+
+    特别地，取其中次数不高于$n$的多项式全体$\bb{K}\left[x\right]$也是$\bb{K}$上的线性空间.
+}
+\exa{}{}{
+    设$C\left[0,1\right]$为$\left[0,1
+            \right]$上全体连续函数的集合，定义
+    \[
+        \left(f+g\right)\left(x\right)=
+        f\left(x\right)+g\left(x\right)
+        \quad
+        kf\left(x\right) =
+        \left(kf\right)\left(x\right)
+    \]
+    容易证明$C\left[0,1\right]$是$\mathbb{R}$的线性空间.
+}
+\exa{}{}{
+    $M_{m \times n}\left(
+        \mathbb{K}
+        \right)$为$\mathbb{K}$上所有$m
+        \times n$矩阵全体，其在矩阵的加法和数乘下是$\mathbb{K}$上的线性空间.
+    特别地，$M_{n}\left(\mathbb{K}\right)$还是一个$\mathbb{K}$-代数（\cref{def:代数}）.
+}
+\exa{}{}{
+    任意的$\mathbb{K}_1 \subseteq
+        \mathbb{K}_2$,均有$\mathbb{K}_2$
+    是$\mathbb{K}_1$的线性空间，其中
+    \begin{align*}
+         & + : a + b \quad a,b \in \mathbb{K}_2
+        \\
+         & \cdot : k \cdot a \quad
+        k \in \mathbb{K}_1,a \in
+        \mathbb{K}_2
+    \end{align*}
+    特别地，$\mathbb{K}_1
+        =\mathbb{K}_2 =
+        \mathbb{K}$时亦成立.
+}
+\subsection{基本性质}
+\lem{零向量唯一性}{零向量唯一性}{
+    线性空间中，零向量是唯一的.\begin{proof}
+        设线性空间$V$的两个零向量$\bm{0}_1$、$\bm{0}_2$，        则\[
+            \bm{0}_1=\bm{0}_1+\bm{0}_2=\bm{0}_2\qedhere
+        \]
+    \end{proof}
+}
+\lem{负向量唯一性}{负向量唯一性}{
+    线性空间中，负向量是唯一的.\begin{proof}
+        设$\bm{\alpha}\in V$，$\bm{\beta}_1$、$\bm{\beta}_2\in V$为
+        $\bm{\alpha}$的负向量.则
+        \begin{align*}
+            \bm{\beta}_1 & =\bm{\beta}_1+\bm{0}=\bm{\alpha}+\bm{\beta}_1+\bm{\beta}_2 \\
+                         & =\bm{0}+\bm{\beta}_2=\bm{\beta}_2\qedhere
+        \end{align*}
+    \end{proof}
+}
+\pro{线性空间的基本性质}{线性空间的基本性质}{
+    设$\mathbb{K}$上的线性空间$V$，$\forall \bm{\alpha},
+        \bm{\beta},\bm{\gamma}
+        \in V$，其除了\cref{def:线性空间}中的性质外还满足
+    \begin{enumerate}[label=\arabic*）]
+        \item \cref{lem:零向量唯一性}零向量唯一
+        \item \cref{lem:负向量唯一性}负向量唯一
+        \item 加法消去律：$
+                  \bm{\alpha} + \bm{\beta}
+                  = \bm{\alpha}+\bm{\gamma}
+                  \Longrightarrow
+                  \bm{\beta} = \bm{\gamma}
+              $
+        \item 数零与向量零：$0 \cdot \bm{\alpha}
+                  = \bm{0}
+              $
+        \item 零元：$k \cdot \bm{0} = \bm{0}$
+        \item 负元：$ \left(-1\right)\bm{\alpha}
+                  = -\bm{\alpha}
+              $
+        \item 整性：$k\cdot \bm{\alpha} = \bm{0}
+                  \Longrightarrow k = 0$或$
+                  \bm{\alpha}=\bm{0}$
+    \end{enumerate}
+}

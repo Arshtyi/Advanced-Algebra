@@ -1,0 +1,451 @@
+\newpage
+\section{分块矩阵}
+\subsection{分块矩阵}
+\dfn{分块矩阵}{分块矩阵}{
+    将矩阵分割为几块，得到一个分块矩阵
+    \[
+        \bm{A} = \left(\bm{A}_{ij}\right)_
+        {r \times s} =
+        \begin{pmatrix}
+            \bm{A}_{11} & \bm{A}_{12} & \cdots & \bm{A}_{1s} \\
+            \bm{A}_{21} & \bm{A}_{22} & \cdots & \bm{A}_{2s} \\
+            \vdots      & \vdots      &        & \vdots      \\
+            \bm{A}_{r1} & \bm{A}_{r2} & \cdots & \bm{A}_{rs}
+        \end{pmatrix}
+    \]
+    其中\[
+        \bm{A}_{i1},\bm{A}_{i2},\cdots,\bm{A}_{is}
+        \quad \left(i = 1,2,\cdots,r\right)
+    \]
+    为第$i$分块行.分块$\bm{A}_{ij}=\left(a_{lk}\right)_{m_i\times n_j},\forall 1\leqslant i\leqslant r,1\leqslant j\leqslant n$，其中
+    \[
+        \left(m_1,m_2,\cdots,m_r\right),\left(
+        n_1,n_2,\cdots,n_s
+        \right)
+    \]
+    分别是$\bm{A}$的行、列分块方式.
+}
+\rem{}{}{
+    分块矩阵只是一种表示方式，本质并无变化.
+}
+\subsection{运算}
+\dfn{分块矩阵的运算}{分块矩阵的运算}{
+    定义分块矩阵相关运算为：
+    \begin{enumerate}[label=（\arabic*）]
+        \item 加法：若$\bm{A} = \left(\bm{A}_{ij}\right)_{
+                      r \times s
+                  }$、$\bm{B} =
+                  \left(\bm{B}_{ij}\right)_{
+                      r \times s
+                  }$行、列分块方式相同，定义加法
+              \[
+                  \bm{A}+\bm{B} = \left(
+                  \bm{A}_{ij} + \bm{B}_{ij}
+                  \right)_{r \times s}
+              \]
+        \item 数乘：$\bm{A} = \left(\bm{A}_{ij}\right)_{
+                      r \times s
+                  }$，$c \in \bb{R} $，数乘
+              \[
+                  c\bm{A} = \left(c\bm{A}_{ij}\right)
+                  _{r \times s}
+              \]
+        \item 乘法：设$\bm{A} = \left(\bm{A}_{ij}\right)_{
+                      r \times s
+                  }$、$\bm{B} =
+                  \left(\bm{B}_{ij}\right)_{
+                      s \times k
+                  }$，且$\bm{A}$的列分块方式与
+              $\bm{B}$的行分块方式相同，那么
+              \[
+                  \bm{AB} = \left(\bm{C}_{ij}
+                  \right)_{r \times k}
+                  = \left(
+                  \sum_{l = 1}^{s}\bm{A}_{il}
+                  \bm{B}_{lj}
+                  \right)_{
+                      r \times k
+                  }
+              \]
+              特别地，如果有形式行向量一样的形式记号即具有行分块
+              $\bm{A} = \left(a_{ij}\right)_{
+                      m \times n
+                  } = \left(
+                  \bm{\alpha }_1,\cdots
+                  ,\bm{\alpha }_m
+                  \right)^{\prime}$，列分块
+              $\bm{B} = \left(b_{ij}\right)_{
+                      n \times p
+                  } = \left(
+                  \bm{\beta  }_1,\cdots
+                  ,\bm{\beta  }_p
+                  \right)$，那么
+              \[
+                  \bm{AB} = \left(\bm{\alpha }_1
+                  \bm{B},\cdots,
+                  \bm{\alpha }_m\bm{B}\right)^{\prime} =
+                  \left(
+                  \bm{A}\bm{\beta }_1,\cdots
+                  ,\bm{A}\bm{\beta }_p
+                  \right)
+              \]
+        \item 转置：设$\bm{A} = \left(\bm{A}_{ij}\right)_{
+                      r \times s
+                  }$，转置为
+              \[
+                  \bm{A}^{\prime} = \left(
+                  \bm{A}_{ij}
+                  \right)_{s \times r}
+              \]
+        \item 共轭：设复矩阵$\bm{A} = \left(\bm{A}_{ij}\right)_{
+                      r \times s
+                  }$，共轭为
+              \[
+                  \overline{\bm{A}} =
+                  \left(\overline{\bm{A}_{ij}} \right)_{r \times s}
+              \]
+    \end{enumerate}
+}
+\exa{}{}{
+    若$\bm{A} = \mathrm{diag}\left\{
+        \bm{A}_1,\cdots,\bm{A}_k
+        \right\}$，$
+        \bm{B}= \mathrm{diag}\left\{
+        \bm{B}_1,\cdots,\bm{B}_k
+        \right\}$，则
+    \[
+        \bm{AB} = \mathrm{diag}\left\{
+        \bm{A}_1\bm{B}_1,\cdots
+        ,\bm{A}_k\bm{B}_k
+        \right\}
+    \]
+}
+\cor{分块对角阵的逆阵}{分块对角阵的逆阵}{
+若$\bm{A} = \mathrm{diag}\left\{\bm{A}_1,\cdots,\bm{A}_k\right\}$可逆则
+\[
+    \bm{A}^{-1} =
+    \mathrm{diag}\left\{
+    \bm{A}_1^{-1},\cdots,\bm{A}_k^{-1}
+    \right\}
+\]
+}
+\subsection{分块初等矩阵}
+\dfn{分块单位阵}{分块单位阵}{
+    分块单位阵为
+    \[
+        \bm{I} = \mathrm{diag}\left\{
+        \bm{I}_{m_1},\cdots,
+        \bm{I}_{m_n}
+        \right\}
+    \]
+}
+\dfn{分块初等矩阵}{分块初等矩阵}{
+    类似于\cref{def:初等矩阵}
+    \paragraph{第一类分块初等矩阵}对换$\bm{I}$的第$i$分块行（列）与第$j$分块行（列）得到.
+    \[
+        \bm{P}_{ij} =
+        \begin{pmatrix}
+            \bm{I}_{m_{1}} &        &              &        &              &        &              \\
+                           & \ddots &              &        &              &        &              \\
+                           &        & 0            & \cdots & \bm{I}_{m_j} &        &              \\
+                           &        & \vdots       &        & \vdots       &        &              \\
+                           &        & \bm{I}_{m_i} & \cdots & 0            &        &              \\
+                           &        &              &        &              & \ddots &              \\
+                           &        &              &        &              &        & \bm{I}_{m_n}
+        \end{pmatrix}
+    \]
+    \paragraph{第二类分块初等矩阵}
+    $ \det\left(\bm{M}\right) \neq 0$下以$\bm{M}$左（右）乘
+    $\bm{I}$的第$i$分块行（列）得到.
+    \[
+        \bm{P}_i\left(\bm{M}\right) =
+        \begin{pmatrix}
+            \bm{I}_{m_1} &        &        &        &              \\
+                         & \ddots &        &        &              \\
+                         &        & \bm{M} &        &              \\
+                         &        &        & \ddots &              \\
+                         &        &        &        & \bm{I}_{m_n}
+        \end{pmatrix}
+    \]
+    % \newpage
+    \paragraph{第三类分块初等矩阵}
+    以矩阵$\bm{M}$左（右）乘$\bm{I}$的第$i$分块行（列）后加到第
+    $j$分块行（列）得到.
+    \[
+        \bm{T}_{ij} \left(\bm{M}\right)=
+        \begin{pmatrix}
+            \bm{I}_{m_1} &        &              &        &              &        &              \\
+                         & \ddots &              &        &              &        &              \\
+                         &        & \bm{I}_{m_i} & \cdots & 0            &        &              \\
+                         &        & \vdots       &        & \vdots       &        &              \\
+                         &        & \bm{M}       & \cdots & \bm{I}_{m_j} &        &              \\
+                         &        &              &        &              & \ddots &              \\
+                         &        &              &        &              &        & \bm{I}_{m_n}
+        \end{pmatrix}
+    \]
+}
+\thm{分块初等矩阵的逆阵}{分块初等矩阵的逆阵}{
+    分块初等矩阵均可逆且逆阵为同类分块初等矩阵
+    \[
+        \bm{P}_{ij}^{-1} = \bm{P}_{ij}^{\prime} \quad
+        \bm{P}_i\left(\bm{M}\right)^{-1}
+        =\bm{P}_i\left(\bm{M}^{-1}\right) \quad
+        \bm{T}_{ij}\left(\bm{M}\right)^{-1}
+        = \bm{T}_{ij}\left(-\bm{M}\right)
+    \]
+}
+\thm{分块初等矩阵的行列式}{分块初等矩阵的行列式}{
+    \[
+        \det\left(\bm{P}_{ij}\right) = \left(-1
+        \right)^l, \det\left(\bm{P}_i\left(\bm{M}\right)\right)
+        =  \det\left(\bm{M}\right),
+        \det\left(\bm{T}_{ij}\left(\bm{M}
+        \right)\right) = 1
+    \]
+    其中
+    \[
+        l = m_i m_j + \left(m_i + m_j\right)
+        \sum_{i < r <j}m_r
+    \]
+}
+\subsection{分块初等变换}
+\thm{分块初等变换与分块初等矩阵}{分块初等变换与分块初等矩阵}{
+    类似于\cref{thm:初等变换与初等矩阵}，每一种分块初等行（列）变换等价于左（右）乘这种变换对应的分块初等矩阵.
+}
+\cor{}{第三类分块初等变换不改变行列式的值}{
+    第三类分块初等变换不会改变矩阵行列式的值.
+}
+\subsection{行列式降阶公式}
+\lem{}{分块三角行列式}{
+    对分块三角行列式有
+    \[
+        \left|\bm{G}\right| =
+        \begin{vmatrix}
+            \bm{A} & \bm{B} \\
+            \bm{O} & \bm{C}
+        \end{vmatrix}
+        = \left|\bm{A}\right|
+        \left|\bm{C}\right|
+    \]
+    \[
+        \left|\bm{H}\right| =
+        \begin{vmatrix}
+            \bm{A} & \bm{O} \\
+            \bm{B} & \bm{C}
+        \end{vmatrix}
+        = \left|\bm{A}\right|
+        \left|\bm{C}\right|
+    \]\begin{proof}
+        利用\cref{thm:Laplace定理}易证.
+    \end{proof}
+}
+\thm{行列式降阶公式}{行列式降阶公式}{
+    对于矩阵
+    \[
+        \bm{M} = \begin{pmatrix}
+            \bm{A} & \bm{B} \\
+            \bm{C} & \bm{D}
+        \end{pmatrix}
+    \]
+    \begin{enumerate}[label=\arabic*）]
+        \item 若$\bm{A}$可逆，则
+              \[
+                  \left|\bm{M}\right| = \left|\bm{A}
+                  \right|\left|\bm{D} - \bm{C}\bm{A}
+                  ^{-1}\bm{B}\right|
+              \]
+        \item 若$\bm{D}$可逆，则\[
+                  \left|\bm{M}\right| = \left|
+                  \bm{D}
+                  \right|\left|
+                  \bm{A} - \bm{B}\bm{D}^{-1}
+                  \bm{C}
+                  \right|
+              \]
+        \item 若$\bm{A}$、$\bm{D}$均可逆，则
+              \[
+                  \left|\bm{A}
+                  \right|\left|\bm{D} - \bm{C}\bm{A}
+                  ^{-1}\bm{B}\right|
+                  =
+                  \left|
+                  \bm{D}
+                  \right|\left|
+                  \bm{A} - \bm{B}\bm{D}^{-1}
+                  \bm{C}
+                  \right|
+              \]
+    \end{enumerate}
+}
+\exa{}{}{
+    计算下面矩阵的行列式
+    \[
+        \bm{M}=\begin{pmatrix}
+            a_1^2    & a_1a_2+1 & \cdots & a_1a_n+1 \\
+            a_2a_1+1 & a_2^2    & \cdots & a_2a_n+1 \\
+            \vdots   & \vdots   &        & \vdots   \\
+            a_na_1+1 & a_na_2+1 & \cdots & a_n^2
+        \end{pmatrix}
+    \]\begin{solution}
+        注意到
+        \begin{align*}
+            \bm{M} & =\begin{pmatrix}
+                          a_1^2+1  & a_1a_2+1 & \cdots & a_1a_n+1 \\
+                          a_2a_1+1 & a_2^2+1  & \cdots & a_2a_n+1 \\
+                          \vdots   & \vdots   &        & \vdots   \\
+                          a_na_1+1 & a_na_2+1 & \cdots & a_n^2+1
+                      \end{pmatrix}-\bm{I}_n         \\
+                   & =-\bm{I}_n+\begin{pmatrix}
+                                    a_1    & 1      \\
+                                    a_2    & 1      \\
+                                    \vdots & \vdots \\
+                                    a_n    & 1
+                                \end{pmatrix}\begin{pmatrix}
+                                                 a_1 & a_2 & \cdots & a_n \\
+                                                 1   & 1   & \cdots & 1
+                                             \end{pmatrix} \\
+                   & =-\bm{I}_n+\begin{pmatrix}
+                                    a_1    & 1      \\
+                                    a_2    & 1      \\
+                                    \vdots & \vdots \\
+                                    a_n    & 1
+                                \end{pmatrix}
+            \bm{I}_2^{-1}\begin{pmatrix}
+                             a_1 & a_2 & \cdots & a_n \\
+                             1   & 1   & \cdots & 1
+                         \end{pmatrix}
+        \end{align*}
+        由\cref{thm:行列式降阶公式}降阶公式有
+
+        \begin{align*}
+            \left|\bm{M}\right| & =
+            \left|\bm{I}_2\right|^{-1}\cdot
+            \left|-\bm{I}_n\right|\cdot
+            \left|
+            \bm{I}_2+\begin{pmatrix}
+                         a_1 & a_2 & \cdots & a_n \\
+                         1   & 1   & \cdots & 1
+                     \end{pmatrix}\left(-\bm{I}_n\right)^{-1}
+            \begin{pmatrix}
+                a_1    & 1      \\
+                a_2    & 1      \\
+                \vdots & \vdots \\
+                a_n    & 1
+            \end{pmatrix}
+            \right|                                        \\
+                                & =\left(-1\right)^n\left|
+            \bm{I}_2-\begin{pmatrix}
+                         \sum\limits_{i=1}^{n}a_i^2 & \sum\limits_{i=1}^{n}a_i \\
+                         \sum\limits_{i=1}^{n}a_i   & n
+                     \end{pmatrix}
+            \right|                                        \\
+                                & =\left(-1\right)^n\left(
+            \left(1-n\right)
+            \left(1-\sum\limits_{i=1}^{n}a_i^2\right)-\left(
+                \sum\limits_{i=1}^{n}a_i
+                \right)^2
+            \right)
+        \end{align*}
+    \end{solution}
+}
+\exa{}{}{
+    $\bm{A}$、$\bm{D}$均可逆，求分块矩阵的逆阵
+    \[
+        \begin{pmatrix}
+            \bm{A} & \bm{B} \\
+            \bm{O} & \bm{D}
+        \end{pmatrix}
+    \] \begin{solution}
+        设$\bm{A}$、$\bm{D}$的阶数分别为$m$、$n$，那么
+        \begin{align*}
+            \begin{pmatrix}
+                \bm{A} & \bm{B} & \bm{I}_m & \bm{O}   \\
+                \bm{O} & \bm{D} & \bm{O}   & \bm{I}_n
+            \end{pmatrix}
+             & \longrightarrow
+            \begin{pmatrix}
+                \bm{A} & \bm{O} & \bm{I}_m & -\bm{B}\bm{D}^{-1} \\
+                \bm{O} & \bm{D} & \bm{O}   & \bm{I}_n
+            \end{pmatrix} \\
+             & \longrightarrow
+            \begin{pmatrix}
+                \bm{I}_m & \bm{O}   & \bm{A}^{-1} & -\bm{A}^{-1}\bm{BD}^{-1} \\
+                \bm{O}   & \bm{I}_n & \bm{O}      & \bm{D}^{-1}
+            \end{pmatrix}
+        \end{align*}
+    \end{solution}
+}
+\exa{}{}{
+    设$n$阶方阵$\bm{A}$、$\bm{B}$，求证：
+    \[
+        \begin{vmatrix}
+            \bm{A} & \bm{B} \\
+            \bm{B} & \bm{A}
+        \end{vmatrix}
+        =
+        \left|\bm{A}+\bm{B}\right|
+        \left|\bm{A}-\bm{B}\right|
+    \]\begin{proof}
+        作第三类分块初等变换
+        \begin{align*}
+            \begin{vmatrix}
+                \bm{A} & \bm{B} \\
+                \bm{B} & \bm{A}
+            \end{vmatrix}
+             & =
+            \begin{vmatrix}
+                \bm{A}+\bm{B} & \bm{A}+\bm{B} \\
+                \bm{B}        & \bm{A}
+            \end{vmatrix}     \\
+             & =\begin{vmatrix}
+                    \bm{A}+\bm{B} & \bm{O}        \\
+                    \bm{B}        & \bm{A}-\bm{B}
+                \end{vmatrix} \\
+             & =
+            \left|\bm{A}+\bm{B}\right|
+            \left|\bm{A}-\bm{B}\right|\qedhere
+        \end{align*}
+    \end{proof}
+}
+\exa{}{temp1}{
+    设$n$阶复矩阵$\bm{A}$、$\bm{B}$，求证：
+    \[
+        \begin{vmatrix}
+            \bm{A} & -\bm{B} \\
+            \bm{B} & \bm{A}
+        \end{vmatrix}=\left|
+        \bm{A}+\mathrm{i}\bm{B}
+        \right|\left|\bm{A}-\mathrm{i}\bm{B}\right|
+    \]
+    \begin{proof}
+        \begin{align*}
+            \begin{vmatrix}
+                \bm{A} & -\bm{B} \\
+                \bm{B} & \bm{A}
+            \end{vmatrix}
+             & =
+            \begin{vmatrix}
+                \bm{A}+\mathrm{i}\bm{B} & \mathrm{i}\bm{A}-\bm{B} \\
+                \bm{B}                  & \bm{A}
+            \end{vmatrix}     \\
+             & =\begin{vmatrix}
+                    \bm{A}+\mathrm{i}\bm{B} & \bm{O}                  \\
+                    \bm{B}                  & \bm{A}-\mathrm{i}\bm{B}
+                \end{vmatrix} \\
+             & =
+            \left|\bm{A}+\mathrm{i}\bm{B}\right|
+            \left|\bm{A}-\mathrm{i}\bm{B}\right|\qedhere
+        \end{align*}
+    \end{proof}
+}
+\exa{}{}{
+    设$n$阶方阵$\bm{A}$、$\bm{B}$且$\bm{AB}=\bm{BA}$，求证：
+    \[
+        \begin{vmatrix}
+            \bm{A} & -\bm{B} \\
+            \bm{B} & \bm{A}
+        \end{vmatrix}=\left|\bm{A}^2+\bm{B}^ 2\right|
+    \]\begin{proof}
+        由\cref{ex:temp1}立得.
+    \end{proof}
+}

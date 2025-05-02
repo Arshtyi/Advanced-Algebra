@@ -1,0 +1,106 @@
+\newpage
+\section{矩阵的基本形式}
+\subsection{矩阵的表示}
+\dfn{矩阵的形式}{矩阵的形式}{
+矩阵是一张\emph{数表}，通常用大写英文字母表示，如:
+\[
+    \bm{A} = \begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots &        & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+    \end{pmatrix}_{m \times n}
+\]
+记作$a_{ij}$或$\left(
+    a_{ij}
+    \right)_{m \times n}$或$\bm{A}_{mn}$或$
+    \bm{A}_{m \times n}$，一些情况下也会记作
+$\bm{A}^{m\times n}$等形式.
+}
+\subsection{若干基础矩阵}
+\pro{}{若干基础矩阵}{
+    \begin{enumerate}[label=（\arabic*）]
+        \item 方阵：一个行数和列数相等的矩阵,比如
+              \[
+                  \bm{A}_{n} = \begin{pmatrix}
+                      a_{11} & a_{12} & \cdots & a_{1n} \\
+                      a_{21} & a_{22} & \cdots & a_{2n} \\
+                      \vdots & \vdots &        & \vdots \\
+                      a_{n1} & a_{n2} & \cdots & a_{nn}
+                  \end{pmatrix}_{n \times n}
+              \]
+        \item 单位阵：一个主对角线上全是$1$，其他元素都是$0$的方阵
+              \[
+                  \bm{I}_{n}  = \bm{E}_n = \begin{pmatrix}
+                      1 &        &   \\
+                        & \ddots &   \\
+                        &        & 1
+                  \end{pmatrix}
+                  _{n}
+              \]
+        \item 常量矩阵（常数矩阵）：一个主对角线上全是同一个常数$k$，其他元素都是零的方阵
+              \[
+                  \bm{K}_n = \begin{pmatrix}
+                      k &        &   \\
+                        & \ddots &   \\
+                        &        & k
+                  \end{pmatrix}
+                  _n
+              \]
+        \item 对角矩阵：主对角线之外的所有元素都是$0$的方阵 \[
+                  \bm{\varLambda} _n = \begin{pmatrix}
+                      a_{11} &        &        &        \\
+                             & a_{22} &        &        \\
+                             &        & \ddots &        \\
+                             &        &        & a_{nn}
+                  \end{pmatrix}= \diag\left\{
+                  a_{11},a_{22},\cdots,a_{nn}
+                  \right\}
+              \]
+        \item 三角阵：一个方阵主对角线以上（下）全是$ 0$，称为下（上）三角阵\[
+                  \bm{A}_n = \begin{pmatrix}
+                      a_{11} & a_{12} & \cdots & a_{1n} \\
+                             & a_{22} & \cdots & a_{2n} \\
+                             &        & \ddots & \vdots \\
+                             &        &        & a_{nn}
+                  \end{pmatrix}
+                  ,
+                  \bm{B}_n = \begin{pmatrix}
+                      b_{11} &        &        &        \\
+                      b_{21} & b_{22} &        &        \\
+                      \vdots & \vdots & \ddots &        \\
+                      b_{n1} & b_{n2} & \cdots & b_{nn}
+                  \end{pmatrix}
+              \]
+        \item 旋转矩阵：这里给出二阶形式，注意，逆时针为正方向\[
+                  \bm{A} = \begin{pmatrix}
+                      \cos \theta & -\sin\theta \\
+                      \sin\theta  & \cos\theta
+                  \end{pmatrix}
+                  = \mathrm{exp}\left(
+                  \theta \begin{bmatrix}
+                          0 & -1 \\
+                          1 & 0
+                      \end{bmatrix}
+                  \right)
+              \]
+        \item 设$\bm{A}_{mn}$为非零矩阵，若所有非零行（即至少有一个非零元素的行）全在零行的上面，$\bm{A}_{mn}$中各非零行中第一个（最后一个）非零元素（称为阶梯点）前（后）面零元素的个数随行数增大而严格增多（减少），则称为上（下）梯形矩阵，简称为上（下）梯形阵，上下梯形阵统称为梯形阵.
+    \end{enumerate}
+}
+\rem{}{}{
+    \emph{ 一个矩阵有可能同时是上、下梯形阵，也可能都不是，也可能只是其中之一！}
+}
+\subsection{矩阵的迹}
+\dfn{迹}{迹}{
+方阵$\bm{A}=\left(a_{ij}\right)_{m\times n}$的主对角线上元素之和称为这个方阵的迹，记作$ \tr\bm{A}=\Tr\bm{A}=a_{11} + a_{22} + \cdots + a_{nn}$.
+}
+\thm{}{迹的交换性}{
+    设$\bm{A}\in M_{m\times n}\left(\bb{R}\right),\bm{B}\in M_{n\times m}\left(\bb{R}\right)$，则\[
+        \Tr \bm{AB}=\Tr\bm{BA}
+    \]
+    \begin{proof}
+        注意到\[
+            \Tr\bm{AB}-\bm{BA}=0\qedhere
+        \]
+    \end{proof}
+}

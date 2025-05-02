@@ -1,0 +1,49 @@
+\section{数域}
+\dfn{数域与数环}{数域与数环}{
+    设$\bb{K} \subseteq \bb{C} $且$\bb{K} $中元的个数不少于$2$.如果$\bb{K} $中任意两个元素作加、减、乘、除（除数不为零）得到的结果仍然属于$\bb{K} $，那么$\bb{K} $称为一个数域.
+
+    特别地，如果$\bb{K} $仅对加、减、乘封闭而对除法不封闭，则称$\bb{K} $为一个数环.
+}
+\exa{}{}{
+    回顾
+    \[
+        \bb{N}
+        \subseteq \bb{Z}
+        \subseteq \bb{Q}
+        \subseteq \bb{R}
+        \subseteq \bb{C}
+    \]
+    这其中，$\bb{N}$不是数域或数环，$\bb{Z} $是整数环，$\bb{Q} $是有理数域，$\bb{R} $是实数域，
+    $\bb{C} $是复数域.
+}
+\lem{最小的数域}{最小的数域}{
+    容易证明$\bb{C} $包含无穷多个数域，但任一数域$\bb{K}
+        \subseteq \bb{C}$一定满足：
+    \begin{enumerate}[label=\arabic*）]
+        \item $0 \in \bb{K} ,
+                  1 \in \bb{K} $
+        \item $\bb{Q}
+                  \subseteq \bb{K}$
+    \end{enumerate}
+    不难得知$\bb{Q}$是最“小”的数域.
+}
+\rem{}{}{
+    一个包含数域（环）的数集不一定是 一个数域或数环.
+}
+\subsection{超越数与代数数}
+\dfn{超越数与代数数}{超越数与代数数}{
+    设$\alpha  \in \bb{C}$，如果存在一个多项式
+    \[
+        f\left(x\right) = a_n x^n +
+        \cdots + a_1 x + a_0 \neq 0
+    \]
+    其中$a_i \neq 0\left(i = 0,\cdots,n\right)$，使得$f\left(\alpha\right) = 0$，则称$\alpha $是一个代数数，否则称$\alpha $是一个超越数.
+}
+\subsection{杂谈}
+\rem{}{}{
+    从抽象代数层面说，域（Field）是数域和四则运算的推广，是环的一种.最著名的域就是复数域、实数域、有理数域，此外还有有理函数域、代数函数域、代数数域（与数域有一些不同）等.
+
+    域上定义有加法和乘法，一般地，记作$\oplus$和$\wedge$，最小的伽罗瓦域是$\bb{F}_2=\left\{\overline{0},\overline{1}\right\}$.
+
+    因此，数域只是域的一种，在高等代数中，我们主要讨论数域，即复数域$\bb{C}$的子域.
+}

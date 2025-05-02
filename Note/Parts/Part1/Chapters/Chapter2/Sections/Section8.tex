@@ -1,0 +1,179 @@
+\newpage
+\section{初等变换与初等矩阵}
+\subsection{行列式运算的性质}
+\pro{行列式的若干性质}{行列式的若干性质}{
+    设$\bm{A},\bm{B}\in M_{n}\left(\bb{R}\right),c\in \bb{R}$，则\begin{enumerate}[label=\arabic*）]
+        \item 一般$ \det\left(\bm{A}+ \bm{B}\right) \neq  \det\left(\bm{A}\right) +  \det\left(\bm{B}\right)$而是如\cref{cor:矩阵和的行列式}
+        \item $ \det\left(c\bm{A}\right) =c^n  \det\left(\bm{A}\right)$
+        \item $ \det\left(\bm{AB}\right) =\det\left(\bm{A}\right) \cdot\det\left(\bm{B}\right)$
+        \item $ \det\left(\bm{A}^{\prime}\right) =\det\left(\bm{A}\right)$
+        \item $ \det\left(\overline{\bm{A}}\right) = \overline{\det\left(\bm{A}\right)}$
+        \item $ \det\left(\bm{A}^{-1}\right)= \left[ \det\left(\bm{A}\right)\right]^{-1}$
+        \item $ \det\left(\bm{A}^*\right) = \det^{n - 1}\left(\bm{A}\right)$
+    \end{enumerate}
+}
+\subsection{矩阵的初等变换}
+\dfn{矩阵的初等变换}{矩阵的初等变换}{
+    对矩阵的第一类、第二类、第三类初等
+    行（列）变换为
+    \begin{enumerate}[label=（\arabic*）]
+        \item 对换矩阵中两行（列）的位置
+        \item 用一非零常数$c$乘以某一行（列）
+        \item 将矩阵某一行（列）乘以一常数$c$加到另一行（列）上
+    \end{enumerate}
+}
+\subsection{相抵}
+\dfn{相抵}{相抵}{
+    若$\bm{A}$经过有限次的初等变换（行列均可）化为$\bm{B}$，则称$\bm{A}$与$\bm{B}$是等价的，或者说$\bm{A}$相抵于$\bm{B}$，记作$\bm{A} \sim \bm{B}$.
+}
+\clm{}{}{
+    相抵关系是一种等价关系.
+}
+\thm{相抵标准型}{相抵标准型}{
+    任一矩阵$\bm{A}_{m \times n}$一定相抵于它的相抵标准型$\bm{B}$
+    \[
+        \bm{B} =
+        \begin{pmatrix}
+            \bm{I}_r & \bm{O} \\
+            \bm{O}   & \bm{O}
+        \end{pmatrix}
+        \quad
+        \left(0 \leqslant r \leqslant \min \left\{m,n\right\},r \in \bb{N} \right)
+    \]并且其中的$r$不依赖于初等变换的选取而仅由$\bm{A}$唯一确定.\begin{proof}
+        考虑对$\min\left\{m,n\right\}$进行归纳，若$\min\left\{m,n\right\}=0$则归纳结束.设$\min\left\{m,n\right\}<k$时成立，下面证明$\min\left\{m,n\right\}=k$的情形.
+
+        显然$\bm{A}=\bm{O}$时成立.下设$\bm{A}\neq\bm{O} $，不妨设$a_{ij}\neq 0.$那么将第$i$行与第$1$行对换，第$j$列与第$1$列对换，那么以下设$a_{11}\neq 0$
+        \[
+            \bm{A}=\begin{pmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\
+                a_{21} & a_{22} & \cdots & a_{2n} \\
+                \vdots & \vdots &        & \vdots \\
+                a_{m1} & a_{m2} & \cdots & a_{mn}
+            \end{pmatrix}\longrightarrow
+            \begin{pmatrix}
+                1      & 0      & \cdots & 0      \\
+                0      & b_{22} & \cdots & b_{2n} \\
+                \vdots & \vdots &        & \vdots \\
+                0      & b_{m2} & \cdots & b_{mn}
+            \end{pmatrix}
+        \]于是根据归纳假设即证.
+    \end{proof}
+}
+\thm{}{相抵于阶梯形}{
+    任一矩阵$\bm{A}_{m \times n}$在初等行变换下一定相抵于一个阶梯形矩阵.
+    \begin{proof}
+        对列数$n$进行归纳，$n=0$表示归纳结束，设列数小于$n$时成立，下面证明$n$时成立.
+
+        一方面，如果$\bm{A}$第一列全为零，由归纳假设得证.另一方面，如果$\bm{A}$第一列不全为零，用行变换将非零元换到$\left(1,1\right)$位置，消去同列其他元素得到一个$\left(m-1\right)\times\left(n-1\right)$阶矩阵，由归纳假设得证.于是证毕.
+    \end{proof}
+}
+\subsection{初等矩阵}
+\dfn{初等矩阵}{初等矩阵}{
+    对单位阵$\bm{I}_n$分别施加第一类、第二类、第三类初等变换后得到的矩阵分别称为第一类、第二类、第三类初等矩阵.
+    \paragraph{第一类初等矩阵}
+    第一类初等矩阵$P_{ij}$表示将单位阵$\bm{I}_n$
+    的$i$行与第$j$列（或者是第$i$列与第$j$列）对换得到的
+    矩阵
+    \[
+        \bm{P}_{ij} =
+        \begin{pmatrix}
+            1 &        &        &        &        &        &   \\
+              & \ddots &        &        &        &        &   \\
+              &        & 0      & \cdots & 1      &        &   \\
+              &        & \vdots &        & \vdots &        &   \\
+              &        & 1      & \cdots & 0      &        &   \\
+              &        &        &        &        & \ddots &   \\
+              &        &        &        &        &        & 1
+        \end{pmatrix}
+    \]
+    \paragraph{第二类初等矩阵}
+    第二类初等矩阵$P_i\left(c\right)$表示
+    用常数$c \in \bb{R}\left(c \neq 0\right)$
+    单位阵第$i$行（或者是第$i$列）得到的矩阵
+    \[
+        \bm{P}_i\left(c\right) =
+        \begin{pmatrix}
+            1 &        &   &        &   \\
+              & \ddots &   &        &   \\
+              &        & c &        &   \\
+              &        &   & \ddots &   \\
+              &        &   &        & 1
+        \end{pmatrix}
+    \]
+    \paragraph{第三类初等矩阵}
+    第三类初等矩阵$\bm{T}_{ij}\left(c\right)$
+    表示将单位阵第$i$行（或者是第$i$列）乘以一常数$c$
+    后加到第$j$行（或者是第$j$列）得到的矩阵
+    \[
+        \bm{T}_{ij} \left(c\right)=
+        \begin{pmatrix}
+            1 &        &        &        &        &        &   \\
+              & \ddots &        &        &        &        &   \\
+              &        & 1      & \cdots & 0      &        &   \\
+              &        & \vdots &        & \vdots &        &   \\
+              &        & c      & \cdots & 1      &        &   \\
+              &        &        &        &        & \ddots &   \\
+              &        &        &        &        &        & 1
+        \end{pmatrix}
+    \]
+}
+\cor{初等矩阵的逆阵}{初等矩阵的逆阵}{
+    初等矩阵均为可逆阵且其逆阵仍为同类初等矩阵
+    \[
+        \bm{P}_{ij}^{-1} = \bm{P}_{ij} \quad
+        \bm{P}_i\left(c\right)^{-1}
+        = \bm{P}_i\left(\frac{1}{c}\right)
+        \quad
+        \bm{T}_{ij}\left(c\right)^{-1}
+        = \bm{T}_{ij}\left(-c\right)
+    \]
+}
+\thm{初等变换与初等矩阵}{初等变换与初等矩阵}{
+    对于$m \times n$矩阵$\bm{A}$，对$\bm{A}$作一次初等行变换得到的矩阵等于用一个$m$阶对应的初等矩阵左乘$\bm{A}$的积；对$\bm{A}$作一次初等列变换得到的矩阵等于用一个$m$阶对应的初等矩阵右乘$\bm{A}$的积.
+}
+\clm{}{}{
+    初等行（列）变换等价于左（右）乘对应的初等矩阵.
+}
+\cor{初等矩阵的行列式}{初等矩阵的行列式}{
+    \[
+        \left|\bm{P}_{ij}\right|=-1,
+        \left|\bm{P}_i\left(c\right)\right|=c,
+        \left|\bm{T}_{ij}\left(c\right)\right|=1
+    \]
+}
+\cor{}{第三类初等变换不改变行列式的值}{
+    由\cref{thm:初等变换与初等矩阵}，\cref{cor:初等矩阵的行列式}和\cref{thm:方阵积的行列式}可知对矩阵施加第三类初等变换不改变其行列式的值.
+}
+\cor{}{第三类初等变换不改变矩阵的奇异性}{
+    \cref{cor:第三类初等变换不改变行列式的值}进一步表明了第三类初等变换不改变矩阵的奇异性.
+}
+\subsection{相抵}
+\pro{方阵的若干等价结论}{方阵的若干等价结论}{
+    设$n$阶方阵$\bm{A}$，则下列命题等价：
+    \begin{enumerate}[label=（\arabic*）]
+        \item $\bm{A}$是非异阵
+        \item $\bm{A}$ 的相抵标准型为$\bm{I}_n$
+        \item $\bm{A}$仅通过初等行（列）变换就可以化为$\bm{I}_n$
+        \item $\bm{A}$等于若干个初等矩阵的积
+    \end{enumerate}\begin{proof}
+        $(1)\Longrightarrow (2)$设$\bm{A}$的相抵标准型为$\begin{pmatrix}
+                \bm{I}_r & \bm{O} \\
+                \bm{O}   & \bm{O}
+            \end{pmatrix}$，由$\bm{A}$非异及\cref{cor:第三类初等变换不改变矩阵的奇异性}知该相抵标准型非奇异，故$r=n$.
+
+        $(2)\Longrightarrow (3)$设存在初等阵$\bm{P}_1,\bm{P}_2,\cdots,\bm{P}_r,\bm{Q}_1,\bm{Q}_2,\cdots,\bm{Q}_s\st$
+        \[
+            \bm{P}_1\bm{P}_2\cdots\bm{P}_r\bm{A}\bm{Q}_1\bm{Q}_2\cdots\bm{Q}_s=\bm{I}_n
+        \]作逆阵即证.
+
+        $(3)\Longrightarrow (4)$依据上一证明，显然.
+
+        $(4)\Longrightarrow (1)$由\cref{cor:初等矩阵的逆阵}知初等矩阵均非异，故$\bm{A}$非异.
+    \end{proof}
+}
+\cor{相抵的等价表述}{相抵的等价表述}{
+    对于$\bm{A}=\left(a_{ij}\right)_{m\times n}\in M_{m\times n}\left(\bb{R}\right)$,若存在初等阵$\bm{P}_1,\bm{P}_2,\cdots,\bm{P}_r,\bm{Q}_1,\bm{Q}_2,\cdots,\bm{Q}_s\st$
+    \[
+        \bm{P}_1\bm{P}_2\cdots\bm{P}_r\bm{A}\bm{Q}_1\bm{Q}_2\cdots\bm{Q}_s=\bm{B}
+    \]则称$\bm{A}$与$\bm{B}$相抵.
+}

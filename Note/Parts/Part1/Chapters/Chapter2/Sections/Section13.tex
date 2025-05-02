@@ -1,0 +1,200 @@
+\newpage
+\section{一些特别的矩阵}
+介绍一些应用广泛的特殊矩阵.
+\subsection{标准单位向量}
+\dfn{标准单位列向量组}{标准单位列向量组}{
+    $n$维标准单位列向量组指
+    \[
+        \bm{e}_1=\begin{pmatrix}
+            1 \\0\\\vdots\\0
+        \end{pmatrix},\bm{e}_2=\begin{pmatrix}
+            0 \\1\\\vdots\\0
+        \end{pmatrix},\cdots,\bm{e}_n=\begin{pmatrix}
+            0 \\0\\\vdots\\1
+        \end{pmatrix}
+    \]
+}
+\pro{标准单位向量的性质}{标准单位向量的性质}{
+    另设$\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m$为$m$维标准单位列向量，则
+    \begin{enumerate}[label=\arabic*）]
+        \item $\bm{e}_i'\bm{e}_j =0\left(i\neq j\right),\bm{e}_i'\bm{e}_i=1$
+        \item 设$\bm{A}=\left(a_{ij}\right)_{m\times n}$，则$\bm{Ae}_i$是$\bm{A}$的第$i$个列向量，$\bm{f}_i'\bm{A}$是$\bm{A}$的第$i$个行向量
+        \item 设$\bm{A}=\left(a_{ij}\right)_{m\times n}$，则$\bm{f}_i'\bm{A}\bm{e}_j=a_{ij}$
+        \item 设$\bm{A}=\left(a_{ij}\right)_{m\times n},\bm{B}=\left(b_{ij}\right)_{m\times n}$，则$\bm{A}=\bm{B}$当且仅当$\bm{Ae}_i=\bm{Be}_i\left(\forall 1\leqslant i\leqslant n\right)$，亦当且仅当$\bm{f}_i'\bm{A}=\bm{f}_i'\bm{B}\left(\forall 1\leqslant i\leqslant m\right)$
+    \end{enumerate}
+}
+\subsection{基础矩阵}
+\dfn{基础矩阵/初级矩阵}{基础矩阵}{
+    $n$阶基础矩阵（初级矩阵）是指$n^2$个$n$阶矩阵$\left\{
+        \bm{E}_{ij},1\leqslant i,j\leqslant n
+        \right\}.$此处$\bm{E}_{ij}$是一个除$\left(i,j\right)$元为$1$外其余元素均为$0$的矩阵即
+    \[
+        \bm{E}_{ij}=\bm{e}_i\bm{e}_j'
+    \]
+}
+\pro{基础矩阵的性质}{基础矩阵的性质}{
+    \begin{enumerate}[label=\arabic*）]
+        \item 若$j\neq k$，则$\bm{E}_{ij}\bm{E}_{kl}=\bm{O}$
+        \item 若$j=k$，则$\bm{E}_{ij}\bm{E}_{kl}=\bm{E}_{il}$
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n\times n}$，则
+              \[
+                  \bm{A}=\sum_{i,j=1}^{n}a_{ij}\bm{E}_{ij}
+              \]
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n\times n}$，则$\bm{E}_{ij}\bm{A}$的第$i$行是$\bm{A}$的第$j$行，$\bm{E}_{ij}\bm{A}$的其余行全为零
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n\times n}$，则$\bm{A}\bm{E}_{ij}$的第$j$列是$\bm{A}$的第$i$列，$\bm{A}\bm{E}_{ij}$的其余列全为零
+        \item 若$\bm{A}=\left(a_{ij}\right)_{n\times n}$，则$\bm{E}_{ij}\bm{A}\bm{E}_{kl}=a_{jk}\bm{E}_{il}$
+    \end{enumerate}
+}
+\subsection{循环矩阵}
+\dfn{循环矩阵}{循环矩阵}{
+    设数域$\bb{K}$上的任意$n$个数$a_1,a_2,\cdots,a_n$，则下面的矩阵称为$\bb{K}$上的$n$阶循环矩阵
+    \[
+        \bm{A}=\begin{pmatrix}
+            a_1     & a_2    & a_3    & \cdots & a_n     \\
+            a_n     & a_1    & a_2    & \cdots & a_{n-1} \\
+            a_{n-1} & a_n    & a_1    & \cdots & a_{n-2} \\
+            \vdots  & \vdots & \vdots &        & \vdots  \\
+            a_2     & a_3    & a_4    & \cdots & a_{1}
+        \end{pmatrix}
+    \]
+    特别地，$a_2=1,a_1=a_3=\cdots=a_n$的循环矩阵为基础循环矩阵
+    \[
+        \bm{J}=\begin{pmatrix}
+            0      & 1      & 0      & \cdots & 0      \\
+            0      & 0      & 1      & \cdots & 0      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            0      & 0      & 0      & \cdots & 1      \\
+            1      & 0      & 0      & \cdots & 0
+        \end{pmatrix}
+    \]
+    任一循环矩阵均可用关于基础矩阵的多项式表出.
+}
+基础循环矩阵有非常良好的幂形式，这也是任一循环矩阵可用其的多项式表出的原因，当然，从线性空间的角度也能给出解释.
+\lem{基础循环矩阵的幂}{基础循环矩阵的幂}{
+    基础循环矩阵
+    \[
+        \bm{J}=\begin{pmatrix}
+            0      & 1      & 0       & \cdots & 0      \\
+            0      & 0      & 1\cdots & 0               \\
+            \vdots & \vdots & \vdots  &        & \vdots \\
+            0      & 0      & 0       & \cdots & 1      \\
+            1      & 0      & 0       & \cdots & 0
+        \end{pmatrix}
+    \]
+    的幂次为
+    \[
+        \bm{J}^k=\begin{pmatrix}
+            \bm{O}   & \bm{I}_{n-k} \\
+            \bm{I}_k & \bm{O}
+        \end{pmatrix}
+        \left(1\leqslant k\leqslant n\right)
+    \]
+}
+\thm{循环矩阵关于基础循环矩阵的多项式表示}{循环矩阵关于基础循环矩阵的多项式表示}{
+    利用基础矩阵的幂，容易有
+    \[
+        \bm{A}=a_1\bm{I}_1+a_2\bm{J}+a_3\bm{J}^2
+        +\cdots+a_n\bm{J}^{n-1}
+    \]
+    令$f\left(x\right)=a_1+a_2x+a_3x^2+\cdots+a_n$是
+    $\bb{K}$上次数不高于$n-1$的多项式,使得$\bm{A}=f\left(\bm{J}\right)$，这就是循环矩阵关于基础循环矩阵的多项式表达.
+}
+\thm{}{全体循环矩阵}{
+    记$C_n\left(\bb{K}\right)$为$\bb{K}$上的所有$n$阶循环矩阵组成的集合，其在矩阵运算下是$\bb{K}$上的$n$维线性空间，一组基为$\left\{
+        \bm{I}_n,\bm{J},\cdots,\bm{J}^{n-1}
+        \right\}$.
+}
+\thm{基础循环矩阵的特征值}{基础循环矩阵的特征值}{
+    解特征多项式
+    \[
+        \left|\lambda \bm{I}_n-\bm{J}\right|=\lambda^n-1
+    \]
+    即特征值为$n$次单位根
+    \[
+        \varepsilon_k = \cos\frac{2k\pi}{n}+\mathrm{i}\sin\frac{2k\pi}{n}\left(0\leqslant k\leqslant n - 1\right)
+    \]
+    其中，特征值$\varepsilon_k$的特征向量为
+    \[
+        \bm{\alpha}_k=
+        \left(
+        1,\varepsilon_k,\varepsilon_k^2,\cdots,\varepsilon_k^{n-1}
+        \right)'
+    \]
+}
+\subsection{幂零Jordan块}
+\dfn{幂零Jordan块}{幂零Jordan块}{
+    跟基础循环矩阵很像
+    \[
+        \bm{A}=\begin{pmatrix}
+            0      & 1      & 0       & \cdots & 0      \\
+            0      & 0      & 1\cdots & 0               \\
+            \vdots & \vdots & \vdots  &        & \vdots \\
+            0      & 0      & 0       & \cdots & 1      \\
+            0      & 0      & 0       & \cdots & 0
+        \end{pmatrix}
+    \]
+    其幂次
+    \[
+        \bm{A}^k=\begin{pmatrix}
+            \bm{O} & \bm{I}_{n-k} \\
+            \bm{O} & \bm{O}
+        \end{pmatrix}\left(1\leqslant k\leqslant
+        n\right)
+    \]
+}
+\subsection{多项式的友阵与Frobenius块}
+\dfn{多项式的友阵}{多项式的友阵}{
+设首一多项式$f\left(x\right)=x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n$，其友阵为
+\[
+    \bm{C}\left(f\left(x\right)\right)=\begin{pmatrix}
+        0      & 0      & \cdots & 0      & -a_n     \\
+        1      & 0      & \cdots & 0      & -a_{n-1} \\
+        0      & 1      & \cdots & 0      & -a_{n-2} \\
+        \vdots & \vdots &        & \vdots & \vdots   \\
+        0      & 0      & \cdots & 1      & -a_1
+    \end{pmatrix}
+\]
+其转置$\bm{F}\left(f\left(x\right)\right)=\bm{C}\left(f\left(x\right)\right)$称为Frobenius块.
+}
+\pro{友阵的性质}{友阵的性质}{
+设$\bm{e}_i$是标准单位列向量，则\[
+    \bm{C}\left(f\left(x\right)\right)\bm{e}_i=e_{i+1}\left(\forall 1\leqslant i\leqslant n-1\right),
+    \bm{C}\left(f\left(x\right)\right)\bm{e}_n=-\sum_{i=1}^{n}a_{n-i+1}\bm{e}_i
+\]
+}
+\thm{}{友阵与原多项式关系}{
+    \[
+        \left|x\bm{I}_n-\bm{C}\left(f\left(x\right)\right)\right|=f\left(x\right)
+    \]\begin{proof}
+        考虑行列式
+        \[
+            F_n=\begin{vmatrix}
+                \lambda & 0       & 0       & \cdots & 0       & a_n         \\
+                -1      & \lambda & 0       & \cdots & 0       & a_{n-1}     \\
+                0       & -1      & \lambda & \cdots & 0       & a_{n-2}     \\
+                \vdots  & \vdots  & \vdots  &        & \vdots  & \vdots      \\
+                0       & 0       & 0       & \cdots & \lambda & a_2         \\
+                0       & 0       & 0       & \cdots & -1      & \lambda+a_1
+            \end{vmatrix}
+        \]
+        按第一行展开，注意到：$a_n$的余子式是上三角，$\lambda$的余子式是更低一阶的类似行列式，即\[
+            F_n=\lambda F_{n-1}+\left(-1\right)^{n+1}\left(-1\right)^{n-1}a_n=\lambda F_{n-1}+a_n
+        \]
+        因此\[
+            F_n=\lambda^n+a_1\lambda^{n-1}+a_2\lambda^{n-2}+\cdots+a_n\qedhere
+        \]
+    \end{proof}
+}
+\subsection{反对称阵}
+\pro{反对称阵的刻画}{反对称阵的刻画}{
+    \begin{itemize}
+        \item 设$n$阶对称阵$\bm{A}$,则$\bm{A}$是零矩阵等价于$\forall \bm{\alpha}\in\bb{R}^n$
+              \[
+                  \bm{\alpha}'\bm{A\alpha}=0
+              \]
+        \item 设$n$阶方阵$\bm{A}$,则$\bm{A}$是反对称阵等价于$\forall \bm{\alpha}\in\bb{R}^n$
+              \[
+                  \bm{\alpha}'\bm{A\alpha}=0
+              \]
+    \end{itemize}
+}

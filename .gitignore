@@ -1,0 +1,20 @@
+*.aux
+*.vscode
+*.bbl
+*.toc
+*.log
+*.out
+*.gz
+*.synctex
+*.blg
+# *.pdf
+*.synctex(busy)
+.github/
+
+# temp
+temp.tex
+temp/
+Answer/
+AdvancedAlgebra.pdf
+Book/
+Additional/

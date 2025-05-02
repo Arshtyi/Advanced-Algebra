@@ -1,0 +1,219 @@
+\newpage
+\section{方阵的逆阵}
+\subsection{定义}
+\dfn{逆阵}{逆阵}{
+    如果对于一个$n$阶方阵$\bm{A}$，存在一个
+    $n$阶方阵$\bm{B}$使得
+    \[
+        \bm{AB} = \bm{BA} = \bm{I}_n
+    \]
+    那么$\bm{B}$称为$\bm{A}$的逆矩阵，记作
+    \[
+        \bm{B} = \bm{A}^{-1}
+    \]
+}
+\rem{}{}{
+    只有方阵才具有逆阵.同时并不是所有非零方阵都具有逆阵.
+}
+\dfn{奇异阵}{奇异阵}{
+    称有逆阵的方阵为可逆阵或非奇异阵或非异阵，而称无逆阵的方阵为奇异阵.
+}
+\subsection{性质}
+\pro{逆阵的性质}{逆阵的性质}{
+    \begin{enumerate}[label=（\arabic*）]
+        \item 逆阵存在则必定唯一
+        \item $\left(\bm{A}^{-1}\right)^{-1} = \bm{A}$
+        \item $\bm{A}$、$\bm{B}$均可逆则$\bm{AB}$可逆且$\left(\bm{AB}\right)^{-1} =\bm{B}^{-1}\bm{A}^{-1}$
+        \item 若$0\neq c \in \bb{R}$，则$c\bm{A}$可逆且$\left(c\bm{A}\right)^{-1}=c^{-1}\bm{A}^{-1}$
+        \item $\bm{A}$可逆则$\bm{A}^{\prime}$可逆且$\left(\bm{A}^{\prime}\right)^{-1}= \left(\bm{A}^{-1}\right)^{\prime}$
+        \item 一般$\bm{AB}\neq\bm{BA}$时$\left(\bm{AB}\right)^{-1} \neq\bm{A}^{-1} \bm{B}^{-1}$
+        \item 整性对可逆阵成立
+        \item 对可逆阵，乘法消去律成立
+    \end{enumerate}
+}
+\cor{}{积的逆阵}{
+设可逆阵$\bm{A}_1,\bm{A}_2,\cdots,\bm{A}_m\in M_n\left(\bb{R}\right)$，则$\bm{A}_1\bm{A}_2\cdots\bm{A}_m$也可逆且\[
+    \left(
+    \bm{A}_1\bm{A}_2\cdots\bm{A}_m
+    \right)^{-1}= \bm{A}_m^{-1}\bm{A}_{m-1}^{-1}\cdots\bm{A}_1^{-1}
+\]
+}
+\cor{}{逆阵的若干推论}{
+    \begin{enumerate}[label=（\arabic*）]
+        \item $\bm{A}_1,\cdots,\bm{A}_m$均为$n$阶方阵，且存在$\bm{A}_i$是奇异阵，那么$\bm{A}_1\cdots \bm{A}_m$是奇异阵
+        \item $ \bm{A}$可逆$\Longleftrightarrow\left|\bm{A}\right|^{-1} = \left|\bm{A}^{-1}\right|$
+        \item 对于$n$阶方阵$\bm{A}$、$\bm{B}$，若$\bm{AB}=\bm{I}_n$或$\bm{BA}=\bm{I}_n\Longleftrightarrow\bm{B} = \bm{A}^{-1}$
+    \end{enumerate}
+    \begin{proof}
+        \begin{enumerate}[label=（\arabic*）]
+            \item 计算下面矩阵的行列式
+            \item \[
+                      \big|\bm{A}\big|\left|\bm{A}^{-1}\right|=1
+                      \Longrightarrow \left| \bm{A}^{-1}\right|=
+                      \big | \bm{A}\big|^{-1}
+                  \]
+            \item 仅证$\bm{AB}=\bm{I}_n$，因为
+                  \[
+                      1=\left|\bm{I}_n\right|=\left|\bm{A}\right|\left|\bm{B}\right|
+                      \Longrightarrow \left|\bm{A}\right|\neq 0 \Longrightarrow \bm{A}^{-1}\text{存在}
+                  \]
+                  故
+                  \[
+                      \bm{B}=\bm{I}_n\bm{B}=\left(\bm{A}^{-1}\bm{A}\right)\bm{B}=\bm{A}^{-1}\bm{I}_n=\bm{A}^{-1}\qedhere
+                  \]
+        \end{enumerate}
+    \end{proof}
+}
+\subsection{伴随阵}
+\dfn{伴随阵}{伴随阵}{
+    $\bm{A}$为$n$阶方阵,$A_{ij}$为$ \det\left(\bm{A}\right)$的$\left(i,j\right)$元的代数余子式，则$\bm{A}$的伴随阵为
+    \[
+        \bm{A}^* = \begin{pmatrix}
+            A_{11} & A_{21} & \cdots & A_{n1} \\
+            A_{12} & A_{22} & \cdots & A_{n2} \\
+            \vdots & \vdots &        & \vdots \\
+            A_{1n} & A_{2n} & \cdots & A_{nn}
+        \end{pmatrix}
+    \]
+}
+\rem{}{}{
+    关于\cref{def:伴随阵}的下标，应当以$ \det\left(\bm{A}\right)$剩下的元的位置看而不是划去的元的位置，或者也可以说多了一步转置.
+}
+\clm{}{}{
+    矩阵的伴随矩阵一定存在.
+}
+\lem{}{与伴随阵的积}{
+    设$n$阶方阵$\bm{A}$的伴随阵$\bm{A}^*$，则
+    \[
+        \bm{A}\bm{A}^* =\bm{A}^*\bm{A}
+        = \left|\bm{A}\right|\bm{I}_n
+        =  \det\left(\bm{A}\right)\bm{I}_n
+    \]\begin{proof}
+        考虑到\cref{thm:列形式的异乘变零定理}异乘变零定理，有
+        \begin{align*}
+            \begin{vmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\
+                a_{21} & a_{22} & \cdots & a_{2n} \\
+                \vdots & \vdots &        & \vdots \\
+                a_{n1} & a_{n2} & \cdots & a_{nn}
+            \end{vmatrix}
+            \begin{vmatrix}
+                A_{11} & A_{21} & \cdots & A_{n1} \\
+                A_{12} & A_{22} & \cdots & A_{n2} \\
+                \vdots & \vdots &        & \vdots \\
+                A_{1n} & A_{2n} & \cdots & A_{nn}
+            \end{vmatrix} & =
+            \begin{vmatrix}
+                \left|\bm{A}\right| & 0                   & \cdots & 0                   \\
+                0                   & \left|\bm{A}\right| & \cdots & 0                   \\
+                \vdots              & \vdots              &        & \vdots              \\
+                0                   & 0                   & \cdots & \left|\bm{A}\right|
+            \end{vmatrix} \qedhere
+        \end{align*}
+    \end{proof}
+}
+\thm{}{逆阵的存在性}{
+    对于矩阵$\bm{A}$
+    \[\det\left(\bm{A}\right)
+        \begin{cases*}
+            =0\Longrightarrow \text{不可逆/奇异} \\
+            \neq 0\Longrightarrow \text{可逆/非奇异}
+        \end{cases*}
+    \]
+}
+\thm{}{逆阵与伴随}{
+    若$\bm{A}$可逆，即$ \det\left(\bm{A}\right) \neq 0$，那么
+    \[
+        \bm{A}^{-1} = \frac{1}{\left|\bm{A} \right|} \bm{A}^*
+    \]\begin{proof}
+        $\left|\bm{A}\right| \neq 0$时
+        \[
+            \bm{A}\left(\frac{1}{\left|\bm{A}\right|}\bm{A}^*\right)=
+            \frac{\bm{AA}^*}{\left|\bm{A}\right|}=
+            \bm{I}_n \qedhere
+        \]
+    \end{proof}
+}
+\clm{}{}{
+    有了这样一套矩阵的逆阵理论,对于\cref{thm:Cramer法则}中的线性方程组
+    \[
+        \begin{cases*}
+            a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1 \\
+            a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2 \\
+            \qquad\qquad\cdots\cdots\cdots\cdots     \\
+            a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=b_n
+        \end{cases*}\Longleftrightarrow \bm{Ax}=\bm{\beta}
+    \]在$\left|\bm{A}\right|\neq 0$时就有解为
+    \[
+        \bm{x}=\bm{A}^{-1}\bm{\beta}
+    \]
+}
+\thm{方阵积的行列式}{方阵积的行列式}{
+    $\bm{A}$、$\bm{B}$为$n$阶方阵则
+    \[
+        \left|\bm{AB}\right|=\left|\bm{A}\right|\left|\bm{B}\right|
+    \]\begin{proof}
+        设$\bm{A}=\left(a_{ij}\right)_{n \times n}$，$\bm{B} =\left(b_{ij}\right)_{n \times n}$，构造
+        \[
+            \bm{C}_{2n \times 2n}=\begin{bmatrix}
+                \bm{A}    & \bm{O} \\
+                -\bm{I}_n & \bm{B}
+            \end{bmatrix}
+        \]
+        则
+        \begin{align*}
+            \left|\bm{C}\right| & =
+            \begin{vmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} & 0      & 0      & \cdots & 0      \\
+                a_{21} & a_{22} & \cdots & a_{2n} & 0      & 0      & \cdots & 0      \\
+                \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+                a_{n1} & a_{n2} & \cdots & a_{nn} & 0      & 0      & \cdots & 0      \\
+                -1     & 0      & \cdots & 0      & b_{11} & b_{12} & \cdots & b_{1n} \\
+                0      & -1     & \cdots & 0      & b_{21} & b_{22} & \cdots & b_{2n} \\
+                \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+                0      & 0      & \cdots & -1     & b_{n1} & b_{n2} & \cdots & b_{nn}
+            \end{vmatrix}                                                                                  \\
+                                & =
+            \begin{vmatrix}
+                0      & 0      & \cdots & 0      & \displaystyle\sum_{r}a_{1r}b_{r1} & \displaystyle\sum_{r}a_{1r}b_{r2} & \cdots & \displaystyle\sum_{r}a_{1r}b_{rn} \\
+                0      & 0      & \cdots & 0      & \displaystyle\sum_{r}a_{2r}b_{r1} & \displaystyle\sum_{r}a_{2r}b_{r2} & \cdots & \displaystyle\sum_{r}a_{2r}b_{rn} \\
+                \vdots & \vdots & \ddots & \vdots & \vdots                            & \vdots                            & \ddots & \vdots                            \\
+                0      & 0      & \cdots & 0      & \displaystyle\sum_{r}a_{nr}b_{r1} & \displaystyle\sum_{r}a_{nr}b_{r2} & \cdots & \displaystyle\sum_{r}a_{nr}b_{rn} \\
+                -1     & 0      & \cdots & 0      & b_{11}                            & b_{12}                            & \cdots & b_{1n}                            \\
+                0      & -1     & \cdots & 0      & b_{21}                            & b_{22}                            & \cdots & b_{2n}                            \\
+                \vdots & \vdots & \ddots & \vdots & \vdots                            & \vdots                            & \ddots & \vdots                            \\
+                0      & 0      & \cdots & -1     & b_{n1}                            & b_{n2}                            & \cdots & b_{nn}
+            \end{vmatrix} \\
+                                & =
+            \begin{vmatrix}
+                \bm{O}    & \bm{AB} \\
+                -\bm{I}_n & \bm{B}
+            \end{vmatrix}
+        \end{align*}
+        接下来用Laplace定理以前$n$行展开，化简前
+        \begin{align*}
+            \left|\bm{C}\right| & =
+            \begin{vmatrix}
+                \bm{A}    & \bm{O} \\
+                -\bm{I}_n & \bm{B}
+            \end{vmatrix}                           \\
+                                & =\left| \bm{A} \right|
+            \left| \bm{B} \right|
+        \end{align*}
+        化简后
+        \begin{align*}
+            \left|
+            \bm{C}
+            \right|
+             & =
+            \left( -1 \right) ^{1+2+\cdots+2n}
+            \left|\bm{AB}\right|
+            \left|-\bm{I}_n\right|                                      \\
+             & =\left(-1\right)^{n\left(n+1\right)}\left|\bm{AB}\right| \\
+             & =\left|\bm{AB}\right|
+        \end{align*}
+        于是\[
+            \left|\bm{AB}\right|=\left|\bm{A}\right|\left|\bm{B}\right|\qedhere
+        \]
+    \end{proof}
+}

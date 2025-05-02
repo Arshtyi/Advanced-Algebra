@@ -1,0 +1,577 @@
+\newpage
+\section{特别的行列式}
+\subsection{Vandermonde行列式}
+\exa{Vandermonde行列式}{}{
+    Vandermonde行列式是指这样的行列式:
+    \[
+        V_n = \begin{vmatrix}
+            1      & x_1    & \cdots & x_1^{n - 1} \\
+            \vdots & \vdots & \ddots & \vdots      \\
+            1      & x_n    & \cdots & x_n^{n - 1}
+        \end{vmatrix}
+    \]\begin{solution}
+        不难得出其递推式:
+        \[
+            V_n = \prod _{ i  = 1 }^{n - 1}\left(x_n  - x_i\right) V_{n - 1}
+        \]
+        故:
+        \[
+            V_n  = \prod _{1 \leqslant i < j \leqslant n}
+            \left(x _j - x_i\right)
+        \]
+    \end{solution}
+}
+\subsection{一个含组合数的行列式}
+\exa{}{}{
+    \[
+        \begin{vmatrix}
+            1      & 1            & \cdots & 1                  \\
+            1      & \bmn{1}{2}   & \cdots & \bmn{1}{n}         \\
+            1      & \bmn{2}{3}   & \cdots & \bmn{2}{n + 1}     \\
+            \vdots & \vdots       &        & \vdots             \\
+            1      & \bmn{n-1}{n} & \cdots & \bmn{n-1}{2 n - 2}
+        \end{vmatrix}
+    \]\begin{solution}
+        因为有
+        \[
+            \bmn{m}{n}  - \bmn{m - 1}{n - 1} = \bmn{m}{n-1}
+        \]
+        故重复用每一行减去上一行得到\begin{align*}
+            \left|\bm{D}\right|
+             & =
+            \begin{vmatrix}
+                1      & 1             & \cdots & 1                    \\
+                1      & \bmn{1}{2}    & \cdots & \bmn{1}{n}           \\
+                1      & \bmn{2}{3}    & \cdots & \bmn{2}{n+1}         \\
+                \vdots & \vdots        &        & \vdots               \\
+                1      & \bmn{n-1 }{n} & \cdots & \bmn{n - 1}{ 2n - 2}
+            \end{vmatrix}             \\
+             & = \begin{vmatrix}
+                     \bmn{1}{1}       & \bmn{1}{2}   & \cdots & \bmn{ 1}{n-1}      \\
+                     \bmn{2}{2}       & \bmn{2}{3}   & \cdots & \bmn{2}{n}         \\
+                     \vdots           & \vdots       &        & \vdots             \\
+                     \bmn{n -1}{n -1} & \bmn{n-1}{n} & \cdots & \bmn{n  -1}{2n -3}
+                 \end{vmatrix} \\
+             & =\begin{vmatrix}
+                    \bmn{2}{2}     & \cdots & \bmn{2}{n-1}    \\
+                    \vdots         &        & \vdots          \\
+                    \bmn{n-1}{n-1} & \cdots & \bmn{n-1}{2n-4}
+                \end{vmatrix}                      \\
+             & =\cdots                                                         \\
+             & =\begin{vmatrix}
+                    1 & \bmn{n-2}{n-1} \\
+                    1 & \bmn{n-1}{n}
+                \end{vmatrix}                                             \\
+             & =1
+        \end{align*}
+    \end{solution}
+}
+\subsection{爪型行列式}
+\exa{爪型行列式}{}{
+    求形如
+    \[
+        \left|\bm{A}\right|
+        =
+        \begin{vmatrix}
+            a_1    & b_2    & b_3    & \cdots & b_n    \\
+            c_2    & a_2    & 0      & \cdots & 0      \\
+            c_3    & 0      & a_3    & \cdots & 0      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            c_n    & 0      & 0      & \cdots & a_n
+        \end{vmatrix}
+    \]
+    的行列式的值其中$a_i\neq 0,\forall 2 \leqslant
+        i\leqslant n.$
+    \begin{solution}
+        \begin{align*}
+            \left|\bm{A}\right| & =
+            \begin{vmatrix}
+                a_1-\displaystyle\sum_{i = 2}
+                ^{n}\cfrac{b_ic_i}{a_i} & b_2    & b_3    & \cdots & b_n    \\
+                0                       & a_2    & 0      & \cdots & 0      \\
+                0                       & 0      & a_3    & \cdots & 0      \\
+                \vdots                  & \vdots & \vdots &        & \vdots \\
+                0                       & 0      & 0      & \cdots & a_n
+            \end{vmatrix} \\
+                                & =
+            \left(a_1-\sum_{i = 2}
+            ^{n}\frac{b_ic_i}{a_i}\right)a_2a_3\cdots a_n               \\
+                                & =a_1a_2\cdots a_n-
+            \sum_{i = 2}^{n}a_2\cdots\widehat{a}_i\cdots
+            a_nb_ic_i
+        \end{align*}
+    \end{solution}
+}
+\subsection{加和}
+\exa{}{加和}{
+证明：设
+\[
+    \left|\bm{A}\right|
+    =\begin{vmatrix}
+        a_{11} & \cdots & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{n1} & \cdots & a_{nn}
+    \end{vmatrix}
+\]
+则
+\[
+    \left|\bm{A}\left(
+    t_1,t_2,\cdots,t_n
+    \right)\right|
+    =\begin{vmatrix}
+        a_{11}+t_1 & a_{12}+t_2 &
+        \cdots     & a_{1n}+t_n              \\
+        a_{21}+t_1 & a_{22}+t_2 &
+        \cdots     & a_{2n}+t_n              \\
+        \vdots     & \vdots     &   & \vdots \\
+        a_{n1}+t_1 & a_{n2}+t_2 &
+        \cdots     & a_{nn}+t_n
+    \end{vmatrix}
+    =\left|\bm{A}\right|
+    +\sum_{j=1}^{n}\left(
+    t_j\sum_{i=1}^{n}
+    A_{ij}
+    \right)
+\]
+其中$A_{ij}$是$a_{ij}$的代数余子式.
+
+特别地$
+    t_1 = t_2 = \cdots = t_n = t
+$时
+得到
+\[
+    \left|\bm{A}\left(t\right)\right|
+    =\left|\bm{A}\left(0\right)\right|
+    +t\sum_{i,j=1}^{n}A_{ij}
+\]
+其中$A_{ij}$为$a_{ij}$在
+$\left|\bm{A}\left(0\right)\right|$中的
+代数余子式.\begin{proof}
+    将上式第一列拆开
+    \begin{align*}
+        \left|\bm{A}\left(
+        t_1,t_2,\cdots,t_n
+        \right)\right|
+         & =\begin{vmatrix}
+                a_{11}+t_1 & a_{12}+t_2 &
+                \cdots     & a_{1n}+t_n              \\
+                a_{21}+t_1 & a_{22}+t_2 &
+                \cdots     & a_{2n}+t_n              \\
+                \vdots     & \vdots     &   & \vdots \\
+                a_{n1}+t_1 & a_{n2}+t_2 &
+                \cdots     & a_{nn}+t_n
+            \end{vmatrix} \\
+         & =\begin{vmatrix}
+                a_{11} & a_{12}+t_2 &
+                \cdots & a_{1n}+t_n              \\
+                a_{21} & a_{22}+t_2 &
+                \cdots & a_{2n}+t_n              \\
+                \vdots & \vdots     &   & \vdots \\
+                a_{n1} & a_{n2}+t_2 &
+                \cdots & a_{nn}+t_n
+            \end{vmatrix}+
+        \begin{vmatrix}
+            t_1    & a_{12}+t_2 &
+            \cdots & a_{1n}+t_n              \\
+            t_1    & a_{22}+t_2 &
+            \cdots & a_{2n}+t_n              \\
+            \vdots & \vdots     &   & \vdots \\
+            t_1    & a_{n2}+t_2 &
+            \cdots & a_{nn}+t_n
+        \end{vmatrix}         \\
+         & =\cdots                               \\
+         & =\left|\bm{A}\right|
+        +\sum_{j=1}^{n}\left(
+        t_j\sum_{i=1}^{n}
+        A_{ij}
+        \right)\qedhere
+    \end{align*}
+\end{proof}
+}
+\exa{}{}{
+    \cref{ex:加和}这一形式对形如
+    \[
+        \left|\bm{A}\right|=
+        \begin{vmatrix}
+            x_1    & a      & \cdots & a      & a      \\
+            -a     & x_2    & \cdots & a      & a      \\
+            \vdots & \vdots &        & \vdots & \vdots \\
+            -a     & -a     & \cdots & -a     & x_n
+        \end{vmatrix}
+    \]
+    的行列式极其方便，考虑$t=\pm a$，
+    容易得到
+    \[
+        \left|\bm{A}\right|=\frac{1}{2}
+        \left(\prod_{i=1}^{n}\left(x_i+a\right)+
+        \prod_{i=1}^{n}\left(x_i-a\right)\right)
+    \]
+}
+\exa{}{}{
+设行列式
+$\left|\bm{A}\right|
+    =\left(a_{ij}\right)_n$，证明：
+\[
+    \begin{vmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} & x_1    \\
+        a_{21} & a_{22} & \cdots & a_{2n} & x_2    \\
+        \vdots & \vdots &        & \vdots & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} & x_n    \\
+        y_1    & y_2    & \cdots & y_n    & z
+    \end{vmatrix}=
+    z\left|\bm{A}\right|
+    -\sum_{i=1}^{n}\sum_{j=1}^{n}A_{ij}x_iy_j
+\]\begin{proof}
+    将行列式按最后一列展开，
+    容易证明第$i$项$\left(1\leqslant i\leqslant n\right)$
+    为$\displaystyle -\sum_{j=1}^{n}A_{ij}x_iy_j$，且最后一项为
+    $z\left|\bm{A}\right|$，证毕.
+\end{proof}
+}
+\subsection{Cauchy行列式}
+\exa{Cauchy行列式}{Cauchy行列式}{
+    求行列式
+    \[
+        \left|\bm{A}\right|
+        =
+        \begin{vmatrix}
+            \left(a_1+b_1\right)^{-1}
+                                      & \left(a_1+b_2\right)^{-1}
+                                      & \cdots                    &
+            \left(a_1+b_n\right)^{-1}                                          \\
+            \left(a_2+b_1\right)^{-1} &
+            \left(a_2+b_2\right)^{-1} & \cdots
+                                      & \left(a_2+b_n\right)^{-1}              \\
+            \vdots                    & \vdots                    &   & \vdots \\
+            \left(a_n+b_1\right)^{-1} &
+            \left(a_n+b_2\right)^{-1} &
+            \cdots                    & \left(a_n+b_n\right)^{-1}
+        \end{vmatrix}
+    \]\begin{solution}
+        记$D_n=\left|\bm{A}\right|$，用其余列减去第$n$列，提公因子后其余行减去第$n$行，再提公因子
+        \begin{align*}
+            D_n & =
+            \begin{vmatrix}
+                \dfrac{1}{a_1+b_1}     & \cdots
+                                       & \dfrac{1}{a_1+b_{n-1}}
+                                       & \dfrac{1}{a_1+b_n}                           \\
+                \vdots                 &                            & \vdots & \vdots \\
+                \dfrac{1}{a_{n-1}+b_1} &
+                \cdots                 & \dfrac{1}{a_{n-1}+b_{n-1}} &
+                \dfrac{1}{a_{n-1}+b_n}                                                \\[1em]
+                \dfrac{1}{a_n+b_1}     & \cdots
+                                       & \dfrac{1}{a_n+b_{n-1}}
+                                       & \dfrac{1}{a_n+b_n}
+            \end{vmatrix}                                     \\
+                & =
+            \begin{vmatrix}
+                \dfrac{b_n-b_1}{\left(a_1+b_1\right)
+                    \left(a_1+b_n\right)}
+                                      & \cdots                     &
+                \dfrac{b_n-b_{n-1}}{\left(a_1+b_{n-1}\right)
+                \left(a_1+b_n\right)} &
+                \dfrac{1}{a_1+b_n}                                                                 \\
+                \vdots                &                            & \vdots               & \vdots \\
+                \dfrac{b_n-b_1}{\left(
+                    a_{n-1}+b_1
+                    \right)\left(
+                    a_{n-1}+b_n
+                \right)}              & \cdots
+                                      & \dfrac{b_n-b_{n-1}}{\left(
+                a_{n-1}+b_{n-1}
+                \right)\left(
+                a_{n-1}+b_n
+                \right)}              & \dfrac{1}{a_{n-1}+b_n}                                     \\[1em]
+                \dfrac{b_n-b_1}{\left(
+                    a_n+b_1
+                    \right)\left(a_n+b_n\right)}
+                                      & \cdots                     & \dfrac{b_n-b_{n-1}}{
+                \left(a_n+b_{n-1}\right)
+                \left(
+                a_n+b_n
+                \right)}              & \dfrac{1}{a_n+b_n}
+            \end{vmatrix} \\
+                & =
+            \frac{
+                \prod\limits_{i=1}^{n-1}
+                \left(b_n-b_i\right)
+            }{\prod\limits_{j=1}^{n}
+                \left(a_j+b_n\right)}
+            \begin{vmatrix}
+                \dfrac{1}{a_1+b_1}         & \cdots & \dfrac{1}{a_1+b_{n-1}} & 1      \\
+                \vdots                     &        & \vdots                 & \vdots \\
+                \dfrac{1}{a_{n-1}+b_1}     & \cdots &
+                \dfrac{1}{a_{n-1}+b_{n-1}} & 1                                        \\[1em]
+                \dfrac{1}{a_n+b_1}         & \cdots &
+                \dfrac{1}{a_n+b_{n-1}}     & 1
+            \end{vmatrix}                                            \\
+                & =
+            \frac{
+                \prod\limits_{i=1}^{n-1}
+                \left(b_n-b_i\right)
+            }{\prod\limits_{j=1}^{n}
+                \left(a_j+b_n\right)}
+            \begin{vmatrix}
+                \dfrac{a_n-a_1}{\left(a_1+b_1\right)
+                \left(a_n+b_1\right)} & \cdots             &
+                \dfrac{a_n-a_1}{\left(
+                    a_1+b_{n-1}
+                    \right)\left(
+                    a_n+b_{n-1}
+                \right)}              & 0                                    \\
+                \vdots                &                    & \vdots & \vdots \\
+                \dfrac{a_n-a_{n-1}}{\left(
+                a_{n-1}+b_1
+                \right)\left(
+                a_n+b_1
+                \right)}              & \cdots             &
+                \dfrac{a_n-a_{n-1}}{\left(
+                a_{n-1}+b_{n-1}
+                \right)\left(
+                a_n+b_{n-1}
+                \right)}              & 0                                    \\[1em]
+                \dfrac{1}{a_n+b_1}    &
+                \cdots                & \dfrac{1}{a_n+b_n} & 1
+            \end{vmatrix}                       \\
+                & =
+            \frac{
+                \prod\limits_{i=1}^{n-1}
+                \left(a_n-a_i\right)\left(
+                b_n-b_i
+                \right)
+            }{\prod\limits_{j=1}^{n}
+                \left(a_j+b_n\right)\prod\limits_{k=1}^{n-1}\left(
+                a_n+b_k
+                \right)}D_{n-1}
+        \end{align*}
+        因此
+
+        \[
+            \left|\bm{A}\right|
+            =
+            \prod_{1\leqslant i < j\leqslant n}
+            \left(a_j-a_i\right)\left(
+            b_j-b_i
+            \right)
+            \Bigg/
+            \prod_{i,j=1}^{n}\left(a_i+b_j
+            \right)
+        \]
+    \end{solution}
+}
+\subsection{三对角行列式}
+\exa{三对角行列式}{三对角行列式}{
+\[
+    D_n=\begin{vmatrix}
+        a_1 & b_1 &        &        &         &         \\
+        c_1 & a_2 & b_2    &        &         &         \\
+            & c_2 & a_3    & \ddots &         &         \\
+            &     & \ddots & \ddots & \ddots  &         \\
+            &     &        & \ddots & a_{n-1} & b_{n-1} \\
+            &     &        &        & c_{n-1} & a_n
+    \end{vmatrix}
+\]
+按最后一列展开
+\[
+    D_n=a_nD_{n-1}-b_{n-1}c_{n-1}
+    D_{n-2}\left(n\geqslant 2\right)
+    ,D_0=1,D_1=a_1
+\]
+令$b_i=1,c_j=-1\left(
+    1\leqslant i,j\leqslant n-1
+    \right)$得到的行列式与连分数相关，记
+\[
+    \left(a_1a_2\cdots a_n\right)=
+    \begin{vmatrix}
+        a_1 & 1   &        &        &         &     \\
+        -1  & a_2 & 1      &        &         &     \\
+            & -1  & a_3    & \ddots &         &     \\
+            &     & \ddots & \ddots & \ddots  &     \\
+            &     &        & \ddots & a_{n-1} & 1   \\
+            &     &        &        & -1      & a_n
+    \end{vmatrix}
+\]
+易证
+\[
+    a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cfrac{1}{\cdots+\cfrac{1}{a_{n-1}+\cfrac{1}{a_n}}}}}
+    =
+    \frac{\left(a_1a_2
+        \cdots a_n\right)}{\left(
+        a_2a_3\cdots a_n\right)}
+\]
+进一步令$a_k=1\left(
+    1\leqslant k\leqslant n
+    \right)$得到斐波拉契数列.
+\[
+    F\left(n\right) = F\left(n-1\right)+F\left(n-2\right)
+\]
+}
+\subsection{行列式函数的导数}
+\exa{}{}{
+    设$f_{ij}\left(x\right)$是可导函数，记
+    \[
+        F\left(x\right)=
+        \begin{vmatrix}
+            f_{11}\left(x\right) & f_{12}\left(x\right) & \cdots & f_{1n}\left(x\right) \\
+            f_{21}\left(x\right) & f_{22}\left(x\right) & \cdots & f_{2n}\left(x\right) \\
+            \vdots               & \vdots               &        & \vdots               \\
+            f_{n1}\left(x\right) & f_{n2}\left(x\right) & \cdots & f_{nn}\left(x\right)
+        \end{vmatrix}
+    \]
+    证明：
+    \[
+        \frac{\rmd}{\rmd x}F\left(x\right)
+        =
+        \sum_{i=1}^{n}F_i\left(x\right)
+    \]
+    其中
+    \[
+        F_i\left(x\right)
+        =
+        \begin{vmatrix}
+            f_{11}\left(x\right) & f_{12}\left(x\right) & \cdots & \dfrac{\rmd}{\rmd x}f_{1i}\left(x\right) & \cdots & f_{1n}\left(x\right) \\[1em]
+            f_{21}\left(x\right) & f_{22}\left(x\right) & \cdots & \dfrac{\rmd}{\rmd x}f_{2i}\left(x\right) & \cdots & f_{2n}\left(x\right) \\
+            \vdots               & \vdots               &        & \vdots                                   &        & \vdots               \\
+            f_{n1}\left(x\right) & f_{n2}\left(x\right) & \cdots & \dfrac{\rmd}{\rmd x}f_{ni}\left(x\right) & \cdots & f_{nn}\left(x\right)
+        \end{vmatrix}
+    \]\begin{proof}
+        考虑数学归纳法，对阶数$n$归纳，$n=1$时显然成立.设结论对$n-1$阶行列式成立，将行列式展开
+        \[
+            F\left(x\right)
+            =
+            f_{11}\left(x\right)
+            A_{11}\left(x\right)
+            +f_{21}\left(x\right)A_{21}\left(x\right)+
+            \cdots+f_{n1}\left(x\right)A_{n1}\left(x\right)
+        \]
+        其中$A_{i1}$是$f_{i1}\left(x\right)$的代数余子式，两端求导并记$A_{ij}^k\left(x\right)$是对$A_{ij}\left(x\right)$第$k$列元素求导后得到的行列式，则
+        \begin{align*}
+            \frac{\rmd }{\rmd x}F\left(x\right)
+             & =\frac{\rmd }{\rmd x}\left(
+            \sum_{i=1}^{n}f_{i1}\left(x\right)A_{i1}\left(x\right)
+            \right)
+            =\sum_{i=1}^{n}f'_{i1}\left(x\right)A_{i1}\left(x\right)
+            +\sum_{i=1}^{n}f_{i1}\left(x\right)A'_{i1}\left(x\right) \\
+             & =F_1\left(x\right)+\sum_{i=1}^{n}f_{i1}\left(x\right)
+            \left(\sum_{k=1}^{n-1}A^k_{i1}\left(x
+            \right)\right)=F_1\left(x\right)+
+            \sum_{k=1}^{n-1}\sum_{i=1}^{n}
+            f_{i1}\left(x\right)A^k_{i1}\left(x\right)
+        \end{align*}
+        又$\displaystyle
+            \sum_{i=1}^{n}f_{i1}\left(x\right)A_{i1}^k\left(x
+            \right)=F_{k+1}\left(x\right)\left(
+            1\leqslant k\leqslant n-1
+            \right)$，故
+        \[
+            \frac{\rmd }{\rmd x}F\left(x\right)
+            =
+            F_{1}\left(x\right)+F_2\left(x
+            \right)+\cdots+F_n\left(x\right)
+            \qedhere
+        \]
+        利用组合定义也可证明：
+        \[
+            F\left(x\right)=
+            \sum_{\left(k_1,k_2,\cdots,k_n\right)\in
+                S_n}\left(-1\right)^{N\left(k_1,k_2,\cdots,k_n\right)}
+            f_{k_11}\left(x\right)f_{k_22}\left(x\right)\cdots
+            f_{k_nn}\left(x\right).
+        \]
+    \end{proof}
+}
+\subsection{含有三角函数的行列式}
+\exa{}{}{
+    求
+    \[
+        \left|\bm{A}\right|
+        =
+        \begin{vmatrix}
+            1      & \cos \theta_1 & \cos2\theta_1 & \cdots & \cos\left(n-1\right)\theta_1
+            \\
+            1      & \cos \theta_2 & \cos2\theta_2 & \cdots & \cos\left(n-1\right)\theta_2
+            \\
+            \vdots & \vdots        & \vdots        &        & \vdots                       \\
+            1      & \cos \theta_n & \cos2\theta_n & \cdots & \cos\left(n-1\right)\theta_n
+        \end{vmatrix}
+    \]
+    \begin{solution}
+        由De Moivre公式
+        \[
+            \cos k\theta +\rmi\sin k\theta =
+            \left(\cos \theta + \rmi\sin \theta\right)^k
+        \]及二项式定理并作三角恒等变换得
+        \begin{align*}
+            \left|\bm{A}\right|
+             & =
+            2^{\frac{1}{2}\left(n-1\right)\left(n-2\right)}
+            \begin{vmatrix}
+                1      & \cos \theta_1 & \cos^2\theta_1 & \cdots & \cos^{n-1}\theta_1
+                \\
+                1      & \cos \theta_2 & \cos^2\theta_2 & \cdots & \cos^{n-1}\theta_2
+                \\
+                \vdots & \vdots        & \vdots         &        & \vdots             \\
+                1      & \cos \theta_n & \cos^2\theta_n & \cdots & \cos^{n-1}\theta_n
+            \end{vmatrix} \\
+             & =2^{\frac{1}{2}\left(n-1\right)\left(n-2\right)}
+            \prod_{1\leqslant i<j
+                \leqslant n}\left(\cos \theta_j-\cos \theta_i\right)
+        \end{align*}
+    \end{solution}
+    同时利用和差化积容易证明
+    \begin{align*}
+          & \begin{vmatrix}
+                \sin \theta_1 & \sin 2\theta_1 & \cdots & \sin n\theta_1 \\
+                \sin \theta_2 & \sin 2\theta_2 & \cdots & \sin n\theta_2 \\
+                \vdots        & \vdots         &        & \vdots         \\
+                \sin \theta_n & \sin 2\theta_n & \cdots & \sin n\theta_n
+            \end{vmatrix} \\
+        = &
+        2^{\frac{1}{2}
+                \left(n-1\right)
+                \left(n-2\right)}
+        \prod_{i=1}^{n}\sin \theta_i \cdot
+        \prod_{1\leqslant i<j
+            \leqslant n}\left(\cos \theta_j-\cos \theta_i\right)
+    \end{align*}
+}
+\subsection{其他}
+\exa{}{}{
+    计算
+    \[
+        D_n=\begin{vmatrix}
+            x_1    & y      & y      & \cdots & y       & y      \\
+            z      & x_2    & y      & \cdots & y       & y      \\
+            z      & z      & x_3    & \cdots & y       & y      \\
+            \vdots & \vdots & \vdots &        & \vdots  & \vdots \\\
+            z      & z      & z      & \cdots & x_{n-1} & y      \\
+            z      & z      & z      & \cdots & z       & x_n
+        \end{vmatrix}
+    \]
+    \begin{solution}
+        将第$n$列拆分得递推
+        \[
+            D_n=\left(x_n-y\right)D_{n-1}+y\prod_{i=1}^{n-1}\left(x_i-z\right)
+        \]
+        其转置同理有
+        \[
+            D_n=\left(x_n-z\right)D_{n-1}+z\prod_{i=1}^{n-1}\left(x_i-y\right)
+        \]
+        故
+        $y \neq z$时
+        \[
+            D_n=
+            \frac{1}{z-y}\left[
+                z\prod_{i=1}
+                ^{n}\left(x_i-y\right)-y
+                \prod_{i=1}^{n}\left(x_i-z\right)
+                \right]
+        \]
+        $y=z$时
+        \[
+            D_n=
+            \prod_{i=1}^{n}\left(x_i-y\right)+y\sum_{i=1}^{n}\prod_{i\neq j}
+            \left(x_j-y\right)
+        \]
+    \end{solution}
+}
