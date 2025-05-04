@@ -1,0 +1,491 @@
+\newpage
+\section{线性方程组的解}
+\subsection{判定}
+\thm{线性方程组解的判定定理}{线性方程组解的判定定理}{
+    \[\bm{A}\bm{x} = \bm{\beta}
+        \Longleftrightarrow
+        \begin{cases*}
+            a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n = b_1 \\
+            a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2   \\
+            \qquad\cdots\cdots\cdots\cdots\cdots
+            \cdots\cdots                               \\
+            a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m
+        \end{cases*}
+    \]
+    其增广矩阵
+    \[
+        \widetilde{\bm{A}}
+        =\begin{pmatrix}
+            \bm{A} & \bm{\beta}
+        \end{pmatrix}
+        =  \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} & b_1    \\
+            a_{21} & a_{22} & \cdots & a_{2n} & b_2    \\
+            \vdots & \vdots &        & \vdots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn} & b_m
+        \end{pmatrix}
+    \]
+
+    \begin{enumerate}[label=\arabic*）]
+        \item $ \rmr \left(\bm{A}\right)
+                  =\rmr \left(\widetilde{\bm{A}}
+                  \right) = n\Longrightarrow
+              $有唯一一组解
+        \item $\rmr \left(\bm{A}\right)
+                  =\rmr \left(\widetilde{\bm{A}}
+                  \right) < n \Longrightarrow $
+              有无穷多组解
+        \item $\rmr \left(\bm{A}\right)
+                  \neq \rmr \left(
+                  \widetilde{\bm{A}}
+                  \right)$（事实上，可以断言$\rmr \left(
+                  \widetilde{\bm{A}
+                  }\right) =
+                  \rmr \left(\bm{A}\right) + 1$）$\Longrightarrow $无解
+    \end{enumerate}\begin{proof}
+        先证有解当且仅当
+        $ \rmr \left(\bm{A}\right)
+            =\rmr \left(\widetilde{\bm{A}}
+            \right)$.作列分块$\bm{A}=\left(\bm{\alpha}_1,
+            \bm{\alpha}_2,\cdots,\bm{\alpha}_n
+            \right)$，于是方程化为
+        \[
+            x_1\bm{\alpha}_1+x_2\bm{\alpha}_2+\cdots+x_n\bm{\alpha}_n
+            =\bm{\beta}
+        \]
+        因此方程有解等价于$\bm{\beta}$是$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n$的线性组合.
+
+        先证必要性，设方程有解，则
+        $\bm{\beta}$是$\bm{\alpha}_1,
+            \bm{\alpha}_2,\cdots,\bm{\alpha}_n$的线性组合.设$\bm{A}$的列向量的极大无关组为
+        $\left\{\bm{\alpha}_{i_1},\bm{\alpha}_{i_2}
+            ,\cdots,\bm{\alpha}_{i_r}\right\}$，即$\rmr \left(\bm{A}\right)=r$.显然
+        $\bm{\beta}$是$\bm{\alpha}_{i_1},
+            \bm{\alpha}_{i_2},\cdots,\bm{\alpha}_{i_r}
+        $的线性组合.于是
+        $\left\{\bm{\alpha}_{i_1},
+            \bm{\alpha}_{i_2},\cdots,\bm{\alpha}_{i_r}
+            \right\}$也是$\widetilde{\bm{A}}$的
+        列向量的极大无关组.于是$\rmr \left(\widetilde{\bm{A}}\right)=r=\rmr \left(\bm{A}\right).$
+
+        再证充分性，设$\rmr \left(\widetilde{\bm{A}}\right)=
+            \rmr \left(\bm{A}\right)=r$，并且
+        $\left\{\bm{\alpha}_{i_1},\bm{\alpha}_{i_2},
+            \cdots,\bm{\alpha}_{i_r}\right\}$是$\bm{A}$的列向量的极大无关组，即也是$\widetilde{\bm{A}}$的$
+            r$个线性无关的向量，即是$\widetilde{\bm{A}}$的列向量
+        的极大无关组.于是
+        $\bm{\beta}$是$\bm{\alpha}_{i_1},
+            \bm{\alpha}_{i_2},\cdots,\bm{\alpha}_{i_r}
+        $的线性组合.
+
+        有解条件证毕.
+
+        若$\rmr \left(\bm{A}\right)=\rmr \left(
+            \widetilde{\bm{A}}
+            \right)=n$,则$\left(\bm{\alpha}_1,
+            \bm{\alpha}_2,\cdots,\bm{\alpha}_n\right)$线
+        性无关.又因为线性表示唯一，因此$\left(x_1,x_2,\cdots,x_n\right)$唯一确定.
+
+        若$\rmr \left(\bm{A}\right)=\rmr \left(
+            \widetilde{\bm{A}}
+            \right)<n$，则$\left(\bm{\alpha}_1,
+            \bm{\alpha}_2,\cdots,\bm{\alpha}_n\right)$线性相关即存在不全为零的$c_1,c_2,\cdots,c_n\in \mathbb{K}$使得
+        \begin{align*}
+            \bm{0}=c_1\bm{\alpha}_1
+            +c_2\bm{\alpha}_2+\cdots+
+            c_n\bm{\alpha}_n
+        \end{align*}
+        又因为方程有解等价于存在$k_1,k_2,\cdots,k_n\in \mathbb{K}$使得$
+            \bm{\beta}=k_1\bm{\alpha}_1+k_2\bm{\alpha}_2+\cdots+k_n\bm{\alpha}_n
+        $， 两式组合得
+        \[
+            \bm{\beta}=
+            \left(k_1+kc_1\right)\bm{\alpha}_1+\left(
+            k_2+kc_2
+            \right)\bm{\alpha}_2+\cdots+\left(k_n+kc_n\right)
+            \bm{\alpha}_n
+        \]
+        即$  x_i=k_i+kc_i,\forall k\in \mathbb{K}$，即有无穷多组解.
+    \end{proof}
+}
+\subsection{解的结构与表达}
+当线性方程组具有无穷多组解时，一个重要的问题就是如何用有限多组解来表达或者说生成这无穷多组解.
+\lem{相伴方程组的解}{相伴方程组的解}{
+    设$\bm{\gamma}$是$\bm{Ax}=\bm{\beta}$的一个特解，则$\bm{\alpha}$是$\bm{Ax}=\bm{\beta}$的解等价于$\bm{\alpha}-\bm{\gamma}$为相伴的
+    齐次线性方程组$\bm{Ax}=\bm{0}$的解.
+}
+\lem{解空间}{解空间}{
+    考虑相伴的齐次线性方程组$\bm{Ax}=\bm{0}$，其至少有零解.令
+    \[
+        V_{\bm{A}}=\left\{\bm{x}\in \mathbb{K}^n\big|\bm{Ax}=\bm{0}\right\}
+    \]
+    即方程的解集，那么断言这是$\mathbb{K}^n$的子空间，称为该齐次线性方程组的解空间.
+}
+\thm{基础解系}{基础解系}{
+设$\rmr \left(\bm{A}
+    \right)=r$，则解空间
+$V_{\bm{A}} =
+    \left\{
+    \bm{x} \in \mathbb{K}^n\mid
+    \bm{Ax} =\bm{0}
+    \right\}$是
+$\mathbb{K}^n$的一个$n  -r$维
+子空间即
+\[
+    \dim_{\mathbb{K}}V_{\bm{A}} +
+    \rmr \left(\bm{A}\right)
+    = n
+\]
+从而存在一组基$\left\{\bm{\eta}_1,\bm{\eta}_2,\cdots
+    ,\bm{\eta}_{n - r}\right\}$使得$\bm{Ax}=\bm{0}$的解都是$\bm{\eta}_1,\bm{\eta}_2,\cdots,
+    \bm{\eta}_{n - r}$的线性组合，这组基$\left\{\bm{\eta}_1,\bm{\eta}_2,\cdots
+    ,\bm{\eta}_{n - r}\right\}$（齐次线性方程组解空间的基）称为基础解系.\begin{proof}
+    首先考虑高斯消去法与初等行变换，我们知道，对线性方程组进行同解基础上的化简等价于对系数矩阵$\bm{A}$做初等行变换.此外，列对换仅仅改变了未定元的位置，因此是允许的.
+
+    由行变换，可将$\bm{A}$的行向量的极大无关组换至
+    前$r$行.不妨设
+    \[
+        \bm{A}=\begin{pmatrix}
+            \bm{\alpha}_1     \\
+            \bm{\alpha}_2     \\
+            \vdots            \\
+            \bm{\alpha}_r     \\
+            \bm{\alpha}_{r+1} \\
+            \vdots            \\
+            \bm{\alpha}_m
+        \end{pmatrix}
+    \]
+    其中$\left\{\bm{\alpha}_1,
+        \bm{\alpha}_2,
+        \cdots,\bm{\alpha}_r\right\}$为行向量的极大无关组.于是有
+    \[
+        \bm{A}\longrightarrow
+        \begin{pmatrix}
+            \bm{\alpha}_1 \\
+            \bm{\alpha}_2 \\
+            \vdots        \\
+            \bm{\alpha}_r \\
+            \bm{0}        \\
+            \vdots        \\
+            \bm{0}
+        \end{pmatrix}
+    \]
+    令\[
+        \bm{A}_1=\begin{pmatrix}
+            \bm{\alpha}_1 \\\bm{\alpha}_2\\\vdots\\\bm{\alpha}_r
+        \end{pmatrix}\Longrightarrow
+        \rmr \left(\bm{A}_1\right)=r
+    \]
+    在允许列对换（交换变量位置）的情况下，不妨设$\bm{A}_1$的列向量的极大无关组为前$r$列，则
+    $\bm{A}_1=\left(\bm{B}_1^{r\times r}
+        ,\bm{B}_2^{r\times \left(n-r\right)}\right)$,
+    则$\rmr \left(\bm{B}_1\right)=r.$
+    故$\bm{B}_1$非异，其可通过行变换成为单位阵，此时
+    $\bm{A}\longrightarrow \left(\bm{I}_r,
+        \bm{C}\right)$.
+
+    总之，在初等行变换和列对换后$\bm{A}$化为
+    \[
+        \begin{bmatrix}
+            \bm{I}_r & \bm{C} \\\bm{O} & \bm{O}
+        \end{bmatrix}
+        ,\bm{C}=\left(c_{ij}\right)_{r\times \left(n-r\right)}
+    \]
+    从而所给齐次线性方程组与下面的方程同解
+    \[
+        \begin{cases*}
+            x_1+\qquad \qquad +c_{1,r+1}x_{r+1}+\cdots+c_{1,n}x_n=0      \\
+            \qquad x_2+\qquad +c_{2,r+1}x_{r+1}+\cdots+c_{2,n}x_n=0      \\
+            \qquad\qquad\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots \\
+            \qquad\qquad \quad x_r+c_{r,r+1}x_{r+1}+\cdots+c_{r,n}x_n=0
+        \end{cases*}
+    \]
+    取$x_{r+1}=1$，$x_{r+2}=\cdots=x_n=0$得一个解
+    \[
+        \bm{\eta}_1=\begin{pmatrix}
+            -c_{1,r+1} \\
+            -c_{2,r+1} \\
+            \vdots     \\
+            -c_{r,r+1} \\
+            1          \\
+            0          \\
+            \vdots     \\
+            0
+        \end{pmatrix}
+    \]
+    随后令
+    $x_{r+2}=1$，其他为零，如此下去$\cdots$，得到
+    $\bm{\eta}_1,\bm{\eta}_2,\cdots,\bm{\eta}_{n-r}
+    $，并断言这就是该方程解空间的一组基.
+
+    一方面，它们显然线性无关；另一方面，任取上述方程一解
+    $\bm{\eta}=\left(a_1,a_2,\cdots,a_n\right)
+        '$，那么
+    \[
+        \bm{\eta}=\begin{pmatrix}
+            a_1 \\a_2\\\vdots\\a_n
+        \end{pmatrix}
+        =\begin{pmatrix}
+            -c_{1,r+1}a_{r+1}-\cdots-c_{1,n}a_n \\
+            -c_{2,r+1}a_{r+1}-\cdots-c_{2,n}a_n \\
+            \vdots                              \\
+            -c_{r,r+1}a_{r+1}-\cdots-c_{r,n}a_n \\
+            a_{r+1}                             \\
+            \vdots                              \\
+            a_n
+        \end{pmatrix}=a_{r+1}\bm{\eta}_1+\cdots+a_n\bm{\eta}
+        _{n-r}
+    \]
+    线性组合亦成立.故这是的该方程解空间的一组基.同时也是齐次线性方程组的解空间$V_{\bm{A}}$的一组基.
+
+    于是
+    \[
+        \dim V_{\bm{A}}=n-r=n-\rmr \left(\bm{A}
+        \right)
+        \qedhere
+    \]
+\end{proof}
+}
+\thm{结构定理}{结构定理}{
+设$\rmr \left(\bm{A}\right)
+    =\rmr \left(\widetilde{\bm{A}
+    }\right) = r$,而$\bm{\gamma}$是$\bm{Ax}=\bm{\beta}$
+的一个特解，$\left\{\bm{\eta}_1,\bm{\eta}_2,\cdots
+    ,\bm{\eta}_{n - r}\right\}$是相伴齐次线性方程组$\bm{Ax}=\bm{0}$的一个基础解系，则$
+    \bm{Ax}=\bm{\beta}$的通解为
+\[
+    \bm{\gamma}+
+    k_1\bm{\eta}_1+k_2\bm{\eta}_2+\cdots
+    +k_{n - r}\bm{\eta}_{n - r}
+\]
+其中$k_i \in \mathbb{K}$.\begin{proof}
+    考虑$\bm{\alpha}-\bm{\gamma}$用基础解系线性组合立得.
+\end{proof}
+}
+\rem{}{}{
+    \cref{thm:结构定理} 强调数域$\mathbb{K}$求解.
+
+    求解过程中，仅允许初等行变换和第三类初等列变换即列对换，其它变换不允许使用.
+}
+\subsection{求解\texorpdfstring{ $\bm{Ax}=\bm{\beta}$}{Ax = beta}}
+\thm{求解$\bm{Ax}=\bm{\beta}$的方法}{求解Ax=beta的方法}{
+一般地，求解方程
+\[
+    \begin{cases*}
+        a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n = b_1 \\
+        a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2   \\
+        \qquad\cdots\cdots\cdots\cdots\cdots
+        \cdots\cdots                               \\
+        a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m
+    \end{cases*}\Longleftrightarrow
+    \bm{Ax}=\bm{\beta}
+\]
+的方法如下：
+
+$1.$施加行变换将$\widetilde{\bm{A}}
+    =\begin{pmatrix}
+        \bm{A} & \bm{\beta}
+    \end{pmatrix}$化为阶梯形，判断$\rmr \left(\bm{A}\right)$与$\rmr \left(\widetilde{
+        \bm{A}
+    }\right)$的关系来确定解的存在性.
+
+$2.$继续对$\widetilde{\bm{A}}$作初等行变换和列对换（不允许采用其他变换，不允许在列对换时操作常数列，列对换仅仅变换了未定元的次序，后面需要换回来）化为如下解方程组的标准型形式
+\[
+    \bm{D} =            \begin{pmatrix}
+        \bm{I}_r                   & \bm{C}_{r
+        \times \left(n - r\right)} & \bm{\gamma}          \\
+        \bm{O}                     & \bm{O}      & \bm{O}
+    \end{pmatrix}
+\]
+得到特解
+\[
+    \begin{bmatrix}
+        \bm{\gamma} \\
+        \bm{O}
+    \end{bmatrix}
+\]和基础解系
+$\bm{\eta}_1,\bm{\eta}_2,\cdots,
+    \bm{\eta}_{n - r}$，其中
+\[
+    \bm{\eta}_i
+    =\begin{pmatrix}
+        -c_{1,r+i} \\
+        -c_{2,r+i} \\
+        \vdots     \\
+        -c_{r,r+i} \\
+        0          \\
+        \vdots     \\
+        1          \\
+        \vdots     \\
+        0
+    \end{pmatrix}
+\]
+其中$c_{i,r+i}$是$\bm{C}_{
+        r\times\left(n - r\right)
+    }$的第$\left(i,i\right)$元或者说$\bm{D}$的$\left(i,r+i\right)$元；元$1$位于$-c_{r,r+i}$下第$i$个位置或者说是总的第$r + i$个位置.
+
+$3.$根据列对换的情况调整特解$\bm{\gamma}$和基础解系$\left\{\bm{\eta}_1,\bm{\eta}_2,\cdots,\bm{\eta}_{n - r}\right\}$的分量得到正确的特解$\bm{\delta }$和基础解系$\left\{\bm{\xi}_1,\bm{\xi}_2,\cdots,\bm{\xi}_{n - r}\right\}$，最后组合为通解
+\[
+    \bm{\delta}+k_1\bm{\xi}_1+k_2\bm{\xi}_2
+    +\cdots+k_{n - r}\bm{\xi}_{n - r}
+\]
+其中$k_i \in \mathbb{K},\forall 1\leqslant i\leqslant n-r.$
+}
+\pro{}{对解的一些刻画}{
+    设$\bm{Ax} = \bm{\beta}\left(
+        \bm{\beta} \neq \bm{0}
+        \right)$的特解为$\bm{\gamma}$，$\bm{Ax} = \bm{0}$的基础解系为$\left\{\bm{\eta}_1,\bm{\eta}_2,\cdots
+        ,\bm{\eta}_{n - r}\right\}$，则\begin{enumerate}[label=\arabic*）]
+        \item $\bm{\gamma},\bm{\gamma}+
+                  \bm{\eta}_1,\bm{\gamma}+\bm{\eta}_2,\cdots,
+                  \bm{\gamma}+\bm{\eta}_{n - r}$线性无关
+        \item $\bm{Ax}=\bm{\beta}$的解必符合如下形式：
+              \[c_0\bm{\gamma}+c_1\left(
+                  \bm{\gamma}+\bm{\eta}_1
+                  \right)+c_2\left(
+                  \bm{\gamma}+\bm{\eta}_2
+                  \right)+\cdots+
+                  c_{n - r}\left(\bm{\gamma}+
+                  \bm{\eta}_{n - r}\right)
+              \]并且有$c_0+c_1+c_2+\cdots+c_{n - r}=1$.反之，这样形式的向量一定是方程的解.
+    \end{enumerate}\begin{proof}
+        \begin{enumerate}[label=\arabic*）]
+            \item 设
+                  \[
+                      \lambda_0\bm{\gamma}
+                      +\lambda_1\left(
+                      \bm{\gamma}+\bm{\eta}_1
+                      \right)+\cdots+
+                      \lambda_{n - r}\left(\bm{\gamma}+
+                      \bm{\eta}_{n - r}\right)=\bm{0}
+                  \]
+                  即
+                  \[
+                      \left(\sum_{i=0}^{n-r}
+                      \lambda_i\right)\bm{\gamma}+\lambda_1\bm{\eta}_1+\cdots
+                      +\lambda_{n-r}\bm{\eta}_{n-r}=
+                      \bm{0}
+                  \]
+                  用$\bm{A}$左乘，即得
+                  \[
+                      \left(\sum_{i=0}^{n-r}\lambda_{i}\right)\bm{\beta}=\bm{0}
+                  \]
+                  故$\displaystyle
+                      \sum_{i=0}^{n-r}\lambda_i=0$，反代即得
+                  \[
+                      \lambda_1\bm{\eta}_1+\cdots
+                      +\lambda_{n-r}\bm{\eta}_{n-r}=
+                      \bm{0}
+                  \]
+                  又因为线性无关，故$\lambda_1=\cdots=\lambda_{n-r}=0$，易推知$\lambda_0=0$.
+            \item 由结构定理，任一解$\bm{\alpha}=\bm{\gamma}+k_1\bm{\eta}_1+\cdots
+                      +k_{n - r}\bm{\eta}_{n - r},k_i\in \mathbb{K}.$
+                  显然有
+                  \[
+                      \bm{\alpha}=\left(1-k_1-k_2-\cdots-k_{n-r}\right)
+                      \bm{\gamma}+k_1\left(\bm{\gamma}+\bm{\eta}_1\right)
+                      +k_2\left(\bm{\gamma}+\bm{\eta}_2\right)+
+                      \cdots+k_{n-r}\left(\bm{\gamma}+\bm{\eta}_{n-r}\right)
+                      \qedhere
+                  \]
+        \end{enumerate}
+    \end{proof}
+}
+\subsection{求解线性方程组的应用}
+\pro{}{求解线性方程组的应用}{
+核心是
+\[
+    \dim_{\mathbb{K}}V_{\bm{A}} +
+    \rmr \left(\bm{A}\right)=n
+\]
+其中$n$为未定元个数.主要可用于：\begin{enumerate}[label=\arabic*）]
+    \item $n$阶方阵$\bm{A}$可逆等价于$\bm{Ax}=\bm{0}$仅有零解.
+    \item 利用$\rmr \left(\bm{A}\right)$求$V_{\bm{A}}$.
+    \item 利用$V_{\bm{A}}$求$\rmr \left(\bm{A}\right)$.
+\end{enumerate}
+}
+\exa{}{}{
+    已知$\bm{A}^2-\bm{A}-3\bm{I}_n=\bm{O}$，求证：$\bm{A}-2\bm{I}_n$非异.\begin{proof}
+        只要证方程
+        \[
+            \left(\bm{A}-2\bm{I}_n\right)\bm{x}=\bm{0}
+        \]
+        仅有零解.设一解$\bm{x}_0$，则$\bm{Ax}_0=2\bm{x}_0$，于是$\bm{A}^2\bm{x}_0=2\bm{Ax}_0=4\bm{x}_0$，故$\bm{x}_0=\bm{0}$.
+    \end{proof}
+}
+\exa{}{}{
+    设$\lambda_1,\lambda_2,\cdots,\lambda_n$是数域$\mathbb{K}$中不同的数且有$1\leqslant k \leqslant n-1$.设
+    \begin{flalign}
+        \tag{$1$}
+                                                                             & \begin{cases*}
+                                                                                   x_1+x_2+\cdots+x_n=0                            \\
+                                                                                   \lambda_1x_1+\lambda_2x_2+\cdots+\lambda_nx_n=0 \\
+                                                                                   \qquad\cdots\cdots\cdots\cdots\cdots            \\
+                                                                                   \lambda_{1}^{k-1}x_1+\lambda_2^{k-1}x_2+\cdots+\lambda_n^{k-1}x_n=0
+                                                                               \end{cases*} \\
+        \tag{$2$}                                                            &
+        \begin{cases*}
+            x_1^{k}+x_2^k+\cdots+x^k_n=0                                      \\
+            \lambda_1^{k+1}x_1+\lambda_2^{k+1}x_2+\cdots+\lambda_n^{k+1}x_n=0 \\
+            \qquad\cdots\cdots\cdots\cdots\cdots                              \\
+            \lambda_{1}^{n-1}x_1+\lambda_2^{n-1}x_2+\cdots+\lambda_n^{n-1}x_n=0
+        \end{cases*} &
+    \end{flalign}
+    设解空间分别为$V_1$、$V_2$，求证：$\mathbb{K}^n=V_1\oplus V_2.$\begin{proof}
+        考虑$V_1\cap V_2$，即$(1)$、$(2)$联立得到方程组的解空间
+        \[
+            \tag{$3$}
+            \begin{cases*}
+                x_1+x_2+\cdots+x_n=0                                                \\
+                \lambda_1x_1+\lambda_2x_2+\cdots+\lambda_nx_n=0                     \\
+                \qquad\cdots\cdots\cdots\cdots\cdots                                \\
+                \lambda_{1}^{k-1}x_1+\lambda_2^{k-1}x_2+\cdots+\lambda_n^{k-1}x_n=0 \\
+                x_1^{k}+x_2^k+\cdots+x^k_n=0                                        \\
+                \lambda_1^{k+1}x_1+\lambda_2^{k+1}x_2+\cdots+\lambda_n^{k+1}x_n=0   \\
+                \qquad\cdots\cdots\cdots\cdots\cdots                                \\
+                \lambda_{1}^{n-1}x_1+\lambda_2^{n-1}x_2+\cdots+\lambda_n^{n-1}x_n=0
+            \end{cases*}
+        \]
+        其系数矩阵的行列式为Vandermonde行列式，值为
+        \[
+            \prod_{1\leqslant i<j\leqslant n}
+            \left(\lambda_j-\lambda_i\right)
+            \neq 0
+        \]
+        故系数矩阵满秩.于是$V_1\cap V_2=0.$
+        不妨将三个系数矩阵记作
+        \[
+            \bm{A}=\begin{pmatrix}
+                \bm{A}_1 \\\bm{A}_2
+            \end{pmatrix}
+        \]
+        且$\rmr \left(\bm{A}\right)=n$，则
+        $\rmr \left(\bm{A}_1\right)=k,\rmr \left(\bm{A}_2\right)=n-k.$于是$\dim V_1=n-\rmr \left(\bm{A}_1\right)=n-k,
+            \dim V_2=n-\rmr \left(\bm{A}_2\right)=k.$故$\dim\left(V_1\oplus V_2\right)=n=\dim \mathbb{K}^n.$
+    \end{proof}
+}
+\exa{}{}{
+    设$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$,求证：\[\rank \left(\bm{AA}'\right)=\rank \left(\bm{A}'\bm{A}\right)
+        =\rank \left(\bm{A}\right)\]\begin{proof}
+        设方程$\bm{Ax}=\bm{0}$的解空间为$V_{\bm{A}}$，方程$\bm{A}'\bm{Ax}=\bm{0}$的解空间为$V_{\bm{A}'\bm{A}}$.显然
+        \[
+            V_{\bm{A}}\subseteq
+            V_{\bm{A}'\bm{A}}
+        \]
+        任取$\bm{x}_0\in V_{\bm{A}'\bm{A}}$，此时
+        $\bm{x}_0\in \mathbb{R}^n$且$\bm{A}'\bm{Ax}_0=\bm{0}.$令$\bm{Ax}_0=\left(a_1,a_2,\cdots,a_m\right)'\in \mathbb{R}^m$.
+        对$\bm{A}'\bm{Ax}_0=\bm{0}$左乘$\bm{x}_0'$得
+        \[
+            \left(\bm{Ax}_0\right)'\left(\bm{Ax}_0\right)
+            =\bm{0}
+        \]
+        即$\displaystyle
+            \sum_{i=1}^{m}a_i^2=0.$故$\forall 1\leqslant i\leqslant m,a_i=0$即
+        $\bm{Ax}_0=\bm{0}.$则
+        $
+            V_{\bm{A}}\supseteq
+            V_{\bm{A}'\bm{A}}
+        $
+        故$V_{\bm{A}}=V_{\bm{A}'\bm{A}}$，利用维数公式即得.
+    \end{proof}
+}

@@ -179,6 +179,8 @@
 \define@key{incfig}{float}{\def\figfloat{#1}}
 \define@key{incfig}{caption}{\def\figcaption{#1}}
 \define@key{incfig}{label}{\def\figlabel{#1}}
+\define@key{incfig}{env}{\def\figenv{#1}}
+\define@key{incfig}{envopt}{\def\figenvopt{#1}}
 
 \newcommand{\incfig}[2][]{%
     % #1: Optional parameters in key=value format (empty by default)
@@ -188,6 +190,8 @@
     \def\figlabel{}%
     \def\figscale{}%
     \def\figfloat{htbp}%
+    \def\figenv{}%
+    \def\figenvopt{}%
 
     % Parse options using keyval package
     \setkeys{incfig}{#1}%
@@ -201,20 +205,51 @@
         \def\svgwidth{\figscale\columnwidth}%
     }%
 
-    \ifthenelse{\equal{\figcaption}{}}{%
-        % No caption - just include the figure
-        \import{./Figures/}{#2.pdf_tex}
-    }{%
-        % Caption provided - use figure environment
-        \expandafter\figure\expandafter[\figfloat]
-        \centering
-        \import{./Figures/}{#2.pdf_tex}
-        \caption{\figcaption}
-        \ifthenelse{\equal{\figlabel}{}}{}{%
-            \label{\figlabel}%
+    % Handle different embedding scenarios
+    \ifthenelse{\equal{\figenv}{}}{%
+        % No custom environment specified
+        \ifthenelse{\equal{\figcaption}{}}{%
+            % No caption - just include the figure
+            \import{./Figures/}{#2.pdf_tex}
+        }{%
+            % Caption provided - use figure environment
+            \expandafter\figure\expandafter[\figfloat]
+            \centering
+            \import{./Figures/}{#2.pdf_tex}
+            \caption{\figcaption}
+            \ifthenelse{\equal{\figlabel}{}}{}{%
+                \label{\figlabel}%
+            }
+            \endfigure
         }
-        \endfigure
-    }
+    }{%
+        % Custom environment specified
+        \ifthenelse{\equal{\figenvopt}{}}{%
+            % No environment options
+            \csname\figenv\endcsname
+            \centering
+            \import{./Figures/}{#2.pdf_tex}
+            \ifthenelse{\equal{\figcaption}{}}{}{%
+                \caption{\figcaption}
+                \ifthenelse{\equal{\figlabel}{}}{}{%
+                    \label{\figlabel}%
+                }
+            }
+            \csname end\figenv\endcsname
+        }{%
+            % With environment options
+            \csname\figenv\endcsname[\figenvopt]
+            \centering
+            \import{./Figures/}{#2.pdf_tex}
+            \ifthenelse{\equal{\figcaption}{}}{}{%
+                \caption{\figcaption}
+                \ifthenelse{\equal{\figlabel}{}}{}{%
+                    \label{\figlabel}%
+                }
+            }
+            \csname end\figenv\endcsname
+        }%
+    }%
 }% <- Comment to prevent parsing errors
 
 % --- Figure and Subfigure Configuration ---
@@ -646,7 +681,6 @@
 \Crefname{tcb@cnt@corollary}{\textbf{Corollary}}{Corollaries}
 \crefname{tcb@cnt@claim}{\textbf{Claim}}{Claims}
 \Crefname{tcb@cnt@claim}{\textbf{Claim}}{Claims}
-
 % ===========================================================================
 % XI. BIBLIOGRAPHY SUPPORT
 % ===========================================================================

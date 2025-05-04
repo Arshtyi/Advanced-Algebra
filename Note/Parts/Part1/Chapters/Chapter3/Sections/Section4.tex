@@ -1,3 +1,198 @@
 \newpage
 \section{向量的线性关系}
 \subsection{线性表示}
+\dfn{线性表示}{线性表示}{
+    设$\bb{K}$上的线性空间$V$，$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n \in
+        V_{\bbk}$，如果存在$
+        k_1,k_2,\cdots,k_n \in \bbk$，使得
+    \[
+        \bm{\beta} =
+        k_1\bm{\alpha}_1+\cdots+
+        k_n\bm{\alpha}_n
+    \]
+    称$\bm{\beta}$是$\bm{\alpha}_1,
+        \bm{\alpha}_2,\cdots,\bm{\alpha}_n$的线性组合，或者说$\bm{\beta}$可以用$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n$线性表示/表出.记作
+    \[
+        \bm{\beta}\hookrightarrow \left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right\}
+    \]
+}
+\exa{}{}{
+    $\bbk$上的$n$维标准单位行向量
+    \[
+        \bm{e}_i = \left(0,\cdots,1,\cdots,0\right)
+        \quad
+        \left(1\leqslant i\leqslant n\right)
+    \]
+    （其中$1$位于第$i$位）构成的向量组$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$称为$\bbk$上的标准单位行向量组.显然任一$n$维行向量$\bm{\alpha}=
+        \left(a_1,a_2,\cdots,a_n\right)$都可用其表示
+    \[
+        \bm{\alpha}=a_1\bm{e}_1+a_2\bm{e}_2+\cdots+a_n\bm{e}_n
+    \]
+}
+\subsection{线性相关与线性无关}
+\dfn{线性相关}{线性相关}{
+    设$\bbk$上的线性空间$V$，    $\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n \in
+        V_{\bbk}$，若存在不全为零的$k_1,k_2,\cdots,k_n \in\bbk$使得\[
+        k_1\bm{\alpha}_1+k_2\bm{\alpha}_2+\cdots
+        +k_n\bm{\alpha}_n = \bm{0}
+    \]
+    称$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n $是线性相关的；反之若不存在这样的一组
+    $k_1,k_2,\cdots,k_n\in\bbk$（或者说只有可能是$k_1=k_2=\cdots=k_n=0$），则称
+    $\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n $是线性无关的.
+}
+\clm{}{}{
+    向量的线性关系取决于基域的选取.
+}
+\exa{}{}{
+    $\bbr \subseteq\bbc$，易证$\left\{1,\mathrm{i}\right\}$在$\bbr$线性无关，在$\bbc$线性相关.
+}
+\lem{}{含有零向量的向量组一定线性相关}{
+    包含$\bm{0}$的向量组一定线性相关.
+}
+\lem{}{只有一个向量的向量组}{
+    \[
+        A = \left\{\bm{\alpha}\right\}\begin{cases*}
+            \text{线性无关} & $\bm{\alpha} \neq \bm{0}$ \\
+            \text{线性相关} & $\bm{\alpha} = \bm{0}$
+        \end{cases*}
+    \]
+}
+\thm{}{大小向量组线性关系的约束}{
+    $n > m > s$，如果$\left\{\bm{\alpha}_1
+        ,\bm{\alpha}_2,\cdots,\bm{\alpha}_m\right\}$线
+    性相关，那么$\left\{\bm{\alpha}_1,\bm{\alpha}_2,
+        \cdots,\bm{\alpha}_m,\cdots,
+        \bm{\alpha}_n\right\}$也线性相关；
+    如果$\left\{\bm{\alpha}_1,\bm{\alpha}_2
+        ,\cdots,\bm{\alpha}_m\right\}$，线
+    性无关，那么$\left\{\bm{\alpha}_1,\bm{\alpha}_2,
+        \cdots,\bm{\alpha}_s\right\}$也
+    线性无关.
+}
+\cor{}{向量组内部的线性关系}{
+    $\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n$线性相关等价于存在$\bm{\alpha}_i\left(
+        1 \leqslant i
+        \leqslant n
+        \right)$是$\left\{
+        \bm{\alpha}_1,\bm{\alpha}_2,\cdots
+        ,\widehat{\bm{\alpha}}_i,\bm{\alpha}_{i+1},
+        \cdots,\bm{\alpha}_n
+        \right\}$的线性组合.
+}
+\cor{}{加入线性无关的向量组的向量的线性关系}{
+    设$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n,\bm{\beta}
+        \in  V_{\bbk}$，且$\bm{\alpha}_1,\bm{\alpha}_2,\cdots
+        ,\bm{\alpha}_n$是线性无关的，那么一定有要么$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n,\bm{\beta}
+    $线性无关，要么$\bm{\beta}$ 是$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n$的线性组合.
+}
+\thm{线性表示唯一}{线性表示唯一}{
+    已知$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_n,\bm{\beta}
+        \in  V_{\bbk}$且
+    \[
+        \bm{\beta} = k_1\bm{\alpha}_1+k_2\bm{\alpha}_2
+        +\cdots+k_n\bm{\alpha}_n
+    \]
+    则该表示形式唯一当且仅当$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n$线性无关.
+}
+\thm{}{线性组合的传递性}{
+    设有向量组$A = \left\{
+        \bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \bm{\alpha}_m
+        \right\}$、$
+        B = \left\{
+        \bm{\beta}_1,\bm{\beta}_2,\cdots,
+        \bm{\beta}_n
+        \right\}$、$C =
+        \left\{\bm{\gamma}_1,\bm{\gamma}_2,\cdots
+        ,\bm{\gamma}_p\right\}$，若$B$中的向量均为$A$中的向量的线性组合且$C$中的向量均为$B$中的向量的线性组合，那么$C$中的向量均可用$A$中的向量线性表示.即若
+    \[
+        C\hookrightarrow B \hookrightarrow A
+    \]
+    则
+    \[
+        C\hookrightarrow A
+    \]
+}
+\exa{}{}{
+    $\bm{\alpha} = \left(a_1,a_2,
+        \cdots,a_n\right)$与$
+        \bm{\beta} = \left(b_1,b_2,\cdots,
+        b_n\right)$线性相关的充分必要条件是$a_i = c b_i(i = 1,2,\cdots,n,c \in\bbr)$成立.
+}
+\exa{}{}{
+    $V = \bbr^2$中
+    $\overrightarrow{OA} =\left(
+        a_1,a_2
+        \right)$、$\overrightarrow{OB}=
+        \left(b_1,b_2\right)
+    $线性相关等价于$O$、$A$、$B$共线；
+    $\overrightarrow{OA}
+        =\left(a_1,a_2\right) $、
+    $\overrightarrow{OB} = \left(b_1
+        ,b_2\right)
+    $线性无关等价于
+    $\bigtriangleup OAB$非退化，这时
+    \[
+        S_{\bigtriangleup OAB} =
+        \frac{\left|\overrightarrow{OA}
+            \times \overrightarrow{OB} \right|
+        }{2} = \frac{
+            \begin{vmatrix}
+                a_1 & a_2 \\
+                b_1 & b_2
+            \end{vmatrix}
+        }{2}
+        \neq 0
+    \]
+
+    $V = \bbr^3$中
+    $\overrightarrow{OA} =\left(
+        a_1,a_2,a_3
+        \right)$、$\overrightarrow{OB}=
+        \left(b_1,b_2,b_3\right)
+    $、
+    $\overrightarrow{OC} =
+        \left(c_1,c_2,c_3\right) $线性相关等价于$O$、$A$、$B$、$C$共面 ；
+    $\overrightarrow{OA}
+        =\left(a_1,a_2,a_3\right) $、
+    $\overrightarrow{OB} = \left(b_1
+        ,b_2,b_3\right)
+    $、$
+        \overrightarrow{OC} =
+        \left(c_1,c_2,c_3\right) $线性无关等价于四面体$ OABC$非退化  （或者说该平行六面体非退化），这时
+    \[
+        \begin{vmatrix}
+            a_1 & a_2 & a_3 \\
+            b_1 & b_2 & b_3 \\
+            c_1 & c_2 & c_3
+        \end{vmatrix}
+        \neq 0
+    \]
+}
+\cor{}{向量组线性关系的行列式判断}{
+    $\bm{\alpha}_1 = \left(a_{11},a_{21},
+        \cdots,a_{n1}\right),\bm{\alpha}_2=
+        \left(a_{12},a_{22},\cdots,a_{2n}\right),\cdots,\bm{\alpha}_n
+        =\left(a_{1n},a_{2n},\cdots,a_{nn}\right)
+        \in \bbk^n$线性无关等价于
+    \[
+        \left|\bm{\alpha}_1,\bm{\alpha}_2,\cdots
+        ,\bm{\alpha}_n\right|=
+        \begin{vmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & s      & \vdots \\
+            a_{n1} & a_{n2} & \cdots & a_{nn}
+        \end{vmatrix}
+        \neq 0
+    \]
+    即是矩阵可逆，也就是满秩.反之则是缺秩，对应线性相关.
+}

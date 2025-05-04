@@ -1,0 +1,204 @@
+\newpage
+\section{实系数多项式与有理系数多项式}
+因为\[
+    \mathbb{Q}\subseteq \mathbb{R}\subseteq\mathbb{C}
+\]
+我们来分别考虑三个数域上的不可约多项式.其中复数域上的不可约多项式由\cref{thm:代数学基本定理}给出.
+\subsection{实数域}
+\thm{}{根的对称}{
+设$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\in\mathbb{R}\left[x\right]$，若$a+b\mathrm{i}\left(b\neq 0\right)$是一个复根，那么$a-b\mathrm{i}$也是一个根.
+}
+\thm{实数域上的不可约多项式}{实数域上的不可约多项式}{
+    实数域上的不可约多项式只能是一次多项式或者如下无实数根的二次多项式：
+    \[
+        ax^2+bx+c=0,\Delta = b^2-4ac<0
+    \]\begin{proof}
+        任取$\mathbb{R}$上的不可约多项式，其一，$\deg f\left(x\right)=1$显然成立.
+
+        其二，$\deg f\left(x\right)=2$时设$f\left(x\right)=ax^2+bx+c\left(a\neq 0\right)$，则$f\left(x\right)$可约当且仅当$f\left(x\right)=a\left(x-x_1\right)\left(x-x_2\right)
+            \left(x_1,x_2\in\mathbb{R}\right)$.于是$f\left(x\right)$不可约当且仅当其无实根即判别式小于零.
+
+        其三，考虑$\deg f\left(x\right)\geqslant 3$.
+        一方面，如果$f\left(x\right)$有实根$x_0$,
+        那么$f\left(x\right)=\left(x-x_0\right)q\left(x\right)\Longrightarrow $可约.
+        另一方面，如果有虚根，一定成对，那么\[\left(
+            x-\left(a+b\mathrm{i}\right)
+            \right)\big|_{\mathbb{C}}f\left(x\right),
+            \left(
+            x-\left(a-b\mathrm{i}\right)
+            \right)\big|_{\mathbb{C}}f\left(x\right)
+        \]
+        因为$x-\left(a+b\mathrm{i}\right)$和$x-\left(a-
+            b\mathrm{i}\right)$均是不可约的且互异，于是互素，于是
+        \[
+            \left(\left(x-a\right)^2+b^2\right)\big|_{\mathbb{C}}f\left(x
+            \right)\Longrightarrow
+            \left(\left(x-a\right)^2+b^2\right)\big|_{\mathbb{R}}f\left(x\right)
+        \]
+        （因为整除关系在基域扩张下不
+        改变\textsuperscript{\cite{谢启鸿2015}}）
+        即\[f\left(x\right)=g\left(x\right)\left(\left(x-a\right)^2+b^2\right)\]其中$
+            g\left(x\right)\in\mathbb{R}\left[x\right]\Longrightarrow \deg g\left(x\right)\geqslant 1\Longrightarrow $可约.
+
+        另证\[
+            \left(\left(x-a\right)^2+b^2\right)\big|_{\mathbb{R}}f\left(x
+            \right)
+        \]
+        考虑$\mathbb{R}$上的带余除法
+        \[
+            f\left(x\right)=\left(\left(x-a\right)^2+b^2\right)q\left(x\right)+r\left(x\right)
+        \]
+        其中$q\left(x\right),r\left(x\right)\in\mathbb{R}\left[x\right],\deg r\left(x\right)<\deg \left(\left(x-a\right)^2+b^2\right)=2$.代入$x=a+b\mathrm{i}$得$0=r\left(a+b\mathrm{i}\right)$，结合次数即得
+        $r\left(x\right)=0.$
+    \end{proof}
+}
+\cor{实数域上的多项式的不可约分解}{实数域上的多项式的不可约分解}{
+    实数域上的多项式$f\left(x\right)$必定可以分解为有限个一次因式及不可约二次因式（判别式小于零）的乘积.
+}
+\subsection{有理数域上的不可约多项式}
+\subsubsection{整系数多项式与有理系数多项式}
+\thm{}{整系数多项式存在有理根的必要条件}{
+设$n$次整系数多项式
+\[
+    f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
+\]
+其中$a_n\neq 0,p,q$为互素整数，则有理数$\displaystyle
+    \frac{p}{q}$是$f\left(x\right)$的根的必要条件是\[q\mid a_n,p\mid a_0\]\begin{proof}
+    令$\displaystyle x=\frac{p}{q}$即可.
+\end{proof}
+}
+\clm{有理系数方程是否存在有理根的必要条件}{}{
+    因为任一有理系数方程均可化为同解的整系数方程，因此\cref{thm:整系数多项式存在有理根的必要条件}也是有理系数方程是否存在有理根的必要条件.于是有理系数多项式在有理数域上的可约性与不可约性的研究完全等价于其化为的整系数多项式的可约性与不可约性的研究.
+}
+\exa{}{}{
+    $    f\left(x\right)=x^5-12x^3+36x+12=0$无有理根.
+}
+\rem{}{}{
+    设$f\left(x\right)\in\mathbb{Q}\left[x\right],\deg f\left(x\right)\geqslant 2$，则
+    \[
+        f\left(x\right)\text{有有理根}\Longrightarrow
+        f\left(x\right)\text{在}\mathbb{Q}\text{可约}
+    \]
+    反推不成立.
+}
+\subsubsection{本原化}
+\dfn{本原多项式}{本原多项式}{
+设整系数多项式$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$，若$\gcd\left(a_n,a_{n-1},
+    \cdots,a_1,a_0\right)=1$，则称$f\left(x\right)$为本原多项式.
+}
+\exa{}{}{
+    首一多项式均为本原多项式.
+}
+\subsubsection{可约的延拓}
+\lem{Gauss引理}{Gauss引理}{
+    两个本原多项式之积仍是本原多项式.\begin{proof}
+        设本原多项式
+        \begin{align*}
+             & f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0; \\
+             & g\left(x\right)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0
+        \end{align*}
+        积\[
+            f\left(x\right)g\left(x\right)=c_{n+m}x^{n+m}+
+            c_{n+m-1}x^{n+m-1}+\cdots+c_1x+c_0
+        \]
+        其中$\displaystyle
+            c_k=\sum_{i+j=k}a_ib_j.$考虑反证法，设$f\left(x\right)g\left(x\right)$不是本原多项式，则存在一个素数$p$\st$p\mid c_k\left(\forall 0\leqslant
+            k\leqslant n+m \right)$.因为$f\left(x\right)$是本原多项式，于是$\exists 0\leqslant i\leqslant n\st
+            p\mid a_0,p\mid a_1,\cdots,p\mid a_{i-1},p\nmid a_i.$同理，$\exists 0\leqslant j\leqslant m\st p\mid b_0,p\mid b_1,\cdots
+            ,p\mid b_{j-1},p\nmid b_j.$因为
+        \[
+            c_{i+j}=\cdots+a_{i-2}b_{j+2}+a_{i-1}b_{j+1}+a_ib_j+a_{i+1}b_{j-1}+a_{i+2}b_{j-2}+\cdots
+        \]
+        那么一定有$p\mid a_ib_j$矛盾.
+    \end{proof}
+}
+\dfn{}{定义在整数环上的可约与不可约}{
+    若一个整系数多项式可以分解为两个次数较低的整系数多项式之积，则称为在整数环上可约.
+}
+\thm{}{可约域的缩小}{
+    设$f\left(x\right)$为整系数多项式，则$f\left(x\right)$在$\mathbb{Q}$可约等价于$f\left(x\right)$在$\mathbb{Z}$可约.即\[f\left(x\right)=g\left(x\right)h\left(x\right),g\left(x\right),h\left(x\right)\in\mathbb{Z}\left[x\right]\]其中$\deg g\left(x\right)\geqslant 1,\deg h\left(x\right)\geqslant 1.$\begin{proof}
+        先证充分性，即$f\left(x\right)=g\left(x\right)h\left(x\right),g\left(x\right),h\left(x\right)\in\mathbb{Z}\left[x\right],\deg g\left(x\right)\geqslant 1,
+            \deg h\left(x\right)\geqslant 1$，将$g\left(x\right),h\left(x\right)$视为
+        $\mathbb{Q}$上的多项式，则$f\left(x\right)$在$\mathbb{Q}$可约.
+
+        然后证必要性，即设$f\left(x\right)$在$\mathbb{Q}$可约，即\[
+            f\left(x\right)=g\left(x\right)h\left(x\right)
+        \]
+        其中$g\left(x\right),h\left(x\right)\in\mathbb{Q}\left[x\right],\deg g\left(x\right)\geqslant 1,\deg h\left(x\right)\geqslant 1.$设$g\left(x\right)=ag_1\left(x\right),a\in\mathbb{Q},g_1\left(x\right)$是
+        本原的整系数多项式，$h\left(x\right)=bh_1\left(x\right),b\in\mathbb{Q},h_1\left(x\right)$是本原的整系数多项式.于是
+        \[
+            f\left(x\right)=abg_1\left(x\right)h_1\left(x\right)
+        \]
+        断言$ab\in\mathbb{Z}$.考虑反证法，设$\displaystyle
+            ab=\frac{p}{q},\left(p,q\right)=1$且$q>1.$于是$\displaystyle
+            \frac{p}{q}g_1\left(x\right)h_1\left(x\right)\notin \mathbb{Z}\left[x\right]$矛盾.于是$ab\in\mathbb{Z}$则
+        \[
+            f\left(x\right)=\left(abg_1\left(x\right)\right)h_1\left(x\right)
+            \qedhere\]
+    \end{proof}
+}
+\subsubsection{Eisenstein判别法}
+\thm{Eisenstein判别法}{Eisenstein判别法}{
+设整系数多项式$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,a_n\neq 0,n\geqslant 1,p$为素数.若$p\mid a_i\left(\forall 0\leqslant i\leqslant n-1\right)$但$p\nmid a_n$且$p^2\nmid a_0$则$f\left(x\right)$
+在$\mathbb{Q}$不可约.\begin{proof}
+    只需要证明在$\mathbb{Z}$不可约即可.考虑反证法，设$f\left(x\right)=g\left(x\right)h\left(x\right)$，其中
+    \begin{align*}
+        g\left(x\right)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0 \\
+        h\left(x\right)=c_tx^{t}+c_{t-1}x^{t-1}+\cdots+c_1x+c_0
+    \end{align*}
+    是整系数多项式且$m+t=n,
+        m\geqslant1,t\geqslant 1,a_n=b_mc_t,a_0=b_0c_0.$因为
+    $p\nmid a_n\Longrightarrow p\nmid b_m$且
+    $p\nmid c_t.$
+    又$p\mid a_0=b_0c_0
+        \Longrightarrow p\mid b_0$或$p\mid c_0$且不能同时成立$\left(p^2\nmid a_0
+        \right)$.不妨设$p\mid b_0,p\nmid c_0$则$\exists 1\leqslant j\leqslant m,p\mid b_0,p\mid b_1,\cdots,p\mid b_{j-1},p\nmid
+        b_j$，因为\[
+        a_j=b_0c_j+b_1c_{j-1}+\cdots+b_{j-1}c_1+b_jc_0
+    \]
+    于是$p\nmid a_j$，矛盾.
+\end{proof}
+}
+\rem{}{}{
+    Eisenstein判别法是一个非常强的充分条件，但是正如我们前面所说，目前没有比较好的充分必要条件.
+}
+\exa{}{}{
+    证明：$\forall n\geqslant 1,x^n-2$在$\mathbb{Q}$不可约.\begin{proof}
+        \cref{thm:Eisenstein判别法}取$p=2$即可.
+    \end{proof}
+}
+\clm{}{}{
+    在$\mathbb{Q}$上，不可约多项式的次数没有上界.
+}
+\exa{}{}{
+设素数$p$，证明：
+\[
+    f\left(x\right)=x^{p-1}+x^{p-2}+\cdots+x+1
+\]
+在$\mathbb{Q}$不可约.\begin{proof}
+    考虑$x=y+1$则\begin{align*}
+        f\left(x\right)=\frac{x^p-1}{x-1}=\frac{\left(y+1\right)^p-1}{y}=
+        y^{p-1}+\mathrm{C}_p^1y^{p-2}+\mathrm{C}_p^2y^{p-3}+\cdots+\mathrm{C}_p^{p-1}
+    \end{align*}
+    注意到$p\mid \mathrm{C}_p^i\left(1\leqslant i\leqslant p-1\right),p\nmid 1,p\nmid \mathrm{C}_p^{p-1}=p$，由\cref{thm:Eisenstein判别法}证毕.
+\end{proof}
+}
+\exa{}{}{
+    证明
+    \[
+        f\left(x\right)=1+x+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}
+    \]
+    在$n$为素数时在$\mathbb{Q}$不可约.\begin{proof}
+        考虑$n!f\left(x\right),n=p$由\cref{thm:Eisenstein判别法}即可.
+    \end{proof}
+}
+\subsubsection{Osada判别法}
+\thm{Osada判别法}{Osada判别法}{
+设首一整系数多项式
+\[
+    f\left(x\right)=x^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
+\]
+其中\[
+    \left|a_0\right|>1+\sum_{i=1}^{n-1}\left|a_i\right|,\left|a_0\right|\]
+为素数，则$f\left(x\right)$在$\mathbb{Q}$不可约.
+}

@@ -1,0 +1,126 @@
+\section{一元多项式代数}
+\subsection{定义}
+\dfn{一元多项式}{一元多项式}{
+设数域$\mathbb{K}$，$x$为未定元，$a_i\in\mathbb{K}\left(0\leqslant i\leqslant n\right)$，则称如下形式表达式
+\[f\left(x\right)=
+    a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0
+\]
+为$\mathbb{K}$上关于$x$的一元多项式.$\mathbb{K}$上的一元多项式全体记作$\mathbb{K}\left[x\right]$.
+}
+\rem{}{}{
+    所谓“形式”二字，其一，只是形式写成和式，但加法尚未定义；其二，$x$是未定元，不是变元，因为未定元不是数，变元是数.
+}
+\dfn{一元多项式的次数}{一元多项式的次数}{
+    一般地，若$a_n\neq 0$，则$\deg f\left(x\right)=n.$
+
+    特别地，对于常数多项式$f\left(x\right)=a\in\mathbb{K}$，若$a\neq 0$，则$\deg f\left(x\right)=0$，称为零次多项式；若$a=0$，称为零多项式，约定其次数为$-\infty$.
+}
+\subsection{运算}
+\dfn{一元多项式的相等}{一元多项式的相等}{
+特别地，一个多项式等于零多项式当且仅当$a_n=a_{n-1}=\cdots=a_0=0$.
+
+一般地，考虑两个非零多项式
+\begin{align*}
+     & f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,a_n\neq 0 \\
+     & g\left(x\right)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0,b_m\neq 0
+\end{align*}
+其中$m,n\geqslant 0.$则$f\left(x\right)=g\left(x\right)$当且仅当$n=m$且$a_i=b_i\left(\forall 0\leqslant i\leqslant n=m\right)$.
+}
+\dfn{一元多项式的加法与数乘}{一元多项式的加法与数乘}{
+一般地，考虑两个多项式
+\begin{align*}
+     & f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \\
+     & g\left(x\right)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0
+\end{align*}
+不妨设$n\geqslant m$.定义加法
+为\[
+    f\left(x\right)+g\left(x\right)=a_nx^n+\cdots+a_{m+1}x^{m+1}+\left(a_m+b_m\right)x^m+\cdot+\left(a_1+b_1\right)x+\left(a_0+b_0\right)
+\]
+$\forall k\in\mathbb{K}$，定义数乘
+\[
+    k\cdot f\left(x\right)=ka_nx^n+ka_{n-1}x^{n-1}+\cdots+ka_1x+ka_0
+\]
+}
+\thm{}{一元多项式全体是线性空间}{
+    $\mathbb{K}\left[x\right]$在加法和数乘下成为$\mathbb{K}$-线性空间.
+}
+\dfn{一元多项式的乘法}{一元多项式的乘法}{
+    特别地，任一多项式与零多项式的乘积均为零多项式.
+
+    一般地，对于两个非零多项式
+    \begin{align*}
+         & f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,a_n\neq 0 \\
+         & g\left(x\right)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0,b_m\neq 0
+    \end{align*}
+    定义它们的乘积为一个$n+m$次多项式
+    \begin{align*}
+        h\left(x\right) & =f\left(x\right)\cdot g\left(x\right) \\
+                        & =c_{n+m}x^{n+m}+\cdots+c_1x+c_0
+    \end{align*}
+    其中\[
+        c_{n+m}=a_nb_m,\cdots,c_k=\sum_{i+j=k}a_ib_j,\cdots,c_0=a_0b_0\]
+}
+\pro{一元多项式的乘法的性质}{一元多项式的乘法的性质}{
+    \begin{enumerate}[label=\arabic*）]
+        \item 交换律：$f\left(x\right)g\left(x\right)=
+                  g\left(x\right) f\left(x\right)$
+        \item 结合律：$\left(f\left(x\right)g\left(x\right)\right)h\left(x\right)=
+                  f\left(x\right)\left(g\left(x\right)h\left(x\right)\right)$
+        \item 分配律：$f\left(x\right)\left(g\left(x\right)+h\left(x\right)\right)=f\left(x\right)g\left(x\right)+f\left(x\right)h\left(x\right)$
+        \item 乘法与数乘相容：$k\left(f\left(x\right)g\left(x\right)\right)=\left(kf\left(x\right)\right)g\left(x\right)=f\left(x\right)
+                  \left(kg\left(x\right)\right)$
+        \item 乘法单位元：$1\cdot f\left(x\right)=f\left(x\right)$
+    \end{enumerate}
+}
+\subsection{交换代数}
+\cor{}{一元多项式全体是交换代数}{
+    $\mathbb{K}\left[x\right]$是$\mathbb{K}$-交换代数.
+}
+\cor{}{一元多项式全体是交换环}{
+    $\mathbb{K}\left[x\right]$又称$\bbk$上的一元多项式环，进一步地，他还是一个交换环.
+}
+\thm{一元多项式积的次数}{一元多项式积的次数}{
+    若$f\left(x\right),g\left(x\right)\in \mathbb{K}\left[x\right]$，则\[
+        \deg \left(f\left(x\right)g\left(x\right)\right)=\deg f\left(x\right)+\deg g\left(x\right)
+    \]
+}
+\clm{}{}{
+    \cref{thm:一元多项式积的次数}也适用于零多项式.
+}
+\cor{}{一元多项式是整环}{
+    若$f\left(x\right),g\left(x\right)\in \mathbb{K}\left[x\right]$，且$f\left(x\right)\neq 0,g\left(x\right)\neq 0$，则
+    \[
+        f\left(x\right)g\left(x\right)\neq 0
+    \]\begin{proof}
+        \[
+            \deg \left(f\left(x\right)g\left(x\right)\right)=\deg f\left(x\right)+\deg g\left(x\right)\geqslant 0
+            \qedhere
+        \]
+    \end{proof}
+}
+\exa{}{}{
+    $\mathbb{R}$上的代数$C\left[0,1\right]$不具有整性.
+
+    $\mathbb{K}$上的代数$M_n\left(\mathbb{K}\right)$不具有整性.
+}
+\cor{一元多项式的乘法消去律}{一元多项式的乘法消去律}{
+    设$f\left(x\right)\neq 0 ,g\left(x\right),
+        h\left(x\right)\in \mathbb{K}\left[x\right]$，且$f\left(x\right)g\left(x\right)=f\left(x\right)h\left(x\right)$，则\[
+        g\left(x\right)=h\left(x\right)
+    \]
+}
+\pro{关于次数的若干结论}{关于次数的若干结论}{
+设$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,g\left(x\right)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0
+    \in \mathbb{K}\left[x\right],c\neq 0\in \mathbb{K}$，则\begin{enumerate}[label=\arabic*）]
+    \item $\deg\left(cf\left(x\right)\right)=\deg f\left(x\right)$
+    \item $\deg\left(f\left(x\right)\pm g\left(x\right)\right)\leqslant \max\left\{
+              \deg f\left(x\right),\deg g\left(x\right)
+              \right\}$ ，等号有两种情况取到
+          \[
+              \begin{cases*}
+                  \deg f\left(x\right)\neq \deg g\left(x\right) \\
+                  \deg f\left(x\right)=\deg g\left(x\right),a_n+b_m\neq 0
+              \end{cases*}
+          \]
+\end{enumerate}
+}

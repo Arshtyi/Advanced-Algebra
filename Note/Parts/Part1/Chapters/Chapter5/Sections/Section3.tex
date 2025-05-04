@@ -1,0 +1,304 @@
+\newpage
+\section{最大公因式}
+\subsection{定义}
+\dfn{公因式与公倍式}{公因式与公倍式}{
+    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$，若$d\left(x\right)\in\mathbb{K}\left[x\right]$\st
+    \[
+        d\left(x\right)\mid f\left(x\right),d\left(x\right)\mid g\left(x\right)
+    \]
+    则称$d\left(x\right)$为$f\left(x\right)$与$g\left(x\right)$的一个公因式（公因子）；
+    若$m\left(x\right)\in\mathbb{K}\left[x\right]$\st
+    \[
+        f\left(x\right)\mid m\left(x\right),g\left(x\right)\mid m\left(x\right)
+    \]
+    则称$m\left(x\right)$是$f\left(x\right)$与$g\left(x\right)$的一个公倍式.
+}
+\dfn{最大公因式与最小公倍式}{最大公因式与最小公倍式}{
+    若$d\left(x\right)$是$f\left(x\right)$与$g\left(x\right)$的公因式，且对于$f\left(x\right)$与$g\left(x\right)$的任一公因式$h\left(x\right)$，均有
+    \[
+        h\left(x\right)\mid d\left(x\right)
+    \]
+    则称$d\left(x\right)$是$f\left(x\right)$与$g\left(x\right)$的最大公因式，记作
+    \[
+        d\left(x\right)=\left(f\left(x\right),g\left(x\right)\right)=\gcd\left(f\left(x\right),g\left(x\right)\right)
+    \]
+
+    若$m\left(x\right)$是$f\left(x\right)$与$g\left(x\right)$的公倍式，且对于$f\left(x\right)$与$g\left(x\right)$的任一公倍式$l\left(x\right)$，均有
+    \[
+        m\left(x\right)\mid l\left(x\right)
+    \]
+    则称$m\left(x\right)$是$f\left(x\right)$与$g\left(x\right)$的最小公倍式，记作
+    \[
+        m\left(x\right)=\left[f\left(x\right),g\left(x\right)\right]=\lcm\left(f\left(x\right),g\left(x\right)\right)
+    \]
+}
+\clm{零多项式的最大公因式}{}{
+    约定零多项式的最大公因式为零多项式.
+}
+\thm{最大公因式存在性}{最大公因式存在性}{
+    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$,且二者不全为零，则$f\left(x\right),g\left(x\right)$的最大公因式
+    $d\left(x\right)$必定存在且存在
+    $u\left(x\right),v\left(x\right)\in\mathbb{K}\left[x\right]$\st
+    \[
+        d\left(x\right)=f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)
+    \]\begin{proof}
+        利用Euclid辗转相除法证明.
+
+        其一，若$f\left(x\right)=0$,则$\left(f\left(x\right),g\left(x\right)\right)=g\left(x\right)$，反之亦然.
+
+        设$f\left(x\right)\neq 0,g\left(x\right)\neq 0$.作带余除法
+        \[
+            f\left(x\right)=g\left(x\right)q_1\left(x\right)+r_1\left(x\right)
+        \]
+        其中$\deg r_1\left(x\right)<\deg g\left(x\right)$.于是\[
+            g\left(x\right)=r_1\left(x\right)q_2\left(x\right)+r_2\left(x0\right)
+        \]
+        其中$\deg r_2\left(x\right)<\deg r_1\left(x\right)$.如此重复即
+        \[
+            r_{s-2}\left(x\right)=r_{s-1}\left(x\right)q_s\left(x\right)+r_s\left(x\right)
+        \]
+        其中$\deg r_s\left(x\right)<\deg r_{s-1}\left(x\right)$.再做一次即得
+        \[
+            r_{s-1}\left(x\right)=r_s\left(x\right)q_{s+1}\left(x\right)+r_{s+1}\left(x\right)
+        \]
+        其中$\deg r_{s+1}\left(x\right)<\deg r_s\left(x\right)$.考虑到余式次数严格递减， 这个过程必定在某一步得到一个为零的余式，不妨设$r_{s+1}\left(x\right)=0,r_{s}\left(x\right)\neq 0.$断言
+        \[
+            r_s\left(x\right)=\gcd\left(f\left(x\right),g\left(x\right)\right)
+        \]
+        约定$r_{-1}\left(x\right)=f\left(x\right),r_0\left(x\right)=
+            g\left(x\right)$.
+        只需倒回验证即可.存在性证毕.
+
+        因为\[
+            r_s\left(x\right)=r_{s-2}\left(x\right)-r_{s-1}\left(x\right)q_s\left(x\right)
+        \]
+        且\[
+            r_{s-1}\left(x\right)=r_{s-3}\left(x\right)-r_{s-2}\left(x\right)q_{s-1}\left(x\right)
+        \]
+        则\[r_s\left(x\right)=
+            r_{s-3}\left(x\right)\left(-q_s\left(x\right)\right)+\left(1+q_{s-1}\left(x\right)q_s\left(x\right)\right)
+            r_{s-2}\left(x\right)
+        \]
+        迭代即得
+        \[
+            r_s\left(x\right)=r_{-1}\left(x\right)u\left(x\right)+r_0\left(x\right)v\left(x\right)
+            \qedhere\]
+    \end{proof}
+}
+\rem{}{}{
+    反过来，若存在$u\left(x\right),v\left(x\right)$\st
+    \[
+        d\left(x\right)=f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)
+    \]
+    却不能推出$d\left(x\right)=\left(f\left(x\right),g\left(x\right)\right)$.除非加上$d\left(x\right)\mid f\left(x\right)$且$d\left(x\right)\mid g\left(x\right)$的条件.
+}
+\subsection{唯一性}
+\thm{最大公因式不唯一}{最大公因式不唯一}{
+    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$的两个最大公因式为
+    $d_1\left(x\right),d_2\left(x\right)$，
+    则$d_1\left(x\right)\mid
+        d_2\left(x\right),d_2
+        \left(x\right)\mid d_1\left(x\right)$.那么必定存在$c\neq 0\in\mathbb{K}$\st
+    \[d_2\left(x\right)=cd_1\left(x\right)\]
+}
+\dfn{首一多项式}{首一多项式}{
+    称首项系数为$1$的多项式为首一多项式.
+}
+\clm{}{}{
+    一般地，约定最大公因式均指首一多项式，如此约定下最大公因式存在且唯一.
+}
+\thm{最小公倍式不唯一}{最小公倍式不唯一}{
+    设多项式$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$的两个最小公倍式为
+    $m_1\left(x\right),m_2\left(x\right)$，
+    则$m_1\left(x\right)\mid
+        m_2\left(x\right),m_2
+        \left(x\right)\mid m_1\left(x\right)$.那么必
+    定存在$c\neq 0\in\mathbb{K}$\st
+    \[m_2\left(x\right)=cm_1\left(x\right)\]
+}
+\clm{}{}{
+    一般地，约定最小公倍式均指首一多项式，如此约定下最小公倍式存在且唯一（存在性证明见）.
+}
+\subsection{有限多个多项式}
+\dfn{有限多个多项式的公因式与最大公因式}{有限多个多项式的公因式与最大公因式}{
+    设存在有限多个多项式$f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)\in\mathbb{K}\left[x\right]\left(m\geqslant 2\right)$，若$d\left(x\right)\mid f_i\left(x\right)\left(\forall 1\leqslant i\leqslant m\right)$,则称$d\left(x\right)$为
+    $f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)$的一个公因式.
+    进一步地，若$f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)$的任一公因式$h\left(x\right)$均有
+    \[
+        h\left(x\right)\mid d\left(x\right)
+    \]
+    则称$d\left(x\right)$为$f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)$的最大公因式，记作\[
+        d\left(x\right)=\left(
+        f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)
+        \right)\left(m\geqslant 2\right)
+    \]
+}
+\dfn{有限多个多项式的公倍式与最小公倍式}{有限多个多项式的公倍式与最小公倍式}{
+    设存在有限多个多项式$f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)\in\mathbb{K}\left[x\right]\left(m\geqslant 2\right)$，若$f_i\left(x\right)|m\left(x\right)\left(\forall 1\leqslant i\leqslant m\right)$，则称$m\left(x\right)$为
+    $f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)$的一个公倍式.
+    进一步的，若$f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)$的任一公倍式$l\left(x\right)$均有
+    \[
+        m\left(x\right)\mid l\left(x\right)
+    \]
+    则称$m\left(x\right)$为
+    $f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)$的最小公倍式，记作\[
+        m\left(x\right)=\left[
+            f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)
+            \right]\left(m\geqslant 2\right)
+    \]
+}
+\lem{}{多个多项式的最大公因式的求法}{
+    设多项式$f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)\in\mathbb{K}\left[x\right]\left(m\geqslant 3\right)$，则\[
+        \left(f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)\right)=\left(\left(f_1\left(x\right),f_2\left(x\right)\right),f_3\left(x\right),\cdots,f_m\left(x\right)\right)
+    \]\begin{proof}
+        设$d\left(x\right)=\left(f_1\left(x\right),f_2\left(x\right),\cdots,f_m\left(x\right)\right),d_{12}\left(x\right)=\left(f_1\left(x\right),f_2\left(x\right)\right)$.
+        只需证\[
+            d\left(x\right)=\left(d_{12}\left(x\right),f_3\left(x\right),\cdots,f_m\left(x\right)\right)
+        \]
+        一方面，$d\left(x\right)|f_i\left(x\right)\left(\forall 1\leqslant i\leqslant m\right)$，故$d\left(x\right)|d_{12}\left(x\right),d\left(x\right)|f_i\left(x\right)\left(\forall 3\leqslant i\leqslant m\right)$.另一方面，任取$h\left(x\right)$为$d_{12}\left(x\right),f_3\left(x\right),\cdots,f_m\left(x\right)$，则
+        $h\left(x\right)\mid d_{12}\left(x\right)$，故$h\left(x\right)\mid f_1\left(x\right)$且
+        $h\left(x\right)\mid f_2\left(x\right)$，于是$h\left(x\right)\mid f_i\left(x\right)\left(\forall 1\leqslant i\leqslant m\right)$，因此$h\left(x\right)\mid d\left(x\right)$.
+    \end{proof}
+}
+\subsection{互素}
+\dfn{互素}{互素}{
+    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$，若$\gcd\left(f\left(x\right),g\left(x\right)\right)=1$，称$f\left(x\right),g\left(x\right)$互素.
+}
+\thm{互素的判定}{互素的判定}{
+    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$，则$f\left(x\right)$与$g\left(x\right)$互素等价于存在$u\left(x\right),v\left(x\right)\in\mathbb{K}\left[x\right]$\st
+    \[
+        f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)=1
+    \]\begin{proof}
+        必要性，即已知互素，$d\left(x\right)=1$，由\cref{thm:最大公因式存在性}得证.
+
+        充分性，设$d\left(x\right)=\left(f\left(x\right),g\left(x\right)\right)$，则
+        $d\left(x\right)\mid f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)=1$，即$\exists
+            t\left(x\right)\in\mathbb{K}\left[x\right]$\st$1=d\left(x\right)t\left(x\right)$.两边同时取次数即得
+        $d\left(x\right)=a\neq 0$，考虑到首一多项式，$d\left(x\right)=1$.
+    \end{proof}
+}
+\cor{}{互素因子之积仍是因子}{
+    设$f_1\left(x\right)\mid f\left(x\right)$且$f_2\left(x\right)\mid f\left(x\right)$，若$\left(f_1\left(x\right),f_2\left(x\right)\right)=1$，则\[
+        f_1\left(x\right)f_2\left(x\right)\mid f\left(x\right)
+    \]\begin{proof}
+        设$u\left(x\right),v\left(x\right)\in\mathbb{K}\left[x\right]$\st
+        \[
+            f_1\left(x\right)u\left(x\right)+f_2\left(x\right)v\left(x\right)=1
+        \]
+        即\[
+            f_1\left(x\right)u\left(x\right)f\left(x\right)+f_2\left(x\right)v\left(x\right)f\left(x\right)=f\left(x\right)
+        \]
+        明显$f_1\left(x\right)f_2\left(x\right)\mid f_1\left(x\right)u\left(x\right)f\left(x\right)$，$f_1\left(x\right)f_2\left(x\right)\mid
+            f_2\left(x\right)v\left(x\right)f\left(x\right)$.
+    \end{proof}
+}
+\cor{}{互素多项式之积的因子也是每个的因子}{
+    若$\left(f\left(x\right),g\left(x\right)\right)=1$，且$f\left(x\right)\mid g\left(x\right)h\left(x\right)$，则\[
+        f\left(x\right)\mid h\left(x\right)
+    \]\begin{proof}
+        类似地
+        \[
+            f\left(x\right)u\left(x\right)h\left(x\right)+g\left(x\right)v\left(x\right)h\left(x\right)=h\left(x\right)
+            \qedhere
+        \]
+    \end{proof}
+}
+\cor{}{素多项式之积仍然是素多项式}{
+    若$\left(f_1\left(x\right),g\left(x\right)\right)=1,\left(f_2\left(x\right),g\left(x\right)\right)=1$，则
+    \[
+        \left(f_1\left(x\right)f_2\left(x\right),g\left(x\right)\right)=1
+    \]\begin{proof}
+        因为\[
+            f_1\left(x\right)u_1\left(x\right)+g\left(x\right)v_1\left(x\right)=1
+        \]
+        \[
+            f_2\left(x\right)u_2\left(x\right)+g\left(x\right)v_2\left(x\right)=1
+        \]
+        于是\begin{align*}
+              & \left(f_1\left(x\right)f_2\left(x\right)\right)\left(u_1\left(x\right)u_2\left(x\right)\right)                                                                                          \\
+            + & g\left(x\right)\left[f_1\left(x\right)u_1\left(x\right)v_2\left(x\right)+f_2\left(x\right)u_2\left(x\right)v_1\left(x\right)+g\left(x\right)v_1\left(x\right)v_2\left(x\right)\right]=1
+            \qedhere
+        \end{align*}
+    \end{proof}
+}
+\cor{}{提取互素部分}{
+    设$d\left(x\right)=\left(f\left(x\right),g\left(x\right)\right)$，且$f\left(x\right)=
+        f_1\left(x\right)d\left(x\right),g\left(x\right)=g_1\left(x\right)d\left(x\right)$，则\[
+        \left(f_1\left(x\right),g_1\left(x\right)\right)=1
+    \]
+}
+\cor{}{因子的叠加}{
+    设$\left(f\left(x\right),g\left(x\right)\right)=d\left(x\right)$，则\[
+        \left(t\left(x\right)f\left(x\right),t\left(x\right)g\left(x\right)\right)=t\left(x\right)d\left(x\right)
+    \]\begin{proof}
+        因为\[
+            f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)=d\left(x\right)
+        \]
+        则\[
+            f\left(x\right)t\left(x\right)u\left(x\right)+g\left(x\right)t\left(x\right)v\left(x\right)=t\left(x\right)d\left(x\right)
+        \]
+        任取$f\left(x\right)t\left(x\right),g\left(x\right)t\left(x\right)$公因子为$h\left(x\right)$，则
+        \[
+            h\left(x\right)\mid t\left(x\right)d\left(x\right)
+            \qedhere
+        \]
+    \end{proof}
+}
+\subsection{最小公倍式}
+\thm{最小公倍式存在性}{最小公倍式存在性}{
+    设非零多项式$f\left(x\right),g\left(x\right)$，则\[
+        f\left(x\right)g\left(x\right)\sim \left(f\left(x\right)g\left(x\right)\right)\left[f\left(x\right),g\left(x\right)\right]
+    \]\begin{proof}
+        设最大公因式$d\left(x\right)=\left(f\left(x\right),g\left(x\right)\right),
+            f\left(x\right)=f_1\left(x\right)d\left(x\right),g\left(x\right)=g_1\left(x\right)d\left(x\right)$，于是$\left(
+            f_1\left(x\right),g_1\left(x\right)
+            \right)=1.$于是\[
+            \frac{
+                f\left(x\right)g\left(x\right)
+            }{\left(f\left(x\right),g\left(x\right)\right)}=f_1\left(x\right)d\left(x\right)g_1\left(x\right)
+        \]
+        只需证明$f_1\left(x\right)d\left(x\right)g_1\left(x\right)$为最小公倍式.
+
+        一方面，显然这是$f\left(x\right),g\left(x\right)$的一个公倍式.另一方面，任取$l\left(x\right)$为$f\left(x\right),g\left(x\right)$的一个公倍式.
+        因为$l\left(x\right)=f\left(x\right)u\left(x\right)=g\left(x\right)
+            v\left(x\right)$.于是
+        \[
+            f_1\left(x\right)u\left(x\right)=g_1\left(x\right)v\left(x\right)
+        \]因为$\left(f_1\left(x\right),g_1\left(x\right)\right)=1$，故\[
+            g_1\left(x\right)\mid u\left(x\right)
+        \]设$u\left(x\right)=g_1\left(x\right)p\left(x\right)$，于是$l\left(x\right)=f_1\left(x\right)d\left(x\right)g_1\left(x\right)p\left(x\right)$.
+    \end{proof}
+}
+\subsection{Chinese Remainden Theorem}
+\thm{Chinese Remainden Theorem}{Chinese Remainden Theorem}{ 中国剩余定理，又叫孙子定理.
+
+    设$g_1\left(x\right),\cdots,g_m\left(x\right)$为两两互素的多项式，
+    $r_1\left(x\right),\cdots,r_m\left(x\right)\in\mathbb{K}\left[x\right]$，则存在$f\left(x\right)\in\mathbb{K}\left[x\right]$使得
+    \[
+        f\left(x\right)=g_i\left(x\right)q_i\left(x\right)+r_i\left(x\right)\left(\forall 1\leqslant i\leqslant m\right)
+    \]\begin{proof}
+        构造\[f_i\left(x\right)=g_i\left(x\right)p_i\left(x\right)+1\left(\forall 1\leqslant i\leqslant m\right)\]
+        且\[
+            g_j\left(x\right)\mid f_i\left(x\right)\left(j\neq i\right)
+        \]
+        那么$\displaystyle
+            f\left(x\right)=\sum_{i=1}^{m}r_i\left(x\right)f_i\left(x\right)
+            .$
+
+        $f_1\left(x\right)$满足如下条件：
+        \begin{align*}
+             & f_1\left(x\right)\equiv 1\pmod {g_1\left(x\right)}         \\
+             & f_1\left(x\right)\equiv 0\pmod {g_j\left(x\right),j\neq 1}
+        \end{align*}
+        因为$\left(g_1\left(x\right),g_j\left(x\right)\right)=1\left(j\neq 1\right)$.故$\exists u_j\left(x\right),v_j\left(x\right)\in\mathbb{K}\left[x\right]$\st
+        \[
+            g_1\left(x\right)u_j\left(x\right)+g_j\left(x\right)v_j\left(x\right)=1
+        \]
+        于是构造$f_1\left(x\right)$如下：
+        \begin{align*}
+            f_1\left(x\right) & =g_2\left(x\right)v_2\left(x\right)\cdots g_n\left(x\right)v_n\left(x\right)                              \\
+                              & =\left(1-g_1\left(x\right)u_2\left(x\right)\right)\cdots\left(1-g_1\left(x\right)u_n\left(x\right)\right)
+        \end{align*}
+        其余同理,证毕.
+    \end{proof}
+}

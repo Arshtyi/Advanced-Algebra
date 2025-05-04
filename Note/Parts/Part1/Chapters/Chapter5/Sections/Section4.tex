@@ -1,0 +1,180 @@
+\newpage
+\section{因式分解}
+\subsection{可约与不可约}
+\dfn{可约多项式与不可约多项式}{可约多项式与不可约多项式}{
+    设$f\left(x\right)\in\mathbb{K}\left[x\right]$,
+    $\deg f\left(x\right)\geqslant 1$.若存在$g\left(x\right),h\left(x\right)\in\mathbb{K}\left[x\right]$,且
+    $\deg g\left(x\right)<\deg f\left(x\right),\deg h\left(x\right)<\deg f\left(x\right)$\st
+    \[f\left(x\right)=g\left(x\right)h\left(x\right)\]
+    那么称$f\left(x\right)$在$\mathbb{K}\left[x\right]$上是可约的.否则称为是不可约的.
+}
+\clm{一次多项式的不可约性}{}{
+    多项式的可约与否取决于数域的选择.但不管在哪个域上，一次多项式总是不可约的.
+}
+\dfn{可约的等价定义}{可约的等价定义}{
+    设$f\left(x\right)\in\mathbb{K}\left[x\right]$，$\deg f\left(x\right)\geqslant 1$.若存在多项式$g\left(x\right),h\left(x\right)\in\mathbb{K}\left[x\right]$，且
+    $\deg g\left(x\right)>0,\deg h\left(x\right)>0$\st
+    \[f\left(x\right)=g\left(x\right)h\left(x\right)\]那么称$f\left(x\right)$在$\mathbb{K}\left[x\right]$上是可约的.
+}
+\dfn{不可约的等价定义}{不可约的等价定义}{
+    设$f\left(x\right)\in\mathbb{K}\left[x\right],\deg f\left(x\right)\geqslant 1$，则$f\left(x\right)$不可约等价于$f\left(x\right)$的因式有且仅有$c\neq 0$和$cf\left(x\right)$.
+}
+\exa{}{}{
+    $f\left(x\right)=x^2-2$在$\mathbb{Q}\left[x\right]$不可约，在$\mathbb{R}\left[x\right]$可约.
+}
+\lem{}{不可约多项式与其他多项式}{
+    设$p\left(x\right)$为$\mathbb{K}\left[x\right]$
+    上的一个不可约多项式，$f\left(x\right)\in \mathbb{K}\left[x\right]$，则要么$\left(p\left(x\right),f\left(x\right)\right)=1$，要么
+    $p\left(x\right)\mid f\left(x\right)$.\begin{proof}
+        设$\left(p\left(x\right),f\left(x\right)\right)=d\left(x\right)$，则$d\left(x\right)|p\left(x\right)$.
+        那么显然，$d\left(x\right)=1$或者$d\left(x\right)=cp\left(x\right)$（首一多项式）.
+    \end{proof}
+}
+\thm{}{不可约多项式作为因子不会是两个多项式的因子乘法得到的}{
+    设不可约多项式$p\left(x\right)\in\mathbb{K}\left[x\right]$，
+    且有多项式$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$且$p\left(x\right)\mid f\left(x\right)g\left(x\right)$，则
+    $p\left(x\right)\mid f\left(x\right)$或$p\left(x\right)\mid g\left(x\right)$.
+}
+\clm{}{}{
+    根据\cref{lem:不可约多项式与其他多项式}，对于首一不可约多项式，互异即是互素.
+}
+\cor{}{不可约多项式作为因子不会是多个多项式的因子乘法得到的}{
+    设不可约多项式$p\left(x\right)$且\[
+        p\left(x\right)\mid f_1\left(x\right)f_2\left(x\right)\cdots f_m\left(x\right)
+    \]
+    则$\exists 1\leqslant i\leqslant m$，\st$p\left(x\right)\mid f_i\left(x\right)$.
+}
+\subsection{因式分解}
+\thm{因式分解定理}{因式分解定理}{
+    设$f\left(x\right)\in\mathbb{K}\left[x\right]$且$\deg f\left(x\right)\leqslant 1$，则\begin{enumerate}[label=\arabic*）]
+        \item 存在性：$f\left(x\right)$一定可分解为$\mathbb{K}$上有限多个不可约多项式之积
+        \item 唯一性：设\[
+                  f\left(x\right)=p_1\left(x\right)p_2\left(x\right)\cdots p_s\left(x\right)=q_1\left(x\right)q_2\left(x\right)\cdots q_t\left(x\right)
+              \]
+              是$f\left(x\right)$的两个不可约分解，即$p_i\left(x\right),q_j\left(x\right)$均为$\mathbb{K}$上的次数大于零的不可约多项式，则一定有$s=t$且在适当调换因式的次序后，有\[
+                  p_i\left(x\right)\sim q_i\left(x\right)\left(\forall 1\leqslant i\leqslant s=t\right)
+              \]
+    \end{enumerate}\begin{proof}
+        \begin{enumerate}[label=\arabic*）]
+            \item 对$\deg f\left(x\right)=n$归纳，$n=1$显然成立.
+
+                  设$\deg f\left(x\right)<n$时成立，下证$\deg f\left(x\right)=n$.$f\left(x\right)$不可约时显然成立.设$f\left(x\right)$可约.则
+                  \[f\left(x\right)=g\left(x\right)h\left(x\right)\]其中$g\left(x\right),h\left(x\right)\in\mathbb{K}\left[x\right],\deg g\left(x\right)<n,\deg h\left(x\right)<n$.
+                  则由归纳假设有
+                  \[g\left(x\right)=p_1\left(x\right)\cdots p_s\left(x\right),h\left(x\right)=q_1\left(x\right)q_2\left(x\right)\cdots q_t\left(x\right)\]其中$p_i\left(x\right),q_j\left(x\right)$均为$\mathbb{K}\left[x\right]$上的不可约多项式.于是存在性证毕.
+
+            \item 对不可约因式个数$s$归纳，$s=1$时$f\left(x\right)=p_1\left(x\right)=q_1\left(x\right)\cdots q_t\left(
+                      x\right)$，$t\geqslant 2$时$p_1\left(x\right)$可约，矛盾.于是$t = 1.$
+                  即$s=t$且$p_1\left(x\right)=q_1\left(x\right)$.
+
+                  设不可约因式个数小于$s$时成立，下证等于时成立.因为\[
+                      f\left(x\right)=p_1\left(x\right)p_2\left(x\right)\cdots p_s\left(x\right)=q_1\left(x\right)q_2\left(x\right)\cdots q_t\left(x\right)
+                  \]
+                  故$p_1\left(x\right)\mid q_1\left(x\right)q_2\left(x\right)\cdots q_t\left(x\right)$，由素性知，$\exists 1\leqslant i\leqslant t$，\st
+                  $p_1\left(x\right)\mid q_i\left(x\right).$不妨调整为$i=1$.即$q_1\left(x\right)=p_1\left(x\right)h\left(x\right).$由$p_1\left(x\right)$的不可约性知$h\left(x\right)=c\neq 0.$
+                  即$q_1\left(x\right)=cp_1\left(x\right)\Longrightarrow p_1\left(x\right)\sim q_1\left(x\right)$.于是得到
+                  \[
+                      p_2\left(x\right)\cdots p_s\left(x\right)=cq_2\left(x\right)\cdots q_t\left(x\right)
+                  \]
+                  则由归纳假设有，$s-1=t-1\Longrightarrow s=t$且调换次序下$p_i\left(x\right)\sim q_i\left(x\right)\left(\forall 2\leqslant i \leqslant s=t\right)$.
+
+                  于是得证.\qedhere
+        \end{enumerate}
+    \end{proof}
+}
+\thm{标准因式分解}{标准因式分解}{
+    设$f\left(x\right)\in\mathbb{K}\left[x\right],\deg f\left(x\right)\geqslant 1$，则有如下标准因式分解
+    \[
+        f\left(x\right)=cp_1\left(x\right)^{e_1}p_2\left(x\right)^{e_2}\cdots p_m\left(x\right)^{e_m}
+    \]
+    其中$c\neq 0\in\mathbb{K}$，$p_i\left(x\right)\left(1\leqslant i\leqslant m\right)$为互异的首一不可约多项式，$ e_i\geqslant 1\left(\forall1\leqslant i\leqslant m\right)$.
+}
+\dfn{重因式}{重因式}{
+    若标准因式分解中$e_1>1\left(\forall 1\leqslant i\leqslant m\right)$，则$p_i\left(x\right)$称为$f\left(x\right)$的$e_i$重因式.$e_i=1$时称为单因式.
+}
+\cor{公共因式分解}{公共因式分解}{
+    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$，则添加某些不可约多项式的零次幂后，有如下公共因式分解
+    \begin{align*}
+         & f\left(x\right)=c_1p_1\left(x\right)^{e_1}p_2\left(x\right)^{e_2}\cdots p_n\left(x\right)^{e_n};
+        \\
+         & g\left(x\right)=c_2p_1\left(x\right)^{f_1}p_2\left(x\right)^{f_2}\cdots p_n\left(x\right)^{f_n}.
+    \end{align*}
+    其中$c_1\neq 0,c_2\neq 0\in\mathbb{K}$，$p_i\left(x\right)\left(1\leqslant i\leqslant n\right)$为互异的首一不可约多项式，$e_i\geqslant 0,f_i\geqslant 0\left(\forall 1\leqslant i\leqslant n\right)$.
+}
+\pro{公共因式分解的若干性质}{公共因式分解的若干性质}{
+    \begin{enumerate}[label=\arabic*）]
+        \item  $g\left(x\right)\mid f\left(x\right)\Longleftrightarrow f_i\leqslant e_i\left(\forall 1\leqslant i\leqslant
+                  n\right)$
+        \item 令$k_i=\min\left\{e_i,f_i\right\},l_i=\max\left\{e_i,f_i\right\}\left(\forall 1\leqslant i\leqslant n\right)$，则有
+              \begin{align*}
+                   & \left(f\left(x\right),g\left(x\right)\right)=p_1\left(x\right)^{k_1}p_2\left(x\right)^{k_2}\cdots p_n\left(x\right)^{k_n} \\
+                   & \left[f\left(x\right),g\left(x\right)\right]=p_1\left(x\right)^{l_1}p_2\left(x\right)^{l_2}\cdots p_n\left(x\right)^{l_n}
+              \end{align*}
+        \item           \[f\left(x\right)g\left(x\right)\sim \left(f\left(x\right),g\left(x\right)\right)\left[f\left(x\right),g\left(x\right)\right]\]
+    \end{enumerate}
+}
+\rem{}{}{
+    考虑计算某一多项式是否具有重因式的问题，尽管我们可以计算出它的标准因式分解，但前提是找到合适的不可约多项式，这是极其困难的一件事.
+}
+\subsection{形式导数与重因式判定}
+\dfn{形式导数}{形式导数}{
+设$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\in\mathbb{K}\left[x\right]$，则
+\[
+    f'\left(x\right)=na_{n}x^{n-1}+\left(n-1\right)a_{n-1}x^{n-2}+\cdots+a_1
+\]
+称为其形式导数.
+}
+\pro{形式导数的若干性质}{形式导数的若干性质}{
+    \begin{enumerate}[label=\arabic*）]
+        \item $\left(f\left(x\right)+g\left(x\right)\right)'=f'\left(x\right)+g'\left(x\right)$
+        \item $\left(cf\left(x\right)\right)'=cf'\left(x\right)$
+        \item $\left(f\left(x\right)g\left(x\right)\right)'=f'\left(x\right)g\left(x\right)+f\left(x\right)g'\left(x\right)$
+        \item $\left(f\left(x\right)^m\right)'=mf\left(x\right)^{m-1}f'\left(x\right)$
+        \item 若$\deg f\left(x\right)\geqslant 1$，则$\deg f'\left(x\right)=\deg f\left(x\right)-1$，那么
+              \[
+                  f\left(x\right)\nmid f'\left(x\right)
+              \]
+    \end{enumerate}
+}
+\cor{}{相同的不可约因子}{
+    设多项式$f\left(x\right)\in\mathbb{K}\left[x\right],\deg f\left(x\right)\geqslant 1$，其形式导数为$f'\left(x\right)$，$d\left(x\right)=\left(f\left(x\right),f'\left(x\right)\right)$，则$\displaystyle
+        \frac{f\left(x\right)}{d\left(x\right)}$一定没有重因式且与$f\left(x\right)$有相同的不可约因子（不计重数）.\begin{proof}
+        设标准分解
+        \[
+            f\left(x\right)=cp_1\left(x\right)^{e_1}p_2\left(x\right)^{e_2}\cdots p_m\left(x\right)^{e_m}
+        \]
+        其中$c\neq 0\in\mathbb{K}$,$p_i\left(x\right)\left(1\leqslant i\leqslant m\right)$为互异的首一不可约多项式，$e_i\geqslant 1\left(1\leqslant i\leqslant m\right)$.求导即有
+        \begin{align*}
+            f'\left(x\right)= & ce_1p_1\left(x\right)^{e_1-1}p_2\left(x\right)^{e_2}\cdots p_m\left(x\right)^{e_m}p_1'\left(x\right)  \\
+                              & +ce_2p_1\left(x\right)^{e_1}p_2\left(x\right)^{e_2-1}\cdots p_m\left(x\right)^{e_m}p_2'\left(x\right) \\
+                              & +\cdots                                                                                               \\
+                              & +ce_mp_1\left(x\right)^{e_1}p_2\left(x\right)^{e_2}\cdots p_m\left(x\right)^{e_m-1}p_m'\left(x\right)
+        \end{align*}
+        故$p_1\left(x\right)^{e_1-1}p_2\left(x\right)^{e_2-1}\cdots p_m\left(x\right)^{e_m-1}$是$f\left(x\right),f'\left(x\right)$的一个公因式.下面证明它是最大公因式.
+
+        设$d\left(x\right)=\left(f\left(x\right),f'\left(x\right)\right)=
+            p_1\left(x\right)^{k_1}p_2\left(x\right)^{k_2}\cdots p_m\left(x\right)^{k_m}$
+        .$e_i-1\leqslant k_i\leqslant
+            e_i\left(\forall 1\leqslant i
+            \leqslant m\right)$，断言全部取下界.
+
+        考虑反证法，设$k_1=e_1$，即$p_1\left(x\right)^{e_1}\mid f'\left(x\right)$，显然矛盾.于是
+        \[
+            d\left(x\right)=p_1\left(x\right)^{e_1-1}p_2\left(x\right)^{e_2-1}\cdots p_m\left(x\right)^{e_m-1}
+        \]
+        则$\displaystyle
+            \frac{f\left(x\right)}{d\left(x\right)}=cp_1\left(x\right)p_2\left(x\right)
+            \cdots p_m\left(x\right)$无重因式且与$f\left(x\right)$有相同的不可约因子.
+    \end{proof}
+}
+\thm{重因式判定}{重因式判定}{
+    设$f\left(x\right)\in\mathbb{K}\left[x\right],\deg f\left(x\right)\geqslant 1$，则$f\left(x\right)$无重因式等价于
+    \[\left(f\left(x\right),f'\left(x\right)\right)=1\]
+}
+\rem{}{}{
+    \cref{thm:重因式判定}表明，计算一个多项式是否存在重因式时，可以
+    避开标准分解（实际上找到标准分解不见得简单，甚至会非常难，因为想要证明或判定
+    一个多项式在域上不可约实际上异常困难，目前也仅有一些充分条件而没有必要条件），转而利用辗转相除法求得
+    该多项式与其导数的公因式从而根据
+    定理\cref{thm:重因式判定}判定.
+}
