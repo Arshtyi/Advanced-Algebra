@@ -1,0 +1,539 @@
+\section{特征值与特征向量}
+\subsection{引入}
+考虑一个曾提出的问题，如何找到一个线性空间的一组基，使得该线性空间上所有线性变换的表示矩阵尽量简单（比如对角阵）.或者说，能否找到一些尽量简单的矩阵使得其他矩阵均与它们中的某一个相似（比如对角阵）.
+
+设线性空间$V_{\bbk}^n$，$\bm{\varphi}\in\mathcal{L}\left(V\right)$，且$\bm{\varphi}$在$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$这组基下的表示矩阵为$\bm{A}=\mathrm{diag}\,\left\{
+    \lambda_1,\lambda_2,\cdots,\lambda_n
+    \right\}$，从而
+\[
+    \left(
+    \bm{\varphi}\left(\bm{e}_1\right),\bm{\varphi}\left(\bm{e}_2\right),\cdots,\bm{\varphi}\left(\bm{e}_n\right)
+    \right)=
+    \left(
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right)\begin{pmatrix}
+        \lambda_1 & 0         & \cdots & 0         \\
+        0         & \lambda_2 & \cdots & 0         \\
+        \vdots    & \vdots    & \ddots & \vdots    \\
+        0         & 0         & \cdots & \lambda_n
+    \end{pmatrix}
+\]即$\bm{\varphi}\left(
+    \bm{e}_i
+    \right)=\lambda_i\bm{e}_i,\forall 1\leqslant i\leqslant n.$那么
+\[
+    \bm{\alpha}= \sum_{i=1}^{n} a_i\bm{e}_i\Longrightarrow
+    \bm{\varphi}\left(
+    \bm{\alpha}
+    \right)=\sum_{i=1}^{n}a_i\lambda_i
+    \bm{e}_i
+\]
+
+设$\lambda_1,\cdots,\lambda_r$非零，$
+    \lambda_{r+1}=\cdots=\lambda_n=0.$则$\mathrm{r}\left(
+    \bm{\varphi}
+    \right)=r$且$\mathrm{Ker}\bm{\varphi}=L\left(
+    \bm{e}_{r+1},\cdots,\bm{e}_n
+    \right),\mathrm{Im}\bm{\varphi}=L\left(
+    \bm{e}_1,\cdots,\bm{e}_r
+    \right)$.
+
+这一切的关键在于$
+    \bm{\varphi}\left(
+    \bm{e}_i
+    \right)=\lambda_i\bm{e}_i,\bm{e}_i\neq 0,\forall 1\leqslant i\leqslant n
+$.这样的$\lambda_i$称为线性变换$\bm{\varphi}$的特征值，$\bm{e}_i$称为$\bm{\varphi}$的特征向量.
+\subsection{特征值与特征向量}
+\dfn{线性变换意义的特征值与特征向量}{线性变换意义的特征值与特征向量}{
+    设$\bm{\varphi}\in\mathcal{L}\left(
+        V_{\mathbb{K}}^n
+        \right)$，若存在$\lambda\in\mathbb{K},\bm{0}\neq \bm{e}\in V\st$
+    \[
+        \bm{\varphi}\left(\bm{e}\right)=\lambda\bm{e}
+    \]则称$\lambda$为$\bm{\varphi}$的特征值，$\bm{e}$为$\bm{\varphi}$对应于特征值$\lambda$的特征向量.
+}
+\dfn{线性变换的特征子空间}{线性变换的特征子空间}{
+    对于每一个特征值$\lambda$，其对应的特征向量加上一个零向量构成的集合称为$\bm{\varphi}$关于特征值$\lambda$的特征子空间，记作$V_{\lambda}\left(\bm{\varphi}\right)=
+        \left\{
+        \bm{v}\in V\mid \bm{\varphi}\left(\bm{v}\right)=\lambda\bm{v}
+        \right\}$.
+}
+\thm{特征子空间的维数}{特征子空间的维数}{
+根据\cref{def:线性变换的特征子空间}知特征子空间$V_{\lambda_0}$的维数$\mathrm{dim}V_{\lambda_0}$等于$\bm{\varphi}$的特征值$\lambda_0$的几何重数.
+}
+\lem{}{特征子空间是不变子空间}{
+    特征子空间$V_{\lambda}\left(\bm{\varphi}\right)$是$V$的子空间，并且是不变子空间.
+}
+下面考虑代数的角度.一般地，设$\bm{\varphi}$在某一组基下的表示矩阵为$\bm{A}\in M_n\left(
+    \mathbb{K}
+    \right)$，$\bm{e}$的坐标向量为$\bm{\alpha}\in\mathbb{K}^n$,则$\bm{\varphi}\left(
+    \bm{e}
+    \right)$的坐标向量为$\bm{A\alpha}$，于是
+\[
+    \bm{\varphi}\left(\bm{e}\right)=\lambda\bm{e}\Longleftrightarrow
+    \bm{A\alpha}=\lambda\bm{\alpha}
+\]
+\dfn{矩阵的特征值与特征向量}{矩阵的特征值与特征向量}{
+    设$\bm{A}\in M_n\left(
+        \mathbb{K}
+        \right)$，若存在$\lambda\in\mathbb{K},\bm{0}\neq\bm{\alpha}\in\mathbb{K}^n\st$
+    \[
+        \bm{A\alpha}=\lambda\bm{\alpha}
+    \]则称$\lambda$为$\bm{A}$的特征值，$\bm{\alpha}$为$\bm{A}$对应于特征值$\lambda$的特征向量.
+}
+\dfn{矩阵的特征子空间}{矩阵的特征子空间}{
+    对于每一个特征值$\lambda$，定义$V_{\lambda}$为线性方程组
+    \[
+        \left(
+        \lambda\bm{I}_n-\bm{A}
+        \right)\bm{\alpha}=\bm{0}
+    \]
+    的解空间，称为$\bm{A}$关于特征值$\lambda$的特征子空间.
+}
+\clm{}{}{
+    $\lambda_0$为$\bm{A}$的特征值当且仅当
+    $\exists \bm{0}\neq \bm{\alpha}\in\mathbb{K}^n \st\bm{A\alpha}=\lambda_0\bm{\alpha}$当且仅当
+    线性方程组$\left(
+        \lambda_0\bm{I}_n-\bm{A}
+        \right)\bm{\alpha}=\bm{0}$有非零解当且仅当$\left(
+        \lambda_0\bm{I}_n-\bm{A}
+        \right)$非奇异当且仅当
+    $\left|\lambda_0\bm{I}_n-\bm{A}\right|=0$.
+
+    即$\lambda$是方程
+    \[\left|\lambda\bm{I}_n-\bm{A}\right|=0\]的根.即考虑
+    \[
+        \left|
+        \lambda\bm{I}_ n-\bm{A}
+        \right|=\begin{vmatrix}
+            \lambda-a_{11} & -a_{12}        & \cdots & -a_{1n}        \\
+            -a_{21}        & \lambda-a_{22} & \cdots & -a_{2n}        \\
+            \vdots         & \vdots         & \ddots & \vdots         \\
+            -a_{n1}        & -a_{n2}        & \cdots & \lambda-a_{nn}
+        \end{vmatrix}
+    \]
+    这是一个关于$\lambda$的$n$次首一多项式，称为$\bm{A}$的特征多项式.
+}
+\dfn{矩阵的特征多项式}{矩阵的特征多项式}{
+    设$\bm{A}\in M_n\left(\mathbb{K}\right)$，称$\left|
+        \lambda\bm{I}_n-\bm{A} \right|$为$\bm{A}$的特征多项式.
+}
+\lem{特征值在相似关系下不改变}{特征值在相似关系下不改变}{
+    相似矩阵有相同的特征多项式，进一步地有相同的特征值（计重数）.\begin{proof}
+        设$\bm{B}=\bm{P}^{-1}\bm{AP}$，则
+        \begin{align*}
+            \left|
+            \lambda\bm{I}_n-\bm{B}
+            \right| & =
+            \left|
+            \lambda\bm{I}_n-\bm{P}^{-1}\bm{AP}
+            \right|=\left|
+            \bm{P}^{-1}\left(
+            \lambda\bm{I}_n-\bm{A}
+            \right)\bm{P}
+            \right|           \\
+                    & =\left|
+            \bm{P}^{-1}
+            \right|\left|
+            \lambda\bm{I}_n-\bm{A}
+            \right|\left|
+            \bm{P}
+            \right|=\left|
+            \lambda\bm{I}_n-\bm{A}
+            \right|\qedhere
+        \end{align*}
+    \end{proof}
+}
+\dfn{线性变换的特征多项式}{线性变换的特征多项式}{
+    设$\bm{\varphi}\in\mathcal{L}\left(
+        V_{\mathbb{K}}^n
+        \right)$，任取一组基下的表示矩阵$\bm{A}$，定义$\bm{\varphi}$的特征多项式是$\bm{A}$的特征多项式（由上知特征多项式的定义不依赖于基或表示矩阵的选取）.记作$\left|
+        \lambda\bm{I}_V-\bm{\varphi}\right|$.
+}
+\lem{}{特征值的和与积}{
+    设$\bm{A}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$，则
+    \begin{align*}
+        \lambda_1+\lambda_2+\cdots+\lambda_n & =\mathrm{tr}\bm{A}   \\
+        \lambda_1\lambda_2\cdots\lambda_n    & =\left|\bm{A}\right|
+    \end{align*}\begin{proof}
+        设\begin{align*}
+            \left|\lambda\bm{I}_n-\bm{A}\right| & =
+            \lambda^n+a_1\lambda^{n-1}+\cdots+a_{n-1}\lambda+a_n \\
+                                                & =\left(
+            \lambda-\lambda_1
+            \right)\left(
+            \lambda-\lambda_2
+            \right)\cdots\left(
+            \lambda-\lambda_n
+            \right)
+        \end{align*}
+        其中$a_1=
+            -\left(
+            a_{11}+a_{22}+\cdots+a_{nn}
+            \right)=-\mathrm{tr}\bm{A}$，令$\lambda = 0$得$
+            a_n=\left(-1\right)^n\left|\bm{A}\right|
+        $.考虑\cref{thm:Vieta定理}Veita定理即可.
+    \end{proof}
+}
+\cor{}{r阶主子式之和}{
+    进一步，可以证明
+    \begin{align*}
+        \sum_{1\leqslant i_1<i_2<\cdots<i_r\leqslant n}\lambda_{i_1}\lambda_{i_2}\cdots\lambda_{i_r}=
+        \sum_{1\leqslant i_1<i_2<\cdots<i_r\leqslant n} \bm{A}\begin{pmatrix}
+                                                                  i_1 & i_2 & \cdots & i_r \\
+                                                                  i_1 & i_2 & \cdots & i_r
+                                                              \end{pmatrix}
+    \end{align*}
+}
+\cor{}{非异阵判定}{
+    设$\bm{A}\in M_n\left(\mathbb{K}\right)$，则$\bm{A}$非异当且仅当
+    $\lambda_i\neq 0,\forall 1\leqslant i\leqslant n.$\begin{proof}
+        \[
+            \lambda_1\lambda_2\cdots \lambda_n=\left|\bm{A}\right|\qedhere
+        \]
+    \end{proof}
+}
+\pro{求解特征值和特征向量}{求解特征值和特征向量}{
+    \begin{enumerate}[label=\arabic*）]
+        \item 写出特征矩阵$\lambda \bm{I}_n-\bm{A}$，求出特征多项式$\left|\lambda \bm{I}_n-\bm{A}\right|=0$的根$\lambda_1,\lambda_2,\cdots,\lambda_n$即为特征值.
+        \item $\forall 1\leqslant i\leqslant n$，解线性方程组$\left(
+                  \lambda_i\bm{I}_n-\bm{A}
+                  \right)\bm{\alpha}=\bm{0}$，得到的非零解即为对应于$\lambda_i$的特征向量.
+    \end{enumerate}
+}
+\rem{特征值的范围}{}{
+    对于$\bm{A}\in M_n\left(
+        \mathbb{K}
+        \right)$，其特征值可能不在$\mathbb{K}$中，例如矩阵
+    $\begin{bmatrix}
+            0 & -1 \\
+            1 & 0
+        \end{bmatrix}\in M_2\left(
+        \mathbb{R}
+        \right)$的特征值为$\pm \mathrm{i} \notin \mathbb{R}$。因此更一般地，我们考虑特征值相关问题时通常在复数域$\mathbb{C}$上考虑.
+}
+\exa{}{}{
+考虑上三角阵
+\[
+    \bm{A}=\begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        0      & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0      & 0      & \cdots & a_{nn}
+    \end{pmatrix}
+\]其特征多项式显然为
+\begin{align*}
+    \left|
+    \lambda\bm{I}_n-\bm{A}
+    \right| & =
+    \begin{vmatrix}
+        \lambda-a_{11} & -a_{12}        & \cdots & -a_{1n}        \\
+        0              & \lambda-a_{22} & \cdots & -a_{2n}        \\
+        \vdots         & \vdots         & \ddots & \vdots         \\
+        0              & 0              & \cdots & \lambda-a_{nn}
+    \end{vmatrix} \\
+            & =\left(
+    \lambda-a_{11}
+    \right)\left(
+    \lambda-a_{22}
+    \right)\cdots\left(
+    \lambda-a_{nn}
+    \right)
+\end{align*}特征值为
+$\lambda_1=a_{11},\lambda_2=a_{22},\cdots,\lambda_n=a_{nn}$.
+}
+\exa{}{}{
+    考虑矩阵
+    \[
+        \begin{bmatrix}
+            3 & 1 & -1 \\
+            2 & 2 & -1 \\
+            2 & 2 & 0
+        \end{bmatrix}
+    \]
+    则其特征根
+    $\lambda_1=1,\lambda_2=\lambda_3=2$.求解
+    \[
+        \left(
+        \lambda\bm{I}_3-\bm{A}
+        \right)\bm{x}=\bm{0}
+    \]得：$\lambda_1=1$时
+    \[
+        \begin{bmatrix}
+            -2 & -1 & 1 \\
+            -2 & -1 & 1 \\
+            -2 & -2 & 1
+        \end{bmatrix}\longrightarrow
+        \begin{bmatrix}
+            1 & 0 & -\frac{1}{2} \\
+            0 & 1 & 0            \\
+            0 & 0 & 0
+        \end{bmatrix}\Longrightarrow
+        \bm{\xi}_1=\begin{pmatrix}
+            1 \\0\\2
+        \end{pmatrix}
+    \]
+    对应特征向量为$c_1\bm{\xi}_1,c\neq 0.$
+    $\lambda_2=\lambda_3=2$时
+    \[
+        \begin{bmatrix}
+            -1 & -1 & 1 \\
+            -2 & 0  & 1 \\
+            -2 & -2 & 2
+        \end{bmatrix}\longrightarrow
+        \begin{bmatrix}
+            1 & 0 & -\frac{1}{2} \\
+            0 & 1 & -\frac{1}{2} \\
+            0 & 0 & 0
+        \end{bmatrix}\Longrightarrow
+        \bm{\xi}_2=\begin{pmatrix}
+            1 \\1\\2
+        \end{pmatrix}
+    \]对应特征向量为$c_2\bm{\xi}_2,c_2\neq 0$.
+}
+\thm{特征多项式的降阶公式}{特征多项式的降阶公式}{
+    设$\bm{A}\in M_{m\times n}\left(\mathbb{C}\right),\bm{B}\in M_{n\times m}\left(\mathbb{C}\right)\left(m\geqslant n\right)$，则\[
+        \left|
+        \lambda\bm{I}_m-\bm{A}\bm{B}
+        \right|=\lambda^{m-n}\left|
+        \lambda\bm{I}_n-\bm{B}\bm{A}
+        \right|
+    \]
+}
+\subsection{相似}
+\thm{}{必定复相似于三角阵}{
+    任一复方阵必复相似于一个上（下）三角阵.\begin{proof}
+        设$\bm{A}\in M_n\left(
+            \mathbb{C}
+            \right)$，对阶数$n$进行归纳，当$n=1$时结论显然成立.假设$n-1$时结论成立，考虍$n$时的情况.由\cref{thm:代数学基本定理}代数学基本定理，任取$\bm{A}$的特征值$\lambda_1$和特征向量$\bm{0}\neq \bm{\alpha}_1\in \mathbb{C}^n$即
+        \[
+            \bm{A\alpha}_1=\lambda_1\bm{\alpha}_1
+        \]
+
+        根据\cref{thm:基扩张定理}基扩张定理，将$\bm{\alpha}_1$扩张为全空间$\mathbb{C}^n$的一组基$\left\{
+            \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
+            \right\}$.令$\bm{P}=\left(
+            \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
+            \right)\in M_n\left(
+            \mathbb{C}
+            \right)$且$\bm{P}$非异.因为
+        \begin{align*}
+            \bm{AP} & =\left(
+            \bm{A\alpha}_1,\bm{A\alpha}_2,\cdots,\bm{A\alpha}_n
+            \right)           \\
+                    & =\left(
+            \bm{\alpha}_1,  \bm{A\alpha}_2,\cdots,\bm{A\alpha}_n
+            \right)\begin{bmatrix}
+                       \lambda_1 & *            \\
+                       \bm{O}    & \bm{A}_{n-1}
+                   \end{bmatrix}
+        \end{align*}
+        其中$\bm{A}_{n-1}\in M_{n-1}\left(
+            \mathbb{C}
+            \right)$.于是
+        \[
+            \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
+                \lambda_1 & *            \\
+                \bm{O}    & \bm{A}_{n-1}
+            \end{pmatrix}
+        \]
+        由归纳假设,$\exists\textup{非异阵}
+            \bm{Q}\in M_{n-1}\left(
+            \mathbb{C}
+            \right)\st$
+        \[
+            \bm{Q}^{-1}\bm{A}_{n-1}\bm{Q}=\begin{pmatrix}
+
+                \lambda_2 & \cdots & *           \\
+                \vdots    & \ddots & \vdots      \\
+                \bm{O}    & \cdots & \lambda_{n}
+            \end{pmatrix}
+        \]作非异阵$
+            \bm{R}=\begin{pmatrix}
+                1      & \bm{O} \\
+                \bm{O} & \bm{Q}
+            \end{pmatrix}\in M_n\left(
+            \mathbb{C}
+            \right)$，则
+        \begin{align*}
+            \bm{R}^{-1}\bm{P}^{-1}\bm{APR} & =
+            \bm{R}^{-1}\left(
+            \bm{P}^{-1}\bm{A}\bm{P}
+            \right)\bm{R}                                                               \\
+                                           & =\begin{bmatrix}
+                                                  1      & \bm{O}      \\
+                                                  \bm{O} & \bm{Q}^{-1}
+                                              \end{bmatrix}\begin{bmatrix}
+                                                               \lambda_1 & *            \\
+                                                               \bm{O}    & \bm{A}_{n-1}
+                                                           \end{bmatrix}\begin{bmatrix}
+                                                                            1      & \bm{O} \\
+                                                                            \bm{O} & \bm{Q}
+                                                                        \end{bmatrix} \\
+                                           & =
+            \begin{bmatrix}
+                \lambda_1 & \cdots & *         \\
+                \vdots    & \ddots & \vdots    \\
+                \bm{O}    & \cdots & \lambda_n
+            \end{bmatrix}\qedhere
+        \end{align*}
+    \end{proof}
+}
+\cor{}{特征值在同一个域中变换所用非异阵}{
+    设$\bm{A}\in M_n\left(
+        \mathbb{K}
+        \right)$的特征值均在$\mathbb{K}$中，则$\exists
+        \text{非异阵}\bm{P}\in M_n\left(
+        \mathbb{K}
+        \right)\st$
+    \[
+        \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
+            \lambda_1 & *         & \cdots & *         \\
+                      & \lambda_2 & \cdots & *         \\
+                      &           & \ddots & \vdots    \\
+                      &           &        & \lambda_n
+        \end{pmatrix}
+    \]
+}
+\rem{}{}{
+一个问题是，如果知道了$\bm{A}\in M_n\left(
+    \mathbb{K}
+    \right)$的特征值，那么
+\[
+    f\left(
+    \bm{A}
+    \right)=a_m\bm{A}^m+a_{m-1}\bm{A}^{m-1}+\cdots+a_1\bm{A}+a_0\bm{I}_n\in M_n\left(
+    \mathbb{K}
+    \right)
+\]的特征值是否也能够知道.
+}
+\lem{相似关系在幂运算下保持}{相似关系在幂运算下保持}{
+    相似关系在幂运算下保持.
+    \[
+        \left(
+        \bm{P}^{-1}\bm{AP}
+        \right)^m=\bm{P}^{-1}\bm{A}^m\bm{P}
+    \]
+}
+\cor{相似关系与多项式相容}{相似关系与多项式相容}{
+    由\cref{lem:相似关系在幂运算下保持}，有
+    \[
+        f\left(
+        \bm{P}^{-1}\bm{AP}
+        \right)= \bm{P}^{-1}f\left(
+        \bm{A}
+        \right)\bm{P}
+    \]即相似与多项式相容.
+}
+\cor{相似关系在求逆运算下保持}{相似关系在求逆运算下保持}{
+    相似关系在求逆运算下保持.
+    \[
+        \left(
+        \bm{P}^{-1}\bm{AP}
+        \right)^{-1}=\bm{P}^{-1}\bm{A}^{-1}\bm{P}
+    \]
+}
+\cor{相似关系在伴随运算下保持}{相似关系在伴随运算下保持}{
+    相似关系在伴随运算下保持. \[
+        \left(
+        \bm{P}^{-1}\bm{AP}
+        \right)^*=\bm{P}^*\bm{A}^*\left(
+        \bm{P}^*
+        \right)^{-1}
+    \]
+}
+\subsection{运算}
+\pro{}{多项式的特征值}{
+    设$\bm{A}\in M_n\left(
+        \mathbb{K}
+        \right)$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$，则$f\left(
+        \bm{A}
+        \right)$的特征值为$f\left(
+        \lambda_1
+        \right),f\left(
+        \lambda_2
+        \right),\cdots,f\left(
+        \lambda_n
+        \right)$.\begin{proof}
+        存在非异阵$\bm{P}\in M_n\left(
+            \mathbb{K}
+            \right)$使得
+        \[
+            \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
+                \lambda_1 & \cdots & *         \\
+                \vdots    & \ddots & \vdots    \\
+                \bm{O}    & \cdots & \lambda_n
+            \end{pmatrix}
+        \]考虑
+        $
+            \bm{P}^{-1}f\left(
+            \bm{A}
+            \right)\bm{P}=f\left(
+            \bm{P}^{-1}\bm{AP}
+            \right)
+        $，因为上三角阵的加减乘运算仍为上三角阵，且运算的主对角线元素等于主对角线元素的运算，则
+        \[
+            f\left(
+            \bm{P}^{-1}\bm{AP}
+            \right)=\begin{pmatrix}
+                f\left(
+                \lambda_1
+                \right) & \cdots & *       \\
+                \vdots  & \ddots & \vdots  \\
+                \bm{O}  & \cdots & f\left(
+                \lambda_n
+                \right)
+            \end{pmatrix}\qedhere
+        \]
+    \end{proof}
+}
+\pro{}{特征值适合矩阵适合的多项式}{
+    设$\bm{A}\in M_n\left(
+        \mathbb{K}
+        \right)$适合$g\left(
+        x
+        \right)\in \mathbb{K}\left[x\right]$即$g\left(\bm{A}\right)=\bm{O}$，则$\bm{A}$的任意特征值也适合该多项式即$g\left(
+        \lambda_i
+        \right)=0,\forall 1\leqslant i\leqslant n$.\begin{proof}
+        设$\bm{A\alpha}=\lambda\bm{\alpha},\bm{0}\neq \bm{\alpha}\in \mathbb{C}^n$，则$\bm{A}^m\bm{\alpha}=\lambda^m\bm{\alpha}$.于是
+        \[
+            \bm{O}=g\left(\bm{A}\right)\bm{\alpha}=g\left(\lambda\right)\bm{\alpha}\Longrightarrow
+            g\left(\lambda\right)=0
+        \]
+
+        亦可用\cref{prop:多项式的特征值}完成，因为$\bm{O}=g\left(\bm{A}\right)$的特征值为$g\left(\lambda_1\right),
+            g\left(\lambda_2\right),\cdots,g\left(\lambda_n\right)$且零矩阵的特征值均为零，得证.
+    \end{proof}
+}
+\lem{逆阵的特征值}{逆阵的特征值}{
+    设 可逆阵$\bm{A}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$，则$\bm{A}^{-1}$的特征值为$\lambda_1^{-1},\lambda_2^{-1},\cdots,\lambda_n^{-1}$.\begin{proof}
+        因为存在非异阵$\bm{P}\in M_n\left(
+            \mathbb{K}
+            \right)$使得
+        \[
+            \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
+                \lambda_1 & \cdots & *         \\
+                \vdots    & \ddots & \vdots    \\
+                \bm{O}    & \cdots & \lambda_n
+            \end{pmatrix}
+        \]因为非异上三角阵的逆阵仍为非异上三角阵，且主对角线元素的逆等于原主对角线元素的逆，所以
+        \[
+            \bm{P}^{-1}\bm{A}^{-1}\bm{P}=\begin{pmatrix}
+                \lambda_1^{-1} & \cdots & *              \\
+                \vdots         & \ddots & \vdots         \\
+                \bm{O}         & \cdots & \lambda_n^{-1}
+            \end{pmatrix}\qedhere
+        \]
+    \end{proof}
+}
+\pro{伴随的特征值}{伴随的特征值}{
+    设$\bm{A}\in M_n\left(
+        \mathbb{K}
+        \right)$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$,则$\bm{A}^*$的特征值为
+    \[
+        \prod_{i\neq 1}\lambda_i,\prod_{i\neq 2}\lambda_i,\cdots,\prod_{i\neq n}\lambda_i
+    \]\begin{proof}
+        注意到上三角阵的伴随阵仍为上三角阵，且主对角线元素的伴随等于其余元素的乘积即可.
+    \end{proof}
+}

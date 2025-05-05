@@ -1,0 +1,140 @@
+\newpage
+\section{总结}
+\exa{}{}{
+    设$\bm{A}^2-\bm{A}-3\bm{I}_n=\bm{O}$，求证：$\bm{A}-2\bm{I}_n$可逆.\begin{proof}
+        \begin{enumerate}[label=\arabic*）]
+            \item 凑因子：\[
+                      \left(\bm{A}-2\bm{I}_n\right)\left(\bm{A}+\bm{I}_n\right)=\bm{I}_n
+                  \]
+            \item 求解方程组：只要证$\left(
+                      \bm{A}-2\bm{I}_n
+                      \right)\bm{x}=\bm{0}$只有零解
+            \item 互素多项式：\[
+                      \left(
+                      x^2-x-3,x-2
+                      \right)=1
+                  \]
+            \item 特征值：反证法，考虑设$\bm{A}-2\bm{I}_n$不可逆，即其行列式为零，则$2$是$\bm{A}$的一个特征值，但是该特征值却不适合多项式$x^2-x-3$，矛盾.\qedhere
+        \end{enumerate}
+    \end{proof}
+}
+\exa{}{}{
+    设$4$阶方阵$\bm{A}$满足$\mathrm{tr}\bm{A}^i=i,i=1,2,3,4$.求$\left|\bm{A}\right|$.\begin{solution}
+        设$\bm{A}$的特征值$\lambda_1,\lambda_2,\lambda_3,\lambda_4$，则
+        $\bm{A}^i$的特征值为$\lambda_1^i,\lambda_2^i,\lambda_3^i,\lambda_4^i$，于是$\displaystyle
+            \sum_{k=1}^{4}\lambda_k^i=i$即Fermal和$s_1=1,s_2=2,s_3=3,s_4=4.$
+
+        因为$\left|\bm{A}\right|=\lambda_1\lambda_2\lambda_3\lambda_4=\sigma_4$.于是由牛顿公式，$k\leqslant n=4$时
+        \[
+            s_k-s_{k-1}\sigma_1+\cdots+\left(-1\right)^kk\sigma_k=0
+        \]
+        于是取$k=1,2,3,4$得到$\displaystyle
+            \sigma_1=1,\sigma_2=-\frac{1}{2},\sigma_3=\frac{1}{6},\sigma_4=\frac{1}{24}.$
+    \end{solution}
+}
+\exa{}{}{
+    设矩阵$\bm{A}^m,\bm{B}^n$且无公共特征值，证明矩阵方程$\bm{AX}=\bm{XB}$只有零解.\begin{proof}
+        利用\cref{thm:Cayley-Hamilton定理}Cayley-Hamilton定理，设$\bm{A}$的特征多项式为$f\left(\lambda\right)=\left|\lambda\bm{I}_m-\bm{A}\right|$,于是$f\left(\bm{A}\right)=\bm{O}$.同时容易有$\bm{A}^2\bm{X}=\bm{XB}^2,\cdots$于是有\[\bm{O}=f\left(\bm{A}\right)\bm{X}=\bm{X}f\left(\bm{B}\right)\]
+
+        下面考虑证明$f\left(\bm{B}\right)$非异，不妨设$\bm{B}$的特征值$\mu_1,\mu_2,\cdots,\mu_n$则$f\left(\bm{B}\right)$的特征值为$f\left(\mu_1\right)\neq 0,f\left(\mu_2\right)\neq 0,\cdots,f\left(\mu_n\right)\neq 0$，那么$f\left(\bm{B}\right)$可逆.于是$\bm{X}=\bm{O}$得证.
+
+        也可设$\bm{B}$特征多项式$g\left(\lambda\right)$且$\left(f\left(\lambda\right),g\left(\lambda\right)
+            \right)=1$，考虑带余除法则
+        \[
+            f\left(\lambda\right)u\left(\lambda\right)+g\left(\lambda\right)v\left(\lambda\right)=1
+        \]于是$f\left(\bm{B}\right)u\left(\bm{B}\right)=\bm{I}_n$得证$f\left(\bm{B}\right)$可逆.
+    \end{proof}
+}
+\exa{}{}{
+    设$n$阶方阵$\bm{A},\bm{B}$，特征值均大于零，且$\bm{A}^2=\bm{B}^2.$求证：$\bm{A}=\bm{B}$.\begin{proof}
+        即上例中$\bm{X}=\bm{A}-\bm{B}$，因为
+        \[
+            \bm{A}\left(\bm{A}-\bm{B}\right)=
+            \left(\bm{A}-\bm{B}\right)\left(-\bm{B}\right)
+        \]考虑到$\bm{A}$和$-\bm{B}$没有公共特征值，由上例得证.
+    \end{proof}
+}
+\exa{}{}{
+    设$n$阶方阵$\bm{A}$的特征值均为偶数，证明：$\bm{X}+\bm{AX}=\bm{XA}^2$只有零解.\begin{proof}
+        显然考虑
+        \[
+            \left(\bm{A}+\bm{I}\right)\bm{X}=\bm{X}\bm{A}^2
+        \]由上例，考虑$\bm{A}+\bm{I}$与$\bm{A}^2$的特征值即可，显然成立.
+    \end{proof}
+}
+\exa{}{}{
+    设$n$阶方阵$\bm{A}$适合$a_mx^m+
+        \cdots+a_1x+a_0
+    $且$\displaystyle
+        \left|a_m\right|\geqslant
+        \sum_{i=0}^{m-1}\left|a_i\right|
+    $.证明：$2\bm{X}+\bm{AX}=\bm{XA}$仅有零解.\begin{proof}
+        任取一特征值$\lambda_0$,断言$\left|\lambda_0\right|<1$，反证法，设$\left|\lambda_0\right|\geqslant 1.$因为$\lambda_0$适合该多项式即
+        \[
+            a_m\lambda_0^m+\cdots+a_1\lambda_0+a_0=0
+        \]
+        于是
+        \[
+            a_m=-\frac{a_{m-1}}{\lambda_0}-\cdots-\frac{a_1}{\lambda_0^{m-1}}-\frac{a_0}{\lambda_0^m}
+        \]
+        两边取模长
+        \[
+            \left|a_m\right|\leqslant
+            \sum_{i=0}^{m-1}\left|a_i\right|
+        \]显然矛盾.
+
+        于是来考虑$\bm{A}$和$\bm{A}+2\bm{I}_n$的特征值.因为$\bm{A}$的特征值均在复平面单位圆内部，而$\bm{A}+2\bm{I}_2$的特征值在向右平移两个单位的圆内且均不包含边界于是二者没有公共特征值.
+    \end{proof}
+}
+\exa{}{}{
+    设矩阵$\bm{A}^m\in M_m\left(
+        \mathbb{K}
+        \right),\bm{B}^n\in M_n\left(\mathbb{K}\right)$无公共特征值，则$\forall \bm{C}\in M_{m\times n}\left(\mathbb{K}\right)$，矩阵方程$\bm{AX}-\bm{XB}=\bm{C}$有唯一解.\begin{proof}
+        考虑$\bm{\varphi}\in \mathcal{L}\left(
+            M_{m\times n}\left(\mathbb{K}\right)
+            \right):\bm{X}\longmapsto
+            \bm{AX}-\bm{XB}$，由上例可知$\bm{\varphi}$是单射，那么也是满射，于是是线性同构.于是$\forall \bm{C}\in M_{m\times n}\left(\mathbb{K}\right)$，一定存在唯一一个$\bm{X}_0\in M_{m\times n}\left(\mathbb{K}\right)$使得\[\bm{\varphi}\left(\bm{X}_0\right)=\bm{AX}_0-\bm{X}_0\bm{B}=\bm{C}\qedhere\]
+    \end{proof}
+}
+\exa{}{}{
+    设矩阵$\bm{A}^m,\bm{B}^n$无公共特征值且均可对角化，则$\bm{M}=\begin{pmatrix}
+            \bm{A} & \bm{C} \\\bm{O} & \bm{B}
+        \end{pmatrix}$可对角化.\begin{proof}
+        由上例知存在$\bm{X}_0$使得\[\bm{AX}_0-\bm{X}_0\bm{B}=\bm{C}\]于是
+        \begin{align*}
+            \begin{pmatrix}
+                \bm{I}_m & \bm{X}_0 \\\bm{O} & \bm{I}_n
+            \end{pmatrix}\begin{pmatrix}
+                             \bm{A} & \bm{C} \\\bm{O} & \bm{B}
+                         \end{pmatrix}\begin{pmatrix}
+                                          \bm{I}_m & -\bm{X}_0 \\\bm{O} & \bm{I}_n
+                                      \end{pmatrix}=\begin{pmatrix}
+                                                        \bm{A} & \bm{O} \\\bm{O} & \bm{B}
+                                                    \end{pmatrix}
+        \end{align*}
+        相似得证，于是$\bm{M}$可对角化.
+    \end{proof}
+}
+\exa{}{}{
+    设$\bm{A}$为非异循环矩阵，求证：$\bm{A}^{-1}$也是循环矩阵.\begin{proof}
+        法一，设\[
+            \bm{A}=\begin{pmatrix}
+                a_1    & a_2    & \cdots & a_n     \\
+                a_n    & a_1    & \cdots & a_{n-1} \\
+                \vdots & \vdots &        & \vdots  \\
+                a_2    & a_3    & \cdots & a_1
+            \end{pmatrix}
+        \]并有基础循环矩阵$\bm{J}=\begin{pmatrix}
+                 & \bm{I}_{n-1} \\1 &
+            \end{pmatrix}$则$\bm{A}=a_1\bm{I}_n+a_2\bm{J}+\cdots+a_n\bm{J}^{n-1}$.作$g\left(x\right)=a_1+a_2x+\cdots+a_nx^{n-1}$且$\bm{J}$的特征多项式$\displaystyle
+            f\left(\lambda\right)=\lambda^n-1\Longrightarrow\omega_k=e^{\frac{2k\pi \mathrm{i}}{n}},0\leqslant k\leqslant n-1
+        $.因此$\bm{A}$的特征值是$g\left(\omega_k\right),0\leqslant k\leqslant n-1$即特征值，因为$\bm{A}$非异即$g\left(\omega_k\right)$非零即推知$\left(
+            f\left(x\right),g\left(x\right)
+            \right)=1$即带余除法
+        \[
+            f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)=1
+        \]代入$\bm{J}$即得$\bm{A}^{-1}=v\left(\bm{J}\right).$
+
+        法二，因为$\bm{A}$可逆则$\bm{A}^{-1}=h\left(\bm{A}\right)=h\left(g\left(\bm{J}\right)\right)$得证.
+    \end{proof}
+}
