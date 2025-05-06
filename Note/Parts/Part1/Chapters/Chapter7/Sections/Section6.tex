@@ -1,0 +1,1143 @@
+\newpage
+\section{Jordan标准型}
+\subsection{Jordan标准型}
+\lem{Jordan块}{Jordan块}{
+断言矩阵
+\[
+    \bm{J}=\bm{J}_r\left(\lambda_0\right)=\begin{pmatrix}
+        \lambda_0 & 1         &        &        &           \\
+                  & \lambda_0 & 1      &        &           \\
+                  &           & \ddots & \ddots &           \\
+                  &           &        & \ddots & 1         \\
+                  &           &        &        & \lambda_0
+    \end{pmatrix}_{r\times r}
+\]有且仅有初等因子
+\[
+    \left(
+    \lambda-\lambda_0
+    \right)^r
+\]\begin{proof}
+    特征矩阵\[
+        \lambda\bm{I}-\bm{J}=\begin{pmatrix}
+            \lambda-\lambda_0 & -1                &        &        &                   \\
+                              & \lambda-\lambda_0 & -1     &        &                   \\
+                              &                   & \ddots & \ddots &                   \\
+                              &                   &        & \ddots & -1                \\
+                              &                   &        &        & \lambda-\lambda_0
+        \end{pmatrix}
+    \]容易有\begin{align*}
+        D_r\left(\lambda\right)=\left|\lambda\bm{I}-\bm{J}\right|=\left(\lambda-\lambda_0\right)^r
+    \end{align*}并且$\forall 1\leqslant k<r$，存在$k$阶子式的值为$\left(-1\right)^k\Longrightarrow D_k\left(\lambda\right)=1,\forall 1\leqslant k<r.$于是行列式因子组为\[
+        1,\cdots,1,\left(\lambda-\lambda_0\right)^r
+    \]不变因子组相同，初等因子组为\[
+        \left(\lambda-\lambda_0\right)^r\qedhere
+    \]
+\end{proof}
+}
+下面给出不同于法式-行列式因子-不变因子-初等因子这一过程的求得初等因子的办法.
+\lem{}{初等因子求法}{
+    设$\lambda\bm{I}_n-\bm{A}$相抵于对角$\lambda$-阵\[
+        \mathrm{diag}\left\{
+        f_1\left(\lambda\right),f_2\left(\lambda\right),\cdots,f_n\left(\lambda\right)
+        \right\}
+    \]其中$f_i\left(\lambda\right)$为首一多项式.则$f_1\left(\lambda\right),f_2\left(\lambda\right),\cdots,f_n\left(\lambda\right)$的准素因子全体即为$\bm{A}$的初等因子组.\begin{proof}
+        第一步，$\forall 1\leqslant i<j\leqslant n,\left(
+            f_i\left(\lambda\right),f_j\left(\lambda\right)
+            \right)=g\left(\lambda\right),\left[
+                f_i\left(\lambda\right),f_j\left(\lambda\right)
+                \right]=h\left(\lambda\right).$下面证明上述对角阵相抵于\[
+            \mathrm{diag}\left\{
+            f_1\left(\lambda\right),\cdots,g\left(\lambda\right),\cdots,h\left(\lambda\right),\cdots,f_n\left(\lambda\right)
+            \right\}
+        \]并且二者的主对角元的准素因子全体相同.
+
+        不妨设$\displaystyle i=1,j=2,f_1\left(\lambda\right)=g\left(\lambda\right)q\left(\lambda\right),h\left(\lambda\right)=\frac{
+                f_1\left(\lambda\right)f_2\left(\lambda\right)
+            }{g\left(\lambda\right)}=f_2\left(\lambda\right)q\left(\lambda\right)$且存在$u\left(\lambda\right),v\left(\lambda\right)\st$\[
+            g\left(\lambda\right)=f_1\left(\lambda\right)u\left(\lambda\right)+f_2\left(\lambda\right)v\left(\lambda\right)
+        \]考虑到\begin{align*}
+            \begin{pmatrix}
+                f_1\left(\lambda\right) &                         \\
+                                        & f_2\left(\lambda\right)
+            \end{pmatrix} & \longrightarrow
+            \begin{pmatrix}
+                f_1\left(\lambda\right) & g\left(\lambda\right)   \\
+                                        & f_2\left(\lambda\right)
+            \end{pmatrix}                                                                    \\
+                                                                 & \longrightarrow
+            \begin{pmatrix}
+                                       & g\left(\lambda\right)   \\
+                -h\left(\lambda\right) & f_2\left(\lambda\right)
+            \end{pmatrix}                                                                     \\
+                                                                 & \longrightarrow\begin{pmatrix}
+                                                                                                             & g\left(\lambda\right) \\
+                                                                                      -h\left(\lambda\right) &
+                                                                                  \end{pmatrix} \\
+                                                                 & \longrightarrow\begin{pmatrix}
+                                                                                      g\left(\lambda\right) &                       \\
+                                                                                                            & h\left(\lambda\right)
+                                                                                  \end{pmatrix}
+        \end{align*}
+
+        接下来证明$f_1\left(\lambda\right),f_2\left(\lambda\right)$与$g\left(\lambda\right),h\left(\lambda\right)$的准素因子全体相同.在数域$\mathbb{K}$上做公共因式分解\begin{align*}
+             & f_1\left(\lambda\right)=p_1\left(\lambda\right)^{r_1}p_2\left(\lambda\right)^{r_2}\cdots p_t\left(\lambda\right)^{r_t} \\
+             & f_2\left(\lambda\right)=p_1\left(\lambda\right)^{s_1}p_2\left(\lambda\right)^{s_2}\cdots p_t\left(\lambda\right)^{s_t}
+        \end{align*}其中$p_i\left(\lambda\right)$为互异的首一不可约多项式，$r_i,s_i\geqslant 0,\forall 1\leqslant i\leqslant t.$令$e_i=\min\left\{r_i,s_i\right\},k_i=\max\left\{r_i,s_i\right\}.$于是
+        \begin{align*}
+             & g\left(\lambda\right)=p_1\left(\lambda\right)^{e_1}p_2\left(\lambda\right)^{e_2}\cdots p_t\left(\lambda\right)^{e_t} \\
+             & h\left(\lambda\right)=p_1\left(\lambda\right)^{k_1}p_2\left(\lambda\right)^{k_2}\cdots p_t\left(\lambda\right)^{k_t}
+        \end{align*}于是$f_1\left(\lambda\right),f_2\left(\lambda\right)$与$g\left(\lambda\right),h\left(\lambda\right)$的准素因子全体相同.
+
+        第二步，反复利用第一步，将上述对角阵变为法式.依次将$\left(1,1\right)$元与第$\left(2,2\right)$元，第$\left(3,3\right)$元，$\cdots$，第$\left(n,n\right)$元进行第一步的操作，从而第$\left(1,1\right)$元的因式分解中不同多项式的幂次均为最小.
+
+        一般地，设第$\left(1,1\right),\left(2,2\right),\cdots,\left(i-1,i-1\right)$元已经做好了操作，那么让第$\left(i,i\right)$元依次与$\left(i+1,i+1\right),\left(i+2,i+2\right),\cdots,\left(n,n\right)$进行第一步的操作.最终得到对角阵\[
+            \mathrm{diag}\left\{
+            d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_n\left(\lambda\right)
+            \right\}
+        \]由第一步保证$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_n\left(\lambda\right)$，根据\cref{def:法式}，这就是法式.
+
+        于是该对角阵与法式拥有相同的准素因子组即相同的初等因子组.
+    \end{proof}
+}
+\exa{}{}{
+    设$\lambda\bm{I}-\bm{A}$相抵于\[
+        \begin{pmatrix}
+            1 &                                                &           &   &           \\
+              & \left(\lambda-1\right)^2\left(\lambda+2\right) &           &   &           \\
+              &                                                & \lambda+2 &   &           \\
+              &                                                &           & 1 &           \\
+              &                                                &           &   & \lambda-1
+        \end{pmatrix}
+    \]根据\cref{lem:初等因子求法}可知初等因子组为\[
+        \lambda-1,\left(\lambda-1\right)^2,\lambda+2,\lambda+2
+    \]
+}
+\lem{Jordan块的初等因子}{Jordan块的初等因子}{
+    设矩阵\[
+        \bm{A}=\mathrm{diag}\left\{
+        \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+        \right\}
+    \]则$\bm{A}$的初等因子为\[
+        \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
+    \]\begin{proof}
+        因为\[
+            \lambda\bm{I}-\bm{A}=\begin{pmatrix}
+                \lambda\bm{I}-\bm{J}_{r_1}\left(\lambda_1\right) &                                                  &        &                                                  \\
+                                                                 & \lambda\bm{I}-\bm{J}_{r_2}\left(\lambda_2\right) &        &                                                  \\
+                                                                 &                                                  & \ddots &                                                  \\
+                                                                 &                                                  &        & \lambda\bm{I}-\bm{J}_{r_k}\left(\lambda_k\right)
+            \end{pmatrix}
+        \]由\cref{lem:Jordan块}知$\lambda\bm{I}-\bm{J}_{r_i}\left(\lambda_i\right)$相抵于\[
+            \mathrm{diag}\left\{
+            1,\cdots,1,\left(\lambda-\lambda_i\right)^{r_i}
+            \right\}
+        \]即$\lambda\bm{I}-\bm{A}$相抵于\[
+            \mathrm{diag}\left\{
+            1,\cdots,1,\left(\lambda-\lambda_1\right)^{r_1};1,\cdots,1,\left(\lambda-\lambda_2\right)^{r_2};\cdots;1,\cdots,1,\left(\lambda-\lambda_k\right)^{r_k}
+            \right\}
+        \]根据\cref{lem:初等因子求法}，$\bm{A}$的初等因子组为\[
+            \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}\qedhere
+        \]
+    \end{proof}
+}
+\thm{Jordan标准型}{Jordan标准型}{
+    设$\bm{A}\in M_n\left(\mathbb{C}\right)$的初等因子组为\[
+        \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
+    \]则$\bm{A}$相似于\[
+        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+        \right\}
+    \]\begin{proof}
+        由\cref{lem:Jordan块的初等因子}知$\bm{J}$的初等因子组为\[
+            \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
+        \]由\cref{thm:相似关系的全系不变量}知初等因子组是相似关系下的全系不变量，故$\bm{A}$相似于$\bm{J}$.
+    \end{proof}
+}
+\rem{}{}{
+    \cref{thm:Jordan标准型}需要保证在复数域$\mathbb{C}$上.
+}
+\dfn{Jordan标准型}{Jordan标准型}{
+    \cref{thm:Jordan标准型}中的\[
+        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+        \right\}
+    \]称为$\bm{A}$的Jordan标准型，其中$\bm{J}_{r_i}\left(\lambda_i\right)$称为$\bm{A}$的一个Jordan块.
+}
+\clm{}{}{
+    Jordan标准型中Jordan块的次序是无所谓的.但一个Jordan块被一个初等因子完全唯一地决定.从而在不考虑Jordan块的次序时，Jordan标准型由矩阵$\bm{A}$完全唯一地决定.
+}
+\thm{几何意义的Jordan标准型}{几何意义的Jordan标准型}{
+    设$\bm{\varphi}\in \mathcal{L}\left(
+        V_{\mathbb{C}}^n
+        \right)$，则存在$V$的一组基$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为Jordan标准型即\[
+        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+        \right\}
+    \]
+}
+\cor{}{可对角化的等价条件}{
+    设$\bm{A}\in M_n\left(\mathbb{C}\right)$，则下列结论等价：
+
+    \begin{enumerate}[label=\arabic*）]
+        \item $\bm{A}$可对角化
+        \item $ \bm{A}$的极小多项式无重根
+        \item $\bm{A}$的初等因子全为一次多项式（或者Jordan块都是一阶的）
+    \end{enumerate}\begin{proof}
+        $(1)\Longrightarrow (2)$根据\cref{ex:极小多项式无重根等价于可对角化}即得.
+
+        $(2)\Longrightarrow (3)$设$\bm{A}$的不变因子组为\[
+            1,\cdots,1,d_1\left(\lambda\right),\cdots,d_k\left(\lambda\right)
+        \]由\cref{thm:不变因子组导出极小多项式}知$d_k\left(\lambda\right)$为$\bm{A}$的极小多项式$m\left(\lambda\right)$，从而$d_k\left(\lambda\right)$无重根，进一步地由整除关系知$d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)$均没有重根，即它们的准素因子全体为一次多项式，从而初等因子全为一次多项式.
+
+        $(3)\Longrightarrow (1)$设$\bm{A}$的初等因子组为\[
+            \lambda-\lambda_1,\lambda-\lambda_2,\cdots,\lambda-\lambda_n
+        \]于是Jordan标准型为\[
+            \bm{J}=\begin{pmatrix}
+                \lambda_1 &           &        &           \\
+                          & \lambda_2 &        &           \\
+                          &           & \ddots &           \\
+                          &           &        & \lambda_n
+            \end{pmatrix}
+        \]即$\bm{A}$可对角化.
+    \end{proof}
+}
+\cor{}{可对角化则不变子空间上的限制可对角化}{
+设$\bm{\varphi}\in \mathcal{L}\left(
+    V_{\mathbb{C}}^n
+    \right)$，$V_0$是$\bm{\varphi}$-不变子空间，若$\bm{\varphi}$可对角化，则$\displaystyle \bm{\varphi}\Big|_{V_0}$可对角化.\begin{proof}
+    设$\bm{\varphi},\bm{\varphi}\Big|_{V_0}$的极小多项式分别为$m\left(\lambda\right),g\left(\lambda\right).$考虑到\begin{align*}
+        m\left(\bm{\varphi}\Big|_{V_0}\right)=m\left(\bm{\varphi}\right)\Big|_{V_0}=\bm{0}\Big|_{V_0}=\bm{0}
+    \end{align*}于是极小多项式$g\left(\lambda\right)\mid m\left(\lambda\right).$
+
+    若$\bm{\varphi}$可对角化，则由\cref{cor:可对角化的等价条件}知极小多项式$m\left(\lambda\right)$没有重根，那么$g\left(\lambda\right)$也无重根，根据\cref{cor:可对角化的等价条件}知$\bm{\varphi}\Big|_{V_0}$可对角化.
+\end{proof}
+}
+\cor{}{代数意义的限制可对角化}{
+    若\[
+        \bm{M}=\begin{pmatrix}
+            \bm{A}^m & \bm{C}   \\
+            \bm{O}   & \bm{B}^n
+        \end{pmatrix}
+    \]可对角化，则$\bm{A},\bm{B}$可对角化.\begin{proof}
+        设$\bm{M}$的极小多项式为$m\left(\lambda\right)$，则\begin{align*}
+            \bm{O}=m\left(\bm{M}\right)=\begin{pmatrix}
+                                            m\left(\bm{A}\right) & *                    \\
+                                            \bm{O}               & m\left(\bm{B}\right)
+                                        \end{pmatrix}
+        \end{align*}从而$m\left(\bm{A}\right)=m\left(\bm{B}\right)=\bm{O}$即$m_{\bm{A}}\left(\lambda\right)\mid m\left(\lambda\right),m_{\bm{B}}\left(\lambda\right)\mid m\left(\lambda\right)$,因为由\cref{cor:可对角化的等价条件}知$m\left(\lambda\right)$无重根，则$m_{\bm{A}}\left(\lambda\right),m_{\bm{B}}\left(\lambda\right)$无重根，于是由\cref{cor:可对角化的等价条件}知$\bm{A},\bm{B}$可对角化.
+    \end{proof}
+}
+\cor{}{可对角化等价于所有不变子空间上的限制可对角化}{
+设$\bm{\varphi}\in \mathcal{L}\left(
+    V_{\mathbb{C}}^n
+    \right),V=V_1\oplus V_2\oplus\cdots\oplus V_k$,其中$V_i$是$\bm{\varphi}$-不变子空间$,\forall 1\leqslant i\leqslant k.$则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}\Big|_{V_i}$可对角化$\left(\forall 1\leqslant i\leqslant k\right).$\begin{proof}
+    必要性由\cref{cor:代数意义的限制可对角化}即得.
+
+    考虑充分性，因为存在$V_i$的一组基$\left\{
+        \bm{e}_{i1},\bm{e}_{i2},\cdots,\bm{e}_{in_i}
+        \right\}$使得$\bm{\varphi}\Big|_{V_i}$在这组基下的表示矩阵为对角阵.根据\cref{thm:直和的判定}知子空间的基可以合并为$V$的一组基，从而$\bm{\varphi}$在这组基下的表示矩阵为对角阵，即$\bm{\varphi}$可对角化.
+\end{proof}
+}
+\cor{}{代数意义的可对角化等价于所有不变子空间上的限制可对角化}{
+    设
+    \[
+        \bm{A}=\begin{pmatrix}
+            \bm{A}_1 &          &        &          \\
+                     & \bm{A}_2 &        &          \\
+                     &          & \ddots &          \\
+                     &          &        & \bm{A}_k
+        \end{pmatrix}
+    \]则$\bm{A}$可对角化当且仅当$\bm{A}_1,\bm{A}_2,\cdots,\bm{A}_k$均可对角化.\begin{proof}
+        由\cref{lem:分块对角矩阵的极小多项式}知\[
+            m\left(\lambda\right)=\left[
+            m_{\bm{A}_1}\left(\lambda\right),m_{\bm{A}_2}\left(\lambda\right),\cdots,m_{\bm{A}_k}\left(\lambda\right)
+            \right]
+        \]然后根据\cref{cor:可对角化的等价条件}即得.
+    \end{proof}
+}
+\cor{}{特征值在域中则矩阵的约当标准型也在域中}{
+    设$\bm{A}\in M_n\left(\mathbb{K}\right)$的特征值全在$\mathbb{K}$中，则$\bm{A}$在$\mathbb{K}$上相似于其Jordan标准型.\begin{proof}
+        首先，$\bm{A}$必定复相似于\[
+            \bm{J}= \mathrm{diag}\left\{
+            \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+            \right\}
+        \]容易见得Jordan块均在$M_n\left(\mathbb{K}\right)$，根据相似关系在基域扩张下的不变性知$\bm{A}$在$\mathbb{K}$上相似于其Jordan标准型$\bm{J}$.
+    \end{proof}
+}
+\exa{}{}{
+    设$\bm{A}$的初等因子组为\[
+        \lambda-1,\left(\lambda-1\right)^3,\left(\lambda+2\right)^2,\left(\lambda+2\right)^3\]求其Jordan标准型.\begin{solution}
+        $\bm{A}$的Jordan标准型为\[
+            \mathrm{diag}\left\{
+            1,\begin{pmatrix}
+                1 & 1 &   \\
+                  & 1 & 1 \\
+                  &   & 1
+            \end{pmatrix},\begin{pmatrix}
+                -2 & 1  \\
+                   & -2
+            \end{pmatrix},
+            \begin{pmatrix}
+                -2 & 1  &    \\
+                   & -2 & 1  \\
+                   &    & -2
+            \end{pmatrix}
+            \right\}
+        \]
+    \end{solution}
+}
+\exa{}{}{
+    设$\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{C}}^4\right)$，其在$\left\{
+        \bm{e}_1,\bm{e}_2,\bm{e}_3,\bm{e}_4
+        \right\}$的表示阵为\[\bm{A}=
+        \begin{pmatrix}
+            3   & 1  & 0  & 0 \\
+            -4  & -1 & 0  & 0 \\
+            6   & 1  & 2  & 1 \\
+            -14 & -5 & -1 & 0
+        \end{pmatrix}
+    \]试求另一组基$\left\{
+        \bm{f}_1,\bm{f}_2,\bm{f}_3,\bm{f}_4
+        \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为Jordan标准型并求从$\bm{e}_i$到$\bm{f}_i$的过渡矩阵.\begin{solution}
+        根据\cref{thm:不同基下的表示矩阵的关系}知过渡矩阵$\bm{P}$使得\[
+            \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}\Longrightarrow
+            \bm{AP}= \bm{PJ}
+        \]因为$\bm{A}$的初等因子组为\[
+            \left(\lambda-1\right)^2,\left(\lambda-1\right)^2
+        \]则\[
+            \bm{J}=\begin{pmatrix}
+                1 & 1 &   &   & \\
+                  & 1 &   &   & \\
+                  &   & 1 & 1 & \\
+                  &   &   & 1
+            \end{pmatrix}
+        \]取$\bm{P}=\left(\bm{\alpha}_1,\bm{\alpha}_2,\bm{\alpha}_3,\bm{\alpha}_4\right)$代入\[
+            \bm{AP}= \bm{PJ}
+        \]得到\[
+            \begin{cases*}
+                \bm{A\alpha}_1=\bm{\alpha}_1,               \\
+                \bm{A\alpha}_2=\bm{\alpha}_1+\bm{\alpha}_2, \\
+                \bm{A\alpha}_3=\bm{\alpha}_3,               \\
+                \bm{A\alpha}_4=\bm{\alpha}_3+\bm{\alpha}_4
+            \end{cases*}
+        \]即$\bm{\alpha}_1,\bm{\alpha}_3$是$\bm{A}$的特征值$1$的两个线性无关的特征向量,又\[
+            \left(\bm{A}-\bm{I}\right)\bm{\alpha}_2=\bm{\alpha}_1,\left(\bm{A}-\bm{I}\right)\bm{\alpha}_4=\bm{\alpha}_3
+        \]于是需要先求出$\bm{A}$的特征值$1$的两个线性无关的特征向量$\bm{\alpha}_1,\bm{\alpha}_3$，然后代入上述方程求出$\bm{\alpha}_2,\bm{\alpha}_4$.最终得到\[\bm{\alpha}_2=\begin{pmatrix}
+                \cfrac{5}{4} \\-\cfrac{7}{2}\\0\\0
+            \end{pmatrix}\Longleftarrow
+            \bm{\alpha}_1=\begin{pmatrix}
+                -1 \\2\\4\\0
+            \end{pmatrix},\bm{\alpha}_3=\begin{pmatrix}
+                -1 \\2\\0\\4
+            \end{pmatrix}\Longrightarrow\bm{\alpha}_4=\begin{pmatrix}
+                \cfrac{1}{4} \\-\cfrac{3}{2}\\0\\0
+            \end{pmatrix}
+        \]
+        即过渡矩阵\[
+            \bm{P}=\begin{pmatrix}
+                -1 & \cfrac{5}{4}  & -1 & \cfrac{1}{4}  \\
+                2  & -\cfrac{7}{2} & 2  & -\cfrac{3}{2} \\
+                4  & 0             & 0  & 0             \\
+                0  & 0             & 4  & 0
+            \end{pmatrix}
+        \]而所求基为\[
+            \left\{
+            \bm{f}_1,\bm{f}_2,\bm{f}_3,\bm{f}_4
+            \right\}=\left\{
+            -\bm{e}_1+2\bm{e}_2+4\bm{e}_3,\cfrac{5}{4}\bm{e}_1-\cfrac{7}{2}\bm{e}_2,-\bm{e}_1+2\bm{e}_2+4\bm{e}_4,\cfrac{1}{4}\bm{e}_1-\cfrac{3}{2}\bm{e}_2
+            \right\}
+        \]
+    \end{solution}
+}
+\subsection{Jordan标准型的相关应用}
+这一部分，首先将讨论$\bm{\varphi}$的特征值的度数（几何重数）和重数（代数重数）在Jordan标准型中的体现，然后给出全空间关于Jordan标准型的两种直和分解，最后给出Jordan标准型的一些应用.
+\clm{总设}{}{
+总设$n$维线性空间$V$，线性变换$\bm{\varphi}\in \mathcal{L}\left(V\right),$其初等因子组为\[
+    \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
+\]并且存在一组基\[
+    \left\{
+    e_{11},e_{12},\cdots,e_{1r_1};e_{21},e_{22},\cdots,e_{2r_2};\cdots;e_{k1},e_{k2},\cdots,e_{kr_k}
+    \right\}
+\]使得$\bm{\varphi}$在这组基下的表示矩阵为\[
+    \bm{J}= \mathrm{diag}\left\{
+    \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+    \right\}
+\]
+}
+因为$\forall 1\leqslant i\leqslant k$\[
+    \left(
+    \bm{\varphi}\left(\bm{e}_{i1}\right),\bm{\varphi}\left(\bm{e}_{i2}\right),\cdots,\bm{\varphi}\left(\bm{e}_{ir_i}\right)
+    \right)=\left(
+    \bm{e}_{i1},\bm{e}_{i2},\cdots,\bm{e}_{ir_i}
+    \right)\begin{pmatrix}
+        \lambda_i & 1         &        &        &           \\
+                  & \lambda_i & 1      &                    \\
+                  &           & \ddots & \ddots &           \\
+                  &           &        & \ddots & 1         \\
+                  &           &        &        & \lambda_i
+    \end{pmatrix}
+\]即\begin{align*}
+    \begin{cases*}
+        \bm{\varphi}\left(\bm{e}_{i1}\right)=\lambda_i\bm{e}_{i1}             \\
+        \bm{\varphi}\left(\bm{e}_{i2}\right)=\bm{e}_{i1}+\lambda_i\bm{e}_{i2} \\
+        \qquad\qquad\cdots\cdots                                              \\
+        \bm{\varphi}\left(\bm{e}_{ir_i}\right)=\bm{e}_{i,r_i-1}+\lambda_i\bm{e}_{ir_i}
+    \end{cases*}\tag{$*$}
+\end{align*}令张成的子空间\[
+    V_i=L\left(
+    \bm{e}_{i1},\bm{e}_{i2},\cdots,\bm{e}_{ir_i}
+    \right)
+\]根据上文，$\bm{\varphi}\left(V_i\right)\subseteq V_i$即$V_i$是$\bm{\varphi}$-不变子空间.根据\cref{thm:直和的判定}，$V=V_1\oplus V_2\oplus\cdots\oplus V_k.$
+\dfn{Jordan块相伴的子空间}{Jordan块相伴的子空间}{
+    如上文，张成的子空间\[
+        V_i=L\left(
+        \bm{e}_{i1},\bm{e}_{i2},\cdots,\bm{e}_{ir_i}
+        \right)
+    \]称为Jordan块$\bm{J}_{r_i}\left(\lambda_i\right)$相伴的子空间.
+}
+设\[
+    f\left(\lambda\right)=\left(\lambda-\lambda_1\right)^{r_1}\left(\lambda-\lambda_2\right)^{r_2}\cdots\left(\lambda-\lambda_k\right)^{r_k}
+\]不妨设$\lambda_1=\lambda_2=\cdots=\lambda_s\neq \lambda_j,\forall s<j\leqslant k.$于是\[
+    f\left(\lambda\right)=\left(\lambda-\lambda_1\right)^{r_1+r_2+\cdots+r_s}\left(\lambda-\lambda_{s+1}\right)^{r_{s+1}}\cdots\left(\lambda-\lambda_k\right)^{r_k}
+\]其中$\lambda_1$的代数重数为$r_1+r_2+\cdots+r_s$，其等于属于特征值$\lambda_1$的Jordan块的阶数之和，而度数为\[
+    \dim V_{\lambda_1}=\dim\mathrm{Ker}\left(
+    \bm{\varphi}-\lambda_1\bm{I}_V
+    \right)=n-\dim\mathrm{Im}\left(
+    \bm{\varphi}-\lambda_1\bm{I}_V
+    \right)=n-\mathrm{rank}\left(
+    \bm{\varphi}-\lambda_1\bm{I}_V
+    \right)
+\]考虑\[\bm{J}_{r_i}\left(\lambda_i\right)-\lambda_1\bm{I}=
+    \begin{pmatrix}
+        \lambda_i-\lambda_1 & 1                   &        &        &                     \\
+                            & \lambda_i-\lambda_1 & 1      &                              \\
+                            &                     & \ddots & \ddots &                     \\
+                            &                     &        & \ddots & 1                   \\
+                            &                     &        &        & \lambda_i-\lambda_1
+    \end{pmatrix}
+\]则秩\[
+    \mathrm{rank}\,\left(
+    \bm{J}_{r_i}\left(\lambda_i\right)-\lambda_1\bm{I}
+    \right)=\begin{cases*}
+        r_i-1 & ,$\lambda_i=\lambda_1\left(1\leqslant i\leqslant s\right)$ \\
+        r_i   & ,$\lambda_i\neq \lambda_1\left(s<i\leqslant k\right)$
+    \end{cases*}
+\]于是\begin{align*}
+    \mathrm{r}\left(\bm{J}-\lambda_1\bm{I}\right) & =\sum_{i=1}^k\mathrm{r}\left(
+    \bm{J}_{r_i}\left(\lambda_i\right)-\lambda_1\bm{I}
+    \right)                                                                                      \\
+                                                  & =r_1-1+r_2-1+\cdots+r_s-1+r_{s+1}+\cdots+r_k \\
+                                                  & =n-s
+\end{align*}
+于是$\lambda_1$的几何重数为$s$，即属于特征值$\lambda_1$的Jordan块的个数.
+\thm{代数重数与几何重数在Jordan标准型中的体现}{代数重数与几何重数在Jordan标准型中的体现}{
+    特征值$\lambda_1$的代数重数等于属于特征值$\lambda_1$的所有Jordan块的阶数之和，而几何重数等于属于特征值$\lambda_1$的Jordan块的个数.
+}
+\clm{广义特征向量}{}{
+    $*$式中$\bm{e}_{i1}$是特征向量，而$\bm{e}_{i2},\bm{e}_{i3},\cdots,\bm{e}_{ir_i}$被称为广义特征向量.
+}
+\cor{特征子空间的基}{特征子空间的基}{
+    $\left\{
+        \bm{e}_{11},\bm{e}_{21},\cdots,\bm{e}_{s1}
+        \right\}$是特征子空间$V_{\lambda_1}$的一组基.
+}
+令$\bm{\psi}=\bm{\varphi}-\lambda_i\bm{I}_V$，则$*$式成为\[
+    \begin{cases*}
+        \bm{\psi}\left(\bm{e}_{i1}\right)=\bm{0}      \\
+        \bm{\psi}\left(\bm{e}_{i2}\right)=\bm{e}_{i1} \\
+        \qquad\cdots\cdots                            \\
+        \bm{\psi}\left(\bm{e}_{ir_i}\right)=\bm{e}_{i,r_i-1}
+    \end{cases*}
+\]即有\[
+    \bm{e}_{ir_i}\xlongrightarrow{\bm{\psi}}\bm{e}_{i,r_i-1}\xlongrightarrow{\bm{\psi}}\cdots\xlongrightarrow{\bm{\psi}}\bm{e}_{i1}\xlongrightarrow{\bm{\psi}}\bm{0}
+\]
+\dfn{循环子空间}{循环子空间}{
+    设$\bm{\psi}\in \mathcal{L}\left(V\right)$，$V_0$是$r$维的$\bm{\psi}$-不变子空间，若存在$\bm{0}\neq \bm{\alpha}\in V_0\st$\[
+        \left\{
+        \bm{\alpha},\bm{\psi}\left(\bm{\alpha}\right),\cdots,\bm{\psi}^{r-1}\left(\bm{\alpha}\right)
+        \right\}
+    \]是$V_0$的一组基，则称$V_0$是$\bm{\psi}$的一个循环子空间.$\bm{\alpha}$称为该循环子空间的循环向量.
+}
+\rem{}{}{
+    定义一般的循环子空间时不需要保证$\bm{\psi}^r\left(\bm{\alpha}\right)=\bm{0}.$
+}
+于是对于上式\[
+    \left\{
+    \bm{e}_{ir_i},\bm{\psi}\left(\bm{e}_{ir_i}\right),\cdots,\bm{\psi}^{r_i-1}\left(\bm{e}_{ir_i}\right)
+    \right\}
+\]是$V_i$的一组基，于是$V_i$是$\bm{\psi}=\bm{\varphi}-\lambda_i\bm{I}_V$的一个循环子空间，而$\bm{e}_{ir_i}$是$V_i$的循环向量$\left(1\leqslant i\leqslant k\right)$.
+
+于是全空间一定可以分解为循环子空间的直和.
+\lem{根子空间}{根子空间}{
+    设\[
+        R\left(\lambda_1\right)=V_1\oplus V_2\oplus\cdots\oplus V_s
+    \]则\begin{align*}
+        R\left(\lambda_1\right) & =\mathrm{Ker}\left(
+        \bm{\varphi}-\lambda_1\bm{I}_V
+        \right)^n                                     \\
+                                & =\left\{
+        \bm{v}\in V\mid \left(
+        \bm{\varphi}-\lambda_1\bm{I}_V
+        \right)^n\left(\bm{v}\right)=\bm{0}
+        \right\}
+    \end{align*}\begin{proof}
+        先证$R\left(\lambda_1\right)\subseteq\mathrm{Ker}\left(\bm{\varphi}-\lambda_1\bm{I}_V\right)^n$.任取\[
+            R\left(\lambda_1\right)\ni\bm{v}=\bm{v}_1+\bm{v}_2+\cdots+\bm{v}_s,\bm{v}_i\in V_i
+        \]考虑$V_i$的基\[
+            \bm{e}_{ir_i}\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\bm{e}_{i,r_i-1}\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\cdots\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\bm{e}_{i1}\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\bm{0}
+        \]即$\left(
+            \bm{\varphi}-\lambda_1\bm{I}_V
+            \right)^{r_i}\left(
+            \bm{e}_{ij}
+            \right)=\bm{0},\forall j\Longrightarrow
+            \left(
+            \bm{\varphi}-\lambda_1\bm{I}_V
+            \right)^{r_i}\left(
+            \bm{v}_i
+            \right)=\bm{0}$.于是\[
+            \left(
+            \bm{\varphi}-\lambda_1\bm{I}_V
+            \right)^n\left(\bm{v}\right)=
+            \left(
+            \bm{\varphi}-\lambda_1\bm{I}_V
+            \right)^n\left(\bm{v}_1\right)+\left(
+            \bm{\varphi}-\lambda_1\bm{I}_V
+            \right)^n\left(\bm{v}_2\right)+\cdots+\left(
+            \bm{\varphi}-\lambda_1\bm{I}_V
+            \right)^n\left(\bm{v}_s\right)=\bm{0}
+        \]
+
+        再证$\mathrm{Ker}\left(\bm{\varphi}-\lambda_1\bm{I}_V\right)^n\subseteq R\left(\lambda_1\right)$.设$\bm{v}\in V$在基下的坐标向量\[
+            \bm{x}=\left(
+            x_{11},x_{12},\cdots,x_{1r_1},x_{21},x_{22},\cdots,x_{2r_2},\cdots,x_{s1},x_{s2},\cdots,x_{sr_s}
+            \right)'
+        \]考虑$\left(
+            \bm{J}-\lambda_1\bm{I}
+            \right)^n\bm{x}=\bm{0}$的解.
+
+        由上文知\[
+            \left(
+            \bm{J}_{r_i}\left(\lambda_i\right)-\lambda_1\bm{I}
+            \right)^n=\begin{cases*}
+                \bm{0}    & ,$1\leqslant i\leqslant s$ \\
+                \text{非异} & ,$s<i\leqslant k$
+            \end{cases*}
+        \]于是\[
+            x_{i1}=x_{i2}=\cdots=x_{ir_i}=0,\forall s<i\leqslant k
+        \]而\[
+            \left(
+            x_{11},x_{12},\cdots,x_{1r_1},x_{21},x_{22},\cdots,x_{2r_2},\cdots,x_{s1},x_{s2},\cdots,x_{sr_s}
+            \right)
+        \]为任意解.于是\[
+            \mathrm{Ker}\left(
+            \bm{\varphi}-\lambda_1\bm{I}_V
+            \right)^n=V_1\oplus V_2\oplus\cdots\oplus V_s=R\left(\lambda_1\right)\qedhere
+        \]
+    \end{proof}
+}
+\rem{}{}{
+    事实上，\cref{lem:根子空间}的证明中用到的系数$n$最佳取到$\max\left\{
+        r_1,r_2,\cdots,r_s
+        \right\}$或者退一步取到$r_1+r_2+\cdots+r_s.$
+}
+\dfn{根子空间}{根子空间}{
+    \[
+        R\left(\lambda_1\right)=\mathrm{Ker}\left(
+        \bm{\varphi}-\lambda_1\bm{I}_V
+        \right)^n=V_1\oplus V_2\oplus\cdots\oplus V_s
+    \]称为特征值$\lambda_1$的根子空间.
+}
+\rem{}{}{
+    同上,\cref{def:根子空间}中的$n$最佳取到$\max\left\{
+        r_1,r_2,\cdots,r_s
+        \right\}$或者退一步取到$r_1+r_2+\cdots+r_s$即代数重数（具体在\cref{ex:像空间与核空间稳定}中已证明）.
+}
+\rem{}{}{
+    根据\cref{lem:幂的像空间与核空间}，特征值$\lambda_1$的特征子空间$V_{\lambda_1}=\mathrm{Ker}\left(\bm{\varphi}-\lambda_1\bm{I}_V\right)\subseteq R\left(\lambda_1\right).$
+}
+\cor{}{}{
+    $\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{C}}\right)$可对角化当且仅当对于所有特征值$\lambda_0$均有\[
+        V_{\lambda_0}=R\left(\lambda_0\right)
+    \]\begin{proof}
+        考虑维数，根据\cref{thm:特征子空间的维数}，左侧特征子空间的维数是$\bm{\varphi}$的几何重数；右侧根据定义是各循环子空间的维数之和，而循环子空间的维数之和为属于$\lambda_1$的Jordan块的阶数之和，即代数重数.于是根据\cref{def:完全特征向量系}和\cref{thm:可对角化的条件}知$\bm{\varphi}$可对角化.
+    \end{proof}
+}
+下面对上面叙述的内容进行一个总结.
+\thm{全空间关于Jordan标准型的两种直和分解}{全空间关于Jordan标准型的两种直和分解}{
+    设$\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{C}}^n\right)$\begin{enumerate}[label=\arabic*）]
+        \item 设$\bm{\varphi}$的初等因子组为\[
+                  \left(
+                  \lambda-\lambda_1
+                  \right)^{r_1},\left(
+                  \lambda-\lambda_2
+                  \right)^{r_2},\cdots,\left(
+                  \lambda-\lambda_k
+                  \right)^{r_k}
+              \]并且它们相伴的子空间为$V_1,V_2,\cdots,V_k$，则\[
+                  V=V_1\oplus V_2\oplus\cdots\oplus V_k
+              \]其中$V_i$是维数等于$r_i$的关于$\bm{\varphi}-\lambda_i\bm{I}_V$的循环子空间.
+        \item 设$\bm{\varphi}$的全体不同特征值为$\lambda_1,\lambda_2,\cdots,\lambda_s$，则\[
+                  V=R\left(\lambda_1\right)\oplus R\left(\lambda_2\right)\oplus\cdots\oplus R\left(\lambda_s\right)
+              \]其中$R\left(\lambda_i\right)$是特征值$\lambda_i$的根子空间，其维数等于$\lambda_i$的代数重数，并且每一个$R\left(\lambda_i\right)$都可以分解为$(1)$中若干个$V_j$的直和.
+    \end{enumerate}
+}
+\rem{}{}{
+    Jordan标准型理论的核心是如果一个矩阵问题的条件与结论在相似关系下不发生改变，那么就可以将该问题化约到Jordan标准型的情况下进行讨论，并且进一步地化约到Jordan块的情况下进行讨论.
+
+    但在具体实践中，一般来说是\[
+        \text{Jordan块成立}\Longrightarrow
+        \text{Jordan标准型成立}\Longrightarrow
+        \text{一般矩阵成立}
+    \]
+}
+\exa{}{}{
+    设$\bm{A}\in M_n\left(\mathbb{C}\right)$，证明：$\bm{A}=\bm{BC},$其中$\bm{B},\bm{C}$为对称阵.\begin{proof}
+        因为存在非异阵$\bm{P}$使得\[
+            \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=
+            \mathrm{diag}\left\{
+            \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+            \right\}
+        \]先来考虑Jordan块\[
+            \bm{J}_{r_i}\left(\lambda_i\right)=\begin{pmatrix}
+                \lambda_i & 1         &        &        &           \\
+                          & \lambda_i & 1      &                    \\
+                          &           & \ddots & \ddots &           \\
+                          &           &        & \ddots & 1         \\
+                          &           &        &        & \lambda_i
+            \end{pmatrix}
+        \]事实上，这个矩阵旋转一定角度后自然成为一个对称阵，注意到\[
+            \begin{pmatrix}
+                \lambda_i & 1         &        &        &           \\
+                          & \lambda_i & 1      &                    \\
+                          &           & \ddots & \ddots &           \\
+                          &           &        & \ddots & 1         \\
+                          &           &        &        & \lambda_i
+            \end{pmatrix}=\begin{pmatrix}
+                  &         & 1         & \lambda_i \\
+                  & 1       & \lambda_i             \\
+                  & \iddots & \iddots   &           \\
+                1 & \iddots                         \\
+                \lambda_i
+            \end{pmatrix}\begin{pmatrix}
+                 &   &         &   & 1 \\
+                 &   &         & 1     \\
+                 &   & \iddots         \\
+                 & 1                   \\
+                1
+            \end{pmatrix}=\bm{S}_i\bm{T}_i
+        \]然后推广到Jordan标准型即令\begin{align*}
+             & \bm{S}=\mathrm{diag}\,\left\{
+            \bm{S}_1,\bm{S}_2,\cdots,\bm{S}_k
+            \right\}                         \\
+             & \bm{T}=\mathrm{diag}\,\left\{
+            \bm{T}_1,\bm{T}_2,\cdots,\bm{T}_k
+            \right\}
+        \end{align*}于是\[
+            \bm{J}=\bm{ST}
+        \]其中$\bm{S},\bm{T}$是对称阵.又因为$\bm{A}=\bm{PJP}^{-1}=\bm{PSTP}^{-1}=\left(\bm{PSP}'\right)\left(\left(\bm{P}^{-1}\right)'\bm{TP}^{-1}\right)$是对称阵.
+    \end{proof}
+}
+\exa{}{}{
+    设$\bm{A}\in M_n\left(\mathbb{C}\right)$，求$\bm{A}^k\left(k\geqslant 1\right).$\begin{solution}
+        因为存在非异阵$\bm{P}$使得\[
+            \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=
+            \mathrm{diag}\left\{
+            \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+            \right\}
+        \]于是$\bm{A}^k=\bm{P}\bm{J}^k\bm{P}^{-1}=\bm{P}\mathrm{diag}\left\{
+            \bm{J}_{r_1}\left(\lambda_1\right)^k,\bm{J}_{r_2}\left(\lambda_2\right)^k,\cdots,\bm{J}_{r_k}\left(\lambda_k\right)^k
+            \right\}\bm{P}^{-1}$.
+
+        考虑\begin{align*}\bm{J}_n\left(\lambda_0\right) & =
+              \begin{pmatrix}
+                          \lambda_0 & 1         &        &        &           \\
+                                    & \lambda_0 & 1      &                    \\
+                                    &           & \ddots & \ddots &           \\
+                                    &           &        & \ddots & 1         \\
+                                    &           &        &        & \lambda_0
+                      \end{pmatrix} \\
+                                             & =\lambda_0\bm{I}_n+\bm{N}
+        \end{align*}其中\[
+            \bm{N}=\bm{J}_n\left(0\right)=\begin{pmatrix}
+                0 & 1 &        &        &   \\
+                  & 0 & 1      &            \\
+                  &   & \ddots & \ddots &   \\
+                  &   &        & \ddots & 1 \\
+                  &   &        &        & 0
+            \end{pmatrix}
+        \]并且有良好的性质\[
+            \bm{N}^2=\begin{pmatrix}
+                 &  & 1                        \\
+                 &  &   & 1                    \\
+                 &  &   &   & \ddots           \\
+                 &  &   &   &        & 1       \\
+                 &  &   &   &        &   &     \\
+                 &  &   &   &        &   &   &
+            \end{pmatrix},\cdots,\bm{N}^{n-1}=\begin{pmatrix}
+                 &  &  &  &  &  &  & 1 \\
+                \\
+                \\
+                \\
+                \\
+                \\
+            \end{pmatrix}
+        \]因为$\bm{N}$的特征多项式为$\lambda^n$，于是根据\cref{thm:Cayley-Hamilton定理}Cayley-Hamilton定理知$\bm{N}^n=\bm{O}.$因为纯量阵与任何矩阵都可交换，则设$k\geqslant n-1$有\begin{align*}
+            \bm{J}_n\left(\lambda_0\right)^k & =\left(\lambda_0\bm{I}_n+\bm{N}\right)^k                                                                                   \\
+                                             & =\lambda_0^k\bm{I}_n+C_k^1\lambda_0^{k-1}\bm{N}+C_k^2\lambda_0^{k-2}\bm{N}^2+\cdots+C_k^{n-1}\lambda_0^{k-n+1}\bm{N}^{n-1} \\
+                                             & =\begin{pmatrix}
+                                                    \lambda_0^k & C_k^1\lambda_0^{k-1} & C_k^2\lambda_0^{k-2} & \cdots & C_k^{n-1}\lambda_0^{k-n+1} \\
+                                                                & \lambda_0^k          & C_k^1\lambda_0^{k-1} & \cdots & C_k^{n-2}\lambda_0^{k-n+2} \\
+                                                                &                      & \lambda_0^k          & \cdots & \vdots                     \\
+                                                                &                      &                      & \ddots & \vdots                     \\
+                                                                &                      &                      &        & \lambda_0^k
+                                                \end{pmatrix}
+        \end{align*}合并即可.
+    \end{solution}
+}
+\lem{同时对角化}{同时对角化}{
+    设$\bm{A},\bm{B}\in M_n\left(\mathbb{C}\right)$，若$\bm{A},\bm{B}$均可对角化且乘积可交换即$\bm{AB}=\bm{BA}$，则$\bm{A},\bm{B}$可同时对角化即存在非异阵$\bm{P}$使得$\bm{P}^{-1}\bm{AP}$和$\bm{P}^{-1}\bm{BP}$均为对角阵.\begin{proof}
+        考虑几何角度，即$\bm{\varphi},\bm{\psi}\in\mathcal{L}\left(V_{\mathbb{C}}^n\right)$，二者均可对角化且$\bm{\varphi}\bm{\psi}=\bm{\psi}\bm{\varphi}$，则$\bm{\varphi},\bm{\psi}$可同时对角化即存在一组基使得$\bm{\varphi},\bm{\psi}$在这组基下的表示矩阵均为对角阵.
+
+        下面对线性空间的维数$n$进行归纳.$n=1$显然.设维数$<n$时成立，考虑维数等于$n$的情况.
+
+        设$\bm{\varphi}$的全体不同特征值为$\lambda_1,\lambda_2,\cdots,\lambda_s$.一方面，$s=1$则$\bm{\varphi}=\lambda_1\bm{I}_V$.因为$\bm{\psi}$可对角化即存在一组基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$使得$\bm{\psi}$在这组基下的表示矩阵为对角阵，因为纯量变换$\bm{\varphi}=\lambda_1\bm{I}_V$在任意基下的表示矩阵均为对角阵$\lambda_1\bm{I}_n$，于是证毕.
+
+        另一方面，$s>1$时.设对应特征子空间$V_1,V_2,\cdots,V_s$.根据\cref{thm:可对角化的条件}，$\bm{\varphi}$可对角化即\[
+            V=V_1\oplus V_2\oplus\cdots\oplus V_s
+        \]其中$\dim V_i<n,\forall 1\leqslant i\leqslant s.$
+
+        下面利用$\bm{\varphi\psi}=\bm{\psi\varphi}$证明$\bm{\varphi}$的特征子空间$V_i$是$\bm{\psi}$的不变子空间.任取$\bm{v}_i\in V_i\Longrightarrow \bm{\varphi}\left(\bm{v}_i\right)=\lambda_i\bm{v}_i.$于是\begin{align*}
+            \bm{\varphi}\left(\bm{\psi}\left(\bm{v}_i\right)\right) & =\bm{\psi}\left(\bm{\varphi}\left(\bm{v}_i\right)\right) \\
+                                                                    & =\lambda_i\bm{\psi}\left(\bm{v}_i\right)
+        \end{align*}
+        于是$\bm{\psi}\left(\bm{v}_i\right)\in V_i$即$V_i$是$\bm{\psi}$的不变子空间.
+
+        做限制$\bm{\varphi}\Big|_{V_i},\bm{\psi}\Big|_{V_i}$根据\cref{cor:可对角化等价于所有不变子空间上的限制可对角化}知它们均可对角化并且可交换.并且维数在$s>1$前提下严格小于$n$，则由归纳假设知存在$V_i$的一组基$\left\{
+            \bm{e}_{i1},\bm{e}_{i2},\cdots,\bm{e}_{ir_i}
+            \right\}$使得$\bm{\varphi}\Big|_{V_i},\bm{\psi}\Big|_{V_i}$在这组基下的表示矩阵均为对角阵.
+
+        考虑到直和$V=V_1\oplus V_2\oplus\cdots\oplus V_s\Longrightarrow$子空间的基可以拼成全空间的一组基，那么$\bm{\varphi},\bm{\psi}$在这组基下的表示矩阵即由各限制拼成的对角阵.于是证毕.
+    \end{proof}
+}
+\thm{Jordan-Chevalley分解定理}{Jordan-Chevalley分解定理}{
+    设$\bm{A}\in M_n\left(\mathbb{C}\right),$则$\bm{A}$一定可以作分解$\bm{A}=\bm{B}+\bm{C}$,其中\begin{enumerate}[label=（\arabic*）]
+        \item $\bm{B}$可对角化
+        \item $\bm{C}$是幂零阵
+        \item 乘积可交换：$\bm{BC}=\bm{CB}$
+        \item $\bm{B},\bm{C}$均可表示为$\bm{A}$的多项式
+    \end{enumerate}并且满足$(1)\sim (3)$的分解是唯一的.\begin{proof}
+        设非异阵$\bm{P}$使得\[
+            \bm{P}^{-1}\bm{A}\bm{P}=\mathrm{diag}\left\{
+            \bm{J}_1,\bm{J}_2,\cdots,\bm{J}_s
+            \right\}
+        \]其中$\lambda_1,\lambda_2,\cdots,\lambda_s$是$\bm{A}$的全体不同特征值，而$\bm{J}_i$是$\lambda_i$的根子空间的块（阶数为$\lambda_i$的代数重数$m_i$）\[
+            \bm{J}_i=\begin{pmatrix}
+                \bm{J}_{r_1}\left(\lambda_i\right) &                                    &        &                                    \\
+                                                   & \bm{J}_{r_2}\left(\lambda_i\right) &        &                                    \\
+                                                   &                                    & \ddots &                                    \\
+                                                   &                                    &        & \bm{J}_{r_k}\left(\lambda_i\right)
+            \end{pmatrix}=\lambda_i\bm{I}+\bm{N}_i=\bm{M}_i+\bm{N}_i
+        \]前者是对角阵，后者每个分块的上次对角线元素为$1$并且是幂零阵（$\bm{N}_i^{m_i}=\bm{O}$），并且有$\bm{M}_i\bm{N}_i=\bm{N}_i\bm{M}_i$.
+
+        做拼接\begin{align*}
+             & \bm{M}=\mathrm{diag}\,\left\{
+            \bm{M}_1,\bm{M}_2,\cdots,\bm{M}_s
+            \right\}                         \\
+             & \bm{N}=\mathrm{diag}\,\left\{
+            \bm{N}_1,\bm{N}_2,\cdots,\bm{N}_s
+            \right\}
+        \end{align*}前者是对角阵，后者是幂零阵并且可交换即$\bm{MN}=\bm{NM}$.于是分解$\bm{J}=\bm{M}+\bm{N}$满足条件$(1)\sim (3)$.
+
+        $\bm{J}_i$的特征多项式为$\left(\lambda-\lambda_i\right)^{m_i}$，由\cref{thm:Cayley-Hamilton定理}知$
+            \left(
+            \bm{J}_i-\lambda_i\bm{I}
+            \right)^{m_i}=
+            \bm{N}_i^{m_i}=\bm{O}
+        $.因为\[
+            \left(\lambda-\lambda_1\right)^{m_1}\left(\lambda-\lambda_2\right)^{m_2}\cdots\left(\lambda-\lambda_s\right)^{m_s}
+        \]两两互素，则由\cref{thm:Chinese Remainden Theorem}知存在$g\left(\lambda\right)$使得\[
+            g\left(\lambda\right)=\left(\lambda-\lambda_i\right)^{m_i}q_i\left(\lambda\right)+\lambda_i,\forall 1\leqslant i\leqslant s
+        \]于是\begin{align*}
+            g\left(\bm{J}_i\right)=\lambda_i\bm{I}=\bm{M}_i
+        \end{align*}而\begin{align*}
+            g\left(\bm{J}\right) & =\mathrm{diag}\left\{
+            g\left(\bm{J}_1\right),g\left(\bm{J}_2\right),\cdots,g\left(\bm{J}_s\right)
+            \right\}                                     \\
+                                 & =\mathrm{diag}\left\{
+            \bm{M}_1,\bm{M}_2,\cdots,\bm{M}_s
+            \right\}=\bm{M}
+        \end{align*}并且$\bm{N}=\bm{J}-g\left(\bm{J}\right)$即$(4)$证毕.
+
+        再考虑到$\bm{A}=\bm{P}\bm{JP}^{-1}=\bm{P}\left(\bm{M}+\bm{N}\right)\bm{P}^{-1}=\bm{P}\bm{MP}^{-1}+\bm{P}\bm{NP}^{-1}=\bm{B}+\bm{C}$,容易验证$\bm{B}$可对角化，而$\bm{C}$是幂零阵并且\begin{align*}
+            \bm{BC}=\bm{PMNP}^{-1}=\bm{PNMP}^{-1}=\bm{CB}
+        \end{align*}同时\begin{align*}
+             & g\left(\bm{A}\right)=\bm{P}g\left(\bm{J}\right)\bm{P}^{-1}=\bm{B} \\
+             & \bm{A}-\bm{B}=\bm{A}-g\left(\bm{A}\right)=\bm{C}
+        \end{align*}
+
+        于是Jordan-Chevalley分解存在性证毕，下面证明唯一性.再设$\bm{A}=\bm{B}_1+\bm{C}_1,$其中$\bm{B}_1,\bm{C}_1$满足$(1)\sim (3)$，容易证明$\bm{B}_1,\bm{C}_1$与$\bm{A}$是可交换的，于是$\bm{B}_1$与$\bm{A}$的任何一个多项式可交换即与$\bm{B}$可交换即$\bm{BB}_1=\bm{B}_1\bm{B}$.同理$\bm{CC}_1=\bm{C}_1\bm{C}$.因为\[
+            \bm{B}-\bm{B}_1=\bm{C}_1-\bm{C}
+        \]不妨设$\bm{C}_1^r=\bm{O},\bm{C}^s=\bm{O}$则$\displaystyle \left(\bm{C}_1-\bm{C}\right)^{r+s}=\sum_{i+j=r+s}C_{r+s}^i\bm{C}_1^i\bm{C}^j=\bm{O}$于是$\left(
+            \bm{B}-\bm{B}_1
+            \right)^{r+s}=\bm{O}$.由\cref{lem:同时对角化}知存在非异阵$\bm{P}$使得\[
+            \bm{P}^{-1}\bm{BP}=\begin{pmatrix}
+                a_1 &     &        &     \\
+                    & a_2 &        &     \\
+                    &     & \ddots &     \\
+                    &     &        & a_n
+            \end{pmatrix},\bm{P}^{-1}\bm{B}_1\bm{P}=\begin{pmatrix}
+                b_1 &     &        &     \\
+                    & b_2 &        &     \\
+                    &     & \ddots &     \\
+                    &     &        & b_n
+            \end{pmatrix}
+        \]于是\begin{align*}
+            \bm{O} & =\bm{P}^{-1}\left(\bm{B}-\bm{B}_1\right)^{r+s}\bm{P}                                           \\
+                   & =\left(
+            \bm{P}^{-1}\bm{B}\bm{P}-\bm{P}^{-1}\bm{B}_1\bm{P}
+            \right)^{r+s}                                                                                           \\
+                   & =\begin{pmatrix}
+                          \left(a_1-b_1\right)^{r+s} &                            &        &                            \\
+                                                     & \left(a_2-b_2\right)^{r+s} &        &                            \\
+                                                     &                            & \ddots &                            \\
+                                                     &                            &        & \left(a_n-b_n\right)^{r+s}
+                      \end{pmatrix}
+        \end{align*}于是$a_1=b_1,a_2=b_2,\cdots,a_n=b_n$即$\bm{B}=\bm{B}_1\Longrightarrow \bm{C}=\bm{C}_1$.
+
+        于是Jordan-Chevalley分解定理证毕.
+    \end{proof}
+}
+\subsection{Jordan标准型应用三大主题}
+Jordan标准型应用的第一个主题是如何合理地选取特征向量求得广义特征向量.
+\exa{}{}{
+    考虑矩阵\[
+        \bm{A}=\begin{pmatrix}
+            2 & 6 & -15 \\1&1&-5\\1 & 2 & -6
+        \end{pmatrix}\]求可逆阵$\bm{P}$使得$\bm{P}^{-1}\bm{A}\bm{P}$为Jordan标准型.\begin{solution}
+        计算得到初等因子组\[\lambda+1,
+            \left(\lambda+1\right)^2
+        \]即Jordan标准型为\[
+            \begin{pmatrix}
+                -1 &    &    \\
+                   & -1 & 1  \\
+                   &    & -1
+            \end{pmatrix}
+        \]设$\bm{P}=\left(
+            \bm{\alpha}_1,\bm{\alpha}_2,\bm{\alpha}_3
+            \right)$，由$\bm{AP}=\bm{PJ}$知\[
+            \bm{A\alpha}_1=-\bm{\alpha}_1,\bm{A\alpha}_2=-\bm{\alpha}_2,\bm{A\alpha}_3=\bm{\alpha}_2-\bm{\alpha}_3
+        \]于是$\bm{\alpha}_2$是$\bm{A}$关于特征值$-1$的特征向量，而$\bm{\alpha}_3$是$\left(
+            \bm{A}+\bm{I}_3
+            \right)\bm{x}=\bm{\alpha}_2$的一个解即广义特征向量.问题在于$\bm{\alpha}_2$的选取必然影响到$\bm{\alpha}_3$的选取.
+
+        首先求得\begin{align*}
+            \bm{A}+\bm{I}_3=\begin{pmatrix}
+                                3 & 6 & -15 \\1&2&-5\\1 & 2 & -5
+                            \end{pmatrix}\longrightarrow\begin{pmatrix}
+                                                            1 & 2 & -5 \\0&0&0\\0 & 0 & 0
+                                                        \end{pmatrix}
+        \end{align*}于是基础解系\[
+            \bm{\beta}_1=\begin{pmatrix}
+                -2 \\1\\0
+            \end{pmatrix},\bm{\beta}_2=\begin{pmatrix}
+                5 \\0\\1
+            \end{pmatrix}
+        \]试求解\[
+            \left(
+            \begin{array}{c:c}
+                    \bm{A}+\bm{I}_3 & \bm{\beta}_2
+                \end{array}
+            \right)=\begin{pmatrix}
+                3 & 6 & -15 & 5 \\1&2&-5&0\\1 & 2 & -5 & 1
+            \end{pmatrix}
+        \]发现该方程是无解的.
+
+        但实际上这并不是本问题无解的问题，而是对$\bm{\alpha}_2$的选取不够好.取$\bm{\alpha}_2=k_1\bm{\beta}_1+k_2\bm{\beta}_2=\left(
+            -2k_1+5k_2,k_1,k_2
+            \right)'$并且此处应当有\[
+            \mathrm{rank}\begin{pmatrix}
+                3 & 6 & -15 & -2k_1+5k_2 \\1&2&-5&k_1\\1 & 2 & -5 & k_2
+            \end{pmatrix}=1
+        \]明显有$k_1=k_2$，于是不妨取$k_1=k_2=1$即$\bm{\alpha}_2=\begin{pmatrix}
+                3 \\1\\1
+            \end{pmatrix}$，于是解出$\bm{\alpha}_3=\begin{pmatrix}
+                1 \\0\\0
+            \end{pmatrix}$.而$\bm{\alpha}_1$取得与$\bm{\alpha}_2$线性无关即可，不妨取$\bm{\alpha}_1=\bm{\beta}_1=\begin{pmatrix}
+                -2 \\1\\0
+            \end{pmatrix}$.于是所求\[
+            \bm{P}= \begin{pmatrix}
+                -2 & 3 & 1 \\1&1&0\\0 & 1 & 0
+            \end{pmatrix}
+        \]
+    \end{solution}
+}
+Jordan标准型应用的第二个主题是如何求得带参数的矩阵的Jordan标准型.主要有以下方法和思路：
+
+\begin{enumerate}[label=\arabic*）]
+    \item 选取特殊的子式求得行列式因子
+    \item 计算度数以确定Jordan块的个数
+    \item 计算极小多项式以确定最大的Jordan块的阶数
+\end{enumerate}
+\exa{}{}{
+    设\[
+        \bm{A}=\begin{pmatrix}
+            a & 1 & 1      & \cdots & 1      \\
+              & a & 1      & \cdots & 1      \\
+              &   & \ddots & \ddots & \vdots \\
+              &   &        & \ddots & 1      \\
+              &   &        &        & a
+        \end{pmatrix}
+    \]
+    求其Jordan标准型.\begin{solution}
+        法一.
+        \[
+            \lambda\bm{I}-\bm{A}=\begin{pmatrix}
+                \lambda-a & -1        & -1     & \cdots & -1        \\
+                          & \lambda-a & -1     & \cdots & -1        \\
+                          &           & \ddots & \ddots & \vdots    \\
+                          &           &        & \ddots & -1        \\
+                          &           &        &        & \lambda-a
+            \end{pmatrix}
+        \]注意到\[
+            \left(
+            \lambda\bm{I}-\bm{A}
+            \right)\begin{pmatrix}
+                1 & 2 & \cdots & n-1 \\
+                1 & 2 & \cdots & n-1
+            \end{pmatrix}=\left(\lambda-a\right)^{n-1}
+        \]设\begin{align*}
+            \left(
+            \lambda\bm{I}-\bm{A}
+            \right)\begin{pmatrix}
+                       1 & 2 & \cdots & n-1 \\
+                       2 & 3 & \cdots & n
+                   \end{pmatrix}=g\left(\lambda\right)
+        \end{align*}并且$a$不是$g\left(\lambda\right)$的根即上述两子式互素.则根据\cref{def:行列式因子}有\[
+            D_{n-1}\left(\lambda\right)=1,D_n\left(\lambda\right)=\left(\lambda-a\right)^n
+        \]于是不变因子组
+
+        \[
+            1,\cdots,1,\left(\lambda-a\right)^n
+        \]则Jordan标准型为$\bm{J}_n\left(a\right).$
+
+        法二.特征值$a$的代数重数为$n$，几何重数$=n-\mathrm{rank}\left(
+            \bm{A}-a\bm{I}
+            \right)=1$，于是Jordan块只有一个$n$阶的即$\bm{J}_n\left(a\right)$.
+
+        法三.$\bm{A}$的特征多项式为$\left(
+            \lambda-a
+            \right)^n$则极小多项式为$\left(
+            \lambda-a
+            \right)^k,k\leqslant n.$因为\[
+            \bm{A}=a\bm{I}_n+\bm{N}+\bm{N}^2+\cdots+\bm{N}^{n-1}
+        \]其中$\bm{N}=\bm{J}_n\left(0\right).$考虑$k=n-1$此时\begin{align*}
+            \left(
+            \bm{A}-a\bm{I}_n
+            \right)^k & =\left(
+            \bm{N}+\bm{N}^2+\cdots+\bm{N}^{n-1}
+            \right)^{n-1}             \\
+                      & =\bm{N}^{n-1} \\
+                      & \neq \bm{O}
+        \end{align*}于是极小多项式即为$\left(
+            \lambda-a
+            \right)^n$.则不变因子组为\[
+            1,\cdots,1,\left(\lambda-a\right)^n\]于是Jordan标准型为$\bm{J}_n\left(a\right)$.
+    \end{solution}
+}
+\exa{}{}{
+    设矩阵\[
+        \bm{A}=\begin{pmatrix}
+            1   &   &     &   \\
+            a+2 & 1 &     &   \\
+            5   & 3 & 1   &   \\
+            7   & 6 & b+4 & 1
+        \end{pmatrix}
+    \]求其Jordan标准型.\begin{solution}
+        明显特征值为$1$，代数重数$4$，几何重数\begin{align*}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              & 4-\mathrm{rank}\left(
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \bm{A}-\bm{I}_4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \right)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          = & \begin{cases*}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          1 & ,$a\neq -2$且$b\neq -4\leadsto\bm{J}_4\left(1\right)$ \\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          2 & ,$a=-2$或$b=-4\leadsto\mathrm{diag}\left\{
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \bm{J}_k\left(1\right),\bm{J}_l\left(1\right)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \right\},1\leqslant k\leqslant l,k+l=4$
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \end{cases*}\end{align*}显然$2\leqslant l\leqslant 3.$
+
+        于是需要估计$\bm{A}$的极小多项式（其可能是$\left(\lambda-1\right)^l,l=2,3$）.首先\begin{align*}
+            \left(\bm{A}-\bm{I}_4\right)^2 & =\begin{pmatrix}
+                                                                                      &                   &  & \\
+                                                                                      &                   &  & \\
+                                                  3\left(a+2\right)                   &                   &  & \\
+                                                  6\left(a+2\right)+5\left(b+4\right) & 3\left(b+4\right) &  &
+                                              \end{pmatrix}                                     \\
+                                           & =\begin{cases*}
+                                                  \bm{O}      & ,$a=-2$且$b=-4\leadsto\mathrm{diag}\left\{
+                                                      \bm{J}_2\left(1\right),\bm{J}_2\left(1\right)
+                                                  \right\}$                                                       \\
+                                                  \neq \bm{O} & ,$a\neq -2$或$b\neq -4\leadsto\mathrm{diag}\left\{
+                                                      \bm{J}_1\left(1\right),\bm{J}_3\left(1\right)
+                                                      \right\}$
+                                              \end{cases*}
+        \end{align*}
+    \end{solution}
+}
+Jordan标准型应用的第三个主题是关于循环子空间的应用.
+\dfn{一般的循环子空间}{一般的循环子空间}{
+    设线性变换$\bm{\varphi}\in\mathcal{L}\left(
+        V_{\mathbb{K}}^n
+        \right),\bm{0}\neq\bm{\alpha}\in V$.由$\left\{
+        \bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots
+        \right\}$这一族向量生成的子空间$C\left(
+        \bm{\varphi},\bm{\alpha}
+        \right)$称为线性变换$\bm{\varphi}$关于循环向量$\bm{\alpha}$的循环子空间.
+}
+\lem{循环子空间的基}{循环子空间的基}{
+    设$\dim C\left(\bm{\varphi},\bm{\alpha}\right)=m$则$\left\{
+        \bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{m-1}\left(\bm{\alpha}\right)
+        \right\}$必定是$C\left(\bm{\varphi},\bm{\alpha}\right)$的一组基.\begin{proof}
+        设\[k=\max\left\{
+            i\in\mathbb{Z}^+\mid \bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{i-1}\left(\bm{\alpha}\right)\text{线性无关}
+            \right\}\]即$\bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{k-1}\left(\bm{\alpha}\right)$线性无关且$\bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{k}\left(\bm{\alpha}\right)$线性相关.
+
+        根据\cref{cor:加入线性无关的向量组的向量的线性关系}知$\bm{\varphi}^k\left(\bm{\alpha}\right)$是$\bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{k-1}\left(\bm{\alpha}\right)$的线性组合.
+
+        下一步考虑数学归纳法证明$\forall i\geqslant k,\bm{\varphi}^i\left(\bm{\alpha}\right)$是$\bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{k-1}\left(\bm{\alpha}\right)$的线性组合.$i=k$时已经证明，设$<i$时成立，下面考虑$=i$时，因为$\bm{\varphi}^{i}\left(\bm{\alpha}\right)=\bm{\varphi}^{i-1}\left(\bm{\varphi}\left(\bm{\alpha}\right)\right)$是\[\bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{k-1}\left(\bm{\alpha}\right)\]的线性组合.于是证毕.
+
+        于是$\bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{k-1}\left(\bm{\alpha}\right)$是$C\left(\bm{\varphi},\bm{\alpha}\right)$的一组基并且维数为$k$即$m=\dim C\left(\bm{\varphi},\bm{\alpha}\right)=k$.
+    \end{proof}
+}
+\cor{最小不变子空间}{最小不变子空间}{
+    事实上，$C\left(
+        \bm{\varphi},\bm{\alpha}
+        \right)$是包含$\bm{\alpha}$的最小$\bm{\varphi}$-不变子空间.
+}
+\cor{}{循环子空间上的限制的表示矩阵}{
+设\[
+    \bm{\varphi}^m\left(\bm{\alpha}\right)=-a_0\bm{\alpha}-a_1\bm{\varphi}\left(\bm{\alpha}\right)-\cdots-a_{m-1}\bm{\varphi}^{m-1}\left(\bm{\alpha}\right)
+\]令\[
+    g\left(x\right)=x^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0\in \mathbb{K}\left[x\right]
+\]而限制$\bm{\varphi}\Big|_{C\left(
+    \bm{\varphi},\bm{\alpha}
+    \right)}$在基$\left\{
+    \bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{m-1}\left(\bm{\alpha}\right)
+    \right\}$下的表示矩阵为\[
+    \bm{F}\left(g\left(\lambda\right)\right)=\begin{pmatrix}
+          &   &        &   & -a_0     \\
+        1 &   &        &   & -a_1     \\
+          & 1 &        &   & \vdots   \\
+          &   & \ddots &   & \vdots   \\
+          &   &        & 1 & -a_{m-1}
+    \end{pmatrix}
+\]
+}
+\exa{}{}{
+    \begin{enumerate}[label=\arabic*）]
+        \item 考虑$\bm{\varphi}\left(\alpha\right)=\lambda_0\bm{\alpha},\lambda_0\in\mathbb{K},\bm{\alpha}\neq \bm{0}$的循环子空间$C\left(
+                  \bm{\varphi},\bm{\alpha}
+                  \right)=L\left(
+                  \bm{\alpha}
+                  \right)$.
+
+        \item 进一步地，考虑$\bm{\varphi}\left(\bm{\alpha}_i\right)=\lambda_i\bm{\alpha}_i,\lambda_1,\lambda_2,\cdots,\lambda_n\in\mathbb{K}$且互异，$\bm{\alpha}_i\neq\bm{0}$.令$\bm{\alpha}=\bm{\alpha}_1+\bm{\alpha}_2+\cdots+\bm{\alpha}_n$，容易证明$C\left(
+                  \bm{\varphi},\bm{\alpha}
+                  \right)=V$.
+    \end{enumerate}
+}
+\exa{全空间分解}{全空间分解}{
+    设$\bm{\varphi}\in\mathcal{L}\left(
+        V_{\mathbb{K}}^n
+        \right)$的不变因子为\[
+        1,\cdots,1,d_1\left(\lambda\right),\cdots,d_k\left(\lambda\right)
+    \]根据有理标准型理论知存在$V$的一组基$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为\[
+        \bm{F}= \mathrm{diag}\left\{
+        \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
+        \right\}
+    \]因为表示矩阵为多项式友阵说明是循环子空间，于是全空间一定可以分解为循环子空间的直和\[
+        V=C\left(
+        \bm{\varphi},\bm{e}_{i_1}
+        \right)\oplus C\left(
+        \bm{\varphi},\bm{e}_{i_2}
+        \right)\oplus\cdots\oplus C\left(
+        \bm{\varphi},\bm{e}_{i_k}
+        \right)
+    \]
+}
+\exa{全空间分解}{全空间分解2}{
+    设$\bm{\varphi}\in\mathcal{L}\left(
+        V_{\mathbb{C}}^n
+        \right)$的初等因子为\[
+        \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
+    \]并且存在一组基$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为\[
+        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
+        \right\}
+    \]根据\cref{thm:全空间关于Jordan标准型的两种直和分解}知\[
+        V=C\left(
+        \bm{\varphi}-\lambda_1\bm{I}_V,\bm{e}_{i_1}
+        \right)\oplus C\left(
+        \bm{\varphi}-\lambda_2\bm{I}_V,\bm{e}_{i_2}
+        \right)\oplus\cdots\oplus C\left(
+        \bm{\varphi}-\lambda_k\bm{I}_V,\bm{e}_{i_k}
+        \right)
+    \]
+}
+\rem{}{}{
+    \cref{ex:全空间分解}和\cref{ex:全空间分解2}都是关于全空间的分解，但是\cref{ex:全空间分解}是关于同一个线性变换而\cref{ex:全空间分解2}不是.
+}
+\thm{唯一确定可交换的线性变换}{唯一确定可交换的线性变换}{
+    设$n$维循环空间$V=C\left(
+        \bm{\varphi},\bm{\alpha}
+        \right),\bm{\psi}\in\mathcal{L}\left(
+        V
+        \right)$且$
+        \bm{\varphi\psi}=\bm{\psi\varphi}
+    $则\begin{enumerate}[label=\arabic*）]
+        \item $\bm{\psi}$由$\bm{\psi}\left(\bm{\alpha}\right)$唯一确定
+        \item $\exists g\left(x\right)\in\mathbb{K}\left[x\right]\st\bm{\psi}=g\left(\bm{\varphi}\right)$
+    \end{enumerate}\begin{proof}
+        因为$V=C\left(
+            \bm{\varphi},\bm{\alpha}
+            \right)$的基为$\left\{
+            \bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\cdots,\bm{\varphi}^{n-1}\left(\bm{\alpha}\right)
+            \right\}$,$\bm{\psi}$由其在基上的作用唯一决定而$\bm{\psi}\left(
+            \bm{\varphi}^i\left(
+                \bm{\alpha}
+                \right)
+            \right)=\bm{\varphi}^i\left(
+            \bm{\psi}\left(
+                \bm{\alpha}
+                \right)
+            \right),\forall 0\leqslant i\leqslant n-1$.于是$\bm{\psi}$由$\bm{\psi}\left(
+            \bm{\alpha}
+            \right)$唯一确定.
+
+        $(2)$因为\[
+            \bm{\psi}\left(\bm{\alpha}\right)=
+            a_0\bm{\alpha}+a_1\bm{\varphi}\left(\bm{\alpha}\right)+\cdots+a_{n-1}\bm{\varphi}^{n-1}\left(\bm{\alpha}\right)
+        \]令\[
+            g\left(x\right)=a_0+a_1x+\cdots+a_{n-1}x^{n-1}\in\mathbb{K}\left[x\right]
+        \]于是$\bm{\psi}$和$g\left(\bm{\varphi}\right)$是两个均可与$\bm{\varphi}$交换的线性变换，且$(1)$表明它们由$\bm{\alpha}$处的值唯一确定，于是由$\bm{\psi}\left(
+            \bm{\alpha}
+            \right)=g\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)\Longrightarrow \bm{\psi}=g\left(
+            \bm{\varphi}
+            \right).$
+    \end{proof}
+}
+\cor{}{相关推论}{
+    \begin{enumerate}[label=\arabic*）]
+        \item 若$\bm{A}=\bm{F}\left(g\left(\lambda\right)\right),\bm{AB}=\bm{BA}$,则$\bm{B}=f\left(\bm{A}\right)$
+        \item 若$\bm{A}=\bm{J}_n\left(\lambda_0\right),\bm{AB}=\bm{BA}$,则$\bm{B}=g\left(\bm{A}\right)$
+    \end{enumerate}
+}

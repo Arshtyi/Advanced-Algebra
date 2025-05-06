@@ -8,7 +8,7 @@
 \ProvidesClass{AdvancedAlgebra}
 
 % --- Base Class and Options ---
-\LoadClass[a4paper,12pt,twoside]{book}
+\LoadClass[a4paper,12pt,twoside,openany]{book}
 
 % ===========================================================================
 % I. ENGINE DETECTION AND CORE PACKAGES

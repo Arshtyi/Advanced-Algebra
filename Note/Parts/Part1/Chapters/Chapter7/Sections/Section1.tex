@@ -1,0 +1,230 @@
+\section{多项式矩阵}
+\subsection{引入}
+这一章我们将要开始研究曾经提出的问题：对于向量空间上的线性变换，怎么找到一组基使得该线性变换在这组基下的表示矩阵相对简单.代数角度则是寻找一些尽可能简单的矩阵，使得所有其他矩阵均与它们相似.
+
+第一步，要找出矩阵在相似关系下的全系不变量.第二步，构造相似标准型.
+\clm{}{}{
+    一种关系下的全系不变量是这样的量，首先，它们在这种关系下不发生改变，并且如果全系不变量相等，则可断言关系成立.
+
+    这也就意味着，不变量不一定是全系不变量.
+
+    对于相抵关系，找到标准型是极其容易的，但对相似关系，这个问题要复杂得多.比如特征多项式与极小多项式，二者即使“加”起来也不是一个相似关系的全系不变量.
+}
+\subsection{多项式矩阵/ \texorpdfstring{$\lambda$}{lambda}-矩阵}
+\dfn{多项式矩阵}{多项式矩阵}{
+    设$\bm{A}\left(\lambda\right)=\left(a_{ij}\left(\lambda\right)\right)_{m\times n}$，其中$a_{ij}\left(\lambda\right)$是关于未定元$\lambda$的多项式，则称$\bm{A}\left(\lambda\right)$为多项式矩阵或$\lambda$-矩阵.
+}
+\pro{多项式矩阵的基础性质}{多项式矩阵的基础性质}{
+    设$\lambda$-矩阵$\bm{A}\left(\lambda\right)=\left(a_{ij}\left(\lambda\right)\right)_{m\times n},\bm{B}\left(\lambda\right)=\left(b_{ij}\left(\lambda\right)\right)_{k\times l}$.
+
+    \begin{enumerate}[label=\arabic*）]
+        \item $\bm{A}\left(\lambda\right)=\bm{B}\left(\lambda\right)$当且仅当\[
+                  \begin{cases*}
+                      m=k,n=l \\
+                      a_{ij}\left(\lambda\right)=b_{ij}\left(\lambda\right),\forall 1\leqslant i\leqslant m,1\leqslant j\leqslant n
+                  \end{cases*}
+              \]
+        \item 规定同阶多项式矩阵的加法（$m=k,n=l$）：\[
+                  \bm{A}\left(\lambda\right)\pm\bm{B}\left(\lambda\right)=\left(a_{ij}\left(\lambda\right)\pm b_{ij}\left(\lambda\right)\right)_{m\times n}
+              \]
+        \item 定义数乘：$\forall k\in \mathbb{K},k\bm{A}\left(\lambda\right)=\left(ka_{ij}\left(\lambda\right)\right)_{m\times n}$
+        \item 定义乘法：设$\bm{B}\left(\lambda\right)=\left(b_{ij}\left(\lambda\right)\right)_{n\times p}$,则\[\bm{C}\left(\lambda\right)=\bm{A}\left(\lambda\right)\bm{B}\left(\lambda\right)=\left(c_{ij}\left(\lambda\right)\right)_{m\times p}\]其中\[
+                  c_{ij}\left(\lambda\right)=
+                  \sum_{k=1}^{n}a_{ik}\left(\lambda\right)b_{kj}\left(\lambda\right)
+              \]
+    \end{enumerate}
+}
+\rem{}{}{
+    多项式矩阵的性质不是随便一想就从数值矩阵中推广得到的，必须经过严密的推导，也并不是所有的性质都能推广到多项式矩阵上.比如$\lambda$-矩阵$\bm{A}\left(\lambda\right)=\begin{pmatrix}
+            \lambda & 0 \\1 & 0
+        \end{pmatrix},\left|\bm{A}\left(\lambda\right)\right|\neq 0$但
+    $\bm{A}\left(\lambda\right)$不可逆.
+}
+\dfn{多项式矩阵初等变换}{多项式矩阵初等变换}{
+    以下为$\lambda$-矩阵的初等行（列）变换.
+
+    \begin{enumerate}[label=\arabic*）]
+        \item 不同两行（列）对换
+        \item 某一行（列）乘上某个非零常数
+        \item 某一行（列）乘以一个多项式加到另一行（列）上
+    \end{enumerate}
+}
+\clm{}{}{
+    \cref{def:多项式矩阵初等变换}第二类变换只能是非零常数，不能是一个多项式，更不能是$\lambda^{-1}$这样的非法元素.
+}
+\dfn{初等$\lambda$-阵}{初等多项式矩阵}{
+    对$\bm{I}_n$依次作用三类$\lambda$-初等行变换得到的矩阵称为初等$\lambda$-阵.
+    \begin{enumerate}[label=\arabic*）]
+        \item \[\bm{P}_{ij}=\begin{pmatrix}
+                      1 &        &        &        &        &        &   \\
+                        & \ddots &        &        &        &        &   \\
+                        &        & 0      & \cdots & 1      &        &   \\
+                        &        & \vdots & \ddots & \vdots &        &   \\
+                        &        & 1      & \cdots & 0      &        &   \\
+                        &        &        &        &        & \ddots &   \\
+                        &        &        &        &        &        & 1
+                  \end{pmatrix}
+              \]
+        \item \[
+                  \bm{P}_i\left(c\right)=\begin{pmatrix}
+                      1 &        &   &        &   &        &   \\
+                        & \ddots &   &        &   &        &   \\
+                        &        & c &        &   &        &   \\
+                        &        &   & \ddots &   &        &   \\
+                        &        &   &        & 1 &        &   \\
+                        &        &   &        &   & \ddots &   \\
+                        &        &   &        &   &        & 1
+                  \end{pmatrix}
+              \]
+        \item \[
+                  \bm{T}_{ij}\left(f\left(\lambda\right)\right)=\begin{pmatrix}
+                      1 &        &                       &        &   &        &   \\
+                        & \ddots &                       &        &   &        &   \\
+                        &        & 1                     &        &   &        &   \\
+                        &        & \vdots                & \ddots &   &        &   \\
+                        &        & f\left(\lambda\right) & \cdots & 1 &        &   \\
+                        &        &                       &        &   & \ddots &   \\
+                        &        &                       &        &   &        & 1
+                  \end{pmatrix}
+              \]
+    \end{enumerate}
+}
+\thm{初等$\lambda$-变换与初等$\lambda$-阵}{初等多项式变换与初等多项式矩阵}{
+    $\lambda$-矩阵的初等行（列）变换等价于左（右）乘以相应的初等$\lambda$-阵.
+}
+\dfn{$\lambda$-矩阵的相抵}{多项式矩阵的相抵}{
+    若$\bm{A}\left(\lambda\right)$经过若干次初等行（列）变换可以化为$\bm{B}\left(\lambda\right)$，则称$\bm{A}\left(\lambda\right)$与$\bm{B}\left(\lambda\right)$相抵.
+}
+\dfn{$\lambda$-矩阵的逆阵}{多项式矩阵的逆阵}{
+    设$n$阶$\lambda$-阵$\bm{A}\left(\lambda\right),\bm{B}\left(\lambda\right)$，若\[\bm{A}\left(\lambda\right)\bm{B}\left(\lambda\right)=\bm{B}\left(\lambda\right)\bm{A}\left(\lambda\right)=\bm{I}_n\]则称$\bm{A}\left(\lambda\right)$为可逆$\lambda$-阵，$\bm{B}\left(\lambda\right)$为$\bm{A}\left(\lambda\right)$的逆阵，记作$\bm{A}\left(\lambda\right)^{-1}.$
+}
+\thm{$\lambda$-矩阵的乘积的逆阵}{多项式矩阵的乘积的逆阵}{
+    若干可逆$\lambda$-矩阵的乘积仍然可逆且
+    \[
+        \left(\bm{A}_1\left(\lambda\right)\cdots\bm{A}_m\left(\lambda\right)\right)^{-1}=
+        \bm{A}_m\left(\lambda\right)^{-1}\cdots\bm{A}_1\left(\lambda\right)^{-1}
+    \]
+}
+\thm{初等$\lambda$-矩阵的逆阵}{初等多项式矩阵的逆阵}{
+    上述初等$\lambda$-阵均是可逆$\lambda$-阵
+    \[
+        \bm{P}_{ij}^{-1}=\bm{P}_{ij},
+        \bm{P}_i\left(c\right)^{-1}=\bm{P}_i\left(c^{-1}\right),\bm{T}_{ij}\left(f\left(\lambda\right)\right)^{-1}=\bm{T}_{ij}\left(-f\left(\lambda\right)\right)
+    \]
+}
+\subsection{矩阵多项式}
+\dfn{矩阵多项式}{矩阵多项式}{
+    定义
+    \[
+        \bm{M}\left(\lambda\right)=\bm{M}_m\lambda^m+\bm{M}_{m-1}\lambda^{m-1}+\cdots+\bm{M}_1\lambda+\bm{M}_0
+    \]其中，$\bm{M}_{i}\in M_{r\times s}\left(\mathbb{K}\right)$.这样以矩阵为系数的多项式称为矩阵多项式.
+}
+\dfn{矩阵多项式的次数}{矩阵多项式的次数}{
+    若$\bm{M}_m\neq \bm{O}$，定义$\deg\bm{M}\left(\lambda\right)=m$.约定$\deg\bm{O}=-\infty.$
+}
+\dfn{矩阵多项式的相等}{矩阵多项式的相等}{
+    设
+    \[
+        \bm{M}\left(\lambda\right)=\bm{M}_m\lambda^m+\bm{M}_{m-1}\lambda^{m-1}+\cdots+\bm{M}_1\lambda+\bm{M}_0,\bm{M}_m\neq \bm{O}
+    \]和
+    \[
+        \bm{N}\left(\lambda\right)=\bm{N}_n\lambda^n+\bm{N}_{n-1}\lambda^{n-1}+\cdots+\bm{N}_1\lambda+\bm{N}_0,\bm{N}_n\neq \bm{O}
+    \]则$\bm{M}\left(\lambda\right)=\bm{N}\left(\lambda\right)$当且仅当
+    \[m=n,\bm{M}_i=\bm{N}_i,\forall 0\leqslant i\leqslant m=n\]
+}
+\clm{}{}{
+    多项式矩阵和矩阵多项式这两个理论体系实质是等价的.
+}
+\dfn{矩阵多项式的运算定义}{矩阵多项式的运算定义}{
+    设
+    \[
+        \bm{M}\left(\lambda\right)=\bm{M}_m\lambda^m+\bm{M}_{m-1}\lambda^{m-1}+\cdots+\bm{M}_1\lambda+\bm{M}_0,\bm{M}_m\neq \bm{O}
+    \]和
+    \[
+        \bm{N}\left(\lambda\right)=\bm{N}_n\lambda^n+\bm{N}_{n-1}\lambda^{n-1}+\cdots+\bm{N}_1\lambda+\bm{N}_0,\bm{N}_n\neq \bm{O}
+    \]
+    \begin{enumerate}[label=\arabic*）]
+        \item 定义加法：不妨设$m\geqslant n$则
+              \begin{align*}
+                    & \bm{M}\left(\lambda\right)+\bm{N}\left(\lambda\right) \\
+                  = &
+                  \bm{M}_m\lambda^m+\cdots+\bm{M}_{n+1}\lambda^{n+1}+\left(\bm{M}_n+\bm{N}_n\right)\lambda^n+\cdots+\left(\bm{M}_1+\bm{N}_1\right)\lambda+\left(\bm{M}_0+\bm{N}_0\right)
+              \end{align*}
+        \item 定义数乘：$\forall k\in \mathbb{K},k\bm{M}\left(\lambda\right)=\left(k\bm{M}_m\right)\lambda^m+\cdots+\left(k\bm{M}_1\right)\lambda+k\bm{M}_0$
+        \item 定义乘法：\[
+                  \bm{M}\left(\lambda\right)\cdot \bm{N}\left(\lambda\right)=\bm{P}\left(\lambda\right)=\sum\bm{P}_k\lambda^k
+              \]其中$\displaystyle
+                  \bm{P}_k=\sum_{i+j=k}\bm{M}_i\bm{N}_j$
+    \end{enumerate}
+}
+\clm{}{}{
+    由于矩阵乘法的特殊性，矩阵多项式一般不可交换顺序，同时相乘得到的新矩阵多项式也不一定能够保持次数.
+}
+\lem{矩阵多项式的乘积的次数}{矩阵多项式的乘积的次数}{
+    $\deg\left(\bm{M}\left(\lambda\right)\cdot\bm{N}\left(\lambda\right)\right)\leqslant \deg\bm{M}\left(\lambda\right)+\deg\bm{N}\left(\lambda\right)$.特别地，若$\bm{M}_m$或$\bm{N}_n$可逆则取到等号.\begin{proof}
+        因为$\bm{M}\left(\lambda\right)\cdot\bm{N}\left(\lambda\right)$的首项为$\bm{M}_m\bm{N}_n\lambda^{m+n}$可能为$\bm{O}$，但当某一个可逆时，因为可逆阵乘以一个矩阵不为零矩阵于是取到等号.
+    \end{proof}
+}
+\lem{矩阵多项式的带余除法}{矩阵多项式的带余除法}{
+    设$\lambda$-阵$\bm{M}\left(\lambda\right)$和数字矩阵$\bm{B}\in M_n\left(\mathbb{K}\right)$.那么
+    \[
+        \bm{M}\left(\lambda\right)=\left(\lambda\bm{I}-\bm{B}\right)\bm{Q}\left(\lambda\right)+\bm{R}
+    \]
+    \[
+        \bm{M}\left(\lambda\right)=\bm{S}\left(\lambda\right)\left(\lambda\bm{I}-\bm{B}\right)+\bm{T}
+    \]\begin{proof}
+        对$\deg\bm{M}\left(\lambda\right)=m$进行归纳.$m=0$取$\bm{S}\left(\lambda\right)=\bm{Q}\left(\lambda\right)=\bm{O},\bm{R}=\bm{T}=\bm{M}\left(\lambda\right)$即可.假设$\deg\bm{M}\left(\lambda\right)<m$时结论成立，下证$\deg\bm{M}\left(\lambda\right)=m$时的情况.令$\bm{Q}_1\left(\lambda\right)=\bm{M}_m\lambda^{n-1}$则
+        \[
+            \bm{M}\left(\lambda\right)-\left(\lambda\bm{I}-\bm{B}\right)\bm{Q}_1\left(\lambda\right)=\left(\bm{B}\bm{M}_m+\bm{M}_{m-1}\right)\lambda^{m-1}+\cdots+\bm{M}_0
+        \]故存在$\bm{Q}_2\left(\lambda\right),\bm{R}\st$
+        \[
+            \bm{M}\left(\lambda\right)-\left(\lambda\bm{I}-\bm{B}\right)\bm{Q}_1\left(\lambda\right)=\left(\lambda\bm{I}-\bm{B}\right)\bm{Q}_2\left(\lambda\right)+\bm{R}
+        \]取$\bm{Q}\left(\lambda\right)=\bm{Q}_1\left(\lambda\right)+\bm{Q}_2\left(\lambda\right).$
+
+        另一方向同理， 证毕.
+    \end{proof}
+}
+\subsection{相似与相抵}
+\thm{}{矩阵相似等价于特征矩阵相抵}{
+    设$\bm{A},\bm{B}\in M_n\left(\mathbb{K}\right)$，则二者相似$\bm{A}\approx  \bm{B}$当且仅当它们的特征矩阵相抵\[\lambda\bm{I}_n-\bm{A}\sim\lambda\bm{I}_n-\bm{B}\]\begin{proof}
+        必要性：即二者相似则特征矩阵相抵，这是显然的.设$\bm{B}=\bm{P}^{-1}\bm{AP}$，则\[
+            \lambda\bm{I}_n-\bm{B}=\bm{P}^{-1}\left(\lambda\bm{I}_n-\bm{A}\right)\bm{P}
+        \]因为可逆阵是初等数字矩阵的乘积，后者是特殊的初等$\lambda$-矩阵，于是$\lambda\bm{I}_n-\bm{B}$与$\lambda\bm{I}_n-\bm{A}$相抵.
+
+        充分性，即\[\bm{M}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)\bm{N}\left(\lambda\right)=\lambda\bm{I}-\bm{B}\]其中$\bm{M}\left(\lambda\right),\bm{N}\left(\lambda\right)$是可逆$\lambda$-阵.又
+        $\bm{M}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)=\left(\lambda\bm{I}-\bm{B}\right)\bm{N}\left(\lambda\right)^{-1}$，考虑左带余除法\[
+            \bm{M}\left(\lambda\right)=\left(\lambda\bm{I}-\bm{B}\right)\bm{Q}\left(\lambda\right)+\bm{R}
+        \]即\[
+            \left(\lambda\bm{I}-\bm{B}\right)\left[
+                \bm{Q}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)-\bm{N}\left(\lambda\right)^{-1}
+                \right]=-\bm{R}\left(\lambda\bm{I}-\bm{A}\right)
+        \]断言次数$\deg\left[
+                \bm{Q}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)-\bm{N}\left(\lambda\right)^{-1}
+                \right]\leqslant 0$（即为数字矩阵）.
+
+        考虑反证法证明，设
+        $\deg
+            \left[
+                \bm{Q}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)-\bm{N}\left(\lambda\right)^{-1}
+                \right]\geqslant 1
+        $则上式左侧次数不低于$2$，右侧次数不高于$1$，矛盾.于是$\bm{Q}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)-\bm{N}\left(\lambda\right)^{-1}=-\bm{P}\in M_n\left(\mathbb{K}\right)$.于是得到
+        \[
+            \bm{P}\lambda-\bm{BP}=\bm{R}\lambda-\bm{RA}
+        \]这是两个矩阵多项式的相等，则$\bm{P}=\bm{R},\bm{BP}=\bm{RA}$.于是只要证明$\bm{P}=\bm{R}$是一个可逆阵即可.
+
+        因为$\bm{P}=
+            \bm{Q}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)-\bm{N}\left(\lambda\right)^{-1}
+        $，于是
+        \[
+            \bm{Q}\left(\lambda\right)\left(\lambda\bm{I}-\bm{A}\right)\bm{N}\left(\lambda\right)+\bm{P}\bm{N}\left(\lambda\right)=\bm{I}_n
+        \]即
+        \[
+            \bm{Q}\left(\lambda\right)\bm{M}\left(\lambda\right)^{-1}\left(\lambda\bm{I}-\bm{B}\right)+\bm{P}\bm{N}\left(\lambda\right)=\bm{I}_n
+        \]考虑右带余除法$\bm{N}\left(\lambda\right)=\bm{S}\left(\lambda\right)\left(\lambda\bm{I}-\bm{B}\right)+\bm{T}$，于是
+        \[
+            \left[
+                \bm{Q}\left(\lambda\right)\bm{M}\left(\lambda\right)^{-1}+\bm{PS}\left(\lambda\right)
+                \right]\left(\lambda\bm{I}-\bm{B}\right)=\bm{I}_n-\bm{PT}
+        \]断言$\bm{Q}\left(\lambda\right)\bm{M}\left(\lambda\right)^{-1}+\bm{PS}\left(\lambda\right)=\bm{O}$，考虑反证法证明，设其次数非负，那么上式左侧次数不低于$1$，右侧次数不高于$0$，矛盾.于是得到$\bm{PT}=\bm{I}_n\Longrightarrow \bm{P}$可逆.
+    \end{proof}
+}

@@ -1,0 +1,209 @@
+\newpage
+\section{有理标准型}
+\subsection{引入}
+\lem{友阵}{友阵}{
+    考虑$r$阶矩阵\[
+        \bm{F}=\begin{pmatrix}
+            0      & 1        & 0        & \cdots & 0      \\
+            0      & 0        & 1        & \cdots & 0      \\
+            \vdots & \vdots   & \vdots   &        & \vdots \\
+            0      & 0        & 0        & \cdots & 1      \\
+            -a_r   & -a_{r-1} & -a_{r-2} & \cdots & -a_1
+        \end{pmatrix}
+    \]\begin{enumerate}[label=\arabic*）]
+        \item $\bm{F}$的行列式因子组为\[
+                  \overbrace{1, \ldots, 1}^{r-1 \text{个}}, f\left(\lambda\right)
+              \]其中\[
+                  f\left(\lambda\right)=\lambda^r+a_1\lambda^{r-1}+\cdots+a_{r-1}\lambda+a_r
+              \]不变因子组相同
+        \item $\bm{F}$的特征多项式与极小多项式相同，均为
+              \[
+                  f\left(\lambda\right)=\lambda^r+a_1\lambda^{r-1}+\cdots+a_{r-1}\lambda+a_r
+              \]
+    \end{enumerate}\begin{proof}
+        \begin{align*}
+            \lambda\bm{I}_r-\bm{F} & =\begin{pmatrix}
+                                          \lambda & -1      & 0       & \cdots & 0           \\
+                                          0       & \lambda & -1      & \cdots & 0           \\
+                                          \vdots  & \vdots  & \vdots  &        & \vdots      \\
+                                          0       & 0       & 0       & \cdots & -1          \\
+                                          a_r     & a_{r-1} & a_{r-2} & \cdots & a_1+\lambda
+                                      \end{pmatrix}
+        \end{align*}
+        有$D_r\left(\lambda\right)=\left|
+            \lambda\bm{I}_r-\bm{F}
+            \right|=f\left(\lambda\right).$再考虑$1\leqslant r\leqslant r-1$的情况，$\lambda\bm{I}_n-\bm{F}$有一个$k$阶子式$\left(-1\right)^k\Longrightarrow D_k\left(\lambda\right)=1,\forall 1\leqslant k\leqslant r-1$.
+
+        设极小多项式$m\left(\lambda\right)$，只要证$m\left(\lambda\right)=f\left(\lambda\right)$.由\cref{thm:Cayley-Hamilton定理}Cayley-Hamilton定理知$m\left(\lambda\right)\mid f\left(\lambda\right)\Longrightarrow
+            \deg m\left(\lambda\right)\leqslant r.$一方面，若$\deg m\left(\lambda\right)=r\Longrightarrow m\left(\lambda\right)=f\left(\lambda\right).$另一方面,设$\deg m\left(\lambda\right)<r$，设\[
+            m\left(\lambda\right)=c_{r-1}\lambda^{r-1}+\cdots+c_1\lambda+c_0
+        \]其中$c_i$不完全为零.考虑标准单位行向量，则有
+        \[
+            \bm{e}_1\bm{F}=\bm{e}_2,\bm{e}_2\bm{F}=\bm{e}_3,\cdots,\bm{e}_{r-1}\bm{F}=\bm{e}_r
+        \]即\[
+            \bm{e}_1\bm{F}^i=\bm{e}_{i+1},\forall 1\leqslant i\leqslant r-1
+        \]由极小多项式定义有$\bm{O}=m\left(\bm{F}\right)=
+            c_{r-1}\bm{F}^{r-1}+\cdots+c_1\bm{F}+c_0\bm{I}_r
+        $同时左乘$\bm{e}_1$
+        \[
+            \bm{O}=c_{r-1}\bm{e}_1\bm{F}^{r-1}+\cdots+c_1\bm{e}_1\bm{F}+c_0\bm{e}_1\bm{I}_r
+        \]利用上述迭代即得
+        \[
+            \bm{O}=c_{r-1}\bm{e}_r+\cdots+c_1\bm{e}_2+c_0\bm{e}_1
+        \]即$\left(
+            c_{r-1},\cdots,c_1,c_0
+            \right)=\bm{0}\Longrightarrow
+            c_i=0,\forall 1\leqslant i\leqslant r-1
+        $.这与假设矛盾.故$m\left(\lambda\right)=f\left(\lambda\right)$.
+    \end{proof}
+}
+\rem{}{}{
+    \cref{lem:友阵}中实际上是多项式相伴的友阵的转置（一些书本上也可能不取转置）.一般记作$\bm{F}\left(f\left(\lambda\right)\right)=\bm{F}.$
+}
+\lem{}{利用多项式矩阵刻画相抵}{
+设$\lambda$-阵$\bm{A}\left(\lambda\right)$相抵于\[
+    \mathrm{diag}\left\{
+    d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_n\left(\lambda\right)
+    \right\}
+\]$\lambda$-阵$\bm{B}\left(\lambda\right)$相抵于\[
+    \mathrm{diag}\left\{
+    d_{i_1}\left(\lambda\right),d_{i_2}\left(\lambda\right),\cdots,d_{i_n}\left(\lambda\right)
+    \right\}
+\]其中$\left(
+    i_1,i_2,\cdots,i_n
+    \right)$是$\left(1,2,\cdots,n\right)$的一个置换，则$\bm{A}\left(\lambda\right)\sim\bm{B}\left(\lambda\right)$.\begin{proof}
+    事实上，根据相抵关系传递，只需证明两个对角阵相抵即可.
+
+    先考虑这样简单的情况：对角阵主对角线上两个元素对换时它们是否相抵.考虑如下对角阵
+    \[
+        \mathrm{diag}\left\{
+        d_1\left(\lambda\right),\cdots,d_i\left(\lambda\right),\cdots,d_j\left(\lambda\right),\cdots,d_n\left(\lambda\right)
+        \right\}
+    \]
+    要将第$i$和第$j$个对角元素对换，只需先对换第$i$行和第$j$行，再对换第$i$列和第$j$列即可.对于一般的情况，只需不断地对换相邻的两个对角元素即可.
+\end{proof}
+}
+\subsection{有理标准型}
+\thm{}{矩阵相似于友阵组成的对角阵}{
+    设$\bm{A}\in M_n\left(\mathbb{K}\right)$的不变因子组为\[
+        1,1,\cdots,1;
+        d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)
+    \]则$\bm{A}$相似于
+    \[\bm{F}=
+        \mathrm{diag}\left\{
+        \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
+        \right\}
+    \]\begin{proof}
+        因为$\lambda\bm{I}_n-\bm{A}$相抵于
+        \[
+            \mathrm{diag}\left\{1,1,\cdots,1;
+            d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)
+            \right\}
+        \]因为他们有相同的行列式因子组，故他们有相同的$n$阶行列式因子即行列式即
+        \[
+            \left|
+            \lambda\bm{I}_n-\bm{A}
+            \right|=d_1\left(\lambda\right)d_2\left(\lambda\right)\cdots d_k\left(\lambda\right)
+        \]设$\deg d_i\left(\lambda\right)=n_i\geqslant 1,\forall 1\leqslant i\leqslant k$，显然$n_1+n_2+\cdots+n_k.$
+
+        因为$\lambda\bm{I}-\bm{F}\left(d_i\left(\lambda\right)\right)$的法式为\[\mathrm{diag}\{
+            \overbrace{1, \ldots, 1}^{n_i-1 \text{个}}, d_i\left(\lambda\right)
+            \}\]考虑到
+        \[
+            \lambda\bm{I}-\bm{F}=\begin{pmatrix}
+                \lambda\bm{I}-\bm{F}\left(d_1\left(\lambda\right)\right) &                                                          &        &                                                          \\
+                                                                         & \lambda\bm{I}-\bm{F}\left(d_2\left(\lambda\right)\right) &        &                                                          \\
+                                                                         &                                                          & \ddots &                                                          \\
+                                                                         &                                                          &        & \lambda\bm{I}-\bm{F}\left(d_k\left(\lambda\right)\right)
+            \end{pmatrix}
+        \]通过初等变换一定得到一个对角阵
+        \[
+            \mathrm{diag}\left\{
+            1,\cdots,1,d_1\left(\lambda\right),1,\cdots,1,d_2\left(\lambda\right),\cdots,1,\cdots,1,d_k\left(\lambda\right)
+            \right\}
+        \]显然$1$一共有\begin{align*}n_1-1+\cdots+n_k-1 & =n_1+\cdots+n_k-k \\
+                                 & =n-k\end{align*}个，根据\cref{lem:利用多项式矩阵刻画相抵}，$\lambda\bm{I}-\bm{A}\sim\lambda\bm{I}-\bm{F}$.于是数字矩阵具有相似关系即$\bm{A}\approx\bm{F}$.
+    \end{proof}
+}
+\dfn{有理标准型}{有理标准型}{
+    \cref{thm:矩阵相似于友阵组成的对角阵}中的分块对角阵
+    \[\bm{F}=
+        \mathrm{diag}\left\{
+        \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
+        \right\}
+    \]称为$\bm{A}$的Frobenius标准型或有理标准型.每一个$\bm{F}\left(d_i\left(\lambda\right)\right)$称为Frobenius块.
+}
+\exa{}{}{
+    设$6$阶矩阵$\bm{A}$的不变因子组为
+    \[
+        1,1,1,\lambda-1,\left(\lambda-1\right)^2,\left(\lambda-1\right)^2\left(\lambda+1\right)
+    \]求它的有理标准型.\begin{proof}
+        将非常数的不变因子展开
+        \[
+            \left(\lambda-1\right)^2=\lambda^2-2\lambda+1,\left(\lambda-1\right)^2\left(\lambda+1\right)=\lambda^3-\lambda^2-\lambda+1
+        \]
+        对应Frobenius块为其非首项系数取负倒序，得到\[
+            \bm{F}=\begin{pmatrix}
+                1 &    &   &    &   &   \\
+                  & 0  & 1 &    &   &   \\
+                  & -1 & 2 &    &   &   \\
+                  &    &   & 0  & 1 & 0 \\
+                  &    &   & 0  & 0 & 1 \\
+                  &    &   & -1 & 1 & 1
+            \end{pmatrix}
+        \]
+    \end{proof}
+}
+\thm{}{不变因子组导出极小多项式}{
+    设$\bm{A}\in M_n\left(\mathbb{K}\right)$的不变因子组为\[
+        1,\cdots,1,d_1\left(\lambda\right),\cdots,d_k\left(\lambda\right)
+    \]其中非零首一多项式$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_k\left(\lambda\right)$，则$\bm{A}$的极小多项式为$m\left(\lambda\right)=d_k\left(\lambda\right).$\begin{proof}
+        因为$\bm{A}$相似于其有理标准型$\bm{F}=\mathrm{diag}\left\{
+            \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
+            \right\}$且相似的矩阵具有相同的极小多项式即$m_{\bm{A}}\left(\lambda\right)=m_{\bm{F}}\left(\lambda\right)$,记$\bm{F}_i=\bm{F}\left(d_i\left(\lambda\right)\right),\forall 1\leqslant i\leqslant k$，则
+        \[
+            m_{\bm{F}}\left(\lambda\right)=\left[
+            m_{\bm{F}_1}\left(\lambda\right),m_{\bm{F}_2}\left(\lambda\right),\cdots,m_{\bm{F}_k}\left(\lambda\right)
+            \right]
+        \]\cref{lem:友阵}告诉我们
+        \[
+            m_{\bm{F}_i}\left(\lambda\right)=d_i\left(\lambda\right),\forall 1\leqslant i\leqslant k
+        \]于是
+        \[
+            m_{\bm{A}}\left(\lambda\right)=\left[
+                d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)
+                \right]=d_k\left(\lambda\right)\qedhere
+        \]
+    \end{proof}
+}
+\cor{}{极小多项式的扩张}{
+设$\bm{A}\in M_n\left(\mathbb{F}\right)$，其极小多项式$m_{\mathbb{F}}\left(\lambda\right)$.若$\mathbb{F}\subseteq\mathbb{K}$，将$\bm{A}$视为$\mathbb{K}$上的矩阵，其极小多项式$m_{\mathbb{K}}\left(\lambda\right)$，则$m_{\mathbb{F}}\left(\lambda\right)=m_{\mathbb{K}}\left(\lambda\right).$\begin{proof}
+    由\cref{cor:不变因子的扩张}知不变因子在基域扩张下不改变及\cref{thm:不变因子组导出极小多项式}可知.
+\end{proof}
+}
+\exa{}{}{
+    考虑四阶矩阵
+    \[
+        \bm{A}=\begin{pmatrix}
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 1 \\
+            0 & 0 & 0 & 0
+        \end{pmatrix},\bm{B}=\begin{pmatrix}
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 1 \\
+            0 & 0 & 0 & 0
+        \end{pmatrix}
+    \]\begin{solution}
+        它们的不变因子组为
+        \begin{align*}
+             & \bm{A}:1,\lambda,\lambda,\lambda^2 \\
+             & \bm{B}:1,1,\lambda^2,\lambda^2
+        \end{align*}
+        在本章开始时曾说过，即使是极小多项式与特征多项式放在一起也不能成为相似关系下的全系不变量，这里就直观地给出了这个例子：极小多项式仅仅是不变因子组的最后一项，而特征多项式是不变因子组的乘积，这两个相比于整个不变因子组来说都是不完整的，都是很弱的条件，哪怕合在一起也是弱的.
+    \end{solution}
+}
+\rem{}{}{
+    我们曾说要寻找尽可能简单的矩阵来描述相似关系,但是这里的Frobenius标准型在$d_i\left(\lambda\right)$的次数比较高时其Frobenius块的阶数也会变得很大，这让它并不足够简单，所以我们的一个想法是对$d_i\left(\lambda\right)$做一些简化如因式分解.
+}
