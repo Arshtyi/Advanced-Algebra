@@ -1,0 +1,78 @@
+name: Auto Compile and Release
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Install LaTeX environment
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y texlive-full
+                  sudo apt-get install -y latexmk
+                  sudo apt-get install -y bibtex
+
+            - name: Install custom fonts
+              run: |
+                  mkdir -p ~/.fonts
+                  cp Fonts/*.ttf ~/.fonts/ || true
+                  cp Fonts/*.otf ~/.fonts/ || true
+                  fc-cache -f -v
+
+            - name: Compile Note/AdvancedAlgebra.tex
+              run: |
+                  if [ -d "Note" ]; then
+                    cd Note
+                    xelatex AdvancedAlgebra.tex
+                    bibtex AdvancedAlgebra
+                    xelatex AdvancedAlgebra.tex
+                    xelatex AdvancedAlgebra.tex
+                    cd ..
+                  else
+                    echo "Note directory not found, skipping compilation"
+                  fi
+
+            - name: Compile Answer/answer.tex
+              run: |
+                  if [ -d "Answer" ]; then
+                    cd Answer
+                    xelatex answer.tex
+                    bibtex answer
+                    xelatex answer.tex
+                    xelatex answer.tex
+                    cd ..
+                  else
+                    echo "Answer directory not found, skipping compilation"
+                  fi
+
+            - name: Get current Beijing time
+              id: time
+              run: |
+                  BEIJING_TIME=$(TZ="Asia/Shanghai" date +"%Y-%m-%d_%H-%M")
+                  echo "::set-output name=beijing_time::$BEIJING_TIME"
+                  echo "BEIJING_TIME=$BEIJING_TIME" >> $GITHUB_ENV
+
+            - name: Prepare PDFs for release
+              run: |
+                  mkdir -p release_pdfs
+                  [ -f "Note/AdvancedAlgebra.pdf" ] && cp Note/AdvancedAlgebra.pdf release_pdfs/ || echo "Note PDF not found"
+                  [ -f "Answer/answer.pdf" ] && cp Answer/answer.pdf release_pdfs/ || echo "Answer PDF not found"
+
+            - name: Create Release
+              id: create_release
+              uses: softprops/action-gh-release@v1
+              with:
+                  tag_name: ${{ env.BEIJING_TIME }}
+                  name: ${{ env.BEIJING_TIME }}
+                  files: release_pdfs/*.pdf
+                  draft: false
+                  prerelease: false
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
