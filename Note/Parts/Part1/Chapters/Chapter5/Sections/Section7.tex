@@ -1,54 +1,54 @@
 \newpage
 \section{实系数多项式与有理系数多项式}
 因为\[
-    \mathbb{Q}\subseteq \mathbb{R}\subseteq\mathbb{C}
+    \mathbb{Q}\subseteq \bbr \subseteq\bbc
 \]
 我们来分别考虑三个数域上的不可约多项式.其中复数域上的不可约多项式由\cref{thm:代数学基本定理}给出.
 \subsection{实数域}
 \thm{}{根的对称}{
-设$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\in\mathbb{R}\left[x\right]$，若$a+b\mathrm{i}\left(b\neq 0\right)$是一个复根，那么$a-b\mathrm{i}$也是一个根.
+设$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\in\bbr \left[x\right]$，若$a+b\mathrm{i}\left(b\neq 0\right)$是一个复根，那么$a-b\mathrm{i}$也是一个根.
 }
 \thm{实数域上的不可约多项式}{实数域上的不可约多项式}{
     实数域上的不可约多项式只能是一次多项式或者如下无实数根的二次多项式：
     \[
         ax^2+bx+c=0,\Delta = b^2-4ac<0
     \]\begin{proof}
-        任取$\mathbb{R}$上的不可约多项式，其一，$\deg f\left(x\right)=1$显然成立.
+        任取$\bbr $上的不可约多项式，其一，$\deg f\left(x\right)=1$显然成立.
 
         其二，$\deg f\left(x\right)=2$时设$f\left(x\right)=ax^2+bx+c\left(a\neq 0\right)$，则$f\left(x\right)$可约当且仅当$f\left(x\right)=a\left(x-x_1\right)\left(x-x_2\right)
-            \left(x_1,x_2\in\mathbb{R}\right)$.于是$f\left(x\right)$不可约当且仅当其无实根即判别式小于零.
+            \left(x_1,x_2\in\bbr \right)$.于是$f\left(x\right)$不可约当且仅当其无实根即判别式小于零.
 
         其三，考虑$\deg f\left(x\right)\geqslant 3$.
         一方面，如果$f\left(x\right)$有实根$x_0$,
         那么$f\left(x\right)=\left(x-x_0\right)q\left(x\right)\Longrightarrow $可约.
         另一方面，如果有虚根，一定成对，那么\[\left(
             x-\left(a+b\mathrm{i}\right)
-            \right)\big|_{\mathbb{C}}f\left(x\right),
+            \right)\big|_{\bbc }f\left(x\right),
             \left(
             x-\left(a-b\mathrm{i}\right)
-            \right)\big|_{\mathbb{C}}f\left(x\right)
+            \right)\big|_{\bbc }f\left(x\right)
         \]
         因为$x-\left(a+b\mathrm{i}\right)$和$x-\left(a-
             b\mathrm{i}\right)$均是不可约的且互异，于是互素，于是
         \[
-            \left(\left(x-a\right)^2+b^2\right)\big|_{\mathbb{C}}f\left(x
+            \left(\left(x-a\right)^2+b^2\right)\big|_{\bbc }f\left(x
             \right)\Longrightarrow
-            \left(\left(x-a\right)^2+b^2\right)\big|_{\mathbb{R}}f\left(x\right)
+            \left(\left(x-a\right)^2+b^2\right)\big|_{\bbr }f\left(x\right)
         \]
         （因为整除关系在基域扩张下不
         改变\textsuperscript{\cite{谢启鸿2015}}）
         即\[f\left(x\right)=g\left(x\right)\left(\left(x-a\right)^2+b^2\right)\]其中$
-            g\left(x\right)\in\mathbb{R}\left[x\right]\Longrightarrow \deg g\left(x\right)\geqslant 1\Longrightarrow $可约.
+            g\left(x\right)\in\bbr \left[x\right]\Longrightarrow \deg g\left(x\right)\geqslant 1\Longrightarrow $可约.
 
         另证\[
-            \left(\left(x-a\right)^2+b^2\right)\big|_{\mathbb{R}}f\left(x
+            \left(\left(x-a\right)^2+b^2\right)\big|_{\bbr }f\left(x
             \right)
         \]
-        考虑$\mathbb{R}$上的带余除法
+        考虑$\bbr $上的带余除法
         \[
             f\left(x\right)=\left(\left(x-a\right)^2+b^2\right)q\left(x\right)+r\left(x\right)
         \]
-        其中$q\left(x\right),r\left(x\right)\in\mathbb{R}\left[x\right],\deg r\left(x\right)<\deg \left(\left(x-a\right)^2+b^2\right)=2$.代入$x=a+b\mathrm{i}$得$0=r\left(a+b\mathrm{i}\right)$，结合次数即得
+        其中$q\left(x\right),r\left(x\right)\in\bbr \left[x\right],\deg r\left(x\right)<\deg \left(\left(x-a\right)^2+b^2\right)=2$.代入$x=a+b\mathrm{i}$得$0=r\left(a+b\mathrm{i}\right)$，结合次数即得
         $r\left(x\right)=0.$
     \end{proof}
 }

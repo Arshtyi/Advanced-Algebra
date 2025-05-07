@@ -62,11 +62,11 @@
 }
 \lem{}{利用多项式矩阵刻画相抵}{
 设$\lambda$-阵$\bm{A}\left(\lambda\right)$相抵于\[
-    \mathrm{diag}\left\{
+    \diag \left\{
     d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_n\left(\lambda\right)
     \right\}
 \]$\lambda$-阵$\bm{B}\left(\lambda\right)$相抵于\[
-    \mathrm{diag}\left\{
+    \diag \left\{
     d_{i_1}\left(\lambda\right),d_{i_2}\left(\lambda\right),\cdots,d_{i_n}\left(\lambda\right)
     \right\}
 \]其中$\left(
@@ -76,7 +76,7 @@
 
     先考虑这样简单的情况：对角阵主对角线上两个元素对换时它们是否相抵.考虑如下对角阵
     \[
-        \mathrm{diag}\left\{
+        \diag \left\{
         d_1\left(\lambda\right),\cdots,d_i\left(\lambda\right),\cdots,d_j\left(\lambda\right),\cdots,d_n\left(\lambda\right)
         \right\}
     \]
@@ -90,13 +90,13 @@
         d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)
     \]则$\bm{A}$相似于
     \[\bm{F}=
-        \mathrm{diag}\left\{
+        \diag \left\{
         \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
         \right\}
     \]\begin{proof}
         因为$\lambda\bm{I}_n-\bm{A}$相抵于
         \[
-            \mathrm{diag}\left\{1,1,\cdots,1;
+            \diag \left\{1,1,\cdots,1;
             d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)
             \right\}
         \]因为他们有相同的行列式因子组，故他们有相同的$n$阶行列式因子即行列式即
@@ -106,7 +106,7 @@
             \right|=d_1\left(\lambda\right)d_2\left(\lambda\right)\cdots d_k\left(\lambda\right)
         \]设$\deg d_i\left(\lambda\right)=n_i\geqslant 1,\forall 1\leqslant i\leqslant k$，显然$n_1+n_2+\cdots+n_k.$
 
-        因为$\lambda\bm{I}-\bm{F}\left(d_i\left(\lambda\right)\right)$的法式为\[\mathrm{diag}\{
+        因为$\lambda\bm{I}-\bm{F}\left(d_i\left(\lambda\right)\right)$的法式为\[\diag \{
             \overbrace{1, \ldots, 1}^{n_i-1 \text{个}}, d_i\left(\lambda\right)
             \}\]考虑到
         \[
@@ -118,7 +118,7 @@
             \end{pmatrix}
         \]通过初等变换一定得到一个对角阵
         \[
-            \mathrm{diag}\left\{
+            \diag \left\{
             1,\cdots,1,d_1\left(\lambda\right),1,\cdots,1,d_2\left(\lambda\right),\cdots,1,\cdots,1,d_k\left(\lambda\right)
             \right\}
         \]显然$1$一共有\begin{align*}n_1-1+\cdots+n_k-1 & =n_1+\cdots+n_k-k \\
@@ -128,7 +128,7 @@
 \dfn{有理标准型}{有理标准型}{
     \cref{thm:矩阵相似于友阵组成的对角阵}中的分块对角阵
     \[\bm{F}=
-        \mathrm{diag}\left\{
+        \diag \left\{
         \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
         \right\}
     \]称为$\bm{A}$的Frobenius标准型或有理标准型.每一个$\bm{F}\left(d_i\left(\lambda\right)\right)$称为Frobenius块.
@@ -158,7 +158,7 @@
     设$\bm{A}\in M_n\left(\mathbb{K}\right)$的不变因子组为\[
         1,\cdots,1,d_1\left(\lambda\right),\cdots,d_k\left(\lambda\right)
     \]其中非零首一多项式$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_k\left(\lambda\right)$，则$\bm{A}$的极小多项式为$m\left(\lambda\right)=d_k\left(\lambda\right).$\begin{proof}
-        因为$\bm{A}$相似于其有理标准型$\bm{F}=\mathrm{diag}\left\{
+        因为$\bm{A}$相似于其有理标准型$\bm{F}=\diag \left\{
             \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
             \right\}$且相似的矩阵具有相同的极小多项式即$m_{\bm{A}}\left(\lambda\right)=m_{\bm{F}}\left(\lambda\right)$,记$\bm{F}_i=\bm{F}\left(d_i\left(\lambda\right)\right),\forall 1\leqslant i\leqslant k$，则
         \[
@@ -177,7 +177,7 @@
     \end{proof}
 }
 \cor{}{极小多项式的扩张}{
-设$\bm{A}\in M_n\left(\mathbb{F}\right)$，其极小多项式$m_{\mathbb{F}}\left(\lambda\right)$.若$\mathbb{F}\subseteq\mathbb{K}$，将$\bm{A}$视为$\mathbb{K}$上的矩阵，其极小多项式$m_{\mathbb{K}}\left(\lambda\right)$，则$m_{\mathbb{F}}\left(\lambda\right)=m_{\mathbb{K}}\left(\lambda\right).$\begin{proof}
+设$\bm{A}\in M_n\left(\bbf \right)$，其极小多项式$m_{\bbf }\left(\lambda\right)$.若$\bbf \subseteq\mathbb{K}$，将$\bm{A}$视为$\mathbb{K}$上的矩阵，其极小多项式$m_{\mathbb{K}}\left(\lambda\right)$，则$m_{\bbf }\left(\lambda\right)=m_{\mathbb{K}}\left(\lambda\right).$\begin{proof}
     由\cref{cor:不变因子的扩张}知不变因子在基域扩张下不改变及\cref{thm:不变因子组导出极小多项式}可知.
 \end{proof}
 }

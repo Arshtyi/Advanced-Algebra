@@ -3,7 +3,7 @@
 \subsection{引入}
 上文\cref{def:法式}提到任意$\lambda$-矩阵$\bm{A}\left(\lambda\right)$必定相抵于
 \[
-    \mathrm{diag}\left\{
+    \diag \left\{
     d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
     \right\}
 \]其中
@@ -24,7 +24,7 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
     \end{enumerate}
 }
 \exa{}{}{
-    考虑$\bm{\varLambda}=\mathrm{diag}\left\{d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0\right\}$，其中$d_i\left(\lambda\right)$为非零首一多项式且$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_r\left(\lambda\right).$容易得到
+    考虑$\bm{\varLambda}=\diag \left\{d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0\right\}$，其中$d_i\left(\lambda\right)$为非零首一多项式且$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_r\left(\lambda\right).$容易得到
     \[
         D_1\left(\lambda\right)=d_1\left(\lambda\right)\]\[D_2\left(\lambda\right)=\left(d_i\left(\lambda\right)d_j\left(\lambda\right)\right)_{1\leqslant i<j\leqslant r}=d_1\left(\lambda\right)d_2\left(\lambda\right)
     \]\[
@@ -128,7 +128,7 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
 \thm{法式确定不变因子}{法式确定不变因子}{
     设$\bm{A}\left(\lambda\right)$的法式为
     \[
-        \mathrm{diag}\left\{
+        \diag \left\{
         d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
         \right\}
     \]则$\bm{A}\left(\lambda\right)$的不变因子组为
@@ -166,12 +166,12 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
     数字矩阵的特征矩阵的行列式因子组或不变因子组是相似关系的全系不变量.故将$\bm{A}\in M_n\left(\mathbb{K}\right)$的特征矩阵$\lambda\bm{I}_n-\bm{A}$的行列式因子组或不变因子组称为$\bm{A}$的行列式因子组或不变因子组.
 }
 \thm{相似关系的扩张}{相似关系的扩张}{
-    设$\bm{A},\bm{B}\in M_n\left(\mathbb{F}\right),\mathbb{F}\subseteq \mathbb{K}$，则$\bm{A},\bm{B}$在$\mathbb{F}$上相似当且仅当$\bm{A},\bm{B}$在$\mathbb{K}$上相似.\begin{proof}
-        因为$\bm{A},\bm{B}$在$\mathbb{F}$相似即存在$\bm{P}\in M_n\left(\mathbb{F}\right)\st\bm{B}=\bm{P}^{-1}\bm{AP}$.另一方面，$\bm{A},\bm{B}$在$\mathbb{K}$相似即存在$\bm{Q}\in M_n\left(\mathbb{K}\right)\st\bm{B}=\bm{Q}^{-1}\bm{AQ}$.
+    设$\bm{A},\bm{B}\in M_n\left(\bbf \right),\bbf \subseteq \mathbb{K}$，则$\bm{A},\bm{B}$在$\bbf $上相似当且仅当$\bm{A},\bm{B}$在$\mathbb{K}$上相似.\begin{proof}
+        因为$\bm{A},\bm{B}$在$\bbf $相似即存在$\bm{P}\in M_n\left(\bbf \right)\st\bm{B}=\bm{P}^{-1}\bm{AP}$.另一方面，$\bm{A},\bm{B}$在$\mathbb{K}$相似即存在$\bm{Q}\in M_n\left(\mathbb{K}\right)\st\bm{B}=\bm{Q}^{-1}\bm{AQ}$.
 
         必要性显然.下证充分性.
 
-        设$\bm{A},\bm{B}$在$\mathbb{K}$上相似，于是特征矩阵$\lambda\bm{I}_n-\bm{A},\lambda\bm{I}_n-\bm{B}$作为$\mathbb{K}$上的$\lambda$-阵有相同的行列式因子组或不变因子组.但实际上，$\bm{A},\bm{B}\in M_n\left(\mathbb{F}\right)$，因为法式与初等变换选取无关，于是求法式过程中保证初等变换取自$\mathbb{F}\left[x\right]$即得到上述法式，于是存在$\mathbb{F}$上的可逆$\lambda$-阵$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right),\bm{M}\left(\lambda\right),\bm{N}\left(\lambda\right)\st$
+        设$\bm{A},\bm{B}$在$\mathbb{K}$上相似，于是特征矩阵$\lambda\bm{I}_n-\bm{A},\lambda\bm{I}_n-\bm{B}$作为$\mathbb{K}$上的$\lambda$-阵有相同的行列式因子组或不变因子组.但实际上，$\bm{A},\bm{B}\in M_n\left(\bbf \right)$，因为法式与初等变换选取无关，于是求法式过程中保证初等变换取自$\bbf \left[x\right]$即得到上述法式，于是存在$\bbf $上的可逆$\lambda$-阵$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right),\bm{M}\left(\lambda\right),\bm{N}\left(\lambda\right)\st$
         \[
             \bm{P}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{A}\right)\bm{Q}\left(\lambda\right)=\bm{\varLambda}=\bm{M}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{B}\right)\bm{N}\left(\lambda\right)
         \]于是
@@ -181,7 +181,7 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
             \bm{P}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{A}\right)\bm{Q}\left(\lambda\right)
             \bm{N}\left(\lambda\right)^{-1}
         \]
-        于是两个特征矩阵作为$\mathbb{F}$上的$\lambda$-阵相似，于是$\bm{A},\bm{B}$作为$\mathbb{F}$上的矩阵相似.证毕.
+        于是两个特征矩阵作为$\bbf $上的$\lambda$-阵相似，于是$\bm{A},\bm{B}$作为$\bbf $上的矩阵相似.证毕.
     \end{proof}
 }
 \cor{不变因子的扩张}{不变因子的扩张}{

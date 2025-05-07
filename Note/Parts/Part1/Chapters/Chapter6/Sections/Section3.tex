@@ -227,7 +227,7 @@
         \right)$，$f\left(\lambda\right)=\left|
         \lambda\bm{I}_n-\bm{A}
         \right|$为其特征多项式，则$f\left(\bm{A}\right)=\bm{O}$.\begin{proof}
-        矩阵运算是否为零矩阵与域无关，于是扩张到$\mathbb{C}.$因为任一方阵均复相似于一个上三角阵，于是存在非异阵$\bm{P}\st$
+        矩阵运算是否为零矩阵与域无关，于是扩张到$\bbc .$因为任一方阵均复相似于一个上三角阵，于是存在非异阵$\bm{P}\st$
         \[
             \bm{B}=\bm{P}^{-1}\bm{AP}=\begin{pmatrix}
                 \lambda_1 & a_{12}    & \cdots & a_{1n}    \\
@@ -295,7 +295,7 @@
     设$\bm{A}=c\bm{I}_n$，显然$f\left(\lambda\right)=m\left(\lambda\right)^n.$
 }
 \cor{几何意义的Cayley-Hamilton定理}{几何意义的Cayley-Hamilton定理}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{K}}^n\right)$，其特征多项式$f\left(\lambda\right)=\left|
+    设$\bm{\varphi}\in \call  \left(V_{\mathbb{K}}^n\right)$，其特征多项式$f\left(\lambda\right)=\left|
         \lambda\bm{I}_V-\bm{\varphi}
         \right|$，则$f\left(\bm{\varphi}\right)=\bm{0}.$
 }
@@ -304,7 +304,7 @@
     设$\bm{A}=\begin{pmatrix}
             a_{11} & a_{12} \\
             a_{21} & a_{22}
-        \end{pmatrix}\in M_2\left(\mathbb{C}\right)$,若$\bm{A}$不可对角化则$\lambda_1=\lambda_2.$其特征多项式
+        \end{pmatrix}\in M_2\left(\bbc \right)$,若$\bm{A}$不可对角化则$\lambda_1=\lambda_2.$其特征多项式
     \[
         \left|
         \lambda\bm{I}_2-\bm{A}
@@ -325,11 +325,11 @@
 
     考虑映射
     \begin{align*}
-        \bm{\varphi}:M_2\left(\mathbb{C}\right) & \longrightarrow \mathbb{C}^4 \\
+        \bm{\varphi}:M_2\left(\bbc \right) & \longrightarrow \bbc ^4 \\
         \begin{pmatrix}
             a_{11} & a_{12} \\
             a_{21} & a_{22}
-        \end{pmatrix}                      & \longmapsto \left(
+        \end{pmatrix}                 & \longmapsto \left(
         a_{11},
         a_{12},
         a_{21},
@@ -337,7 +337,7 @@
         \right)'
     \end{align*}显然线性同构.
 
-    也就是说，若上述矩阵$\bm{A}$不可对角化，其对应的$\mathbb{C}^4$中的点$\left(
+    也就是说，若上述矩阵$\bm{A}$不可对角化，其对应的$\bbc ^4$中的点$\left(
         a_{11},a_{12},a_{21},a_{22}
         \right)$必定是$f$的零点即$f\left(
         a_{11},a_{12},a_{21},a_{22}

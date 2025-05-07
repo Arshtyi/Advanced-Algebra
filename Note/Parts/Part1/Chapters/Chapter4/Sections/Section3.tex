@@ -146,7 +146,7 @@
     经过上述定义，我们得到一个映射
     \begin{align*}
         \bm{T}:
-        \mathcal{L}\left(
+        \call  \left(
         V^n,U^m
         \right)      & \longrightarrow
         M_{m\times n}\left(\mathbb{K}
@@ -174,7 +174,7 @@
         \]
         由线性扩张定理知，上述定义可扩张为$\bm{\varphi}:V\longrightarrow U$，且表示矩阵为$\bm{A}$.满性证毕.
 
-        再来考虑单性.设$\bm{\varphi}$、$\bm{\psi}\in \mathcal{L}\left(V,U\right)$
+        再来考虑单性.设$\bm{\varphi}$、$\bm{\psi}\in \call  \left(V,U\right)$
         且二者表示矩阵均为$\bm{A}$,故二者在基向量上的取值相同， 由线性扩张定理知二者相同.单性证毕.
     \end{proof}
 }
@@ -188,7 +188,7 @@
          & \bm{\eta}_V:V^n\longrightarrow \mathbb{K}^n \\
          & \bm{\eta}_U:U^m\longrightarrow \mathbb{K}^m
     \end{align*}
-    设线性映射$\bm{\varphi}\in \mathcal{L}\left(
+    设线性映射$\bm{\varphi}\in \call  \left(
         V,U
         \right)$在给定基下的表示矩阵$\bm{A}\in M_{m \times n}\left(\mathbb{K}\right)$，记线性映射
     \begin{align*}
@@ -201,13 +201,13 @@
 }
 \thm{}{矩阵与线性映射及交换图}{
 对于上述定义的映射$\bm{T}:
-    \mathcal{L}\left(V,U\right)
+    \call  \left(V,U\right)
     \longrightarrow
     M_{m \times n}\left(\mathbb{K}\right)$
 
 $(1)$ 该映射为线性同构
 
-$(2)$ $\forall \bm{\varphi}\in \mathcal{L}\left(
+$(2)$ $\forall \bm{\varphi}\in \call  \left(
     V,U
     \right),\bm{A} = \bm{T}
     \left(\bm{\varphi}\right)$
@@ -221,7 +221,7 @@ $(3)$ $\bm{\eta}_U \circ \bm{\varphi} =
 \end{center}
 
 \begin{proof}
-    $(1)$ 设$\bm{\varphi}$、$\bm{\psi}\in \mathcal{L}\left(V,U\right)$且\[\bm{T}\left(\bm{\varphi}\right)=\bm{A}=\left(a_{ij}\right)_{m\times n}
+    $(1)$ 设$\bm{\varphi}$、$\bm{\psi}\in \call  \left(V,U\right)$且\[\bm{T}\left(\bm{\varphi}\right)=\bm{A}=\left(a_{ij}\right)_{m\times n}
         ,\bm{T}\left(\bm{\psi}\right)=\bm{B}=\left( b_{ij}
         \right)_{m\times n}\]即
     \[
@@ -258,7 +258,7 @@ $(3)$ $\bm{\eta}_U \circ \bm{\varphi} =
 \subsection{线性变换}
 \dfn{}{线性变换的表示矩阵}{
     特别地，我们考虑线性变换
-    $\bm{\varphi}\in \mathcal{L}\left(
+    $\bm{\varphi}\in \call  \left(
         V^n_{\mathbb{K}}
         \right)$，在给定的基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
@@ -307,12 +307,12 @@ $(3)$ $\bm{\eta}_U \circ \bm{\varphi} =
 \thm{矩阵乘法的几何意义}{矩阵乘法的几何意义}{
     设$\mathbb{K}$上线性空间$V,U,W$间的线性映射
     $\bm{\varphi}:V^n\longrightarrow
-        U^m \in \mathcal{L}\left(V,U
+        U^m \in \call  \left(V,U
         \right),\bm{\psi}:U^m\longrightarrow
         W^p
-        \in \mathcal{L}\left(U,W\right)$,则$\bm{\psi}\circ \bm{\varphi}
+        \in \call  \left(U,W\right)$,则$\bm{\psi}\circ \bm{\varphi}
         :V^n\longrightarrow W^p \in
-        \mathcal{L}\left(V,W\right)$
+        \call  \left(V,W\right)$
     也是线性映射且
     \[
         \bm{T}\left(\bm{\psi\circ\varphi}\right)
@@ -375,10 +375,10 @@ $(3)$ $\bm{\eta}_U \circ \bm{\varphi} =
     \end{proof}
 }
 \cor{}{线性变换到矩阵的映射是代数同构}{
-    $\bm{T}:\mathcal{L}\left(V\right)
+    $\bm{T}:\call  \left(V\right)
         \longrightarrow M_n\left(\mathbb{K}
         \right)$是线性同构，且$\forall
-        \bm{\varphi},\bm{\psi}\in \mathcal{L}\left(V
+        \bm{\varphi},\bm{\psi}\in \call  \left(V
         \right)$
     \[
         \bm{T}\left(\bm{\varphi}\circ \bm{\psi}
@@ -418,7 +418,7 @@ $(3)$ $\bm{\eta}_U \circ \bm{\varphi} =
 }
 \subsection{不同基下的表示矩阵}
 \thm{}{不同基下的表示矩阵的关系}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V
+    设$\bm{\varphi}\in \call  \left(V
         \right)$，$V$是$\mathbb{K}$上的
     $n$维线性空间，取两组基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n

@@ -2,7 +2,7 @@
 \section{不变子空间}
 \subsection{定义}
 \dfn{不变子空间}{不变子空间}{
-    设线性映射$\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{K}}\right)$，$U$是$V$的子空间.若
+    设线性映射$\bm{\varphi}\in \call  \left(V_{\mathbb{K}}\right)$，$U$是$V$的子空间.若
     \[
         \bm{\varphi}\left(U\right)\subseteq U
     \]
@@ -16,7 +16,7 @@
     \]
 }
 \exa{}{}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V
+    设$\bm{\varphi}\in \call  \left(V
         \right)$，则一定有两个平凡的$\bm{\varphi}$-不变子空间
     即零子空间$0$和全子空间$V$.此外，核空间$\Ker \bm{\varphi}$和像空间$\Image\bm{\varphi}$存在时也一定是$\bm{\varphi}$-不变子空间.
 }
@@ -30,7 +30,7 @@
     \]
 }
 \exa{}{}{
-    考虑$V=\mathbb{R}^2$，线性变换$\bm{\varphi}$为绕原点逆时针旋转$\theta$角，其在标准基下的表示矩阵为
+    考虑$V=\bbr ^2$，线性变换$\bm{\varphi}$为绕原点逆时针旋转$\theta$角，其在标准基下的表示矩阵为
     \[
         \bm{A}=\begin{bmatrix}
             \cos \theta & -\sin \theta \\
@@ -47,7 +47,7 @@
         \left(k\in \mathbb{K}\text{固定}\right)$，则$V$的任一子空间均为$\bm{\varphi}$-不变子空间.
 }
 \lem{}{张成的子空间为不变子空间的判定}{
-    设线性变换$\bm{\varphi}\in \mathcal{L}\left(V
+    设线性变换$\bm{\varphi}\in \call  \left(V
         \right)$，子空间$U=L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m\right)$，其中$\bm{\alpha}_i\in V$，则$U$为$\bm{\varphi}$-不变子空间等价于
     \[
         \bm{\varphi}\left(\bm{\alpha}_i\right)
@@ -65,7 +65,7 @@
 }
 \subsection{表示矩阵}
 \thm{}{不变子空间诱导的线性变换的表示矩阵}{
-    设线性变换$\bm{\varphi}\in \mathcal{L}\left(V^n\right)$，且$U$为$\bm{\varphi}$-不变子空间，取$U$的一组基
+    设线性变换$\bm{\varphi}\in \call  \left(V^n\right)$，且$U$为$\bm{\varphi}$-不变子空间，取$U$的一组基
     为$\left\{\bm{e}_1,\bm{e}_2,
         \cdots,\bm{e}_r\right\}$，将其扩张为
     $V$的一组基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r,\bm{e}_{r+1},\cdots,
@@ -104,7 +104,7 @@
     \end{proof}
 }
 \cor{}{线性变换的表示矩阵诱导的不变子空间}{
-    设线性变换$\bm{\varphi}\in \mathcal{L}\left(
+    设线性变换$\bm{\varphi}\in \call  \left(
         V^n\right)$，且$\bm{\varphi}$在$V$的一组基
     $\left\{\bm{e}_1,\bm{e}_2,\cdots,
         \bm{e}_n\right\}$下的表示矩阵具有形式
@@ -117,7 +117,7 @@
     那么$U=L\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r\right)$是$\bm{\varphi}$-不变子空间.
 }
 \cor{}{全空间分解为两个不变子空间的直和}{
-    设线性变换$\bm{\varphi}\in \mathcal{L}\left(V^n\right)$，且$V=V_1\oplus V_2$（$V_1$、$V_2$均为$\bm{\varphi}$-不变子空间），那么一定可以分别取$V_1$、$V_2$的一组基来拼成$V$的一组基，使得
+    设线性变换$\bm{\varphi}\in \call  \left(V^n\right)$，且$V=V_1\oplus V_2$（$V_1$、$V_2$均为$\bm{\varphi}$-不变子空间），那么一定可以分别取$V_1$、$V_2$的一组基来拼成$V$的一组基，使得
     $\bm{\varphi}$在这组基下的表示矩阵为
     \[
         \begin{pmatrix}
@@ -130,16 +130,16 @@
     \end{proof}
 }
 \cor{}{全空间分解为多个不变子空间的直和}{
-设线性变换$\bm{\varphi}\in \mathcal{L}\left(V^n
+设线性变换$\bm{\varphi}\in \call  \left(V^n
     \right)$，且$V=V_1\oplus V_2\oplus \cdots \oplus V_m$（$V_i$均为
 $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_{V_i}$在给定基下的表示矩阵为$\bm{A}_i\left(1\leqslant i \leqslant m\right)$，则将这些$V_i$的基拼成$V$的一组基后，$\bm{\varphi}$在这组基下的表示矩阵为\[\bm{A}=
-    \mathrm{diag}\left\{
+    \diag \left\{
     \bm{A}_1,\bm{A}_2,\cdots,\bm{A}_m
     \right\}\]
 }
 \subsection{例子}
 \exa{}{}{
-    设$V^3$的一组基为$\left\{\bm{e}_1,\bm{e}_2,\bm{e}_3\right\}$，线性变换$\bm{\varphi}\in \mathcal{L}\left(V\right)$在这组基下的表示矩阵为
+    设$V^3$的一组基为$\left\{\bm{e}_1,\bm{e}_2,\bm{e}_3\right\}$，线性变换$\bm{\varphi}\in \call  \left(V\right)$在这组基下的表示矩阵为
     \[\bm{A}=
         \begin{pmatrix}
             3 & 1 & -1 \\
@@ -221,8 +221,8 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
 }
 \subsection{代数与几何}
 \exa{}{}{
-    设线性映射$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$，$\rmr \left(\bm{\varphi}\right)=r\geqslant 1$，证明：
-    $\exists \bm{\varphi}_i\in \mathcal{L}\left(V,U\right)$，满足
+    设线性映射$\bm{\varphi}\in \call  \left(V^n,U^m\right)$，$\rmr \left(\bm{\varphi}\right)=r\geqslant 1$，证明：
+    $\exists \bm{\varphi}_i\in \call  \left(V,U\right)$，满足
     $\rmr \left(\bm{\varphi}_i\right)=1$且$\bm{\varphi}=\bm{\varphi}_1+\bm{\varphi}_2+\cdots+\bm{\varphi}_r$.\begin{proof}
         代数角度看：设$\bm{A}\in M_{m\times n}\left(\mathbb{K}\right)$，且
         $\rmr \left(\bm{A}\right)=r\geqslant 1$，求证：
@@ -250,7 +250,7 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
     \end{proof}
 }
 \exa{}{}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V^n\right)$，且$\bm{\varphi}^m=\bm{0}$,$n=mq+1$，证明：
+    设$\bm{\varphi}\in \call  \left(V^n\right)$，且$\bm{\varphi}^m=\bm{0}$,$n=mq+1$，证明：
     \[\rmr \left(\bm{\varphi}\right)\leqslant n - q - 1\]\begin{proof}
         同样从代数角度看：设$\bm{A}\in M_{n}\left(\mathbb{K}\right)$，且$\bm{A}^m=\bm{O}$，$n=mq+1$，证明：
         \[\rmr \left(\bm{A}\right)\leqslant n-q-1\]
@@ -278,7 +278,7 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
         \bm{A}^{n+1}
         \right)=\cdots
     \]\begin{proof}
-        我们从几何角度给出一个更强的结论：设$\bm{\varphi}\in \mathcal{L}
+        我们从几何角度给出一个更强的结论：设$\bm{\varphi}\in \call
             \left(V^n\right)$，则$\exists m \in \left[
                 0,n
                 \right]$，使得
@@ -456,8 +456,8 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
 }
 \exa{}{}{
     设$\bm{A}$、$\bm{B}\in M_{m\times n}\left(\mathbb{K}\right)$，证明：$\bm{Ax}=\bm{0}$与$\bm{Bx}=\bm{0}$同解等价于存在$m$阶非异阵$\bm{P}$使得$\bm{B}=\bm{PA}$\begin{proof}
-        即证：已知$\bm{\varphi}$、$\bm{\psi}\in \mathcal{L}\left(V^n,U^m\right)$，那么$\Ker \bm{\varphi}=\Ker \bm{\psi}$等价于
-        存在自同构$\bm{\xi}\in \mathcal{L}
+        即证：已知$\bm{\varphi}$、$\bm{\psi}\in \call  \left(V^n,U^m\right)$，那么$\Ker \bm{\varphi}=\Ker \bm{\psi}$等价于
+        存在自同构$\bm{\xi}\in \call
             \left(U\right)$，\st
         $\bm{\psi}=\bm{\xi}\circ \bm{\varphi}$.
         下面考虑必要性，我们用下面的图说明这一思想过程，以三维欧式空间为例.

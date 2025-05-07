@@ -52,7 +52,7 @@ $的收敛半径也是$R$.
     下面考虑复幂级数
     \[
         f\left(z\right)=\sum_{n=0}^{\infty}a_nz^n
-        ,a_i\in\mathbb{C},z\in\mathbb{C}
+        ,a_i\in\bbc ,z\in\bbc
     \]值得注意的是$\left|z\right|$表示复数的模长而不是实数的绝对值.其余表述与实幂级数类似.
 }
 \pro{常见复幂级数及其收敛半径}{常见复幂级数及其收敛半径}{
@@ -70,15 +70,15 @@ $的收敛半径也是$R$.
     \end{enumerate}
 }
 \subsection{矩阵幂级数}
-考虑$f\left(z\right)=a_0+a_1z+\cdots+a_pz^p\in \mathbb{C}\left[z\right]$，矩阵$\bm{A}\in M_n\left(\mathbb{C}\right)$则\[
+考虑$f\left(z\right)=a_0+a_1z+\cdots+a_pz^p\in \bbc \left[z\right]$，矩阵$\bm{A}\in M_n\left(\bbc \right)$则\[
     f\left(\bm{A}\right)\coloneqq a_0\bm{I}_n+a_1\bm{A}+\cdots+a_p\bm{A}^p
 \]
 
 设非异阵$\bm{P}$使得\[
-    \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}= \mathrm{diag}\,\left\{
+    \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}= \diag \,\left\{
     \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
     \right\}
-\]并且$f\left(\bm{A}\right)=\bm{P}f\left(\bm{J}\right)\bm{P}^{-1}=\bm{P}\mathrm{diag}\left\{
+\]并且$f\left(\bm{A}\right)=\bm{P}f\left(\bm{J}\right)\bm{P}^{-1}=\bm{P}\diag \left\{
     f\left(
     \bm{J}_{r_1}\left(\lambda_1\right)
     \right),f\left(
@@ -138,7 +138,7 @@ $的收敛半径也是$R$.
 \dfn{部分和定义收敛}{部分和定义收敛}{
 设复幂级数$\displaystyle f\left(z\right)=\sum_{i=0}^{\infty}a_iz^i,$其部分和\[
     f_p\left(z\right)=a_0+a_1z+\cdots+a_pz^p
-\]设$\bm{A}\in M_n\left(\mathbb{C}\right)$得到矩阵序列$\displaystyle \left\{
+\]设$\bm{A}\in M_n\left(\bbc \right)$得到矩阵序列$\displaystyle \left\{
     f_p\left(\bm{A}\right)
     \right\}_{p=0}^{\infty}$.若该矩阵序列收敛到矩阵$\bm{B}$，则矩阵幂级数\[
     \sum_{i=0}^{\infty}a_i\bm{A}^i=a_0\bm{I}_n+a_1\bm{A}+a_2\bm{A}^2+\cdots
@@ -159,7 +159,7 @@ $的收敛半径也是$R$.
                   \bm{P}^{-1}\bm{X}\bm{P}
                   \right)\bm{P}^{-1}
               \]
-        \item 设\[\bm{X}=\mathrm{diag}\left\{
+        \item 设\[\bm{X}=\diag \left\{
                   \bm{X}_1,\bm{X}_2,\cdots,\bm{X}_k
                   \right\}\]则$f\left(\bm{X}\right)$收敛当且仅当$f\left(
                   \bm{X}_1
@@ -168,7 +168,7 @@ $的收敛半径也是$R$.
                   \right),\cdots,f\left(
                   \bm{X}_k
                   \right)$收敛并且\[
-                  f\left(\bm{X}\right)=\mathrm{diag}\,\left\{
+                  f\left(\bm{X}\right)=\diag \,\left\{
                   f\left(
                   \bm{X}_1
                   \right),f\left(
@@ -209,7 +209,7 @@ $的收敛半径也是$R$.
                       \right)=\lim_{p\to\infty}\bm{P}^{-1}f_p\left(\bm{X}\right)\bm{P}=\bm{P}^{-1}\lim_{p\to\infty}f_p\left(\bm{X}\right)\bm{P}=\bm{P}^{-1}f\left(\bm{X}\right)\bm{P}
                   \end{align*}
             \item 首先\[
-                      f_p\left(\bm{X}\right)=\mathrm{diag}\left\{
+                      f_p\left(\bm{X}\right)=\diag \left\{
                       f_p\left(
                       \bm{X}_1
                       \right),f_p\left(
@@ -230,7 +230,7 @@ $的收敛半径也是$R$.
                       \bm{X}_k
                       \right)$收敛并且\begin{align*}
                       f\left(\bm{X}\right) & =\lim_{p\to\infty}f_p\left(\bm{X}\right) \\
-                                           & =\lim_{p\to\infty}\mathrm{diag}\left\{
+                                           & =\lim_{p\to\infty}\diag \left\{
                       f_p\left(
                       \bm{X}_1
                       \right),f_p\left(
@@ -239,7 +239,7 @@ $的收敛半径也是$R$.
                       \bm{X}_k
                       \right)
                       \right\}                                                        \\
-                                           & =\mathrm{diag}\left\{
+                                           & =\diag \left\{
                       \lim_{p\to\infty}f_p\left(
                       \bm{X}_1
                       \right),\lim_{p\to\infty}f_p\left(
@@ -248,7 +248,7 @@ $的收敛半径也是$R$.
                       \bm{X}_k
                       \right)
                       \right\}                                                        \\
-                                           & =\mathrm{diag}\left\{
+                                           & =\diag \left\{
                       f\left(
                       \bm{X}_1
                       \right),f\left(
@@ -303,7 +303,7 @@ $的收敛半径也是$R$.
     \end{proof}
 }
 \thm{审敛法}{审敛法}{
-    设复幂级数$\displaystyle f\left(z\right)=\sum_{i=0}^{\infty}a_iz^i$的收敛半径为$R$,$\bm{A}\in M_n\left(\mathbb{C}\right),$其谱集$\sigma\left(\bm{A}\right)=\left\{
+    设复幂级数$\displaystyle f\left(z\right)=\sum_{i=0}^{\infty}a_iz^i$的收敛半径为$R$,$\bm{A}\in M_n\left(\bbc \right),$其谱集$\sigma\left(\bm{A}\right)=\left\{
         \lambda_1,\lambda_2,\cdots,\lambda_n
         \right\}$，其中$\lambda_i$为$\bm{A}$的特征值.定义谱半径$\displaystyle \rho\left(\bm{A}\right)=\max_{
             1\leqslant i\leqslant n
@@ -322,7 +322,7 @@ $的收敛半径也是$R$.
               \]
     \end{enumerate}\begin{proof}
         首先存在非异阵$\bm{P}$使得\[
-            \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=\mathrm{diag}\left\{
+            \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=\diag \left\{
             \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
             \right\}
         \]根据\cref{thm:矩阵幂级数收敛的等价命题}知$f\left(\bm{A}\right)$收敛当且仅当$f\left(\bm{J}\right)$收敛当且仅当$f\left(
@@ -344,7 +344,7 @@ $的收敛半径也是$R$.
 
             \item 因为\begin{align*}f\left(\bm{A}\right) & =f\left(\bm{PJP}^{-1}\right)=
               \bm{P}f\left(\bm{J}\right)\bm{P}^{-1}                \\
-                                   & =\bm{P}\mathrm{diag}\,\left\{
+                                   & =\bm{P}\diag \,\left\{
               f\left(
               \bm{J}_{r_1}\left(\lambda_1\right)
               \right),f\left(
@@ -394,13 +394,13 @@ $的收敛半径也是$R$.
 \]特别地，$\bm{A},\bm{B}$可交换即$\bm{AB}=\bm{BA}$时才有$\mathrm{e}^{\bm{A}+\bm{B}}=\mathrm{e}^{\bm{A}}\cdot \mathrm{e}^{\bm{B} }=\mathrm{e}^{\bm{B}}\cdot \mathrm{e}^{\bm{A}}$（第一个等号证明需要引入范数）.
 }
 \exa{}{}{
-设$\bm{A}\in M_n\left(\mathbb{C}\right)$，求$\mathrm{e}^{t\bm{A}},t$为变量.\begin{solution}
+设$\bm{A}\in M_n\left(\bbc \right)$，求$\mathrm{e}^{t\bm{A}},t$为变量.\begin{solution}
     复幂级数$f\left(z\right)=\mathrm{e}^{tz}$，$f^{\left(i\right)}\left(z\right)=t^i\mathrm{e}^{tz}$，设\[
-        \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=\mathrm{diag}\left\{
+        \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=\diag \left\{
         \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
         \right\}
     \]于是\begin{align*}
-        \mathrm{e}^{t\bm{A}}=f\left(\bm{A}\right)=\bm{P}\mathrm{diag}\left\{
+        \mathrm{e}^{t\bm{A}}=f\left(\bm{A}\right)=\bm{P}\diag \left\{
         f\left(
         \bm{J}_{r_1}\left(\lambda_1\right)
         \right),f\left(

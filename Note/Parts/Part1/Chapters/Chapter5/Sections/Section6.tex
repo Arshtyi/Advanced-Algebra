@@ -3,7 +3,7 @@
 \subsection{二元连续函数}
 我们需要二元连续函数的一些相关知识作为铺垫.
 \dfn{连续}{连续}{
-    设$f\left(x,y\right)$是$\mathbb{R}^2$上的函数， 则$f\left(x,y\right)$在$\left(x_0,y_0\right)$连续定义为$\forall \epsilon >0,\exists \delta >0,\forall \left(x,y\right)\in O_{\left(x_0,y_0\right),\delta}$
+    设$f\left(x,y\right)$是$\bbr ^2$上的函数， 则$f\left(x,y\right)$在$\left(x_0,y_0\right)$连续定义为$\forall \epsilon >0,\exists \delta >0,\forall \left(x,y\right)\in O_{\left(x_0,y_0\right),\delta}$
     \[
         \left|f\left(x,y\right)-f\left(x_0,y_0\right)\right|<\epsilon
     \]
@@ -21,11 +21,11 @@
 \subsection{代数学基本定理}
 \thm{代数学基本定理}{代数学基本定理}{
     任何次数大于等于$1$的复系数多项式至少有一个复根.或者说，复数域上的不可约多项式只能是一次的.\begin{proof}
-        设\[f\left(z\right)=a_nz^n+a_{n-1}z^{n-1}+\cdots+a_1z+a_0\in\mathbb{C}\left[z\right],a_n\neq 0,n\geqslant 1\]
+        设\[f\left(z\right)=a_nz^n+a_{n-1}z^{n-1}+\cdots+a_1z+a_0\in\bbc \left[z\right],a_n\neq 0,n\geqslant 1\]
 
-        第一步，证明：$\exists z_0\in\mathbb{C}$\,\textup{s.t.}$\forall z\in\mathbb{C},
+        第一步，证明：$\exists z_0\in\bbc $\,\textup{s.t.}$\forall z\in\bbc ,
             \left|f\left(z\right)\right|\geqslant \left|f\left(z_0\right)\right|$.
-        设$z=x+y\mathrm{i},x,y\in\mathbb{R}$，则$f\left(z\right)=f\left(x+y\mathrm{i}\right)=
+        设$z=x+y\mathrm{i},x,y\in\bbr $，则$f\left(z\right)=f\left(x+y\mathrm{i}\right)=
             P\left(x,y\right)+Q\left(x,y\right)\mathrm{i}$，其中$P\left(x,y\right),Q\left(x,y\right)$是二元多项式.那么\[
             \left|f\left(z\right)\right|
             =\sqrt{P\left(x,y\right)^2+
@@ -35,7 +35,7 @@
 
         考虑估计
         \[
-            \left|z_1\right|-\left|z_2\right|\leqslant \left|z_1+z_2\right|\leqslant \left|z_1\right|+\left|z_2\right|,\forall z_1,z_2\in\mathbb{C}
+            \left|z_1\right|-\left|z_2\right|\leqslant \left|z_1+z_2\right|\leqslant \left|z_1\right|+\left|z_2\right|,\forall z_1,z_2\in\bbc
         \]
         那么
         \begin{align*}
@@ -56,7 +56,7 @@
             \geqslant \frac{1}{2}\left|a_n\right|\left|z\right|^n\to
             \infty\]
 
-        任取$z_1\in\mathbb{C},\exists R\in\mathbb{R},\st\left|f\left(z\right)\right|\geqslant \left|f\left(z_1\right)\right|\left(
+        任取$z_1\in\bbc ,\exists R\in\bbr ,\st\left|f\left(z\right)\right|\geqslant \left|f\left(z_1\right)\right|\left(
             \left|z\right|>R\right)$，由二元连续函数的性质知，
         $\left|f\left(z\right)\right|$在闭圆盘
         $D=\left\{z\mid \left|z\right|\leqslant R\right\}$
@@ -65,7 +65,7 @@
             \left|f\left(z\right)\right|\geqslant \left|f\left(z_0\right)\right|,\forall z\in
             D
         \]
-        于是$\left|f\left(z\right)\right|\left(z\in\mathbb{C}
+        于是$\left|f\left(z\right)\right|\left(z\in\bbc
             \right)$在$z_0$取
         到最小值.
 
@@ -108,7 +108,7 @@
         \item 任一复系数多项式都是一次多项式的乘积
         \item 任一$n$次复系数多项式恰好有$n$个复根（计重数）
     \end{enumerate}\begin{proof}
-        $(1)\Longrightarrow (2)$设$p\left(x\right)$在$\mathbb{C}$不可约，设$p\left(b\right)=0$则由前文知$\left(x-b\right)|p\left(x\right)\Longrightarrow p\left(x\right)=\left(x-b\right)q\left(x\right)\Longrightarrow q\left(x\right)=c\neq 0.$
+        $(1)\Longrightarrow (2)$设$p\left(x\right)$在$\bbc $不可约，设$p\left(b\right)=0$则由前文知$\left(x-b\right)|p\left(x\right)\Longrightarrow p\left(x\right)=\left(x-b\right)q\left(x\right)\Longrightarrow q\left(x\right)=c\neq 0.$
 
         $(2)\Longrightarrow (3)$由因式分解定理立得.
 
@@ -144,7 +144,7 @@
 \end{proof}
 }
 \subsection{一元方程的求解}
-一元$n$次方程的求解在历史上是持久的问题,下面都是在复数域$\mathbb{C}$讨论.
+一元$n$次方程的求解在历史上是持久的问题,下面都是在复数域$\bbc $讨论.
 \subsubsection{一元二次方程}
 一元二次方程$ax^2+bx+c=0$的求根公式为
 \[

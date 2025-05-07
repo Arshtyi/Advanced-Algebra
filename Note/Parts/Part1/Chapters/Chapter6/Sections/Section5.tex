@@ -19,7 +19,7 @@
     \end{proof}
 }
 \exa{}{}{
-    设$4$阶方阵$\bm{A}$满足$\mathrm{tr}\bm{A}^i=i,i=1,2,3,4$.求$\left|\bm{A}\right|$.\begin{solution}
+    设$4$阶方阵$\bm{A}$满足$\Tr \bm{A}^i=i,i=1,2,3,4$.求$\left|\bm{A}\right|$.\begin{solution}
         设$\bm{A}$的特征值$\lambda_1,\lambda_2,\lambda_3,\lambda_4$，则
         $\bm{A}^i$的特征值为$\lambda_1^i,\lambda_2^i,\lambda_3^i,\lambda_4^i$，于是$\displaystyle
             \sum_{k=1}^{4}\lambda_k^i=i$即Fermal和$s_1=1,s_2=2,s_3=3,s_4=4.$
@@ -90,7 +90,7 @@
     设矩阵$\bm{A}^m\in M_m\left(
         \mathbb{K}
         \right),\bm{B}^n\in M_n\left(\mathbb{K}\right)$无公共特征值，则$\forall \bm{C}\in M_{m\times n}\left(\mathbb{K}\right)$，矩阵方程$\bm{AX}-\bm{XB}=\bm{C}$有唯一解.\begin{proof}
-        考虑$\bm{\varphi}\in \mathcal{L}\left(
+        考虑$\bm{\varphi}\in \call  \left(
             M_{m\times n}\left(\mathbb{K}\right)
             \right):\bm{X}\longmapsto
             \bm{AX}-\bm{XB}$，由上例可知$\bm{\varphi}$是单射，那么也是满射，于是是线性同构.于是$\forall \bm{C}\in M_{m\times n}\left(\mathbb{K}\right)$，一定存在唯一一个$\bm{X}_0\in M_{m\times n}\left(\mathbb{K}\right)$使得\[\bm{\varphi}\left(\bm{X}_0\right)=\bm{AX}_0-\bm{X}_0\bm{B}=\bm{C}\qedhere\]

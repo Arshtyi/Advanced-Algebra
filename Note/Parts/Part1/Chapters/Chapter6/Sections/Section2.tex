@@ -2,7 +2,7 @@
 \section{对角化}
 \subsection{前提}
 \dfn{几何意义的对角化}{几何意义的对角化}{
-    设$\bm{\varphi}\in \mathcal{L}\left(
+    设$\bm{\varphi}\in \call  \left(
         V_{\mathbb{K}}^n
         \right)$,若$\bm{\varphi}$在某组基下的表示矩阵为对角阵，则称$\bm{\varphi}$可对角化.
 }
@@ -12,10 +12,10 @@
         \right)$，若$\bm{A}\approx \bm{\varLambda}$则称$\bm{A}$可对角化.
 }
 \thm{几何意义的可对角化条件}{几何意义的可对角化条件}{
-    设$V$是$\mathbb{K}$上的$n$维线性空间，$\bm{\varphi}\in\mathcal{L}\left(V\right)$.则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}$有$n$个线性无关的特征向量.\begin{proof}
+    设$V$是$\mathbb{K}$上的$n$维线性空间，$\bm{\varphi}\in\call  \left(V\right)$.则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}$有$n$个线性无关的特征向量.\begin{proof}
         先考虑必要性，设$\bm{\varphi}$可对角化，即存在$V$的一组基$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
-            \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为$\mathrm{diag}\left\{
+            \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为$\diag \left\{
             \lambda_1,\lambda_2,\cdots,\lambda_n
             \right\}$，则有
         \[
@@ -81,7 +81,7 @@
 }
 \thm{}{特征子空间的和是直和}{
     设$\bm{\varphi}\in
-        \mathcal{L}\left(
+        \call  \left(
         V_{\mathbb{K}}^n
         \right)
     $，$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的不同特征值，$V_1,V_2,\cdots,V_k$是对应的特征子空间，则
@@ -147,7 +147,7 @@
     \end{proof}
 }
 \thm{}{不同特征值个数与可对角化}{
-    设$\bm{\varphi}\in \mathcal{L}\left(
+    设$\bm{\varphi}\in \call  \left(
         V_{\mathbb{K}}^n
         \right)$有$n$个不同的特征值，则$\bm{\varphi}$可对角化.\begin{proof}
         设$\bm{\varphi}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$，由于它们不同，故对应的特征向量$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_n$线性无关，于是$\bm{\varphi}$有$n$个线性无关的特征向量，故可对角化.
@@ -159,8 +159,8 @@
 }
 实际上，任给一个矩阵，其可对角化的概率要远大于不可对角化的概率，并且可以用可对角化的矩阵取去逼近不可对角化的矩阵.
 \thm{可对角化的充分必要条件}{可对角化的充分必要条件}{
-    设$V$是$\mathbb{C}$上的$n$维线性空间，$
-        \bm{\varphi}\in \mathcal{L}\left(
+    设$V$是$\bbc $上的$n$维线性空间，$
+        \bm{\varphi}\in \call  \left(
         V
         \right)
     $，设全体不同特征值$\lambda_1,\lambda_2,\cdots,\lambda_k$，$V_1,V_2,\cdots,V_k$为对应的特征子空间，则$\bm{\varphi}$可对角化当且仅当
@@ -208,9 +208,9 @@
 \clm{几何重数与代数重数的区别}{}{
     几何重数与代数重数不见得相等.由线性映射维数公式知，几何重数
     \[
-        \dim V _0=\dim\mathrm{Ker}\left(
+        \dim V _0=\dim\Ker \left(
         \lambda_0\bm{I}_V-\bm{\varphi}
-        \right)=n-\mathrm{r}\left(
+        \right)=n-\rmr \left(
         \lambda_0\bm{I}_V-\bm{\varphi}
         \right)
     \]
@@ -220,7 +220,7 @@
 }
 \lem{代数重数与几何重数的关系}{代数重数与几何重数的关系}{
     设$
-        \bm{\varphi}\in \mathcal{L}\left(
+        \bm{\varphi}\in \call  \left(
         V_{\mathbb{K}}^n
         \right)
     $，$\lambda_0$是$\bm{\varphi}$的一个特征值，则$\lambda_0$的几何重数一定小于等于其代数重数.\begin{proof}
@@ -284,14 +284,14 @@
 }
 \dfn{完全特征向量系}{完全特征向量系}{
     设
-    $\bm{\varphi}\in \mathcal{L}\left(
+    $\bm{\varphi}\in \call  \left(
         V_{\mathbb{K}}^n
         \right)
     $，若对$\bm{\varphi}$的任一特征值$\lambda_0$，其几何重数等于代数重数，则称$\bm{\varphi}$有完全的特征向量系.
 }
 \thm{可对角化的条件}{可对角化的条件}{
     设
-    $\bm{\varphi}\in \mathcal{L}\left(
+    $\bm{\varphi}\in \call  \left(
         V_{\mathbb{K}}^n
         \right)
     $，则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}$有完全的特征向量系.\begin{proof}
@@ -483,13 +483,13 @@
     事实上，考虑几何重数还可以有另外的方法，这在前文已述.因为
     \[
         V_{\lambda_0}=\left\{
-        \bm{v}\in \mathbb{C}^n\mid
+        \bm{v}\in \bbc ^n\mid
         \bm{A}\bm{v}=\lambda_0\bm{v}
         \right\}=\left(
         \lambda_0\bm{I}_n-\bm{A}
         \right)\bm{x}=\bm{0}\textup{的解空间}
     \]故
-    几何重数$\dim V_{\lambda_0}=n-\mathrm{r}\left(
+    几何重数$\dim V_{\lambda_0}=n-\rmr \left(
         \lambda_0\bm{I}_n-\bm{A}
         \right)$.
 }

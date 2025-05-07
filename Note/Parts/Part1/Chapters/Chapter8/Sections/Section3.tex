@@ -1,0 +1,143 @@
+\newpage
+\section{惯性定理}
+\subsection{实二次型、实对称阵}
+\thm{秩是合同关系的不变量}{秩是合同关系的不变量}{
+    矩阵的秩是合同关系下的一个不变量.\begin{proof}
+        因为对于实对称阵$\bm{A}$，存在非异阵$\bm{C}$使得$\bm{A}$合同于\[
+            \bm{C}'\bm{AC}=\diag \left\{
+            d_1,d_2,\cdots,d_n
+            \right\}
+        \]因为对换主对角元是合同变换，故可以把所有零元兑换到最后即\[
+            \bm{C}'\bm{AC}=\diag \left\{
+            d_1,d_2,\cdots,d_r,0,\cdots,0
+            \right\}
+        \]于是\[
+            \rank \left(\bm{A}\right)=\rank \left(\bm{C}'\bm{AC}\right)=r
+        \]即秩是合同关系下的一个不变量.
+    \end{proof}
+}
+考虑对应的二次型\[
+    f\left(
+    x_1,x_2,\cdots,x_n
+    \right)=d_1x_1^2+d_2x_2^2+\cdots+d_rx_r^2
+\]并进一步假设前$p$个主对角元大于零即$d_1,d_2,\cdots,d_p>0,d_{p+1},\cdots,d_r<0$，则令\[
+    \begin{cases*}
+        y_1=\sqrt{d_1}x_1              \\
+        y_2=\sqrt{d_2}x_2              \\
+        \cdots\cdots\cdots\cdots       \\
+        y_p=\sqrt{d_p}x_p              \\
+        y_{p+1}=\sqrt{-d_{p+1}}x_{p+1} \\
+        \cdots\cdots\cdots\cdots       \\
+        y_r=\sqrt{-d_r}x_r             \\
+        y_{r+1}=x_{r+1}                \\
+        \cdots\cdots\cdots\cdots       \\
+        y_n=x_n
+    \end{cases*}
+\]于是\[
+    f=y_1^2+y_2^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2
+\]即$\bm{A}$合同于\[
+    \diag \left\{
+    1,1,\cdots,1;-1,-1,\cdots,-1;0,0,\cdots,0
+    \right\}
+\]其中有$p$个$1$和$r-p$个$-1$，$n-r$个$0$.
+\dfn{规范标准型}{规范标准型}{
+$n$元实二次型$f\left(
+    x_1,x_2,\cdots,x_n
+    \right)$化为的\[
+    f=y_1^2+y_2^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2
+\]称为实二次型的规范标准型.
+}
+\thm{惯性定理}{惯性定理}{
+    设$n$元实二次型$f\left(
+        x_1,x_2,\cdots,x_n
+        \right)$的两个规范标准型为\begin{align*}
+         & y_1^2+y_2^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2 \\
+         & z_1^2+z_2^2+\cdots+z_k^2-z_{k+1}^2-\cdots-z_r^2
+    \end{align*}则$p=k.$\begin{proof}
+        即证\begin{align*}
+            f & =y_1^2+y_2^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2          \\
+              & =z_1^2+z_2^2+\cdots+z_k^2-z_{k+1}^2-\cdots-z_r^2\tag{$*$}
+        \end{align*}
+
+        设$\bm{x}=\bm{Cy}=\bm{Bz},\bm{B},\bm{C}$为非异阵.于是$\bm{z}=\bm{C}^{-1}\bm{By}=\left(c_{ij}\right)_{n\times n}\bm{y}.$\[
+            \begin{cases*}
+                z_1=c_{11}y_1+c_{12}y_2+\cdots+c_{1n}y_n \\
+                z_2=c_{21}y_1+c_{22}y_2+\cdots+c_{2n}y_n \\
+                \qquad\qquad\cdots\cdots\cdots\cdots     \\
+                z_n=c_{n1}y_1+c_{n2}y_2+\cdots+c_{nn}y_n
+            \end{cases*}
+        \]
+
+        考虑反证法，先设$p>k$.思路是通过取值使得$\left(*\right)$式产生矛盾.不妨取$z_1=z_2=\cdots=z_k=y_{p+1}=\cdots=y_n=0$得到\[
+            \begin{cases*}
+                c_{11}y_1+c_{12}y_2+\cdots+c_{1n}y_n=0 \\
+                c_{21}y_1+c_{22}y_2+\cdots+c_{2n}y_n=0 \\
+                \qquad\qquad\cdots\cdots\cdots\cdots   \\
+                c_{k1}y_1+c_{k2}y_2+\cdots+c_{kn}y_n=0 \\
+                y_{p+1}=0                              \\
+                \qquad\qquad\cdots\cdots\cdots\cdots   \\
+                y_n=0
+            \end{cases*}\tag{$**$}
+        \]这个齐次线性方程组共$n-p+k<n$个方程,即系数矩阵的秩严格小于$n$，故一定有非零解$y_1=a_1,\cdots,y_p=a_p,y_{p+1}=0,\cdots,y_n=0$即$\exists i\in\left[1,p\right],a_p\neq 0$于是\[
+            y_1^2+y_2^2+\cdots+y_p^2=a_1^2+a_2^2+\cdots+a_p^2>0
+        \]返回去考虑$\left(*\right)$式\begin{align*}
+            0<      LHS & =a_1^2+a_2^2+\cdots+a_p^2 \\
+            =RHS        & =-\left(
+            z_k^2+z_{k+1}^2+\cdots+z_r^2
+            \right)\leqslant 0
+        \end{align*}得到矛盾.同理可证$p<k$的情况,故$p=k$.
+    \end{proof}
+}
+\dfn{惯性指数}{惯性指数}{
+设$f$的规范标准型为\[
+    f=y_1^2+y_2^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2
+\]称$r$为二次型$f$的秩，称$p$为二次型$f$的正惯性指数，称$q=r-p$为二次型$f$的负惯性指数，$s=p-q$为二次型$f$的符号差.
+}
+\clm{}{}{
+    \cref{def:惯性指数}中四者知其二即可求得另外两者.
+
+    \cref{def:惯性指数}中定义也用于对应的实对称矩阵.
+}
+\thm{合同关系的全系不变量}{合同全系不变量}{
+    秩与符号差（或者正负惯性指数）是实对称矩阵在合同关系下的全系不变量.\begin{proof}
+        设实对称阵$\bm{A},\bm{B}$的秩$r$，符号差$s$，正惯性指数$\displaystyle p=\frac{1}{2}\left(r+s\right)$，负惯性指数$q=\displaystyle \frac{1}{2}\left(r-s\right)$，即$\bm{A},\bm{B}$均合同于\[
+            \diag \left\{
+            1,1,\cdots,1;-1,-1,\cdots,-1;0,0,\cdots,0
+            \right\}
+        \]则$\bm{A},\bm{B}$合同.
+    \end{proof}
+}
+\dfn{合同标准型}{合同标准型}{
+    设$\bm{A}\in M_n\left(\bbr \right)$的秩为$r$，符号差为$s$，正惯性指数$\displaystyle
+        p=\frac{1}{2}\left(r+s\right)$，负惯性指数$q=\displaystyle \frac{1}{2}\left(r-s\right)
+    $
+    则合同标准型\[
+        \diag \left\{
+        1,1,\cdots,1;-1,-1,\cdots,-1;0,0,\cdots,0
+        \right\}
+    \]其中有$p$个$1$和$q$个$-1$,$n-r$个$0$.
+}
+\subsection{复二次型、复对称阵}
+由于负数在复数域上可开方，故复二次型的规范标准型为\[
+    f=z_1^2+z_2^2+\cdots+z_r^2
+\]其中$r$为复二次型的秩.
+\dfn{复二次型的规范标准型}{复二次型的规范标准型}{
+    $n$元复二次型$f\left(
+        x_1,x_2,\cdots,x_n
+        \right)$化为的\[
+        f=z_1^2+z_2^2+\cdots+z_r^2
+    \]称为复二次型的规范标准型.
+}
+\thm{复二次型的全系不变量}{复二次型的全系不变量}{
+    复二次型的全系不变量只有秩一个.
+}
+\thm{复对称矩阵的合同标准型}{复对称矩阵的合同标准型}{
+    复对称矩阵的合同标准型为\[
+        \diag \left\{
+        1,1,\cdots,1;0,0,\cdots,0
+        \right\}=\begin{pmatrix}
+            \bm{I}_r & \bm{O} \\
+            \bm{O}   & \bm{O}
+        \end{pmatrix}
+    \]其中有$r$个$1$，$n-r$个$0$.
+}

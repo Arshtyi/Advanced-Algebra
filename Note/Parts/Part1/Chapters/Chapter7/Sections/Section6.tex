@@ -37,7 +37,7 @@
 下面给出不同于法式-行列式因子-不变因子-初等因子这一过程的求得初等因子的办法.
 \lem{}{初等因子求法}{
     设$\lambda\bm{I}_n-\bm{A}$相抵于对角$\lambda$-阵\[
-        \mathrm{diag}\left\{
+        \diag \left\{
         f_1\left(\lambda\right),f_2\left(\lambda\right),\cdots,f_n\left(\lambda\right)
         \right\}
     \]其中$f_i\left(\lambda\right)$为首一多项式.则$f_1\left(\lambda\right),f_2\left(\lambda\right),\cdots,f_n\left(\lambda\right)$的准素因子全体即为$\bm{A}$的初等因子组.\begin{proof}
@@ -46,7 +46,7 @@
             \right)=g\left(\lambda\right),\left[
                 f_i\left(\lambda\right),f_j\left(\lambda\right)
                 \right]=h\left(\lambda\right).$下面证明上述对角阵相抵于\[
-            \mathrm{diag}\left\{
+            \diag \left\{
             f_1\left(\lambda\right),\cdots,g\left(\lambda\right),\cdots,h\left(\lambda\right),\cdots,f_n\left(\lambda\right)
             \right\}
         \]并且二者的主对角元的准素因子全体相同.
@@ -91,7 +91,7 @@
         第二步，反复利用第一步，将上述对角阵变为法式.依次将$\left(1,1\right)$元与第$\left(2,2\right)$元，第$\left(3,3\right)$元，$\cdots$，第$\left(n,n\right)$元进行第一步的操作，从而第$\left(1,1\right)$元的因式分解中不同多项式的幂次均为最小.
 
         一般地，设第$\left(1,1\right),\left(2,2\right),\cdots,\left(i-1,i-1\right)$元已经做好了操作，那么让第$\left(i,i\right)$元依次与$\left(i+1,i+1\right),\left(i+2,i+2\right),\cdots,\left(n,n\right)$进行第一步的操作.最终得到对角阵\[
-            \mathrm{diag}\left\{
+            \diag \left\{
             d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_n\left(\lambda\right)
             \right\}
         \]由第一步保证$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_n\left(\lambda\right)$，根据\cref{def:法式}，这就是法式.
@@ -114,7 +114,7 @@
 }
 \lem{Jordan块的初等因子}{Jordan块的初等因子}{
     设矩阵\[
-        \bm{A}=\mathrm{diag}\left\{
+        \bm{A}=\diag \left\{
         \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
         \right\}
     \]则$\bm{A}$的初等因子为\[
@@ -128,11 +128,11 @@
                                                                  &                                                  &        & \lambda\bm{I}-\bm{J}_{r_k}\left(\lambda_k\right)
             \end{pmatrix}
         \]由\cref{lem:Jordan块}知$\lambda\bm{I}-\bm{J}_{r_i}\left(\lambda_i\right)$相抵于\[
-            \mathrm{diag}\left\{
+            \diag \left\{
             1,\cdots,1,\left(\lambda-\lambda_i\right)^{r_i}
             \right\}
         \]即$\lambda\bm{I}-\bm{A}$相抵于\[
-            \mathrm{diag}\left\{
+            \diag \left\{
             1,\cdots,1,\left(\lambda-\lambda_1\right)^{r_1};1,\cdots,1,\left(\lambda-\lambda_2\right)^{r_2};\cdots;1,\cdots,1,\left(\lambda-\lambda_k\right)^{r_k}
             \right\}
         \]根据\cref{lem:初等因子求法}，$\bm{A}$的初等因子组为\[
@@ -141,10 +141,10 @@
     \end{proof}
 }
 \thm{Jordan标准型}{Jordan标准型}{
-    设$\bm{A}\in M_n\left(\mathbb{C}\right)$的初等因子组为\[
+    设$\bm{A}\in M_n\left(\bbc \right)$的初等因子组为\[
         \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
     \]则$\bm{A}$相似于\[
-        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}= \diag \left\{
         \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
         \right\}
     \]\begin{proof}
@@ -154,11 +154,11 @@
     \end{proof}
 }
 \rem{}{}{
-    \cref{thm:Jordan标准型}需要保证在复数域$\mathbb{C}$上.
+    \cref{thm:Jordan标准型}需要保证在复数域$\bbc $上.
 }
 \dfn{Jordan标准型}{Jordan标准型}{
     \cref{thm:Jordan标准型}中的\[
-        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}= \diag \left\{
         \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
         \right\}
     \]称为$\bm{A}$的Jordan标准型，其中$\bm{J}_{r_i}\left(\lambda_i\right)$称为$\bm{A}$的一个Jordan块.
@@ -167,18 +167,18 @@
     Jordan标准型中Jordan块的次序是无所谓的.但一个Jordan块被一个初等因子完全唯一地决定.从而在不考虑Jordan块的次序时，Jordan标准型由矩阵$\bm{A}$完全唯一地决定.
 }
 \thm{几何意义的Jordan标准型}{几何意义的Jordan标准型}{
-    设$\bm{\varphi}\in \mathcal{L}\left(
-        V_{\mathbb{C}}^n
+    设$\bm{\varphi}\in \call  \left(
+        V_{\bbc }^n
         \right)$，则存在$V$的一组基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
         \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为Jordan标准型即\[
-        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}= \diag \left\{
         \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
         \right\}
     \]
 }
 \cor{}{可对角化的等价条件}{
-    设$\bm{A}\in M_n\left(\mathbb{C}\right)$，则下列结论等价：
+    设$\bm{A}\in M_n\left(\bbc \right)$，则下列结论等价：
 
     \begin{enumerate}[label=\arabic*）]
         \item $\bm{A}$可对角化
@@ -204,8 +204,8 @@
     \end{proof}
 }
 \cor{}{可对角化则不变子空间上的限制可对角化}{
-设$\bm{\varphi}\in \mathcal{L}\left(
-    V_{\mathbb{C}}^n
+设$\bm{\varphi}\in \call  \left(
+    V_{\bbc }^n
     \right)$，$V_0$是$\bm{\varphi}$-不变子空间，若$\bm{\varphi}$可对角化，则$\displaystyle \bm{\varphi}\Big|_{V_0}$可对角化.\begin{proof}
     设$\bm{\varphi},\bm{\varphi}\Big|_{V_0}$的极小多项式分别为$m\left(\lambda\right),g\left(\lambda\right).$考虑到\begin{align*}
         m\left(\bm{\varphi}\Big|_{V_0}\right)=m\left(\bm{\varphi}\right)\Big|_{V_0}=\bm{0}\Big|_{V_0}=\bm{0}
@@ -230,8 +230,8 @@
     \end{proof}
 }
 \cor{}{可对角化等价于所有不变子空间上的限制可对角化}{
-设$\bm{\varphi}\in \mathcal{L}\left(
-    V_{\mathbb{C}}^n
+设$\bm{\varphi}\in \call  \left(
+    V_{\bbc }^n
     \right),V=V_1\oplus V_2\oplus\cdots\oplus V_k$,其中$V_i$是$\bm{\varphi}$-不变子空间$,\forall 1\leqslant i\leqslant k.$则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}\Big|_{V_i}$可对角化$\left(\forall 1\leqslant i\leqslant k\right).$\begin{proof}
     必要性由\cref{cor:代数意义的限制可对角化}即得.
 
@@ -260,7 +260,7 @@
 \cor{}{特征值在域中则矩阵的约当标准型也在域中}{
     设$\bm{A}\in M_n\left(\mathbb{K}\right)$的特征值全在$\mathbb{K}$中，则$\bm{A}$在$\mathbb{K}$上相似于其Jordan标准型.\begin{proof}
         首先，$\bm{A}$必定复相似于\[
-            \bm{J}= \mathrm{diag}\left\{
+            \bm{J}= \diag \left\{
             \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
             \right\}
         \]容易见得Jordan块均在$M_n\left(\mathbb{K}\right)$，根据相似关系在基域扩张下的不变性知$\bm{A}$在$\mathbb{K}$上相似于其Jordan标准型$\bm{J}$.
@@ -270,7 +270,7 @@
     设$\bm{A}$的初等因子组为\[
         \lambda-1,\left(\lambda-1\right)^3,\left(\lambda+2\right)^2,\left(\lambda+2\right)^3\]求其Jordan标准型.\begin{solution}
         $\bm{A}$的Jordan标准型为\[
-            \mathrm{diag}\left\{
+            \diag \left\{
             1,\begin{pmatrix}
                 1 & 1 &   \\
                   & 1 & 1 \\
@@ -289,7 +289,7 @@
     \end{solution}
 }
 \exa{}{}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{C}}^4\right)$，其在$\left\{
+    设$\bm{\varphi}\in \call  \left(V_{\bbc }^4\right)$，其在$\left\{
         \bm{e}_1,\bm{e}_2,\bm{e}_3,\bm{e}_4
         \right\}$的表示阵为\[\bm{A}=
         \begin{pmatrix}
@@ -354,14 +354,14 @@
 \subsection{Jordan标准型的相关应用}
 这一部分，首先将讨论$\bm{\varphi}$的特征值的度数（几何重数）和重数（代数重数）在Jordan标准型中的体现，然后给出全空间关于Jordan标准型的两种直和分解，最后给出Jordan标准型的一些应用.
 \clm{总设}{}{
-总设$n$维线性空间$V$，线性变换$\bm{\varphi}\in \mathcal{L}\left(V\right),$其初等因子组为\[
+总设$n$维线性空间$V$，线性变换$\bm{\varphi}\in \call  \left(V\right),$其初等因子组为\[
     \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
 \]并且存在一组基\[
     \left\{
     e_{11},e_{12},\cdots,e_{1r_1};e_{21},e_{22},\cdots,e_{2r_2};\cdots;e_{k1},e_{k2},\cdots,e_{kr_k}
     \right\}
 \]使得$\bm{\varphi}$在这组基下的表示矩阵为\[
-    \bm{J}= \mathrm{diag}\left\{
+    \bm{J}= \diag \left\{
     \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
     \right\}
 \]
@@ -402,11 +402,11 @@
 \]不妨设$\lambda_1=\lambda_2=\cdots=\lambda_s\neq \lambda_j,\forall s<j\leqslant k.$于是\[
     f\left(\lambda\right)=\left(\lambda-\lambda_1\right)^{r_1+r_2+\cdots+r_s}\left(\lambda-\lambda_{s+1}\right)^{r_{s+1}}\cdots\left(\lambda-\lambda_k\right)^{r_k}
 \]其中$\lambda_1$的代数重数为$r_1+r_2+\cdots+r_s$，其等于属于特征值$\lambda_1$的Jordan块的阶数之和，而度数为\[
-    \dim V_{\lambda_1}=\dim\mathrm{Ker}\left(
+    \dim V_{\lambda_1}=\dim\Ker \left(
     \bm{\varphi}-\lambda_1\bm{I}_V
-    \right)=n-\dim\mathrm{Im}\left(
+    \right)=n-\dim\Image \left(
     \bm{\varphi}-\lambda_1\bm{I}_V
-    \right)=n-\mathrm{rank}\left(
+    \right)=n-\rank \left(
     \bm{\varphi}-\lambda_1\bm{I}_V
     \right)
 \]考虑\[\bm{J}_{r_i}\left(\lambda_i\right)-\lambda_1\bm{I}=
@@ -418,18 +418,18 @@
                             &                     &        &        & \lambda_i-\lambda_1
     \end{pmatrix}
 \]则秩\[
-    \mathrm{rank}\,\left(
+    \rank \,\left(
     \bm{J}_{r_i}\left(\lambda_i\right)-\lambda_1\bm{I}
     \right)=\begin{cases*}
         r_i-1 & ,$\lambda_i=\lambda_1\left(1\leqslant i\leqslant s\right)$ \\
         r_i   & ,$\lambda_i\neq \lambda_1\left(s<i\leqslant k\right)$
     \end{cases*}
 \]于是\begin{align*}
-    \mathrm{r}\left(\bm{J}-\lambda_1\bm{I}\right) & =\sum_{i=1}^k\mathrm{r}\left(
+    \rmr \left(\bm{J}-\lambda_1\bm{I}\right) & =\sum_{i=1}^k\rmr \left(
     \bm{J}_{r_i}\left(\lambda_i\right)-\lambda_1\bm{I}
-    \right)                                                                                      \\
-                                                  & =r_1-1+r_2-1+\cdots+r_s-1+r_{s+1}+\cdots+r_k \\
-                                                  & =n-s
+    \right)                                                                                 \\
+                                             & =r_1-1+r_2-1+\cdots+r_s-1+r_{s+1}+\cdots+r_k \\
+                                             & =n-s
 \end{align*}
 于是$\lambda_1$的几何重数为$s$，即属于特征值$\lambda_1$的Jordan块的个数.
 \thm{代数重数与几何重数在Jordan标准型中的体现}{代数重数与几何重数在Jordan标准型中的体现}{
@@ -454,7 +454,7 @@
     \bm{e}_{ir_i}\xlongrightarrow{\bm{\psi}}\bm{e}_{i,r_i-1}\xlongrightarrow{\bm{\psi}}\cdots\xlongrightarrow{\bm{\psi}}\bm{e}_{i1}\xlongrightarrow{\bm{\psi}}\bm{0}
 \]
 \dfn{循环子空间}{循环子空间}{
-    设$\bm{\psi}\in \mathcal{L}\left(V\right)$，$V_0$是$r$维的$\bm{\psi}$-不变子空间，若存在$\bm{0}\neq \bm{\alpha}\in V_0\st$\[
+    设$\bm{\psi}\in \call  \left(V\right)$，$V_0$是$r$维的$\bm{\psi}$-不变子空间，若存在$\bm{0}\neq \bm{\alpha}\in V_0\st$\[
         \left\{
         \bm{\alpha},\bm{\psi}\left(\bm{\alpha}\right),\cdots,\bm{\psi}^{r-1}\left(\bm{\alpha}\right)
         \right\}
@@ -474,16 +474,16 @@
     设\[
         R\left(\lambda_1\right)=V_1\oplus V_2\oplus\cdots\oplus V_s
     \]则\begin{align*}
-        R\left(\lambda_1\right) & =\mathrm{Ker}\left(
+        R\left(\lambda_1\right) & =\Ker \left(
         \bm{\varphi}-\lambda_1\bm{I}_V
-        \right)^n                                     \\
+        \right)^n                              \\
                                 & =\left\{
         \bm{v}\in V\mid \left(
         \bm{\varphi}-\lambda_1\bm{I}_V
         \right)^n\left(\bm{v}\right)=\bm{0}
         \right\}
     \end{align*}\begin{proof}
-        先证$R\left(\lambda_1\right)\subseteq\mathrm{Ker}\left(\bm{\varphi}-\lambda_1\bm{I}_V\right)^n$.任取\[
+        先证$R\left(\lambda_1\right)\subseteq\Ker \left(\bm{\varphi}-\lambda_1\bm{I}_V\right)^n$.任取\[
             R\left(\lambda_1\right)\ni\bm{v}=\bm{v}_1+\bm{v}_2+\cdots+\bm{v}_s,\bm{v}_i\in V_i
         \]考虑$V_i$的基\[
             \bm{e}_{ir_i}\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\bm{e}_{i,r_i-1}\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\cdots\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\bm{e}_{i1}\xlongrightarrow{\bm{\varphi}-\lambda_1\bm{I}_V}\bm{0}
@@ -509,7 +509,7 @@
             \right)^n\left(\bm{v}_s\right)=\bm{0}
         \]
 
-        再证$\mathrm{Ker}\left(\bm{\varphi}-\lambda_1\bm{I}_V\right)^n\subseteq R\left(\lambda_1\right)$.设$\bm{v}\in V$在基下的坐标向量\[
+        再证$\Ker \left(\bm{\varphi}-\lambda_1\bm{I}_V\right)^n\subseteq R\left(\lambda_1\right)$.设$\bm{v}\in V$在基下的坐标向量\[
             \bm{x}=\left(
             x_{11},x_{12},\cdots,x_{1r_1},x_{21},x_{22},\cdots,x_{2r_2},\cdots,x_{s1},x_{s2},\cdots,x_{sr_s}
             \right)'
@@ -531,7 +531,7 @@
             x_{11},x_{12},\cdots,x_{1r_1},x_{21},x_{22},\cdots,x_{2r_2},\cdots,x_{s1},x_{s2},\cdots,x_{sr_s}
             \right)
         \]为任意解.于是\[
-            \mathrm{Ker}\left(
+            \Ker \left(
             \bm{\varphi}-\lambda_1\bm{I}_V
             \right)^n=V_1\oplus V_2\oplus\cdots\oplus V_s=R\left(\lambda_1\right)\qedhere
         \]
@@ -544,7 +544,7 @@
 }
 \dfn{根子空间}{根子空间}{
     \[
-        R\left(\lambda_1\right)=\mathrm{Ker}\left(
+        R\left(\lambda_1\right)=\Ker \left(
         \bm{\varphi}-\lambda_1\bm{I}_V
         \right)^n=V_1\oplus V_2\oplus\cdots\oplus V_s
     \]称为特征值$\lambda_1$的根子空间.
@@ -555,10 +555,10 @@
         \right\}$或者退一步取到$r_1+r_2+\cdots+r_s$即代数重数（具体在\cref{ex:像空间与核空间稳定}中已证明）.
 }
 \rem{}{}{
-    根据\cref{lem:幂的像空间与核空间}，特征值$\lambda_1$的特征子空间$V_{\lambda_1}=\mathrm{Ker}\left(\bm{\varphi}-\lambda_1\bm{I}_V\right)\subseteq R\left(\lambda_1\right).$
+    根据\cref{lem:幂的像空间与核空间}，特征值$\lambda_1$的特征子空间$V_{\lambda_1}=\Ker \left(\bm{\varphi}-\lambda_1\bm{I}_V\right)\subseteq R\left(\lambda_1\right).$
 }
 \cor{}{}{
-    $\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{C}}\right)$可对角化当且仅当对于所有特征值$\lambda_0$均有\[
+    $\bm{\varphi}\in \call  \left(V_{\bbc }\right)$可对角化当且仅当对于所有特征值$\lambda_0$均有\[
         V_{\lambda_0}=R\left(\lambda_0\right)
     \]\begin{proof}
         考虑维数，根据\cref{thm:特征子空间的维数}，左侧特征子空间的维数是$\bm{\varphi}$的几何重数；右侧根据定义是各循环子空间的维数之和，而循环子空间的维数之和为属于$\lambda_1$的Jordan块的阶数之和，即代数重数.于是根据\cref{def:完全特征向量系}和\cref{thm:可对角化的条件}知$\bm{\varphi}$可对角化.
@@ -566,7 +566,7 @@
 }
 下面对上面叙述的内容进行一个总结.
 \thm{全空间关于Jordan标准型的两种直和分解}{全空间关于Jordan标准型的两种直和分解}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V_{\mathbb{C}}^n\right)$\begin{enumerate}[label=\arabic*）]
+    设$\bm{\varphi}\in \call  \left(V_{\bbc }^n\right)$\begin{enumerate}[label=\arabic*）]
         \item 设$\bm{\varphi}$的初等因子组为\[
                   \left(
                   \lambda-\lambda_1
@@ -593,10 +593,10 @@
     \]
 }
 \exa{}{}{
-    设$\bm{A}\in M_n\left(\mathbb{C}\right)$，证明：$\bm{A}=\bm{BC},$其中$\bm{B},\bm{C}$为对称阵.\begin{proof}
+    设$\bm{A}\in M_n\left(\bbc \right)$，证明：$\bm{A}=\bm{BC},$其中$\bm{B},\bm{C}$为对称阵.\begin{proof}
         因为存在非异阵$\bm{P}$使得\[
             \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=
-            \mathrm{diag}\left\{
+            \diag \left\{
             \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
             \right\}
         \]先来考虑Jordan块\[
@@ -628,10 +628,10 @@
                 1
             \end{pmatrix}=\bm{S}_i\bm{T}_i
         \]然后推广到Jordan标准型即令\begin{align*}
-             & \bm{S}=\mathrm{diag}\,\left\{
+             & \bm{S}=\diag \,\left\{
             \bm{S}_1,\bm{S}_2,\cdots,\bm{S}_k
-            \right\}                         \\
-             & \bm{T}=\mathrm{diag}\,\left\{
+            \right\}                  \\
+             & \bm{T}=\diag \,\left\{
             \bm{T}_1,\bm{T}_2,\cdots,\bm{T}_k
             \right\}
         \end{align*}于是\[
@@ -640,13 +640,13 @@
     \end{proof}
 }
 \exa{}{}{
-    设$\bm{A}\in M_n\left(\mathbb{C}\right)$，求$\bm{A}^k\left(k\geqslant 1\right).$\begin{solution}
+    设$\bm{A}\in M_n\left(\bbc \right)$，求$\bm{A}^k\left(k\geqslant 1\right).$\begin{solution}
         因为存在非异阵$\bm{P}$使得\[
             \bm{P}^{-1}\bm{A}\bm{P}=\bm{J}=
-            \mathrm{diag}\left\{
+            \diag \left\{
             \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
             \right\}
-        \]于是$\bm{A}^k=\bm{P}\bm{J}^k\bm{P}^{-1}=\bm{P}\mathrm{diag}\left\{
+        \]于是$\bm{A}^k=\bm{P}\bm{J}^k\bm{P}^{-1}=\bm{P}\diag \left\{
             \bm{J}_{r_1}\left(\lambda_1\right)^k,\bm{J}_{r_2}\left(\lambda_2\right)^k,\cdots,\bm{J}_{r_k}\left(\lambda_k\right)^k
             \right\}\bm{P}^{-1}$.
 
@@ -697,8 +697,8 @@
     \end{solution}
 }
 \lem{同时对角化}{同时对角化}{
-    设$\bm{A},\bm{B}\in M_n\left(\mathbb{C}\right)$，若$\bm{A},\bm{B}$均可对角化且乘积可交换即$\bm{AB}=\bm{BA}$，则$\bm{A},\bm{B}$可同时对角化即存在非异阵$\bm{P}$使得$\bm{P}^{-1}\bm{AP}$和$\bm{P}^{-1}\bm{BP}$均为对角阵.\begin{proof}
-        考虑几何角度，即$\bm{\varphi},\bm{\psi}\in\mathcal{L}\left(V_{\mathbb{C}}^n\right)$，二者均可对角化且$\bm{\varphi}\bm{\psi}=\bm{\psi}\bm{\varphi}$，则$\bm{\varphi},\bm{\psi}$可同时对角化即存在一组基使得$\bm{\varphi},\bm{\psi}$在这组基下的表示矩阵均为对角阵.
+    设$\bm{A},\bm{B}\in M_n\left(\bbc \right)$，若$\bm{A},\bm{B}$均可对角化且乘积可交换即$\bm{AB}=\bm{BA}$，则$\bm{A},\bm{B}$可同时对角化即存在非异阵$\bm{P}$使得$\bm{P}^{-1}\bm{AP}$和$\bm{P}^{-1}\bm{BP}$均为对角阵.\begin{proof}
+        考虑几何角度，即$\bm{\varphi},\bm{\psi}\in\call  \left(V_{\bbc }^n\right)$，二者均可对角化且$\bm{\varphi}\bm{\psi}=\bm{\psi}\bm{\varphi}$，则$\bm{\varphi},\bm{\psi}$可同时对角化即存在一组基使得$\bm{\varphi},\bm{\psi}$在这组基下的表示矩阵均为对角阵.
 
         下面对线性空间的维数$n$进行归纳.$n=1$显然.设维数$<n$时成立，考虑维数等于$n$的情况.
 
@@ -724,14 +724,14 @@
     \end{proof}
 }
 \thm{Jordan-Chevalley分解定理}{Jordan-Chevalley分解定理}{
-    设$\bm{A}\in M_n\left(\mathbb{C}\right),$则$\bm{A}$一定可以作分解$\bm{A}=\bm{B}+\bm{C}$,其中\begin{enumerate}[label=（\arabic*）]
+    设$\bm{A}\in M_n\left(\bbc \right),$则$\bm{A}$一定可以作分解$\bm{A}=\bm{B}+\bm{C}$,其中\begin{enumerate}[label=（\arabic*）]
         \item $\bm{B}$可对角化
         \item $\bm{C}$是幂零阵
         \item 乘积可交换：$\bm{BC}=\bm{CB}$
         \item $\bm{B},\bm{C}$均可表示为$\bm{A}$的多项式
     \end{enumerate}并且满足$(1)\sim (3)$的分解是唯一的.\begin{proof}
         设非异阵$\bm{P}$使得\[
-            \bm{P}^{-1}\bm{A}\bm{P}=\mathrm{diag}\left\{
+            \bm{P}^{-1}\bm{A}\bm{P}=\diag \left\{
             \bm{J}_1,\bm{J}_2,\cdots,\bm{J}_s
             \right\}
         \]其中$\lambda_1,\lambda_2,\cdots,\lambda_s$是$\bm{A}$的全体不同特征值，而$\bm{J}_i$是$\lambda_i$的根子空间的块（阶数为$\lambda_i$的代数重数$m_i$）\[
@@ -744,10 +744,10 @@
         \]前者是对角阵，后者每个分块的上次对角线元素为$1$并且是幂零阵（$\bm{N}_i^{m_i}=\bm{O}$），并且有$\bm{M}_i\bm{N}_i=\bm{N}_i\bm{M}_i$.
 
         做拼接\begin{align*}
-             & \bm{M}=\mathrm{diag}\,\left\{
+             & \bm{M}=\diag \,\left\{
             \bm{M}_1,\bm{M}_2,\cdots,\bm{M}_s
-            \right\}                         \\
-             & \bm{N}=\mathrm{diag}\,\left\{
+            \right\}                  \\
+             & \bm{N}=\diag \,\left\{
             \bm{N}_1,\bm{N}_2,\cdots,\bm{N}_s
             \right\}
         \end{align*}前者是对角阵，后者是幂零阵并且可交换即$\bm{MN}=\bm{NM}$.于是分解$\bm{J}=\bm{M}+\bm{N}$满足条件$(1)\sim (3)$.
@@ -764,10 +764,10 @@
         \]于是\begin{align*}
             g\left(\bm{J}_i\right)=\lambda_i\bm{I}=\bm{M}_i
         \end{align*}而\begin{align*}
-            g\left(\bm{J}\right) & =\mathrm{diag}\left\{
+            g\left(\bm{J}\right) & =\diag \left\{
             g\left(\bm{J}_1\right),g\left(\bm{J}_2\right),\cdots,g\left(\bm{J}_s\right)
-            \right\}                                     \\
-                                 & =\mathrm{diag}\left\{
+            \right\}                              \\
+                                 & =\diag \left\{
             \bm{M}_1,\bm{M}_2,\cdots,\bm{M}_s
             \right\}=\bm{M}
         \end{align*}并且$\bm{N}=\bm{J}-g\left(\bm{J}\right)$即$(4)$证毕.
@@ -859,7 +859,7 @@ Jordan标准型应用的第一个主题是如何合理地选取特征向量求�
         但实际上这并不是本问题无解的问题，而是对$\bm{\alpha}_2$的选取不够好.取$\bm{\alpha}_2=k_1\bm{\beta}_1+k_2\bm{\beta}_2=\left(
             -2k_1+5k_2,k_1,k_2
             \right)'$并且此处应当有\[
-            \mathrm{rank}\begin{pmatrix}
+            \rank \begin{pmatrix}
                 3 & 6 & -15 & -2k_1+5k_2 \\1&2&-5&k_1\\1 & 2 & -5 & k_2
             \end{pmatrix}=1
         \]明显有$k_1=k_2$，于是不妨取$k_1=k_2=1$即$\bm{\alpha}_2=\begin{pmatrix}
@@ -924,7 +924,7 @@ Jordan标准型应用的第二个主题是如何求得带参数的矩阵的Jorda
             1,\cdots,1,\left(\lambda-a\right)^n
         \]则Jordan标准型为$\bm{J}_n\left(a\right).$
 
-        法二.特征值$a$的代数重数为$n$，几何重数$=n-\mathrm{rank}\left(
+        法二.特征值$a$的代数重数为$n$，几何重数$=n-\rank \left(
             \bm{A}-a\bm{I}
             \right)=1$，于是Jordan块只有一个$n$阶的即$\bm{J}_n\left(a\right)$.
 
@@ -957,15 +957,15 @@ Jordan标准型应用的第二个主题是如何求得带参数的矩阵的Jorda
             7   & 6 & b+4 & 1
         \end{pmatrix}
     \]求其Jordan标准型.\begin{solution}
-        明显特征值为$1$，代数重数$4$，几何重数\begin{align*}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              & 4-\mathrm{rank}\left(
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \bm{A}-\bm{I}_4
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \right)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          = & \begin{cases*}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          1 & ,$a\neq -2$且$b\neq -4\leadsto\bm{J}_4\left(1\right)$ \\
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          2 & ,$a=-2$或$b=-4\leadsto\mathrm{diag}\left\{
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \bm{J}_k\left(1\right),\bm{J}_l\left(1\right)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \right\},1\leqslant k\leqslant l,k+l=4$
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \end{cases*}\end{align*}显然$2\leqslant l\leqslant 3.$
+        明显特征值为$1$，代数重数$4$，几何重数\begin{align*}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              & 4-\rank \left(
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \bm{A}-\bm{I}_4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \right)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          = & \begin{cases*}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          1 & ,$a\neq -2$且$b\neq -4\leadsto\bm{J}_4\left(1\right)$ \\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          2 & ,$a=-2$或$b=-4\leadsto\diag \left\{
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \bm{J}_k\left(1\right),\bm{J}_l\left(1\right)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \right\},1\leqslant k\leqslant l,k+l=4$
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \end{cases*}\end{align*}显然$2\leqslant l\leqslant 3.$
 
         于是需要估计$\bm{A}$的极小多项式（其可能是$\left(\lambda-1\right)^l,l=2,3$）.首先\begin{align*}
             \left(\bm{A}-\bm{I}_4\right)^2 & =\begin{pmatrix}
@@ -975,10 +975,10 @@ Jordan标准型应用的第二个主题是如何求得带参数的矩阵的Jorda
                                                   6\left(a+2\right)+5\left(b+4\right) & 3\left(b+4\right) &  &
                                               \end{pmatrix}                                     \\
                                            & =\begin{cases*}
-                                                  \bm{O}      & ,$a=-2$且$b=-4\leadsto\mathrm{diag}\left\{
+                                                  \bm{O}      & ,$a=-2$且$b=-4\leadsto\diag \left\{
                                                       \bm{J}_2\left(1\right),\bm{J}_2\left(1\right)
-                                                  \right\}$                                                       \\
-                                                  \neq \bm{O} & ,$a\neq -2$或$b\neq -4\leadsto\mathrm{diag}\left\{
+                                                  \right\}$                                                \\
+                                                  \neq \bm{O} & ,$a\neq -2$或$b\neq -4\leadsto\diag \left\{
                                                       \bm{J}_1\left(1\right),\bm{J}_3\left(1\right)
                                                       \right\}$
                                               \end{cases*}
@@ -987,7 +987,7 @@ Jordan标准型应用的第二个主题是如何求得带参数的矩阵的Jorda
 }
 Jordan标准型应用的第三个主题是关于循环子空间的应用.
 \dfn{一般的循环子空间}{一般的循环子空间}{
-    设线性变换$\bm{\varphi}\in\mathcal{L}\left(
+    设线性变换$\bm{\varphi}\in\call  \left(
         V_{\mathbb{K}}^n
         \right),\bm{0}\neq\bm{\alpha}\in V$.由$\left\{
         \bm{\alpha},\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^2\left(\bm{\alpha}\right),\cdots
@@ -1048,14 +1048,14 @@ Jordan标准型应用的第三个主题是关于循环子空间的应用.
     \end{enumerate}
 }
 \exa{全空间分解}{全空间分解}{
-    设$\bm{\varphi}\in\mathcal{L}\left(
+    设$\bm{\varphi}\in\call  \left(
         V_{\mathbb{K}}^n
         \right)$的不变因子为\[
         1,\cdots,1,d_1\left(\lambda\right),\cdots,d_k\left(\lambda\right)
     \]根据有理标准型理论知存在$V$的一组基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
         \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为\[
-        \bm{F}= \mathrm{diag}\left\{
+        \bm{F}= \diag \left\{
         \bm{F}\left(d_1\left(\lambda\right)\right),\bm{F}\left(d_2\left(\lambda\right)\right),\cdots,\bm{F}\left(d_k\left(\lambda\right)\right)
         \right\}
     \]因为表示矩阵为多项式友阵说明是循环子空间，于是全空间一定可以分解为循环子空间的直和\[
@@ -1069,14 +1069,14 @@ Jordan标准型应用的第三个主题是关于循环子空间的应用.
     \]
 }
 \exa{全空间分解}{全空间分解2}{
-    设$\bm{\varphi}\in\mathcal{L}\left(
-        V_{\mathbb{C}}^n
+    设$\bm{\varphi}\in\call  \left(
+        V_{\bbc }^n
         \right)$的初等因子为\[
         \left(\lambda-\lambda_1\right)^{r_1},\left(\lambda-\lambda_2\right)^{r_2},\cdots,\left(\lambda-\lambda_k\right)^{r_k}
     \]并且存在一组基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
         \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为\[
-        \bm{J}= \mathrm{diag}\left\{
+        \bm{J}= \diag \left\{
         \bm{J}_{r_1}\left(\lambda_1\right),\bm{J}_{r_2}\left(\lambda_2\right),\cdots,\bm{J}_{r_k}\left(\lambda_k\right)
         \right\}
     \]根据\cref{thm:全空间关于Jordan标准型的两种直和分解}知\[
@@ -1095,7 +1095,7 @@ Jordan标准型应用的第三个主题是关于循环子空间的应用.
 \thm{唯一确定可交换的线性变换}{唯一确定可交换的线性变换}{
     设$n$维循环空间$V=C\left(
         \bm{\varphi},\bm{\alpha}
-        \right),\bm{\psi}\in\mathcal{L}\left(
+        \right),\bm{\psi}\in\call  \left(
         V
         \right)$且$
         \bm{\varphi\psi}=\bm{\psi\varphi}

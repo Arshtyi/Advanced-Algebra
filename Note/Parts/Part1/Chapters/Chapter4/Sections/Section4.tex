@@ -1,7 +1,7 @@
 \newpage
 \section{线性映射的像与核}
 \clm{总设}{}{
-总设线性映射$\bm{\varphi}:V_{\mathbb{K}}^n\longrightarrow U_{\mathbb{K}}^m \in\mathcal{L}\left(V,U\right)$.
+总设线性映射$\bm{\varphi}:V_{\mathbb{K}}^n\longrightarrow U_{\mathbb{K}}^m \in\call  \left(V,U\right)$.
 }
 \subsection{像空间与核空间}
 \dfn{像集与核集}{像集与核集}{
@@ -129,7 +129,7 @@
     \end{proof}
 }
 \exa{}{}{
-一个简单的例子是考虑$V=\mathbb{R}^2$，定义映射$\bm{\varphi}$为绕原点逆时针旋转$\theta$角，那么
+一个简单的例子是考虑$V=\bbr ^2$，定义映射$\bm{\varphi}$为绕原点逆时针旋转$\theta$角，那么
 \[
     \left(\bm{\varphi}\left(\bm{e}_1\right),\bm{\varphi}\left(\bm{e}
         _2\right)\right)=\left(\bm{e}_1,\bm{e}_2\right)\begin{bmatrix}
@@ -247,13 +247,13 @@
     \end{proof}
 }
 \cor{线性映射维数公式}{线性映射维数公式}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$，则
+    设$\bm{\varphi}\in \call  \left(V^n,U^m\right)$，则
     \[\dim \Image\bm{\varphi}+\dim
         \Ker \bm{\varphi}=\dim V=n
     \]
 }
 \cor{秩对线性映射的刻画}{秩对线性映射的刻画}{
-    设$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$，$\bm{A}=\bm{T}\left(\bm{\varphi}\right)$，则
+    设$\bm{\varphi}\in \call  \left(V^n,U^m\right)$，$\bm{A}=\bm{T}\left(\bm{\varphi}\right)$，则
     \[
         \begin{cases*}
             \bm{\varphi}\text{为满射}\Longleftrightarrow
@@ -274,19 +274,19 @@
         \bm{\varphi}\text{是满射}\Longleftrightarrow
         \bm{\varphi}\text{是单射}
     \]
-    特别地，线性变换$\bm{\varphi}\in \mathcal{L}\left(
+    特别地，线性变换$\bm{\varphi}\in \call  \left(
         V^n
         \right)$，则$\bm{\varphi}$是自同构等价于$\bm{\varphi}$
     是单射也等价于$\bm{\varphi}$是满射.
 }
 \cor{}{线性变换的秩对其本身的刻画}{
-    设线性变换$\bm{\varphi}\in \mathcal{L}\left(
+    设线性变换$\bm{\varphi}\in \call  \left(
         V^n
         \right)$,则$\bm{\varphi}$为单射或满射等价于 $\bm{\varphi}$在任意基下的表示矩阵均可逆（满秩）.
 }
 \subsection{像空间与核空间的计算}
 \rem{记号说明}{}{
-    先说明记号，设有映射$\bm{\varphi}\in \mathcal{L}\left(V^n,U^m\right)$,分别取定线性空间$V$和$U$的一组基为
+    先说明记号，设有映射$\bm{\varphi}\in \call  \left(V^n,U^m\right)$,分别取定线性空间$V$和$U$的一组基为
     $\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$和$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m\right\}$，$\bm{T}\left(\bm{\varphi}\right)=\bm{A}$，且有线性同构
     \begin{align*}
         \bm{\eta}_V:\Ker \bm{\varphi} & \longrightarrow \Ker \bm{\varphi}_{\bm{A}} \\

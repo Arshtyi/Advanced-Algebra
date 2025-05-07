@@ -2,11 +2,11 @@
 \section{线性映射的运算}
 \subsection{运算}
 \dfn{线性映射全体}{线性映射全体}{
-    设$V_{\mathbb{K}}$、$U_{\mathbb{K}}$，记$\mathcal{L} \left(V,U\right)$为$V \longrightarrow U$的线性映射全体.
+    设$V_{\mathbb{K}}$、$U_{\mathbb{K}}$，记$\call   \left(V,U\right)$为$V \longrightarrow U$的线性映射全体.
 }
 \dfn{线性映射的加法与数乘}{线性映射的加法与数乘}{
     $\forall \bm{\varphi},\bm{\psi}
-        \in \mathcal{L} \left(
+        \in \call   \left(
         V,U
         \right)$
     ，定义加法
@@ -27,18 +27,18 @@
         \right)
     \]
     容易验证二者均是线性映射且
-    $\bm{\varphi}+\bm{\psi} \in \mathcal{L}\left(V,U\right)$，$k\bm{\varphi}
-        \in \mathcal{L} \left(V,U\right)$.
+    $\bm{\varphi}+\bm{\psi} \in \call  \left(V,U\right)$，$k\bm{\varphi}
+        \in \call   \left(V,U\right)$.
 }
 \thm{}{线性映射全体是线性空间}{
-    $\mathcal{L} \left(V,U\right)$在\cref{def:线性映射的加法与数乘}的加法和数乘运算下是$\mathbb{K}$上的线性空间.
+    $\call   \left(V,U\right)$在\cref{def:线性映射的加法与数乘}的加法和数乘运算下是$\mathbb{K}$上的线性空间.
 
-    特别地，$\mathcal{L} \left(
+    特别地，$\call   \left(
         V,\mathbb{K}
         \right)$是$V$上的线性函数全体构成的线性空间，称为$V$的共轭空间，记作$V^*$，当$V$维数有限时，$V^*$也称为$V$的对偶空间.
 
-    $\mathcal{L}
-        \left(V,V\right) = \mathcal{L}
+    $\call
+        \left(V,V\right) = \call
         \left(V\right)$为$V$上的线性变换
     全体构成的线性空间，它可以额外将映射的复合定义为乘法运算.
 }
@@ -72,7 +72,7 @@
 \exa{}{}{
     区间$\left[0,1\right]$上的连续函数全体构成的线性空间
     $V = C\left[0,1\right]/
-        \mathbb{R}$是$\mathbb{R}$上的代数.乘法定义为
+        \bbr $是$\bbr $上的代数.乘法定义为
     \[
         \left(f\cdot g\right)\left(x
         \right)\coloneqq
@@ -91,12 +91,12 @@
     是$\mathbb{K}$-代数.
 }
 \exa{}{}{
-    \cref{def:线性映射全体}提到$\mathcal{L} \left(V_{\mathbb{K}}
+    \cref{def:线性映射全体}提到$\call   \left(V_{\mathbb{K}}
         \right)$是定义有乘法的，那么它是$\mathbb{K}$-代数.
 }
 \subsection{幂}
 \dfn{线性映射的幂}{线性映射的幂}{
-    设$\bm{\varphi}\in \mathcal{L} \left(
+    设$\bm{\varphi}\in \call   \left(
         V
         \right),\forall n \in \mathbb{Z}^+$，定义幂
     \[
@@ -119,7 +119,7 @@
 }
 \cor{}{线性映射的幂的不可交换性}{
     对于$\bm{\varphi},\bm{\psi}\in
-        \mathcal{L} \left(V\right)$，一般
+        \call   \left(V\right)$，一般
     $\bm{\varphi}\circ \bm{\psi}
         \neq \bm{\psi} \circ \bm{\varphi}$，故
     \[
@@ -135,7 +135,7 @@
 }
 \cor{}{自同构的保持}{
     若$\bm{\varphi},\bm{\psi}
-        \in \mathcal{L} \left(
+        \in \call   \left(
         V_{\mathbb{K}}
         \right)$为自同构，则$\bm{\varphi}\circ\bm{\psi}$
     是自同构，且$\left(\bm{\varphi \circ\psi}\right)

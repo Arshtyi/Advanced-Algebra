@@ -2,9 +2,9 @@
 \subsection{引入}
 考虑一个曾提出的问题，如何找到一个线性空间的一组基，使得该线性空间上所有线性变换的表示矩阵尽量简单（比如对角阵）.或者说，能否找到一些尽量简单的矩阵使得其他矩阵均与它们中的某一个相似（比如对角阵）.
 
-设线性空间$V_{\bbk}^n$，$\bm{\varphi}\in\mathcal{L}\left(V\right)$，且$\bm{\varphi}$在$\left\{
+设线性空间$V_{\bbk}^n$，$\bm{\varphi}\in\call  \left(V\right)$，且$\bm{\varphi}$在$\left\{
     \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
-    \right\}$这组基下的表示矩阵为$\bm{A}=\mathrm{diag}\,\left\{
+    \right\}$这组基下的表示矩阵为$\bm{A}=\diag \,\left\{
     \lambda_1,\lambda_2,\cdots,\lambda_n
     \right\}$，从而
 \[
@@ -31,11 +31,11 @@
 \]
 
 设$\lambda_1,\cdots,\lambda_r$非零，$
-    \lambda_{r+1}=\cdots=\lambda_n=0.$则$\mathrm{r}\left(
+    \lambda_{r+1}=\cdots=\lambda_n=0.$则$\rmr \left(
     \bm{\varphi}
-    \right)=r$且$\mathrm{Ker}\bm{\varphi}=L\left(
+    \right)=r$且$\Ker \bm{\varphi}=L\left(
     \bm{e}_{r+1},\cdots,\bm{e}_n
-    \right),\mathrm{Im}\bm{\varphi}=L\left(
+    \right),\Image \bm{\varphi}=L\left(
     \bm{e}_1,\cdots,\bm{e}_r
     \right)$.
 
@@ -46,7 +46,7 @@
 $.这样的$\lambda_i$称为线性变换$\bm{\varphi}$的特征值，$\bm{e}_i$称为$\bm{\varphi}$的特征向量.
 \subsection{特征值与特征向量}
 \dfn{线性变换意义的特征值与特征向量}{线性变换意义的特征值与特征向量}{
-    设$\bm{\varphi}\in\mathcal{L}\left(
+    设$\bm{\varphi}\in\call  \left(
         V_{\mathbb{K}}^n
         \right)$，若存在$\lambda\in\mathbb{K},\bm{0}\neq \bm{e}\in V\st$
     \[
@@ -146,7 +146,7 @@ $.这样的$\lambda_i$称为线性变换$\bm{\varphi}$的特征值，$\bm{e}_i$�
     \end{proof}
 }
 \dfn{线性变换的特征多项式}{线性变换的特征多项式}{
-    设$\bm{\varphi}\in\mathcal{L}\left(
+    设$\bm{\varphi}\in\call  \left(
         V_{\mathbb{K}}^n
         \right)$，任取一组基下的表示矩阵$\bm{A}$，定义$\bm{\varphi}$的特征多项式是$\bm{A}$的特征多项式（由上知特征多项式的定义不依赖于基或表示矩阵的选取）.记作$\left|
         \lambda\bm{I}_V-\bm{\varphi}\right|$.
@@ -154,7 +154,7 @@ $.这样的$\lambda_i$称为线性变换$\bm{\varphi}$的特征值，$\bm{e}_i$�
 \lem{}{特征值的和与积}{
     设$\bm{A}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$，则
     \begin{align*}
-        \lambda_1+\lambda_2+\cdots+\lambda_n & =\mathrm{tr}\bm{A}   \\
+        \lambda_1+\lambda_2+\cdots+\lambda_n & =\Tr \bm{A}          \\
         \lambda_1\lambda_2\cdots\lambda_n    & =\left|\bm{A}\right|
     \end{align*}\begin{proof}
         设\begin{align*}
@@ -171,7 +171,7 @@ $.这样的$\lambda_i$称为线性变换$\bm{\varphi}$的特征值，$\bm{e}_i$�
         其中$a_1=
             -\left(
             a_{11}+a_{22}+\cdots+a_{nn}
-            \right)=-\mathrm{tr}\bm{A}$，令$\lambda = 0$得$
+            \right)=-\Tr \bm{A}$，令$\lambda = 0$得$
             a_n=\left(-1\right)^n\left|\bm{A}\right|
         $.考虑\cref{thm:Vieta定理}Veita定理即可.
     \end{proof}
@@ -210,8 +210,8 @@ $.这样的$\lambda_i$称为线性变换$\bm{\varphi}$的特征值，$\bm{e}_i$�
             0 & -1 \\
             1 & 0
         \end{bmatrix}\in M_2\left(
-        \mathbb{R}
-        \right)$的特征值为$\pm \mathrm{i} \notin \mathbb{R}$。因此更一般地，我们考虑特征值相关问题时通常在复数域$\mathbb{C}$上考虑.
+        \bbr
+        \right)$的特征值为$\pm \mathrm{i} \notin \bbr $。因此更一般地，我们考虑特征值相关问题时通常在复数域$\bbc $上考虑.
 }
 \exa{}{}{
 考虑上三角阵
@@ -293,7 +293,7 @@ $\lambda_1=a_{11},\lambda_2=a_{22},\cdots,\lambda_n=a_{nn}$.
     \]对应特征向量为$c_2\bm{\xi}_2,c_2\neq 0$.
 }
 \thm{特征多项式的降阶公式}{特征多项式的降阶公式}{
-    设$\bm{A}\in M_{m\times n}\left(\mathbb{C}\right),\bm{B}\in M_{n\times m}\left(\mathbb{C}\right)\left(m\geqslant n\right)$，则\[
+    设$\bm{A}\in M_{m\times n}\left(\bbc \right),\bm{B}\in M_{n\times m}\left(\bbc \right)\left(m\geqslant n\right)$，则\[
         \left|
         \lambda\bm{I}_m-\bm{A}\bm{B}
         \right|=\lambda^{m-n}\left|
@@ -305,18 +305,18 @@ $\lambda_1=a_{11},\lambda_2=a_{22},\cdots,\lambda_n=a_{nn}$.
 \thm{}{必定复相似于三角阵}{
     任一复方阵必复相似于一个上（下）三角阵.\begin{proof}
         设$\bm{A}\in M_n\left(
-            \mathbb{C}
-            \right)$，对阶数$n$进行归纳，当$n=1$时结论显然成立.假设$n-1$时结论成立，考虍$n$时的情况.由\cref{thm:代数学基本定理}代数学基本定理，任取$\bm{A}$的特征值$\lambda_1$和特征向量$\bm{0}\neq \bm{\alpha}_1\in \mathbb{C}^n$即
+            \bbc
+            \right)$，对阶数$n$进行归纳，当$n=1$时结论显然成立.假设$n-1$时结论成立，考虍$n$时的情况.由\cref{thm:代数学基本定理}代数学基本定理，任取$\bm{A}$的特征值$\lambda_1$和特征向量$\bm{0}\neq \bm{\alpha}_1\in \bbc ^n$即
         \[
             \bm{A\alpha}_1=\lambda_1\bm{\alpha}_1
         \]
 
-        根据\cref{thm:基扩张定理}基扩张定理，将$\bm{\alpha}_1$扩张为全空间$\mathbb{C}^n$的一组基$\left\{
+        根据\cref{thm:基扩张定理}基扩张定理，将$\bm{\alpha}_1$扩张为全空间$\bbc ^n$的一组基$\left\{
             \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
             \right\}$.令$\bm{P}=\left(
             \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
             \right)\in M_n\left(
-            \mathbb{C}
+            \bbc
             \right)$且$\bm{P}$非异.因为
         \begin{align*}
             \bm{AP} & =\left(
@@ -330,7 +330,7 @@ $\lambda_1=a_{11},\lambda_2=a_{22},\cdots,\lambda_n=a_{nn}$.
                    \end{bmatrix}
         \end{align*}
         其中$\bm{A}_{n-1}\in M_{n-1}\left(
-            \mathbb{C}
+            \bbc
             \right)$.于是
         \[
             \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
@@ -340,7 +340,7 @@ $\lambda_1=a_{11},\lambda_2=a_{22},\cdots,\lambda_n=a_{nn}$.
         \]
         由归纳假设,$\exists\textup{非异阵}
             \bm{Q}\in M_{n-1}\left(
-            \mathbb{C}
+            \bbc
             \right)\st$
         \[
             \bm{Q}^{-1}\bm{A}_{n-1}\bm{Q}=\begin{pmatrix}
@@ -354,7 +354,7 @@ $\lambda_1=a_{11},\lambda_2=a_{22},\cdots,\lambda_n=a_{nn}$.
                 1      & \bm{O} \\
                 \bm{O} & \bm{Q}
             \end{pmatrix}\in M_n\left(
-            \mathbb{C}
+            \bbc
             \right)$，则
         \begin{align*}
             \bm{R}^{-1}\bm{P}^{-1}\bm{APR} & =
@@ -496,7 +496,7 @@ $\lambda_1=a_{11},\lambda_2=a_{22},\cdots,\lambda_n=a_{nn}$.
         \right)\in \mathbb{K}\left[x\right]$即$g\left(\bm{A}\right)=\bm{O}$，则$\bm{A}$的任意特征值也适合该多项式即$g\left(
         \lambda_i
         \right)=0,\forall 1\leqslant i\leqslant n$.\begin{proof}
-        设$\bm{A\alpha}=\lambda\bm{\alpha},\bm{0}\neq \bm{\alpha}\in \mathbb{C}^n$，则$\bm{A}^m\bm{\alpha}=\lambda^m\bm{\alpha}$.于是
+        设$\bm{A\alpha}=\lambda\bm{\alpha},\bm{0}\neq \bm{\alpha}\in \bbc ^n$，则$\bm{A}^m\bm{\alpha}=\lambda^m\bm{\alpha}$.于是
         \[
             \bm{O}=g\left(\bm{A}\right)\bm{\alpha}=g\left(\lambda\right)\bm{\alpha}\Longrightarrow
             g\left(\lambda\right)=0

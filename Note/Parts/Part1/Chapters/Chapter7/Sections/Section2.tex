@@ -28,7 +28,7 @@
 \thm{}{任意多项式矩阵相抵于对角多项式矩阵}{
     设$n$阶$\lambda$-矩阵$\bm{A}\left(\lambda\right)$，则其相抵于
     \[
-        \bm{B}\left(\lambda\right)=\mathrm{diag}\left\{
+        \bm{B}\left(\lambda\right)=\diag \left\{
         d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
         \right\}
     \]其中$d_i\left(\lambda\right)$为非零首一多项式且$d_i\left(\lambda\right)\mid d_{i+1}\left(\lambda\right),\forall 1\leqslant i\leqslant r-1$\begin{proof}
@@ -46,7 +46,7 @@
 
         由归纳假设，存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$作为若干个$n-1$阶初等$\lambda$-阵的乘积，使得
         \[
-            \bm{P}\left(\lambda\right)\bm{B}_{n-1}'\left(\lambda\right)\bm{Q}\left(\lambda\right)=\mathrm{diag}\left\{
+            \bm{P}\left(\lambda\right)\bm{B}_{n-1}'\left(\lambda\right)\bm{Q}\left(\lambda\right)=\diag \left\{
             d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
             \right\}
         \]
@@ -131,7 +131,7 @@
         \[
             \bm{P}\left(\lambda\right)\bm{A}\left(\lambda\right)\bm{Q}\left(\lambda\right)
             =
-            \mathrm{diag}\left\{
+            \diag \left\{
             d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
             \right\}
         \]
@@ -168,7 +168,7 @@
 \thm{特征矩阵的法式}{特征矩阵的法式}{
     设$\bm{A}\in M_n\left(\mathbb{K}\right)$,则$\lambda\bm{I}_n-\bm{A}$相抵于
     \[
-        \mathrm{diag}\left\{
+        \diag \left\{
         1,\cdots,1;d_1\left(\lambda\right),\cdots,d_m\left(\lambda\right)
         \right\}
     \]其中$d_i\left(\lambda\right)$是非常数的首一多项式，且$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_m\left(\lambda\right).$这就是$\lambda\bm{I}_n-\bm{A}$的法式.\begin{proof}
@@ -176,7 +176,7 @@
         \[
             \bm{P}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{A}\right)\bm{Q}\left(\lambda\right)
             =
-            \mathrm{diag}\left\{
+            \diag \left\{
             d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
             \right\}
         \]取行列式得$r=n$且
@@ -191,7 +191,7 @@
             n=\sum_{i=1}^{n}\deg d_i\left(\lambda\right)\geqslant n\]即有\[\deg d_i\left(\lambda\right)=1,\forall 1\leqslant i\leqslant n\]所以$d_i\left(\lambda\right)$是相互整除的首一一次多项式，于是他们只能全部相等.
 
         于是$\lambda\bm{I}_n-\bm{A}$相抵于\[
-            \mathrm{diag}\left\{
+            \diag \left\{
             \lambda-c, \cdots,\lambda-c
             \right\}=\lambda\bm{I}_n-c\bm{I}_n
         \]因为\cref{thm:矩阵相似等价于特征矩阵相抵}，于是\[\bm{A}\approx c\bm{I}_n\]后者两边乘上$\bm{P}^{-1}$、$\bm{P}$是交换的，即\[\bm{A}=c\bm{I}_n\qedhere\]
