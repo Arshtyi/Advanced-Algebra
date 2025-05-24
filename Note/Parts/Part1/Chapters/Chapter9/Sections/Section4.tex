@@ -1,0 +1,372 @@
+\newpage
+\section{内积空间的同构、正交变换和酉变换}
+\subsection{保积同构}
+设$V$为欧式空间，标准正交基为$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$，线性同构\begin{align*}
+    \bm{\varphi}:V                        & \longrightarrow\mathbb{R}^n\text{标准内积}  \\
+    \bm{\alpha}=\sum_{i=1}^{n}a_i\bm{e}_i & \longmapsto\bm{x}=\begin{pmatrix}
+                                                                  a_1 \\a_2\\\vdots\\a_n
+                                                              \end{pmatrix} \\
+    \bm{\beta}=\sum_{i=1}^{n}b_i\bm{e}_i  & \longmapsto\bm{y}=\begin{pmatrix}
+                                                                  b_1 \\b_2\\\vdots\\b_n
+                                                              \end{pmatrix}
+\end{align*}于是\[
+    \left(
+    \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\beta}\right)
+    \right)=\left(
+    \bm{x},\bm{y}
+    \right)_{\mathbb{R}^n}\bm{x}'\bm{y}
+\]又因为标准正交基下$\left(
+    \bm{\alpha},\bm{\beta}
+    \right)=\bm{x}'\bm{y}$.即$\forall\bm{\alpha},\bm{\beta}\in V:$\[
+    \left(
+    \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\beta}\right)
+    \right)_{\mathbb{R}^n}=\left(
+    \bm{\alpha},\bm{\beta}
+    \right)_V
+\]
+
+设$V$为酉空间，标准正交基为$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$，线性同构\begin{align*}
+    \bm{\varphi}:V & \longrightarrow\mathbb{C}^n\text{标准内积}
+\end{align*}同样可推得$\forall\bm{\alpha},\bm{\beta}\in V:$\[
+    \left(
+    \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\beta}\right)
+    \right)_{\mathbb{C}^n}=\left(
+    \bm{\alpha},\bm{\beta}
+    \right)_V
+\]
+\clm{}{}{
+    上述结论说明：不管一个内积空间的内积结构有多么复杂，都可以通过一个线性同构化归到标准列向量或行向量空间上的标准内积结构.
+}
+\dfn{保积同构}{保积同构}{
+    设$V,U$是$\mathbb{K}$上的实（复）内积空间，线性映射$\bm{\varphi}:V\longrightarrow U$，若$\forall\bm{\alpha},\bm{\beta}\in V:$\[
+        \left(
+        \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\beta}\right)
+        \right)_U=\left(
+        \bm{\alpha},\bm{\beta}
+        \right)_V
+    \]则称$\bm{\varphi}$是保持内积的线性映射.若进一步地，$\bm{\varphi}$作为线性映射是同构，则称为保积同构.
+}
+\clm{}{}{
+    内积空间的保积同构是等价关系.
+
+    保持内积的线性映射一定是单射，但不一定是满射.
+}
+\exa{}{}{
+    嵌入映射：\begin{align*}
+        \bm{\varphi}:\mathbb{R}^2 & \longrightarrow\mathbb{R}^3\text{标准内积} \\
+        \begin{pmatrix}
+            a \\b
+        \end{pmatrix}           & \longmapsto\begin{pmatrix}
+                                                 a \\b\\0
+                                             \end{pmatrix}
+    \end{align*}是保持内积的线性映射，是单射，不是满射.
+}
+\rem{}{}{
+    容易证明，保积则保持范数从而保持距离即\[
+        \left\lVert \bm{\varphi}\left(\bm{\alpha}\right)\right\rVert=\left\lVert \bm{\alpha}\right\rVert
+    \]
+}
+\pro{}{保持范数与保持内积}{
+    设$\bm{\varphi}:V\longrightarrow U$是内积空间之间的线性映射，若$\bm{\varphi}$保持范数，则$\bm{\varphi}$保持内积.\begin{proof}
+        因为\[
+            \left\lVert\bm{\alpha}+\bm{\beta}\right\rVert^2=\left\lVert\bm{\alpha}\right\rVert^2+\left\lVert\bm{\beta}\right\rVert^2+\left(\bm{\alpha},\bm{\beta}\right)+\left(\bm{\beta},\bm{\alpha}\right)
+        \]\[
+            \left\lVert\bm{\alpha}-\bm{\beta}\right\rVert^2=\left\lVert\bm{\alpha}\right\rVert^2+\left\lVert\bm{\beta}\right\rVert^2-\left(\bm{\alpha},\bm{\beta}\right)-\left(\bm{\beta},\bm{\alpha}\right)
+        \]
+
+        若$V$是欧式空间，容易知道\[
+            \left(
+            \bm{\alpha},\bm{\beta}
+            \right)=\frac{1}{4}\left(
+            \left\lVert\bm{\alpha}+\bm{\beta}\right\rVert^2-\left\lVert\bm{\alpha}-\bm{\beta}\right\rVert^2
+            \right)
+        \]于是\begin{align*}
+            \left(
+            \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\beta}\right)
+            \right) & =\frac{1}{4}\left(
+            \left\lVert\bm{\varphi}\left(\bm{\alpha}\right)+\bm{\varphi}\left(\bm{\beta}\right)\right\rVert^2-\left\lVert\bm{\varphi}\left(\bm{\alpha}\right)-\bm{\varphi}\left(\bm{\beta}\right)\right\rVert^2
+            \right)                      \\
+                    & =\frac{1}{4}\left(
+            \left\lVert\bm{\varphi}\left(\bm{\alpha}+\bm{\beta}\right)\right\rVert^2-\left\lVert\bm{\varphi}\left(\bm{\alpha}-\bm{\beta}\right)\right\rVert^2
+            \right)                      \\
+                    & =\frac{1}{4}\left(
+            \left\lVert\bm{\alpha}+\bm{\beta}\right\rVert^2-\left\lVert\bm{\alpha}-\bm{\beta}\right\rVert^2
+            \right)                      \\
+                    & =\left(
+            \bm{\alpha},\bm{\beta}
+            \right)
+        \end{align*}
+
+        若$V$是酉空间，则有\begin{align*}
+            \left(
+            \bm{\alpha},\bm{\beta}
+            \right)=\frac{1}{4}\left(
+            \left\lVert\bm{\alpha}+\bm{\beta}\right\rVert^2-\left\lVert\bm{\alpha}-\bm{\beta}\right\rVert^2+\rmi\left\lVert\bm{\alpha}+\rmi\bm{\beta}\right\rVert^2-\rmi\left\lVert\bm{\alpha}-\rmi\bm{\beta}\right\rVert^2
+            \right)\qedhere
+        \end{align*}
+    \end{proof}
+}
+\clm{}{}{
+    根据\cref{prop:保持范数与保持内积}，保积、保范、保距是等价的.
+}
+\pro{}{保持内积的等价结论}{
+    设$\bm{\varphi}:V^n\longrightarrow U^n$是$n$维实（复）内积空间的线性映射，则以下命题等价\begin{enumerate}[label=\arabic*）]
+        \item $\bm{\varphi}$保持内积
+        \item $\bm{\varphi}$是保积同构
+        \item $\bm{\varphi}$将$V$的任意一组标准正交基映为$U$的一组标准正交基
+        \item $\bm{\varphi}$将$V$的某一组标准正交基映为$U$的一组标准正交基
+    \end{enumerate}\begin{proof}
+        $(1)\Longrightarrow(2)$因为$\bm{\varphi}$保持内积，于是是单射，由\cref{cor:同维数下秩对线性映射的刻画}知$\bm{varphi}$是满射，也是同构.
+
+        $(2)\Longrightarrow(3)$任取$V$的一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$，由保积同构知$\forall1\leqslant i,j\leqslant n:$\[
+            \left(
+            \bm{\varphi}\left(\bm{e}_i\right),\bm{\varphi}\left(\bm{e}_j\right)
+            \right)=\left(
+            \bm{e}_i,\bm{e}_j
+            \right)=\delta_{ij}
+        \]
+
+        $(3)\Longrightarrow(4)$显然.
+
+        $(4)\Longrightarrow(1)$设$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$是$V$的一组标准正交基，且$\left\{
+            \bm{\varphi}\left(\bm{e}_1\right),\bm{\varphi}\left(\bm{e}_2\right),\cdots,\bm{\varphi}\left(\bm{e}_n\right)
+            \right\}$是$U$的一组标准正交基.任取$\displaystyle\bm{\alpha}=\sum_{i=1}^{n}a_i\bm{e}_i,\bm{\beta}=\sum_{i=1}^{n}b_i\bm{e}_i\in V$，坐标向量分别为$\displaystyle\bm{x}=\left(
+            a_1,a_2,\cdots,a_n
+            \right)',\bm{y}=\left(
+            b_1,b_2,\cdots,b_n
+            \right)'.\bm{\varphi}\left(\bm{\alpha}\right)=\sum_{i=1}^{n}a_i\bm{\varphi}\left(\bm{e}_i\right),\bm{\varphi}\left(\bm{\beta}\right)=\sum_{i=1}^{n}b_i\bm{\varphi}\left(\bm{e}_i\right)$.因为\begin{align*}
+            \left(
+            \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\beta}\right)
+            \right) & =\left(
+            \sum_{i=1}^{n}a_i\bm{\varphi}\left(\bm{e}_i\right),\sum_{i=1}^{n}b_i\bm{\varphi}\left(\bm{e}_i\right)
+            \right)                                    \\
+                    & =\sum_{i=1}^{n}a_i\overline{b}_i \\
+                    & =\bm{x}'\bm{y}                   \\
+                    & =\left(
+            \bm{\alpha},\bm{\beta}
+            \right)\qedhere
+        \end{align*}
+    \end{proof}
+}
+\cor{}{内积空间保积同构的等价条件}{
+    设$V,U$同为有限维实（复）内积空间，则$V,U$间存在保积同构$\bm{\varphi}:V\longrightarrow U$当且仅当$\dim V=\dim U$.\begin{proof}
+        必要性.因为保积同构前提是线性同构，由\cref{thm:同构的存在性}即得.
+
+        充分性.根据\cref{prop:保持内积的等价结论}，设$\dim V=\dim U=n$，取$V$的一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$和$U$的一组标准正交基$\left\{
+            \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+            \right\}$，根据\cref{lem:线性扩张定理}即得这样的线性映射\begin{align*}
+            \bm{\varphi}:V & \longrightarrow U   \\
+            \bm{e}_i       & \longmapsto\bm{f}_i
+        \end{align*}存在，扩张为$\bm{\varphi}\in\mathcal{L}\left(V,U\right)$，容易知道将一组基映为另一组基的线性映射一定是线性同构，根据\cref{prop:保持内积的等价结论}即得.\qedhere
+    \end{proof}
+}
+\subsection{正交变换、酉变换}
+\dfn{正交变换、酉变换}{正交变换、酉变换}{
+    设内积空间$V$上的线性算子$\bm{\varphi}$，若$\bm{\varphi}$保持内积，则称$\bm{\varphi}$为$\begin{cases*}
+            \text{正交算子} & ,$V$是欧式空间 \\
+            \text{酉算子}  & ,$V$是酉空间
+        \end{cases*}$.
+}
+\clm{}{}{
+    由\cref{prop:保持内积的等价结论}知\cref{def:正交变换、酉变换}是可逆算子.
+}
+\thm{正交算子、酉算子的判定}{正交算子、酉算子的判定}{
+    设$\bm{\varphi}$为有限维内积空间$V$上的线性算子，则$\bm{\varphi}$为正交算子（酉算子）当且仅当$\bm{\varphi}$可逆且$\bm{\varphi}^*=\bm{\varphi}^{-1}$.\begin{proof}
+        先考虑必要性.首先$\bm{\varphi}$是正交算子（酉算子），由\cref{prop:保持内积的等价结论}知$\bm{\varphi}$是保积同构，即$\bm{\varphi}$是可逆的.另一方面，$\forall\bm{\alpha},\bm{\beta}\in V:$\begin{align*}
+            \left(
+            \bm{\varphi}\left(\bm{\alpha}\right),\bm{\beta}
+            \right) & =\left(
+            \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(
+                \bm{\varphi}^{-1}\left(\bm{\beta}\right)
+                \right)
+            \right)                                                   \\
+                    & =\left(
+            \bm{\alpha},\bm{\varphi}^{-1}\left(\bm{\beta}\right)
+            \right)                                                   \\
+                    & \Longrightarrow\bm{\varphi}^*=\bm{\varphi}^{-1}
+        \end{align*}
+
+        下面考虑充分性.\begin{align*}
+            \left(
+            \bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}\left(\bm{\beta}\right)
+            \right) & =\left(
+            \bm{\alpha},\bm{\varphi}^*\left(\bm{\varphi}\left(\bm{\beta}\right)\right)
+            \right)           \\
+                    & =\left(
+            \bm{\alpha},\bm{\varphi}^{-1}\left(\bm{\varphi}\left(\bm{\beta}\right)\right)
+            \right)           \\
+                    & =\left(
+            \bm{\alpha},\bm{\beta}
+            \right)\qedhere
+        \end{align*}
+    \end{proof}
+}
+\dfn{正交矩阵、酉矩阵}{正交矩阵、酉矩阵}{
+    设$\bm{A}\in M_n\left(\mathbb{R}\right)$，若$\bm{A}'=\bm{A}^{-1}$，则称$\bm{A}$是正交矩阵；设$\bm{C}\in M_n\left(\mathbb{C}\right)$，若$\overline{\bm{C}}'=\bm{C}^{-1}$，则称$\bm{C}$是酉矩阵.
+}
+\thm{算子与矩阵}{算子与矩阵}{
+    设$\bm{\varphi}$为$n$维内积空间$V$上的线性算子，则$\bm{\varphi}$是正交算子（酉算子）当且仅当$\bm{\varphi}$在任意一组（或者某一组）标准正交基下的表示矩阵是正交矩阵（酉矩阵）.\begin{proof}
+        取$V$的一组标准正交基$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$，设$\bm{\varphi}$的表示矩阵$\bm{A}$，根据\cref{thm:伴随算子的表示矩阵}，$\bm{\varphi}^*$在这组基下的表示矩阵\[
+            \begin{cases*}
+                \bm{A}'            & ,$V$是欧式空间 \\
+                \overline{\bm{A}}' & ,$V$是酉空间
+            \end{cases*}
+        \]根据\cref{thm:正交算子、酉算子的判定}，$\bm{\varphi}$是正交算子（酉算子）当且仅当$\bm{\varphi}^*=\bm{\varphi}^{-1}$，于是$\bm{\varphi}^*,\bm{\varphi}^{-1}$在这组基下的表示矩阵相同即\[
+            \begin{cases*}
+                \bm{A}'=\bm{A}^{-1}\Longrightarrow\bm{A}\text{是正交阵}            & ,$V$是欧式空间 \\
+                \overline{\bm{A}}'=\bm{A}^{-1}\Longrightarrow\bm{A}\text{是酉矩阵} & ,$V$是酉空间
+            \end{cases*}
+        \]
+    \end{proof}
+}
+\thm{正交阵的判定}{正交阵的判定}{
+    设矩阵$\bm{A}\in M_n\left(\mathbb{R}\right)$，则下列结论等价\begin{enumerate}[label=\arabic*）]
+        \item $\bm{A}$为正交阵
+        \item $\bm{A}$的$n$个行向量是$\mathbb{R}_n$（标准内积）的一组标准正交基
+        \item $\bm{A}$的$n$个列向量是$\mathbb{R}^n$（标准内积）的一组标准正交基
+    \end{enumerate}\begin{proof}
+        因为$\bm{A}$为正交阵即\[
+            \bm{AA}'=\bm{A}'\bm{A}=\bm{I}_n
+        \]作$\bm{A}=\begin{pmatrix}
+                \bm{\alpha}_1 \\\bm{\alpha}_2\\\vdots\\\bm{\alpha}_n
+            \end{pmatrix}$于是\begin{align*}
+            \bm{I}_n & =\bm{AA}'                                            \\
+                     & =\begin{pmatrix}
+                            \bm{\alpha}_1 \\\bm{\alpha}_2\\\vdots\\\bm{\alpha}_n
+                        \end{pmatrix}\left(
+            \bm{\alpha}_1',\bm{\alpha}_2',\cdots,\bm{\alpha}_n'
+            \right)
+        \end{align*}其中$\left(i,j\right)$元即为$\delta_{ij}=\bm{\alpha}_i\cdot\bm{\alpha}_j'=\left(\bm{\alpha}_i,\bm{\alpha}_j\right)_{\mathbb{R}_n}$，于是得证.列形式同理.
+    \end{proof}
+}
+\thm{酉矩阵的判定}{酉矩阵的判定}{
+    设矩阵$\bm{C}\in M_n\left(\mathbb{C}\right)$，则下列结论等价\begin{enumerate}[label=\arabic*）]
+        \item $\bm{C}$为酉矩阵
+        \item $\bm{C}$的$n$个行向量是$\mathbb{C}_n$（标准内积）的一组标准正交基
+        \item $\bm{C}$的$n$个列向量是$\mathbb{C}^n$（标准内积）的一组标准正交基
+    \end{enumerate}
+}
+\clm{}{}{
+    正交阵是特殊的酉阵.
+}
+\exa{}{}{
+    $\bm{I}$是正交阵.
+}
+\exa{}{}{
+    \[
+        \bm{D}=\mathrm{diag}\,\left\{
+        d_1,d_2,\cdots,d_n
+        \right\}\in M_n\left(\mathbb{R}\right)
+    \]是正交阵当且仅当$\forall1\leqslant i\leqslant n:d_i=\pm1.$
+}
+\exa{}{}{
+    二阶正交阵分为\begin{enumerate}[label=\arabic*）]
+        \item 旋转矩阵\[
+                  \begin{pmatrix}
+                      \cos\theta & -\sin\theta \\
+                      \sin\theta & \cos\theta
+                  \end{pmatrix}
+              \]行列式值为$1$
+        \item 反射矩阵\[
+                  \begin{pmatrix}
+                      \cos\theta & \sin\theta  \\
+                      \sin\theta & -\cos\theta
+                  \end{pmatrix}
+              \]行列式值为$-1$
+    \end{enumerate}
+}
+\exa{}{}{
+    \[
+        \frac{1}{9}\begin{pmatrix}
+            4+3\rmi & 4\rmi    & -6-2\rmi \\
+            -4\rmi  & 4-3\rmi  & -2-6\rmi \\
+            6+2\rmi & -2-6\rmi & 1
+        \end{pmatrix}
+    \]是酉阵.
+}
+\pro{}{酉阵的行列式}{
+    酉阵的行列式模长为$1$（特别地，正交阵的行列式等于$\pm1$），特征值模长为$1$.\begin{proof}
+        容易知道\begin{align*}
+            1 & =\left|\bm{I}_n\right|                   \\
+              & =\left|
+            \bm{A}\overline{\bm{A}}'
+            \right|                                      \\
+              & =\left|
+            \det\bm{A}
+            \right|^2                                    \\
+              & \Longrightarrow\left|\det\bm{A}\right|=1
+        \end{align*}
+
+        设$\bm{A\alpha}=\lambda_0\bm{\alpha},\bm{0}\neq\bm{\alpha}\in \mathbb{C}^n,\lambda_0\in\mathbb{C}$.于是\[
+            \overline{\bm{\alpha}}'\overline{\bm{A}}'=\overline{\lambda_0}\overline{\bm{\alpha}}'
+        \]左乘得到\begin{align*}
+            \overline{\bm{\alpha}}'\bm{\alpha}=\left|\lambda_0\right|^2\overline{\bm{\alpha}}'\bm{\alpha}
+        \end{align*}其中$\overline{\bm{\alpha}}'\bm{\alpha}=\left|\bm{\alpha}\right|^2>0$，于是$\left|\lambda_0\right|=1$.
+    \end{proof}
+}
+\subsection{\texorpdfstring{$\bm{QR}$}{QR}分解}
+\thm{$\bm{QR}$分解}{QR分解}{
+    设$\bm{A}$为$n$阶实（复）方阵，则\[
+        \bm{A}=\bm{QR}
+    \]其中$\bm{Q}$为正交阵（酉阵），$\bm{R}$为主对角元全部大于等于$0$的上三角阵.进一步地，若$\bm{A}$非异，则上述分解唯一.\begin{proof}
+        作列分块$\bm{A}=\left(\bm{u}_1,\bm{u}_2,\cdots,\bm{u}_n\right)$，做一个推广的Gram-Schmidt正交化，得到正交向量组$\left\{
+            \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_n
+            \right\}$，其中$\bm{w}_i$要么是零向量，要么是单位向量.考虑数学归纳法，设$\bm{w}_1,\bm{w}_2,\cdots,\bm{w}_{k-1}$已经做好，考虑$\bm{w}_k.$
+
+        令\[
+            \bm{v}_k=\bm{u}_k-\sum_{j=1}^{k-1}\left(
+            \bm{u}_k,\bm{w}_j
+            \right)\bm{w}_j
+        \]于是\[
+            \bm{w}_k=\begin{cases*}
+                \bm{0}                                            & ,$\bm{v}_k=\bm{0}$    \\
+                \dfrac{\bm{v}_k}{\left\lVert\bm{v}_k\right\rVert} & ,$\bm{v}_k\neq\bm{0}$
+            \end{cases*}
+        \]于是得到符合条件的正交向量组$\left\{
+            \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_k
+            \right\}$.于是根据数学归纳法知一定能够将$\bm{A}$的行向量组$\left\{
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_n
+            \right\}$通过这样一种推广Gram-Schmidt正交化得到正交向量组$\left\{
+            \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_n
+            \right\}$,其中$\bm{w}_i$要么是零向量，要么是单位向量.并且$\forall1\leqslant k\leqslant n:$\[
+            \bm{u}_k=\sum_{j=1}^{k-1}\left(
+            \bm{u}_k,\bm{w}_j
+            \right)\bm{w}_j+\left\lVert\bm{v}_k\right\rVert\bm{w}_k
+        \]于是\begin{align*}
+            \bm{A} & =\left(\bm{u}_1,\bm{u}_2,\cdots,\bm{u}_n\right)                                                            \\
+                   & =\left(
+            \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_n
+            \right)\begin{pmatrix}
+                       \left\lVert\bm{v}_1\right\rVert & *                               & \cdots & *                               \\
+                                                       & \left\lVert\bm{v}_2\right\rVert & \cdots & *                               \\
+                                                       &                                 & \ddots & \vdots                          \\
+                                                       &                                 &        & \left\lVert\bm{v}_n\right\rVert
+                   \end{pmatrix}\tag{$\ast$} \\
+                   & =\left(
+            \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_n
+            \right)\bm{R}
+        \end{align*}但是$\left(
+            \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_n
+            \right)$不见得就是矩阵$\bm{Q}$.注意到若某个$\bm{w}_i=\bm{0}$则$\bm{R}$的第$i$行全为零.不妨设$\left(
+            \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_n
+            \right)$中有$r$个非零向量$\bm{w}_{i_1},\bm{w}_{i_2},\cdots,\bm{w}_{i_r}$，扩张为全空间$\mathbb{R}^n$的一组正交基$\left\{
+            \widetilde{\bm{w}}_1,\widetilde{\bm{w}}_2,\cdots,\widetilde{\bm{w}}_n
+            \right\}$,其中$\widetilde{\bm{w}}_j=\bm{w}_j\left(j=i_1,i_2,\cdots,i_r\right)$.这样的构造对$\ast$式的成立没有影响，于是$\bm{Q}=\left(
+            \widetilde{\bm{w}}_1,\widetilde{\bm{w}}_2,\cdots,\widetilde{\bm{w}}_n
+            \right)$的构造完成即\[
+            \bm{A}=\bm{QR}\qedhere
+        \]
+    \end{proof}
+}

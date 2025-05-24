@@ -63,8 +63,6 @@
 \RequirePackage{mathtools}        % Enhancements for amsmath
 \RequirePackage{bm}               % Bold math symbols
 \RequirePackage{extarrows}        % Extended arrow commands
-
-% ===========================================================================
 % IV. GRAPHICS AND DIAGRAMS
 % ===========================================================================
 

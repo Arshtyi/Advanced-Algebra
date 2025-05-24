@@ -1,0 +1,567 @@
+\newpage
+\section{内积的表示和正交基}
+\subsection{Gram矩阵}
+考虑$V$是$n$维内积空间，一组基为$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$，记$g_{ij}=\left(\bm{e}_i,\bm{e}_j\right)$，作矩阵$\bm{G}=\left(g_{ij}\right)_{n\times n}$.同时$\displaystyle V\ni\bm{\alpha}=\sum_{i=1}^{n}a_i\bm{e}_i$在这组基下的坐标向量为$\displaystyle\bm{x}=\begin{pmatrix}
+        a_1 \\a_2\\\vdots\\a_n
+    \end{pmatrix},V\ni\bm{\beta}=\sum_{i=1}^{n}b_i\bm{e}_i$在这组基下的坐标向量为$\displaystyle\bm{y}=\begin{pmatrix}
+        b_1 \\b_2\\\vdots\\b_n
+    \end{pmatrix}$.那么，如何计算$\left(
+    \bm{\alpha},\bm{\beta}
+    \right)$.
+
+一方面，若$V$是欧式空间，则\begin{align*}
+    \left(
+    \bm{\alpha},\bm{\beta}
+    \right) & =\left(
+    \sum_{i=1}^{n}a_i\bm{e}_i,\sum_{j=1}^{n}b_j\bm{e}_j
+    \right)                                             \\
+            & =\sum_{i=1}^{n}\sum_{j=1}^{n}a_ib_j\left(
+    \bm{e}_i,\bm{e}_j
+    \right)                                             \\
+            & =\sum_{i=1}^{n}\sum_{j=1}^{n}a_ib_jg_{ij} \\
+            & =\sum_{j=1}^{n}\left(
+    \sum_{i=1}^{n}a_ig_{ij}
+    \right)b_j                                          \\
+            & =\left(
+    a_1,a_2,\cdots,a_n
+    \right)\bm{G}\begin{pmatrix}
+                     b_1 \\b_2\\\vdots\\b_n
+                 \end{pmatrix}                  \\
+            & =\bm{x}'\bm{G}\bm{y}
+\end{align*}其中$\bm{G}$称为基$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$的Gram矩阵或者内积空间$V$在给定基下的度量矩阵.并且因为是欧式空间，容易有$g_{ij}=g_{ji}$即$\bm{G}$是实对称阵.并且\[
+    \bm{x}'\bm{Gx}=\left(
+    \bm{\alpha},\bm{\alpha}
+    \right)>0,\forall\bm{0}\neq\bm{\alpha}\in \mathbb{R}^n
+\]即$\bm{G}$是正定阵.
+
+反之，设$V$是实线性空间，一组基是$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$，$\bm{G}$是一个$n$阶正定实对称阵，$\forall\bm{\alpha},\bm{\beta}\in V$的坐标向量为$\bm{x},\bm{y}$.则\[
+    \left(
+    \bm{\alpha},\bm{\beta}
+    \right)_{\bm{G}}=\bm{x}'\bm{G}\bm{y}
+\]这样的$\left(\dashline,\dashline\right)$是一个内积结构.
+
+对于$n$维实线性空间$V$，给定基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$，则有\begin{align*}
+    \left\{V\text{上所有内积结构}\right\}                                                      & \longleftrightarrow\left\{
+    n\text{阶正定实对称矩阵}
+    \right\}                                                                                                                                                        \\
+    \bm{\varphi}:\left(\dashline,\dashline\right)                                       & \longmapsto\bm{G}=\left(\left(\bm{e}_i,\bm{e}_j\right)\right)_{n\times n} \\
+    \bm{\psi}:\left(\bm{\alpha},\bm{\beta}\right)_{\bm{G}}\coloneqq \bm{x}'\bm{G}\bm{y} & \longmapsfrom\bm{G}
+\end{align*}其中$\bm{\psi}=\bm{\varphi}^{-1}$.
+
+另一方面，若$V$是酉空间，则\begin{align*}
+    \left(\bm{\alpha},\bm{\beta}\right) & =\left(
+    \sum_{i=1}^{n}a_i\bm{e}_i,\sum_{j=1}^{n}b_j\bm{e}_j
+    \right)                                                                                    \\
+                                        & =\sum_{i=1}^{n}\sum_{j=1}^{n}a_i\overline{b}_j\left(
+    \bm{e}_i,\bm{e}_j
+    \right)                                                                                    \\
+                                        & =\sum_{i=1}^{n}\sum_{j=1}^{n}a_i\overline{b}_jg_{ij} \\
+                                        & =\sum_{j=1}^{n}\left(
+    \sum_{i=1}^{n}a_ig_{ij}
+    \right)\overline{b}_j                                                                      \\
+                                        & =\left(
+    a_1,a_2,\cdots,a_n
+    \right)\bm{G}\begin{pmatrix}
+                     \overline{b}_1 \\\overline{b}_2\\\vdots\\\overline{b}_n
+                 \end{pmatrix}                        \\
+                                        & =\bm{x}'\bm{G}\overline{\bm{y}}
+\end{align*}其中$\bm{G}$称为基$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$的Gram矩阵或者内积空间$V$在给定基下的度量矩阵.并且因为是酉空间，容易有$\overline{g}_{ij}=g_{ji}$即$\bm{G}$是Hermite阵.并且\[
+    \bm{x}'\bm{G}\overline{\bm{x}}=\left(
+    \bm{\alpha},\bm{\alpha}
+    \right)>0,\forall\bm{0}\neq\bm{\alpha}\in \mathbb{C}^n\Longrightarrow\overline{\bm{y}}'\bm{G}\bm{y}>0,\forall\bm{0}\neq\bm{y}=\overline{\bm{x}}\in\mathbb{C}^n
+\]即$\bm{G}$是正定Hermite阵.
+
+反之，设$V$是酉空间，一组基是$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$，$\bm{G}$是一个$n$阶正定Hermite阵，$\forall\bm{\alpha},\bm{\beta}\in V$的坐标向量为$\bm{x},\bm{y}$.则\[
+    \left(
+    \bm{\alpha},\bm{\beta}
+    \right)_{\bm{G}}=\bm{x}'\bm{G}\overline{\bm{y}}
+\]这样的$\left(\dashline,\dashline\right)$是一个内积结构.
+
+设$V$是$n$维复线性空间，给定基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$，则有 \begin{align*}
+    \left\{V\text{上所有内积结构}\right\}                                                                 & \longleftrightarrow\left\{
+    n\text{阶正定Hermite阵}
+    \right\}                                                                                                                                                                   \\
+    \bm{\varphi}:\left(\dashline,\dashline\right)                                                  & \longmapsto\bm{G}=\left(\left(\bm{e}_i,\bm{e}_j\right)\right)_{n\times n} \\
+    \bm{\psi}:\left(\bm{\alpha},\bm{\beta}\right)_{\bm{G}}\coloneqq \bm{x}'\bm{G}\overline{\bm{y}} & \longmapsfrom\bm{G}
+\end{align*}其中$\bm{\psi}=\bm{\varphi}^{-1}$.
+\dfn{Gram矩阵}{Gram矩阵}{
+    设$V$是一个$n$维内积空间，取定一组基为$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$，记$g_{ij}=\left(\bm{e}_i,\bm{e}_j\right)$，作矩阵$\bm{G}=\left(g_{ij}\right)_{n\times n}$即\[
+        \bm{G}=\begin{pmatrix}
+            \left(
+            \bm{e}_1,\bm{e}_1
+            \right) & \left(
+            \bm{e}_1,\bm{e}_2
+            \right) & \cdots & \left(
+            \bm{e}_1,\bm{e}_n
+            \right)                            \\
+            \left(
+            \bm{e}_2,\bm{e}_1
+            \right) & \left(
+            \bm{e}_2,\bm{e}_2
+            \right) & \cdots & \left(
+            \bm{e}_2,\bm{e}_n
+            \right)                            \\
+            \vdots  & \vdots &        & \vdots \\
+            \left(
+            \bm{e}_n,\bm{e}_1
+            \right) & \left(
+            \bm{e}_n,\bm{e}_2
+            \right) & \cdots & \left(
+            \bm{e}_n,\bm{e}_n
+            \right)
+        \end{pmatrix}
+    \]
+}
+问题在于：是否有一组基$\left\{
+    \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+    \right\}$使得其Gram矩阵是单位阵.若采用\cref{def:Kronecken符号}即\[
+    \left(
+    \bm{e}_i,\bm{e}_j
+    \right)=\delta_{ij},\forall 1\leqslant i,j\leqslant n
+\]
+\subsection{正交基}
+\dfn{正交基}{正交基}{
+    设$n$维内积空间$V$的一组基为$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$，若$\forall i\neq j,\left(\bm{e}_i,\bm{e}_j\right)=0\Longleftrightarrow\bm{e}_i\perp\bm{e}_j$，则称这组基为正交基.特别地，若$\left\lVert\bm{e}_i\right\rVert=1,\forall 1\leqslant i\leqslant n,$则称这组基为标准正交基.
+}
+\exa{}{}{
+    设$V=\mathbb{R}^n\left(\mathbb{C}^n\right)$，取标准内积.则标准单位向量组$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$是标准正交基.
+}
+\exa{}{}{
+    设$V=M_n\left(\mathbb{R}\right)$，取Forbenius内积$\left(\bm{A},\bm{B}\right)=\mathrm{Tr}\left(\bm{A}\bm{B}'\right)$，则基础矩阵$\left\{
+        \bm{E}_{ij},1\leqslant i,j\leqslant n
+        \right\}$是一组标准正交基.\begin{proof}
+        \begin{align*}
+            \left(
+            \bm{E}_{ij},\bm{E}_{kl}
+            \right) & =\mathrm{Tr}\left(
+            \bm{E}_{ij}\bm{E}_{kl}'
+            \right)                                                \\
+                    & =\mathrm{Tr}\left(
+            \bm{E}_{ij}\bm{E}_{lk}
+            \right)                                                \\
+                    & =\mathrm{Tr}\left(
+            \delta_{jl}\bm{E}_{ik}
+            \right)                                                \\
+                    & =\delta_{jl}\mathrm{Tr}\left(
+            \bm{E}_{ik}
+            \right)                                                \\
+                    & =\delta_{jl}\cdot\delta_{ik}                 \\
+                    & =\begin{cases*}
+                           1 & ,$\left(i,j\right)=\left(k,l\right)$    \\
+                           0 & ,$\left(i,j\right)\neq\left(k,l\right)$
+                       \end{cases*}\qedhere
+        \end{align*}
+    \end{proof}
+}
+\lem{}{正交向量的线性关系}{
+    两两正交的非零向量线性无关.
+    \begin{proof}
+        设两两正交的非零向量$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m$且\[
+            c_1\bm{\alpha}_1+c_2\bm{\alpha}_2+\cdots+c_m\bm{\alpha}_m=\bm{0}
+        \]
+        考虑到\begin{align*}
+            0 & =\left(
+            \sum_{i=1}^{m}c_i\bm{\alpha}_i,\bm{\alpha}_j
+            \right)                                                           \\
+              & =\sum_{i=1}^{m}c_i\left(
+            \bm{\alpha}_i,\bm{\alpha}_j
+            \right)                                                           \\
+              & =c_j                                                          \\
+              & \Longrightarrow c_j=0,\forall 1\leqslant j\leqslant m\qedhere
+        \end{align*}
+    \end{proof}
+}
+\cor{}{}{
+    由\cref{cor:超过维数的向量组}，\cref{lem:正交向量的线性关系}，$n$维内积空间中，两两正交的非零向量最多有$n$个.
+}
+\lem{}{与一组正交向量生成的子空间正交}{
+    若向量$\bm{\beta}$与向量$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m$都正交，则$\bm{\beta}$与$L\left(
+        \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m
+        \right)$.
+}
+\thm{Gram-Schmidt正交化方法}{Gram-Schmidt正交化方法}{
+    设$V$为$n$维内积空间，$\bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m$是其中线性无关的向量，则存在两两正交的非零向量$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m$使得\[
+        L\left(
+        \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m
+        \right)=L\left(
+        \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m
+        \right)
+    \]\begin{proof}
+        对$m$进行归纳，当$m=1$时，取$\bm{v}_1=\bm{u}_1$.假设对$m=k$成立，即可以将$\left\{
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_k
+            \right\}$通过这种方法成为两两正交且非零的$\left\{
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k
+            \right\}$且\[
+            L\left(
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_k
+            \right)=L\left(
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k
+            \right)
+        \]下面考虑$m=k+1$时,即将$\bm{u}_{k+1}$变为$\bm{v}_{k+1}$.
+
+        考虑$\mathbb{R}^3.$其中$\left\{
+            \bm{u}_1,\bm{u}_2
+            \right\}$已经转为$\left\{
+            \bm{v}_1,\bm{v}_2
+            \right\}$，现在考虑$\bm{u}_3$.
+
+        \incfig[scale=0.9]{Gram-Schmidt}
+
+        显然$\bm{v}_3$等于$\bm{u}_3$减去它在$\bm{v}_1,\bm{v}_2$张成的平面上的投影.不妨取$\bm{u}_3=a\bm{v}_1+b\bm{v}_2+\bm{v}_3$，两边内积$\bm{v}_1$即得\[
+            a=\frac{\left(\bm{v}_3,\bm{v}_1\right)}{\left\lVert \bm{v}_1\right\rVert ^2}
+        \]同理即得\[
+            \bm{v}_3=\bm{u}_3-\frac{\left(\bm{v}_3,\bm{v}_1\right)}{\left\lVert \bm{v}_1\right\rVert ^2}\bm{v}_1-\frac{\left(\bm{v}_3,\bm{v}_2\right)}{\left\lVert \bm{v}_2\right\rVert ^2}\bm{v}_2
+        \]
+
+        令\[
+            \bm{v}_{k+1}=\bm{u}_{k+1}-\sum_{i=1}^{k}\frac{\left(\bm{u}_{k+1},\bm{v}_i\right)}{\left\lVert \bm{v}_i\right\rVert ^2}\bm{v}_i\tag{$\ast$}
+        \]先证$\bm{v}_{k+1}\neq\bm{0}$，考虑反证法，若$\bm{v}_{k+1}=\bm{0}$，则\[
+            \bm{u}_{k+1}\in L\left(
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k
+            \right)=L\left(
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_k
+            \right)
+        \]这与$\bm{u}_1,
+            \bm{u}_2,\cdots,\bm{u}_{k+1}$线性无关矛盾.
+
+        再证明两两正交.$\forall 1\leqslant j\leqslant k$，作\begin{align*}
+            \left(
+            \bm{v}_{k+1},\bm{v}_j
+            \right) & =\left(
+            \bm{u}_{k+1},\bm{v}_j
+            \right)-\sum_{i=1}^{k}\frac{\left(
+                \bm{u}_{k+1},\bm{v}_i
+                \right)}{\left\lVert \bm{v}_i\right\rVert ^2}\left(
+            \bm{v}_i,\bm{v}_j
+            \right)           \\
+                    & =\left(
+            \bm{u}_{k+1},\bm{v}_j
+            \right)-\frac{\left(
+                \bm{u}_{k+1},\bm{v}_j
+                \right)}{\left\lVert \bm{v}_j\right\rVert ^2}\left(
+            \bm{v}_j,\bm{v}_j
+            \right)=0
+        \end{align*}
+
+        再证张成的空间相同，$(\ast)$式表明$\bm{u}_{k+1}$是$
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k,\bm{v}_{k+1}
+        $的线性组合，根据归纳假设\begin{align*}
+            L\left(
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_{k+1}
+            \right) & =L\left(
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_k\right)+L\left(
+            \bm{u}_{k+1}
+            \right)                     \\
+                    & =L\left(
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k
+            \right)+L\left(
+            \bm{u}_{k+1}
+            \right)                     \\
+                    & \subseteq L\left(
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k,\bm{v}_{k+1}
+            \right)
+        \end{align*}另一方面\begin{align*}
+            L\left(
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_{k+1}
+            \right) & =L\left(
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k\right)+L\left(
+            \bm{v}_{k+1}
+            \right)                                   \\
+                    & \subseteq L\left(
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k
+            \right)+L\left(
+            \bm{u}_{k+1}
+            \right)                                   \\
+                    & \xlongequal{\text{归纳假设}}L\left(
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_{k}
+            \right)+L\left(
+            \bm{u}_{k+1}
+            \right)                                   \\
+                    & \subseteq L\left(
+            \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_{k+1}
+            \right)
+        \end{align*}
+        于是证毕.
+    \end{proof}
+}
+\rem{}{}{
+    \cref{thm:Gram-Schmidt正交化方法}Gram-Schmidt正交化方法表明$U=L\left(
+        \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m
+        \right)=L\left(
+        \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m
+        \right)$将一组基转化为一组正交基.过渡矩阵\[
+        \left(
+        \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m
+        \right)=\left(
+        \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m
+        \right)\bm{B}
+    \]因为\[\bm{u}_1=\bm{v}_1,
+        \bm{u}_{k+1}=\bm{v}_{k+1}+\sum_{i=1}^{k}\frac{\left(
+            \bm{u}_{k+1},\bm{v}_i
+            \right)}{\left\lVert \bm{v}_i\right\rVert ^2}\bm{v}_i
+    \]于是\[
+        \bm{B}=\begin{pmatrix}
+            1      & *      & \cdots & *      \\
+            0      & 1      & \cdots & *      \\
+            \vdots & \vdots &        & \vdots \\
+            0      & 0      & \cdots & 1
+        \end{pmatrix}
+    \]再做\[
+        \bm{w}_i=\frac{\bm{v}_i}{\left\lVert \bm{v}_i\right\rVert },\forall 1\leqslant i\leqslant m
+    \]就得到$\left\{
+        \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_m
+        \right\}$为$U$的一组标准正交基.设过渡矩阵$\bm{\Lambda}$，容易有\[
+        \left(
+        \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m
+        \right)=\left(
+        \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_m
+        \right)\begin{pmatrix}
+            \left\lVert \bm{v}_1\right\rVert &                                  &        &                                  \\
+                                             & \left\lVert \bm{v}_2\right\rVert &        &                                  \\
+                                             &                                  & \ddots &                                  \\
+                                             &                                  &        & \left\lVert \bm{v}_m\right\rVert
+        \end{pmatrix}
+    \]于是一般的基$\left\{
+        \bm{u}_1,\bm{u}_2,\cdots,\bm{u}_m
+        \right\}$到标准正交基$\left\{
+        \bm{w}_1,\bm{w}_2,\cdots,\bm{w}_m
+        \right\}$的过渡矩阵为\begin{align*}
+        \bm{C} & =\bm{\Lambda}\bm{B}                                                                                              \\
+               & =\begin{pmatrix}
+                      \left\lVert \bm{v}_1\right\rVert & *                                & \cdots & *                                \\
+                                                       & \left\lVert \bm{v}_2\right\rVert & \cdots & *                                \\
+                                                       &                                  & \ddots & \vdots                           \\
+                                                       &                                  &        & \left\lVert \bm{v}_m\right\rVert
+                  \end{pmatrix}
+    \end{align*}这是一个主对角元全部大于零的上三角阵.
+}
+\cor{标准正交基的存在性}{标准正交基的存在性}{
+    任何有限维内积空间均有标准正交基.\begin{proof}
+        考虑对基向量$\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right\}$做正交化，得到$\left\{
+            \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_n
+            \right\}$这组正交基，再单位化即得到标准正交基.
+    \end{proof}
+}
+\exa{}{}{
+    设$V=\mathbb{R}_3$，取标准内积，有三个线性无关的向量$\bm{u}_1=\left(3,0,4\right),\bm{u}_2=\left(
+        -1,0,7
+        \right),\bm{u}_3=\left(
+        2,9,11
+        \right)$，求一组标准正交基.\begin{solution}
+        \[
+            \bm{v}_1=\bm{u}_1=\left(
+            3,0,4
+            \right)
+        \]
+        \begin{align*}
+            \bm{v}_2 & =\bm{u}_2-\frac{\left(
+                \bm{u}_2,\bm{v}_1
+            \right)}{\left\lVert \bm{v}_1\right\rVert ^2}\bm{v}_1 \\
+                     & =\left(-4,0,3\right)
+        \end{align*}
+        \begin{align*}
+            \bm{v}_3 & =\bm{u}_3-\frac{\left(
+                \bm{u}_3,\bm{v}_1
+                \right)}{\left\lVert \bm{v}_1\right\rVert ^2}\bm{v}_1-\frac{\left(
+                \bm{u}_3,\bm{v}_2
+            \right)}{\left\lVert \bm{v}_2\right\rVert ^2}\bm{v}_2 \\
+                     & =\left(0,9,0\right)
+        \end{align*}单位化得到\[
+            \bm{w}_1=\frac{1}{5}\left(3,0,4\right),
+            \bm{w}_2=\frac{1}{5}\left(-4,0,3\right),
+            \bm{w}_3=\left(0,1,0\right)
+        \]
+    \end{solution}
+}
+\lem{不同基之间的Gram矩阵的关系}{不同基之间的Gram矩阵的关系}{
+    设$V$的两组基$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$和$\left\{
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right\}$，过渡阵$\bm{C}:$\[
+        \left(
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right)=\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\bm{C}
+    \]则Gram矩阵\begin{align*}
+         & \text{实}:\bm{G}\left(
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right)=\bm{C}'\bm{G}\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\bm{C}\Longrightarrow\text{合同关系} \\
+         & \text{复}:\bm{G}\left(
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right)=\bm{C}'\bm{G}\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\overline{\bm{C}}\Longrightarrow\text{复相合关系}
+    \end{align*}\begin{proof}
+        证明实情况.设$\bm{C}=\left(c_{ij}\right)_{n\times n}:$\[
+            \left(
+            \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+            \right)=\left(
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right)\bm{C}
+        \]于是\[
+            \bm{f}_k=\sum_{i=1}^{n}c_{ik}\bm{e}_i,\bm{f}_l=\sum_{j=1}^{n}c_{jl}\bm{e}_j
+        \]而\begin{align*}
+            \left(\bm{f}_k,\bm{f}_l\right) & =\left(
+            \sum_{i=1}^{n}c_{ik}\bm{e}_i,\sum_{j=1}^{n}c_{jl}\bm{e}_j
+            \right)                                                                          \\
+                                           & =\sum_{i=1}^{n}\sum_{j=1}^{n}c_{ik}c_{jl}\left(
+            \bm{e}_i,\bm{e}_j
+            \right)                                                                          \\
+                                           & =\sum_{i=1}^{n}\sum_{j=1}^{n}c_{ik}c_{jl}g_{ij} \\
+                                           & =\sum_{j=1}^{n}\left(
+            \sum_{i=1}^{n}c_{ik}g_{ij}
+            \right)c_{jl}                                                                    \\
+                                           & =\bm{C}'\bm{G}\left(
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+            \right)\bm{C}\qedhere
+        \end{align*}
+    \end{proof}
+}
+\rem{}{}{
+    上述\cref{lem:不同基之间的Gram矩阵的关系}告诉我们,对于一组基$\left\{
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right\}$，根据\cref{thm:正定阵与负定阵},$\bm{G}\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)$合同于$\bm{I}_n$即存在非异阵$\bm{C}\in M_n\left(\mathbb{R}\right)$使得\[\bm{C}'\bm{G}\bm{C}=\bm{I}_n
+    \]则考虑\[
+        \left(
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right)=\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\bm{C}
+    \]由\cref{lem:不同基之间的Gram矩阵的关系}知$\bm{G}\left(
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right)=\bm{C}'\bm{G}\left(
+        \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
+        \right)\bm{C}=\bm{I}_n$，即$\left\{
+        \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
+        \right\}$是一组标准正交基.
+}
+\subsection{正交补空间}
+\dfn{正交补空间}{正交补空间}{
+    设$U$是内积空间$V$的子空间，定义\[
+        U^{\perp}=\left\{
+        \bm{v}\in V|\left(\bm{v},U\right)=0\right\}
+    \]易证$U^{\perp}$是$V$的子空间，称为$U$的正交补空间.
+}
+\thm{}{正交补空间}{
+    设$V$是$n$维内积空间，$U$是$V$的子空间，则\begin{enumerate}[label=\arabic*）]
+        \item $\displaystyle V=U\oplus U^{\perp}$
+        \item $U$的一组标准正交基一定可以扩张为$V$的一组标准正交基.
+    \end{enumerate}\begin{proof}
+        设$\dim U=m$，作内积的限制在$U$上，易证$U$是$m$维内积空间，根据\cref{cor:标准正交基的存在性}知$U$上存在一组标准正交基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_m\right\}$.
+
+        $(1)$任取$\bm{v}\in V$，作Gram-Schmidt正交化，令\[
+            \bm{w}=\bm{v}-\left(
+            \bm{v},\bm{e}_1
+            \right)\bm{e}_1-\left(
+            \bm{v},\bm{e}_2
+            \right)\bm{e}_2-\cdots-\left(
+            \bm{v},\bm{e}_m
+            \right)\bm{e}_m
+        \]则$\bm{w}\perp\bm{e}_i,\forall1\leqslant i\leqslant m\Longrightarrow\left(\bm{w},U\right)=0\Longrightarrow\bm{w}\in U^{\perp}$，于是\[
+            \bm{v}=\bm{w}+\sum_{i=1}^{m}\left(
+            \bm{v},\bm{e}_i
+            \right)\bm{e}_i\in U+U^{\perp}
+        \]
+
+        任取$\bm{v}\in U\cap U^{\perp}\Longrightarrow\left(\bm{v}\in U,\bm{v}\in U^{\perp}\right)=0\Longrightarrow\bm{v}=\bm{0}\Longrightarrow U\cap U^{\perp}=0$.于是\[
+            V=U\oplus U^{\perp}
+        \]
+
+        $(2)$取$U^{\perp}$的一组标准正交基$\left\{
+            \bm{e}_{m+1},\bm{e}_{m+2},\cdots,\bm{e}_n
+            \right\}$，那么全空间的一组标准正交基就是\[\left\{
+            \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_m,\bm{e}_{m+1},\bm{e}_{m+2},\cdots,\bm{e}_n
+            \right\}\]
+    \end{proof}
+}
+\dfn{正交和}{正交和}{
+    设$V$为内积空间，其$m$个子空间$V_1,V_2,\cdots,V_m$.若$\forall\bm{\alpha}\in V_i,\bm{\beta}\in V_j,\left(\bm{\alpha},\bm{\beta}\right)=0$，则称$V_i,V_j$正交.此时若$V=V_1+V_2+\cdots+V_m$且$V_i$两两正交，则称上述和为正交和，记作\[
+        V=V_1\perp V_2\perp\cdots\perp V_m
+    \]
+}
+\thm{正交直和}{正交直和}{
+    \cref{def:正交和}正交和都是直和，称为正交直和.\begin{proof}
+        先证明：$\displaystyle V_i\perp\sum_{j\neq i}V_j$，任取$\bm{v}_i\in V_i$，考虑\begin{align*}
+            \left(
+            \bm{v}_i,\sum_{j\neq i}\bm{v}_j
+            \right)=\sum_{j\neq i}\left(
+            \bm{v}_i,\bm{v}_j
+            \right)=0
+        \end{align*}任取$\displaystyle\bm{\alpha}\in V_i\cap\sum_{j\neq i}V_j,\left(\bm{\alpha}\in V_i,\bm{\alpha}\in\sum_{j\neq i}V_j\right)=0\Longrightarrow\bm{\alpha}=\bm{0}\Longrightarrow V_i\cap\sum_{j\neq i}V_j=0$于是\[
+            V=V_1\oplus V_2\oplus\cdots\oplus V_m\qedhere
+        \]
+    \end{proof}
+}
+\dfn{投影变换}{投影变换}{
+    设$V=V_1\oplus V_2\oplus \cdots\oplus V_m$（这等价于$V\ni\bm{v}=\bm{v}_1+\bm{v}_2+\cdots+\bm{v}_m$的唯一分解），构造$\bm{E}_i\in \mathcal{L}\left(V\right):\bm{E}_i\left(\bm{v}\right)=\bm{v}_i$称为$V$到$V_i$的投影变换（$\forall1\leqslant i\leqslant m$）.其满足\begin{enumerate}[label=\arabic*）]
+        \item $\bm{E}_i^2=\bm{E}_i$
+        \item $\bm{E}_i\bm{E}_j=\bm{0},\forall i\neq j$
+        \item $\bm{E}_1+\bm{E}_2+\cdots+\bm{E}_m=\bm{I}_V$
+    \end{enumerate}
+}
+\dfn{正交投影变换}{正交投影变换}{
+    对\cref{def:投影变换}，进一步地，设正交直和\[V=V_1\perp V_2\perp\cdots\perp V_m\]此时投影变换$\bm{E}_i$称为$V$到$V_i$的正交投影变换.
+}
+\lem{}{正交投影变换的对称性}{
+    设$V=U\perp U^{\perp}$为内积空间，记$\bm{E}$为从$V$到$U$的正交投影变换，则$\forall\bm{\alpha},\bm{\beta}\in V:$\[
+        \left(
+        \bm{E}\left(\bm{\alpha}\right),\bm{\beta}
+        \right)=\left(
+        \bm{\alpha},\bm{E}\left(\bm{\beta}\right)
+        \right)
+    \]\begin{proof}
+        设$\bm{\alpha}=\bm{u}_1+\bm{w}_1,\bm{\beta}=\bm{u}_2+\bm{w}_2,\bm{u}_1,\bm{u}_2\in U,\bm{w}_1,\bm{w}_2\in U^{\perp},\bm{E}\left(\bm{\alpha}\right)=\bm{u}_1,\bm{E}\left(\bm{\beta}\right)=\bm{u}_2$代入即证.
+    \end{proof}
+}
+\thm{Bessel不等式}{Bessel不等式}{
+    设$V$为一个内积空间，$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m$是一组两两正交的非零向量，则$\forall\bm{y}\in V:$\[
+        \sum_{i=1}^{m}\frac{
+            \left|\left(\bm{y},\bm{v}_i\right)\right|^2
+        }{\left\lVert \bm{v}_i\right\rVert ^2}\leqslant\left\lVert \bm{y}\right\rVert ^2
+    \]即向量模长的平方大于等于投影的模长的平方之和，等号成立当且仅当$\bm{y}$是$
+        \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m
+    $的线性组合.\begin{proof}
+        作Gram-Schmidt正交化\[
+            \bm{z}=\bm{y}-\sum_{i=1}^{m}\frac{
+                \left(\bm{y},\bm{v}_i\right)
+            }{\left\lVert \bm{v}_i\right\rVert ^2}\bm{v}_i
+        \]于是$\left(\bm{z},\bm{v}_i\right)=0,\forall1\leqslant i\leqslant m.$于是\[
+            \left(
+            z,\sum_{i=1}^{m}\frac{
+                \left(\bm{y},\bm{v}_i\right)
+            }{\left\lVert \bm{v}_i\right\rVert ^2}\bm{v}_i
+            \right)=0
+        \]记$\displaystyle \bm{x}=\sum_{i=1}^{m}\frac{
+                \left(\bm{y},\bm{v}_i\right)
+            }{\left\lVert \bm{v}_i\right\rVert ^2}\bm{v}_i,\bm{y}=\bm{z}+\bm{x},\left(\bm{x},\bm{z}\right)=0$，于是由\cref{thm:勾股定理}知$
+            \left\lVert \bm{y}\right\rVert ^2=\left\lVert \bm{z}\right\rVert ^2+\left\lVert \bm{x}\right\rVert ^2\geqslant\left\lVert \bm{x}\right\rVert ^2
+        $再用\cref{thm:勾股定理}得到$\displaystyle\left\lVert\bm{x}\right\rVert^2=\sum_{i=1}^{m}\frac{\left|\left(\bm{y},\bm{v}_i\right)\right|^2}{
+                \left\lVert \bm{v}_i\right\rVert ^2
+            }$，于是不等式证毕.
+
+        等号成立当且仅当$\bm{z}=\bm{0}$，即$\bm{y}$是$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m$的线性组合.
+    \end{proof}
+}
+\clm{}{}{
+    事实上，\cref{thm:Bessel不等式}Bessel不等式对于无限维内积空间也成立.设一列两两正交的非零向量$\left\{
+        \bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m,\bm{v}_{m+1},\cdots
+        \right\}$,则$\forall\bm{y}\in V:$\[
+        \sum_{i=1}^{m}\frac{
+            \left|\left(\bm{y},\bm{v}_i\right)\right|^2
+        }{\left\lVert \bm{v}_i\right\rVert ^2}\leqslant\left\lVert \bm{y}\right\rVert ^2
+    \]也就是\[
+        \sum_{i=1}^{\infty}\frac{
+            \left|\left(\bm{y},\bm{v}_i\right)\right|^2
+        }{\left\lVert \bm{v}_i\right\rVert ^2}\leqslant\left\lVert \bm{y}\right\rVert ^2
+    \]即左侧正项级数收敛.特别地，若等号成立，则称该空间为完备的内积空间，也叫Hilbert空间.
+}

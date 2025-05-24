@@ -1,0 +1,489 @@
+\newpage
+\section{实正规矩阵}
+\subsection{极小多项式的不可约分解}
+\lem{}{正规与多项式相容}{
+    设$V$为$n$维欧式空间，$\bm{\varphi}$是$V$上的正规算子，则$\forall f\left(x\right)\in\mathbb{R}\left[x\right],f\left(\bm{\varphi}\right)$也是$V$上的正规算子.\begin{proof}
+        设$f\left(x\right)=a_mx^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0$，于是\[
+            f\left(
+            \bm{\varphi}
+            \right)=a_m\bm{\varphi}^m+a_{m-1}\bm{\varphi}^{m-1}+\cdots+a_1\bm{\varphi}+a_0\bm{I}
+        \]容易有\[
+            f\left(\bm{\varphi}\right)^*=a_m\bm{\varphi}^{*m}+a_{m-1}\bm{\varphi}^{*m-1}+\cdots+a_1\bm{\varphi}^*+a_0\bm{I}=f\left(
+            \bm{\varphi}^*
+            \right)
+        \]因为$\bm{\varphi\varphi}^*=\bm{\varphi}^*\bm{\varphi}$，于是\[
+            f\left(
+            \bm{\varphi}
+            \right)f\left(
+            \bm{\varphi}
+            \right)^*=f\left(
+            \bm{\varphi}
+            \right)^*f\left(
+            \bm{\varphi}
+            \right)\qedhere
+        \]
+    \end{proof}
+}
+\lem{}{互素的延拓}{
+    设欧式空间$V$上的实正规算子$\bm{\varphi}$，$f\left(x\right),g\left(x\right)$是互素的实系数多项式，则$\forall\bm{\alpha}\in\mathrm{Ker}\,f\left(\bm{\varphi}\right),\bm{\beta}\in\mathrm{Ker}\,g\left(\bm{\varphi}\right):$\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)=0
+    \]\begin{proof}
+        因为$\left(
+            f\left(x\right),g\left(x\right)
+            \right)=1$，则$\exists u\left(x\right),v\left(x\right)\in\mathbb{R}\left[x\right]:$\[
+            f\left(x\right)u\left(x\right)+g\left(x\right)v\left(x\right)=1
+        \]即\[
+            f\left(
+            \bm{\varphi}
+            \right)u\left(
+            \bm{\varphi}
+            \right)+g\left(
+            \bm{\varphi}
+            \right)v\left(
+            \bm{\varphi}
+            \right)=\bm{I}_V
+        \]两边作用$\forall\bm{\alpha}\in\mathrm{Ker}\,f\left(\bm{\varphi}\right):$\[
+            \bm{\alpha}=f\left(
+            \bm{\varphi}
+            \right)u\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)+g\left(
+            \bm{\varphi}
+            \right)v\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)=g\left(
+            \bm{\varphi}
+            \right)v\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)
+        \]作\begin{align*}
+            \left(
+            \bm{\alpha},\bm{\beta}
+            \right) & =\left(
+            g\left(
+                \bm{\varphi}
+                \right)v\left(
+                \bm{\varphi}
+                \right)\left(
+                \bm{\alpha}
+                \right),\bm{\beta}
+            \right)           \\
+                    & =\left(
+            v\left(
+                \bm{\varphi}
+                \right)\left(
+                \bm{\alpha}
+                \right),g\left(
+                \bm{\varphi}
+                \right)^*\left(
+                \bm{\beta}
+                \right)
+            \right)
+        \end{align*}因为$g\left(\bm{\varphi}\right)\left(\bm{\beta}\right)=\bm{0}$，考虑到$\bm{\varphi}$是正规算子，即$\forall\bm{v}\in V:\left\lVert\bm{\varphi}\left(\bm{v}\right)\right\rVert=\left\lVert\bm{\varphi}^*\left(\bm{v}\right)\right\rVert$，于是容易导出$g\left(\bm{\varphi}\right)^*\left(\bm{\beta}\right)=\bm{0}$，于是\[
+            \left(
+            \bm{\alpha},\bm{\beta}
+            \right)=0\qedhere
+        \]
+    \end{proof}
+}
+\thm{}{极小多项式不可约分解引出的正交直和分解}{
+    设$n$维欧式空间$V$上的实正规算子$\bm{\varphi}$的极小多项式为$g\left(x\right)$，设$g_1\left(x\right),g_2\left(x\right),\cdots,g_k\left(x\right)$是$g\left(x\right)$所有互不相同的首一不可约多项式，$\forall1\leqslant i\leqslant k:W_i\coloneqq \mathrm{Ker}\,g_i\left(\bm{\varphi}\right)$，则\begin{enumerate}[label=\arabic*）]
+        \item $g\left(x\right)=g_1\left(x\right)g_2\left(x\right)\cdots g_k\left(x\right)$，其中$\forall1\leqslant i\leqslant k:\deg g_i\left(x\right)\leqslant 2$
+        \item $V=W_1\perp W_2\perp \cdots\perp W_k$
+        \item $W_i$是$\bm{\varphi}$-不变子空间，$\displaystyle\bm{\varphi}\mid_{W_i}$是$W_i$上的实正规算子且$g_i\left(x\right)$是$\displaystyle\bm{\varphi}\mid_{W_i}$的极小多项式
+    \end{enumerate}\begin{proof}
+        $(1)$任取$V$的一组标准正交基，$\bm{\varphi}$在这组基下的表示矩阵为$\bm{A}$，则$\bm{A}$实正规（$\bm{AA}'=\bm{A}'\bm{A}$）亦是复正规（$\bm{A}\overline{\bm{A}}'=\overline{\bm{A}}'\bm{A}$），由\cref{cor:正规必定对角}，$\bm{A}$作为复正规阵必定可对角化，根据\cref{cor:可对角化的等价条件}，$\bm{A}$的极小多项式$g\left(x\right)$在复数域$\mathbb{C}$上无重根，那么$g\left(x\right)$在实数域$\mathbb{R}$上没有重因式（若不然，必定在复数域上有重根），于是$g\left(x\right)$等于其所有互异的首一不可约多项式的乘积即\[
+            g\left(x\right)=g_1\left(x\right)g_2\left(x\right)\cdots g_k\left(x\right)
+        \]并且根据实数域$\mathbb{R}$上的不可约多项式的性质，每个$g_i\left(x\right)$的次数$\deg g_i\left(x\right)\leqslant 2$.
+
+        $(2)$作\[
+            f_i\left(x\right)=\frac{g\left(x\right)}{g_i\left(x\right)}=g_1\left(x\right)g_2\left(x\right)\cdots\widehat{g_i\left(x\right)}\cdots g_k\left(x\right)\Longrightarrow\left(
+            f_1\left(\bm{\varphi}\right),f_2\left(\bm{\varphi}\right),\cdots, f_k\left(\bm{\varphi}\right)
+            \right)=1
+        \]即$\exists u_i\left(x\right):$\[
+            f_1\left(x\right)u_1\left(x\right)+f_2\left(x\right)u_2\left(x\right)+\cdots+f_k\left(x\right)u_k\left(x\right)=1
+        \]即\[
+            f_1\left(\bm{\varphi}\right)u_1\left(\bm{\varphi}\right)+f_2\left(\bm{\varphi}\right)u_2\left(\bm{\varphi}\right)+\cdots+f_k\left(\bm{\varphi}\right)u_k\left(\bm{\varphi}\right)=\bm{I}_V
+        \]$\forall\bm{\alpha}\in V:$\[
+            \bm{\alpha}=f_1\left(\bm{\varphi}\right)u_1\left(\bm{\varphi}\right)\left(\bm{\alpha}\right)+f_2\left(\bm{\varphi}\right)u_2\left(\bm{\varphi}\right)\left(\bm{\alpha}\right)+\cdots+f_k\left(\bm{\varphi}\right)u_k\left(\bm{\varphi}\right)\left(\bm{\alpha}\right)
+        \]考虑\[
+            g_i\left(
+            \bm{\varphi}
+            \right)f_i\left(
+            \bm{\varphi}
+            \right)u_i\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)=g\left(
+            \bm{\varphi}
+            \right)u_i\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)=\bm{0}u_i\left(
+            \bm{\varphi}
+            \right)\left(\bm{\alpha}\right)=\bm{0}
+        \]于是\[
+            f_i\left(
+            \bm{\varphi}
+            \right)u_i\left(
+            \bm{\varphi}
+            \right)\left(
+            \bm{\alpha}
+            \right)\in \mathrm{Ker}\,g_i\left(
+            \bm{\varphi}
+            \right)=W_i
+        \]于是\[
+            V=W_1+W_2+\cdots+W_k
+        \]
+        注意到$\forall1\leqslant i\neq j\leqslant k:\left(g_i\left(x\right),g_j\left(x\right)\right)=1$，由\cref{lem:互素的延拓},$W_i\perp W_j$，于是\[
+            V=W_1\perp W_2\perp\cdots\perp W_k
+        \]
+
+        $(3)$先证明$W_i$是$\bm{\varphi}$-不变子空间且是$\bm{\varphi}^*$-不变子空间.任取$\bm{w}\in W_i=\mathrm{Ker}\,g_i\left(\bm{\varphi}\right)\Longrightarrow g_i\left(\bm{\varphi}\right)\left(\bm{w}\right)=\bm{0}$，那么\[
+            g_i\left(
+            \bm{\varphi}
+            \right)\bm{\varphi}\left(\bm{w}\right)=\bm{\varphi}\left(\bm{0}\right)=\bm{0}\Longrightarrow\bm{\varphi}\left(\bm{w}\right)\in W_i=\mathrm{Ker}\,g_i\left(\bm{\varphi}\right)
+        \]于是$W_i$是$\bm{\varphi}$-不变子空间，而因为正规\begin{align*}
+            g_i\left(\bm{\varphi}\right)\left(
+            \bm{\varphi}^*\left(\bm{w}\right)
+            \right) & =\bm{\varphi}^*g\left(
+            \bm{\varphi}
+            \right)\left(\bm{w}\right)       \\
+                    & =\bm{0}
+        \end{align*}
+        即$W_i$是$\bm{\varphi}^*$-不变子空间.
+        做限制$\bm{\varphi}\mid_{W_i},\bm{\varphi}^*\mid_{W_i}$，下面证明二者就是限制关系，$\forall\bm{\alpha},\bm{\beta}\in W_i:$\[
+            \left(
+            \bm{\varphi}\left(
+                \bm{\alpha}
+                \right),\bm{\beta}
+            \right)=\left(
+            \bm{\alpha},\bm{\varphi}^*\left(
+                \bm{\beta}
+                \right)
+            \right)
+        \]自然地视作限制，于是\[
+            \left(
+            \bm{\varphi}\mid_{W_i}
+            \right)^*=\bm{\varphi}^*\mid_{W_i}
+        \]考虑是否正规:\begin{align*}
+            \bm{\varphi}\mid_{W_i}\bm{\varphi}^*\mid_{W_i} & =\left(
+            \bm{\varphi}\bm{\varphi}^*
+            \right)_{W_i}                                                                                    \\
+                                                           & =\left(
+            \bm{\varphi}^*\bm{\varphi}
+            \right)_{W_i}                                                                                    \\
+                                                           & =\bm{\varphi}^*\mid_{W_i}\bm{\varphi}\mid_{W_i}
+        \end{align*}因为$W_i=\mathrm{Ker}\,g_i\left(\bm{\varphi}\right)$，那么$\bm{\varphi}\mid_{W_i}$适合$g_i\left(x\right)$（即$g_i\left(\bm{\varphi}\mid_{W_i}\right)=\bm{0}\in\mathcal{L}\left(W_i\right)$），于是$\bm{\varphi}\mid_{W_i}$的极小多项式整除$g_i\left(x\right)$，但是$g_i\left(x\right)$是次数大于等于$1$的不可约多项式,于是$\bm{\varphi}\mid_{W_i}$的极小多项式为$g_i\left(x\right)$.
+    \end{proof}
+}
+\subsection{极小多项式为二次不可约多项式的正规算子的结构}
+一般地，二次不可约多项式\[
+    g\left(x\right)=\left(x-a\right)^2+b^2
+\]其中$a,b\neq0\in\mathbb{R}$.特别地，考虑$a=0,b=1:g\left(x\right)=x^2+1.$
+\lem{}{适合简单多项式的正规算子}{
+    设$n$维欧式空间$V$上的实正规算子$\bm{\varphi}$的极小多项式$g\left(x\right)=x^2+1$，则$\forall\bm{0}\neq\bm{v}\in V,\bm{u}=\bm{\varphi}\left(\bm{v}\right):$\begin{enumerate}[label=\arabic*）]
+        \item $\left\lVert\bm{u}\right\rVert=\left\lVert\bm{v}\right\rVert,\left(
+                  \bm{v},\bm{u}
+                  \right)=0$
+        \item $\bm{\varphi},\bm{\varphi}^*$的表示阵为\[
+                  \left(
+                  \bm{\varphi}\left(\bm{u}\right),\bm{\varphi}\left(\bm{v}\right)
+                  \right)=\left(\bm{u},\bm{v}\right)\begin{pmatrix}
+                      0  & 1 \\
+                      -1 & 0
+                  \end{pmatrix},\left(
+                  \bm{\varphi}^*\left(\bm{u}\right),\bm{\varphi}^*\left(\bm{v}\right)
+                  \right)=\left(\bm{u},\bm{v}\right)\begin{pmatrix}
+                      0 & -1 \\
+                      1 & 0
+                  \end{pmatrix}
+              \]即\[
+                  \begin{cases*}
+                      \bm{\varphi}\left(\bm{v}\right)=\bm{u}    \\
+                      \bm{\varphi}\left(\bm{u}\right)=-\bm{v}   \\
+                      \bm{\varphi}^*\left(\bm{v}\right)=-\bm{u} \\
+                      \bm{\varphi}^*\left(\bm{u}\right)=\bm{v}
+                  \end{cases*}
+              \]
+    \end{enumerate}\begin{proof}
+        \[\bm{\varphi}
+            \left(
+            \bm{u}
+            \right)=\bm{\varphi}^2\left(
+            \bm{v}
+            \right)=-\bm{v}
+        \]左侧证毕.
+
+        考虑\begin{align*}
+            0 & =
+            \left\lVert\bm{\varphi}\left(\bm{v}\right)-\bm{u}\right\rVert^2+\left\lVert\bm{\varphi}\left(\bm{u}\right)+\bm{v}\right\rVert^2      \\
+              & =\left\lVert\bm{\varphi}\left(\bm{v}\right)\right\rVert^2-2\left(
+            \bm{\varphi}\left(\bm{v}\right),\bm{u}
+            \right)+\left\lVert\bm{u}\right\rVert^2+\left\lVert\bm{\varphi}\left(\bm{u}\right)\right\rVert^2+2\left(
+            \bm{\varphi}\left(\bm{u}\right),\bm{v}
+            \right)+\left\lVert\bm{v}\right\rVert^2                                                                                              \\
+              & =\left\lVert\bm{\varphi}^*\left(\bm{v}\right)\right\rVert^2-2\left(
+            \bm{\varphi}^*\left(\bm{u}\right),\bm{v}
+            \right)+\left\lVert\bm{u}\right\rVert^2+\left\lVert\bm{\varphi}^*\left(\bm{u}\right)\right\rVert^2+2\left(
+            \bm{\varphi}^*\left(\bm{v}\right),\bm{u}
+            \right)+\left\lVert\bm{v}\right\rVert^2                                                                                              \\
+              & =\left\lVert\bm{\varphi}\left(\bm{v}\right)+\bm{u}\right\rVert^2+\left\lVert\bm{\varphi}\left(\bm{u}\right)-\bm{v}\right\rVert^2
+        \end{align*}于是右侧证毕.
+
+        另一方面
+
+        \[
+            \left(
+            \bm{u},\bm{u}
+            \right)=\left(
+            \bm{\varphi}\left(
+                \bm{v}
+                \right),\bm{u}
+            \right)=\left(
+            \bm{v},\bm{\varphi}^*\left(
+                \bm{u}
+                \right)
+            \right)=\left(
+            \bm{v},\bm{v}
+            \right)
+        \]\[
+            \left(
+            \bm{u},\bm{v}
+            \right)=\left(
+            \bm{v},\bm{\varphi}^*\left(
+                \bm{v}
+                \right)
+            \right)=-\left(
+            \bm{v},\bm{u}
+            \right)\qedhere
+        \]
+    \end{proof}
+}
+\lem{}{适合一般多项式的正规算子}{
+设$n$维欧式空间上的正规算子$\bm{\varphi}$极小多项式$g\left(x\right)=\left(x-a\right)^2+b^2,a,b\neq0\in\mathbb{R}$，则$\forall\bm{0}\neq\bm{v}\in V,\bm{u}=b^{-1}\left(\bm{\varphi}-a\bm{I}_V\right)\left(\bm{v}\right):$
+\begin{enumerate}[label=\arabic*）]
+    \item $\left\lVert\bm{u}\right\rVert=\left\lVert\bm{v}\right\rVert,\left(
+              \bm{v},\bm{u}
+              \right)=0$
+    \item $\bm{\varphi},\bm{\varphi}^*$的表示阵为\[
+              \left(
+              \bm{\varphi}\left(\bm{u}\right),\bm{\varphi}\left(\bm{v}\right)
+              \right)=\left(\bm{u},\bm{v}\right)\begin{pmatrix}
+                  a  & b \\
+                  -b & a
+              \end{pmatrix},\left(
+              \bm{\varphi}^*\left(\bm{u}\right),\bm{\varphi}^*\left(\bm{v}\right)
+              \right)=\left(\bm{u},\bm{v}\right)\begin{pmatrix}
+                  a & -b \\
+                  b & a
+              \end{pmatrix}
+          \]即\[
+              \begin{cases*}
+                  \bm{\varphi}\left(\bm{v}\right)=a\bm{v}+b\bm{u}    \\
+                  \bm{\varphi}\left(\bm{u}\right)=-b\bm{v}+a\bm{u}   \\
+                  \bm{\varphi}^*\left(\bm{v}\right)=-b\bm{u}+a\bm{v} \\
+                  \bm{\varphi}^*\left(\bm{u}\right)=b\bm{v}+a\bm{u}
+              \end{cases*}
+          \]
+\end{enumerate}\begin{proof}
+    因为$\bm{\varphi}$适合$g\left(x\right)=\left(x-a\right)^2+b^2$，那么\[
+        \left(
+        \bm{\varphi}-a\bm{I}_V
+        \right)^2+b^2\bm{I}_V=\bm{0}\Longrightarrow\left(
+        b^{-1}\left(
+        \bm{\varphi}-a\bm{I}_V
+        \right)
+        \right)^2+\bm{I}_V=\bm{0}
+    \]$\bm{\psi}\coloneqq b^{-1}\left(\bm{\varphi}-a\bm{I}_V\right)$，其极小多项式为$x^2+1$，由\cref{lem:适合简单多项式的正规算子}得证.
+\end{proof}
+}
+\thm{}{一般极小多项式的空间的结构}{
+    设$n$维欧式空间上的正规算子$\bm{\varphi}$极小多项式$g\left(x\right)=\left(x-a\right)^2+b^2,a,b\neq0\in\mathbb{R}$，则$\exists V_1,V_2,\cdots,V_s:\dim V_1=\dim V_2=\cdots=\dim V_s=2:$\[
+        V=V_1\perp V_2\perp\cdots\perp V_s
+    \]且$\forall1\leqslant i\leqslant s$，存在$V_i$的一组标准正交基$\left\{\bm{u}_i,\bm{v}_i\right\}$使得$\bm{\varphi}\mid_{V_i}$的表示矩阵为
+    \[
+        \begin{pmatrix}
+            a  & b \\
+            -b & a
+        \end{pmatrix}
+    \]\begin{proof}
+        对$\dim V$归纳，$\dim V=0$表示证明结束，证明$\dim V=1,V=L\left(\bm{e}\right),\bm{\varphi}\left(\bm{e}\right)=\lambda_0\bm{e},\lambda_0\in\mathbb{R}$但$\lambda_0$不适合极小多项式$g\left(x\right)=\left(x-a\right)^2+b^2$，于是$\dim V=1$是不可能的，进一步地，所有$\dim V$为奇数的情形也是不可能的.
+
+        设$\dim V<n$的情形成立，下证$\dim V=n$的情形，$\forall\bm{0}\neq\bm{v}_1\in V,\left\lVert\bm{v}_1\right\rVert=1,\bm{u}_1=b^{-1}\left(\bm{\varphi}-a\bm{I}_V\right)\left(\bm{v}_1\right)$，由\cref{lem:适合一般多项式的正规算子}知$\left\lVert\bm{u}_1\right\rVert=1,\left(
+            \bm{v}_1,\bm{u}_1
+            \right)=0$，令$V_1=L\left(\bm{u}_1,\bm{v}_1\right)$，则$V_1$的一组标准正交基就是$\left\{\bm{u}_1,\bm{v}_1\right\}$,且$\bm{\varphi}\mid_{V_1}:$\[
+            \left(
+            \bm{\varphi}\left(\bm{u}\right),\bm{\varphi}\left(\bm{v}\right)
+            \right)=\left(\bm{u},\bm{v}\right)\begin{pmatrix}
+                a  & b \\
+                -b & a
+            \end{pmatrix},\left(
+            \bm{\varphi}^*\left(\bm{u}\right),\bm{\varphi}^*\left(\bm{v}\right)
+            \right)=\left(\bm{u},\bm{v}\right)\begin{pmatrix}
+                a & -b \\
+                b & a
+            \end{pmatrix}
+        \]即$V_1$是$\bm{\varphi}$-不变子空间和$\bm{\varphi}^*$-不变子空间，于是$V_1^{\perp}$是$\bm{\varphi}^*$-不变子空间和$\left(\bm{\varphi}^*\right)^*= \bm{\varphi}$-不变子空间.作限制$\bm{\varphi}\mid_{V_1^{\perp}},\bm{\varphi}^*\mid_{V_1^{\perp}}$.以\cref{thm:极小多项式不可约分解引出的正交直和分解}同样方法可证$\bm{\varphi}\mid_{V_1^{\perp}}$正规.因为\begin{align*}
+            \dim V_1^{\perp} & =\dim V-\dim V_1 \\
+                             & =n-2             \\
+                             & <n
+        \end{align*}
+        这已经证好，由归纳假设存在$s-1$个$2$维正规不变子空间$V_2,V_3,\cdots,V_s$,于是\[V_1^{\perp}=V_2\perp V_3\perp\cdots\perp V_s\]且$\forall2\leqslant i\leqslant s:$存在$V_i$的一组标准正交基$\left\{\bm{u}_i,\bm{v}_i\right\}$使得$\bm{\varphi}\mid_{V_i}$的表示矩阵为\[
+            \begin{pmatrix}
+                a  & b \\
+                -b & a
+            \end{pmatrix}
+        \]于是$V=V_1\perp V_2\perp\cdots\perp V_s$且$\forall1\leqslant i\leqslant s:$存在$V_i$的一组标准正交基$\left\{\bm{u}_i,\bm{v}_i\right\}$使得$\bm{\varphi}\mid_{V_i}$的表示矩阵为\[
+            \begin{pmatrix}
+                a  & b \\
+                -b & a
+            \end{pmatrix}
+        \]于是$\bm{\varphi}$在$\left\{
+            \bm{u}_1,\bm{v}_1,\bm{u}_2,\bm{v}_2,\cdots,\bm{u}_s,\bm{v}_s
+            \right\}$这组基下的表示矩阵为\[
+            \mathrm{diag}\,\left\{
+            \begin{pmatrix}
+                a  & b \\
+                -b & a
+            \end{pmatrix},\begin{pmatrix}
+                a  & b \\
+                -b & a
+            \end{pmatrix},\cdots,\begin{pmatrix}
+                a  & b \\
+                -b & a
+            \end{pmatrix}
+            \right\}\qedhere
+        \]
+    \end{proof}
+}
+\subsection{实正规算子的正交相似标准型}
+\thm{实正规算子的正交相似标准型}{实正规算子的正交相似标准型}{
+设$n$维欧式空间$V$上的实正规算子$\bm{\varphi}$，则存在$V$的一组标准正交基使得$\bm{\varphi}$的表示阵为\[
+    \mathrm{diag}\,\left\{
+    \begin{pmatrix}
+        a_1  & b_1 \\
+        -b_1 & a_1
+    \end{pmatrix},\begin{pmatrix}
+        a_2  & b_2 \\
+        -b_2 & a_2
+    \end{pmatrix},\cdots,\begin{pmatrix}
+        a_r  & b_r \\
+        -b_r & a_r
+    \end{pmatrix},c_{2r+1},\cdots,c_n
+    \right\}
+\]其中$\forall1\leqslant i\leqslant r,2r+1\leqslant j\leqslant n:a_i,b_i\neq0,c_j\in\mathbb{R}$.这一矩阵称为实正规阵的正交相似标准型.\begin{proof}
+    根据\cref{thm:极小多项式不可约分解引出的正交直和分解}对$\bm{\varphi}$的极小多项式进行不可约分解并有$V=W_1\perp W_2\perp\cdots\perp W_k$，考虑$\bm{\varphi}\mid_{W_i}$的极小多项式$g_i\left(x\right)$.
+
+    一方面，如果$g_i\left(x\right)=x-c_i$，那么$\bm{\varphi}\mid_{W_i}=c_i\bm{I}_{W_i}$.
+
+    另一方面，如果$g_i\left(x\right)=\left(x-a_i\right)^2+b_i^2$，根据\cref{thm:一般极小多项式的空间的结构},存在$W_i$的一组标准正交基使得$\bm{\varphi}\mid_{W_i}$的表示矩阵为\[
+        \mathrm{diag}\,\left\{
+        \begin{pmatrix}
+            a_i  & b_i \\
+            -b_i & a_i
+        \end{pmatrix},\begin{pmatrix}
+            a_i  & b_i \\
+            -b_i & a_i
+        \end{pmatrix},\cdots,\begin{pmatrix}
+            a_i  & b_i \\
+            -b_i & a_i
+        \end{pmatrix}
+        \right\}\]
+
+    两种情形合并即证.
+\end{proof}
+}
+\thm{正交相似标准型的特征值}{正交相似标准型的特征值}{
+\cref{thm:实正规算子的正交相似标准型}正交相似标准型的特征值为\[
+    a_1\pm b\rmi,a_2\pm b\rmi,\cdots,a_r\pm b\rmi,c_{2r+1},\cdots,c_n
+\]
+}
+\clm{}{}{
+    \cref{thm:实正规算子的正交相似标准型}和\cref{thm:正交相似标准型的特征值}说明，实正规矩阵的全体特征值与其正交相似标准型相互唯一确定.
+}
+\thm{实正规阵在正交相似下的全系不变量}{实正规阵在正交相似下的全系不变量}{
+    实正规阵在正交相似下的全系不变量是全体特征值，也是其正交相似标准型.
+}
+\cor{}{旋转对角阵}{
+    设$n$阶正交阵$\bm{A}$，则存在正交阵$\bm{P}$使得\[
+        \bm{P}'\bm{AP}=\mathrm{diag}\,\left\{
+        \begin{pmatrix}
+            \cos\theta_1  & \sin\theta_1 \\
+            -\sin\theta_1 & \cos\theta_1
+        \end{pmatrix},\cdots,\begin{pmatrix}
+            \cos\theta_r  & \sin\theta_r \\
+            -\sin\theta_r & \cos\theta_r
+        \end{pmatrix};1,\cdots,1;-1,\cdots,-1
+        \right\}
+    \]\begin{proof}
+        首先一定有正交阵$\bm{P}$使得$\bm{P}'\bm{AP}$为正交相似标准型\[
+            \mathrm{diag}\,\left\{
+            \begin{pmatrix}
+                a_1  & b_1 \\
+                -b_1 & a_1
+            \end{pmatrix},\begin{pmatrix}
+                a_2  & b_2 \\
+                -b_2 & a_2
+            \end{pmatrix},\cdots,\begin{pmatrix}
+                a_r  & b_r \\
+                -b_r & a_r
+            \end{pmatrix},c_{2r+1},\cdots,c_n
+            \right\}
+        \]是正交的，于是其中分块均正交，根据正交的定义$\bm{Q}'\bm{Q}=\bm{I}_2$即证.
+    \end{proof}
+}
+\cor{实反对称阵的正交相似标准型}{实反对称阵的正交相似标准型}{
+    设$n$阶实反对称阵$\bm{A}$，则存在正交阵$\bm{P}$使得\[
+        \bm{P}'\bm{AP}=\mathrm{diag}\,\left\{
+        \begin{pmatrix}
+            0    & b_1 \\
+            -b_1 & 0
+        \end{pmatrix},
+        \begin{pmatrix}
+            0    & b_2 \\
+            -b_2 & 0
+        \end{pmatrix},
+        \cdots,
+        \begin{pmatrix}
+            0    & b_r \\
+            -b_r & 0
+        \end{pmatrix},
+        0,\cdots,0
+        \right\}\]\begin{proof}
+        首先$\bm{AA}'=-\bm{A}^2=\bm{A}'\bm{A}$即实反对称阵是实正规阵，根据\cref{thm:实正规算子的正交相似标准型}得到存在正交阵$\bm{P}$使得$\bm{P}'\bm{AP}$为\[
+            \mathrm{diag}\,\left\{
+            \begin{pmatrix}
+                a_1  & b_1 \\
+                -b_1 & a_1
+            \end{pmatrix},\begin{pmatrix}
+                a_2  & b_2 \\
+                -b_2 & a_2
+            \end{pmatrix},\cdots,\begin{pmatrix}
+                a_r  & b_r \\
+                -b_r & a_r
+            \end{pmatrix},c_{2r+1},\cdots,c_n
+            \right\}
+        \]注意到\begin{align*}
+            \left(
+            \bm{P}'\bm{AP}
+            \right)'=\bm{P}'\bm{A}'\bm{P}=-\bm{P}'\bm{AP}\qedhere
+        \end{align*}
+    \end{proof}
+}
+\cor{实反对称阵的秩}{实反对称阵的秩}{
+    实反对称阵的秩为偶数.
+}
+\cor{实反对称阵的特征值}{实反对称阵的特征值}{
+    实反对称阵的特征值均为$0$或者纯虚数.
+}

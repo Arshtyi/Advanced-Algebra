@@ -1,2 +1,361 @@
 \section{内积空间的概念}
 \subsection{\texorpdfstring{$\bbr ^3$}{R3}}
+\dfn{$\bbr^3$中向量的点积}{R^3中向量的点积}{
+设$\bm{u}=\left(x_1,x_2,x_3\right),\bm{v}=\left(y_1,y_2,y_3\right)\in\mathbb{R}^3$，定义点积/内积\[
+    \bm{u}\cdot\bm{v}=x_1y_1+x_2y_2+x_3y_3
+\]长度\[
+    \left\lVert \bm{u}\right\rVert =\left(\bm{u}\cdot\bm{u}\right)^{\frac{1}{2}}=\sqrt{x_1^2+x_2^2+x_3^2}
+\]     距离\[
+    d\left(
+    \bm{u},\bm{v}
+    \right)=\left\lVert \bm{u}-\bm{v}\right\rVert =\left(
+    \left(
+    \bm{u}-\bm{v}
+    \right)\cdot\left(
+    \bm{u}-\bm{v}
+    \right)
+    \right)^{\frac{1}{2}}
+\]
+}
+\pro{$\bbr^3$中向量点积的性质}{R^3中向量点积的性质}{
+    设$\bm{u},\bm{v},\bm{w}\in\mathbb{R}^3,c\in\mathbb{R}$，则\begin{enumerate}[label=\arabic*）]
+        \item $\bm{u}\cdot\bm{v}=\bm{v}\cdot\bm{u}$
+        \item $\left(\bm{u}+\bm{w}\right)\cdot\bm{v}=\bm{u}\cdot\bm{v}+\bm{w}\cdot\bm{v}$
+        \item $\left(c\bm{u}\right)\cdot\bm{v}=c\left(\bm{u}\cdot\bm{v}\right)$
+        \item $\bm{u}\cdot\bm{u}\geqslant 0$且等号成立当且仅当$\bm{u}=\bm{0}$
+    \end{enumerate}
+}
+\subsection{一般线性空间}
+\dfn{实内积空间}{实内积空间}{
+    设实线性空间$V$，若存在二元运算\begin{align*}
+        \left(\dashline,\dashline\right):V\times V & \longrightarrow\mathbb{R}                      \\
+        \bm{\alpha}\times\bm{\beta}                & \longmapsto\left(\bm{\alpha},\bm{\beta}\right)
+    \end{align*}且满足（$\bm{\alpha},\bm{\beta},\bm{\gamma}\in V,c\in\mathbb{R}$）\begin{enumerate}[label=\arabic*）]
+        \item 对称性：$\left(\bm{\alpha},\bm{\beta}\right)=\left(\bm{\beta},\bm{\alpha}\right)$
+        \item 第一变元的线性：$\left(\bm{\alpha}+\bm{\beta},\bm{\gamma}\right)=\left(\bm{\alpha},\bm{\gamma}\right)+\left(\bm{\beta},\bm{\gamma}\right),\left(c\bm{\alpha},\bm{\beta}\right)=c\left(\bm{\alpha},\bm{\beta}\right)$
+        \item 正定性：$\left(\bm{\alpha},\bm{\alpha}\right)\geqslant 0$且等号成立当且仅当$\bm{\alpha}=\bm{0}$
+    \end{enumerate}则称该二元运算为$V$上的一个内积，实数$\left(\bm{\alpha},\bm{\beta}\right)$称为向量$\bm{\alpha},\bm{\beta}$的内积.这样给定一个内积结构的实线性空间称为实内积空间，有限维的实内积空间称为Euclid空间，简称欧式空间.
+}
+\dfn{复内积空间}{复内积空间}{
+    设复线性空间$V$，若存在二元运算\begin{align*}
+        \left(\dashline,\dashline\right):V\times V & \longrightarrow\mathbb{C}                      \\
+        \bm{\alpha}\times\bm{\beta}                & \longmapsto\left(\bm{\alpha},\bm{\beta}\right)
+    \end{align*}且满足（$\bm{\alpha},\bm{\beta},\bm{\gamma}\in V,c\in\mathbb{C}$）\begin{enumerate}[label={\textup{(\arabic*)}}]
+        \item 共轭对称性：$\left(\bm{\alpha},\bm{\beta}\right)=\overline{\left(\bm{\beta},\bm{\alpha}\right)}$
+        \item 第一变元的线性：$\left(\bm{\alpha}+\bm{\beta},\bm{\gamma}\right)=\left(\bm{\alpha},\bm{\gamma}\right)+\left(\bm{\beta},\bm{\gamma}\right),\left(c\bm{\alpha},\bm{\beta}\right)=c\left(\bm{\alpha},\bm{\beta}\right)$
+        \item 正定性：$\left(\bm{\alpha},\bm{\alpha}\right)\geqslant 0$且等号成立当且仅当$\bm{\alpha}=\bm{0}$
+    \end{enumerate}则称该二元运算为$V$上的一个内积，复数$\left(\bm{\alpha},\bm{\beta}\right)$称为向量$\bm{\alpha},\bm{\beta}$的内积.这样给定一个内积结构的复线性空间称为复内积空间，有限维的复内积空间称为酉空间.
+}
+\clm{}{}{
+    内积不一定是单射也不一定是满射，更不会只能构造出一种.
+}
+\rem{}{}{
+    \cref{def:复内积空间}中由共轭对称性可得\[
+        \left(
+        \bm{\alpha},\bm{\alpha}
+        \right)=\overline{\left(
+            \bm{\alpha},\bm{\alpha}
+            \right)}\Longrightarrow\left(
+        \bm{\alpha},\bm{\alpha}
+        \right)\in\mathbb{R}
+    \]于是正定性是有意义的.
+}
+\rem{}{}{
+    \cref{def:实内积空间}中第二变元也是线性的即\[\left(\bm{\alpha},c\bm{\beta}+d\bm{\gamma}\right)=c\left(\bm{\alpha},\bm{\beta}\right)+d\left(\bm{\alpha},\bm{\gamma}\right)\]但\cref{def:复内积空间}中第二变元是共轭线性的即\[\left(\bm{\alpha},c\bm{\beta}+d\bm{\gamma}\right)=\overline{c}\left(\bm{\alpha},\bm{\beta}\right)+\overline{d}\left(\bm{\alpha},\bm{\gamma}\right)\]
+}
+\clm{}{}{
+    \cref{def:实内积空间}相容于\cref{def:复内积空间}.
+}
+\exa{}{}{
+    设$V=\mathbb{R}^n,\bm{\alpha}=\begin{pmatrix}
+            x_1 \\x_2\\\vdots\\x_n
+        \end{pmatrix},\bm{\beta}=\begin{pmatrix}
+            y_1 \\y_2\\\vdots\\y_n
+        \end{pmatrix}$，定义内积\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}'\bm{\beta}=x_1y_1+x_2y_2+\cdots+x_ny_n
+    \]称为$\mathbb{R}^n$上的标准内积.
+
+    设$V=\mathbb{R}_n,\bm{\alpha}=\left(
+        x_1,x_2,\cdots,x_n
+        \right),\bm{\beta}=\left(
+        y_1,y_2,\cdots,y_n
+        \right)$，定义内积\[\left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}\bm{\beta}'=x_1y_1+x_2y_2+\cdots+x_ny_n\]称为$\mathbb{R}_n$上的标准内积.
+
+    设$V=\mathbb{C}^n,\bm{\alpha}=\begin{pmatrix}
+            x_1 \\x_2\\\vdots\\x_n
+        \end{pmatrix},\bm{\beta}=\begin{pmatrix}
+            y_1 \\y_2\\\vdots\\y_n
+        \end{pmatrix}$，定义内积\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}'\overline{\bm{\beta}}=x_1\overline{y_1}+x_2\overline{y_2}+\cdots+x_n\overline{y_n}
+    \]称为$\mathbb{C}^n$上的标准内积.
+
+    设$V=\mathbb{C}_n,\bm{\alpha}=\left(
+        x_1,x_2,\cdots,x_n
+        \right),\bm{\beta}=\left(
+        y_1,y_2,\cdots,y_n
+        \right)$，定义内积\[\left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}\overline{\bm{\beta}}'=x_1\overline{y_1}+x_2\overline{y_2}+\cdots+x_n\overline{y_n}\]称为$\mathbb{C}_n$上的标准内积.
+}
+\exa{}{}{
+    设$V=\mathbb{R}^2,\bm{\alpha}=\begin{pmatrix}
+            x_1 \\x_2
+        \end{pmatrix},\bm{\beta}=\begin{pmatrix}
+            y_1 \\y_2
+        \end{pmatrix}$，则可定义内积\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq x_1y_1-x_2y_1-x_1y_2+4x_2y_2
+    \]
+}
+\exa{}{}{
+    设$V=\mathbb{R}^n,\bm{\alpha},\bm{\beta}\in V,\bm{G}$是$n$阶正定实对称阵，定义\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}'\bm{G}\bm{\beta}
+    \]这称为$\mathbb{R}^n$上相伴于正定阵$\bm{G}$的内积.
+
+    设$V=\mathbb{R}_n,\bm{\alpha},\bm{\beta}\in V,\bm{G}$是$n$阶正定实对称阵，定义\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}\bm{G}\bm{\beta}'
+    \]这称为$\mathbb{R}_n$上相伴于正定阵$\bm{G}$的内积.
+
+    设$V=\mathbb{C}^n,\bm{\alpha},\bm{\beta}\in V,\bm{H}$是$n$阶正定Hermite阵，定义\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}'\bm{G}\overline{\bm{\beta}}
+    \]这称为$\mathbb{C}^n$上相伴于正定Hermite阵$\bm{H}$的内积.
+
+    设$V=\mathbb{C}_n,\bm{\alpha},\bm{\beta}\in V,\bm{H}$是$n$阶正定Hermite阵，定义\[
+        \left(
+        \bm{\alpha},\bm{\beta}
+        \right)\coloneqq \bm{\alpha}\bm{G}\overline{\bm{\beta}}'
+    \]这称为$\mathbb{C}_n$上相伴于正定Hermite阵$\bm{H}$的内积.
+}
+\exa{}{}{
+    设$V$是$\left[a,b\right]$的连续函数全体构成的实线性空间，$f\left(t\right),g\left(t\right)\in V$，定义\[
+        \left(f,g\right)=\int_a^bf\left(t\right)g\left(t\right)\,\rmd t
+    \]为$V$上的内积，$V$是一个无限维实内积空间.
+}
+\exa{}{}{
+    设$V=\bbr\left[x\right]$\begin{align*}
+         & f\left(x\right)=a_0+a_1x+\cdots+a_nx^n \\
+         & g\left(x\right)=b_0+b_1x+\cdots+b_mx^m
+    \end{align*}且$n\geqslant m.$定义\[
+        \left(
+        f\left(x\right),g\left(x\right)
+        \right)\coloneqq a_0b_0+a_1b_1+\cdots+a_mb_m
+    \]
+}
+\exa{}{}{
+    设$V=M_n\left(\bbr\right),\bm{A},\bm{B}\in V$.定义\[
+        \left(
+        \bm{A},\bm{B}
+        \right)\coloneqq \Tr\left(
+        \bm{A}\bm{B}'
+        \right)
+    \]为Forbenius内积.
+}
+\dfn{范数}{范数}{
+设$V$为一个内积空间，定义$\forall \bm{\alpha}\in V$的范数（长度）为\[
+    \left\lVert \bm{\alpha}\right\rVert =\left(\bm{\alpha},\bm{\alpha}\right)^{\frac{1}{2}}
+\]及$\bm{\alpha},\bm{\beta}\in V$的距离为\begin{align*}
+    d\left(
+    \bm{\alpha},\bm{\beta}
+    \right) & =\left\lVert \bm{\alpha}-\bm{\beta}\right\rVert \\
+            & =\left(
+    \left(
+    \bm{\alpha}-\bm{\beta}
+    \right),\left(
+    \bm{\alpha}-\bm{\beta}
+    \right)
+    \right)^{\frac{1}{2}}
+\end{align*}
+}
+\exa{}{}{
+    设$V=\bbr^n,$取标准内积，则$\bm{\alpha}=\begin{pmatrix}
+            x_1 \\x_2\\\vdots\\x_n
+        \end{pmatrix}$的范数为\[
+        \left\lVert \bm{\alpha}\right\rVert =\sqrt{
+            x_1^2+x_2^2+\cdots+x_n^2
+        }
+    \]
+
+    设$V=\bbc^n,$取标准内积，则$\bm{\alpha}=\begin{pmatrix}
+            x_1 \\x_2\\\vdots\\x_n
+        \end{pmatrix}$的范数为\[
+        \left\lVert \bm{\alpha}\right\rVert =\sqrt{
+            x_1\overline{x_1}+x_2\overline{x_2}+\cdots+x_n\overline{x_n}
+        }
+    \]
+}
+\pro{范数的基本性质}{范数的基本性质}{
+    \begin{enumerate}[label=\arabic*）]
+        \item 范数非负性：$
+                  \left\lVert \bm{\alpha}\right\rVert \geqslant 0
+              $且等号成立当且仅当$\bm{\alpha}=\bm{0}$
+        \item 距离的对称性：$d\left(
+                  \bm{\alpha},\bm{\beta}
+                  \right)=d\left(
+                  \bm{\beta},\bm{\alpha}
+                  \right)$
+    \end{enumerate}
+}
+\thm{范数的性质}{范数的性质}{
+    设 $V$为内积空间，$\bm{\alpha},\bm{\beta}\in V,c$为一常数，则\begin{enumerate}[label=\arabic*）]
+        \item 范数的齐次性：$\left\lVert c\bm{\alpha}\right\rVert = \left| c\right|\left\lVert \bm{\alpha}\right\rVert$
+        \item Cauchy-Schwarz不等式：$\left|\left(
+                  \bm{\alpha},\bm{\beta}
+                  \right)\right|\leqslant \left\lVert \bm{\alpha}\right\rVert \left\lVert \bm{\beta}\right\rVert$且等号成立当且仅当$\bm{\alpha},\bm{\beta}$线性相关
+        \item 三角不等式：$\left\lVert \bm{\alpha}+\bm{\beta}\right\rVert \leqslant \left\lVert \bm{\alpha}\right\rVert +\left\lVert \bm{\beta}\right\rVert$
+    \end{enumerate}\begin{proof}
+        \begin{enumerate}[label=\arabic*）]
+            \item 是显然的.
+            \item 一方面，$\bm{\alpha}=\bm{0}$时显然成立.另一方面，设$\bm{\alpha}\neq\bm{0}$，作\[
+                      \bm{\gamma}=\bm{\beta}-\frac{
+                          \left(
+                          \bm{\beta},\bm{\alpha}
+                          \right)
+                      }{
+                          \left\lVert \bm{\alpha}\right\rVert ^2
+                      }\bm{\alpha}
+                  \]容易知道$\left(
+                      \bm{\gamma},\bm{\alpha}
+                      \right)=0$且\begin{align*}
+                      0\leqslant \left\lVert \bm{\gamma}\right\rVert ^2 & =\left(
+                      \bm{\gamma},\bm{\gamma}
+                      \right)                                                                                           \\
+                                                                        & =\left(
+                      \bm{\beta}-\frac{
+                          \left(
+                          \bm{\beta},\bm{\alpha}
+                          \right)
+                      }{
+                          \left\lVert \bm{\alpha}\right\rVert ^2
+                      }\bm{\alpha},\bm{\beta}-\frac{
+                          \left(
+                          \bm{\beta},\bm{\alpha}
+                          \right)
+                      }{
+                          \left\lVert \bm{\alpha}\right\rVert ^2
+                      }\bm{\alpha}
+                      \right)                                                                                           \\
+                                                                        & =\left(
+                      \bm{\beta},\bm{\beta}
+                      \right)-\frac{
+                          \left(
+                          \bm{\beta},\bm{\alpha}
+                          \right)
+                      }{
+                          \left\lVert \bm{\alpha}\right\rVert ^2
+                      }\left(
+                      \bm{\alpha},\bm{\beta}
+                      \right)                                                                                           \\
+                                                                        & =\left\lVert \bm{\beta}\right\rVert ^2-\frac{
+                          \left| \left(
+                          \bm{\beta},\bm{\alpha}
+                          \right)\right|^2
+                      }{
+                          \left\lVert \bm{\alpha}\right\rVert ^2
+                      }
+                  \end{align*}即\[
+                      \left|\left(
+                      \bm{\alpha},\bm{\beta}
+                      \right)\right|\leqslant \left\lVert \bm{\alpha}\right\rVert \left\lVert \bm{\beta}\right\rVert\]且等号成立当且仅当$\bm{\gamma}=\bm{0}$即$\bm{\beta}$与$\bm{\alpha}$线性相关.
+            \item 因为\begin{align*}
+                      \left\lVert \bm{\alpha}+\bm{\beta}\right\rVert ^2 & =\left(
+                      \bm{\alpha}+\bm{\beta},\bm{\alpha}+\bm{\beta}
+                      \right)                                                                                                                                                                                                             \\
+                                                                        & =\left(
+                      \bm{\alpha},\bm{\alpha}
+                      \right)+\left(
+                      \bm{\alpha},\bm{\beta}
+                      \right)+\left(
+                      \bm{\beta},\bm{\alpha}
+                      \right)+\left(
+                      \bm{\beta},\bm{\beta}
+                      \right)                                                                                                                                                                                                             \\
+                                                                        & =\left\lVert \bm{\alpha}\right\rVert ^2+\left\lVert \bm{\beta}\right\rVert ^2+\left(
+                      \bm{\alpha},\bm{\beta}
+                      \right)+\overline{
+                          \left(
+                          \bm{\alpha},\bm{\beta}
+                          \right)
+                      }                                                                                                                                                                                                                   \\
+                                                                        & =\left\lVert \bm{\alpha}\right\rVert ^2+\left\lVert \bm{\beta}\right\rVert ^2+2\Re\left(
+                      \left(
+                          \bm{\alpha},\bm{\beta}
+                          \right)
+                      \right)                                                                                                                                                                                                             \\
+                                                                        & \leqslant \left\lVert \bm{\alpha}\right\rVert ^2+\left\lVert \bm{\beta}\right\rVert ^2+2\left|\left(
+                      \bm{\alpha},\bm{\beta}
+                      \right)\right|                                                                                                                                                                                                      \\
+                                                                        & \leqslant \left\lVert \bm{\alpha}\right\rVert ^2+2\left\lVert \bm{\alpha}\right\rVert \left\lVert \bm{\beta}\right\rVert +\left\lVert \bm{\beta}\right\rVert ^2 \\
+                                                                        & =\left(
+                      \left\lVert \bm{\alpha}\right\rVert +\left\lVert \bm{\beta}\right\rVert
+                      \right)^2\qedhere
+                  \end{align*}
+        \end{enumerate}
+    \end{proof}
+}
+\exa{}{}{
+    设$V=\mathbb{R}^n$，取标准内积，于是Cauchy-Schwarz不等式推得Cauchy不等式\[
+        \left(
+        x_1y_1+x_2y_2+\cdots+x_ny_n
+        \right)^2\leqslant \left(
+        x_1^2+x_2^2+\cdots+x_n^2
+        \right)\left(
+        y_1^2+y_2^2+\cdots+y_n^2
+        \right)
+    \]
+
+    设$V=C\left[a,b\right]$，取积分内积，于是Cauchy-Schwarz不等式推得Schwarz不等式\[
+        \left(
+        \int_a^bf\left(t\right)g\left(t\right)\,\mathrm{d} t
+        \right)^2\leqslant \int_a^bf^2\left(t\right)\,\mathrm{d} t\int_a^bg^2\left(t\right)\,\mathrm{d} t
+    \]
+}
+\dfn{向量夹角}{向量夹角}{
+    设$V$为内积空间，$\bm{0}\neq\bm{\alpha},\bm{0}\neq\bm{\beta}\in V,\bm{\alpha},\bm{\beta}$的夹角$\theta$的余弦值$\cos\theta$为\[
+        \cos\theta=\begin{cases*}
+            \cfrac{\left(
+                \bm{\alpha},\bm{\beta}
+                \right)}{
+                \left\lVert \bm{\alpha}\right\rVert \left\lVert \bm{\beta}\right\rVert
+            }\Longrightarrow\theta\in\left[0,\pi\right]            & ，$V$为实内积空间 \\
+            \cfrac{
+                \left|
+                \left(
+                \bm{\alpha},\bm{\beta}
+                \right)
+                \right|
+            }{
+                \left\lVert \bm{\alpha}\right\rVert \left\lVert \bm{\beta}\right\rVert
+            }\Longrightarrow\theta\in\left[0,\cfrac{\pi}{2}\right] & ，$V$为复内积空间
+        \end{cases*}
+    \]
+}
+\dfn{向量的正交}{向量的正交}{
+    若$\left(\bm{\alpha},\bm{\beta}\right)=0$，则称向量$\bm{\alpha},\bm{\beta}$正交或垂直，记作$\bm{\alpha}\perp\bm{\beta}$.
+}
+\clm{}{}{
+    零向量与任意向量正交.
+}
+\cor{非零向量的正交与夹角}{非零向量的正交与夹角}{
+    设$\bm{\alpha}\neq\bm{0},\bm{\beta}\neq\bm{0}$，则$\bm{\alpha}\perp\bm{\beta}$当且仅当$\cos\theta=0$即$\displaystyle\theta=\frac{\pi}{2}$.
+}
+\rem{}{}{
+    在\cref{def:向量夹角}中，复内积空间定义下不取$\Re\left(\left(\bm{\alpha},\bm{\beta}\right)\right)$而取$\left|\left(\bm{\alpha},\bm{\beta}\right)\right|$正是因为尽管能够使得$\theta$取到$\left[0,\pi\right]$，却失去了\cref{cor:非零向量的正交与夹角}的几何意义.
+}
+\thm{勾股定理}{勾股定理}{
+    若$\bm{\alpha}\perp\bm{\beta}$，则\[
+        \left\lVert \bm{\alpha}+\bm{\beta}\right\rVert ^2=\left\lVert \bm{\alpha}\right\rVert ^2+\left\lVert \bm{\beta}\right\rVert ^2
+    \]
+}
