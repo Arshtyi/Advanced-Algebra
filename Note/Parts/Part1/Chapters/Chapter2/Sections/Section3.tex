@@ -2,7 +2,7 @@
 \section{矩阵的运算}
 \subsection{矩阵的线性运算}
 \dfn{矩阵的加减法}{矩阵的加减法}{
-    对应位置相加减即可：
+    对应位置相加减即可:
     \[
         \left(a_{ij}\right)_{m \times n} \pm \left(
         b_{ij}
@@ -36,12 +36,12 @@
     \end{align*}
 }
 \pro{}{矩阵加减法的性质}{
-    \begin{enumerate}[label=（\arabic*）]
-        \item 交换律：$\bm{A} + \bm{B} = \bm{B} + \bm{A} $
-        \item 结合律：$\left( \bm{A} + \bm{B} \right) + \bm{C} = \bm{A}+ \left( \bm{B} + \bm{C}\right)$
-        \item 零元存在：$\bm{A} + \bm{O} = \bm{A}$
-        \item 存在负矩阵：$\bm{A}+\left(-\bm{A}\right) = \bm{O}$
-        \item 移项：$
+    \begin{enumerate}[label=(\arabic*)]
+        \item 交换律:$\bm{A} + \bm{B} = \bm{B} + \bm{A} $
+        \item 结合律:$\left( \bm{A} + \bm{B} \right) + \bm{C} = \bm{A}+ \left( \bm{B} + \bm{C}\right)$
+        \item 零元存在:$\bm{A} + \bm{O} = \bm{A}$
+        \item 存在负矩阵:$\bm{A}+\left(-\bm{A}\right) = \bm{O}$
+        \item 移项:$
                   \bm{A} + \bm{B} = \bm{C} \Longleftrightarrow \bm{A}= \bm{C} - \bm{B} $
     \end{enumerate}
 }
@@ -69,17 +69,17 @@
 \]
 }
 \pro{矩阵数乘的性质}{矩阵数乘的定义}{
-    \begin{enumerate}[label=（\arabic*）]
-        \item 数的分配律：$k \left(\bm{A} + \bm{B}\right) = k\bm{A} + k\bm{B}$
-        \item 矩阵的分配律：$\left(k + l\right)\bm{A} = k\bm{A} + l \bm{B}$
-        \item 结合律：$k\left(l\bm{A}\right) = \left(kl\right) \bm{A} = l \left(k\bm{A}\right)$
-        \item 单位元存在：$1\cdot\bm{A} = \bm{A}$
-        \item 零元存在：$0\cdot\bm{A} = \bm{O}$
+    \begin{enumerate}[label=(\arabic*)]
+        \item 数的分配律:$k \left(\bm{A} + \bm{B}\right) = k\bm{A} + k\bm{B}$
+        \item 矩阵的分配律:$\left(k + l\right)\bm{A} = k\bm{A} + l \bm{B}$
+        \item 结合律:$k\left(l\bm{A}\right) = \left(kl\right) \bm{A} = l \left(k\bm{A}\right)$
+        \item 单位元存在:$1\cdot\bm{A} = \bm{A}$
+        \item 零元存在:$0\cdot\bm{A} = \bm{O}$
     \end{enumerate}
 }
 \subsection{矩阵的乘法}
 \dfn{矩阵的乘法}{矩阵的乘法}{
-    对于矩阵乘法$\bm{A}_{m\times n}\bm{B}_{n\times k}=\bm{C}_{m\times k}$，结果矩阵中的元素$c_{ij}$的算法是用矩阵$\bm{A}$中的第$i$行$\left(a_{i1},a_{i2},\cdots ,a_{in}\right)$各元素分别与矩阵$\bm{B}$中的第$j$列$\left(b_{1j},b_{2j},\cdots,b_{nj}\right)$各元素分别相乘，再把结果相加得到$c_{ij}$即这两个向量做内积：
+    对于矩阵乘法$\bm{A}_{m\times n}\bm{B}_{n\times k}=\bm{C}_{m\times k}$,结果矩阵中的元素$c_{ij}$的算法是用矩阵$\bm{A}$中的第$i$行$\left(a_{i1},a_{i2},\cdots ,a_{in}\right)$各元素分别与矩阵$\bm{B}$中的第$j$列$\left(b_{1j},b_{2j},\cdots,b_{nj}\right)$各元素分别相乘,再把结果相加得到$c_{ij}$即这两个向量做内积:
     \begin{align*}
         c_{ij}=
         \left(
@@ -102,22 +102,22 @@
     多数情况下不成立.这一点通常称为不对易.
 }
 \pro{矩阵乘法的性质}{矩阵乘法的性质}{
-    设$\bm{A}_{m \times n} =\left(a_{ij}\right)_{m \times n}$，$\bm{B}_{n \times p} = \left(
+    设$\bm{A}_{m \times n} =\left(a_{ij}\right)_{m \times n}$,$\bm{B}_{n \times p} = \left(
         b_{ij}
-        \right)_{n \times p}$，$\bm{C}
+        \right)_{n \times p}$,$\bm{C}
         _{p \times q} = \left(
         c_{ij}
-        \right)_{p \times q}$，则
-    \begin{enumerate}[label=（\arabic*）]
-        \item 结合律：$\left(\bm{A}\bm{B}\right)\bm{C} = \bm{A}\left(\bm{B}\bm{C}\right) $
-        \item 分配律：$\bm{A}\left(\bm{B} + \bm{C}\right) = \bm{A}\bm{B} + \bm{A}\bm{C} $
-        \item 分配律：$\left(\bm{B}+\bm{C}\right)\bm{A}=\bm{B}\bm{A}+\bm{C}\bm{A} $
-        \item 与数乘相容：$k\left(\bm{A}\bm{B}\right) =\left(k\bm{A}\right)\bm{B}= \bm{A}\left(k\bm{B}\right)$
-        \item 单位元：$
+        \right)_{p \times q}$,则
+    \begin{enumerate}[label=(\arabic*)]
+        \item 结合律:$\left(\bm{A}\bm{B}\right)\bm{C} = \bm{A}\left(\bm{B}\bm{C}\right) $
+        \item 分配律:$\bm{A}\left(\bm{B} + \bm{C}\right) = \bm{A}\bm{B} + \bm{A}\bm{C} $
+        \item 分配律:$\left(\bm{B}+\bm{C}\right)\bm{A}=\bm{B}\bm{A}+\bm{C}\bm{A} $
+        \item 与数乘相容:$k\left(\bm{A}\bm{B}\right) =\left(k\bm{A}\right)\bm{B}= \bm{A}\left(k\bm{B}\right)$
+        \item 单位元:$
                   \bm{E}_m \bm{A}_{m \times n} =
                   \bm{A}_{m \times n} =
                   \bm{A}_{m \times n}\bm{E}_{n} $
-        \item 注意：$\left(\bm{A}+\bm{B}\right)^2=\bm{A}^2+\bm{A}\bm{B}+\bm{B}\bm{A}+\bm{B}^2.$
+        \item 注意:$\left(\bm{A}+\bm{B}\right)^2=\bm{A}^2+\bm{A}\bm{B}+\bm{B}\bm{A}+\bm{B}^2.$
         \item 对于方阵$\bm{A}\text{、}\bm{B}, \det\left(\bm{AB}\right) =  \det\left(\bm{A}\right)\cdot  \det\left(\bm{B}\right)$
     \end{enumerate}
     \begin{proof}
@@ -145,7 +145,7 @@
     \end{proof}
 }
 \clm{}{}{
-    一般而言，因为整性不成立，矩阵的乘法消去律亦不成立，从线性映射的角度来看，两个非零映射复合得到零映射也并非不可能.
+    一般而言,因为整性不成立,矩阵的乘法消去律亦不成立,从线性映射的角度来看,两个非零映射复合得到零映射也并非不可能.
 }
 \subsection{方阵的非负整数次幂}
 \dfn{方阵的幂}{方阵的幂}{
@@ -160,10 +160,10 @@
     \end{equation*}
 }
 \pro{方针的幂的性质}{方阵的幂的性质}{
-    \begin{enumerate}[label=（\arabic*）]
+    \begin{enumerate}[label=(\arabic*)]
         \item$\bm{A}^{k + l} = \bm{A}^k\bm{A}^l$
         \item$\bm{A}^{kl} = \left(\bm{A}^{k}\right)^{l}$
-        \item 由于矩阵乘法的不可交换，一般有：$\left(\bm{A}\bm{B}\right)^k\neq \bm{A}^k \bm{B}^k$
+        \item 由于矩阵乘法的不可交换,一般有:$\left(\bm{A}\bm{B}\right)^k\neq \bm{A}^k \bm{B}^k$
     \end{enumerate}
 }
 \dfn{方针的多项式}{方阵的多项式}{

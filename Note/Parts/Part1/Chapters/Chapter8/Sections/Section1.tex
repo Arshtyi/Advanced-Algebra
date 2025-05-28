@@ -3,7 +3,7 @@
 \dfn{二次超曲面}{二次超曲面}{
     设二次多项式$f\left(
         x_{1},x_{2},\cdots,x_{n}
-        \right)$，则称\[
+        \right)$,则称\[
         H=\left\{
         \left(a_1,
         a_2,\cdots,a_n
@@ -14,18 +14,18 @@
     \]为一个二次超曲面.
 }
 \rem{}{}{
-    一个问题是给出二次超曲面的分类.基本思路是对二次型进行化简，最后得到一个足够简单的二次型，并且他的不同形式可以代表所有的二次超曲面.
+    一个问题是给出二次超曲面的分类.基本思路是对二次型进行化简,最后得到一个足够简单的二次型,并且他的不同形式可以代表所有的二次超曲面.
 }
-对于一般的二次曲线：\[
+对于一般的二次曲线:\[
     ax^2+bxy+cy^2+dx+ey+f=0
-\]首先尝试利用坐标变换消去交错项：\[
+\]首先尝试利用坐标变换消去交错项:\[
     \begin{cases*}
         x=x'\cos\theta-y'\sin\theta \\
         y=x'\sin\theta+y'\cos\theta
     \end{cases*}
 \]然后平移坐标轴消去一次项
 \clm{}{}{
-    该坐标变换的给出为：首先考虑基向量的旋转\[
+    该坐标变换的给出为:首先考虑基向量的旋转\[
         \left(
         \bm{e}_1,\bm{e}_2
         \right)=\left(
@@ -52,26 +52,26 @@
 }
 于是一般化简$f\left(
     x_1,x_2,\cdots,x_n
-    \right)$的思路是\begin{enumerate}[label=\arabic*）]
+    \right)$的思路是\begin{enumerate}[label=\arabic*)]
     \item 通过坐标向量的非异线性变换消去方程$f\left(
               x_1,x_2,\cdots,x_n
               \right)$中的交错项$x_ix_j\left(\forall i\neq j\right)$使得只剩下平方项
     \item 通过坐标向量的平移消去方程中的低次项
 \end{enumerate}
 
-这样的思路中，第一步是最为重要的，于是我们只考虑如\cref{def:齐次多项式}的二次型，不考虑低次项.
+这样的思路中,第一步是最为重要的,于是我们只考虑如\cref{def:齐次多项式}的二次型,不考虑低次项.
 \subsection{二次型}
 \dfn{二次型}{二次型}{
-数域$\mathbb{K}$上的$n$元二次齐次多项式\[
+数域$\bbk $上的$n$元二次齐次多项式\[
     f\left(
     x_1,x_2,\cdots,x_n
     \right)=\sum_{i=1}^{n}a_{ii}x_i^2+2\sum_{1\leqslant i<j\leqslant n}a_{ij}x_ix_j
 \]称为一个$n$元二次型.
 }
 \rem{}{}{
-    \cref{def:二次型}和\cref{def:齐次多项式}相同，注意绝对不会出现低次项.
+    \cref{def:二次型}和\cref{def:齐次多项式}相同,注意绝对不会出现低次项.
 }
-下面构造一个$\mathbb{K}$上的对称矩阵$\bm{A}$使得\[
+下面构造一个$\bbk $上的对称矩阵$\bm{A}$使得\[
     f\left(
     x_1,x_2,\cdots,x_n
     \right)=\bm{x}'\bm{Ax}
@@ -114,21 +114,21 @@
 
 构造映射\begin{align*}
     \bm{\varphi}:\left\{
-    \mathbb{K}\text{上所有}n\text{阶对称阵}
+    \bbk \text{上所有}n\text{阶对称阵}
     \right\} & \longrightarrow\left\{
     n\text{元二次型}
     \right\}                             \\
     \bm{A}   & \longmapsto\bm{x}'\bm{Ax}
 \end{align*}
-显然这是一个满射，下面考虑单性.设对称阵$\bm{A},\bm{B}$满足\[
+显然这是一个满射,下面考虑单性.设对称阵$\bm{A},\bm{B}$满足\[
     \bm{x}'\bm{Ax}=\bm{x}'\bm{Bx}
 \]即\[
     \sum_{i=1}^{n}a_{ii}x_i^2+2\sum_{1\leqslant i<j\leqslant n}a_{ij}x_ix_j=\sum_{i=1}^{n}b_{ii}x_i^2+2\sum_{1\leqslant i<j\leqslant n}b_{ij}x_ix_j
-\]注意到是对称阵，明显这要求$a_{ij}=b_{ij},\forall 1\leqslant i,j\leqslant n\Longrightarrow \bm{A}=\bm{B}.$于是该映射是一个一一对应.
+\]注意到是对称阵,明显这要求$a_{ij}=b_{ij},\forall 1\leqslant i,j\leqslant n\Longrightarrow \bm{A}=\bm{B}.$于是该映射是一个一一对应.
 \rem{}{}{
     一般称矩阵$\bm{A}$为二次型$f\left(
         x_1,x_2,\cdots,x_n
-        \right)$的表示矩阵或者相伴的矩阵，$f\left(
+        \right)$的表示矩阵或者相伴的矩阵,$f\left(
         x_1,x_2,\cdots,x_n
         \right)$称为$\bm{A}$相伴的二次型.
 }
@@ -153,10 +153,10 @@
     \]
 }
 \rem{}{}{
-    容易看出，一个只含平方项的二次型的表示矩阵是对角阵，反之亦然.于是化简二次型就成了对角化矩阵这样一件我们熟知的事.
+    容易看出,一个只含平方项的二次型的表示矩阵是对角阵,反之亦然.于是化简二次型就成了对角化矩阵这样一件我们熟知的事.
 }
 \subsection{合同关系}
-设$V$是数域$\mathbb{K}$上的$n$维线性空间，一组基$\left\{
+设$V$是数域$\bbk $上的$n$维线性空间,一组基$\left\{
     \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
     \right\},\forall\bm{\alpha}\in V,$其唯一对应于坐标向量$\bm{x}=\begin{pmatrix}
         x_1 \\x_2\\\vdots\\x_n
@@ -182,36 +182,36 @@ $自然看做$V$上的一个函数.另取一组基$\left\{
     \right)\bm{y}=g\left(
     y_1,y_2,\cdots,y_n
     \right)
-\]也就是说，坐标向量的非异变换等价于基变换，这样的变换称为合同变换.、
+\]也就是说,坐标向量的非异变换等价于基变换,这样的变换称为合同变换.、
 \dfn{合同关系}{合同关系}{
-    设$\bm{A},\bm{B}\in M_n\left(\mathbb{K}\right)$，若存在非异阵$\bm{C}\in M_n\left(\mathbb{K}\right)$使得\[
+    设$\bm{A},\bm{B}\in M_n\left(\bbk \right)$,若存在非异阵$\bm{C}\in M_n\left(\bbk \right)$使得\[
         \bm{B}=\bm{C}'\bm{AC}
-    \]则称$\bm{A}$与$\bm{B}$合同，或者具有合同关系.
+    \]则称$\bm{A}$与$\bm{B}$合同,或者具有合同关系.
 }
 \rem{}{}{
-    于是，问题是是否对于任意一个二次型$f\left(
+    于是,问题是是否对于任意一个二次型$f\left(
         x_1,x_2,\cdots,x_n
         \right)$都存在一个坐标向量的非异变换$\bm{x}=\bm{Cy}$使得得到的新的二次型$g\left(
         y_1,y_2,\cdots,y_n
-        \right)$只含平方项.也就是说，是否任意一个对称矩阵都可以通过合同变换化为对角阵.
+        \right)$只含平方项.也就是说,是否任意一个对称矩阵都可以通过合同变换化为对角阵.
     \incfig[scale=0.9]{CongruentTransformation}
 }
 \subsection{对称初等变换}
 \dfn{对称初等变换}{对称初等变换}{
-    下面的变换都是合同变换，称为对称初等变换.\begin{enumerate}[label=\arabic*）]
-        \item 对换$\bm{A}$的第$i$行与第$j$行，再对换第$i$列与第$j$列\[
+    下面的变换都是合同变换,称为对称初等变换.\begin{enumerate}[label=\arabic*)]
+        \item 对换$\bm{A}$的第$i$行与第$j$行,再对换第$i$列与第$j$列\[
                   \bm{P}_{ij}\bm{AP}_{ij},\bm{P}'_{ij}=\bm{P}_{ij}            \]
         \item 用非零常数$c$乘$\bm{A}$的第$i$行与第$i$列\[
                   \bm{P}_i\left(c\right)\bm{AP}_i\left(c\right),\bm{P}'_i\left(c\right)=\bm{P}_i\left(c\right)
               \]
-        \item $\bm{A}$的第$i$行乘上常数$c$加到第$j$行，再将第$i$列乘上常数$c$加到第$j$列\[
+        \item $\bm{A}$的第$i$行乘上常数$c$加到第$j$行,再将第$i$列乘上常数$c$加到第$j$列\[
                   \bm{T}_{ij}\left(c\right)\bm{AT}_{ji}\left(c\right),\bm{T}'_{ij}\left(c\right)=\bm{T}_{ji}\left(c\right)
               \]
     \end{enumerate}
 }
 \lem{}{对称阵变换为首元非零矩阵}{
-    设$\mathbb{K}$上的非零对称阵$\bm{A}$,则必定有非异阵$\bm{C}$使得$\bm{C}'\bm{AC}$的$\left(1,1\right)$元非零.\begin{proof}
-        设$a_{11}\neq 0$，若$\exists 2\leqslant i\leqslant n,a_{ii}\neq 0$，用第一类对称初等变换将第$i$行与第$1$行对换，再将第$i$列与第$1$列对换，则新的$\bm{A}$的$\left(1,1\right)$元非零.若$\forall 2\leqslant i\leqslant n,a_{ii}=0$，则必定存在一个$a_{ij}\neq 0$，考虑到对称阵，设$1\leqslant i<j\leqslant n$即块\[
+    设$\bbk $上的非零对称阵$\bm{A}$,则必定有非异阵$\bm{C}$使得$\bm{C}'\bm{AC}$的$\left(1,1\right)$元非零.\begin{proof}
+        设$a_{11}\neq 0$,若$\exists 2\leqslant i\leqslant n,a_{ii}\neq 0$,用第一类对称初等变换将第$i$行与第$1$行对换,再将第$i$列与第$1$列对换,则新的$\bm{A}$的$\left(1,1\right)$元非零.若$\forall 2\leqslant i\leqslant n,a_{ii}=0$,则必定存在一个$a_{ij}\neq 0$,考虑到对称阵,设$1\leqslant i<j\leqslant n$即块\[
             \begin{pmatrix}
                 0      & \cdots & a_{ij} \\
                 \vdots &        & \vdots \\
@@ -223,14 +223,14 @@ $自然看做$V$上的一个函数.另取一组基$\left\{
                 \vdots  &        & \vdots \\
                 a_{ij}  & \cdots & 0
             \end{pmatrix}
-        \]即$\left(i,i\right)$元不为零，由上文得证.
+        \]即$\left(i,i\right)$元不为零,由上文得证.
     \end{proof}
 }
 \thm{}{任意矩阵必定合同于对角阵}{
-    设$\bm{A}\in M_n\left(\mathbb{K}\right)$，则存在非异阵$\bm{C}\in M_n\left(\mathbb{K}\right)$使得$\bm{C}'\bm{AC}$为对角阵.\begin{proof}
-        对阶数进行归纳，$n=1$显然.下设阶数$<n$时结论成立，下面证明$n$时结论成立.并设$\bm{A}\neq\bm{O}$.
+    设$\bm{A}\in M_n\left(\bbk \right)$,则存在非异阵$\bm{C}\in M_n\left(\bbk \right)$使得$\bm{C}'\bm{AC}$为对角阵.\begin{proof}
+        对阶数进行归纳,$n=1$显然.下设阶数$<n$时结论成立,下面证明$n$时结论成立.并设$\bm{A}\neq\bm{O}$.
 
-        由\cref{lem:对称阵变换为首元非零矩阵}，不妨设$a_{11}\neq 0.$假设存在$a_{1i}=a_{i1}\neq 0$，利用第三类对称初等变换$\displaystyle \bm{T}_{1i}\left(
+        由\cref{lem:对称阵变换为首元非零矩阵},不妨设$a_{11}\neq 0.$假设存在$a_{1i}=a_{i1}\neq 0$,利用第三类对称初等变换$\displaystyle \bm{T}_{1i}\left(
             -\frac{a_{i1}}{a_{11}}
             \right)\bm{AT}_{i1}\left(
             -\frac{a_{1i}}{a_{11}}
@@ -239,7 +239,7 @@ $自然看做$V$上的一个函数.另取一组基$\left\{
                 a_{11} & \bm{O}       \\
                 \bm{O} & \bm{B}^{n-1}
             \end{pmatrix}
-        \]根据归纳假设，存在非异阵$\bm{D}\in M_{n-1}\left(\mathbb{K}\right)$使得$\bm{D}'\bm{BD}=\bm{\varLambda}$为对角阵.于是\[
+        \]根据归纳假设,存在非异阵$\bm{D}\in M_{n-1}\left(\bbk \right)$使得$\bm{D}'\bm{BD}=\bm{\varLambda}$为对角阵.于是\[
             \begin{pmatrix}
                 1      & \bm{O}  \\
                 \bm{O} & \bm{D}'
@@ -253,14 +253,14 @@ $自然看做$V$上的一个函数.另取一组基$\left\{
                 a_{11} & \bm{O}          \\
                 \bm{O} & \bm{\varLambda}
             \end{pmatrix}
-        \]为对角阵，得证.
+        \]为对角阵,得证.
     \end{proof}
 }
 \cor{合同变换与对称初等变换}{合同变换与对称初等变换}{
     合同变换是若干次对称初等变换的复合.\begin{proof}
-        考虑合同变换$\bm{A}\leadsto \bm{C}'\bm{AC}$，其中非异阵\[
+        考虑合同变换$\bm{A}\leadsto \bm{C}'\bm{AC}$,其中非异阵\[
             \bm{C}=\bm{P}_1\bm{P}_2\cdots\bm{P}_r
-        \]其中$\bm{P}_i$为初等阵，于是\begin{align*}
+        \]其中$\bm{P}_i$为初等阵,于是\begin{align*}
             \bm{C}'\bm{AC} & =\left(
             \bm{P}_1\bm{P}_2\cdots\bm{P}_r
             \right)' \bm{A}\left(
@@ -280,14 +280,14 @@ $自然看做$V$上的一个函数.另取一组基$\left\{
 }
 \subsection{分块对称初等变换}
 \dfn{分块对称初等变换}{分块对称初等变换}{
-    下面的变换都是合同变换，称为分块对称初等变换.\begin{enumerate}[label=\arabic*）]
-        \item 对换$\bm{A}$的第$i$分块行与第$j$分块行，再对换第$i$分块列与第$j$分块列\[
+    下面的变换都是合同变换,称为分块对称初等变换.\begin{enumerate}[label=\arabic*)]
+        \item 对换$\bm{A}$的第$i$分块行与第$j$分块行,再对换第$i$分块列与第$j$分块列\[
                   \bm{P}_{ij}\bm{AP}_{ij}'
               \]
-        \item 将第$i$分块行左乘非异阵$\bm{M}$，第$i$分块行右乘$\bm{M}'$\[
+        \item 将第$i$分块行左乘非异阵$\bm{M}$,第$i$分块行右乘$\bm{M}'$\[
                   \bm{P}_i\left(\bm{M}\right)\bm{AP}_i\left(\bm{M}'\right),\bm{P}_i'\left(\bm{M}\right)=\bm{P}_i\left(\bm{M}'\right)
               \]
-        \item 第$i$分块行左乘非异阵$\bm{M}$加到第$j$分块行，第$i$分块列右乘$\bm{M}'$加到第$j$分块列\[
+        \item 第$i$分块行左乘非异阵$\bm{M}$加到第$j$分块行,第$i$分块列右乘$\bm{M}'$加到第$j$分块列\[
                   \bm{T}_{ij}\left(\bm{M}\right)\bm{AT}_{ji}\left(\bm{M}'\right),\bm{T}_{ij}'\left(\bm{M}\right)=\bm{T}_{ji}\left(\bm{M}'\right)
               \]
     \end{enumerate}

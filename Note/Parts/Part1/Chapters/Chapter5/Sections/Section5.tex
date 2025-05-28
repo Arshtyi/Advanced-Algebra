@@ -2,47 +2,47 @@
 \section{多项式函数}
 \subsection{根}
 \dfn{多项式函数}{多项式函数}{
-设$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\in\mathbb{K}\left[x\right]$，则其是一个函数
+设$f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\in\bbk \left[x\right]$,则其是一个函数
 \begin{align*}
-    f:\mathbb{K} & \longrightarrow \mathbb{K}  \\
-    b            & \longmapsto f\left(b\right)
+    f:\bbk & \longrightarrow \bbk        \\
+    b      & \longmapsto f\left(b\right)
 \end{align*}
 $f\left(b\right)\coloneqq
     a_nb^n+a_{n-1}b^{n-1}+\cdots a_1b+a_0$称为$f\left(x\right)$在$b$点的取值.
 
-于是对于一个多项式$f$，我们可以自然地视作一个多项式函数，记作$\overline{f}$.
+于是对于一个多项式$f$,我们可以自然地视作一个多项式函数,记作$\overline{f}$.
 }
 \rem{}{}{
-    一个问题是，两个（一元）多项式作为多项式相等与作为多项式函数相等是否是一回事？前者推后者显然， 因为我们给出的多项式形式定义足够强.我们下面来考虑多项式相等得出多项式函数相等这件事.
+    一个问题是,两个(一元)多项式作为多项式相等与作为多项式函数相等是否是一回事？前者推后者显然, 因为我们给出的多项式形式定义足够强.我们下面来考虑多项式相等得出多项式函数相等这件事.
 
-    一般地，多项式$f\in\mathbb{K}\left[x\right]$诱导的多项式函数记作$\overline{f}$，即我们需要证明
+    一般地,多项式$f\in\bbk \left[x\right]$诱导的多项式函数记作$\overline{f}$,即我们需要证明
     \[
         f=g\Longleftrightarrow \overline{f}=\overline{g}
     \]
 
-    在数域上，这一问题可能有一点“显然”，但实际上，数域只是一种特殊的域，后面我们将说明，这个等价关系在一般的域上不见得成立.
+    在数域上,这一问题可能有一点“显然”,但实际上,数域只是一种特殊的域,后面我们将说明,这个等价关系在一般的域上不见得成立.
 }
 \dfn{根}{根}{
-    设$f\left(x\right)\neq 0\in\mathbb{K}
-        \left[x\right]$，若$b\in\mathbb{K}$，\st$f\left(b\right)=0$，则称$b$是$f\left(x\right)$的根或零点.
+    设$f\left(x\right)\neq 0\in\bbk
+        \left[x\right]$,若$b\in\bbk $,\st$f\left(b\right)=0$,则称$b$是$f\left(x\right)$的根或零点.
 }
 \thm{余数定理}{余数定理}{
-    设$f\left(x\right)\in\mathbb{K}\left[x\right],b\in\mathbb{K}$，则存在$g\left(x\right)\in\mathbb{K}$，\st
+    设$f\left(x\right)\in\bbk \left[x\right],b\in\bbk $,则存在$g\left(x\right)\in\bbk $,\st
     \[
         f\left(x\right)=\left(x-b\right)g\left(x\right)+f\left(b\right)
     \]
-    特别地，$b$是$f\left(x\right)$的根当且仅当$\left(x-b\right)\mid f\left(x\right)$.\begin{proof}
+    特别地,$b$是$f\left(x\right)$的根当且仅当$\left(x-b\right)\mid f\left(x\right)$.\begin{proof}
         首先有带余除法
         \[
             f\left(x\right)=\left(x-b\right)q\left(x\right)+r\left(x\right)
         \]
-        其中$\deg r\left(x\right)<\deg \left(x-b\right)=1\Longrightarrow r\left(x\right)$为非零常数，
+        其中$\deg r\left(x\right)<\deg \left(x-b\right)=1\Longrightarrow r\left(x\right)$为非零常数,
         令上式$x=b\Longrightarrow r\left(x\right)=f\left(b\right)$.
     \end{proof}
 }
 \dfn{重根}{重根}{
-    设$f\left(x\right)\in\mathbb{K}\left[x\right],b\in\mathbb{K}$，若存在
-    $k\in\mathbb{Z}^+$\st$\left(x-b\right)^k\mid f\left(x\right)$但$\left(x-b\right)^{k+1}\nmid f\left(x\right).$称$b$是$f\left(x\right)$的$k$重根.特别地，$k=1$时称为单根.
+    设$f\left(x\right)\in\bbk \left[x\right],b\in\bbk $,若存在
+    $k\in\mathbb{Z}^+$\st$\left(x-b\right)^k\mid f\left(x\right)$但$\left(x-b\right)^{k+1}\nmid f\left(x\right).$称$b$是$f\left(x\right)$的$k$重根.特别地,$k=1$时称为单根.
 }
 \dfn{重根的等价定义}{重根的等价定义}{
 $k$重根等价于
@@ -54,8 +54,8 @@ $k$重根等价于
     $k$重根视作$k$个根.
 }
 \lem{不可约多项式的根}{不可约多项式的根}{
-    设$\mathbb{K}$上的不可约多项式$f\left(x\right)$，若$\deg f\left(x\right)\geqslant 2$，则$f\left(x\right)$在$\mathbb{K}$上没有根.\begin{proof}
-        考虑反证法，设$b\in\mathbb{K}$是$f\left(x\right)$的根，从而$\left(x-b\right)\mid f\left(x\right)$即
+    设$\bbk $上的不可约多项式$f\left(x\right)$,若$\deg f\left(x\right)\geqslant 2$,则$f\left(x\right)$在$\bbk $上没有根.\begin{proof}
+        考虑反证法,设$b\in\bbk $是$f\left(x\right)$的根,从而$\left(x-b\right)\mid f\left(x\right)$即
         \[
             f\left(x\right)=\left(x-b\right)q\left(x\right)
         \]
@@ -63,8 +63,8 @@ $k$重根等价于
     \end{proof}
 }
 \thm{根的个数}{根的个数}{
-    设数域$\mathbb{K}$上的$n$次多项式$f\left(x\right)$，
-    则$f\left(x\right)$在数域$\mathbb{K}$上至多有$n$个根.\begin{proof}
+    设数域$\bbk $上的$n$次多项式$f\left(x\right)$,
+    则$f\left(x\right)$在数域$\bbk $上至多有$n$个根.\begin{proof}
         作标准因式分解
         \[
             f\left(x\right)=cp_1\left(x\right)^{e_1}p_2\left(x\right)^{e_2}\cdots p_m\left(x\right)^{e_m}
@@ -73,37 +73,37 @@ $k$重根等价于
         \[
             f\left(x\right)=c\left(x-b_1\right)^{n_1}\left(x-b_2\right)^{n_2}\cdots\left(x-b_r\right)^{n_r}p_1\left(x\right)^{e_1}p_2\left(x\right)^{e_2}\cdots p_s\left(x\right)^{e_s}
         \]
-        其中$c\neq 0,b_1,b_2,\cdots,b_r$互不相同，$p_1\left(x\right),p_2\left(x\right),\cdots,p_s\left(x\right)$是互异的首一不可约多项式且$\deg p_i\left(x\right)\geqslant 1\left(\forall 1\leqslant i\leqslant
-            s\right)$.于是$f\left(x\right)$的根为$b_1,b_2,\cdots,b_r$，其分别为$n_1,n_2,\cdots,n_r$重.两边同时取次数即得
+        其中$c\neq 0,b_1,b_2,\cdots,b_r$互不相同,$p_1\left(x\right),p_2\left(x\right),\cdots,p_s\left(x\right)$是互异的首一不可约多项式且\[\deg p_i\left(x\right)\geqslant 1\left(\forall 1\leqslant i\leqslant
+            s\right)\]于是$f\left(x\right)$的根为$b_1,b_2,\cdots,b_r$,其分别为$n_1,n_2,\cdots,n_r$重.两边同时取次数即得
         \[
             n=n_1+n_2+\cdots+n_r+e_1\deg p_1\left(x\right)+e_2\deg p_2\left(x\right)+\cdots+e_s\deg p_s\left(x\right)
-        \]于是$f\left(x\right)$在数域$\mathbb{K}$上的根一共有$n_1+n_2+\cdots+n_r\leqslant n$个.
+        \]于是$f\left(x\right)$在数域$\bbk $上的根一共有$n_1+n_2+\cdots+n_r\leqslant n$个.
     \end{proof}
 }
 \lem{}{多项式相等则多项式函数相等}{
-设多项式$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right],\deg f\left(x\right)\leqslant n,\deg g\left(x\right)\leqslant n$，若$\mathbb{K}$中存在$n+1$个数$b_1,b_2,\cdots,b_{n+1}$\st
+设多项式$f\left(x\right),g\left(x\right)\in\bbk \left[x\right],\deg f\left(x\right)\leqslant n,\deg g\left(x\right)\leqslant n$,若$\bbk $中存在$n+1$个数$b_1,b_2,\cdots,b_{n+1}$\st
 \[
     f\left(b_i\right)=g\left(b_i\right)\left(\forall 1\leqslant i\leqslant n+1\right)
 \]
-则$f\left(x\right)=g\left(x\right)$（作为多项式而言）.\begin{proof}
-    设$h\left(x\right)=f\left(x\right)-g\left(x\right)$，由\cref{thm:根的个数}显然.
+则$f\left(x\right)=g\left(x\right)$(作为多项式而言).\begin{proof}
+    设$h\left(x\right)=f\left(x\right)-g\left(x\right)$,由\cref{thm:根的个数}显然.
 \end{proof}
 }
-至此，我们得到了作为多项式相等则作为多项式函数相等的结论.下面证明作为多项式函数相等则作为多项式相等.
+至此,我们得到了作为多项式相等则作为多项式函数相等的结论.下面证明作为多项式函数相等则作为多项式相等.
 \begin{proof}
-    设$\deg f\left(x\right)\leqslant n,\deg g\left(x\right)\leqslant n.$因为$\mathbb{K}\supseteq \mathbb{Q}$，故能取出$n+1$个不同的数
-    $b_1,b_2,\cdots,b_{n+1}\in\mathbb{K}$
+    设$\deg f\left(x\right)\leqslant n,\deg g\left(x\right)\leqslant n.$因为$\bbk \supseteq \bbq  $,故能取出$n+1$个不同的数
+    $b_1,b_2,\cdots,b_{n+1}\in\bbk $
     \st$f\left(b_i\right)=g\left(b_i\right)\left(\forall 1\leqslant i\leqslant n+1
-        \right)$，则二者作为多项式恒等.
+        \right)$,则二者作为多项式恒等.
 \end{proof}
 \subsection{域}
 \rem{}{}{
-    上述证明的关键在于“数域”$\mathbb{K}$是无穷集.但对于一般的域而言，却不见得成立.
+    上述证明的关键在于“数域”$\bbk $是无穷集.但对于一般的域而言,却不见得成立.
 
-    在一般的域上，一般来说，作为多项式相等和作为多项式函数相等，是不一样的.
+    在一般的域上,一般来说,作为多项式相等和作为多项式函数相等,是不一样的.
 }
 \exa{}{}{
-    考虑伽罗瓦域$\bbf _2=\left\{\overline{0},\overline{1}\right\}$，这里的$\overline{0}$可以理解为全体偶数，$\overline{1}$理解为全体奇
+    考虑伽罗瓦域$\bbf _2=\left\{\overline{0},\overline{1}\right\}$,这里的$\overline{0}$可以理解为全体偶数,$\overline{1}$理解为全体奇
     数.定义加法
     \begin{align*}
         \overline{0}+\overline{0}=\overline{0},\overline{1}+\overline{1}=\overline{0},\overline{1}+\overline{0}=\overline{1}
@@ -114,8 +114,8 @@ $k$重根等价于
         \overline{0}\cdot \overline{1}=\overline{0},
         \overline{1}\cdot\overline{1}=\overline{1}
     \]
-    容易验证这个域对加减乘除封闭.同时这是一个有限域，那么上面的定理就不成立了.
+    容易验证这个域对加减乘除封闭.同时这是一个有限域,那么上面的定理就不成立了.
 
-    比如，考虑$f\left(x\right)=x^2,g\left(x\right)=x$，二者作为多项式不相等，但是作为$\bbf _2$上的
+    比如,考虑$f\left(x\right)=x^2,g\left(x\right)=x$,二者作为多项式不相等,但是作为$\bbf _2$上的
     多项式函数是相等的.
 }

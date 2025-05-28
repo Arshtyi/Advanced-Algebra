@@ -2,11 +2,11 @@
 \section{多元多项式}
 \subsection{定义}
 \dfn{单项式}{单项式}{
-设$\mathbb{K}$为数域，$x_1,x_2,\cdots,x_n$是未定元，则
+设$\bbk $为数域,$x_1,x_2,\cdots,x_n$是未定元,则
 \[
     ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}
 \]
-（其中$a\in\mathbb{K}$称为系数，$i_1,i_2,\cdots,i_n\in\bbn $）称为一个单项式.
+(其中$a\in\bbk $称为系数,$i_1,i_2,\cdots,i_n\in\bbn $)称为一个单项式.
 
 单项式的次数定义为
 \[
@@ -18,14 +18,14 @@
 \]
 }
 \dfn{同类项}{同类项}{
-若 $ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\left(a\neq 0\right)$ 与 $bx_1^{j_1}x_2^{j_2}\cdots x_n^{j_n}\left(b\neq 0\right)$ 为同类项，则 $i_1=j_1,i_2=j_2,\cdots,i_n=j_n$.
+若 $ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\left(a\neq 0\right)$ 与 $bx_1^{j_1}x_2^{j_2}\cdots x_n^{j_n}\left(b\neq 0\right)$ 为同类项,则 $i_1=j_1,i_2=j_2,\cdots,i_n=j_n$.
 }
 \dfn{合并同类项}{合并同类项}{
-定义两个同类项之间的加法就是系数的加法，即若 $ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$ 与 $bx_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$ 为同类项，则
+定义两个同类项之间的加法就是系数的加法,即若 $ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$ 与 $bx_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$ 为同类项,则
 \[ ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}+bx_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}=\left(a+b\right)x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n} \]
 }
 \dfn{单项式的运算}{单项式的运算}{
-同类项的加法即是合并同类项，非同类项的加法即是形式和；$\forall k \in\mathbb{K}$，数乘定义为
+同类项的加法即是合并同类项,非同类项的加法即是形式和；$\forall k \in\bbk $,数乘定义为
 \[ kax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}=\left(ka\right)x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n} \]
 乘法定义为
 \[ ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\cdot bx_1^{j_1}x_2^{j_2}\cdots x_n^{j_n}=\left(ab\right)x_1^{i_1+j_1}x_2^{i_2+j_2}\cdots x_n^{i_n+j_n} \]
@@ -58,33 +58,33 @@
 \end{align*} 相等当且仅当$a_{i_1i_2\cdots i_n}=b_{i_1i_2\cdots i_n},\forall \left(i_1,i_2,\cdots,i_n\right)\in\bbn ^n$.
 }
 \dfn{多元多项式全体}{多元多项式全体}{
-记$\mathbb{K}$上的$n$元多形式全体为\[\mathbb{K}\left[x_1,x_2,\cdots,x_n\right]=\left\{
+记$\bbk $上的$n$元多形式全体为\[\bbk \left[x_1,x_2,\cdots,x_n\right]=\left\{
     f\left(x_1,x_2,\cdots,x_n\right)=\sum_{\left(i_1,i_2,\cdots,i_n\right)\in\mathbb{
             N
         }^n}a_{i_1i_2\cdots i_n}x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}
     \right\}\]
-这是一个$\mathbb{K}$-代数，称为关于$x_1,x_2,\cdots,x_n$的$n$元多项式代数（环）.
+这是一个$\bbk $-代数,称为关于$x_1,x_2,\cdots,x_n$的$n$元多项式代数(环).
 }
 \rem{}{}{
-    一个自然的问题是，$\mathbb{K}\left[x\right]$的各种性质是否可以推广到$\mathbb{K}\left[x_1,x_2,\cdots,x_n\right]$.
+    一个自然的问题是,$\bbk \left[x\right]$的各种性质是否可以推广到$\bbk \left[x_1,x_2,\cdots,x_n\right]$.
 }
 \dfn{多元多项式的运算}{多元多项式的运算}{
 加法定义为
 \[
     f\left(x\right)+g\left(x\right)=\sum_{\left(i_1,i_2,\cdots,i_n\right)}\left(a_{i_1i_2\cdots i_n}+b_{i_1i_2\cdots i_n}\right)x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\]
-$\forall k\in\mathbb{K}$，数乘定义为
+$\forall k\in\bbk $,数乘定义为
 \[
     kf\left(x\right)=\sum_{\left(i_1,i_2,\cdots,i_n\right)}\left(ka_{i_1i_2\cdots i_n}\right)x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n} \]
 定义乘法则利用分配律转换为单项式的乘积之和并合并同类项.
 }
 \subsection{\texorpdfstring{$n$}{n}元多项式代数环}
 \dfn{字典序}{字典序}{
-将未定元按自然足标排序，即
+将未定元按自然足标排序,即
 \[
     x_1\succ
     x_2\succ\cdots\succ x_n
 \]
-然后对单项式排序，定义
+然后对单项式排序,定义
 $\displaystyle
     ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\succ bx_{1}^{j_1}x_2^{j_2}\cdots x_n^{j_n}\left(ab\neq 0\right)$当且仅当
 $\exists 1\leqslant k\leqslant n,\st i_1=j_1,i_2=j_2,\cdots,i_{k-1}=j_{k-1},i_k>j_k.$
@@ -92,19 +92,19 @@ $\exists 1\leqslant k\leqslant n,\st i_1=j_1,i_2=j_2,\cdots,i_{k-1}=j_{k-1},i_k>
 \clm{}{}{
     \cref{def:字典序}的定义方式并不是唯一的.
 
-    容易证明，在字典序下，每个多项式有唯一的排序，称为字典排序.但是，首项未必是次数最高的单项式，而是字典序最大的单项式；末项未必是次数最低的单项式，而是字典序最小的单项式.
+    容易证明,在字典序下,每个多项式有唯一的排序,称为字典排序.但是,首项未必是次数最高的单项式,而是字典序最大的单项式；末项未必是次数最低的单项式,而是字典序最小的单项式.
 }
 \lem{}{字典序下多项式乘积的首项保持}{
-    在字典序下，$f\cdot g$的首项是$f$的首项与$g$的首项的乘积.\begin{proof}
+    在字典序下,$f\cdot g$的首项是$f$的首项与$g$的首项的乘积.\begin{proof}
         若$f=0$或$g=0$,显然.
 
-        设$f$的首项为$ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$，$g$的首项为$bx_1^{j_1}x_2^{j_2}\cdots x_n^{j_n}$，则任取
+        设$f$的首项为$ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$,$g$的首项为$bx_1^{j_1}x_2^{j_2}\cdots x_n^{j_n}$,则任取
         $f\left(x\right)$的一个单项$cx_1^{k_1}x_2^{k_2}\cdots x_n^{k_n}$和
-        $g\left(x\right)$的一个单项$dx_1^{l_1}x_2^{l_2}\cdots x_n^{l_n}$，则$\exists 1\leqslant r,s\leqslant n\st
+        $g\left(x\right)$的一个单项$dx_1^{l_1}x_2^{l_2}\cdots x_n^{l_n}$,则$\exists 1\leqslant r,s\leqslant n\st
             i_1=k_1,i_2=k_2,\cdots,i_{r-1}=k_{r-1},i_r>k_r\Longleftrightarrow
             a\succ c$且$j_1=l_1,j_2=l_2,\cdots,j_{s-1}=l_{s-1},j_s>l_s
             \Longleftrightarrow b\succ d
-        $（其中系数指代整个单项），于是不妨设$r\leqslant s$则
+        $(其中系数指代整个单项),于是不妨设$r\leqslant s$则
         \[
             i_1+j_1=k_1+l_1,i_2+j_2=k_2+l_2,
             \cdots,i_{r-1}+j_{r-1}=k_{r-1}+l_{r-1},i_r+j_r>k_r+l_r
@@ -113,43 +113,43 @@ $\exists 1\leqslant k\leqslant n,\st i_1=j_1,i_2=j_2,\cdots,i_{k-1}=j_{k-1},i_k>
         \[
             ab x_1^{i_1+j_1}x_2^{i_2+j_2}\cdots x_n^{i_n+j_n}\succ cd x_1^{k_1+l_1}x_2^{k_2+l_2}\cdots x_n^{k_n+l_n}
         \]
-        同理可证$ab\succ cb,ab\succ ad$，考虑到不可合并，则一定是首项.
+        同理可证$ab\succ cb,ab\succ ad$,考虑到不可合并,则一定是首项.
     \end{proof}
 }
 \thm{}{多元多项式乘法的整性}{
-    设$0\neq f,0\neq g\in\mathbb{K}\left[
+    设$0\neq f,0\neq g\in\bbk \left[
             x_1,x_2,\cdots,x_n
-            \right]$，则$f\cdot g\neq 0$.\begin{proof}
+            \right]$,则$f\cdot g\neq 0$.\begin{proof}
         考虑首项即得.
     \end{proof}
 }
 \cor{多元多项式环的乘法消去律}{}{
-    由\cref{thm:多元多项式乘法的整性}整性立刻得到，多元多项式环满足乘法消去律：设 $f,g,h\in\mathbb{K}\left[x_1,x_2,\cdots,x_n\right]$，且 $f\neq 0$，则
+    由\cref{thm:多元多项式乘法的整性}整性立刻得到,多元多项式环满足乘法消去律:设 $f,g,h\in\bbk \left[x_1,x_2,\cdots,x_n\right]$,且 $f\neq 0$,则
     \[  f\cdot g=f\cdot h\Longrightarrow g=h \]
 }
 \subsection{齐次分解}
-字典排序的缺点在于排序与单项式次数没有很好的关系，因此引入齐次分解.
+字典排序的缺点在于排序与单项式次数没有很好的关系,因此引入齐次分解.
 \dfn{齐次多项式}{齐次多项式}{
-    若多项式$f$的所有单项式均为$m$次单项式，则称$f$为$m$次齐次多项式或$m$次型.
+    若多项式$f$的所有单项式均为$m$次单项式,则称$f$为$m$次齐次多项式或$m$次型.
 }
 \thm{齐次分解}{齐次分解}{
-    \begin{enumerate}[label=\arabic*）]
-        \item  若$f$、$g$均是$m$次型且$f+g\neq 0$，则$f+g$也是$m$次型
-        \item 设$m$次型$f\neq 0 $和$k$次型$g\neq 0$，则$f\cdot g\neq 0$且$f\cdot g$是$m+k$次型
-        \item 设$f\in\mathbb{K}\left[x_1,x_2,\cdots,x_n\right]$，则一定可以通过限制定义域得到与\[
+    \begin{enumerate}[label=\arabic*)]
+        \item  若$f$、$g$均是$m$次型且$f+g\neq 0$,则$f+g$也是$m$次型
+        \item 设$m$次型$f\neq 0 $和$k$次型$g\neq 0$,则$f\cdot g\neq 0$且$f\cdot g$是$m+k$次型
+        \item 设$f\in\bbk \left[x_1,x_2,\cdots,x_n\right]$,则一定可以通过限制定义域得到与\[
                   f=f_d+f_{d-1}+ \cdots+f_1+f_0
               \]
-              其中$d=\deg f\geqslant 0,f_d\neq 0$为$d$次型，$f_i=0$或为$i$次型$\left(\forall 0\leqslant i\leqslant d-1\right)$
+              其中$d=\deg f\geqslant 0,f_d\neq 0$为$d$次型,$f_i=0$或为$i$次型$\left(\forall 0\leqslant i\leqslant d-1\right)$
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
-            \item 若$f+g\neq 0$，则$f+g$的首项为$f$的首项与$g$的首项之和，故为$m$次型.
-            \item 若$f\cdot g\neq 0$，则$f\cdot g$的首项为$f$的首项与$g$的首项之积，故为$m+k$次型.
+        \begin{enumerate}[label=\arabic*)]
+            \item 若$f+g\neq 0$,则$f+g$的首项为$f$的首项与$g$的首项之和,故为$m$次型.
+            \item 若$f\cdot g\neq 0$,则$f\cdot g$的首项为$f$的首项与$g$的首项之积,故为$m+k$次型.
             \item 逐步考查$d$次单项式、$d-1$次单项式$\cdots$即可.\qedhere
         \end{enumerate}
     \end{proof}
 }
 \lem{}{多元多项式运算结果的次数}{
-    设$f$、$g\in\mathbb{K}\left[x_1,x_2,\cdots,x_n\right]$，则\begin{enumerate}[label=\arabic*）]
+    设$f$、$g\in\bbk \left[x_1,x_2,\cdots,x_n\right]$,则\begin{enumerate}[label=\arabic*)]
         \item $\deg\left(f\cdot g\right)=\deg f+\deg g$
         \item $\deg \left(
                   f\pm g
@@ -158,27 +158,27 @@ $\exists 1\leqslant k\leqslant n,\st i_1=j_1,i_2=j_2,\cdots,i_{k-1}=j_{k-1},i_k>
     \end{enumerate}
 }
 \subsection{多元多项式与多元函数}
-正如\cref{def:多项式函数}，多元多项式$f\left(
+正如\cref{def:多项式函数},多元多项式$f\left(
     x_1,x_2,\cdots,x_n
     \right)\in
-    \mathbb{K}\left[
+    \bbk \left[
         x_1,x_2,\cdots,x_n\right]
 $作赋值后成为一个多元函数$\overline{f}\left(
     x_1,x_2,\cdots,x_n
     \right)$
 \begin{align*}
-    f:\mathbb{K}^n & \longrightarrow \mathbb{K} \\
+    f:\bbk ^n & \longrightarrow \bbk \\
     \begin{pmatrix}
         a_1    \\
         a_2    \\
         \vdots \\
         a_n
     \end{pmatrix}
-                   & \longmapsto f\left(
+              & \longmapsto f\left(
     a_1,a_2,\cdots,a_n
     \right)
 \end{align*}
-一个自然的问题是，$f$、$g\in\mathbb{K}
+一个自然的问题是,$f$、$g\in\bbk
     \left[
         x_1,x_2,\cdots,x_n
         \right]$作为多元多项式相等与作为多元函数相等是否等价.即下述关系是否成立
@@ -194,16 +194,16 @@ $作赋值后成为一个多元函数$\overline{f}\left(
     \right)
 \]
 \clm{多元多项式相等得到多元函数相等}{}{
-    由于对多元多项式相等的定义足够强，于是作为多元多项式相等可推得作为多元函数相等.
+    由于对多元多项式相等的定义足够强,于是作为多元多项式相等可推得作为多元函数相等.
 }
 \lem{非零多项式一定是非零函数}{非零多项式一定是非零函数}{
-    设$0\neq f\in\mathbb{K}\left[
+    设$0\neq f\in\bbk \left[
             x_1,x_2,\cdots,x_n
-            \right]$，则存在$a_1,a_2,\cdots,a_n\in\mathbb{K}\st$
+            \right]$,则存在$a_1,a_2,\cdots,a_n\in\bbk \st$
     \[  f\left(
         a_1,a_2,\cdots,a_n
         \right)\neq 0 \]\begin{proof}
-        考虑归纳法，$n=1$显然，假设$n-1$成立，那么只把$x_n$视为未定元，那么
+        考虑归纳法,$n=1$显然,假设$n-1$成立,那么只把$x_n$视为未定元,那么
         \[
             f=b_m\left(
             x_1,x_2,\cdots,x_{n-1}
@@ -215,7 +215,7 @@ $作赋值后成为一个多元函数$\overline{f}\left(
         \]
         其中$b_m\left(
             x_1,x_2,\cdots,x_{n-1}
-            \right)\neq 0$，那么由归纳假设，$\exists a_1,a_2,\cdots,a_{n-1}\in\mathbb{K}\st$
+            \right)\neq 0$,那么由归纳假设,$\exists a_1,a_2,\cdots,a_{n-1}\in\bbk \st$
         \[
             b_m\left(
             a_1,a_2,\cdots,a_{n-1}
@@ -225,18 +225,18 @@ $作赋值后成为一个多元函数$\overline{f}\left(
             a_1,a_2,\cdots,a_{n-1}
             \right)\neq 0
         \]
-        是一个关于$x_n$的$m$次多项式，故有根.
+        是一个关于$x_n$的$m$次多项式,故有根.
     \end{proof}
 }
 \cor{多元多项式相等等价于多元函数相等}{多元多项式相等等价于多元函数相等}{
-    设$f$、$g\in\mathbb{K}\left[
+    设$f$、$g\in\bbk \left[
             x_1,x_2,\cdots,x_n
-            \right]$，则它们作为多元多项式相等当且仅当它们作为多元函数相等.\begin{proof}
-        作为多元多项式相等推得作为多元函数相等显然，作为多元函数相等推得作为多元多项式相等考虑反证法.
+            \right]$,则它们作为多元多项式相等当且仅当它们作为多元函数相等.\begin{proof}
+        作为多元多项式相等推得作为多元函数相等显然,作为多元函数相等推得作为多元多项式相等考虑反证法.
 
-        设$f$、$g\in\mathbb{K}\left[
+        设$f$、$g\in\bbk \left[
                 x_1,x_2,\cdots,x_n
-                \right]$且$\overline{f}=\overline{g},f\neq g$则$f-g\neq 0$，由\cref{lem:非零多项式一定是非零函数}$\exists a_1,a_2,\cdots,a_n\in\mathbb{K}\st$
+                \right]$且$\overline{f}=\overline{g},f\neq g$则$f-g\neq 0$,由\cref{lem:非零多项式一定是非零函数}$\exists a_1,a_2,\cdots,a_n\in\bbk \st$
         \[
             \left(f-g\right)
             \left(
@@ -248,15 +248,15 @@ $作赋值后成为一个多元函数$\overline{f}\left(
             a_1,a_2,\cdots,a_n
             \right)
         \]
-        矛盾，证毕.
+        矛盾,证毕.
     \end{proof}
 }
 \clm{}{}{
-    同样的，可以定义多元多项式的整除关系、公因式、最大公因式、公倍式、最小公倍式、可约与不可约、辗转相除法、带余除法等等.但是，并不是所有的性质都可以推广到多元多项式.
+    同样的,可以定义多元多项式的整除关系、公因式、最大公因式、公倍式、最小公倍式、可约与不可约、辗转相除法、带余除法等等.但是,并不是所有的性质都可以推广到多元多项式.
 }
 \exa{}{}{
-    考虑$f=x,g=y\in\mathbb{K}\left[x,y\right]$，容易有$\left(f,g\right)=1$且$\forall
-        u\left(x,y\right),v\left(x,y\right)\in\mathbb{K}\left[x,y\right]$
+    考虑$f=x,g=y\in\bbk \left[x,y\right]$,容易有$\left(f,g\right)=1$且$\forall
+        u\left(x,y\right),v\left(x,y\right)\in\bbk \left[x,y\right]$
     \[
         fu\left(x,y\right) +gv\left(x,y\right)\neq 1
     \]
@@ -264,9 +264,9 @@ $作赋值后成为一个多元函数$\overline{f}\left(
 \thm{多元多项式的因式分解}{多元多项式的因式分解}{
     设$f\left(
         x_1,x_2,\cdots,x_n
-        \right)\in\mathbb{K}\left[
+        \right)\in\bbk \left[
             x_1,x_2,\cdots,x_n
-            \right]$，则有如下分解\[
+            \right]$,则有如下分解\[
         f\left(
         x_1,x_2,\cdots,x_n
         \right)=
@@ -280,16 +280,16 @@ $作赋值后成为一个多元函数$\overline{f}\left(
     \]
     其中
     $
-        c\in\mathbb{K},P_i \left(
+        c\in\bbk ,P_i \left(
         x_1,x_2,\cdots,x_n
         \right)\left(
         \forall 1\leqslant i\leqslant k
-        \right)$是$\mathbb{K}$上的 $n$ 元不可约多项式.并且这一分解在相伴定义下是唯一的.\begin{proof}
+        \right)$是$\bbk $上的 $n$ 元不可约多项式.并且这一分解在相伴定义下是唯一的.\begin{proof}
         该证明超过高等代数范畴.
     \end{proof}
 }
 \clm{}{}{
-    基于\cref{thm:多元多项式的因式分解}，我们将$n$ 元多项式环$\mathbb{K}\left[
+    基于\cref{thm:多元多项式的因式分解},我们将$n$ 元多项式环$\bbk \left[
             x_1,x_2,\cdots,x_n
-            \right]$称为唯一分解整区（UFD）.
+            \right]$称为唯一分解整区(UFD).
 }

@@ -2,12 +2,12 @@
 \section{奇异值分解}
 \subsection{正交相抵标准型}
 \dfn{奇异值和奇异向量}{奇异值和奇异向量}{
-    设$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$,若$\exists0\leqslant\sigma\in\mathbb{R},\bm{0}\neq\bm{v}\in\mathbb{R}^n,\bm{0}\neq\bm{u}\in\mathbb{R}^m:$\[
+    设$\bm{A}\in M_{m\times n}\left(\bbr \right)$,若$\exists0\leqslant\sigma\in\bbr ,\bm{0}\neq\bm{v}\in\bbr ^n,\bm{0}\neq\bm{u}\in\bbr ^m:$\[
         \bm{Av}=\sigma\bm{u},\bm{A}'\bm{u}=\sigma\bm{v}
-    \]则$\sigma$称为$\bm{A}$的奇异值，$\bm{v},\bm{u}$分别称为$\bm{A}$关于$\sigma$的右、左奇异向量.
+    \]则$\sigma$称为$\bm{A}$的奇异值,$\bm{v},\bm{u}$分别称为$\bm{A}$关于$\sigma$的右、左奇异向量.
 }
 \dfn{线性映射的伴随}{线性映射的伴随}{
-    设欧式空间$V^n,U^m$，线性映射$\bm{\varphi}:V\longrightarrow U$，若存在线性映射$\bm{\varphi}^*:U\longrightarrow V,\forall\bm{v}\in V,\bm{u}\in U:$\[
+    设欧式空间$V^n,U^m$,线性映射$\bm{\varphi}:V\longrightarrow U$,若存在线性映射$\bm{\varphi}^*:U\longrightarrow V,\forall\bm{v}\in V,\bm{u}\in U:$\[
         \left(
         \bm{\varphi}\left(\bm{v}\right),\bm{u}
         \right)=\left(
@@ -21,35 +21,35 @@
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
             \right\},\left\{
             \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m
-            \right\}$，此时$\bm{\varphi}$的表示阵为$\bm{A},\bm{v}\in V$的坐标向量是$\bm{x}\in\mathbb{R}^n,\bm{u}\in U$的坐标向量是$\bm{y}\in\mathbb{R}^m$.\begin{align*}
+            \right\}$,此时$\bm{\varphi}$的表示阵为$\bm{A},\bm{v}\in V$的坐标向量是$\bm{x}\in\bbr ^n,\bm{u}\in U$的坐标向量是$\bm{y}\in\bbr ^m$.\begin{align*}
             \left(
             \bm{\varphi}\left(\bm{v}\right),\bm{u}
             \right)_U=\left(\bm{Ax}\right)'\bm{y}=\bm{x}'\bm{A}'\bm{y}
-        \end{align*}令其中$\bm{A}'$是$\bm{\varphi}^*$在给定基下的表示阵，存在性证毕.
+        \end{align*}令其中$\bm{A}'$是$\bm{\varphi}^*$在给定基下的表示阵,存在性证毕.
 
         唯一性参考\cref{thm:伴随算子的存在性}.
     \end{proof}
 }
 \dfn{奇异值和奇异向量}{奇异值和奇异向量的定义2}{
-    设欧式空间$V^n,U^m,$线性映射$\bm{\varphi}\in\mathcal{L}\left(V,U\right)$，伴随$\bm{\varphi}^*$，若$\exists0\leqslant\sigma\in\mathbb{R},\bm{0}\neq\bm{v}\in V,\bm{0}\neq\bm{u}\in U$使得\[
+    设欧式空间$V^n,U^m,$线性映射$\bm{\varphi}\in\call \left(V,U\right)$,伴随$\bm{\varphi}^*$,若$\exists0\leqslant\sigma\in\bbr ,\bm{0}\neq\bm{v}\in V,\bm{0}\neq\bm{u}\in U$使得\[
         \bm{\varphi}\left(\bm{v}\right)=\sigma\bm{u},\bm{\varphi}^*\left(\bm{u}\right)=\sigma\bm{v}
-    \]则称$\sigma$是$\bm{\varphi}$的奇异值，$\bm{v},\bm{u}$分别是$\bm{\varphi}$关于$\sigma$的右、左奇异向量.
+    \]则称$\sigma$是$\bm{\varphi}$的奇异值,$\bm{v},\bm{u}$分别是$\bm{\varphi}$关于$\sigma$的右、左奇异向量.
 }
 \rem{}{}{
-    \cref{def:奇异值和奇异向量的定义2}下$\bm{\varphi}^*\bm{\varphi}\in\mathcal{L}\left(V\right)$是半正定自伴随算子且\[
+    \cref{def:奇异值和奇异向量的定义2}下$\bm{\varphi}^*\bm{\varphi}\in\call \left(V\right)$是半正定自伴随算子且\[
         \bm{\varphi}^*\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}^*\left(
         \sigma\bm{u}
         \right)=\sigma^2\bm{v}
-    \]同样地，$\bm{\varphi\varphi}^*\in\mathcal{L}\left(U\right)$是半正定自伴随算子且\[
+    \]同样地,$\bm{\varphi\varphi}^*\in\call \left(U\right)$是半正定自伴随算子且\[
         \bm{\varphi\varphi}^*\left(\bm{u}\right)=\bm{\varphi}\left(
         \sigma\bm{v}
         \right)=\sigma^2\bm{u}
     \]
 
-    也就是说，$\sigma$是$\bm{\varphi}^*\bm{\varphi}$的特征值，$\bm{v}$是$\bm{\varphi}^*\bm{\varphi}$对应于$\sigma$的特征向量；$\sigma$是$\bm{\varphi\varphi}^*$的特征值，$\bm{u}$是$\bm{\varphi\varphi}^*$对应于$\sigma$的特征向量.
+    也就是说,$\sigma$是$\bm{\varphi}^*\bm{\varphi}$的特征值,$\bm{v}$是$\bm{\varphi}^*\bm{\varphi}$对应于$\sigma$的特征向量；$\sigma$是$\bm{\varphi\varphi}^*$的特征值,$\bm{u}$是$\bm{\varphi\varphi}^*$对应于$\sigma$的特征向量.
 }
 \thm{}{}{
-    设欧式空间$V^n,U^m,$线性映射$\bm{\varphi}\in\mathcal{L}\left(V,U\right)$，则一定有$V$的一组标准正交基$\left\{
+    设欧式空间$V^n,U^m,$线性映射$\bm{\varphi}\in\call \left(V,U\right)$,则一定有$V$的一组标准正交基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
         \right\}$和$U$的一组标准正交基$\left\{
         \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m
@@ -64,14 +64,14 @@
                      &          & \ddots &          \\
                      &          &        & \sigma_r
         \end{pmatrix}
-    \]其中$\sigma_1\geqslant\sigma_2\geqslant\cdots\geqslant\sigma_r>0$是$\bm{\varphi}$的所有非零（或者是正）奇异值（这由\cref{thm:利用特征值判定}保证一致）.\begin{proof}
-        $\bm{\varphi}^*\bm{\varphi}$是半正定自伴随算子，则存在$V$的一组标准正交基$\left\{
+    \]其中$\sigma_1\geqslant\sigma_2\geqslant\cdots\geqslant\sigma_r>0$是$\bm{\varphi}$的所有非零(或者是正)奇异值(这由\cref{thm:利用特征值判定}保证一致).\begin{proof}
+        $\bm{\varphi}^*\bm{\varphi}$是半正定自伴随算子,则存在$V$的一组标准正交基$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
             \right\}$使得$\bm{\varphi}^*\bm{\varphi}$的表示矩阵为\[
-            \mathrm{diag}\,\left\{
+            \diag \,\left\{
             \lambda_1,\lambda_2,\cdots,\lambda_r;0,0,\cdots,0
             \right\}
-        \]其中$r=\mathrm{r}\,\left(\bm{\varphi}^*\bm{\varphi}\right)=\mathrm{r}\,\left(\bm{\varphi}\right)$且$\lambda_1\geqslant\lambda_2\geqslant\cdots\lambda_r>0$，也就是\[
+        \]其中$r=\rmr \,\left(\bm{\varphi}^*\bm{\varphi}\right)=\rmr \,\left(\bm{\varphi}\right)$且$\lambda_1\geqslant\lambda_2\geqslant\cdots\lambda_r>0$,也就是\[
             \bm{\varphi}^*\bm{\varphi}\left(
             \bm{e}_i
             \right)=\begin{cases*}
@@ -117,9 +117,9 @@
             \right)=\bm{0}
         \end{align*}令$\displaystyle\forall1\leqslant i\leqslant r:\sigma_i=\sqrt{\lambda_i},\bm{f}_i=\frac{1}{\sigma_i}\bm{\varphi}\left(\bm{e}_i\right)$,即$\left\{
             \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_r
-            \right\}$是$U$中两两正交的单位向量，扩张为$U$的标准正交基$\left\{
+            \right\}$是$U$中两两正交的单位向量,扩张为$U$的标准正交基$\left\{
             \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m
-            \right\}$，则\[
+            \right\}$,则\[
             \bm{\varphi}\left(\bm{e}_i\right)=\begin{cases*}
                 \sigma_i\bm{f}_i, & $1\leqslant i\leqslant r$   \\
                 \bm{0},           & $r+1\leqslant i\leqslant n$
@@ -185,7 +185,7 @@
     转化为代数语言即得矩阵的正交相抵标准型.
 }
 \thm{正交相抵标准型}{正交相抵标准型}{
-    设$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$，则存在$m$阶正交阵$\bm{P}$和$n$阶正交阵$\bm{Q}$使得\[
+    设$\bm{A}\in M_{m\times n}\left(\bbr \right)$,则存在$m$阶正交阵$\bm{P}$和$n$阶正交阵$\bm{Q}$使得\[
         \bm{P}'\bm{AQ}=\begin{pmatrix}
             \bm{S} & \bm{O} \\
             \bm{O} & \bm{O}
@@ -195,37 +195,37 @@
                      &          & \ddots &          \\
                      &          &        & \sigma_r
         \end{pmatrix}
-    \]其中$\sigma_1\geqslant\sigma_2\geqslant\cdots\geqslant\sigma_r>0$是$\bm{A}$的全体非零（或者说正）奇异值.
+    \]其中$\sigma_1\geqslant\sigma_2\geqslant\cdots\geqslant\sigma_r>0$是$\bm{A}$的全体非零(或者说正)奇异值.
 }
 \subsection{奇异值分解}
 \dfn{奇异值分解}{奇异值分解}{
-    $\forall\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$，一定存在$m$阶正交阵$\bm{P}$和$n$阶正交阵$\bm{Q}$使得\[
+    $\forall\bm{A}\in M_{m\times n}\left(\bbr \right)$,一定存在$m$阶正交阵$\bm{P}$和$n$阶正交阵$\bm{Q}$使得\[
         \bm{A}=\bm{P}\begin{pmatrix}
             \bm{S} & \bm{O} \\
             \bm{O} & \bm{O}
         \end{pmatrix}\bm{Q}'
-    \]称为$\bm{A}$的奇异值分解（SVD）.
+    \]称为$\bm{A}$的奇异值分解(SVD).
 }
 \clm{}{}{
-    求$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$的奇异值分解的求法：\begin{enumerate}[label=\arabic*）]
+    求$\bm{A}\in M_{m\times n}\left(\bbr \right)$的奇异值分解的求法:\begin{enumerate}[label=\arabic*)]
         \item 求$\bm{A}'\bm{A}$的正交相似标准型即$n$阶正交阵$\bm{Q}$使得\[
-                  \bm{Q}'\bm{A}'\bm{AQ}=\mathrm{diag}\,\left\{
+                  \bm{Q}'\bm{A}'\bm{AQ}=\diag \,\left\{
                   \lambda_1,\lambda_2,\cdots,\lambda_r;0,0,\cdots,0
                   \right\}
-              \]其中$r=\mathrm{r}\,\left(\bm{A}'\bm{A}\right)=\mathrm{r}\,\left(\bm{A}\right),\lambda_1\geqslant\lambda_2\geqslant\cdots\geqslant\lambda_r>0$
+              \]其中$r=\rmr \,\left(\bm{A}'\bm{A}\right)=\rmr \,\left(\bm{A}\right),\lambda_1\geqslant\lambda_2\geqslant\cdots\geqslant\lambda_r>0$
         \item 做分块$\bm{Q}=\left(
                   \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
                   \right),\sigma_i=\sqrt{\lambda_i}$,作$\forall1\leqslant i\leqslant r:$\[
                   \bm{\beta}_i=\frac{1}{\sigma_i}\bm{A}\bm{\alpha}_i
               \]即$\left\{
                   \bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\beta}_r
-                  \right\}$是$\mathbb{R}^m$中的两两正交的单位向量，扩张为$\mathbb{R}^m$的标准正交基\[\left\{
+                  \right\}$是$\bbr ^m$中的两两正交的单位向量,扩张为$\bbr ^m$的标准正交基\[\left\{
                   \bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\beta}_r,\bm{\beta}_{r+1},\cdots,\bm{\beta}_m
                   \right\}\]
         \item 令正交阵$\bm{P}=\left(
                   \bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\beta}_r,
                   \bm{\beta}_{r+1},\cdots,\bm{\beta}_m
-                  \right)$，于是\[
+                  \right)$,于是\[
                   \bm{A}=\bm{P}\begin{pmatrix}
                       \bm{S} & \bm{O} \\
                       \bm{O} & \bm{O}
@@ -234,7 +234,7 @@
     \end{enumerate}
 }
 \subsection{SVD的应用}
-$(1)$对$\bm{A}\in M_n\left(\mathbb{R}\right)$，奇异值分解等价于极分解.设极分解\[
+$(1)$对$\bm{A}\in M_n\left(\bbr \right)$,奇异值分解等价于极分解.设极分解\[
     \bm{A}=\bm{OS}=\bm{O}\left(
     \bm{P}'\bm{\varLambda}\bm{P}
     \right)
@@ -253,7 +253,7 @@ $(1)$对$\bm{A}\in M_n\left(\mathbb{R}\right)$，奇异值分解等价于极分�
     \bm{OP}'
     \right)\bm{AP}
 \]
-另一方面，设SVD\[
+另一方面,设SVD\[
     \bm{A}=\bm{P}\begin{pmatrix}
         \bm{S} & \bm{O} \\
         \bm{O} & \bm{O}
@@ -267,19 +267,19 @@ $(1)$对$\bm{A}\in M_n\left(\mathbb{R}\right)$，奇异值分解等价于极分�
     \right)
 \]
 
-$(2)$主成分分析（PCA）：\[
+$(2)$主成分分析(PCA):\[
     \bm{A}=\bm{P}\begin{pmatrix}
         \bm{S} & \bm{O} \\
         \bm{O} & \bm{O}
     \end{pmatrix}\bm{Q}'
-\]正交阵没有对数据产生根本的影响，他的所有信息均在奇异值矩阵$\bm{S}$中.例如\begin{enumerate}[label=\arabic*）]
-    \item 图片去噪音：$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$,取其$\begin{pmatrix}
+\]正交阵没有对数据产生根本的影响,他的所有信息均在奇异值矩阵$\bm{S}$中.例如\begin{enumerate}[label=\arabic*)]
+    \item 图片去噪音:$\bm{A}\in M_{m\times n}\left(\bbr \right)$,取其$\begin{pmatrix}
                   \sigma_1 &          &        &          \\
                            & \sigma_2 &        &          \\
                            &          & \ddots &          \\
                            &          &        & \sigma_r
-              \end{pmatrix}$，实际中，再把充分小的奇异值视作$0$
-    \item 图片存储：对于$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$，至少利用$m\cdot n$来存储，做分块\begin{align*}
+              \end{pmatrix}$,实际中,再把充分小的奇异值视作$0$
+    \item 图片存储:对于$\bm{A}\in M_{m\times n}\left(\bbr \right)$,至少利用$m\cdot n$来存储,做分块\begin{align*}
               \bm{A} & =\left(
               \bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\beta}_r,\bm{\beta}_{r+1},\cdots,\bm{\beta}_m
               \right)\begin{pmatrix}
@@ -294,18 +294,18 @@ $(2)$主成分分析（PCA）：\[
               \right)$
 \end{enumerate}
 
-$(3)$潜在语言索引（LSI）：考虑$m=100000\times 10000=n$的矩阵$\bm{A}$，作SVD只要考虑$r\times r$的那个矩阵就好了.
+$(3)$潜在语言索引(LSI):考虑$m=100000\times 10000=n$的矩阵$\bm{A}$,作SVD只要考虑$r\times r$的那个矩阵就好了.
 \exa{}{}{
-    设$\bm{\varphi},\bm{\psi}\in\mathcal{L}\left(V^n,U^m\right)$使得$\bm{\varphi}^*\bm{\varphi}=\bm{\psi}^*\bm{\psi}$，证明：存在正交算子$\bm{\omega}\in\mathcal{L}\left(U\right)$使得$\bm{\varphi}=\bm{\omega\psi}$.\begin{proof}
+    设$\bm{\varphi},\bm{\psi}\in\call \left(V^n,U^m\right)$使得$\bm{\varphi}^*\bm{\varphi}=\bm{\psi}^*\bm{\psi}$,证明:存在正交算子$\bm{\omega}\in\call \left(U\right)$使得$\bm{\varphi}=\bm{\omega\psi}$.\begin{proof}
         取$V$的标准正交基$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
             \right\}$使得$\bm{\varphi}^*\bm{\varphi}$和$\bm{\psi}^*\bm{\psi}$的表示阵为\[
-            \mathrm{diag}\,\left\{
+            \diag \,\left\{
             \lambda_1,\lambda_2,\cdots,\lambda_r;0,0,\cdots,0
             \right\}
         \]其中$\lambda_1\geqslant\lambda_2\geqslant\cdots\geqslant\lambda_r>0$.作$\displaystyle\forall1\leqslant i\leqslant r:\sigma_i=\sqrt{\lambda_i},\bm{f}_i=\frac{1}{\sigma_i}\bm{\varphi}\left(\bm{e}_i\right)$,扩张为$U$的标准正交基$\left\{
             \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_r,\bm{f}_{r+1},\cdots,\bm{f}_m
-            \right\}$，另做$\displaystyle\forall1\leqslant i\leqslant r:\bm{g}_i=\frac{1}{\sigma_i}\bm{\psi}\left(\bm{e}_i\right)$并扩张为另一组$U$的标准正交基$
+            \right\}$,另做$\displaystyle\forall1\leqslant i\leqslant r:\bm{g}_i=\frac{1}{\sigma_i}\bm{\psi}\left(\bm{e}_i\right)$并扩张为另一组$U$的标准正交基$
             \left\{
             \bm{g}_1,\bm{g}_2,\cdots,\bm{g}_r,\bm{g}_{r+1},\cdots,\bm{g}_m
             \right\}
@@ -348,7 +348,7 @@ $(3)$潜在语言索引（LSI）：考虑$m=100000\times 10000=n$的矩阵$\bm{A
 }
 $(4)$Moore-Penrose广义逆.
 \dfn{Moore-Penrose广义逆}{Moore-Penrose广义逆}{
-    设欧式空间$V^n,U^m$，线性映射$\bm{\varphi}\in\mathcal{L}\left(V,U\right)$，若存在线性映射$\bm{\varphi}^{\dagger}\in\mathcal{L}\left(U,V\right)$，满足\begin{enumerate}[label=\arabic*）]
+    设欧式空间$V^n,U^m$,线性映射$\bm{\varphi}\in\call \left(V,U\right)$,若存在线性映射$\bm{\varphi}^{\dagger}\in\call \left(U,V\right)$,满足\begin{enumerate}[label=\arabic*)]
         \item $\bm{\varphi}\bm{\varphi}^{\dagger}\bm{\varphi}=\bm{\varphi}$
         \item $\bm{\varphi}^{\dagger}\bm{\varphi}\bm{\varphi}^{\dagger}=\bm{\varphi}^{\dagger}$
         \item $\bm{\varphi}\bm{\varphi}^{\dagger}$和$\bm{\varphi}^{\dagger}\bm{\varphi}$分别是是$V$和$U$上的自伴随算子
@@ -356,20 +356,20 @@ $(4)$Moore-Penrose广义逆.
 }
 \thm{Moore-Penrose广义逆的存在性}{Moore-Penrose广义逆的存在性}{
     \cref{def:Moore-Penrose广义逆}Moore-Penrose广义逆$\bm{\varphi}^{\dagger}$存在且唯一.\begin{proof}
-        做限制$\bm{\xi}=\bm{\varphi}\mid_{\left(\mathrm{Ker}\,\bm{\varphi}\right)^{\perp}}:\left(\mathrm{Ker}\,\bm{\varphi}\right)^{\perp}\longrightarrow\mathrm{Im}\,\bm{\varphi}$,于是$\mathrm{Ker}\,\bm{\xi}=\mathrm{Ker}\,\bm{\varphi}\cap\left(\mathrm{Ker}\,\bm{\varphi}\right)^{\perp}=0$，又\[
+        做限制$\bm{\xi}=\bm{\varphi}\mid_{\left(\Ker \,\bm{\varphi}\right)^{\perp}}:\left(\Ker \,\bm{\varphi}\right)^{\perp}\longrightarrow\Image \,\bm{\varphi}$,于是$\Ker \,\bm{\xi}=\Ker \,\bm{\varphi}\cap\left(\Ker \,\bm{\varphi}\right)^{\perp}=0$,又\[
             \dim \left(
-            \mathrm{Ker}\,\bm{\varphi}
-            \right)^{\perp}=\dim V-\dim\mathrm{Ker}\,\bm{\varphi}=\dim\mathrm{Im}\,\bm{\varphi}
+            \Ker \,\bm{\varphi}
+            \right)^{\perp}=\dim V-\dim\Ker \,\bm{\varphi}=\dim\Image \,\bm{\varphi}
         \]即$\bm{\xi}:\left(
-            \mathrm{Ker}\,\bm{\varphi}
-            \right)^{\perp}\longrightarrow\mathrm{Im}\,\bm{\varphi}$是线性同构.
+            \Ker \,\bm{\varphi}
+            \right)^{\perp}\longrightarrow\Image \,\bm{\varphi}$是线性同构.
 
         定义\[
             \bm{\varphi}^{\dagger}\left(\bm{u}\right)=\begin{cases*}
-                \bm{\xi}^{-1}\left(\bm{u}\right), & $\bm{u}\in\mathrm{Im}\,\bm{\varphi}$                      \\
-                \bm{0},                           & $\bm{u}\in\left(\mathrm{Im}\,\bm{\varphi}\right)^{\perp}$
+                \bm{\xi}^{-1}\left(\bm{u}\right), & $\bm{u}\in\Image \,\bm{\varphi}$                      \\
+                \bm{0},                           & $\bm{u}\in\left(\Image \,\bm{\varphi}\right)^{\perp}$
             \end{cases*}
-        \]得到$\bm{\varphi}^{\dagger}\in \mathcal{L}\left(
+        \]得到$\bm{\varphi}^{\dagger}\in \call \left(
             U,V
             \right)$.
 
@@ -386,18 +386,18 @@ $(4)$Moore-Penrose广义逆.
                 \bm{0},           & $r+1\leqslant i\leqslant n$
             \end{cases*}
         \]于是\[
-            \mathrm{Ker}\,\bm{\varphi}=L\left(
+            \Ker \,\bm{\varphi}=L\left(
             \bm{e}_{r+1},\bm{e}_{r+2},\cdots,\bm{e}_n
             \right),\left(
-            \mathrm{Ker}\,\bm{\varphi}
+            \Ker \,\bm{\varphi}
             \right)^{\perp}=L\left(
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r
             \right)
         \]\[
-            \mathrm{Im}\,\bm{\varphi}=L\left(
+            \Image \,\bm{\varphi}=L\left(
             \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_r
             \right),\left(
-            \mathrm{Im}\,\bm{\varphi}
+            \Image \,\bm{\varphi}
             \right)^{\perp}=L\left(
             \bm{f}_{r+1},\bm{f}_{r+2},\cdots,\bm{f}_m
             \right)
@@ -426,17 +426,17 @@ $(4)$Moore-Penrose广义逆.
             \end{pmatrix}
         \]那么可以验证$(1),(2),(3)$成立.
 
-        存在性证毕，唯一性见\cite{torsor3}.
+        存在性证毕,唯一性见\cite{torsor3}.
     \end{proof}
 }
 \thm{Moore-Penrose广义逆}{Moore-Penrose广义逆}{
-    设$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right)$，则存在唯一的$\bm{A}^{\dagger}\in M_{n\times m}\left(\mathbb{R}\right)$满足\begin{enumerate}[label=\arabic*）]
+    设$\bm{A}\in M_{m\times n}\left(\bbr \right)$,则存在唯一的$\bm{A}^{\dagger}\in M_{n\times m}\left(\bbr \right)$满足\begin{enumerate}[label=\arabic*)]
         \item $\bm{AA}^{\dagger}\bm{A}=\bm{A}$
         \item $\bm{A}^{\dagger}\bm{AA}^{\dagger}=\bm{A}^{\dagger}$
-        \item $\bm{AA}^{\dagger}$和$\bm{A}^{\dagger}\bm{A}$分别是$M_n\left(\mathbb{R}\right)$和$M_m\left(\mathbb{R}\right)$上的实对称阵
+        \item $\bm{AA}^{\dagger}$和$\bm{A}^{\dagger}\bm{A}$分别是$M_n\left(\bbr \right)$和$M_m\left(\bbr \right)$上的实对称阵
     \end{enumerate}上述$\bm{A}^{\dagger}$称为$\bm{A}$的Moore-Penrose广义逆.
 }
-容易知道，若$\bm{A}$的奇异值分解为\[
+容易知道,若$\bm{A}$的奇异值分解为\[
     \bm{A}=\bm{P}\begin{pmatrix}
         \bm{S} & \bm{O} \\
         \bm{O} & \bm{O}
@@ -448,18 +448,18 @@ $(4)$Moore-Penrose广义逆.
     \end{pmatrix}\bm{P}'
 \]
 \clm{}{}{
-    也就是说，知道了$\bm{A}$的奇异值分解，就知道了$\bm{A}^{\dagger}$.
+    也就是说,知道了$\bm{A}$的奇异值分解,就知道了$\bm{A}^{\dagger}$.
 }
 \clm{}{}{
-    在$\bm{\varphi},\bm{A}$可逆时，$\bm{\varphi}^{\dagger}=\bm{\varphi}^{-1},\bm{A}^{\dagger}=\bm{A}^{-1}$.
+    在$\bm{\varphi},\bm{A}$可逆时,$\bm{\varphi}^{\dagger}=\bm{\varphi}^{-1},\bm{A}^{\dagger}=\bm{A}^{-1}$.
 }
 \clm{}{}{
     若$\bm{\varphi}=\bm{0},\bm{A}=\bm{O},\bm{\varphi}^{\dagger}=\bm{0},\bm{A}^{\dagger}=\bm{O}.$
 }
 \lem{}{正交投影算子}{
-    设欧式空间$V^n,U^m$，线性映射$\bm{\varphi}\in\mathcal{L}\left(V,U\right)$，$\bm{\varphi}^{\dagger}$是$\bm{\varphi}$的广义逆，则$\bm{\varphi}^{\dagger}\bm{\varphi}$是从$V$到$\left(
-        \mathrm{Ker}\,\bm{\varphi}
-        \right)^{\perp}$的正交投影算子，且$\bm{\varphi}\bm{\varphi}^{\dagger}$是从$U$到$\mathrm{Im}\,\bm{\varphi}$的正交投影算子.\begin{proof}
+    设欧式空间$V^n,U^m$,线性映射$\bm{\varphi}\in\call \left(V,U\right)$,$\bm{\varphi}^{\dagger}$是$\bm{\varphi}$的广义逆,则$\bm{\varphi}^{\dagger}\bm{\varphi}$是从$V$到$\left(
+        \Ker \,\bm{\varphi}
+        \right)^{\perp}$的正交投影算子,且$\bm{\varphi}\bm{\varphi}^{\dagger}$是从$U$到$\Image \,\bm{\varphi}$的正交投影算子.\begin{proof}
         $\forall1\leqslant i\leqslant r:$\[
             \bm{\varphi}^{\dagger}\bm{\varphi}\left(
             \bm{e}_i
@@ -473,47 +473,47 @@ $(4)$Moore-Penrose广义逆.
         \]
     \end{proof}
 }
-求解线性方程组是高等代数最早的问题，我们已经圆满解决了有解从而求解的问题，但是如何对无解的情形进行一个逼近是未曾考虑的.
+求解线性方程组是高等代数最早的问题,我们已经圆满解决了有解从而求解的问题,但是如何对无解的情形进行一个逼近是未曾考虑的.
 \thm{求解线性方程组}{求解线性方程组}{
-    设$\bm{A}\in M_{m\times n}\left(\mathbb{R}\right),\bm{\beta}\in\mathbb{R}^m,\bm{x}\in\mathbb{R}^n$，考虑\[
+    设$\bm{A}\in M_{m\times n}\left(\bbr \right),\bm{\beta}\in\bbr ^m,\bm{x}\in\bbr ^n$,考虑\[
         \bm{Ax}=\bm{\beta}\tag{$\ast$}
     \]
-    \begin{enumerate}[label=\arabic*）]
-        \item 若$\ast$有解，则$\bm{z}=\bm{A}^{\dagger}\bm{\beta}$是$\ast$的范数最小的解
-        \item 若$\ast$无解，则$\bm{z}=\bm{A}^{\dagger}\bm{\beta}$是$\ast$的最佳逼近即$\forall\bm{x}\in\mathbb{R}^n:$\[
+    \begin{enumerate}[label=\arabic*)]
+        \item 若$\ast$有解,则$\bm{z}=\bm{A}^{\dagger}\bm{\beta}$是$\ast$的范数最小的解
+        \item 若$\ast$无解,则$\bm{z}=\bm{A}^{\dagger}\bm{\beta}$是$\ast$的最佳逼近即$\forall\bm{x}\in\bbr ^n:$\[
                   \left\lVert\bm{A}\bm{z}-\bm{\beta}\right\rVert\leqslant\left\lVert\bm{A}\bm{x}-\bm{\beta}\right\rVert
               \]
     \end{enumerate}\begin{proof}
-        $(1)$设$\bm{x}_0$是解:$\bm{\beta}=\bm{Ax}_0\Longrightarrow\bm{z}=\bm{A}^{\dagger}\bm{Ax}_0$，于是
+        $(1)$设$\bm{x}_0$是解:$\bm{\beta}=\bm{Ax}_0\Longrightarrow\bm{z}=\bm{A}^{\dagger}\bm{Ax}_0$,于是
         \begin{align*}
             \bm{Az}=\bm{AA}^{\dagger}\bm{Ax}_0=\bm{Ax}_0=\bm{\beta}
         \end{align*}即$\bm{z}$是解.
 
         \incfig[scale=0.9]{problem-1}
 
-        如图，这样的分解$\bm{z}=\bm{A}^{\dagger}\bm{Ax}_0$一定是范数最小的.
+        如图,这样的分解$\bm{z}=\bm{A}^{\dagger}\bm{Ax}_0$一定是范数最小的.
 
         $(2)$
         \incfig[scale=0.9]{problem-2}
 
         \[
             \bm{Az}=\bm{AA}^{\dagger}\bm{\beta}\perp\left(
-            \mathrm{Im}\,\bm{A}
+            \Image \,\bm{A}
             \right)^{\perp}
         \]考虑\begin{align*}
             \bm{Ax}-\bm{\beta} & =\bm{A}\left(
             \bm{x}-\bm{z}
             \right)+\bm{Az}-\bm{\beta}
-        \end{align*}分别属于$\mathrm{Im}\,\bm{A}$和$\left(
-            \mathrm{Im}\,\bm{A}
-            \right)^{\perp}$，于是\[
+        \end{align*}分别属于$\Image \,\bm{A}$和$\left(
+            \Image \,\bm{A}
+            \right)^{\perp}$,于是\[
             \left\lVert\bm{Ax}-\bm{\beta}\right\rVert^2\geqslant\left\lVert\bm{Az}-\bm{\beta}\right\rVert^2
         \]即$\bm{z}$是最佳逼近.
     \end{proof}
 }
-利用\cref{thm:求解线性方程组}，实际中求解\[
+利用\cref{thm:求解线性方程组},实际中求解\[
     \bm{A}^{m\times n}\bm{x}^{n\times 1}=\bm{\beta}^{m\times 1}
-\]（其中$m\gg 0,\mathrm{r}\,\left(\bm{A}\right)=n$）这样的线性方程组无解时，就可以利用\[
+\](其中$m\gg 0,\rmr \,\left(\bm{A}\right)=n$)这样的线性方程组无解时,就可以利用\[
     \bm{x}=\bm{A}^{\dagger}\bm{\beta}=\left(
     \bm{A}'\bm{A}
     \right)^{-1}\bm{A}'\bm{\beta}

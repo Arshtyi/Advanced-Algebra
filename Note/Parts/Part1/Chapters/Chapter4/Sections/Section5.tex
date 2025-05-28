@@ -2,35 +2,35 @@
 \section{不变子空间}
 \subsection{定义}
 \dfn{不变子空间}{不变子空间}{
-    设线性映射$\bm{\varphi}\in \call  \left(V_{\mathbb{K}}\right)$，$U$是$V$的子空间.若
+    设线性映射$\bm{\varphi}\in \call  \left(V_{\bbk }\right)$,$U$是$V$的子空间.若
     \[
         \bm{\varphi}\left(U\right)\subseteq U
     \]
-    则称$U$为线性变换$\bm{\varphi}$的不变子空间，或称为$\bm{\varphi}$-不变子空间.
+    则称$U$为线性变换$\bm{\varphi}$的不变子空间,或称为$\bm{\varphi}$-不变子空间.
 }
 \dfn{}{线性变换限制在自身的不变子空间上}{
-    已知$U$为$\bm{\varphi}$-不变子空间，若进一步将$\bm{\varphi}$的定义域限制在$U$上，则这个$\bm{\varphi}$成为$U$上的一个线性变换，称为$\bm{\varphi}$诱导出的
-    线性变换或者是$\bm{\varphi}$在$U$上的限制，记作
+    已知$U$为$\bm{\varphi}$-不变子空间,若进一步将$\bm{\varphi}$的定义域限制在$U$上,则这个$\bm{\varphi}$成为$U$上的一个线性变换,称为$\bm{\varphi}$诱导出的
+    线性变换或者是$\bm{\varphi}$在$U$上的限制,记作
     \[
         \bm{\varphi}\Big |_U:U\longrightarrow U
     \]
 }
 \exa{}{}{
     设$\bm{\varphi}\in \call  \left(V
-        \right)$，则一定有两个平凡的$\bm{\varphi}$-不变子空间
-    即零子空间$0$和全子空间$V$.此外，核空间$\Ker \bm{\varphi}$和像空间$\Image\bm{\varphi}$存在时也一定是$\bm{\varphi}$-不变子空间.
+        \right)$,则一定有两个平凡的$\bm{\varphi}$-不变子空间
+    即零子空间$0$和全子空间$V$.此外,核空间$\Ker \bm{\varphi}$和像空间$\Image\bm{\varphi}$存在时也一定是$\bm{\varphi}$-不变子空间.
 }
 \rem{}{}{
-    事实上，像空间和核空间都是必定存在的，但是当映射是恒等变换时，像空间即全子空间，零空间即零子空间.因此上面应该说是像空间和核空间非平凡或者是非平凡的像空间和核空间存在时.
+    事实上,像空间和核空间都是必定存在的,但是当映射是恒等变换时,像空间即全子空间,零空间即零子空间.因此上面应该说是像空间和核空间非平凡或者是非平凡的像空间和核空间存在时.
 }
 \clm{零空间与零子空间}{}{
-    零子空间$0$指的是只含有零向量的线性子空间，零空间是核空间$\Ker \bm{\varphi}=\Null\left(\bm{\varphi}\right)$.
+    零子空间$0$指的是只含有零向量的线性子空间,零空间是核空间$\Ker \bm{\varphi}=\Null\left(\bm{\varphi}\right)$.
     显然\[
         0\subseteq \Ker \bm{\varphi}
     \]
 }
 \exa{}{}{
-    考虑$V=\bbr ^2$，线性变换$\bm{\varphi}$为绕原点逆时针旋转$\theta$角，其在标准基下的表示矩阵为
+    考虑$V=\bbr ^2$,线性变换$\bm{\varphi}$为绕原点逆时针旋转$\theta$角,其在标准基下的表示矩阵为
     \[
         \bm{A}=\begin{bmatrix}
             \cos \theta & -\sin \theta \\
@@ -39,16 +39,16 @@
     \]
     设$L$为一维$\bm{\varphi}$-不变子空间即$\bm{\varphi}\left(
         L
-        \right)\subseteq L$，容易知道
+        \right)\subseteq L$,容易知道
     $\theta \neq k\pi\left(k\in \mathbb{Z}\right)$时这样的$L$不存在即此时$\bm{\varphi}$没有非平凡的不变子空间.
 }
 \exa{}{}{
     考虑$\bm{\varphi}:\bm{\alpha}\longmapsto k\bm{\alpha}
-        \left(k\in \mathbb{K}\text{固定}\right)$，则$V$的任一子空间均为$\bm{\varphi}$-不变子空间.
+        \left(k\in \bbk \text{固定}\right)$,则$V$的任一子空间均为$\bm{\varphi}$-不变子空间.
 }
 \lem{}{张成的子空间为不变子空间的判定}{
     设线性变换$\bm{\varphi}\in \call  \left(V
-        \right)$，子空间$U=L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m\right)$，其中$\bm{\alpha}_i\in V$，则$U$为$\bm{\varphi}$-不变子空间等价于
+        \right)$,子空间$U=L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m\right)$,其中$\bm{\alpha}_i\in V$,则$U$为$\bm{\varphi}$-不变子空间等价于
     \[
         \bm{\varphi}\left(\bm{\alpha}_i\right)
         \in U\left(\forall 1 \leqslant i \leqslant m \right)
@@ -65,18 +65,18 @@
 }
 \subsection{表示矩阵}
 \thm{}{不变子空间诱导的线性变换的表示矩阵}{
-    设线性变换$\bm{\varphi}\in \call  \left(V^n\right)$，且$U$为$\bm{\varphi}$-不变子空间，取$U$的一组基
+    设线性变换$\bm{\varphi}\in \call  \left(V^n\right)$,且$U$为$\bm{\varphi}$-不变子空间,取$U$的一组基
     为$\left\{\bm{e}_1,\bm{e}_2,
-        \cdots,\bm{e}_r\right\}$，将其扩张为
+        \cdots,\bm{e}_r\right\}$,将其扩张为
     $V$的一组基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r,\bm{e}_{r+1},\cdots,
-        \bm{e}_n\right\}$，则$\bm{\varphi}$在这一组基下的表示矩阵的形式为
+        \bm{e}_n\right\}$,则$\bm{\varphi}$在这一组基下的表示矩阵的形式为
     \[
         \begin{pmatrix}
             \bm{A}^r & \bm{B}\quad  \\
             \bm{O}   & \bm{D}^{n-r}
         \end{pmatrix}
     \]\begin{proof}
-        因为$\bm{\varphi}\left(\bm{e}_i\right)\in U\left(1\leqslant i\leqslant r\right)$，即有
+        因为$\bm{\varphi}\left(\bm{e}_i\right)\in U\left(1\leqslant i\leqslant r\right)$,即有
         \[
             \begin{cases*}
                 \bm{\varphi}\left(\bm{e}_1\right)=a_{11}\bm{e}_1+a_{21}\bm{e}_2+\cdots+a_{r1}\bm{e}_r \\
@@ -105,7 +105,7 @@
 }
 \cor{}{线性变换的表示矩阵诱导的不变子空间}{
     设线性变换$\bm{\varphi}\in \call  \left(
-        V^n\right)$，且$\bm{\varphi}$在$V$的一组基
+        V^n\right)$,且$\bm{\varphi}$在$V$的一组基
     $\left\{\bm{e}_1,\bm{e}_2,\cdots,
         \bm{e}_n\right\}$下的表示矩阵具有形式
     \[
@@ -117,7 +117,7 @@
     那么$U=L\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r\right)$是$\bm{\varphi}$-不变子空间.
 }
 \cor{}{全空间分解为两个不变子空间的直和}{
-    设线性变换$\bm{\varphi}\in \call  \left(V^n\right)$，且$V=V_1\oplus V_2$（$V_1$、$V_2$均为$\bm{\varphi}$-不变子空间），那么一定可以分别取$V_1$、$V_2$的一组基来拼成$V$的一组基，使得
+    设线性变换$\bm{\varphi}\in \call  \left(V^n\right)$,且$V=V_1\oplus V_2$($V_1$、$V_2$均为$\bm{\varphi}$-不变子空间),那么一定可以分别取$V_1$、$V_2$的一组基来拼成$V$的一组基,使得
     $\bm{\varphi}$在这组基下的表示矩阵为
     \[
         \begin{pmatrix}
@@ -125,21 +125,21 @@
             \bm{O}   & \bm{D}^{n-r}
         \end{pmatrix}
     \]\begin{proof}
-        取$V_1$的基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r\right\}$，$V_2$的基$\left\{\bm{e}_{r+1},\cdots,\bm{e}_n\right\}$.因为
-        $\bm{\varphi}\left(\bm{e}_i\right)\in V_1\left(\forall 1\leqslant i\leqslant r\right)$，$\bm{\varphi}\left(\bm{e}_i\right)\in V_2\left(\forall r+1\leqslant i\leqslant n\right)$.仿照\cref{thm:不变子空间诱导的线性变换的表示矩阵}即得.
+        取$V_1$的基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r\right\}$,$V_2$的基$\left\{\bm{e}_{r+1},\cdots,\bm{e}_n\right\}$.因为
+        $\bm{\varphi}\left(\bm{e}_i\right)\in V_1\left(\forall 1\leqslant i\leqslant r\right)$,$\bm{\varphi}\left(\bm{e}_i\right)\in V_2\left(\forall r+1\leqslant i\leqslant n\right)$.仿照\cref{thm:不变子空间诱导的线性变换的表示矩阵}即得.
     \end{proof}
 }
 \cor{}{全空间分解为多个不变子空间的直和}{
 设线性变换$\bm{\varphi}\in \call  \left(V^n
-    \right)$，且$V=V_1\oplus V_2\oplus \cdots \oplus V_m$（$V_i$均为
-$\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_{V_i}$在给定基下的表示矩阵为$\bm{A}_i\left(1\leqslant i \leqslant m\right)$，则将这些$V_i$的基拼成$V$的一组基后，$\bm{\varphi}$在这组基下的表示矩阵为\[\bm{A}=
+    \right)$,且$V=V_1\oplus V_2\oplus \cdots \oplus V_m$($V_i$均为
+$\bm{\varphi}$-不变子空间),分别取$V_i$的基,设$\bm{\varphi}\big |_{V_i}$在给定基下的表示矩阵为$\bm{A}_i\left(1\leqslant i \leqslant m\right)$,则将这些$V_i$的基拼成$V$的一组基后,$\bm{\varphi}$在这组基下的表示矩阵为\[\bm{A}=
     \diag \left\{
     \bm{A}_1,\bm{A}_2,\cdots,\bm{A}_m
     \right\}\]
 }
 \subsection{例子}
 \exa{}{}{
-    设$V^3$的一组基为$\left\{\bm{e}_1,\bm{e}_2,\bm{e}_3\right\}$，线性变换$\bm{\varphi}\in \call  \left(V\right)$在这组基下的表示矩阵为
+    设$V^3$的一组基为$\left\{\bm{e}_1,\bm{e}_2,\bm{e}_3\right\}$,线性变换$\bm{\varphi}\in \call  \left(V\right)$在这组基下的表示矩阵为
     \[\bm{A}=
         \begin{pmatrix}
             3 & 1 & -1 \\
@@ -147,7 +147,7 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
             2 & 2 & 0
         \end{pmatrix}
     \]
-    求证：$U=L\left(\bm{e}_3,\bm{e}_1+\bm{e}_2+2\bm{e}_3\right)$为$\bm{\varphi}$-不变子空间.\begin{proof}
+    求证:$U=L\left(\bm{e}_3,\bm{e}_1+\bm{e}_2+2\bm{e}_3\right)$为$\bm{\varphi}$-不变子空间.\begin{proof}
         只需证
         \[
             \bm{\varphi}\left(\bm{e}_3\right)\in U,
@@ -155,7 +155,7 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
         \]
         通过线性同构
         \[
-            \bm{\eta}:V\longrightarrow \mathbb{K}^3
+            \bm{\eta}:V\longrightarrow \bbk ^3
         \]
         我们仅需要验证坐标向量即可
         \[
@@ -184,7 +184,7 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
         只需要证明$\bm{\varphi}\left(\bm{e}_3\right)$和
         $\bm{\varphi}\left(\bm{e}_1+\bm{e}_2+2
             \bm{e}_3\right)$是$\bm{e}_3$、$\bm{e}_1
-            +\bm{e}_2+2\bm{e}_3$的线性组合即可.一般地，这就是解线性方程组
+            +\bm{e}_2+2\bm{e}_3$的线性组合即可.一般地,这就是解线性方程组
         \[
             \begin{pmatrix}
                 0 & 1 \\0&1\\1 & 2
@@ -194,7 +194,7 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
                 0 & 1 \\0&1\\1 & 2
             \end{pmatrix}\bm{x}=\bm{\varphi}\left(\bm{e}_1+\bm{e}_2+2\bm{e}_3\right)
         \]
-        进一步地，只需要证明线性方程组有解即系数矩阵与增广矩阵的秩相等即可.
+        进一步地,只需要证明线性方程组有解即系数矩阵与增广矩阵的秩相等即可.
         \[
             \rank \begin{pmatrix}
                 0 & 1 \\0&1\\1 & 2
@@ -221,15 +221,15 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
 }
 \subsection{代数与几何}
 \exa{}{}{
-    设线性映射$\bm{\varphi}\in \call  \left(V^n,U^m\right)$，$\rmr \left(\bm{\varphi}\right)=r\geqslant 1$，证明：
-    $\exists \bm{\varphi}_i\in \call  \left(V,U\right)$，满足
+    设线性映射$\bm{\varphi}\in \call  \left(V^n,U^m\right)$,$\rmr \left(\bm{\varphi}\right)=r\geqslant 1$,证明:
+    $\exists \bm{\varphi}_i\in \call  \left(V,U\right)$,满足
     $\rmr \left(\bm{\varphi}_i\right)=1$且$\bm{\varphi}=\bm{\varphi}_1+\bm{\varphi}_2+\cdots+\bm{\varphi}_r$.\begin{proof}
-        代数角度看：设$\bm{A}\in M_{m\times n}\left(\mathbb{K}\right)$，且
-        $\rmr \left(\bm{A}\right)=r\geqslant 1$，求证：
-        $\exists \bm{A}_i\in M_{m\times n}\left(\mathbb{K}\right)$，满足
+        代数角度看:设$\bm{A}\in M_{m\times n}\left(\bbk \right)$,且
+        $\rmr \left(\bm{A}\right)=r\geqslant 1$,求证:
+        $\exists \bm{A}_i\in M_{m\times n}\left(\bbk \right)$,满足
         $\rmr \left(\bm{A}\right)=1$且$\bm{A}=\bm{A}_1+\bm{A}_2+\cdots+\bm{A}_r$.
 
-        事实上，根据相抵标准型，一定存在非异阵$\bm{P}$、$\bm{Q}$使得
+        事实上,根据相抵标准型,一定存在非异阵$\bm{P}$、$\bm{Q}$使得
         \[
             \bm{A}=\bm{P}\begin{pmatrix}
                 \bm{I}_r & \bm{O} \\
@@ -246,16 +246,16 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
                   &        &   &        & 0
             \end{bmatrix}\bm{Q}\left(1\leqslant i \leqslant r\right)
         \]
-        即可（其中$1$在主对角线第$i$位）.
+        即可(其中$1$在主对角线第$i$位).
     \end{proof}
 }
 \exa{}{}{
-    设$\bm{\varphi}\in \call  \left(V^n\right)$，且$\bm{\varphi}^m=\bm{0}$,$n=mq+1$，证明：
+    设$\bm{\varphi}\in \call  \left(V^n\right)$,且$\bm{\varphi}^m=\bm{0}$,$n=mq+1$,证明:
     \[\rmr \left(\bm{\varphi}\right)\leqslant n - q - 1\]\begin{proof}
-        同样从代数角度看：设$\bm{A}\in M_{n}\left(\mathbb{K}\right)$，且$\bm{A}^m=\bm{O}$，$n=mq+1$，证明：
+        同样从代数角度看:设$\bm{A}\in M_{n}\left(\bbk \right)$,且$\bm{A}^m=\bm{O}$,$n=mq+1$,证明:
         \[\rmr \left(\bm{A}\right)\leqslant n-q-1\]
 
-        采用反证法，设$\rmr \left(\bm{A}\right)\geqslant n-q$，由Sylvesler不等式知：
+        采用反证法,设$\rmr \left(\bm{A}\right)\geqslant n-q$,由Sylvesler不等式知:
         \begin{align*}
             0 & =\rmr \left(\bm{A}^m\right)                    \\
               & =\rmr \left(\bm{AA}^{m-1}\right)               \\
@@ -268,20 +268,20 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
         不断做下去即有\[
             \left(m-1\right)q\geqslant \rmr \left(\bm{A}\right)\geqslant n-q = \left(m-1\right)q+1
         \]
-        矛盾，故假设不成立，证毕.
+        矛盾,故假设不成立,证毕.
     \end{proof}
 }
 \exa{像空间与核空间稳定}{像空间与核空间稳定}{
-    设$\bm{A}\in M_n\left(\mathbb{K}\right)$，求证：$\bm{A}$的幂次超过$n$时其秩的值将稳定即
+    设$\bm{A}\in M_n\left(\bbk \right)$,求证:$\bm{A}$的幂次超过$n$时其秩的值将稳定即
     \[
         \rmr \left(\bm{A}^n\right)=\rmr \left(
         \bm{A}^{n+1}
         \right)=\cdots
     \]\begin{proof}
-        我们从几何角度给出一个更强的结论：设$\bm{\varphi}\in \call
-            \left(V^n\right)$，则$\exists m \in \left[
+        我们从几何角度给出一个更强的结论:设$\bm{\varphi}\in \call
+            \left(V^n\right)$,则$\exists m \in \left[
                 0,n
-                \right]$，使得
+                \right]$,使得
         \begin{align*}
              & \Image\bm{\varphi}^m=\Image\bm{\varphi}^{m+1}=\cdots \\
              & \Ker \bm{\varphi}^m=\Ker \bm{\varphi}^{m+1}=\cdots
@@ -295,11 +295,11 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
              & V\supseteq \Image\bm{\varphi}\supseteq \Image\bm{\varphi}^2\supseteq \cdots \\
              & \Ker \bm{\varphi}\subseteq \Ker \bm{\varphi}^2\subseteq \cdots\subseteq V
         \end{align*}
-        取定$n$，有
+        取定$n$,有
         \[
             V\supseteq \Image\bm{\varphi}\supseteq \Image\bm{\varphi}^2\supseteq \cdots \supseteq \Image\bm{\varphi}^n\supseteq \Image\bm{\varphi}^{n+1}
         \]
-        它们都是$V$的子空间，故
+        它们都是$V$的子空间,故
         \[
             n = \dim V\geqslant \dim
             \Image\bm{\varphi}\geqslant\dim
@@ -308,43 +308,43 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
             \Image\bm{\varphi}^n\geqslant\dim
             \Image\bm{\varphi}^{n+1}
         \]
-        $n+2$个空间的维数分布于$n+1$个抽屉中，由抽屉原理知，$\exists m \in \left[0,n\right]$，使得
+        $n+2$个空间的维数分布于$n+1$个抽屉中,由抽屉原理知,$\exists m \in \left[0,n\right]$,使得
         \[
             \dim \Image\bm{\varphi}^m=\dim \Image\bm{\varphi}^{m+1}
         \]
-        又因为$\Image\bm{\varphi}^{m+1}$是$\Image\bm{\varphi}^m$的子空间，于是有$\Image\bm{\varphi}^m=\Image\bm{\varphi}^{m+1}.$
+        又因为$\Image\bm{\varphi}^{m+1}$是$\Image\bm{\varphi}^m$的子空间,于是有$\Image\bm{\varphi}^m=\Image\bm{\varphi}^{m+1}.$
 
-        再来证明：$\forall k \geqslant m,\Image\bm{\varphi}^k=\Image\bm{\varphi}^{k+1}$.因为
+        再来证明:$\forall k \geqslant m,\Image\bm{\varphi}^k=\Image\bm{\varphi}^{k+1}$.因为
         \[
             \Image\bm{\varphi}^{k+1}\subseteq \Image\bm{\varphi}^k
         \]
         任取$\bm{\varphi}^k\left(\bm{v}\right)\in \Image
             \bm{\varphi}^k$.首先注意到
-        $\bm{\varphi}^m\left(\bm{v}\right)\in \Image\bm{\varphi}^m = \Image\bm{\varphi}^{m+1}$，于是
-        $\exists \bm{u}\in V$，使得\[
+        $\bm{\varphi}^m\left(\bm{v}\right)\in \Image\bm{\varphi}^m = \Image\bm{\varphi}^{m+1}$,于是
+        $\exists \bm{u}\in V$,使得\[
             \bm{\varphi}^m\left(\bm{v}\right)=\bm{\varphi}^{m+1}\left(\bm{u}\right)
         \]
-        因为$k \geqslant m$，故
+        因为$k \geqslant m$,故
         \[
             \Image\bm{\varphi}^k\ni
             \bm{\varphi}^k\left(\bm{v}\right)=
             \bm{\varphi}^{k-m}\left(\bm{\varphi}^m\left(\bm{v}\right)\right)=
             \bm{\varphi}^{m+1}\left(\bm{v}\right)\in \Image\bm{\varphi}^{k+1}
         \]
-        因为任意性，得证.
+        因为任意性,得证.
 
-        考察核空间则简单了许多，由维数公式
+        考察核空间则简单了许多,由维数公式
         \[
             \dim \Ker \bm{\varphi}^k + \dim
             \Image\bm{\varphi}^k = \dim V =n
         \]
         立刻得证.
 
-        维数的稳定证毕，下面证明直和.
+        维数的稳定证毕,下面证明直和.
 
         接下来先证明
         $\Image\bm{\varphi}^m
-            \bigcap \Ker \bm{\varphi}^m = 0$（零子空间）.任取
+            \bigcap \Ker \bm{\varphi}^m = 0$(零子空间).任取
         $\bm{\alpha}\in \Image\bm{\varphi}^m\bigcap \Ker \bm{\varphi}^m$即
         \[
             \bm{\varphi}^m\left(\bm{\alpha}\right)=\bm{0},
@@ -355,18 +355,18 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
             \Ker \bm{\varphi}^{2m}=\Ker \bm{\varphi}^m$,故
         $\bm{\alpha}=\bm{\varphi}^m\left(\bm{\beta}\right)=\bm{0}$.
 
-        然后证明$V=\Image\bm{\varphi}^m + \Ker \bm{\varphi}^m$（可以用维数公式证明）.
+        然后证明$V=\Image\bm{\varphi}^m + \Ker \bm{\varphi}^m$(可以用维数公式证明).
         任取
-        $\bm{\alpha}\in V$，因$\bm{\varphi}^m\left(
+        $\bm{\alpha}\in V$,因$\bm{\varphi}^m\left(
             \bm{\alpha}
             \right)\in \Image
             \bm{\varphi}^m=\Image
-            \bm{\varphi}^{2m}$，故$\exists \bm{\beta}\in V$，使得$\bm{\varphi}^{m}\left(\bm{\alpha}
+            \bm{\varphi}^{2m}$,故$\exists \bm{\beta}\in V$,使得$\bm{\varphi}^{m}\left(\bm{\alpha}
             \right)=\bm{\varphi}^{2m}\left(\bm{\beta}
-            \right)$，则由线性映射的性质有
+            \right)$,则由线性映射的性质有
         $\bm{\varphi}^m\left(\bm{\alpha}-\bm{\varphi}^m\left(\bm{\beta}
-                \right)\right)=\bm{0}$，即
-        $\bm{\gamma}=\bm{\alpha}-\bm{\varphi}^m\left(\bm{\beta}\right)\in \Ker \bm{\varphi}^m$，从而有
+                \right)\right)=\bm{0}$,即
+        $\bm{\gamma}=\bm{\alpha}-\bm{\varphi}^m\left(\bm{\beta}\right)\in \Ker \bm{\varphi}^m$,从而有
         \[
             \bm{\alpha}=\bm{\gamma}+\bm{\varphi}^m\left(\bm{\beta}\right)
         \]
@@ -378,21 +378,21 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
         \[
             V=\Ker \bm{\varphi}^m\oplus\Image\bm{\varphi}^m
         \]
-        综合以上证明过程，我们证明了一个更强的结论.
+        综合以上证明过程,我们证明了一个更强的结论.
     \end{proof}
 }
 \exa{}{}{
-    我们给出线性映射维数公式的一种不分别证明像空间和核空间维数的证明方法（实际上我们分别证明了\cref{thm:像空间与核空间的维数公式}像空间和核空间维数而将\cref{cor:线性映射维数公式}维数公式作为推论给出）.
+    我们给出线性映射维数公式的一种不分别证明像空间和核空间维数的证明方法(实际上我们分别证明了\cref{thm:像空间与核空间的维数公式}像空间和核空间维数而将\cref{cor:线性映射维数公式}维数公式作为推论给出).
     \begin{proof}
-        设$\dim \Ker \bm{\varphi}=k$，只需证$\dim \Image\bm{\varphi}=n-k$.
+        设$\dim \Ker \bm{\varphi}=k$,只需证$\dim \Image\bm{\varphi}=n-k$.
 
         首先任取$\Ker \bm{\varphi}$的一组基$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k
-            \right\}$，扩张为$V$的一组基\[\left\{
+            \right\}$,扩张为$V$的一组基\[\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k,\bm{e}_{k+1},\cdots,\bm{e}_n
             \right\}\]
         接下来$\forall \bm{\alpha}\in V$,设$\displaystyle
-            \bm{\alpha}=\sum_{i=1}^n\lambda_i\bm{e}_i$，注意到\[
+            \bm{\alpha}=\sum_{i=1}^n\lambda_i\bm{e}_i$,注意到\[
             \bm{\varphi}\left(\bm{e}_j\right)=\bm{0}\left(\forall 1\leqslant j\leqslant k\right)
         \]
         于是
@@ -436,7 +436,7 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
         \]
         因为$\Ker \bm{\varphi}$的一组基为$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k
-            \right\}$，故得到（符号只是为了方便说明）
+            \right\}$,故得到(符号只是为了方便说明)
         \[
             c_{k+1}\bm{e}_{k+1}+c_{k+2}\bm{e}_{k+2}+\cdots
             +c_n\bm{e}_n=-c_1\bm{e}_1-c_2\bm{e}_2-\cdots-c_k\bm{e}_k
@@ -448,25 +448,25 @@ $\bm{\varphi}$-不变子空间），分别取$V_i$的基,设$\bm{\varphi}\big |_
             +c_n\bm{e}_n=\bm{0}
         \]
         由于$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_k,\bm{e}_{k+1},\bm{e}_{k+2},\cdots,
-            \bm{e}_n$是一组基，那么
+            \bm{e}_n$是一组基,那么
         \[
             c_1=c_2=\cdots=c_{k}=c_{k+1}=c_{k+2}=\cdots=c_n=0\qedhere
         \]
     \end{proof}
 }
 \exa{}{代数与几何}{
-    设$\bm{A}$、$\bm{B}\in M_{m\times n}\left(\mathbb{K}\right)$，证明：$\bm{Ax}=\bm{0}$与$\bm{Bx}=\bm{0}$同解等价于存在$m$阶非异阵$\bm{P}$使得$\bm{B}=\bm{PA}$\begin{proof}
-        即证：已知$\bm{\varphi}$、$\bm{\psi}\in \call  \left(V^n,U^m\right)$，那么$\Ker \bm{\varphi}=\Ker \bm{\psi}$等价于
+    设$\bm{A}$、$\bm{B}\in M_{m\times n}\left(\bbk \right)$,证明:$\bm{Ax}=\bm{0}$与$\bm{Bx}=\bm{0}$同解等价于存在$m$阶非异阵$\bm{P}$使得$\bm{B}=\bm{PA}$\begin{proof}
+        即证:已知$\bm{\varphi}$、$\bm{\psi}\in \call  \left(V^n,U^m\right)$,那么$\Ker \bm{\varphi}=\Ker \bm{\psi}$等价于
         存在自同构$\bm{\xi}\in \call
-            \left(U\right)$，\st
+            \left(U\right)$,\st
         $\bm{\psi}=\bm{\xi}\circ \bm{\varphi}$.
-        下面考虑必要性，我们用下面的图说明这一思想过程，以三维欧式空间为例.
+        下面考虑必要性,我们用下面的图说明这一思想过程,以三维欧式空间为例.
 
         \begin{center}
             \incfig[scale=1.0,float=H]{AlgebraAndGeometrySolution}
         \end{center}
 
-        其中，自同构$\bm{\xi}$只需要保证基的变化，即将一组基映射到另一组基来保证自同构$\bm{\xi}$是线性同构.
+        其中,自同构$\bm{\xi}$只需要保证基的变化,即将一组基映射到另一组基来保证自同构$\bm{\xi}$是线性同构.
         \begin{align*}
             \bm{\xi}:\bm{\varphi}\left(\bm{e}_1\right) & \longmapsto \bm{\psi}\left(\bm{e}_1\right) \\
             \bm{\varphi}\left(\bm{e}_2\right)          & \longmapsto \bm{\psi}\left(\bm{e}_2\right) \\

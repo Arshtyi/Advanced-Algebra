@@ -2,9 +2,9 @@
 \section{基变换与过渡矩阵}
 \subsection{定义}
 \dfn{过渡矩阵}{过渡矩阵}{
-    设$V_{\mathbb{K}}$的两组基
+    设$V_{\bbk }$的两组基
     $\left\{\bm{e}_1,\bm{e}_2,\cdots,
-        \bm{e}_n\right\}$，$
+        \bm{e}_n\right\}$,$
         \left\{\bm{f}_1,\bm{f}_2
         ,\cdots,\bm{f}_n\right\}$
     则有\[
@@ -31,7 +31,7 @@
     称为从基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$到基$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right\}$的过渡矩阵.
 }
 \dfn{形式向量的运算定义}{形式向量的运算定义}{
-    \begin{enumerate}[label=\arabic*）]
+    \begin{enumerate}[label=\arabic*)]
         \item 相等:
               \[
                   \left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots
@@ -55,7 +55,7 @@
                   \bm{\beta}_n
                   \right)
               \]
-        \item 数乘（$k\in\mathbb{K}$）\[
+        \item 数乘($k\in\bbk $)\[
                   k\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots
                   ,\bm{\alpha}_n\right)=
                   \left(k\bm{\alpha}_1,k\bm{\alpha}_2,\cdots
@@ -85,11 +85,11 @@
     其中$\bm{A}$即为过渡矩阵.
 }
 \lem{过渡矩阵的唯一性}{过渡矩阵的唯一性}{
-    设$V_{\mathbb{K}}$的一组基
+    设$V_{\bbk }$的一组基
     $\left\{
         \bm{e}_1,\bm{e}_2,\cdots
         ,\bm{e}_n
-        \right\}$，  $\bm{A}=\left(a_{ij}\right)_{n \times m}$，$\bm{B} =
+        \right\}$,  $\bm{A}=\left(a_{ij}\right)_{n \times m}$,$\bm{B} =
         \left(b_{ij}\right)_{n \times m}$使得
     \[
         \left(
@@ -104,10 +104,10 @@
     则$\bm{A}=\bm{B}$.
 }
 \lem{}{过渡矩阵的确定}{
-    设数域$\mathbb{K}$上的$n$维线性空间$V$，取定$V$的两组基为$\left\{\bm{e}_1,\bm{e}_2,\cdots,
-        \bm{e}_n\right\}$，且$
+    设数域$\bbk $上的$n$维线性空间$V$,取定$V$的两组基为$\left\{\bm{e}_1,\bm{e}_2,\cdots,
+        \bm{e}_n\right\}$,且$
         \left\{\bm{f}_1,\bm{f}_2
-        ,\cdots,\bm{f}_n\right\}$，$\forall
+        ,\cdots,\bm{f}_n\right\}$,$\forall
         \bm{\alpha} \in V$有
     \[
         \bm{\alpha}=
@@ -145,7 +145,7 @@
             a_{1n} & a_{2n} & \cdots & a_{nn}
         \end{pmatrix}
     \]是从$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$到$ \left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right\}$的过渡矩阵的充分必要条件.\begin{proof}
-        一方面，设
+        一方面,设
         \[
             \left(\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right)
             =\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right)\bm{A}
@@ -164,7 +164,7 @@
             \end{pmatrix}
         \end{align*}
 
-        另一方面，考虑$\bm{f}_i$的新坐标向量为$\left(0,0,\cdots,1,\cdots,0\right)^{\prime}\in \mathbb{K}^n$，那么由上式得其旧坐标向量为$\bm{A}\left(0,0,\cdots,1,\cdots,0
+        另一方面,考虑$\bm{f}_i$的新坐标向量为$\left(0,0,\cdots,1,\cdots,0\right)^{\prime}\in \bbk ^n$,那么由上式得其旧坐标向量为$\bm{A}\left(0,0,\cdots,1,\cdots,0
             \right)^{\prime}
         $
         即$\bm{A}$的第$i$列$\left(
@@ -174,7 +174,7 @@
 }
 \subsection{复合}
 \thm{过渡矩阵的可逆性与复合性质}{过渡矩阵的可逆性与复合性质}{
-    设数域$\mathbb{K}$上的线性空间$V$的三组基为$\left\{
+    设数域$\bbk $上的线性空间$V$的三组基为$\left\{
         \bm{e}_1,\bm{e}_2,\cdots
         ,\bm{e}_n
         \right\}$、$
@@ -185,14 +185,14 @@
         \left\{
         \bm{g}_1,\bm{g}_2,\cdots
         ,\bm{g}_n
-        \right\}$，且从基$\left\{
+        \right\}$,且从基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots
         ,\bm{e}_n
         \right\}$到基$
         \left\{
         \bm{f}_1,\bm{f}_2,\cdots,
         \bm{f}_n
-        \right\}$的过渡矩阵为$\bm{A}$，从基$\left\{
+        \right\}$的过渡矩阵为$\bm{A}$,从基$\left\{
         \bm{f}_1,\bm{f}_2,\cdots,
         \bm{f}_n
         \right\}$到基$
@@ -200,7 +200,7 @@
         \bm{g}_1,\bm{g}_2,\cdots
         ,\bm{g}_n
         \right\}$的过渡矩阵为$
-        \bm{B}$，从基$\left\{
+        \bm{B}$,从基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,
         \bm{e}_n
         \right\}$到基$
@@ -208,19 +208,19 @@
         \bm{g}_1,\bm{g}_2,\cdots
         ,\bm{g}_n
         \right\}$的过渡矩阵为$
-        \bm{C}$，则
-    \begin{enumerate}[label=\arabic*）]
+        \bm{C}$,则
+    \begin{enumerate}[label=\arabic*)]
         \item 任何过渡矩阵都是可逆的
         \item $\bm{C} = \bm{AB}$
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
+        \begin{enumerate}[label=\arabic*)]
             \item 设从基$\left\{
                       \bm{f}_1,\bm{f}_2,\cdots,
                       \bm{f}_n
                       \right\}$到基$\left\{
                       \bm{e}_1,\bm{e}_2,\cdots,
                       \bm{e}_n
-                      \right\}$的过渡矩阵为$\bm{P}$，则
+                      \right\}$的过渡矩阵为$\bm{P}$,则
                   \begin{align*}
                       \left(\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n\right)=\left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right)\bm{A} \\
                       \left(\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
@@ -251,7 +251,7 @@
         \left\{
         \bm{f}_1,\bm{f}_2,\cdots,
         \bm{f}_n
-        \right\}$的过渡矩阵为$\bm{A}$，从基
+        \right\}$的过渡矩阵为$\bm{A}$,从基
     $\left\{
         \bm{f}_1,\bm{f}_2,\cdots
         ,\bm{f}_n
@@ -259,16 +259,16 @@
         \left\{
         \bm{e}_1,\bm{e}_2,\cdots,
         \bm{e}_n
-        \right\}$的过渡矩阵为$\bm{B}$，则二者是逆阵关系即
+        \right\}$的过渡矩阵为$\bm{B}$,则二者是逆阵关系即
     \[
         \bm{AB} =  \bm{I}_n
     \]
 }
 \rem{}{}{
-    \cref{thm:过渡矩阵的可逆性与复合性质}的重要意义在于,对于非标准基之间的过渡矩阵，不再需要去解出一个包含$n^2$个未定元的方程，而是通过与标准基之间的过渡矩阵和简单的复合表示，转化为解矩阵方程的问题，进一步地，转换为求逆阵这一简单问题.
+    \cref{thm:过渡矩阵的可逆性与复合性质}的重要意义在于,对于非标准基之间的过渡矩阵,不再需要去解出一个包含$n^2$个未定元的方程,而是通过与标准基之间的过渡矩阵和简单的复合表示,转化为解矩阵方程的问题,进一步地,转换为求逆阵这一简单问题.
 }
 \exa{}{}{
-    设$\mathbb{K}$上的线性空间$V$的两组基为
+    设$\bbk $上的线性空间$V$的两组基为
     \[
         \left\{
         \bm{f}_1=\left(1,0,-1\right),\bm{f}_2=\left(2,1,1\right),\bm{f}_3=\left(1,1,1\right)
@@ -276,7 +276,7 @@
     \]\[\left\{
         \bm{g}_1=\left(0,1,1\right),\bm{g}_2=\left(-1,1,0\right),\bm{g}_3=\left(1,2,1\right)\right\}
     \]求基$\bm{f}$到基$\bm{g}$的过渡矩阵.\begin{solution}
-        设标准基为$\left\{\bm{e}_1=\left(1,0,0\right),\bm{e}_2=\left(0,1,0\right),\bm{e}_3=\left(0,0,1\right)\right\}$，则基$\bm{e}$到基$\bm{f},\bm{g}$的过渡矩阵分别为\[
+        设标准基为$\left\{\bm{e}_1=\left(1,0,0\right),\bm{e}_2=\left(0,1,0\right),\bm{e}_3=\left(0,0,1\right)\right\}$,则基$\bm{e}$到基$\bm{f},\bm{g}$的过渡矩阵分别为\[
             \begin{pmatrix}
                 1  & 2 & 1 \\
                 0  & 1 & 1 \\

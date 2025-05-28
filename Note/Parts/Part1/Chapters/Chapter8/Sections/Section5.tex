@@ -8,8 +8,8 @@
     \right)=d_1x_1^2+d_2x_2^2+\cdots+d_rx_r^2
 \]其中$d_1,d_2,\cdots,d_r\in\bbc ,x_1,x_2,\cdots,x_r$为复变元.
 \clm{}{}{
-    由于复数运算的特殊性，很难直接平行地做推广.因而必须做一些调整.
-    \begin{enumerate}[label=\arabic*）]
+    由于复数运算的特殊性,很难直接平行地做推广.因而必须做一些调整.
+    \begin{enumerate}[label=\arabic*)]
         \item $d_1,d_2,\cdots,d_r\in\bbr $
         \item 考虑模长的平方而不是复数的平方
     \end{enumerate}
@@ -22,7 +22,7 @@
 \]其中$\overline{a}_{ij}=a_{ji},\forall 1\leqslant i,j\leqslant n.$
 }
 \clm{}{}{
-    \cref{def:Hermite型}Hermite型不是一个多项式，多项式的形式必须是平方，而是一个函数.并且取共轭容易发现，它是一个实值函数.
+    \cref{def:Hermite型}Hermite型不是一个多项式,多项式的形式必须是平方,而是一个函数.并且取共轭容易发现,它是一个实值函数.
 }
 \dfn{Hermite矩阵}{Hermite矩阵2}{
 取\cref{def:Hermite型}中系数组成复矩阵\[
@@ -36,7 +36,7 @@
     f\left(
     x_1,x_2,\cdots,x_n
     \right)=\sum_{j=1}^{n}\sum_{i=1}^{n}a_{ij}\overline{x_i}x_j=\overline{\bm{x}}'\bm{A}\bm{x}
-\]满足$\overline{\bm{A}}'=\bm{A}$（\cref{def:Hermite矩阵}）,称为Hermite矩阵.
+\]满足$\overline{\bm{A}}'=\bm{A}$(\cref{def:Hermite矩阵}),称为Hermite矩阵.
 }
 \cor{Hermite矩阵对角元为实数}{Hermite矩阵对角元为实数}{
     Hermite阵的主对角元必定是实数.
@@ -48,7 +48,7 @@
     \right)=\sum_{j=1}^{n}\sum_{i=1}^{n}a_{ij}\overline{x_i}x_j=\overline{\bm{x}}'\bm{A}\bm{x}
 \]其中$\bm{x}=\begin{pmatrix}
         x_1 \\x_2\\\vdots\\x_n
-    \end{pmatrix}$，$\bm{A}$是一个 Hermite 阵.
+    \end{pmatrix}$,$\bm{A}$是一个 Hermite 阵.
 
 构造映射\begin{align*}
     \bm{\varphi}:\left\{
@@ -57,30 +57,30 @@
     x_1,x_2,\cdots,x_n
     \right)=\overline{\bm{x}}'\bm{A}\bm{x}
 \end{align*}这是一个一一对应.\begin{proof}
-    首先这是满射，然后证明这是单射.设Hermite阵$\bm{A},\bm{B}$满足$\overline{\bm{x}}'\bm{Ax}=\overline{\bm{x}}'\bm{Bx}$于是\[\overline{\bm{x}}\left(\bm{A}-\bm{B}\right)\bm{x}=0\Longrightarrow\bm{A}=\bm{B}\]这通过赋值即可证.
+    首先这是满射,然后证明这是单射.设Hermite阵$\bm{A},\bm{B}$满足$\overline{\bm{x}}'\bm{Ax}=\overline{\bm{x}}'\bm{Bx}$于是\[\overline{\bm{x}}\left(\bm{A}-\bm{B}\right)\bm{x}=0\Longrightarrow\bm{A}=\bm{B}\]这通过赋值即可证.
 \end{proof}
 }
-作非异线性变换$\bm{x}=\bm{Cy},\bm{C}$为非异复矩阵，则得到的\[
+作非异线性变换$\bm{x}=\bm{Cy},\bm{C}$为非异复矩阵,则得到的\[
     f=\left(\overline{\bm{Cy}}\right)'\bm{A}\left(\bm{Cy}\right)=\overline{\bm{y}}'\left(
     \overline{\bm{C}}'\bm{AC}
     \right)\bm{y}
 \]中的$\overline{\bm{C}}'\bm{AC}$仍然是Hermite阵.
 \subsection{复相合}
 \dfn{复相合}{复相合}{
-    设$\bm{A},\bm{B}$是两个Hermite型，若存在非异复矩阵$\bm{C}$使得\[
+    设$\bm{A},\bm{B}$是两个Hermite型,若存在非异复矩阵$\bm{C}$使得\[
         \bm{B}=\overline{\bm{C}}'\bm{AC}
     \]则称$\bm{A},\bm{B}$是复相合的.
 }
-于是接下来的问题与实二次型类似，即对于任意一个Hermite阵$\bm{A}$，是否存在非异复矩阵$\bm{C}$使得$\overline{\bm{C}}'\bm{AC}$为一个对角阵.
+于是接下来的问题与实二次型类似,即对于任意一个Hermite阵$\bm{A}$,是否存在非异复矩阵$\bm{C}$使得$\overline{\bm{C}}'\bm{AC}$为一个对角阵.
 \dfn{共轭对称初等变换}{共轭对称初等变换}{
-    共轭对阵初等变换是复相合变换\begin{enumerate}[label=\arabic*）]
-        \item 对换第$i$行与第$j$行，再对换第$i$列与第$j$列\[
+    共轭对阵初等变换是复相合变换\begin{enumerate}[label=\arabic*)]
+        \item 对换第$i$行与第$j$行,再对换第$i$列与第$j$列\[
                   \bm{P}_{ij}\bm{AP}_{ij},\overline{\bm{P}}_{ij}'=\bm{P}_{ij}
               \]
-        \item 第$i$行乘上$0\neq c\in\bbc $，再第$i$列乘上$\overline{c}$\[
+        \item 第$i$行乘上$0\neq c\in\bbc $,再第$i$列乘上$\overline{c}$\[
                   \bm{P}_i\left(c\right)\bm{AP}_i\left(\overline{c}\right),\overline{\bm{P}}_i'\left(c\right)=\bm{P}_i\left(\overline{c}\right)
               \]
-        \item 第$i$行乘上$0\neq c\in\bbc $加到第$j$行，再第$i$列乘上$\overline{c}$加到第$j$列\[
+        \item 第$i$行乘上$0\neq c\in\bbc $加到第$j$行,再第$i$列乘上$\overline{c}$加到第$j$列\[
                   \bm{T}_{ij}\left(c\right)\bm{AT}_{ji}\left(\overline{c}\right),\overline{\bm{T}}'_{ij}\left(c\right)=\bm{T}_{ij}\left(\overline{c}\right)
               \]
     \end{enumerate}
@@ -94,8 +94,8 @@
     \]其中$d_1,d_2,\cdots,d_r\in\bbr $称为标准型.
 }
 \thm{Hermite阵对角化}{Hermite阵对角化}{
-    设$\bm{A}$是一个Hermite阵，则存在非异阵$\bm{C}$使得$\overline{\bm{C}}\bm{AC}$为实对角阵.\begin{proof}
-        类似于\cref{lem:对称阵变换为首元非零矩阵}，\cref{thm:任意矩阵必定合同于对角阵}.
+    设$\bm{A}$是一个Hermite阵,则存在非异阵$\bm{C}$使得$\overline{\bm{C}}\bm{AC}$为实对角阵.\begin{proof}
+        类似于\cref{lem:对称阵变换为首元非零矩阵},\cref{thm:任意矩阵必定合同于对角阵}.
     \end{proof}
 }
 \dfn{Hermite阵的规范标准型}{Hermite阵的规范标准型}{
@@ -118,13 +118,13 @@
         y_1,y_2,\cdots,y_n
         \right)=y_1\overline{y}_1+y_2\overline{y}_2+\cdots+y_p\overline{y}_p-
         y_{p+1}\overline{y}_{p+1}-\cdots-y_r\overline{y}_r
-    \]其中，$r$称为Hermite型的秩，而$p$称为Hermite型的正惯性指数，而$q=r-p$称为Hermite型的负惯性指数，$s=p-q$称为Hermite型的符号差.
+    \]其中,$r$称为Hermite型的秩,而$p$称为Hermite型的正惯性指数,而$q=r-p$称为Hermite型的负惯性指数,$s=p-q$称为Hermite型的符号差.
 }
 \clm{}{}{
     \cref{def:Hermite型的惯性指数}对Hermite阵也适用.同样也是四者知其二即可全推知.
 }
 \thm{复相合关系的全系不变量}{复相合关系的全系不变量}{
-    \cref{def:Hermite型的惯性指数}中秩与符号差（或正负惯性指数）是复相合关系下的全系不变量.
+    \cref{def:Hermite型的惯性指数}中秩与符号差(或正负惯性指数)是复相合关系下的全系不变量.
 }
 \thm{复相合标准型}{复相合标准型}{
     任意Hermite阵在复相合关系下的标准型为\[
@@ -137,12 +137,12 @@
 }
 \subsection{正定Hermite型}
 \dfn{正定Hermite型}{正定Hermite型}{
-    设 Hermite 型$f\left(x_1,x_2,\cdots,x_n\right)=\overline{\bm{x}}'\bm{Ax}$\begin{enumerate}[label=\arabic*）]
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}>0$，则称$f$为正定 Hermite 型，$\bm{A}$为正定 Hermite 阵.
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}\geqslant 0$，则称$f$为半正定 Hermite 型，$\bm{A}$为半正定 Hermite 阵.
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}<0$，则称$f$为负定 Hermite 型，$\bm{A}$为负定 Hermite 阵.
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}\leqslant 0$，则称$f$为半负定 Hermite 型，$\bm{A}$为半负定 Hermite 阵.
-        \item 若$\exists \bm{\alpha},\bm{\beta}\in\bbc ^n$使得$\overline{\bm{\alpha}}'\bm{A\alpha}>0,\overline{\bm{\beta}}'\bm{A\beta}<0$，则称$f$为不定 Hermite 型，$\bm{A}$为不定 Hermite 阵.
+    设 Hermite 型$f\left(x_1,x_2,\cdots,x_n\right)=\overline{\bm{x}}'\bm{Ax}$\begin{enumerate}[label=\arabic*)]
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}>0$,则称$f$为正定 Hermite 型,$\bm{A}$为正定 Hermite 阵.
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}\geqslant 0$,则称$f$为半正定 Hermite 型,$\bm{A}$为半正定 Hermite 阵.
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}<0$,则称$f$为负定 Hermite 型,$\bm{A}$为负定 Hermite 阵.
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbc ^n,\overline{\bm{\alpha}}'\bm{A\alpha}\leqslant 0$,则称$f$为半负定 Hermite 型,$\bm{A}$为半负定 Hermite 阵.
+        \item 若$\exists \bm{\alpha},\bm{\beta}\in\bbc ^n$使得$\overline{\bm{\alpha}}'\bm{A\alpha}>0,\overline{\bm{\beta}}'\bm{A\beta}<0$,则称$f$为不定 Hermite 型,$\bm{A}$为不定 Hermite 阵.
     \end{enumerate}
 }
 \exa{}{}{
@@ -153,14 +153,14 @@
     \]半正定
 }
 \thm{正定Hermite型的判定}{正定Hermite型的判定}{
-    设 Hermite 型$f=\overline{\bm{x}}'\bm{Ax}$的秩为$r$，正负惯性指数$p,q$，则\begin{enumerate}[label=\arabic*）]
-        \item $f$正定当且仅当$p=n$，当且仅当复相合标准型为$\bm{I}_n$
-        \item $f$半正定当且仅当$p=r$，当且仅当复相合标准型为$\begin{pmatrix}
+    设 Hermite 型$f=\overline{\bm{x}}'\bm{Ax}$的秩为$r$,正负惯性指数$p,q$,则\begin{enumerate}[label=\arabic*)]
+        \item $f$正定当且仅当$p=n$,当且仅当复相合标准型为$\bm{I}_n$
+        \item $f$半正定当且仅当$p=r$,当且仅当复相合标准型为$\begin{pmatrix}
                       \bm{I}_r & \bm{O} \\
                       \bm{O}   & \bm{O}
                   \end{pmatrix}$
-        \item $f$负定当且仅当$q=n$，当且仅当复相合标准型为$-\bm{I}_n$
-        \item $f$半负定当且仅当$q=r$，当且仅当复相合标准型为$\begin{pmatrix}
+        \item $f$负定当且仅当$q=n$,当且仅当复相合标准型为$-\bm{I}_n$
+        \item $f$半负定当且仅当$q=r$,当且仅当复相合标准型为$\begin{pmatrix}
                       -\bm{I}_r & \bm{O} \\
                       \bm{O}    & \bm{O}
                   \end{pmatrix}$
@@ -168,7 +168,7 @@
     \end{enumerate}
 }
 \pro{正定Hermite型的等价结论}{正定Hermite型的等价结论}{
-    设$n$阶 Hermite 阵$\bm{A}$，则下列结论等价\begin{enumerate}[label=\arabic*）]
+    设$n$阶 Hermite 阵$\bm{A}$,则下列结论等价\begin{enumerate}[label=\arabic*)]
         \item $\bm{A}$正定
         \item $\bm{A}$复相合于$\bm{I}_n$
         \item 存在非异复矩阵$\bm{C}$使得$\bm{A}=\overline{\bm{C}}'\bm{C}$
@@ -178,7 +178,7 @@
     \end{enumerate}
 }
 \pro{半正定Hermite型的等价结论}{半正定Hermite型的等价结论}{
-    设$n$阶 Hermite 阵$\bm{A}$，则下列结论等价\begin{enumerate}[label=\arabic*）]
+    设$n$阶 Hermite 阵$\bm{A}$,则下列结论等价\begin{enumerate}[label=\arabic*)]
         \item $\bm{A}$半正定
         \item $\bm{A}$复相合于$\begin{pmatrix}
                       \bm{I}_r & \bm{O} \\

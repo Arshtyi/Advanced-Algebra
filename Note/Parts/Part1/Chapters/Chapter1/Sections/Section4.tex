@@ -13,49 +13,49 @@
         \forall i \neq j,k_i \neq k_j
         \right)$
     称为对$\left(1,2,\cdots,n\right)$的一个
-    全排列，简称排列，或者称为
+    全排列,简称排列,或者称为
     对$\left(1,2,\cdots,n\right)$的一个置换.
 }
 \cor{}{置换的个数}{
-    将$\left(1,2,\cdots,n\right)$的置换$\sigma$的全体记作$S_n$，易知$S_n$共有$n!$个元，即$\#S=\left|S_n\right|=n!$.
+    将$\left(1,2,\cdots,n\right)$的置换$\sigma$的全体记作$S_n$,易知$S_n$共有$n!$个元,即$\#S=\left|S_n\right|=n!$.
 }
 \dfn{逆序}{逆序}{
-    $\forall \sigma\in S$，
+    $\forall \sigma\in S$,
     称排列$\left(1,2,\cdots,n\right)$为常序
-    排列，其他都称为逆序.
+    排列,其他都称为逆序.
 }
 \dfn{逆序数}{逆序数}{
     我们称$\left(i,j\right)\left(i > j\right)$为一个
-    逆序对，称一个排列中逆序对的总数为这个排列的逆序数，记作:
+    逆序对,称一个排列中逆序对的总数为这个排列的逆序数,记作:
     \[
         N\left(k_1,k_2,\cdots,k_n\right)
     \]
     其中$\left(k_1,k_2,\cdots,k_n\right) \in S_n.$
 }
 \dfn{排列的奇偶性}{排列的奇偶性}{
-    设$\sigma\in S_n$，如果$N\left(\sigma\right)$为偶数，则称$\sigma$为偶置换，记作$\sigma\in S_n^+$；如果$N\left(\sigma\right)$为奇数，则称$\sigma$为奇置换，记作$\sigma\in S_n^-$.容易知道$\forall n\geqslant2:$\[
+    设$\sigma\in S_n$,如果$N\left(\sigma\right)$为偶数,则称$\sigma$为偶置换,记作$\sigma\in S_n^+$；如果$N\left(\sigma\right)$为奇数,则称$\sigma$为奇置换,记作$\sigma\in S_n^-$.容易知道$\forall n\geqslant2:$\[
         \#S_n^+=\#S_n^-=\frac{\#S_n}{2}=\frac{n!}{2}
     \]
 }
 \thm{}{逆序数的意义}{
     置换$\left(k_1,k_2,\cdots,k_n\right)$经过$N\left(k_1,k_2,\cdots,k_n\right)$次\emph{相邻对换}后一定得到常序排列.
     \begin{proof}
-        考虑数学归纳法，$n=1$显然，假设对$n-1$成立，
+        考虑数学归纳法,$n=1$显然,假设对$n-1$成立,
         下面证明对$n$成立.
 
-        设置换$\left(k_1,k_2,\cdots,k_n\right)$中$k_i=n$.其后的逆序数贡献为$n-i$，作相邻对换$n-i$次将$n$换到最后即$\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n,k_i=n\right)$注意到$\left(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)\in S_{n-1}$且\[N\left(k_1,k_2,\cdots,k_i,\cdots,k_n\right)=N\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)+n-i\]根据归纳假设$\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)$经$N\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)$次相邻对换得到$\left(1,2,\cdots,n-1\right)$.于是$\left(k_1,k_2,\cdots,k_n\right)$经$N\left(k_1,k_2,\cdots,k_n\right)$次相邻对换得到$\left(1,2,\cdots,n\right)$.
+        设置换$\left(k_1,k_2,\cdots,k_n\right)$中$k_i=n$.其后的逆序数贡献为$n-i$,作相邻对换$n-i$次将$n$换到最后即$\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n,k_i=n\right)$注意到$\left(k_1,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)\in S_{n-1}$且\[N\left(k_1,k_2,\cdots,k_i,\cdots,k_n\right)=N\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)+n-i\]根据归纳假设$\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)$经$N\left(k_1,k_2,\cdots,k_{i-1},k_{i+1},\cdots,k_n\right)$次相邻对换得到$\left(1,2,\cdots,n-1\right)$.于是$\left(k_1,k_2,\cdots,k_n\right)$经$N\left(k_1,k_2,\cdots,k_n\right)$次相邻对换得到$\left(1,2,\cdots,n\right)$.
     \end{proof}
 }
 \subsection{行列式的组合定义}
 \thm{}{向量的标准表示}{
-任意列向量可以如下标准方法表出：
+任意列向量可以如下标准方法表出:
 \[
     \bm{\alpha }_i =
     \left(a_{1i},a_{2i},\cdots,a_{ni}\right)' = \sum_{j = 1}^{n}a_{ji}\bm{e}_{j}.
 \]
 }
 \cor{}{行列式的向量表示}{
-    对于任意行列式$\left|\bm{A}\right|$，根据前文给出的\cref{thm:向量的标准表示}得到：
+    对于任意行列式$\left|\bm{A}\right|$,根据前文给出的\cref{thm:向量的标准表示}得到:
     \[
         \det\left(\bm{A}\right) =
         \left|\bm{\alpha }_1,\bm{\alpha }_2,
@@ -95,7 +95,7 @@
             \bm{e}_{k_1},\cdots,\bm{e}_{k_n}
             \right|.
         \end{align*}
-        其中，注意到$k_i=k_j\left(i\neq j\right)$时式子为零，那么求和下标$1 \leqslant k_1,\cdots,k_n \leqslant n$表示排列$\left(k_1,\cdots,k_n\right)$取遍所有可能，可记作:
+        其中,注意到$k_i=k_j\left(i\neq j\right)$时式子为零,那么求和下标$1 \leqslant k_1,\cdots,k_n \leqslant n$表示排列$\left(k_1,\cdots,k_n\right)$取遍所有可能,可记作:
         \[
             \left(k_1,\cdots,k_n\right) \in S_n
         \]又因为行列式$\left|\bm{e}_{k_1}
@@ -114,19 +114,19 @@
         \end{align*}其中
         \[
             \left(-1\right)^{N\left(k_1,\cdots,k_n\right)}
-        \]称为单项符号，而\[
+        \]称为单项符号,而\[
             a_{k_{1}1} \cdots a_{k_{n}n}
         \]称为一个单项.
     \end{proof}
 }
 \rem{}{}{
-    单项符号表明了一个高于一阶的行列式的展开式中必然是正项和负项各$n!/2$个，单项则表明了展开式中的每一项的值都是从不同行不同列取一个元相乘得到.
+    单项符号表明了一个高于一阶的行列式的展开式中必然是正项和负项各$n!/2$个,单项则表明了展开式中的每一项的值都是从不同行不同列取一个元相乘得到.
 }
 \rem{}{}{
     行列式的递归定义和组合定义是完全等价的.
 }
 \lem{}{单项的得到}{
-设$\left(i_1,i_2,\cdots,i_n\right),\left(j_1,j_2,\cdots,j_n\right)\in S_n$，则
+设$\left(i_1,i_2,\cdots,i_n\right),\left(j_1,j_2,\cdots,j_n\right)\in S_n$,则
 \[
     a_{i_1j_1}a_{i_2j_2}\cdots a_{i_nj_n}
 \]在$\left|\bm{A}\right|$中的符号为

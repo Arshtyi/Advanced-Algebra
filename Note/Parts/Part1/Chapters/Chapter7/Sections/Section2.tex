@@ -2,39 +2,39 @@
 \section{矩阵的法式}
 \subsection{法式}
 \lem{}{任意多项式矩阵必定相抵于首元素为其他元素因子的多项式矩阵}{
-    设非零$\lambda$-阵$\bm{A}\left(\lambda\right)=\left(a_{ij}\left(\lambda\right)\right)_{m\times n}$，则$\bm{A}\left(\lambda\right)$必定相抵于$\bm{B}\left(\lambda\right)=\left(b_{ij}\left(\lambda\right)\right)_{m\times n}$，其中$b_{11}\left(\lambda\right)\neq 0$且$b_{11}\left(\lambda\right)\mid b_{ij}\left(\lambda\right),\forall 1\leqslant i\leqslant m,1\leqslant j\leqslant n.$\begin{proof}
+    设非零$\lambda$-阵$\bm{A}\left(\lambda\right)=\left(a_{ij}\left(\lambda\right)\right)_{m\times n}$,则$\bm{A}\left(\lambda\right)$必定相抵于$\bm{B}\left(\lambda\right)=\left(b_{ij}\left(\lambda\right)\right)_{m\times n}$,其中$b_{11}\left(\lambda\right)\neq 0$且$b_{11}\left(\lambda\right)\mid b_{ij}\left(\lambda\right),\forall 1\leqslant i\leqslant m,1\leqslant j\leqslant n.$\begin{proof}
         设$k=\min\left\{
             \deg a_{ij}\left(\lambda\right)\mid
             a_{ij}\left(\lambda\right)\neq 0,1\leqslant i\leqslant m,1\leqslant j\leqslant n
-            \right\}\geqslant 0$，对$k$进行归纳.若$k=0$则存在$a_{ij}\left(\lambda\right)$是非零常数，则通过行列对换即可.
+            \right\}\geqslant 0$,对$k$进行归纳.若$k=0$则存在$a_{ij}\left(\lambda\right)$是非零常数,则通过行列对换即可.
 
-        设非零元次数最小值小于$k$时结论成立，下面证明等于$k$时的情况.
+        设非零元次数最小值小于$k$时结论成立,下面证明等于$k$时的情况.
 
         取$a_{ij}\left(\lambda\right)$使得$\deg a_{ij}\left(\lambda\right)=k$则通过行列对换将其换到$\left(1,1\right)$位置.不妨设$a_{11}\left(\lambda\right)$达到非零元次数最小值.
 
-        其一，设$\exists a_{i1}\left(\lambda\right)\st a_{11}\left(\lambda\right)\nmid a_{i1}\left(\lambda\right)$则有带余除法
+        其一,设$\exists a_{i1}\left(\lambda\right)\st a_{11}\left(\lambda\right)\nmid a_{i1}\left(\lambda\right)$则有带余除法
         \[
             a_{i1}\left(\lambda\right)=
             a_{11}\left(\lambda\right)q\left(\lambda\right)+r\left(\lambda\right)
-        \]其中$\deg r\left(\lambda\right)<\deg a_{11}\left(\lambda\right)=k$且$r\left(\lambda\right)\neq 0.$那么此时将第一行乘上$-q\left(\lambda\right)$加到第$i$行，于是得到一个具有更低的最低次数元（$r\left(\lambda\right)$）的矩阵，根据归纳假设得证.
+        \]其中$\deg r\left(\lambda\right)<\deg a_{11}\left(\lambda\right)=k$且$r\left(\lambda\right)\neq 0.$那么此时将第一行乘上$-q\left(\lambda\right)$加到第$i$行,于是得到一个具有更低的最低次数元($r\left(\lambda\right)$)的矩阵,根据归纳假设得证.
 
-        其二，若$\exists a_{1j}\left(\lambda\right)\st a_{11}\left(\lambda\right)\nmid a_{1j}\left(\lambda\right)$，同理可得.
+        其二,若$\exists a_{1j}\left(\lambda\right)\st a_{11}\left(\lambda\right)\nmid a_{1j}\left(\lambda\right)$,同理可得.
 
-        其三，若$a_{11}\left(\lambda\right)\mid a_{i1}\left(\lambda\right),a_{11}\left(\lambda\right)\mid a_{1j}\left(\lambda\right),\forall 1\leqslant i\leqslant m,1\leqslant j\leqslant n.$此时利用初等变换将同行同列其他元素变为零.然后考虑是否有$a_{11}\left(\lambda\right)\mid a_{ij}'\left(\lambda\right),\forall 2\leqslant i\leqslant m,2\leqslant j\leqslant n$（做过变换已不等于原矩阵元素），若是，则证毕.
+        其三,若$a_{11}\left(\lambda\right)\mid a_{i1}\left(\lambda\right),a_{11}\left(\lambda\right)\mid a_{1j}\left(\lambda\right),\forall 1\leqslant i\leqslant m,1\leqslant j\leqslant n.$此时利用初等变换将同行同列其他元素变为零.然后考虑是否有$a_{11}\left(\lambda\right)\mid a_{ij}'\left(\lambda\right),\forall 2\leqslant i\leqslant m,2\leqslant j\leqslant n$(做过变换已不等于原矩阵元素),若是,则证毕.
 
-        设$\exists a_{ij}'\left(\lambda\right)\st a_{11}\left(\lambda\right)\nmid a_{ij}'\left(\lambda\right).$将第$i$行加到第一行，此为第一种情况，得证.
+        设$\exists a_{ij}'\left(\lambda\right)\st a_{11}\left(\lambda\right)\nmid a_{ij}'\left(\lambda\right).$将第$i$行加到第一行,此为第一种情况,得证.
     \end{proof}
 }
 \thm{}{任意多项式矩阵相抵于对角多项式矩阵}{
-    设$n$阶$\lambda$-矩阵$\bm{A}\left(\lambda\right)$，则其相抵于
+    设$n$阶$\lambda$-矩阵$\bm{A}\left(\lambda\right)$,则其相抵于
     \[
         \bm{B}\left(\lambda\right)=\diag \left\{
         d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
         \right\}
     \]其中$d_i\left(\lambda\right)$为非零首一多项式且$d_i\left(\lambda\right)\mid d_{i+1}\left(\lambda\right),\forall 1\leqslant i\leqslant r-1$\begin{proof}
-        对阶数$n$归纳，$n=1$时显然.设小于$n$阶时成立，来证明等于$n$阶的情形.$\bm{A}\left(\lambda\right)=\bm{O}$显然，下设$\bm{A}\left(\lambda\right)\neq \bm{O}$.
+        对阶数$n$归纳,$n=1$时显然.设小于$n$阶时成立,来证明等于$n$阶的情形.$\bm{A}\left(\lambda\right)=\bm{O}$显然,下设$\bm{A}\left(\lambda\right)\neq \bm{O}$.
 
-        由\cref{lem:任意多项式矩阵必定相抵于首元素为其他元素因子的多项式矩阵}知，$\bm{A}\left(\lambda\right)$必定相抵于$\bm{B}\left(\lambda\right)$，其中$b_{11}\left(\lambda\right)\neq 0$且$b_{11}\left(\lambda\right)\mid b_{ij}\left(\lambda\right),\forall 1\leqslant i,j\leqslant n.$然后利用初等变换得到
+        由\cref{lem:任意多项式矩阵必定相抵于首元素为其他元素因子的多项式矩阵}知,$\bm{A}\left(\lambda\right)$必定相抵于$\bm{B}\left(\lambda\right)$,其中$b_{11}\left(\lambda\right)\neq 0$且$b_{11}\left(\lambda\right)\mid b_{ij}\left(\lambda\right),\forall 1\leqslant i,j\leqslant n.$然后利用初等变换得到
         \[
             \bm{B}'\left(\lambda\right)=\begin{pmatrix}
                 b_{11}\left(\lambda\right) & 0                           & \cdots & 0                           \\
@@ -44,13 +44,13 @@
             \end{pmatrix}
         \]显然$b_{11}\left(\lambda\right)\mid b_{ij}'\left(\lambda\right),\forall 2\leqslant i,j\leqslant n.$将该矩阵右下记作$\bm{B}_{n-1}'\left(\lambda\right)$
 
-        由归纳假设，存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$作为若干个$n-1$阶初等$\lambda$-阵的乘积，使得
+        由归纳假设,存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$作为若干个$n-1$阶初等$\lambda$-阵的乘积,使得
         \[
             \bm{P}\left(\lambda\right)\bm{B}_{n-1}'\left(\lambda\right)\bm{Q}\left(\lambda\right)=\diag \left\{
             d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
             \right\}
         \]
-        其中$d_i\left(\lambda\right)$为非零首一多项式且$d_i\left(\lambda\right)\mid d_{i+1}\left(\lambda\right),\forall 2\leqslant i\leqslant r-1$.设$b_{11}\left(\lambda\right)$的首项系数为$c$，记$d_1\left(\lambda\right)=c^{-1}b_{11}\left(\lambda\right).$作
+        其中$d_i\left(\lambda\right)$为非零首一多项式且$d_i\left(\lambda\right)\mid d_{i+1}\left(\lambda\right),\forall 2\leqslant i\leqslant r-1$.设$b_{11}\left(\lambda\right)$的首项系数为$c$,记$d_1\left(\lambda\right)=c^{-1}b_{11}\left(\lambda\right).$作
         \[
             \begin{pmatrix}
                 c^{-1} & 0 \\0 & \bm{I}_{n-1}
@@ -68,11 +68,11 @@
                                         &                         &        &                         &   & \ddots &   \\
                                         &                         &        &                         &   &        & 0
             \end{pmatrix}
-        \]因为$d_1\left(\lambda\right)$整除$\bm{B}_{n-1}'\left(\lambda\right)$的任一元素，故$d_1\left(\lambda\right)$整除$\bm{P}\left(\lambda\right)\bm{B}_{n-1}'\left(\lambda\right)\bm{Q}\left(\lambda\right)$的任一元素，于是$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)$.
+        \]因为$d_1\left(\lambda\right)$整除$\bm{B}_{n-1}'\left(\lambda\right)$的任一元素,故$d_1\left(\lambda\right)$整除$\bm{P}\left(\lambda\right)\bm{B}_{n-1}'\left(\lambda\right)\bm{Q}\left(\lambda\right)$的任一元素,于是$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)$.
     \end{proof}
 }
 \clm{}{}{
-    由\cref{thm:任意多项式矩阵相抵于对角多项式矩阵}对于任意矩阵$\bm{A}\left(\lambda\right)_{m\times n}$，必定相抵于
+    由\cref{thm:任意多项式矩阵相抵于对角多项式矩阵}对于任意矩阵$\bm{A}\left(\lambda\right)_{m\times n}$,必定相抵于
     \[
         \begin{pmatrix}
             d_1\left(\lambda\right) & 0                       & \cdots & 0                       & \bm{O} \\
@@ -84,32 +84,32 @@
     \]
 }
 \rem{}{}{
-    \cref{thm:任意多项式矩阵相抵于对角多项式矩阵}得到的矩阵的主对角线上非零元素个数$r$可以称为该$\lambda$-矩阵的秩，但是$\lambda$-阵的秩要比数字矩阵的秩来得弱的多，满秩并不意味着可逆.
+    \cref{thm:任意多项式矩阵相抵于对角多项式矩阵}得到的矩阵的主对角线上非零元素个数$r$可以称为该$\lambda$-矩阵的秩,但是$\lambda$-阵的秩要比数字矩阵的秩来得弱的多,满秩并不意味着可逆.
 }
 \dfn{法式}{法式}{
     \cref{thm:任意多项式矩阵相抵于对角多项式矩阵}得到矩阵称为$\bm{A}\left(\lambda\right)$的法式或者相抵标准型.
 }
 \rem{}{}{
-    把\cref{def:法式}叫作相抵标准型过早，还需要证明相抵标准型不依赖于$\lambda$-矩阵初等变换的选取.
+    把\cref{def:法式}叫作相抵标准型过早,还需要证明相抵标准型不依赖于$\lambda$-矩阵初等变换的选取.
 }
 \lem{$\lambda$-阵乘积的行列式}{多项式矩阵的乘积的行列式}{
-    设$n$阶$\lambda$-矩阵$\bm{A}\left(\lambda\right),\bm{B}\left(\lambda\right)$，则
-    \begin{enumerate}[label=\arabic*）]
+    设$n$阶$\lambda$-矩阵$\bm{A}\left(\lambda\right),\bm{B}\left(\lambda\right)$,则
+    \begin{enumerate}[label=\arabic*)]
         \item $\left|\bm{A}\left(\lambda\right)\cdot\bm{B}\left(\lambda\right)\right|=\left|\bm{A}\left(\lambda\right)\right|\cdot\left|\bm{B}\left(\lambda\right)\right|$
-        \item 定义伴随阵：
+        \item 定义伴随阵:
               \[
                   \bm{A}\left(\lambda\right)\bm{A}\left(\lambda\right)^*=\bm{A}\left(\lambda\right)^*\bm{A}\left(\lambda\right)=\left|\bm{A}\left(\lambda\right)\right|\bm{I}_n
               \]
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
+        \begin{enumerate}[label=\arabic*)]
             \item 令$f\left(\lambda\right)=
                       \left|\bm{A}\left(\lambda\right)\cdot\bm{B}\left(\lambda\right)\right|-\left|\bm{A}\left(\lambda\right)\right|\cdot\left|\bm{B}\left(\lambda\right)\right|
-                  $是关于$\lambda$的多项式.$\forall a\in \mathbb{K}$，$f\left(a\right)=0\Longrightarrow f\left(\lambda\right)=0.$
+                  $是关于$\lambda$的多项式.$\forall a\in \bbk $,$f\left(a\right)=0\Longrightarrow f\left(\lambda\right)=0.$
             \item 令$\left(f_{ij}\left(\lambda\right)\right)_{n\times n}=
                       \bm{A}\left(\lambda\right)\bm{A}\left(\lambda\right)^*-\left|
                       \bm{A}\left(\lambda\right)
                       \right|\bm{I}_n
-                  $其中$f_{ij}\left(\lambda\right)\in \mathbb{K}\left[\lambda\right]$.$\forall a\in \mathbb{K},
+                  $其中$f_{ij}\left(\lambda\right)\in \bbk \left[\lambda\right]$.$\forall a\in \bbk ,
                       \left(f_{ij}\left(a\right)\right)_{n\times n}=\bm{A}\left(a\right)
                       \bm{A}\left(a\right)^*-\left|\bm{A}\left(a\right)\right|\bm{I}_n=\bm{O}\Longrightarrow
                       f_{ij}\left(\lambda\right)=0,\forall 1\leqslant i,j\leqslant n.$\qedhere
@@ -118,16 +118,16 @@
 }
 \subsection{逆阵}
 \thm{$\lambda$-阵可逆的充要条件}{多项式矩阵可逆的充要条件}{
-    设$n$阶$\lambda$-阵，则以下等价：\begin{enumerate}[label=\arabic*）]
+    设$n$阶$\lambda$-阵,则以下等价:\begin{enumerate}[label=\arabic*)]
         \item $\bm{A}\left(\lambda\right)$是可逆$\lambda$-阵
         \item $\left|\bm{A}\left(\lambda\right)\right|$是非零常数
         \item $\bm{A}\left(\lambda\right)$的相抵标准型为单位阵
         \item $\bm{A}\left(\lambda\right)$只通过行变换或列变换就能化为$\bm{I}_n$
         \item $\bm{A}\left(\lambda\right)$是若干$\lambda$-初等阵的乘积
     \end{enumerate}\begin{proof}
-        $(1)\Longrightarrow (2)$因为存在$\bm{B}\left(\lambda\right)$使得$\bm{A}\left(\lambda\right)\bm{B}\left(\lambda\right)=\bm{B}\left(\lambda\right)\bm{A}\left(\lambda\right)=\left|\bm{A}\left(\lambda\right)\right|\bm{I}_n$，取行列式立得.
+        $(1)\Longrightarrow (2)$因为存在$\bm{B}\left(\lambda\right)$使得$\bm{A}\left(\lambda\right)\bm{B}\left(\lambda\right)=\bm{B}\left(\lambda\right)\bm{A}\left(\lambda\right)=\left|\bm{A}\left(\lambda\right)\right|\bm{I}_n$,取行列式立得.
 
-        $(2)\Longrightarrow (3)$由\cref{thm:任意多项式矩阵相抵于对角多项式矩阵}，存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$（均为初等$\lambda$-阵的乘积）使得
+        $(2)\Longrightarrow (3)$由\cref{thm:任意多项式矩阵相抵于对角多项式矩阵},存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$(均为初等$\lambda$-阵的乘积)使得
         \[
             \bm{P}\left(\lambda\right)\bm{A}\left(\lambda\right)\bm{Q}\left(\lambda\right)
             =
@@ -135,16 +135,16 @@
             d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0
             \right\}
         \]
-        其中，$d_i\left(\lambda\right)$为非零首一多项式且$d_i\left(\lambda\right)\mid d_{i+1}\left(\lambda\right),\forall 1\leqslant i\leqslant r-1.$两边取行列式得到$r=n$.并且\[d_1\left(\lambda\right)d_2\left(\lambda\right)\cdots d_n\left(\lambda\right)=c\neq 0\]再由首一得到\[d_1\left(\lambda\right)=d_2\left(\lambda\right)=\cdots=d_n\left(\lambda\right)=1\]于是
+        其中,$d_i\left(\lambda\right)$为非零首一多项式且$d_i\left(\lambda\right)\mid d_{i+1}\left(\lambda\right),\forall 1\leqslant i\leqslant r-1.$两边取行列式得到$r=n$.并且\[d_1\left(\lambda\right)d_2\left(\lambda\right)\cdots d_n\left(\lambda\right)=c\neq 0\]再由首一得到\[d_1\left(\lambda\right)=d_2\left(\lambda\right)=\cdots=d_n\left(\lambda\right)=1\]于是
         $\bm{A}\left(\lambda\right)$相抵于$\bm{I}_n.$
 
-        $(3)\Longrightarrow (4)$因为\cref{thm:任意多项式矩阵相抵于对角多项式矩阵}，存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$（均为初等$\lambda$-阵的乘积）使得
+        $(3)\Longrightarrow (4)$因为\cref{thm:任意多项式矩阵相抵于对角多项式矩阵},存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$(均为初等$\lambda$-阵的乘积)使得
         \[
             \bm{P}\left(\lambda\right)\bm{A}\left(\lambda\right)\bm{Q}\left(\lambda\right)
             =\bm{I}_n
-        \]于是$\bm{Q}\left(\lambda\right)\bm{P}\left(\lambda\right)\bm{A}\left(\lambda\right)=\bm{I}_n$于是$\bm{A}\left(\lambda\right)$只需要行变换就可以化为相抵标准型$\bm{I}_n$，同理列变换.
+        \]于是$\bm{Q}\left(\lambda\right)\bm{P}\left(\lambda\right)\bm{A}\left(\lambda\right)=\bm{I}_n$于是$\bm{A}\left(\lambda\right)$只需要行变换就可以化为相抵标准型$\bm{I}_n$,同理列变换.
 
-        $(4)\Longrightarrow (5)$考虑行变换，即
+        $(4)\Longrightarrow (5)$考虑行变换,即
         \[
             \bm{P}_r\left(\lambda\right)
             \cdots\bm{P}_1\left(\lambda\right)\bm{A}\left(\lambda\right)=\bm{I}_n
@@ -156,7 +156,7 @@
             \cdots\bm{P}_r\left(\lambda\right)^{-1}
         \]
 
-        $(5)\Longrightarrow (1)$根据\cref{thm:初等多项式矩阵的逆阵}，初等$\lambda$-阵是可逆阵，其乘积也一定可逆.
+        $(5)\Longrightarrow (1)$根据\cref{thm:初等多项式矩阵的逆阵},初等$\lambda$-阵是可逆阵,其乘积也一定可逆.
     \end{proof}
 }
 \cor{$\lambda$-阵的逆阵}{多项式矩阵的逆阵}{
@@ -166,13 +166,13 @@
     \]
 }
 \thm{特征矩阵的法式}{特征矩阵的法式}{
-    设$\bm{A}\in M_n\left(\mathbb{K}\right)$,则$\lambda\bm{I}_n-\bm{A}$相抵于
+    设$\bm{A}\in M_n\left(\bbk \right)$,则$\lambda\bm{I}_n-\bm{A}$相抵于
     \[
         \diag \left\{
         1,\cdots,1;d_1\left(\lambda\right),\cdots,d_m\left(\lambda\right)
         \right\}
-    \]其中$d_i\left(\lambda\right)$是非常数的首一多项式，且$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_m\left(\lambda\right).$这就是$\lambda\bm{I}_n-\bm{A}$的法式.\begin{proof}
-        因为\cref{thm:任意多项式矩阵相抵于对角多项式矩阵}，存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$（均为初等$\lambda$-阵的乘积）使得
+    \]其中$d_i\left(\lambda\right)$是非常数的首一多项式,且$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_m\left(\lambda\right).$这就是$\lambda\bm{I}_n-\bm{A}$的法式.\begin{proof}
+        因为\cref{thm:任意多项式矩阵相抵于对角多项式矩阵},存在$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$(均为初等$\lambda$-阵的乘积)使得
         \[
             \bm{P}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{A}\right)\bm{Q}\left(\lambda\right)
             =
@@ -182,23 +182,23 @@
         \]取行列式得$r=n$且
         \[
             c\left|\lambda\bm{I}_n-\bm{A}\right|=d_1\left(\lambda\right)d_2\left(\lambda\right)\cdots d_n\left(\lambda\right)
-        \]其中$c\neq 0.$考虑到首一，立得$c=1.$最后调整顺序即可.
+        \]其中$c\neq 0.$考虑到首一,立得$c=1.$最后调整顺序即可.
     \end{proof}
 }
 \exa{}{}{
-    在\cref{thm:特征矩阵的法式}中，若$\deg d_i\left(\lambda\right)\geqslant 1$，则$\bm{A}=c\bm{I}_n$\begin{proof}
+    在\cref{thm:特征矩阵的法式}中,若$\deg d_i\left(\lambda\right)\geqslant 1$,则$\bm{A}=c\bm{I}_n$\begin{proof}
         因为\[\left|\lambda\bm{I}_n-\bm{A}\right|=d_1\left(\lambda\right)\cdots d_n\left(\lambda\right)\]两边取次数得到\[
-            n=\sum_{i=1}^{n}\deg d_i\left(\lambda\right)\geqslant n\]即有\[\deg d_i\left(\lambda\right)=1,\forall 1\leqslant i\leqslant n\]所以$d_i\left(\lambda\right)$是相互整除的首一一次多项式，于是他们只能全部相等.
+            n=\sum_{i=1}^{n}\deg d_i\left(\lambda\right)\geqslant n\]即有\[\deg d_i\left(\lambda\right)=1,\forall 1\leqslant i\leqslant n\]所以$d_i\left(\lambda\right)$是相互整除的首一一次多项式,于是他们只能全部相等.
 
         于是$\lambda\bm{I}_n-\bm{A}$相抵于\[
             \diag \left\{
             \lambda-c, \cdots,\lambda-c
             \right\}=\lambda\bm{I}_n-c\bm{I}_n
-        \]因为\cref{thm:矩阵相似等价于特征矩阵相抵}，于是\[\bm{A}\approx c\bm{I}_n\]后者两边乘上$\bm{P}^{-1}$、$\bm{P}$是交换的，即\[\bm{A}=c\bm{I}_n\qedhere\]
+        \]因为\cref{thm:矩阵相似等价于特征矩阵相抵},于是\[\bm{A}\approx c\bm{I}_n\]后者两边乘上$\bm{P}^{-1}$、$\bm{P}$是交换的,即\[\bm{A}=c\bm{I}_n\qedhere\]
     \end{proof}
 }
 \clm{}{}{
-    于是，\cref{thm:特征矩阵的法式}中的$1$，只有在$\bm{A}$是纯量阵时才会不存在.
+    于是,\cref{thm:特征矩阵的法式}中的$1$,只有在$\bm{A}$是纯量阵时才会不存在.
 }
 \exa{}{}{
     计算矩阵

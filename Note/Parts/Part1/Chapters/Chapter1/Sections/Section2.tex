@@ -4,9 +4,9 @@
 \thm{}{行列式按列展开的任意性}{
     行列式可以按照任意一列展开.
     \begin{proof}
-        设将$\left|\bm{A}\right|$按第$r$列展开，首先考虑经过$r-1$次相邻对换将第$r$列移到第一列的情形得到行列式$\left|\bm{B}\right|$,由\cref{cor:列形式的行列式的基础性质}的$(4)$知$\left|\bm{B}\right|=\left(-1\right)^{r-1}\left|\bm{A}\right|.$展开得\[
+        设将$\left|\bm{A}\right|$按第$r$列展开,首先考虑经过$r-1$次相邻对换将第$r$列移到第一列的情形得到行列式$\left|\bm{B}\right|$,由\cref{cor:列形式的行列式的基础性质}的$(4)$知$\left|\bm{B}\right|=\left(-1\right)^{r-1}\left|\bm{A}\right|.$展开得\[
             \left|\bm{B}\right|=a_{1r}N_{11}-a_{2r}N_{21}+\cdots+(-1)^{n+1}a_{nr}N_{n1}
-        \]注意到$N_{i1}=M_{ir}$，于是
+        \]注意到$N_{i1}=M_{ir}$,于是
         \begin{align*}
             \left|\bm{A}\right| & =\left(-1\right)^{r-1}\left|\bm{B}\right|                                                  \\
                                 & =\left(-1\right)^{r-1}\left(a_{1r}N_{11}-a_{2r}N_{21}+\cdots+(-1)^{n+1}a_{nr}N_{n1}\right) \\
@@ -24,13 +24,13 @@
     \]
 }
 \thm{异乘变零定理}{列形式的异乘变零定理}{
-设$n$阶行列式$\left|\bm{A}\right|$且$1\leqslant r,s\leqslant n$，则
+设$n$阶行列式$\left|\bm{A}\right|$且$1\leqslant r,s\leqslant n$,则
 \[
     a_{1r}A_{1s}+a_{2r}A_{2s}+\cdots+a_{nr}A_{ns}=\delta_{rs}\left|\bm{A}\right|
 \]\begin{proof}
     $r=s$显然成立.
 
-    $r\neq s$时，不妨设$r<s$，构造
+    $r\neq s$时,不妨设$r<s$,构造
     \[
         \begin{vmatrix}
             a_{11} & \cdots & a_{1r} & \cdots & a_{1r} & \cdots & a_{1n} \\
@@ -55,7 +55,7 @@
 \]\begin{proof}
     按第$r$列展开\[
         \left|\bm{A}\right|=a_{1r}A_{1r}+\cdots+a_{nr}A_{nr}
-    \]因为$\forall i\neq s,A_{ir}$至少有一列全为零，于是$A_{ir}=0,\forall i\neq s.$
+    \]因为$\forall i\neq s,A_{ir}$至少有一列全为零,于是$A_{ir}=0,\forall i\neq s.$
 \end{proof}
 }
 \lem{}{按任意行展开}{
@@ -63,7 +63,7 @@
 \[
     \left|\bm{A}\right|=a_{r1}A_{r1}+a_{r2}A_{r2}+\cdots+a_{rn}A_{rn}
 \]\begin{proof}
-    进行拆分,$a_{r1}=a_{r1}+0+\cdots+0,a_{r2}=0+a_{r2}+\cdots+0,\cdots,a_{rn}=0+0+\cdots+a_{rn}$，于是
+    进行拆分,$a_{r1}=a_{r1}+0+\cdots+0,a_{r2}=0+a_{r2}+\cdots+0,\cdots,a_{rn}=0+0+\cdots+a_{rn}$,于是
     \[
         \left|\bm{A}\right|=\begin{vmatrix}
             a_{11} & a_{12} & \cdots & a_{1n} \\
@@ -91,10 +91,10 @@
 \end{proof}
 }
 \cor{异乘变零定理}{行形式的异乘变零定理}{
-设$n$阶行列式$\left|\bm{A}\right|$且$1\leqslant r,s\leqslant n$，则\[
+设$n$阶行列式$\left|\bm{A}\right|$且$1\leqslant r,s\leqslant n$,则\[
     a_{r1}A_{s1}+a_{r2}A_{s2}+\cdots+a_{rn}A_{sn}=\delta_{rs}\left|\bm{A}\right|
-\]类似于列形式的\cref{thm:列形式的异乘变零定理}，此行形式
-$r=s$显然成立，$r\neq s$时，不妨设$r<s$，构造\[
+\]类似于列形式的\cref{thm:列形式的异乘变零定理},此行形式
+$r=s$显然成立,$r\neq s$时,不妨设$r<s$,构造\[
     \left|\bm{C}\right|=\begin{vmatrix}
         a_{11} & a_{12} & \cdots & a_{1n} \\
         \vdots & \vdots &        & \vdots \\
@@ -104,7 +104,7 @@ $r=s$显然成立，$r\neq s$时，不妨设$r<s$，构造\[
         \vdots & \vdots &        & \vdots \\
         a_{n1} & a_{n2} & \cdots & a_{nn}
     \end{vmatrix}
-\]由\cref{lem:按任意行展开}，按第$s$行展开即可.
+\]由\cref{lem:按任意行展开},按第$s$行展开即可.
 }
 \rem{}{}{
     一个容易证明的结论是,$n$阶行列式展开式共有$n!$项.
@@ -125,11 +125,11 @@ $r=s$显然成立，$r\neq s$时，不妨设$r<s$，构造\[
             \vdots & \vdots &        & \vdots \\
             a_{1n} & a_{2n} & \cdots & a_{nn}
         \end{vmatrix}
-    \]即$\left|\bm{A}\right|$的第$i$行就是$\left|\bm{A}'\right|$的第$i$列（$\forall 1\leqslant i\leqslant n$）.
+    \]即$\left|\bm{A}\right|$的第$i$行就是$\left|\bm{A}'\right|$的第$i$列($\forall 1\leqslant i\leqslant n$).
 }
 \thm{}{行列式的转置不变性}{
     行列式转置后值不变即$\left|\bm{A}'\right|=\left|\bm{A}\right|$.\begin{proof}
-        考虑数学归纳法,$n=1$时显然成立.设结论对$n-1$阶成立,下面证明$n$阶的情形.事实上，根据\cref{thm:行列式按列展开的任意性}和\cref{lem:按任意行展开}，只要将$\left|\bm{A}\right|$和$\left|\bm{A}'\right|$分别按某一列（行）、行（列）展开即证.
+        考虑数学归纳法,$n=1$时显然成立.设结论对$n-1$阶成立,下面证明$n$阶的情形.事实上,根据\cref{thm:行列式按列展开的任意性}和\cref{lem:按任意行展开},只要将$\left|\bm{A}\right|$和$\left|\bm{A}'\right|$分别按某一列(行)、行(列)展开即证.
     \end{proof}
 }
 \subsection{Cramer法则}
@@ -154,7 +154,7 @@ $r=s$显然成立，$r\neq s$时，不妨设$r<s$，构造\[
     \end{vmatrix}
 \]
 \thm{Cramer法则}{Cramer法则}{
-    当$\left(\star\right)$的系数行列式$ \det\left(\bm{A}\right) \neq 0$时，该方程组有且仅
+    当$\left(\star\right)$的系数行列式$ \det\left(\bm{A}\right) \neq 0$时,该方程组有且仅
     有一组解:
     \[
         x_i = \frac{ \det\left(\bm{A}_i\right)}

@@ -3,21 +3,21 @@
 \subsection{前提}
 \dfn{几何意义的对角化}{几何意义的对角化}{
     设$\bm{\varphi}\in \call  \left(
-        V_{\mathbb{K}}^n
-        \right)$,若$\bm{\varphi}$在某组基下的表示矩阵为对角阵，则称$\bm{\varphi}$可对角化.
+        V_{\bbk }^n
+        \right)$,若$\bm{\varphi}$在某组基下的表示矩阵为对角阵,则称$\bm{\varphi}$可对角化.
 }
 \dfn{代数意义的对角化}{代数意义的对角化}{
     设$\bm{A}\in M_n\left(
-        \mathbb{K}
-        \right)$，若$\bm{A}\approx \bm{\varLambda}$则称$\bm{A}$可对角化.
+        \bbk
+        \right)$,若$\bm{A}\approx \bm{\varLambda}$则称$\bm{A}$可对角化.
 }
 \thm{几何意义的可对角化条件}{几何意义的可对角化条件}{
-    设$V$是$\mathbb{K}$上的$n$维线性空间，$\bm{\varphi}\in\call  \left(V\right)$.则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}$有$n$个线性无关的特征向量.\begin{proof}
-        先考虑必要性，设$\bm{\varphi}$可对角化，即存在$V$的一组基$\left\{
+    设$V$是$\bbk $上的$n$维线性空间,$\bm{\varphi}\in\call  \left(V\right)$.则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}$有$n$个线性无关的特征向量.\begin{proof}
+        先考虑必要性,设$\bm{\varphi}$可对角化,即存在$V$的一组基$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
             \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为$\diag \left\{
             \lambda_1,\lambda_2,\cdots,\lambda_n
-            \right\}$，则有
+            \right\}$,则有
         \[
             \left(
             \bm{\varphi}\left(\bm{e}_1\right),
@@ -34,9 +34,9 @@
                           &           &        & \lambda_n
             \end{bmatrix}
         \]于是$\bm{\varphi}\left(\bm{e}_i\right)=\lambda_i\bm{e}_i,\forall 1\leqslant i\leqslant n.$于是$\lambda_1,\lambda_2,\cdots,\lambda_n$正是
-        $\bm{\varphi}$的特征值，而$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$正是对应于这$n$个特征值的特征向量，并且它们作为基向量一定是线性无关的.必要性证毕.
+        $\bm{\varphi}$的特征值,而$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$正是对应于这$n$个特征值的特征向量,并且它们作为基向量一定是线性无关的.必要性证毕.
 
-        再考虑充分性，设$\bm{\varphi}$有$n$个线性无关的特征向量$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$，则它们构成$V$的一组基，且$\bm{\varphi}\left(\bm{e}_i\right)=\lambda_i\bm{e}_i,\forall 1\leqslant i\leqslant n$.于是
+        再考虑充分性,设$\bm{\varphi}$有$n$个线性无关的特征向量$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$,则它们构成$V$的一组基,且$\bm{\varphi}\left(\bm{e}_i\right)=\lambda_i\bm{e}_i,\forall 1\leqslant i\leqslant n$.于是
         \[
             \left(
             \bm{\varphi}\left(\bm{e}_1\right),
@@ -53,12 +53,12 @@
                           &           &        & \lambda_n
             \end{bmatrix}
         \]
-        即$\bm{\varphi}$在这组基下的表示矩阵为对角阵，故$\bm{\varphi}$可对角化.
+        即$\bm{\varphi}$在这组基下的表示矩阵为对角阵,故$\bm{\varphi}$可对角化.
     \end{proof}
 }
 \thm{代数意义的可对角化条件}{代数意义的可对角化条件}{
     设$\bm{A}\in M_n\left(
-        \mathbb{K}
+        \bbk
         \right)$则$\bm{A}$可复对角化当且仅当$\bm{A}$有$n$个线性无关的特征向量.
 }
 \exa{}{}{
@@ -68,28 +68,28 @@
             1 & 1 \\
             0 & 1
         \end{bmatrix}
-    \]其特征值为$1,1$，但只有一个线性无关的特征向量$k\begin{pmatrix}
+    \]其特征值为$1,1$,但只有一个线性无关的特征向量$k\begin{pmatrix}
             1 \\0
         \end{pmatrix}\left(
-        k\in\mathbb{K}\backslash \left\{0\right\}
-        \right)$，故不可对角化.
+        k\in\bbk \backslash \left\{0\right\}
+        \right)$,故不可对角化.
 
-    或者考虑反证法，若$\bm{A}$可对角化，则存在非异阵$\bm{P}\in M_2\left(
-        \mathbb{K}
+    或者考虑反证法,若$\bm{A}$可对角化,则存在非异阵$\bm{P}\in M_2\left(
+        \bbk
         \right)$使得
-    $\bm{P}^{-1}\bm{AP}=\bm{I}_2$，于是$\bm{A}=\bm{P}\bm{I}_2\bm{P}^{-1}=\bm{I}_2$，矛盾.
+    $\bm{P}^{-1}\bm{AP}=\bm{I}_2$,于是$\bm{A}=\bm{P}\bm{I}_2\bm{P}^{-1}=\bm{I}_2$,矛盾.
 }
 \thm{}{特征子空间的和是直和}{
     设$\bm{\varphi}\in
         \call  \left(
-        V_{\mathbb{K}}^n
+        V_{\bbk }^n
         \right)
-    $，$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的不同特征值，$V_1,V_2,\cdots,V_k$是对应的特征子空间，则
+    $,$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的不同特征值,$V_1,V_2,\cdots,V_k$是对应的特征子空间,则
     \[
         V_1+V_2+\cdots+V_k=V_1\oplus
         V_2\oplus\cdots\oplus V_k
     \]\begin{proof}
-        对$k$进行归纳，$k=1$显然.设不同特征值的个数$<k$时成立，下面考虑其等于$k$时的情况.此时有
+        对$k$进行归纳,$k=1$显然.设不同特征值的个数$<k$时成立,下面考虑其等于$k$时的情况.此时有
         \[
             V_1+V_2+\cdots+V_{k-1}=V_1\oplus
             V_2\oplus\cdots\oplus V_{k-1}
@@ -111,7 +111,7 @@
         \[
             V_k \ni \bm{v} =
             \bm{v}_1+\bm{v}_2+\cdots+\bm{v}_{k-1}
-        \]其中$\bm{v}_i\in V_i,\forall 1\leqslant i\leqslant k -1.$两边同时作用$\bm{\varphi}$，则
+        \]其中$\bm{v}_i\in V_i,\forall 1\leqslant i\leqslant k -1.$两边同时作用$\bm{\varphi}$,则
         \[
             \lambda_k\bm{v} =
             \lambda_1\bm{v}_1+\lambda_2\bm{v}_2+\cdots+\lambda_{k-1}\bm{v}_{k-1}
@@ -130,7 +130,7 @@
             \lambda_{k-1}-\lambda_k
             \right)\bm{v}_{k-1}
         \]
-        由直和性质\cref{thm:直和的判定}知零向量分块表示唯一，又因为$\lambda_i\neq \lambda_j,\forall i\neq j$，故$\bm{v}_1=\bm{v}_2=\cdots=\bm{v}_{k-1}=\bm{0}$，即$\bm{v}=\bm{0}$，从而
+        由直和性质\cref{thm:直和的判定}知零向量分块表示唯一,又因为$\lambda_i\neq \lambda_j,\forall i\neq j$,故$\bm{v}_1=\bm{v}_2=\cdots=\bm{v}_{k-1}=\bm{0}$,即$\bm{v}=\bm{0}$,从而
         \[
             V_1+V_2+\cdots+V_k=V_1\oplus
             V_2\oplus\cdots\oplus V_k\qedhere
@@ -139,7 +139,7 @@
 }
 \cor{}{不同特征值的特征向量相互正交}{
     不同特征值的特征向量必定线性无关.\begin{proof}
-        设$\lambda_1,\lambda_2,\cdots,\lambda_k$是不同的特征值，$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k$是对应的特征向量.设
+        设$\lambda_1,\lambda_2,\cdots,\lambda_k$是不同的特征值,$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_k$是对应的特征向量.设
         \[
             c_1\bm{v}_1+c_2\bm{v}_2+\cdots+c_k\bm{v}_k=\bm{0}
         \]
@@ -148,50 +148,50 @@
 }
 \thm{}{不同特征值个数与可对角化}{
     设$\bm{\varphi}\in \call  \left(
-        V_{\mathbb{K}}^n
-        \right)$有$n$个不同的特征值，则$\bm{\varphi}$可对角化.\begin{proof}
-        设$\bm{\varphi}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$，由于它们不同，故对应的特征向量$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_n$线性无关，于是$\bm{\varphi}$有$n$个线性无关的特征向量，故可对角化.
+        V_{\bbk }^n
+        \right)$有$n$个不同的特征值,则$\bm{\varphi}$可对角化.\begin{proof}
+        设$\bm{\varphi}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$,由于它们不同,故对应的特征向量$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_n$线性无关,于是$\bm{\varphi}$有$n$个线性无关的特征向量,故可对角化.
     \end{proof}
-    这是一个充分条件，但不是必要条件.
+    这是一个充分条件,但不是必要条件.
 }
 \exa{}{}{
     设$\bm{\varphi}=c\bm{I}_V,\bm{A}=c\bm{I}_n$是可对角化的但特征值全为$c$.
 }
-实际上，任给一个矩阵，其可对角化的概率要远大于不可对角化的概率，并且可以用可对角化的矩阵取去逼近不可对角化的矩阵.
+实际上,任给一个矩阵,其可对角化的概率要远大于不可对角化的概率,并且可以用可对角化的矩阵取去逼近不可对角化的矩阵.
 \thm{可对角化的充分必要条件}{可对角化的充分必要条件}{
-    设$V$是$\bbc $上的$n$维线性空间，$
+    设$V$是$\bbc $上的$n$维线性空间,$
         \bm{\varphi}\in \call  \left(
         V
         \right)
-    $，设全体不同特征值$\lambda_1,\lambda_2,\cdots,\lambda_k$，$V_1,V_2,\cdots,V_k$为对应的特征子空间，则$\bm{\varphi}$可对角化当且仅当
+    $,设全体不同特征值$\lambda_1,\lambda_2,\cdots,\lambda_k$,$V_1,V_2,\cdots,V_k$为对应的特征子空间,则$\bm{\varphi}$可对角化当且仅当
     \[
         V=V_1\oplus V_2\oplus\cdots\oplus V_k
     \]\begin{proof}
-        考虑充分性，设
+        考虑充分性,设
         \[
             V=V_1\oplus V_2\oplus\cdots\oplus V_k
-        \]取$V_1$的基$\left\{
+        \]取$V_1$的基为$\left\{
             \bm{v}_{11},\bm{v}_{12},\cdots,\bm{v}_{1n_1}
-            \right\}$,$V_2$的基$\left\{
+            \right\}$,$V_2$的基为$\left\{
             \bm{v}_{21},\bm{v}_{22},\cdots,\bm{v}_{2n_2}
-            \right\}$，$\cdots$，$V_k$的基$\left\{
+            \right\}$,$\cdots$,$V_k$的基为$\left\{
             \bm{v}_{k1},\bm{v}_{k2},\cdots,\bm{v}_{kn_k}
-            \right\}$，则$
+            \right\}$,则$
             \left\{
             \bm{v}_{11},\bm{v}_{12},\cdots,\bm{v}_{1n_1},\bm{v}_{21},\bm{v}_{22},\cdots,\bm{v}_{2n_2},\cdots,\bm{v}_{k1},\bm{v}_{k2},\cdots,\bm{v}_{kn_k}
             \right\}
-        $是$V$的一组基.于是$\bm{\varphi}$有$n$个线性无关的特征向量，故可对角化.
+        $是$V$的一组基.于是$\bm{\varphi}$有$n$个线性无关的特征向量,故可对角化.
 
-        再考虑必要性，设$\bm{\varphi}$有$n$个线性无关的特征向量$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$，这也是$V$的一组基，于是$\forall \bm{\alpha}\in V$
+        再考虑必要性,设$\bm{\varphi}$有$n$个线性无关的特征向量$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$,这也是$V$的一组基,于是$\forall \bm{\alpha}\in V$
         \[
             \bm{\alpha}=a_1\bm{e}_1 + a_2\bm{e}_2+\cdots+a_n\bm{e}_n
         \]
         进行适当调序可以保证$a_{i_1}\bm{e}_{i_1},a_{i_1}\bm{e}_{i_r}\cdots,a_{i_r}\bm{e}_{i_r}\in V_r\left(
             1   \leqslant r\leqslant k
-            \right)$，于是
+            \right)$,于是
         \[
             V=V_1+ V_2+\cdots+V_k
-        \]又考虑到\cref{thm:特征子空间的和是直和}，故
+        \]又考虑到\cref{thm:特征子空间的和是直和},故
         \[
             V=V_1\oplus V_2\oplus\cdots\oplus V_k
             \qedhere
@@ -201,12 +201,12 @@
 下面利用几何重数与代数重数的关系来讨论对角化的条件.
 \subsection{重数}
 \dfn{代数重数与几何重数}{代数重数与几何重数}{
-    设$\lambda_0$是$\bm{\varphi}$的特征值，$V_0$是其特征子空间，则称$\dim V_0$为$\lambda_0$的度数或几何重数.
+    设$\lambda_0$是$\bm{\varphi}$的特征值,$V_0$是其特征子空间,则称$\dim V_0$为$\lambda_0$的度数或几何重数.
 
     $\lambda_0$作为$\bm{\varphi}$的特征多项式的根的重数称为$\lambda_0$的重数或代数重数.
 }
 \clm{几何重数与代数重数的区别}{}{
-    几何重数与代数重数不见得相等.由线性映射维数公式知，几何重数
+    几何重数与代数重数不见得相等.由线性映射维数公式知,几何重数
     \[
         \dim V _0=\dim\Ker \left(
         \lambda_0\bm{I}_V-\bm{\varphi}
@@ -221,16 +221,16 @@
 \lem{代数重数与几何重数的关系}{代数重数与几何重数的关系}{
     设$
         \bm{\varphi}\in \call  \left(
-        V_{\mathbb{K}}^n
+        V_{\bbk }^n
         \right)
-    $，$\lambda_0$是$\bm{\varphi}$的一个特征值，则$\lambda_0$的几何重数一定小于等于其代数重数.\begin{proof}
-        设几何重数$t=\dim V_0$，代数重数为$m$.
+    $,$\lambda_0$是$\bm{\varphi}$的一个特征值,则$\lambda_0$的几何重数一定小于等于其代数重数.\begin{proof}
+        设几何重数$t=\dim V_0$,代数重数为$m$.
 
         取$V_0$的一组基$\left\{
             \bm{e}_1    ,\bm{e}_2,\cdots,\bm{e}_t
             \right\}$扩张为$V$的一组基$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_t,\bm{e}_{t+1},\cdots,\bm{e}_n
-            \right\}$，则有
+            \right\}$,则有
         \begin{align*}
               & \left(
             \bm{\varphi}\left(
@@ -261,7 +261,7 @@
         不妨设$\bm{A}=\begin{bmatrix}
                 \lambda_0\bm{I}_t & \bm{C} \\
                 \bm{O}            & \bm{B}
-            \end{bmatrix}$，于是特征多项式
+            \end{bmatrix}$,于是特征多项式
         \begin{align*}
             \left|\lambda\bm{I}_V-\bm{\varphi}\right| & =
             \left|
@@ -285,21 +285,21 @@
 \dfn{完全特征向量系}{完全特征向量系}{
     设
     $\bm{\varphi}\in \call  \left(
-        V_{\mathbb{K}}^n
+        V_{\bbk }^n
         \right)
-    $，若对$\bm{\varphi}$的任一特征值$\lambda_0$，其几何重数等于代数重数，则称$\bm{\varphi}$有完全的特征向量系.
+    $,若对$\bm{\varphi}$的任一特征值$\lambda_0$,其几何重数等于代数重数,则称$\bm{\varphi}$有完全的特征向量系.
 }
 \thm{可对角化的条件}{可对角化的条件}{
     设
     $\bm{\varphi}\in \call  \left(
-        V_{\mathbb{K}}^n
+        V_{\bbk }^n
         \right)
-    $，则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}$有完全的特征向量系.\begin{proof}
+    $,则$\bm{\varphi}$可对角化当且仅当$\bm{\varphi}$有完全的特征向量系.\begin{proof}
         只要证明$\bm{\varphi}$有完全的特征向量系当且仅当
         \[
             V= V_1\oplus V_2\oplus\cdots\oplus V_k
         \]
-        其中，$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的全体不同特征值，$V_1,V_2,\cdots,V_k$是对应的特征子空间.
+        其中,$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的全体不同特征值,$V_1,V_2,\cdots,V_k$是对应的特征子空间.
 
         先考虑充分性,设$\lambda_i$的几何重数
         $t_i=\dim V_i\left(
@@ -325,7 +325,7 @@
         \end{align*}
         于是$\bm{\varphi}$有完全的特征向量系.
 
-        在考虑必要性，即$\bm{\varphi}$有完全的特征向量系即$t_i=m_i\left(
+        在考虑必要性,即$\bm{\varphi}$有完全的特征向量系即$t_i=m_i\left(
             \forall 1\leqslant i\leqslant k
             \right)$,则
         \begin{align*}
@@ -348,13 +348,13 @@
             1 & 1 \\
             0 & 1
         \end{bmatrix}
-    \]对于其特征值$1$，代数重数为$2$，几何重数为$1$，故没有完全的特征向量系，因此不可对角化.
+    \]对于其特征值$1$,代数重数为$2$,几何重数为$1$,故没有完全的特征向量系,因此不可对角化.
 }
 \exa{}{}{
-    若已知$\bm{A}$可对角化，如何求得$\bm{P}$使得$\bm{P}^{-1}\bm{AP}$为对角阵.\begin{solution}
+    若已知$\bm{A}$可对角化,如何求得$\bm{P}$使得$\bm{P}^{-1}\bm{AP}$为对角阵.\begin{solution}
         令$\bm{P}=\left(
             \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
-            \right)$，其为非异阵即$\bm{\alpha}_1,
+            \right)$,其为非异阵即$\bm{\alpha}_1,
             \bm{\alpha}_2,\cdots,\bm{\alpha}_n$线性无关.若
         \[
             \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
@@ -379,7 +379,7 @@
 
 }
 \rem{}{}{
-    由于特征向量的线性组合仍为特征向量，故$\bm{P}$的选取一定不是唯一的，但是$\bm{P}$的第$i$个列向量一定对应于$\bm{A}$的第$i$个特征值.
+    由于特征向量的线性组合仍为特征向量,故$\bm{P}$的选取一定不是唯一的,但是$\bm{P}$的第$i$个列向量一定对应于$\bm{A}$的第$i$个特征值.
 }
 \exa{}{}{
     考虑矩阵
@@ -400,7 +400,7 @@
             \right)^2\left(
             \lambda-3
             \right)
-        \end{align*}于是特征值$\lambda_1=1$，代数重数为$2$，解方程组得
+        \end{align*}于是特征值$\lambda_1=1$,代数重数为$2$,解方程组得
         \begin{align*}
             \begin{bmatrix}
                 0 & 0 & 0 \\2&-4&2\\2 & -4 & 2
@@ -414,7 +414,7 @@
             -1,0,1
             \right)'$,故几何重数为$2$.
 
-        特征值$\lambda_2=3$，代数重数为$1$，解方程组得
+        特征值$\lambda_2=3$,代数重数为$1$,解方程组得
         \begin{align*}
             \begin{bmatrix}
                 2 & 0 & 0 \\2&-2&2\\2 & -4 & 4
@@ -424,7 +424,7 @@
             \end{bmatrix}
         \end{align*}基础解系为$\left(
             0,1,1
-            \right)'$，故几何重数为$1$（事实上，可以证明，代数重数为$1$时几何重数必定为$1$）.
+            \right)'$,故几何重数为$1$(事实上,可以证明,代数重数为$1$时几何重数必定为$1$).
 
         于是$\bm{A}$一定可对角化且
         \[
@@ -455,8 +455,8 @@
 \exa{}{}{
     设$\bm{A}=\begin{bmatrix}
             1 & 0 \\1 & -2
-        \end{bmatrix}$，求$\bm{A}^{m}.$\begin{solution}
-        注意到这是一个下三角阵，特征值为$1$和$-2$，于是一定有两个线性无关的特征向量，故一定可对角化.求出\[
+        \end{bmatrix}$,求$\bm{A}^{m}.$\begin{solution}
+        注意到这是一个下三角阵,特征值为$1$和$-2$,于是一定有两个线性无关的特征向量,故一定可对角化.求出\[
             \bm{P}=\begin{bmatrix}
                 3 & 0 \\ 1 & 1
             \end{bmatrix}
@@ -480,7 +480,7 @@
     \end{solution}
 }
 \clm{}{}{
-    事实上，考虑几何重数还可以有另外的方法，这在前文已述.因为
+    事实上,考虑几何重数还可以有另外的方法,这在前文已述.因为
     \[
         V_{\lambda_0}=\left\{
         \bm{v}\in \bbc ^n\mid

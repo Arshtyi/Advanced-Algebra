@@ -20,7 +20,7 @@
 \]
 }
 \subsection{Gerschgorin圆盘第一定理}
-下面给出Gerschgorin圆盘第一定理（戈尔斯哥利戈氏圆盘第一定理，戈氏第一圆盘定理，圆盘定理）.
+下面给出Gerschgorin圆盘第一定理(戈尔斯哥利戈氏圆盘第一定理,戈氏第一圆盘定理,圆盘定理).
 \thm{Gerschgorin圆盘第一定理}{Gerschgorin圆盘第一定理}{
     设$\bm{A}=\left(
         a_{ij}
@@ -30,7 +30,7 @@
         z-  a_{ii}
         \right|\leqslant R_i,\forall 1\leqslant i\leqslant n
     \]\begin{proof}
-        任取$\bm{A}$的特征值$\lambda_0$，其特征向量$\bm{\xi}=\left(
+        任取$\bm{A}$的特征值$\lambda_0$,其特征向量$\bm{\xi}=\left(
             \xi_1,\xi_2,\cdots,\xi_n
             \right)'\neq \bm{0}$即$\bm{A\xi}=\lambda_0\bm{\xi}.$于是有
         \[
@@ -40,7 +40,7 @@
                 \qquad\qquad\cdots\cdots\cdots\cdots              \\
                 a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=\lambda_0x_n
             \end{cases*}
-        \]因为$\bm{\xi}$的分量重至少有一个不为零，于是考虑设$0<\left|x_r\right|=\max\left\{
+        \]因为$\bm{\xi}$的分量重至少有一个不为零,于是考虑设$0<\left|x_r\right|=\max\left\{
             \left|x_1\right|,\left|x_2\right|,\cdots,\left|x_n\right|
             \right\}.$考虑
         \[
@@ -95,28 +95,28 @@
     \end{proof}
 }
 \dfn{连通区域}{连通区域}{
-    若几个戈氏圆盘相连在一起，则称相连区域（指它们覆盖的所有区域）为连通区域，这几个圆盘为连通圆盘.
+    若几个戈氏圆盘相连在一起,则称相连区域(指它们覆盖的所有区域)为连通区域,这几个圆盘为连通圆盘.
 }
 \rem{}{}{
-    对于单个非连通的圆盘,该圆盘内必定存在一个特征值.但对于连通区域中的某一圆盘，只能保证特征值在该连通区域内但不一定在这个圆盘内.这将在Gerschgorin圆盘第二定理中体现.
+    对于单个非连通的圆盘,该圆盘内必定存在一个特征值.但对于连通区域中的某一圆盘,只能保证特征值在该连通区域内但不一定在这个圆盘内.这将在Gerschgorin圆盘第二定理中体现.
 }
 \subsection{Gerschgorin圆盘第二定理}
 \lem{}{多项式的根关于系数连续}{
 设$f\left(x\right)=a_nx^n+
     a_{n-1}x^{n-1}+\cdots+a_1x+a_0
-$，则$f\left(x\right)$的根关于$a_n,\cdots,a_1,a_0$连续.
+$,则$f\left(x\right)$的根关于$a_n,\cdots,a_1,a_0$连续.
 }
 \rem{}{}{
-我们曾说过，对于高于$4$次的多项式，没有能够用系数的初等运算得到的显式求根公式，也无从谈起像二次多项式那样$\displaystyle
+我们曾说过,对于高于$4$次的多项式,没有能够用系数的初等运算得到的显式求根公式,也无从谈起像二次多项式那样$\displaystyle
     \frac{
         -b\pm\sqrt{b^2-4ac}
-    }{2a}$的连续性，因此这里需要做一个解释.
+    }{2a}$的连续性,因此这里需要做一个解释.
 
 设$f\left(x\right)$的根为$\lambda_1,\lambda_2,\cdots,\lambda_n$,则$\lambda_i=\lambda_i\left(
     a_n,\cdots,a_1,a_0
     \right),\forall
     1\leqslant i\leqslant n
-$，考虑
+$,考虑
 \[
     \widetilde{f}\left(x\right)=\widetilde{a}_nx^n+\widetilde{a}_{n-1}x^{n-1}+\cdots+\widetilde{a}_1x+\widetilde{a}_0
 \]的根为
@@ -132,7 +132,7 @@ $\widetilde{\lambda}_1,\widetilde{\lambda}_2,\cdots,\widetilde{\lambda}_n$,则$\
     \widetilde{a}_1-a_1
     \right|<\delta,\left|
     \widetilde{a}_0-a_0
-    \right|<\delta$时，必定有\[\left|
+    \right|<\delta$时,必定有\[\left|
     \widetilde{\lambda}_i\left(
     \widetilde{a}_n,\cdots,\widetilde{a}_1,\widetilde{a}_0
     \right)-\lambda_i\left(
@@ -140,24 +140,24 @@ $\widetilde{\lambda}_1,\widetilde{\lambda}_2,\cdots,\widetilde{\lambda}_n$,则$\
     \right)
     \right|<\varepsilon,\forall 1\leqslant i\leqslant n\]
 
-上定理证明需要利用复变函数论中的Rouch\'e定理，因此这里不再赘述.可参考\cite{蒋尔雄1978}中的证明.
+上定理证明需要利用复变函数论中的Rouch\'e定理,因此这里不再赘述.可参考\cite{蒋尔雄1978}中的证明.
 }
 \rem{}{}{
-    上述定理并非断言多项式的某一个根是关于系数的连续函数，因此一般而言，矩阵的特征值也并不是关于矩阵元素的连续函数.
+    上述定理并非断言多项式的某一个根是关于系数的连续函数,因此一般而言,矩阵的特征值也并不是关于矩阵元素的连续函数.
 
     例如$\bm{A}=\begin{pmatrix}
             0 & z \\1 & 0
-        \end{pmatrix}$，当$z$在复平面上的单位圆内变化时，其特征值不是关于$z$的连续函数，但对于$z$在实轴上的某一区间来说，是成立的，这证明下面Gerschgorin圆盘第二定理利用摄动法证明所用到的.
+        \end{pmatrix}$,当$z$在复平面上的单位圆内变化时,其特征值不是关于$z$的连续函数,但对于$z$在实轴上的某一区间来说,是成立的,这证明下面Gerschgorin圆盘第二定理利用摄动法证明所用到的.
 }
 下面给出Gerschgorin圆盘第二定理,该定理能够对连通区域内特征值作进一步的估计.
 \rem{}{}{
-    戈氏圆盘可能是相同的，也可能是不同的.相同时在下面的第二定理中需要计算重数.
+    戈氏圆盘可能是相同的,也可能是不同的.相同时在下面的第二定理中需要计算重数.
 }
 \thm{Gerschgorin圆盘第二定理}{Gerschgorin圆盘第二定理}{
-    设$k$个戈氏圆盘连成一个连通区域，则有且仅有$k$个特征值落在该连通区域内.
+    设$k$个戈氏圆盘连成一个连通区域,则有且仅有$k$个特征值落在该连通区域内.
 
-    特别地，重合的圆盘计重数，相同的特征值亦计重数.\begin{proof}
-        考虑摄动法，设$\bm{A}=\left(a_{ij}\right)_{n\times n}$,考虑摄动
+    特别地,重合的圆盘计重数,相同的特征值亦计重数.\begin{proof}
+        考虑摄动法,设$\bm{A}=\left(a_{ij}\right)_{n\times n}$,考虑摄动
         \[
             \bm{A}\left(0\right)=\begin{pmatrix}
                 a_{11} &        &        &        \\
@@ -173,7 +173,7 @@ $\widetilde{\lambda}_1,\widetilde{\lambda}_2,\cdots,\widetilde{\lambda}_n$,则$\
                 \vdots  & \vdots  & \ddots & \vdots  \\
                 ta_{n1} & ta_{n2} & \cdots & a_{nn}
             \end{pmatrix}
-        \]$\bm{A}\left(1\right)=\bm{A}.$根据Gerschgorin圆盘第一定理，$\bm{A}\left(t\right)$的特征值落在
+        \]$\bm{A}\left(1\right)=\bm{A}.$根据Gerschgorin圆盘第一定理,$\bm{A}\left(t\right)$的特征值落在
         \[
             \left|
             z-a_{ii}
@@ -185,9 +185,9 @@ $\widetilde{\lambda}_1,\widetilde{\lambda}_2,\cdots,\widetilde{\lambda}_n$,则$\
             z-a_{ii}
             \right|\leqslant
             R_i,\forall 1\leqslant i\leqslant n
-        \]考虑$\bm{A}\left(t\right)$的特征多项式，其系数均是$t$的多项式，于是由\cref{lem:多项式的根关于系数连续}知其关于$t$连续.于是特征值关于系数连续，系数关于$t$连续，因此有$\bm{A}\left(t\right)$的特征值关于$t$连续.
+        \]考虑$\bm{A}\left(t\right)$的特征多项式,其系数均是$t$的多项式,于是由\cref{lem:多项式的根关于系数连续}知其关于$t$连续.于是特征值关于系数连续,系数关于$t$连续,因此有$\bm{A}\left(t\right)$的特征值关于$t$连续.
 
-        断言，特征值在连续变化的过程中，只能在同一个连通区域内变化而不能跳出该连通区域.考虑反证法，如果变化过程中跳出，意味着$\exists t_0\in \left(0,1\right)$使得$\lambda_i\left(t_0\right)$不落在任何一个戈氏圆盘中.这与上文$\forall 0\leqslant t\leqslant 1,\bm{A}\left(t\right)$的特征值均落在$\bm{A}$的对应圆盘中
+        断言,特征值在连续变化的过程中,只能在同一个连通区域内变化而不能跳出该连通区域.考虑反证法,如果变化过程中跳出,意味着$\exists t_0\in \left(0,1\right)$使得$\lambda_i\left(t_0\right)$不落在任何一个戈氏圆盘中.这与上文$\forall 0\leqslant t\leqslant 1,\bm{A}\left(t\right)$的特征值均落在$\bm{A}$的对应圆盘中
         \[
             \left|
             z-a_{ii}
@@ -195,9 +195,9 @@ $\widetilde{\lambda}_1,\widetilde{\lambda}_2,\cdots,\widetilde{\lambda}_n$,则$\
             R_i,\forall 1\leqslant i\leqslant n
         \]矛盾.
 
-        于是从$t:0\to 1$，直到$t=1$，对于一个有$k$个圆盘连通的区域，其内至少有$t=0$时的$k$个特征值，另一方面，该断言对于所有连通区域均成立，于是也至多是$k$个，故有且仅有$k$个特征值落在该连通区域内.
+        于是从$t:0\to 1$,直到$t=1$,对于一个有$k$个圆盘连通的区域,其内至少有$t=0$时的$k$个特征值,另一方面,该断言对于所有连通区域均成立,于是也至多是$k$个,故有且仅有$k$个特征值落在该连通区域内.
     \end{proof}
 }
 \exa{}{}{
-    考虑矩阵$\bm{A}=\left(a_{ij}\right)_{n\times n}$且$0\ll a_{11}\ll a_{22}\ll\cdots\ll a_{nn}$，则$\bm{A}$可对角化.
+    考虑矩阵$\bm{A}=\left(a_{ij}\right)_{n\times n}$且$0\ll a_{11}\ll a_{22}\ll\cdots\ll a_{nn}$,则$\bm{A}$可对角化.
 }

@@ -4,9 +4,9 @@
 \dfn{对称多项式}{对称多项式}{
     设 $f\left(
         x_1,x_2,\cdots,x_n
-        \right)\in\mathbb{K}\left[
+        \right)\in\bbk \left[
             x_1,x_2,\cdots,x_n
-            \right]$，若$\forall 1\leqslant i<j\leqslant n$，都有
+            \right]$,若$\forall 1\leqslant i<j\leqslant n$,都有
     \[
         f\left(
         x_1,\cdots,x_i,\cdots,x_j,\cdots,x_n
@@ -16,7 +16,7 @@
         \right)
     \]则称$f\left(
         x_1,x_2,\cdots,x_n
-        \right)$是$\mathbb{K}$上的$n$元对称多项式.
+        \right)$是$\bbk $上的$n$元对称多项式.
 }
 \lem{}{置换定义的对称多项式}{
     设$\left(
@@ -24,10 +24,10 @@
         \right)
     $是 $\left(
         1,2,\cdots,n
-        \right)$的一个置换，且有对称多项式
+        \right)$的一个置换,且有对称多项式
     $f\left(
         x_1,x_2,\cdots,x_n
-        \right)$，则
+        \right)$,则
     \[
         f\left(
         x_{k_1},x_{k_2},\cdots,x_{k_n}
@@ -35,20 +35,20 @@
         x_1,x_2,\cdots,x_n
         \right)
     \]\begin{proof}
-        根据\cref{thm:逆序数的意义}，任意一个置换经过其逆序数次相邻对换就成为常排列.
+        根据\cref{thm:逆序数的意义},任意一个置换经过其逆序数次相邻对换就成为常排列.
     \end{proof}
 }
 \cor{}{对称多项式的封闭}{
     对称多项式的和与积仍然是对称多项式.
 }
 \lem{对称多项式的复合}{对称多项式的复合}{
-    设对称多项式$f_1,f_2,\cdots,f_m\in\mathbb{K}\left[
+    设对称多项式$f_1,f_2,\cdots,f_m\in\bbk \left[
             x_1,x_2,\cdots,x_n
-            \right]$，且有$g\left(
+            \right]$,且有$g\left(
         y_1,y_2,\cdots,y_m
-        \right)\in\mathbb{K}\left[
+        \right)\in\bbk \left[
             y_1,y_2,\cdots,y_m
-            \right]$，则$
+            \right]$,则$
         g\left(
         f_1,f_2,\cdots,f_m
         \right)
@@ -57,14 +57,14 @@
     $x_1,x_2,\cdots,x_n$
     的对称多项式.
 }
-一个自然的问题是，我们能否用尽可能少的对称多项式去控制所有的对称多项式.
+一个自然的问题是,我们能否用尽可能少的对称多项式去控制所有的对称多项式.
 \subsection{初等对称多项式}
 \dfn{初等对称多项式}{初等对称多项式}{
 设 $f\left(
     x_1,x_2,\cdots,x_n
-    \right)\in\mathbb{K}\left[
+    \right)\in\bbk \left[
         x_1,x_2,\cdots,x_n
-        \right]$，则称
+        \right]$,则称
 \[
     \sigma_1\left(
     x_1,x_2,\cdots,x_n
@@ -94,7 +94,7 @@
 \thm{对称多项式基本定理}{对称多项式基本定理}{
     设$f\left(
         x_1,x_2,\cdots,x_n
-        \right)$是$\mathbb{K}$上的$n$元对称多项式，则存在唯一的多项式
+        \right)$是$\bbk $上的$n$元对称多项式,则存在唯一的多项式
     $g\left(
         y_1,y_2,\cdots,y_n
         \right)$使得
@@ -105,29 +105,29 @@
         \sigma_1,\sigma_2,\cdots,\sigma_n
         \right)
     \]即任意一个对称多项式都可以唯一地表示为初等对称多项式的多项式.\begin{proof}
-        先证明存在性，设$f\neq 0$，则取字典排序下首项为$ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\left(
+        先证明存在性,设$f\neq 0$,则取字典排序下首项为$ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\left(
             a\neq 0
-            \right)$，则断言$
+            \right)$,则断言$
             i_1\geqslant i_2\geqslant\cdots\geqslant i_n
-        $（反证法，对换显然）.构造
+        $(反证法,对换显然).构造
         \[
             g_1\left(
             x_1,x_2,\cdots,x_n
             \right)=
             a\sigma_1^{i_1-i_2}\sigma_2^{i_2-i_3}\cdots\sigma_{n-1}^{i_{n-1}-i_n}\sigma_n^{i_n}
-        \]这是一个对称多项式，且其首项（首项的乘积等于乘积的首项）为\[
+        \]这是一个对称多项式,且其首项(首项的乘积等于乘积的首项)为\[
             ax_1^{i_1-i_2}\left(
             x_1x_2
             \right)^{i_2-i_3}\cdots\left(
             x_1x_2\cdots x_n\right)^{i_n}=ax_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}
         \]
 
-        接下来做这样一件事，首先定义$f_0=f$，找出其首项$a
-            x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$，然后构造$g_1$，然后令$f_1=f_0-g_1$，则$f_1$的首项次数小于$f_0$，重复上述过程，对于一般的$f_i$，根据其首项
+        接下来做这样一件事,首先定义$f_0=f$,找出其首项$a
+            x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$,然后构造$g_1$,然后令$f_1=f_0-g_1$,则$f_1$的首项次数小于$f_0$,重复上述过程,对于一般的$f_i$,根据其首项
         \[bx_1^{k_1}
             x_2^{k_2}\cdots x_n^{k_n}\left(
             i_1\geqslant k_1\geqslant k_2\geqslant\cdots\geqslant k_n\geqslant 0
-            \right)\]构造$g_{i+1}$，$f_ {i+1}=f_i-g_{i+1}$
+            \right)\]构造$g_{i+1}$,$f_ {i+1}=f_i-g_{i+1}$
         这里的指数组$
             \left(
             k_1,k_2,\cdots,k_n
@@ -137,7 +137,7 @@
             f=g_1+g_2+\cdots+g_s+g_{s+1}
         \]存在性证毕.
 
-        再证明唯一性，设$h\left(
+        再证明唯一性,设$h\left(
             y_1,y_2,\cdots,y_n
             \right)$使得
         \[
@@ -159,7 +159,7 @@
             \varphi\left(
             \sigma_1,\sigma_2,\cdots,\sigma_n
             \right)=0
-        $，只要证明$\varphi=0$即可.考虑反证法，$\varphi\neq 0$，因为
+        $,只要证明$\varphi=0$即可.考虑反证法,$\varphi\neq 0$,因为
         \[
             \varphi =
             \cdots+c y_1^{j_1}y_2^{j_2}\cdots y_n^{j_n}+d y_1^{k_1}y_2^{k_2}\cdots y_n^{k_n}+\cdots
@@ -176,7 +176,7 @@
         $的首项是\[
             cx_1^{j_1+j_2+\cdots+j_n}x_2^{j_2+\cdots+j_n}\cdots x_n^{j_n}
         \]$d\sigma_1^{k_1}\sigma_2^{k_2}\cdots\sigma_n^{k_n}$的首项是\[
-            dx_1^{k_1+k_2+\cdots+k_n}x_2^{k_2+\cdots+k_n}\cdots x_n^{k_n}\]断言所有首项均不是同类项.考虑反证法，即有
+            dx_1^{k_1+k_2+\cdots+k_n}x_2^{k_2+\cdots+k_n}\cdots x_n^{k_n}\]断言所有首项均不是同类项.考虑反证法,即有
         \[
             \begin{cases*}
                 j_1+j_2+\cdots+j_n=k_1+k_2+\cdots+k_n \\
@@ -186,10 +186,10 @@
             \end{cases*}
         \]则$j_r=k_r,\forall 1\leqslant r\leqslant n$.
 
-        所有的首项均不是同类项，则一定能找到一个字典序最先的首项，其先于$\varphi
+        所有的首项均不是同类项,则一定能找到一个字典序最先的首项,其先于$\varphi
             \left(
             \sigma_1,\sigma_2,\cdots,\sigma_n
-            \right)$的所有其它单项，于是它不能够被消去，因此\[
+            \right)$的所有其它单项,于是它不能够被消去,因此\[
             \varphi\left(
             \sigma_1,\sigma_2,\cdots,\sigma_n
             \right)\neq 0
@@ -199,8 +199,8 @@
 \exa{}{}{
     设$f\left(x_1,x_2,x_3\right)=x_1^2x_2
         +x_1^2x_3
-        +x_2^2x_1+x_2^2x_3+x_3^2x_1+x_3^2x_2$，求其初等对称多项式表示.\begin{solution}
-        显然，$f$的首项为$x_1^2x_2$，则$g_1=
+        +x_2^2x_1+x_2^2x_3+x_3^2x_1+x_3^2x_2$,求其初等对称多项式表示.\begin{solution}
+        显然,$f$的首项为$x_1^2x_2$,则$g_1=
             \sigma_1^{2-1}\sigma_2^{1-0}\sigma_3^{0}=f+3x_1x_2x_3=f+3\sigma_3
             \Longrightarrow f=\sigma_1\sigma_2-3\sigma_3.$
     \end{solution}
@@ -213,9 +213,9 @@
         x_2^2+x_3^2
         \right)\left(
         x_3^2+x_1^2
-        \right)$，求其初等对称多项式表示.\begin{solution}
-        显然$f$的首项为$x_1^4x_2^2$.进行上述构造时，某一$f_i$的首项
-        $bx_1^{k_1}x_2^{k_2}x_3^{k_3}$满足：
+        \right)$,求其初等对称多项式表示.\begin{solution}
+        显然$f$的首项为$x_1^4x_2^2$.进行上述构造时,某一$f_i$的首项
+        $bx_1^{k_1}x_2^{k_2}x_3^{k_3}$满足:
         \[
             \begin{cases*}
                 k_1+    k_2+k_3=6 \\
@@ -268,7 +268,7 @@
 }
 \rem{}{}{
     \cref{ex:齐次对称多项式的初等对称多项式表示示例}是齐次对称
-    多项式的初等对称多项式表示，对于一般的对称多项式，可以进行齐次分解（容易证明分解得到的多项式均是对称的）后按\cref{ex:齐次对称多项式的初等对称多项式表示示例}方法进行.
+    多项式的初等对称多项式表示,对于一般的对称多项式,可以进行齐次分解(容易证明分解得到的多项式均是对称的)后按\cref{ex:齐次对称多项式的初等对称多项式表示示例}方法进行.
 }
 \subsection{Newton公式}
 \dfn{Fermal和}{Fermal和}{
@@ -332,11 +332,11 @@
     \end{proof}
 }
 \thm{Newton公式}{Newton公式}{
-    记号同\cref{lem:Fermat与形式导数}\begin{enumerate}[label=\arabic*）]
-        \item $k\leqslant n-1$，则
+    记号同\cref{lem:Fermat与形式导数}\begin{enumerate}[label=\arabic*)]
+        \item $k\leqslant n-1$,则
               \[
                   s_k-s_{k-1}\sigma_1+\cdots+\left(-1\right)^{k-1}s_1\sigma_{k-1}+\left(-1\right)^k k\sigma_k=0\]
-        \item $k\geqslant n$，则
+        \item $k\geqslant n$,则
               \[
                   s_k-s_{k-1}\sigma_1+\cdots+
                   \left(-1\right)^{n-1}s_{k - n+1}\sigma_{n-1}+
@@ -368,16 +368,16 @@
             \right)\left(
             x^n-\sigma_1x^{n-1}+\cdots+\left(-1\right)^n\sigma_n
             \right)+g\left(x\right)
-        \]接下来比较$x^n$的系数，$k\leqslant n-1$时为
+        \]接下来比较$x^n$的系数,$k\leqslant n-1$时为
         \[
             \left(-1\right)^k\left(n-k\right)\sigma_k
             =s_k-s_{k-1}\sigma_1+\cdots+\left(-1\right)^{k}s_0\sigma_{k}
         \]
-        其中$s_0=n$，于是
+        其中$s_0=n$,于是
         \[
             s_k-s_{k-1}\sigma_1+\cdots+\left(-1\right)^{k-1}s_1\sigma_{k-1}+\left(-1\right)^k k\sigma_k=0
         \]
-        $k\geqslant n$时，$x^n$的系数为
+        $k\geqslant n$时,$x^n$的系数为
         \[
             0= s_k-s_{k-1}\sigma_1+\cdots+
             \left(-1\right)^{n-1}s_{k - n+1}\sigma_{n-1}+

@@ -2,9 +2,9 @@
 \section{结式与判别式}
 \subsection{结式}
 \thm{基域扩张}{基域扩张}{
-    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right]$，基于基域扩张下的不变性，有：$\left(
+    设$f\left(x\right),g\left(x\right)\in\bbk \left[x\right]$,基于基域扩张下的不变性,有:$\left(
         f\left(x\right),g\left(x\right)
-        \right)_{\mathbb{K}}=1\Longleftrightarrow
+        \right)_{\bbk }=1\Longleftrightarrow
         \left(
         f\left(x\right),g\left(x\right)
         \right)_{\bbc }=1\Longleftrightarrow
@@ -14,24 +14,24 @@
         f\left(x\right),g\left(x\right)$在$\bbc $有公共根.
 }
 \lem{}{不互素的条件}{
-    设$f\left(x\right),g\left(x\right)\in\mathbb{K}\left[x\right],d\left(x\right)=\left(
+    设$f\left(x\right),g\left(x\right)\in\bbk \left[x\right],d\left(x\right)=\left(
         f\left(x\right),g\left(x\right)
-        \right)$，则$d\left(x\right)\neq 1$当且仅当$\exists u\left(x\right)\neq 0,v\left(x\right)\neq 0\in\mathbb{K}\left[x\right]\st$
+        \right)$,则$d\left(x\right)\neq 1$当且仅当$\exists u\left(x\right)\neq 0,v\left(x\right)\neq 0\in\bbk \left[x\right]\st$
     \[
         f\left(x\right)u\left(x\right)=g\left(x\right)v\left(x\right)
     \]其中
     $\deg u\left(x\right)<\deg g\left(x\right),\deg v\left(x\right)<\deg f\left(x\right)$.\begin{proof}
-        先考虑必要性，即设$d\left(x\right)\neq 1$，则
-        $f\left(x\right)=d\left(x\right)v\left(x\right),g\left(x\right)=d\left(x\right)u\left(x\right)$，显然成立.
+        先考虑必要性,即设$d\left(x\right)\neq 1$,则
+        $f\left(x\right)=d\left(x\right)v\left(x\right),g\left(x\right)=d\left(x\right)u\left(x\right)$,显然成立.
 
-        再证充分性，即设$f\left(x\right)u\left(x\right)=g\left(x\right)v\left(x\right)$，则考虑反证法，设$\left(
+        再证充分性,即设$f\left(x\right)u\left(x\right)=g\left(x\right)v\left(x\right)$,则考虑反证法,设$\left(
             f\left(x\right),g\left(x\right)
-            \right)=1$，由
+            \right)=1$,由
         \[
             f\left(x\right)\mid f\left(x\right)u\left(x\right)=g\left(x\right)v\left(x\right)
-        \]知$f\left(x\right)\mid v\left(x\right)$，这与
+        \]知$f\left(x\right)\mid v\left(x\right)$,这与
         $v\left(x\right)\neq 0$且$\deg v\left(x\right)<
-            \deg f\left(x\right)$矛盾，证毕.
+            \deg f\left(x\right)$矛盾,证毕.
     \end{proof}
 }
 \rem{}{}{
@@ -71,11 +71,11 @@
     \end{pmatrix}
 \]
 因为$\left|\bm{A}'\right|=0$等价于该线性方程组存在非零解等价于
-\[u\left(x\right)\neq 0,v\left(x\right)\neq 0\in\mathbb{K}\left[x\right]\]存在即等价于\[
+\[u\left(x\right)\neq 0,v\left(x\right)\neq 0\in\bbk \left[x\right]\]存在即等价于\[
     \left(
     f\left(x\right),g\left(x\right)
     \right)\neq 1
-\]另一方面，若$\left|\bm{A}'\right|\neq 0$，则该线性方程组只有零解，即$f\left(x\right),g\left(x\right)$互素.
+\]另一方面,若$\left|\bm{A}'\right|\neq 0$,则该线性方程组只有零解,即$f\left(x\right),g\left(x\right)$互素.
 \dfn{结式/Sylvester行列式}{结式}{
     设
     \begin{align*}
@@ -97,7 +97,7 @@
             \vdots & \vdots & \vdots & \vdots & \vdots & \vdots  & \vdots  & \vdots & \vdots \\
             0      & \cdots & 0      & b_0    & b_1    & \cdots  & \cdots  & \cdots & b_m
         \end{vmatrix}
-    \]为$f\left(x\right)$与$g\left(x\right)$的结式（resultant）或Sylvester行列式.
+    \]为$f\left(x\right)$与$g\left(x\right)$的结式(resultant)或Sylvester行列式.
 
     若设
     \begin{align*}
@@ -106,7 +106,7 @@
     \end{align*}
     定义一个循环映射
     \begin{align*}
-        r:\mathbb{K}_{n+m}                            & \longrightarrow\mathbb{K}_{n+m}                                \\
+        r:\bbk _{n+m}                                 & \longrightarrow\bbk _{n+m}                                     \\
         \left(c_1,c_2,\cdots,c_{n+m-1},c_{n+m}\right) & \longmapsto\left(c_{n+m},c_1,\cdots,c_{n+m-2},c_{n+m-1}\right)
     \end{align*}于是该结式可以写成
     \[
@@ -116,7 +116,7 @@
     \]
 }
 \rem{}{}{
-    此处记号的确混乱，更多时候，$R\left(
+    此处记号的确混乱,更多时候,$R\left(
         f\left(x\right),g\left(x\right)
         \right)$是一个行列式.
 }
@@ -145,7 +145,7 @@
          & f\left(x\right)=a_0x^n +a_1x^{n-1}+\cdots+a_{n-1}x+a_n,a_0\neq 0 \\
          & g\left(x\right)=b_0x^m+b_1x^{m-1}+\cdots+b_{m-1}x+b_m,b_0\neq 0
     \end{align*}
-    且$f\left(x\right)$的根为$x_1,x_2,\cdots,x_n$，$g\left(x\right)$的根为$y_1,y_2,\cdots,y_m$，则
+    且$f\left(x\right)$的根为$x_1,x_2,\cdots,x_n$,$g\left(x\right)$的根为$y_1,y_2,\cdots,y_m$,则
     \[\left|
         R\left(f\left(x\right),g\left(x\right)\right)\right|=
         a_0^mb_0^n\prod_{i=1}^{n}\prod_{j=1}^{m}\left(
@@ -154,7 +154,7 @@
     \]\begin{proof}
         采用摄动法证明.
 
-        第一步，首一化.$f\left(x\right)=a_0f_1\left(x\right),g\left(x\right)=b_0g_1\left(x\right)$，那么
+        第一步,首一化.$f\left(x\right)=a_0f_1\left(x\right),g\left(x\right)=b_0g_1\left(x\right)$,那么
         \[\left|
             R\left(f\left(x\right),g\left(x\right)\right)\right|=
             a_0^mb_0^nR\left(f_1\left(x\right),g_1\left(x\right)\right)
@@ -168,13 +168,13 @@
         \]
         即可.
 
-        第二步，设$f\left(x\right)=\left(x-x_1\right)
+        第二步,设$f\left(x\right)=\left(x-x_1\right)
             \left(x-x_2\right)\cdots\left(x-x_n\right),g\left(x\right)=\left(x-y_1\right)
             \left(x-y_2\right)\cdots\left(x-y_m\right)$.
 
-        则一方面，若$\exists 1\leqslant i\leqslant n,1\leqslant j\leqslant m\,\textup{s.t.}x_i=y_j,LHS=0=RHS.$
+        则一方面,若$\exists 1\leqslant i\leqslant n,1\leqslant j\leqslant m\st x_i=y_j,LHS=0=RHS.$
 
-        另一方面，设$x_i\neq y_j,\forall 1\leqslant i\leqslant n,1\leqslant j\leqslant m$且$x_1,x_2,\cdots,x_n$互不相同，$y_1,y_2,\cdots,y_m$互不相同.那么
+        另一方面,设$x_i\neq y_j,\forall 1\leqslant i\leqslant n,1\leqslant j\leqslant m$且$x_1,x_2,\cdots,x_n$互不相同,$y_1,y_2,\cdots,y_m$互不相同.那么
         \begin{align*}
               & R\left(f\left(x\right),g\left(x\right)\right)\begin{bmatrix}
                                                                  x_1^{n+m-1} & \cdots & x_n^{n+m-1} & y_1^{n+m-1} & \cdots & y_m^{n+m-1} \\
@@ -237,7 +237,7 @@
             \right)
         \end{align*}至此两函数无同根及无同根且无重根的情况均证毕.
 
-        第三步，摄动法证明两个函数没有同根但是有重根的情况.设$\exists c_1,c_2,\cdots,c_n,d_1,d_2,\cdots,d_m\in\bbc \st\forall 0<t\ll 1$\[x_1+c_1t,x_2+c_2t,\cdots,x_n+c_nt,y_1+d_1t,y_2+d_2t,\cdots,y_m+d_mt\]两两互不相同.
+        第三步,摄动法证明两个函数没有同根但是有重根的情况.设$\exists c_1,c_2,\cdots,c_n,d_1,d_2,\cdots,d_m\in\bbc \st\forall 0<t\ll 1$\[x_1+c_1t,x_2+c_2t,\cdots,x_n+c_nt,y_1+d_1t,y_2+d_2t,\cdots,y_m+d_mt\]两两互不相同.
 
         构造
         \begin{align*}
@@ -256,7 +256,7 @@
             x-y_m-d_mt
             \right)
         \end{align*}
-        二者的系数均是$t$的多项式，特别地，$f_0\left(x\right)=f\left(x\right),g_0\left(x\right)=g\left(x\right)$.由上一步，$\forall 0<t\ll 1$
+        二者的系数均是$t$的多项式,特别地,$f_0\left(x\right)=f\left(x\right),g_0\left(x\right)=g\left(x\right)$.由上一步,$\forall 0<t\ll 1$
         \[
             \left|R\left(
             f_t\left(x\right),g_t\left(x\right)
@@ -266,7 +266,7 @@
             x_i+c_it-y_j-d_jt
             \right)
         \]
-        此为关于$t$的连续函数，令$t\to 0^+$,则
+        此为关于$t$的连续函数,令$t\to 0^+$,则
         \[
             R\left(f\left(x\right),g\left(x\right)\right)=\prod_{i=1}^{n}
             \prod_{j=1}^{m}
@@ -281,7 +281,7 @@
 设$f\left(x\right)=a_0x^n
     +a_1x^{n-1}+\cdots+a_{n-1}x+a_n\left(
     a_0\neq 0
-    \right)$，则称\[
+    \right)$,则称\[
     \Delta\left(f\right)\coloneqq
     \left(-1\right)^{
     \frac{
@@ -299,7 +299,7 @@
     a_0\neq 0
     \right)$的根为
 $x_1,x_2,\cdots,x_n$
-，则其判别式为
+,则其判别式为
 \[
     \Delta \left(f\right)=
     a_0^{2n-2}\prod_{1\leqslant i<j\leqslant n}\left(
@@ -316,7 +316,7 @@ $x_1,x_2,\cdots,x_n$
         \right)                                          \\
                 & =a_0^m\prod_{i=1}^{n}g\left(x_i\right)
     \end{align*}
-    令$g\left(x\right)=f'\left(x\right)\Longrightarrow m=n-1$，则
+    令$g\left(x\right)=f'\left(x\right)\Longrightarrow m=n-1$,则
     \[
         f'\left(x_i\right)=a_0\left(x_i-x_1\right)\cdots\left(x_i-x_{i-1}\right)\left(x_i-x_{i+1}\right)\cdots\left(x_i-x_n\right)
     \]于是
@@ -336,7 +336,7 @@ $x_1,x_2,\cdots,x_n$
 \cor{重根判定}{重根判定}{
     多项式$f\left(x\right)$在$\bbc $有重根当且仅当其判别式$\Delta\left(f\right)=0$.
 }
-之所以结式出现在多元多项式之后，是因为结式可以用于求解多元高次方程组.
+之所以结式出现在多元多项式之后,是因为结式可以用于求解多元高次方程组.
 \exa{}{}{
     考虑求解
     \[
@@ -352,7 +352,7 @@ $x_1,x_2,\cdots,x_n$
         其中$a_i\left(y\right),b_j\left(y\right)$是$y$的多项式且$a_0\left(y\right)\neq 0,b_0\left(y\right)\neq 0.$
         并设一解为$\left(
             \alpha,\beta
-            \right)$.令$y=\beta$，则$f\left(x,\beta\right)=0$与$g\left(x,\beta\right)=0$有公共根$x=\alpha$，则二者结式为零即
+            \right)$.令$y=\beta$,则$f\left(x,\beta\right)=0$与$g\left(x,\beta\right)=0$有公共根$x=\alpha$,则二者结式为零即
         \begin{align*}
               & R_x(f\left(x,\beta\right), g\left(x,\beta\right))                                      \\ = &
             \begin{vmatrix}
@@ -369,10 +369,10 @@ $x_1,x_2,\cdots,x_n$
             \end{vmatrix} \\
             = & 0
         \end{align*}
-        这是一个关于$y$的多项式，一定有根$y=\beta$，反代回去就完成了未定元的减少.
+        这是一个关于$y$的多项式,一定有根$y=\beta$,反代回去就完成了未定元的减少.
     \end{solution}
 }
 \clm{}{}{
-    从上面可以看出一般的思路，即先求$R_x\left(f,g\right)$（一个关于$y$的多项式），再求其根$\beta_1,\cdots,\beta_r$，再代入$f\left(x,\beta_i\right)=0$解得$x=\alpha_1,\cdots,\alpha_s$，最后，需要验证$\left(
+    从上面可以看出一般的思路,即先求$R_x\left(f,g\right)$(一个关于$y$的多项式),再求其根$\beta_1,\cdots,\beta_r$,再代入$f\left(x,\beta_i\right)=0$解得$x=\alpha_1,\cdots,\alpha_s$,最后,需要验证$\left(
         \alpha_i,\beta_j\right)$是否是合理解.
 }

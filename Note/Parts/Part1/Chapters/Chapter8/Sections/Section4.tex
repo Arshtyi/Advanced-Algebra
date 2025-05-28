@@ -2,12 +2,12 @@
 \section{正定型与正定矩阵}
 \subsection{定义}
 \dfn{正定型与负定型}{正定型与负定型}{
-    设$n$元实二次型$f\left(x_1,x_2,\cdots,x_n\right)=\bm{x}'\bm{Ax},\bm{A}$是相伴矩阵\begin{enumerate}[label=\arabic*）]
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}>0$，则称$f$为正定二次型（正定型），$\bm{A}$为正定矩阵（正定阵）
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}\geqslant 0$，则称$f$为半正定二次型（半正定型），$\bm{A}$为半正定矩阵（半正定阵）
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}<0$，则称$f$为负定二次型（负定型），$\bm{A}$为负定矩阵（负定阵）
-        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}\leqslant 0$，则称$f$为半负定二次型（半负定型），$\bm{A}$为半负定矩阵（半负定阵）
-        \item 若$\exists \bm{\alpha},\bm{\beta}\in\bbr ^n$使得$\bm{\alpha}'\bm{A\alpha}>0,\bm{\beta}'\bm{A\beta}<0$，则称$f$为不定二次型（不定型），$\bm{A}$为不定矩阵（不定阵）
+    设$n$元实二次型$f\left(x_1,x_2,\cdots,x_n\right)=\bm{x}'\bm{Ax},\bm{A}$是相伴矩阵\begin{enumerate}[label=\arabic*)]
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}>0$,则称$f$为正定二次型(正定型),$\bm{A}$为正定矩阵(正定阵)
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}\geqslant 0$,则称$f$为半正定二次型(半正定型),$\bm{A}$为半正定矩阵(半正定阵)
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}<0$,则称$f$为负定二次型(负定型),$\bm{A}$为负定矩阵(负定阵)
+        \item 若$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n,\bm{\alpha}'\bm{A\alpha}\leqslant 0$,则称$f$为半负定二次型(半负定型),$\bm{A}$为半负定矩阵(半负定阵)
+        \item 若$\exists \bm{\alpha},\bm{\beta}\in\bbr ^n$使得$\bm{\alpha}'\bm{A\alpha}>0,\bm{\beta}'\bm{A\beta}<0$,则称$f$为不定二次型(不定型),$\bm{A}$为不定矩阵(不定阵)
     \end{enumerate}
 }
 \exa{}{}{
@@ -26,7 +26,7 @@
 \thm{正定型与负定型的规范标准型}{正定型与负定型的规范标准型}{
     设实二次型$f\left(
         x_1,x_2,\cdots,x_n
-        \right)$的秩为$r$，正惯性指数为$p$，负惯性指数$q$，则\begin{enumerate}[label=\arabic*）]
+        \right)$的秩为$r$,正惯性指数为$p$,负惯性指数$q$,则\begin{enumerate}[label=\arabic*)]
         \item $f$是正定型当且仅当$p=n$
         \item $f$是半正定型当且仅当$p=r$
         \item $f$是负定型当且仅当$q=n$
@@ -36,7 +36,7 @@
 }
 \subsection{正定阵}
 \thm{正定阵与负定阵}{正定阵与负定阵}{
-    设$n$阶实对称阵$\bm{A},\rank \left(\bm{A}\right)=r$,，\begin{enumerate}[label=\arabic*）]
+    设$n$阶实对称阵$\bm{A},\rank \left(\bm{A}\right)=r$,,\begin{enumerate}[label=\arabic*)]
         \item $\bm{A}$是正定阵当且仅当$\bm{A}$合同于$\bm{I}_n$
         \item $\bm{A}$是半正定阵当且仅当$\bm{A}$合同于$\begin{pmatrix}
                       \bm{I}_r & \bm{O} \\
@@ -60,18 +60,18 @@
     \]称为$\bm{A}$的顺序主子式.
 }
 \thm{正定阵的判定}{正定阵的判定}{
-    设$n$阶实对称阵$\bm{A}$，则$\bm{A}$是正定阵当且仅当$\bm{A}$的所有顺序主子式均大于零.\begin{proof}
-        先证充分性，设$\bm{A}=\left(a_{ij}\right)_{n\times n}$正定，则二次型\[
+    设$n$阶实对称阵$\bm{A}$,则$\bm{A}$是正定阵当且仅当$\bm{A}$的所有顺序主子式均大于零.\begin{proof}
+        先证充分性,设$\bm{A}=\left(a_{ij}\right)_{n\times n}$正定,则二次型\[
             f\left(
             x_1,x_2,\cdots,x_n
             \right)=\bm{x}'\bm{Ax}=\sum_{i,j=1}^{n}a_{ij}x_ix_j
-        \]正定，令\[
+        \]正定,令\[
             f_k\left(
             x_1,x_2,\cdots,x_k
             \right)=f\left(
             x_1,x_2,\cdots,x_k,0,0,\cdots,0
             \right)=\sum_{i,j=1}^{k}a_{ij}x_ix_j
-        \]正定，其相伴的矩阵$\bm{A}_k$正定.$\forall\bm{0}\neq\left(c_1,c_2,\cdots,c_k\right)\in\bbr ^k$\[
+        \]正定,其相伴的矩阵$\bm{A}_k$正定.$\forall\bm{0}\neq\left(c_1,c_2,\cdots,c_k\right)\in\bbr ^k$\[
             f_k\left(
             c_1,c_2,\cdots,c_k
             \right)=f\left(
@@ -79,7 +79,7 @@
             \right)>0
         \]于是$\bm{A}_k\left(
             1\leqslant k\leqslant n
-            \right)$正定，由\cref{thm:正定阵与负定阵}知存在非异阵$\bm{B}_k\in M_k\left(\bbr \right) $使得\[
+            \right)$正定,由\cref{thm:正定阵与负定阵}知存在非异阵$\bm{B}_k\in M_k\left(\bbr \right) $使得\[
             \bm{B}_k'\bm{A}_k\bm{B}_k=\bm{I}_k
         \]于是\[
             1=\left|
@@ -89,7 +89,7 @@
             \right)
         \]得证.
 
-        再证充分性，考虑数学归纳法，对$n$作归纳，当$n=1$时,$\bm{A}=\left(a\right),a>0,f=ax_1^2$正定，于是$\bm{A}$正定.设阶数小于$n$的时候成立，下面证明$n$阶的情形.\[
+        再证充分性,考虑数学归纳法,对$n$作归纳,当$n=1$时,$\bm{A}=\left(a\right),a>0,f=ax_1^2$正定,于是$\bm{A}$正定.设阶数小于$n$的时候成立,下面证明$n$阶的情形.\[
             \bm{A}=\begin{pmatrix}
                 \bm{A}_{n-1} & \bm{\alpha} \\
                 \bm{\alpha}' & a_{nn}
@@ -99,11 +99,11 @@
                                      \bm{A} & \bm{O}                                          \\
                                      \bm{O} & a_{nn}-\bm{\alpha}'\bm{A}_{n-1}^{-1}\bm{\alpha}
                                  \end{pmatrix}
-        \end{align*}这是合同变换，是第三类分块对称初等变换，不改变行列式的值即\[
+        \end{align*}这是合同变换,是第三类分块对称初等变换,不改变行列式的值即\[
             \left|\bm{A}\right|=\left|\bm{A}_{n-1}\right|\left(
             a_{nn}-\bm{\alpha}'\bm{A}_{n-1}^{-1}\bm{\alpha}
             \right)\Longrightarrow a_{nn}-\bm{\alpha}'\bm{A}_{n-1}^{-1}\bm{\alpha}>0
-        \]因为$\bm{A}_{n-1}$正定，故存在非异阵$\bm{C}_{n-1}\in M_{n-1}\left(\bbr \right)$使得\[
+        \]因为$\bm{A}_{n-1}$正定,故存在非异阵$\bm{C}_{n-1}\in M_{n-1}\left(\bbr \right)$使得\[
             \bm{C}_{n-1}'\bm{A}_{n-1}\bm{C}_{n-1}=\bm{I}_{n-1}
         \]于是\begin{align*}
               & \begin{pmatrix}
@@ -122,13 +122,13 @@
                     \bm{I}_{n-1} & \bm{O}                                          \\
                     \bm{O}       & a_{nn}-\bm{\alpha}'\bm{A}_{n-1}^{-1}\bm{\alpha}
                 \end{pmatrix}
-        \end{align*}即正惯性指数为$n$，故$\bm{A}$正定.
+        \end{align*}即正惯性指数为$n$,故$\bm{A}$正定.
     \end{proof}
 }
 \exa{}{}{
     四元二次型\[
         f=x_1^2+4x_2^2+4x_3^2+3x_4^2+2tx_1x_2-2x_1x_3+4x_2x_3
-    \]正定，求参数$t$的范围.\begin{solution}
+    \]正定,求参数$t$的范围.\begin{solution}
         相伴的实对称阵\[
             \bm{A}=\begin{pmatrix}
                 1  & t & -1 & 0 \\
@@ -140,22 +140,22 @@
     \end{solution}
 }
 \pro{正定阵的性质}{正定阵的性质}{
-    设$n$阶实对称阵$\bm{A}$为正定阵，则：\begin{enumerate}[label=\arabic*）]
+    设$n$阶实对称阵$\bm{A}$为正定阵,则:\begin{enumerate}[label=\arabic*)]
         \item $\bm{A}$的所有主子阵均正定
 
-        \item $\bm{A}$的所有主子式均大于零.特别地，$\bm{A}$的主对角元全大于零
+        \item $\bm{A}$的所有主子式均大于零.特别地,$\bm{A}$的主对角元全大于零
         \item $\bm{A}$中绝对值最大的数必定在主对角线上
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
+        \begin{enumerate}[label=\arabic*)]
             \item 取$i_1,i_2,\cdots,i_k$行、列组成的主子阵$\bm{B}$,令\[
                       f_{\bm{B}}\left(
                       x_{i_1},x_{i_2},\cdots,x_{i_k}
                       \right)\coloneqq f\left(
                       0,\cdots,0,x_{i_1},0,\cdots,0,x_{i_2},\cdots,x_{i_k},0,\cdots,0
                       \right)
-                  \]于是由$f$正定知$f_{\bm{B}}$正定，于是$\bm{B}$正定.
+                  \]于是由$f$正定知$f_{\bm{B}}$正定,于是$\bm{B}$正定.
             \item 由$(1)$可得.
-            \item 设$\bm{A}$的绝对值最大的数在$\bm{A}$的非对角线元素$a_{ij}\left(i<j\right)$上，考虑二阶主子式\begin{align*}
+            \item 设$\bm{A}$的绝对值最大的数在$\bm{A}$的非对角线元素$a_{ij}\left(i<j\right)$上,考虑二阶主子式\begin{align*}
                       \bm{A}\begin{pmatrix}
                                 i & j \\
                                 i & j
@@ -170,8 +170,8 @@
     \end{proof}
 }
 \cor{}{正定实对称阵的特征值全是整数}{
-    设$\bm{A}$为$n$阶正定实对称阵，则$\bm{A}$的特征值全为正数.\begin{proof}
-        设$\bm{0}\neq\bm{\xi}=\left(a_1,a_2,\cdots,a_n\right)\in\bbc ^n$则\[\overline{\bm{\xi}}'\bm{\xi}=\sum_{i=1}^{n}\left|a_i\right|^2>0\]任取$\bm{A}$的特征值$\lambda_0$及其特征向量$\bm{\xi}$.因为$\bm{A}$正定，则存在非异阵$\bm{C}\in M_n\left(\bbr \right)$使得\[
+    设$\bm{A}$为$n$阶正定实对称阵,则$\bm{A}$的特征值全为正数.\begin{proof}
+        设$\bm{0}\neq\bm{\xi}=\left(a_1,a_2,\cdots,a_n\right)\in\bbc ^n$则\[\overline{\bm{\xi}}'\bm{\xi}=\sum_{i=1}^{n}\left|a_i\right|^2>0\]任取$\bm{A}$的特征值$\lambda_0$及其特征向量$\bm{\xi}$.因为$\bm{A}$正定,则存在非异阵$\bm{C}\in M_n\left(\bbr \right)$使得\[
             \bm{A}=\bm{C}'\bm{IC}
         \]因为\begin{align*}
             \bm{A\xi}                             & =\lambda_0\bm{\xi}                                         \\
@@ -186,8 +186,8 @@
     \end{proof}
 }
 \pro{正定阵的若干等价结论}{正定阵的若干等价结论}{
-    设$\bm{A}$为$n$阶正定实对称阵，则下列等价：
-    \begin{enumerate}[label=\arabic*）]
+    设$\bm{A}$为$n$阶正定实对称阵,则下列等价:
+    \begin{enumerate}[label=\arabic*)]
         \item $\bm{A}$正定
         \item $\bm{A}$合同于$\bm{I}_n$
         \item 存在非异阵$\bm{C}\in M_n\left(
@@ -199,16 +199,26 @@
         \item $\bm{A}$的所有顺序主子式均大于$0$
         \item $\bm{A}$的特征值均大于$0$
     \end{enumerate}\begin{proof}
-        $(1)\Longleftrightarrow (2)$由\cref{thm:正定阵与负定阵}即得，$(2)\Longleftrightarrow (3)$由\cref{thm:正定阵与负定阵}即得，$(1)\Longrightarrow (4)$由\cref{prop:正定阵的性质}可知，$(4)\Longrightarrow (5)$显然，而$(5)\Longrightarrow (1)$由\cref{thm:正定阵的判定}.$(1)\Longrightarrow (6)$由\cref{prop:正定阵的性质}即得，$(6)\Longrightarrow (1)$后续证明.
+        $(1)\Longleftrightarrow (2)$由\cref{thm:正定阵与负定阵}即得.
+
+        $(2)\Longleftrightarrow (3)$由\cref{thm:正定阵与负定阵}即得.
+
+        $(1)\Longrightarrow (4)$由\cref{prop:正定阵的性质}可知.
+
+        $(4)\Longrightarrow (5)$显然.
+
+        而$(5)\Longrightarrow (1)$由\cref{thm:正定阵的判定}.
+
+        $(1)\Longrightarrow (6)$由\cref{prop:正定阵的性质}即得,$(6)\Longrightarrow (1)$后续证明.
     \end{proof}
 }
 \subsection{半正定阵}
 \lem{半正定阵的判定}{半正定阵的判定}{
-    设$\bm{A}$是$n$阶实对称阵，则$\bm{A}$半正定当且仅当存在$\bm{C}\in M_n\left(\bbr \right)$使得$\bm{A}=\bm{C}'\bm{C}$.特别地，$\left|\bm{A}\right|\geqslant 0.$\begin{proof}
+    设$\bm{A}$是$n$阶实对称阵,则$\bm{A}$半正定当且仅当存在$\bm{C}\in M_n\left(\bbr \right)$使得$\bm{A}=\bm{C}'\bm{C}$.特别地,$\left|\bm{A}\right|\geqslant 0.$\begin{proof}
         先证必要性.由\cref{thm:正定阵与负定阵}知$\bm{A}$合同于$\begin{pmatrix}
                 \bm{I}_r & \bm{O} \\
                 \bm{O}   & \bm{O}
-            \end{pmatrix}$，其中$r=\rank \left(\bm{A}\right)$，即存在非异阵$\bm{B}\in M_n\left(\bbr \right)$使得\[
+            \end{pmatrix}$,其中$r=\rank \left(\bm{A}\right)$,即存在非异阵$\bm{B}\in M_n\left(\bbr \right)$使得\[
             \bm{A}=\bm{B}'\begin{pmatrix}
                 \bm{I}_r & \bm{O} \\
                 \bm{O}   & \bm{O}
@@ -224,7 +234,7 @@
                 \bm{O}   & \bm{O}
             \end{pmatrix}$于是$\bm{A}=\bm{C}'\bm{C}.$
 
-        再证充分性，设$\bm{A}=\bm{C}'\bm{C},\forall \bm{0}\neq\bm{\alpha}\in \bbr ^n$\[
+        再证充分性,设$\bm{A}=\bm{C}'\bm{C},\forall \bm{0}\neq\bm{\alpha}\in \bbr ^n$\[
             \bm{\alpha}'\bm{A\alpha}=\bm{\alpha}'\bm{C}'\bm{C\alpha}=\left(\bm{C\alpha}\right)'\left(\bm{C\alpha}\right)
         \]其中$\bm{C\alpha}=\left(
             a_1,a_2,\cdots,a_n
@@ -234,21 +244,21 @@
     \end{proof}
 }
 \clm{}{}{
-    事实上，可以用正定阵逼近半正定阵.
+    事实上,可以用正定阵逼近半正定阵.
 }
 \lem{}{正定与半正定}{
-    设$\bm{A}$是$n$阶正定实对称阵，则$\bm{A}$正定当且仅当$\forall t\in\bbr ^+,\bm{A}+t\bm{I}_n$正定.\begin{proof}
+    设$\bm{A}$是$n$阶正定实对称阵,则$\bm{A}$正定当且仅当$\forall t\in\bbr ^+,\bm{A}+t\bm{I}_n$正定.\begin{proof}
         先证必要性.$\forall \bm{0}\neq\bm{\alpha}\in\bbr ^n$\begin{align*}
             \bm{\alpha}'\left(
             \bm{A}+t\bm{I}_n
             \right)\bm{\alpha}=\bm{\alpha}'\bm{A\alpha}+t\bm{\alpha}'\bm{\alpha}
-        \end{align*}其中$\bm{\alpha}'\bm{A\alpha}\geqslant 0,\bm{\alpha}'\bm{\alpha}>0,t>0$，于是$\bm{\alpha}'\left(\bm{A}+t\bm{I}_n\right)\bm{\alpha}$正定.
+        \end{align*}其中$\bm{\alpha}'\bm{A\alpha}\geqslant 0,\bm{\alpha}'\bm{\alpha}>0,t>0$,于是$\bm{\alpha}'\left(\bm{A}+t\bm{I}_n\right)\bm{\alpha}$正定.
 
         再证充分性.$\forall\bm{0}\neq\bm{\alpha}\in\bbr ^n$\[
             \bm{\alpha}'\left(
             \bm{A}+t\bm{I}_n
             \right)\bm{\alpha}=\bm{\alpha}'\bm{A\alpha}+t\bm{\alpha}'\bm{\alpha}>0
-        \]恒成立，取$t\to0^+$即得$\bm{\alpha}'\bm{A\alpha}\geqslant 0.$
+        \]恒成立,取$t\to0^+$即得$\bm{\alpha}'\bm{A\alpha}\geqslant 0.$
     \end{proof}
 }
 \exa{}{}{
@@ -257,8 +267,8 @@
         \right\},\left|\bm{A}_1\right|=1,\left|\bm{A}_2\right|=\left|\bm{A}_3\right|=0$却是不定阵.
 }
 \lem{半正定的判定}{半正定的判定}{
-    设$\bm{A}$是$n$阶实对称阵，则$\bm{A}$半正定当且仅当$\bm{A}$的所有主子式均大于等于零.\begin{proof}
-        先证必要性.$f\left(x_1,x_2,\cdots,x_n\right)=\bm{x}'\bm{Ax}$半正定，取$\bm{A}$的$i_1,i_2,\cdots,i_r$行、列成主子阵.构造\[
+    设$\bm{A}$是$n$阶实对称阵,则$\bm{A}$半正定当且仅当$\bm{A}$的所有主子式均大于等于零.\begin{proof}
+        先证必要性.$f\left(x_1,x_2,\cdots,x_n\right)=\bm{x}'\bm{Ax}$半正定,取$\bm{A}$的$i_1,i_2,\cdots,i_r$行、列成主子阵.构造\[
             f_{\bm{B}}\left(
             x_{i_1},x_{i_2},\cdots,x_{i_r}
             \right)=f\left(
@@ -273,7 +283,7 @@
 
         再证充分性.考虑摄动\begin{align*}
             \left|\bm{A}+t\bm{I}_n\right| & =t^n+c_1t^{n-1}+\cdots+c_n \\
-        \end{align*}其中$c_i$为$\bm{A}$的所有$i$阶主子式之和从而$c_i\geqslant 0,\forall 1\leqslant i\leqslant n.$于是$\forall t\in\bbr ^+,\left|\bm{A}+t\bm{I}_n\right|>0.$设$\bm{A}_k$为$\bm{A}$的顺序主子阵，于是$\bm{A}_k$的主子式均大于等于零.另做上述过程，有\[
+        \end{align*}其中$c_i$为$\bm{A}$的所有$i$阶主子式之和从而$c_i\geqslant 0,\forall 1\leqslant i\leqslant n.$于是$\forall t\in\bbr ^+,\left|\bm{A}+t\bm{I}_n\right|>0.$设$\bm{A}_k$为$\bm{A}$的顺序主子阵,于是$\bm{A}_k$的主子式均大于等于零.另做上述过程,有\[
             \left|
             \bm{A}_k+t\bm{I}_k
             \right|>0,\forall 1\leqslant k\leqslant n,t\in\bbr ^+
@@ -281,12 +291,12 @@
     \end{proof}
 }
 \lem{}{特征值判定版正定}{
-    设$\bm{A}$是$n$阶实对称阵，则$\bm{A}$半正定当且仅当$\bm{A}$的所有特征值均大于等于零.\begin{proof}
+    设$\bm{A}$是$n$阶实对称阵,则$\bm{A}$半正定当且仅当$\bm{A}$的所有特征值均大于等于零.\begin{proof}
         设$\bm{A}$的特征值$\lambda_1,\lambda_2,\cdots,\lambda_n.$由\cref{lem:正定与半正定}知$\bm{A}+t\bm{I}_n,\forall t\in\bbr ^+$正定即$\lambda_i+t>0,\forall 1\leqslant i\leqslant n,t\in\bbr ^+$于是$\lambda_i\geqslant 0,\forall 1\leqslant i\leqslant n.$
     \end{proof}
 }
 \pro{半正定的等价结论}{半正定的等价结论}{
-    假设$\bm{A}$为$n$阶实对称阵，则下列结论等价：\begin{enumerate}[label=\arabic*）]
+    假设$\bm{A}$为$n$阶实对称阵,则下列结论等价:\begin{enumerate}[label=\arabic*)]
         \item $\bm{A}$半正定
         \item $\bm{A}$合同于$\begin{pmatrix}
                       \bm{I}_r & \bm{O} \\
@@ -298,15 +308,15 @@
     \end{enumerate}
 }
 \lem{}{对角元为零则行列全为零}{
-    设$\bm{A}=\left(a_{ij}\right)_{n\times n}$为半正定阵，若$a_{ii}=0$，则$\bm{A}$的第$i$行与第$i$列元素均为零.\begin{proof}
+    设$\bm{A}=\left(a_{ij}\right)_{n\times n}$为半正定阵,若$a_{ii}=0$,则$\bm{A}$的第$i$行与第$i$列元素均为零.\begin{proof}
         任取$a_{ij}\left(i\neq j\right)$所在的二阶主子式$\begin{vmatrix}
                 a_{ii} & a_{ij} \\
                 a_{ji} & a_{jj}
-            \end{vmatrix}=-a_{ij}^2$，由\cref{prop:半正定的等价结论}知结果为大于等于零即$a_{ij}=0\left(\forall i\neq j\right).$
+            \end{vmatrix}=-a_{ij}^2$,由\cref{prop:半正定的等价结论}知结果为大于等于零即$a_{ij}=0\left(\forall i\neq j\right).$
     \end{proof}
 }
 \lem{}{成零}{
-    若$\bm{A}$半正定，且$\exists \bm{\alpha}\in\bbr ^n$使得$\bm{\alpha}'\bm{A\alpha}=0$则$\bm{A\alpha}=\bm{0}.$\begin{proof}
+    若$\bm{A}$半正定,且$\exists \bm{\alpha}\in\bbr ^n$使得$\bm{\alpha}'\bm{A\alpha}=0$则$\bm{A\alpha}=\bm{0}.$\begin{proof}
         由\cref{prop:半正定的等价结论}知存在$\bm{C}\in M_n\left(\bbr \right)$使得$\bm{A}=\bm{C}'\bm{C}$.于是\begin{align*}
             0 & =\bm{\alpha}'\bm{A\alpha}                                                              \\
               & =\bm{\alpha}'\bm{C}'\bm{C\alpha}                                                       \\

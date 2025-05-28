@@ -10,21 +10,21 @@
 $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid d_{i+1}\left(\lambda\right),\forall 1\leqslant i\leqslant r-1.$
 那么现在的问题是$\bm{A}\left(\lambda\right)$和$\bm{B}\left(\lambda\right)$相抵是否等价于它们的法式相同.
 
-一方面，如果二者法式相同，根据相抵关系是一种等价关系易得.另一方面，如果二者相抵，需要证明它们的法式相等.
+一方面,如果二者法式相同,根据相抵关系是一种等价关系易得.另一方面,如果二者相抵,需要证明它们的法式相等.
 
-在此成立的基础上，我们可以得到\begin{enumerate}[label=\arabic*）]
+在此成立的基础上,我们可以得到\begin{enumerate}[label=\arabic*)]
     \item $\lambda$-矩阵在相抵关系下的全系不变量$d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right)$
     \item 相抵标准型不依赖于初等变换的选取
 \end{enumerate}
 \subsection{行列式因子}
 \dfn{行列式因子}{行列式因子}{
-    设$n$阶$\lambda$-阵$\bm{A}\left(\lambda\right)$，$\forall 1\leqslant k\leqslant n$，定义$\bm{A}\left(\lambda\right)$的$k$阶行列式因子$D_k\left(\lambda\right)$为\begin{enumerate}[label=\arabic*）]
-        \item 若$\bm{A}\left(\lambda\right)$的所有$k$阶子式均为零，则定义$D_k\left(\lambda\right)=0$
-        \item 若$\bm{A}\left(\lambda\right)$存在$k$阶子式不为零，则定义$D_k\left(\lambda\right)$为$\bm{A}\left(\lambda\right)$的所有$k$阶子式的最大公因式（非零首一多项式）
+    设$n$阶$\lambda$-阵$\bm{A}\left(\lambda\right)$,$\forall 1\leqslant k\leqslant n$,定义$\bm{A}\left(\lambda\right)$的$k$阶行列式因子$D_k\left(\lambda\right)$为\begin{enumerate}[label=\arabic*)]
+        \item 若$\bm{A}\left(\lambda\right)$的所有$k$阶子式均为零,则定义$D_k\left(\lambda\right)=0$
+        \item 若$\bm{A}\left(\lambda\right)$存在$k$阶子式不为零,则定义$D_k\left(\lambda\right)$为$\bm{A}\left(\lambda\right)$的所有$k$阶子式的最大公因式(非零首一多项式)
     \end{enumerate}
 }
 \exa{}{}{
-    考虑$\bm{\varLambda}=\diag \left\{d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0\right\}$，其中$d_i\left(\lambda\right)$为非零首一多项式且$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_r\left(\lambda\right).$容易得到
+    考虑$\bm{\varLambda}=\diag \left\{d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right);0,\cdots,0\right\}$,其中$d_i\left(\lambda\right)$为非零首一多项式且$d_1\left(\lambda\right)\mid d_2\left(\lambda\right)\mid \cdots\mid d_r\left(\lambda\right).$容易得到
     \[
         D_1\left(\lambda\right)=d_1\left(\lambda\right)\]\[D_2\left(\lambda\right)=\left(d_i\left(\lambda\right)d_j\left(\lambda\right)\right)_{1\leqslant i<j\leqslant r}=d_1\left(\lambda\right)d_2\left(\lambda\right)
     \]\[
@@ -34,7 +34,7 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
     \]
 }
 \lem{非零行列式因子的整除关系}{非零行列式因子的整除关系}{
-    设$\bm{A}\left(\lambda\right)$的所有非零行列式因子为$D_1\left(\lambda\right),D_2\left(\lambda\right),\cdots,D_r\left(\lambda\right)$，则$D_1\left(\lambda\right)\mid D_2\left(\lambda\right)\mid \cdots\mid D_r\left(\lambda\right)$.\begin{proof}
+    设$\bm{A}\left(\lambda\right)$的所有非零行列式因子为$D_1\left(\lambda\right),D_2\left(\lambda\right),\cdots,D_r\left(\lambda\right)$,则$D_1\left(\lambda\right)\mid D_2\left(\lambda\right)\mid \cdots\mid D_r\left(\lambda\right)$.\begin{proof}
         任取$\bm{A}\left(\lambda\right)$的$i+1$阶子式$M_{i+1}$且
         \[
             M_{i+1}=a_{11}\left(\lambda\right)M_{11}-a_{12}\left(\lambda\right)M_{12}+\cdots+\left(-1\right)^{i+2}a_{1,i+1}\left(\lambda\right)M_{1,i+1}
@@ -44,7 +44,7 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
 }
 \subsection{不变因子}
 \dfn{不变因子}{不变因子}{
-    设$\bm{A}\left(\lambda\right)$的非零行列式因子为$D_1\left(\lambda\right),D_2\left(\lambda\right),\cdots,D_r\left(\lambda\right)$，则称$\bm{A}\left(\lambda\right)$的不变因子为
+    设$\bm{A}\left(\lambda\right)$的非零行列式因子为$D_1\left(\lambda\right),D_2\left(\lambda\right),\cdots,D_r\left(\lambda\right)$,则称$\bm{A}\left(\lambda\right)$的不变因子为
     \[
         \begin{cases*}
             g_1\left(\lambda\right)\coloneqq D_1\left(\lambda\right)                                  \\
@@ -55,7 +55,7 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
     \]也可以一起称为不变因子组.
 }
 \exa{}{}{
-    在上面的例子中，不变因子组为
+    在上面的例子中,不变因子组为
     \[
         d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_r\left(\lambda\right)
     \]
@@ -64,13 +64,13 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
     法式的不变因子组就是主对角线上的非零元.
 }
 \thm{相抵的$\lambda$-阵的不变因子}{相抵的多项式矩阵的不变因子}{
-    相抵$\lambda$-阵有相同的行列式因子，进而有相同的不变因子组.\begin{proof}
-        设$\bm{B}\left(\lambda\right)=\bm{P}\left(\lambda\right)\bm{A}\left(\lambda\right)\bm{Q}\left(\lambda\right)$，其中$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$是可逆$\lambda$-阵.设$\bm{A}\left(\lambda\right),\bm{B}\left(\lambda\right)$的行列式因子为$D_k\left(\lambda\right),E_k\left(\lambda\right),1\leqslant k\leqslant n.$要证
+    相抵$\lambda$-阵有相同的行列式因子,进而有相同的不变因子组.\begin{proof}
+        设$\bm{B}\left(\lambda\right)=\bm{P}\left(\lambda\right)\bm{A}\left(\lambda\right)\bm{Q}\left(\lambda\right)$,其中$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right)$是可逆$\lambda$-阵.设$\bm{A}\left(\lambda\right),\bm{B}\left(\lambda\right)$的行列式因子为$D_k\left(\lambda\right),E_k\left(\lambda\right),1\leqslant k\leqslant n.$要证
         \[
             D_k\left(\lambda\right)=E_k\left(\lambda\right),\forall 1\leqslant k\leqslant n
         \]
 
-        根据\cref{thm:Cauchy-Binet公式}Cauchy-Binet公式，考虑
+        根据\cref{thm:Cauchy-Binet公式}Cauchy-Binet公式,考虑
         \begin{align*}
              & \bm{B}\left(\lambda\right)\begin{pmatrix}
                                              i_1 & i_2 & \cdots & i_k \\
@@ -110,16 +110,16 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
                 i_1 & i_2 & \cdots & i_k \\
                 j_1 & j_2 & \cdots & j_k
             \end{pmatrix}
-        \]不管后者是否为零，均有$D_k\left(\lambda\right)\mid E_k\left(\lambda\right)$.
+        \]不管后者是否为零,均有$D_k\left(\lambda\right)\mid E_k\left(\lambda\right)$.
 
-        总之，因为相抵关系是等价关系，我们可以得到
+        总之,因为相抵关系是等价关系,我们可以得到
         \[
             D_k\left(\lambda\right)=0\Longleftrightarrow
             E_k\left(\lambda\right)=0,\forall 1\leqslant k\leqslant n
         \]及$D_k\left(\lambda\right)\neq 0,E_k\left(\lambda\right)\neq 0$时
         \[
             D_k\left(\lambda\right)\mid E_k\left(\lambda\right),E_k\left(\lambda\right)\mid D_k\left(\lambda\right),\forall 1\leqslant k\leqslant n
-        \]即存在$0\neq c\in\mathbb{K}\st D_k\left(\lambda\right)=cE_k\left(\lambda\right)$，由首一性即得$c=1$即$\forall1\leqslant k\leqslant n$:
+        \]即存在$0\neq c\in\bbk \st D_k\left(\lambda\right)=cE_k\left(\lambda\right)$,由首一性即得$c=1$即$\forall1\leqslant k\leqslant n$:
         \[D_k\left(\lambda\right)=E_k\left(\lambda\right)\]
 
         随后不变因子组证明显然.
@@ -141,37 +141,37 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
 }
 \cor{$\lambda$-阵相抵与法式、不变因子}{多项式矩阵相抵与法式、不变因子}{
     $\bm{A}\left(\lambda\right)$与$\bm{B}\left(\lambda\right)$相抵当且仅当它们的法式相同.\begin{proof}
-        一方面，法式相同时考虑到相抵关系的传递性显然.
+        一方面,法式相同时考虑到相抵关系的传递性显然.
 
-        另一方面，设$\bm{A}\left(\lambda\right)\sim \bm{\varLambda}_1,\bm{B}\left(\lambda\right)\sim\bm{\varLambda}_2$，考虑到相抵关系的传递性，$\bm{\varLambda}_1\sim\bm{\varLambda}_2$.得证.
+        另一方面,设$\bm{A}\left(\lambda\right)\sim \bm{\varLambda}_1,\bm{B}\left(\lambda\right)\sim\bm{\varLambda}_2$,考虑到相抵关系的传递性,$\bm{\varLambda}_1\sim\bm{\varLambda}_2$.得证.
     \end{proof}
 }
 \cor{}{不变因子与法式的不变性}{
-    \begin{enumerate}[label=\arabic*）]
+    \begin{enumerate}[label=\arabic*)]
         \item $\lambda$-阵在相抵关系下的全系不变量是行列式因子组或不变因子组
         \item 法式的计算不依赖于初等变换的选取
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
-            \item  根据\cref{thm:相抵的多项式矩阵的不变因子}，相抵的$\lambda$-阵具有相同的行列式因子，进而有相同的不变因子组.另一方面，根据\cref{cor:法式与不变因子的唯一确定}，不变因子与法式相互唯一确定且根据\cref{cor:多项式矩阵相抵与法式、不变因子}，法式相同当且仅当相抵.
-            \item 不妨设$\bm{A}\left(\lambda\right)$的两个法式为$\bm{\varLambda}_1,\bm{\varLambda}_2$，只要证明$\bm{\varLambda}_1=\bm{\varLambda}_2$即可.因为$\bm{\varLambda}_1\sim\bm{\varLambda}_2$，则二者有相同的法式即自身，得证.\qedhere
+        \begin{enumerate}[label=\arabic*)]
+            \item  根据\cref{thm:相抵的多项式矩阵的不变因子},相抵的$\lambda$-阵具有相同的行列式因子,进而有相同的不变因子组.另一方面,根据\cref{cor:法式与不变因子的唯一确定},不变因子与法式相互唯一确定且根据\cref{cor:多项式矩阵相抵与法式、不变因子},法式相同当且仅当相抵.
+            \item 不妨设$\bm{A}\left(\lambda\right)$的两个法式为$\bm{\varLambda}_1,\bm{\varLambda}_2$,只要证明$\bm{\varLambda}_1=\bm{\varLambda}_2$即可.因为$\bm{\varLambda}_1\sim\bm{\varLambda}_2$,则二者有相同的法式即自身,得证.\qedhere
         \end{enumerate}
     \end{proof}
 }
 \thm{}{矩阵相似等价于特征矩阵有相同的不变因子组}{
-    设$\bm{A},\bm{B}\in M_n\left(\mathbb{K}\right)$，则$\bm{A}$与$\bm{B}$相似当且仅当它们的特征矩阵$\lambda\bm{I}_n-\bm{A},\lambda\bm{I}_n-\bm{B}$具有相同的行列式因子组或不变因子组.\begin{proof}
+    设$\bm{A},\bm{B}\in M_n\left(\bbk \right)$,则$\bm{A}$与$\bm{B}$相似当且仅当它们的特征矩阵$\lambda\bm{I}_n-\bm{A},\lambda\bm{I}_n-\bm{B}$具有相同的行列式因子组或不变因子组.\begin{proof}
         根据\cref{thm:矩阵相似等价于特征矩阵相抵}和\cref{cor:不变因子与法式的不变性}得证.
     \end{proof}
 }
 \clm{}{}{
-    数字矩阵的特征矩阵的行列式因子组或不变因子组是相似关系的全系不变量.故将$\bm{A}\in M_n\left(\mathbb{K}\right)$的特征矩阵$\lambda\bm{I}_n-\bm{A}$的行列式因子组或不变因子组称为$\bm{A}$的行列式因子组或不变因子组.
+    数字矩阵的特征矩阵的行列式因子组或不变因子组是相似关系的全系不变量.故将$\bm{A}\in M_n\left(\bbk \right)$的特征矩阵$\lambda\bm{I}_n-\bm{A}$的行列式因子组或不变因子组称为$\bm{A}$的行列式因子组或不变因子组.
 }
 \thm{相似关系的扩张}{相似关系的扩张}{
-    设$\bm{A},\bm{B}\in M_n\left(\bbf \right),\bbf \subseteq \mathbb{K}$，则$\bm{A},\bm{B}$在$\bbf $上相似当且仅当$\bm{A},\bm{B}$在$\mathbb{K}$上相似.\begin{proof}
-        因为$\bm{A},\bm{B}$在$\bbf $相似即存在$\bm{P}\in M_n\left(\bbf \right)\st\bm{B}=\bm{P}^{-1}\bm{AP}$.另一方面，$\bm{A},\bm{B}$在$\mathbb{K}$相似即存在$\bm{Q}\in M_n\left(\mathbb{K}\right)\st\bm{B}=\bm{Q}^{-1}\bm{AQ}$.
+    设$\bm{A},\bm{B}\in M_n\left(\bbf \right),\bbf \subseteq \bbk $,则$\bm{A},\bm{B}$在$\bbf $上相似当且仅当$\bm{A},\bm{B}$在$\bbk $上相似.\begin{proof}
+        因为$\bm{A},\bm{B}$在$\bbf $相似即存在$\bm{P}\in M_n\left(\bbf \right)\st\bm{B}=\bm{P}^{-1}\bm{AP}$.另一方面,$\bm{A},\bm{B}$在$\bbk $相似即存在$\bm{Q}\in M_n\left(\bbk \right)\st\bm{B}=\bm{Q}^{-1}\bm{AQ}$.
 
         必要性显然.下证充分性.
 
-        设$\bm{A},\bm{B}$在$\mathbb{K}$上相似，于是特征矩阵$\lambda\bm{I}_n-\bm{A},\lambda\bm{I}_n-\bm{B}$作为$\mathbb{K}$上的$\lambda$-阵有相同的行列式因子组或不变因子组.但实际上，$\bm{A},\bm{B}\in M_n\left(\bbf \right)$，因为法式与初等变换选取无关，于是求法式过程中保证初等变换取自$\bbf \left[x\right]$即得到上述法式，于是存在$\bbf $上的可逆$\lambda$-阵$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right),\bm{M}\left(\lambda\right),\bm{N}\left(\lambda\right)\st$
+        设$\bm{A},\bm{B}$在$\bbk $上相似,于是特征矩阵$\lambda\bm{I}_n-\bm{A},\lambda\bm{I}_n-\bm{B}$作为$\bbk $上的$\lambda$-阵有相同的行列式因子组或不变因子组.但实际上,$\bm{A},\bm{B}\in M_n\left(\bbf \right)$,因为法式与初等变换选取无关,于是求法式过程中保证初等变换取自$\bbf \left[x\right]$即得到上述法式,于是存在$\bbf $上的可逆$\lambda$-阵$\bm{P}\left(\lambda\right),\bm{Q}\left(\lambda\right),\bm{M}\left(\lambda\right),\bm{N}\left(\lambda\right)\st$
         \[
             \bm{P}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{A}\right)\bm{Q}\left(\lambda\right)=\bm{\varLambda}=\bm{M}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{B}\right)\bm{N}\left(\lambda\right)
         \]于是
@@ -181,7 +181,7 @@ $d_i\left(\lambda\right)$是非零首一多项式且$d_i\left(\lambda\right)\mid
             \bm{P}\left(\lambda\right)\left(\lambda\bm{I}_n-\bm{A}\right)\bm{Q}\left(\lambda\right)
             \bm{N}\left(\lambda\right)^{-1}
         \]
-        于是两个特征矩阵作为$\bbf $上的$\lambda$-阵相似，于是$\bm{A},\bm{B}$作为$\bbf $上的矩阵相似.证毕.
+        于是两个特征矩阵作为$\bbf $上的$\lambda$-阵相似,于是$\bm{A},\bm{B}$作为$\bbf $上的矩阵相似.证毕.
     \end{proof}
 }
 \cor{不变因子的扩张}{不变因子的扩张}{

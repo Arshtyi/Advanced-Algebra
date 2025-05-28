@@ -1,7 +1,7 @@
 \newpage
 \section{线性映射的像与核}
 \clm{总设}{}{
-总设线性映射$\bm{\varphi}:V_{\mathbb{K}}^n\longrightarrow U_{\mathbb{K}}^m \in\call  \left(V,U\right)$.
+总设线性映射$\bm{\varphi}:V_{\bbk }^n\longrightarrow U_{\bbk }^m \in\call  \left(V,U\right)$.
 }
 \subsection{像空间与核空间}
 \dfn{像集与核集}{像集与核集}{
@@ -21,21 +21,21 @@
     二者都显然非空.
 }
 \lem{}{像集与核集是子空间}{
-    线性映射$\bm{\varphi}$在的像集$\Image\bm{\varphi}$是$U$的子空间，称为像空间；核集$\Ker \bm{\varphi}$是$V$的子空间，称为核空间.\begin{proof}
-        任取$\bm{\varphi}\left(\bm{v}\right)$、$\bm{\varphi}\left(\bm{u}\right)\in \Image\bm{\varphi}$， $\bm{v}$、$\bm{u}\in V.$于是
+    线性映射$\bm{\varphi}$在的像集$\Image\bm{\varphi}$是$U$的子空间,称为像空间；核集$\Ker \bm{\varphi}$是$V$的子空间,称为核空间.\begin{proof}
+        任取$\bm{\varphi}\left(\bm{v}\right)$、$\bm{\varphi}\left(\bm{u}\right)\in \Image\bm{\varphi}$, $\bm{v}$、$\bm{u}\in V.$于是
         $\bm{\varphi}\left(\bm{v}\right)+\bm{\varphi}\left(\bm{u}\right)=\bm{\varphi}\left(
             \bm{v}+\bm{u}
-            \right)\in \Image\bm{\varphi}$.$\forall k\in \mathbb{K}$，则$k\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(k\bm{v}\right)\in\Image\bm{\varphi}.
+            \right)\in \Image\bm{\varphi}$.$\forall k\in \bbk $,则$k\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(k\bm{v}\right)\in\Image\bm{\varphi}.
         $
 
-        任取$\bm{\varphi}\left(\bm{v}\right)$、$\bm{\varphi}\left(\bm{u}\right)\in \Ker \bm{\varphi}$， 即$\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(\bm{u}\right)=\bm{0}$.
+        任取$\bm{\varphi}\left(\bm{v}\right)$、$\bm{\varphi}\left(\bm{u}\right)\in \Ker \bm{\varphi}$, 即$\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(\bm{u}\right)=\bm{0}$.
         则$\bm{\varphi}\left(
             \bm{v}+\bm{u}
             \right)=\bm{\varphi}\left(\bm{v}\right)+\bm{\varphi}\left(
             \bm{u}
             \right)=\bm{0}\Longrightarrow
             \bm{v}+\bm{u}\in \Ker \bm{\varphi}.$
-        $\forall k\in\mathbb{K}$，$\bm{\varphi}\left(
+        $\forall k\in\bbk $,$\bm{\varphi}\left(
             k\bm{v}
             \right)=k\bm{\varphi}\left(
             \bm{v}
@@ -44,7 +44,7 @@
     \end{proof}
 }
 \clm{零空间}{}{
-    一般也称核空间为零空间，记作$\Null\left(\bm{T}\left(\bm{\varphi}\right)\right)$.
+    一般也称核空间为零空间,记作$\Null\left(\bm{T}\left(\bm{\varphi}\right)\right)$.
 }
 \pro{}{像空间与核空间对映射本身的刻画}{
     \[
@@ -55,15 +55,15 @@
             \dim \Ker \bm{\varphi}=0\Longleftrightarrow \Ker \bm{\varphi}\text{是}
             V\text{的零子空间}
         \end{cases*}\]\begin{proof}
-        因为$\bm{\varphi}$满射等价于$U=\Image\bm{\varphi}$，
-        也等价于$\dim U=\dim\Image\bm{\varphi}$（因为子空间），则为全子空间.
+        因为$\bm{\varphi}$满射等价于$U=\Image\bm{\varphi}$,
+        也等价于$\dim U=\dim\Image\bm{\varphi}$(因为子空间),则为全子空间.
 
-        一方面，设$\bm{\varphi}$为单射，任取$\bm{v}\in \Ker \bm{\varphi}$，
+        一方面,设$\bm{\varphi}$为单射,任取$\bm{v}\in \Ker \bm{\varphi}$,
         即$\bm{\varphi}\left(\bm{v}\right)=\bm{0}_U=
-            \bm{\varphi}\left(\bm{0}_V\right)$，则$\bm{v}=\bm{0}$，
+            \bm{\varphi}\left(\bm{0}_V\right)$,则$\bm{v}=\bm{0}$,
         即$\Ker \bm{\varphi}=0.$
 
-        另一方面， 设$\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(\bm{u}\right)$，
+        另一方面, 设$\bm{\varphi}\left(\bm{v}\right)=\bm{\varphi}\left(\bm{u}\right)$,
         $\bm{v}$、$\bm{u}\in V.$移项即有
         $\bm{\varphi}\left(\bm{v}-\bm{u}\right)=
             \bm{0}$即
@@ -74,7 +74,7 @@
 \dfn{秩和零度}{秩和零度}{
     定义$\bm{\varphi}$的秩为$\rmr \left(\bm{\varphi}\right)=
         \rank \left(\bm{\varphi}
-        \right)=\dim \Image\bm{\varphi}$，零度（或者叫零化度）
+        \right)=\dim \Image\bm{\varphi}$,零度(或者叫零化度)
     为$\dim \Ker \bm{\varphi}.$
 }
 \lem{幂的像空间与核空间}{幂的像空间与核空间}{
@@ -89,8 +89,8 @@
 }
 \subsection{限制}
 \dfn{限制}{限制}{
-    设线性映射$\bm{\varphi}:V\longrightarrow U$，且
-    $V'$为$V$的子空间，$U'$为$U$的子空间，满足
+    设线性映射$\bm{\varphi}:V\longrightarrow U$,且
+    $V'$为$V$的子空间,$U'$为$U$的子空间,满足
     \[
         \bm{\varphi}\left(V'\right)\subseteq U'
     \]
@@ -101,7 +101,7 @@
     称为$\bm{\varphi}$在$V'$上的一个限制.
 }
 \lem{}{限制对单射的继承}{
-    若$\bm{\varphi}$为单射，则其限制$\bm{\varphi}'$也是单射.
+    若$\bm{\varphi}$为单射,则其限制$\bm{\varphi}'$也是单射.
     \begin{proof}
         定义\begin{align*}
             \bm{\varphi}':V' & \longrightarrow U'                           \\
@@ -109,7 +109,7 @@
         \end{align*}
         与$\bm{\varphi}$有相同的映射法则.
 
-        任取$\bm{v}'_1,\bm{v}'_2\in V',k\in \mathbb{K}$，则
+        任取$\bm{v}'_1,\bm{v}'_2\in V',k\in \bbk $,则
         \begin{align*}
             \bm{\varphi}'\left(\bm{v}'_1+\bm{v}'_2\right) & =\bm{\varphi}\left(\bm{v}_1'\right)+\bm{\varphi}\left(\bm{v}'_2\right)   \\
                                                           & =\bm{\varphi}'\left(\bm{v}'_1\right)+\bm{\varphi}'\left(\bm{v}_2'\right)
@@ -120,7 +120,7 @@
         \end{align*}
         因此$\bm{\varphi}'$是一个线性映射.
 
-        设$\bm{\varphi}$是单射则$\Ker \bm{\varphi}=0.$则容易有：
+        设$\bm{\varphi}$是单射则$\Ker \bm{\varphi}=0.$则容易有:
         \begin{align*}
             \Ker \bm{\varphi}' & =\left\{\bm{v}'\in V'\mid\bm{\varphi}'\left(\bm{v}'\right)=\bm{0}\right\} \\
                                & =\left\{\bm{v}'\in V'\mid\bm{\varphi}\left(\bm{v}'\right)=\bm{0}\right\}  \\
@@ -129,7 +129,7 @@
     \end{proof}
 }
 \exa{}{}{
-一个简单的例子是考虑$V=\bbr ^2$，定义映射$\bm{\varphi}$为绕原点逆时针旋转$\theta$角，那么
+一个简单的例子是考虑$V=\bbr ^2$,定义映射$\bm{\varphi}$为绕原点逆时针旋转$\theta$角,那么
 \[
     \left(\bm{\varphi}\left(\bm{e}_1\right),\bm{\varphi}\left(\bm{e}
         _2\right)\right)=\left(\bm{e}_1,\bm{e}_2\right)\begin{bmatrix}
@@ -137,7 +137,7 @@
         \sin \theta & \cos\theta
     \end{bmatrix}
 \]
-那么考虑$V'$为$x$轴,$U'$为$\theta$角轴，显然$\bm{\varphi}\left(V'\right)\subseteq U'$，于是得到限制
+那么考虑$V'$为$x$轴,$U'$为$\theta$角轴,显然$\bm{\varphi}\left(V'\right)\subseteq U'$,于是得到限制
 \[
     \bm{\varphi}'\Big |_{V'}:V'\longrightarrow U'
 \]
@@ -146,51 +146,51 @@
 \subsection{线性映射与矩阵}
 \rem{}{}{我们首先给出关于像空间与核空间维数的一个非常强的定理.}
 \thm{像空间与核空间的维数公式}{像空间与核空间的维数公式}{
-    设线性映射$\bm{\varphi}:V^n\longrightarrow U^m $，设$V$的一组基为
-    $\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$，
-    $U$的一组基为$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m\right\}$，设$\bm{\varphi}$在给定基下的表示矩阵
-    $\bm{A}\in M_{m\times n}\left(\mathbb{K}
-        \right)$，则有
+    设线性映射$\bm{\varphi}:V^n\longrightarrow U^m $,设$V$的一组基为
+    $\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$,
+    $U$的一组基为$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m\right\}$,设$\bm{\varphi}$在给定基下的表示矩阵
+    $\bm{A}\in M_{m\times n}\left(\bbk
+        \right)$,则有
     \[
         \dim \Image\bm{\varphi}=\rmr \left(\bm{A}\right)
         ,
         \dim \Ker \bm{\varphi}=n-\rmr \left(\bm{A}\right)
     \]
-    第二个式子也叫作秩-零化度定理，它表明任何矩阵的秩与其零化度之和等于这个矩阵的列向量个数.\begin{proof}
+    第二个式子也叫作秩-零化度定理,它表明任何矩阵的秩与其零化度之和等于这个矩阵的列向量个数.\begin{proof}
         首先给出交换图
 
         \begin{center}
             \incfig[scale=0.9,float=H]{CommutativeDiagram}
         \end{center}
 
-        总的来说，需要证明
+        总的来说,需要证明
         \[
             \Ker \bm{\varphi}\cong \Ker \bm{\varphi}_{\bm{A}},
             \Image\bm{\varphi}\cong \Image\bm{\varphi}_{\bm{A}}
         \]
         即构造线性映射并证明是线性同构.
 
-        第一步，证明：
+        第一步,证明:
         \[
             \bm{\eta}_V\left(\Ker \bm{\varphi}
             \right)\subseteq \Ker \bm{\varphi}_{\bm{A}},
             \bm{\eta}_U\left(\Image\bm{\varphi}
             \right)\subseteq \Image\bm{\varphi}_{\bm{A}}
         \]
-        一方面，证明$\bm{\eta}_V\left(\Ker \bm{\varphi}
-            \right)\subseteq \Ker \bm{\varphi}_{\bm{A}}$.任取$\bm{v}\in \Ker \bm{\varphi}$，要证$\bm{\eta}_V\left(
+        一方面,证明$\bm{\eta}_V\left(\Ker \bm{\varphi}
+            \right)\subseteq \Ker \bm{\varphi}_{\bm{A}}$.任取$\bm{v}\in \Ker \bm{\varphi}$,要证$\bm{\eta}_V\left(
             \Ker \bm{\varphi}
             \right)\in \Ker \bm{\varphi}
             _{\bm{A}}$.因为\[\bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)=
             \bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=\bm{\varphi}_U\left(\bm{0}\right)=\bm{0}\]
-        得证.另一方面，证明
+        得证.另一方面,证明
         $\bm{\eta}_U\left(\Image\bm{\varphi}
             \right)\subseteq \Image\bm{\varphi}_{\bm{A}}
-        $，任取$\bm{\varphi}\left(\bm{v}\right)\in \Image\bm{\varphi},\bm{v}\in V$，要证$ \bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)\in \Image\bm{\varphi}_{\bm{A}}.
+        $,任取$\bm{\varphi}\left(\bm{v}\right)\in \Image\bm{\varphi},\bm{v}\in V$,要证$ \bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)\in \Image\bm{\varphi}_{\bm{A}}.
         $因为\[\bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=
             \bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)\in \Image\bm{\varphi}_{\bm{A}}\]得证.
 
-        第二步，做限制.
+        第二步,做限制.
         \begin{align*}
              & \bm{\eta}_V:\Ker \bm{\varphi}\longrightarrow \Ker \bm{\varphi}_{\bm{A}}   \\
              & \bm{\eta}_U:\Image\bm{\varphi}\longrightarrow \Image\bm{\varphi}_{\bm{A}}
@@ -198,43 +198,43 @@
         都是单的线性映射.再证满性即可证明同构.
 
         先证$\bm{\eta}_V:\Ker \bm{\varphi}\longrightarrow \Ker
-            \bm{\varphi}_{\bm{A}}$是满的.任取$\bm{x}\in \Ker \bm{\varphi}_{\bm{A}}$，
+            \bm{\varphi}_{\bm{A}}$是满的.任取$\bm{x}\in \Ker \bm{\varphi}_{\bm{A}}$,
         即$\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)=\bm{0}$.因为
-        $\Ker \bm{\varphi}_{\bm{A}}\subseteq \mathbb{K}^n$且
-        $\bm{\eta}_V:V\longrightarrow \mathbb{K}^n$是满射.故$\exists \bm{v}\in V$，
-        \st$\bm{\eta}_V\left(\bm{v}\right)=\bm{x}$，只需证$\bm{v}\in \Ker \bm{\varphi}$即证明
+        $\Ker \bm{\varphi}_{\bm{A}}\subseteq \bbk ^n$且
+        $\bm{\eta}_V:V\longrightarrow \bbk ^n$是满射.故$\exists \bm{v}\in V$,
+        \st$\bm{\eta}_V\left(\bm{v}\right)=\bm{x}$,只需证$\bm{v}\in \Ker \bm{\varphi}$即证明
         $\bm{\varphi}\left(\bm{v}\right)=\bm{0}.$由交换图\[\bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=
             \bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)=\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)=\bm{0}=\bm{\eta}_U\left(\bm{0}\right)\]故$\bm{\varphi}\left(\bm{v}\right)=\bm{0}$.证毕.
 
         再证$\bm{\eta}_U:\Image\bm{\varphi}\longrightarrow \Image
-            \bm{\varphi}_{\bm{A}}$是满的.任取$\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)\in \Image\bm{\varphi}_{\bm{A}},\bm{x}\in \mathbb{K}^n$.
-        因为$\exists \bm{v}\in V$，\st$\bm{\eta}_V\left(\bm{v}\right)=\bm{x}.$于是
+            \bm{\varphi}_{\bm{A}}$是满的.任取$\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)\in \Image\bm{\varphi}_{\bm{A}},\bm{x}\in \bbk ^n$.
+        因为$\exists \bm{v}\in V$,\st$\bm{\eta}_V\left(\bm{v}\right)=\bm{x}.$于是
         \[\bm{\eta}_U\left(\bm{\varphi}\left(\bm{v}\right)\right)=\bm{\varphi}_{\bm{A}}\left(\bm{\eta}_V\left(\bm{v}\right)\right)=\bm{\varphi}_{\bm{A}}\left(\bm{x}\right)\]得证.
         同构得证.
 
         第三步.因为
         \[
             \Ker \bm{\varphi}_{\bm{A}}
-            =\left\{\bm{x}\in \mathbb{K}^n\mid\bm{Ax}=\bm{0}
+            =\left\{\bm{x}\in \bbk ^n\mid\bm{Ax}=\bm{0}
             \right\}
         \]
         即$\bm{Ax}=\bm{0}$的解空间$V_{\bm{A}}$.因为
-        上面已证同构$\Ker \bm{\varphi}\cong \Ker \bm{\varphi}_{\bm{A}}$，故
+        上面已证同构$\Ker \bm{\varphi}\cong \Ker \bm{\varphi}_{\bm{A}}$,故
         \[
             \dim\Ker \bm{\varphi}=\dim\Ker \bm{\varphi}_{\bm{A}}=\dim V_{\bm{A}}=n-\rmr \left(\bm{A}
             \right)
         \]
-        然后作列分块$\bm{A}=\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right),\bm{\alpha}_i\in \mathbb{K}^n.$
+        然后作列分块$\bm{A}=\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right),\bm{\alpha}_i\in \bbk ^n.$
         故
         \begin{align*}
             \Image\bm{\varphi}_{\bm{A}} & =\left\{
-            \bm{Ax}\mid\bm{x}=\left(x_1,x_2,\cdots,x_n\right)'\in \mathbb{K}^n
+            \bm{Ax}\mid\bm{x}=\left(x_1,x_2,\cdots,x_n\right)'\in \bbk ^n
             \right\}                                                                                      \\
                                         & =\left\{x_1\bm{\alpha}_1+x_2\bm{\alpha}_2+\cdots+
-            x_n\bm{\alpha}_n\mid x_i\in \mathbb{K}\right\}                                                \\
+            x_n\bm{\alpha}_n\mid x_i\in \bbk \right\}                                                     \\
                                         & =L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right)
         \end{align*}
-        因为$\Image\bm{\varphi}\cong \Image\bm{\varphi}_{\bm{A}}$，于是
+        因为$\Image\bm{\varphi}\cong \Image\bm{\varphi}_{\bm{A}}$,于是
         \begin{align*}
             \rmr \left(\bm{\varphi}\right) & =\dim\Image\bm{\varphi}=\dim\Image\bm{\varphi}_{\bm{A}}                             \\
                                            & =\dim L\left(\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right)
@@ -247,13 +247,13 @@
     \end{proof}
 }
 \cor{线性映射维数公式}{线性映射维数公式}{
-    设$\bm{\varphi}\in \call  \left(V^n,U^m\right)$，则
+    设$\bm{\varphi}\in \call  \left(V^n,U^m\right)$,则
     \[\dim \Image\bm{\varphi}+\dim
         \Ker \bm{\varphi}=\dim V=n
     \]
 }
 \cor{秩对线性映射的刻画}{秩对线性映射的刻画}{
-    设$\bm{\varphi}\in \call  \left(V^n,U^m\right)$，$\bm{A}=\bm{T}\left(\bm{\varphi}\right)$，则
+    设$\bm{\varphi}\in \call  \left(V^n,U^m\right)$,$\bm{A}=\bm{T}\left(\bm{\varphi}\right)$,则
     \[
         \begin{cases*}
             \bm{\varphi}\text{为满射}\Longleftrightarrow
@@ -262,32 +262,32 @@
             \bm{A}\text{列满秩},\rmr \left(\bm{A}\right)=n
         \end{cases*}
     \]\begin{proof}
-        因为$\bm{\varphi}$为满射等价于$\dim\Image\bm{\varphi}=\dim U$，$\bm{\varphi}$为单射等价于
+        因为$\bm{\varphi}$为满射等价于$\dim\Image\bm{\varphi}=\dim U$,$\bm{\varphi}$为单射等价于
         $\dim\Ker \bm{\varphi}=0.$
     \end{proof}
 }
 \cor{}{同维数下秩对线性映射的刻画}{
     设线性映射$\bm{\varphi}:V^n\longrightarrow U^n$且
-    $\dim V=\dim U = n$，则
+    $\dim V=\dim U = n$,则
     \[
         \bm{\varphi}\text{是同构}\Longleftrightarrow
         \bm{\varphi}\text{是满射}\Longleftrightarrow
         \bm{\varphi}\text{是单射}
     \]
-    特别地，线性变换$\bm{\varphi}\in \call  \left(
+    特别地,线性变换$\bm{\varphi}\in \call  \left(
         V^n
-        \right)$，则$\bm{\varphi}$是自同构等价于$\bm{\varphi}$
+        \right)$,则$\bm{\varphi}$是自同构等价于$\bm{\varphi}$
     是单射也等价于$\bm{\varphi}$是满射.
 }
 \cor{}{线性变换的秩对其本身的刻画}{
     设线性变换$\bm{\varphi}\in \call  \left(
         V^n
-        \right)$,则$\bm{\varphi}$为单射或满射等价于 $\bm{\varphi}$在任意基下的表示矩阵均可逆（满秩）.
+        \right)$,则$\bm{\varphi}$为单射或满射等价于 $\bm{\varphi}$在任意基下的表示矩阵均可逆(满秩).
 }
 \subsection{像空间与核空间的计算}
 \rem{记号说明}{}{
-    先说明记号，设有映射$\bm{\varphi}\in \call  \left(V^n,U^m\right)$,分别取定线性空间$V$和$U$的一组基为
-    $\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$和$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m\right\}$，$\bm{T}\left(\bm{\varphi}\right)=\bm{A}$，且有线性同构
+    先说明记号,设有映射$\bm{\varphi}\in \call  \left(V^n,U^m\right)$,分别取定线性空间$V$和$U$的一组基为
+    $\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$和$\left\{\bm{f}_1,\bm{f}_2,\cdots,\bm{f}_m\right\}$,$\bm{T}\left(\bm{\varphi}\right)=\bm{A}$,且有线性同构
     \begin{align*}
         \bm{\eta}_V:\Ker \bm{\varphi} & \longrightarrow \Ker \bm{\varphi}_{\bm{A}} \\
         \bm{v}                        & \longmapsto \begin{pmatrix}
@@ -317,25 +317,25 @@
     \end{align*}
 }
 \rem{}{}{
-$\Ker \bm{\varphi}_{\bm{A}}$是$\bm{Ax}=\bm{0}$的解空间，$\Image\bm{\varphi}_{\bm{A}}$是$\bm{A}$的列向量张成的子空间.
+$\Ker \bm{\varphi}_{\bm{A}}$是$\bm{Ax}=\bm{0}$的解空间,$\Image\bm{\varphi}_{\bm{A}}$是$\bm{A}$的列向量张成的子空间.
 }
-先对表示矩阵$\bm{A}$作初等行变换（必要时用列对换），得到列向量组的极大无关组$\left\{
+先对表示矩阵$\bm{A}$作初等行变换(必要时用列对换),得到列向量组的极大无关组$\left\{
     \bm{\alpha}_{i_1},\bm{\alpha}_{i_2},\cdots,\bm{\alpha}_{i_r}
-    \right\}$，$r=\rmr \left(\bm{A}\right)$，得到
+    \right\}$,$r=\rmr \left(\bm{A}\right)$,得到
 方程$\bm{Ax}=\bm{0}$的基础解系$\left\{\bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\eta}_{n-r}\right\}$.最后得出
 \[
     \Ker \bm{\varphi}=k_1\bm{\eta}_V^{-1}\left(\bm{\beta}_1\right)+
     k_2\bm{\eta}_V^{-1}\left(\bm{\beta}_2\right)+\cdots+
-    k_{n-r}\bm{\eta}_V^{-1}\left(\bm{\beta}_{n-r}\right),k_i \in \mathbb{K}
+    k_{n-r}\bm{\eta}_V^{-1}\left(\bm{\beta}_{n-r}\right),k_i \in \bbk
 \]
 \[
     \Image\bm{\varphi}=l_1\bm{\eta}_U^{-1}\left(\bm{\alpha}_{i_1}\right)+
     l_2\bm{\eta}_U^{-1}\left(\bm{\alpha}_{i_2}\right)
     +\cdots+
-    l_r\bm{\eta}_U^{-1}\left(\bm{\alpha}_{i_r}\right),l_j \in \mathbb{K}
+    l_r\bm{\eta}_U^{-1}\left(\bm{\alpha}_{i_r}\right),l_j \in \bbk
 \]
 \exa{}{}{
-    设线性映射$\bm{\varphi}:V^5\longrightarrow U^4$，其在给定基$V:\left\{
+    设线性映射$\bm{\varphi}:V^5\longrightarrow U^4$,其在给定基$V:\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_5
         \right\}$和$U:\left\{
         \bm{f}_1,\bm{f}_2,\bm{f}_3,\bm{f}_4

@@ -2,17 +2,17 @@
 \section{子空间}
 \subsection{子空间}
 \dfn{子空间}{子空间}{
-    设线性空间$V_{\mathbb{K}}$，$V_0$为$V$的非空子集，若
+    设线性空间$V_{\bbk }$,$V_0$为$V$的非空子集,若
     $\forall \bm{\alpha},\bm{\beta}
-        \in V_0,k \in \mathbb{K}$
+        \in V_0,k \in \bbk $
     \[
         \bm{\alpha}+\bm{\beta} \in V_0,k\bm{\alpha
         } \in V_0
     \]
-    称$V_0$是$V$的（线性）子空间（准确地说是子线性空间）.
+    称$V_0$是$V$的(线性)子空间(准确地说是子线性空间).
 }
 \lem{}{子空间仍然是线性空间}{
-    $V_0$在$V$的加法和数乘下是$\mathbb{K}$的线性空间
+    $V_0$在$V$的加法和数乘下是$\bbk $的线性空间
     \begin{align*}
         + :
         V_0 \times V_0
@@ -24,7 +24,7 @@
          & \longmapsto
         \bm{\alpha}+\bm{\beta}
         \\
-        \cdot : \mathbb{K} \times
+        \cdot : \bbk  \times
         V_0
          & \longrightarrow
         V_0                \\
@@ -33,49 +33,49 @@
          & \longmapsto
         k \cdot \bm{\alpha}
     \end{align*}\begin{proof}
-        加法交换律、结合律显然成立，又$\forall\bm{\alpha}\in V_0$，$\bm{0}=\bm{\alpha}+\left(-\bm{\alpha}\right)\in V_0$.即零向量在$V_0$中，且就是$V$中的零向量.显然负元存在.
+        加法交换律、结合律显然成立,又$\forall\bm{\alpha}\in V_0$,$\bm{0}=\bm{\alpha}+\left(-\bm{\alpha}\right)\in V_0$.即零向量在$V_0$中,且就是$V$中的零向量.显然负元存在.
 
         显然数乘的性质均满足.
     \end{proof}
 }
 \cor{}{子空间对线性运算的封闭}{
     子空间对线性组合封闭即若$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\in V_0$,
-    $\lambda_1,\lambda_2,\cdots,\lambda_n\in \mathbb{K}$,则
+    $\lambda_1,\lambda_2,\cdots,\lambda_n\in \bbk $,则
     \[
         \lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_n\bm{\alpha}_n\in V_0
     \]
 }
 \dfn{平凡子空间}{平凡子空间}{
-    一般地，任一线性空间$V$至少有下面两个子空间，被称为平凡子空间.
+    一般地,任一线性空间$V$至少有下面两个子空间,被称为平凡子空间.
     \[
         \text{平凡子空间}
         \begin{cases*}
-            \text{零子空间：}\left\{
+            \text{零子空间:}\left\{
             \bm{0}_V
             \right\} \\
-            \text{全子空间：}
+            \text{全子空间:}
             V
         \end{cases*}
     \]
 }
 \lem{子空间的维数}{子空间的维数}{
-    对于$\mathbb{K}$上的线性空间$V$的任一子空间$V_0$
+    对于$\bbk $上的线性空间$V$的任一子空间$V_0$
     \[
         0 \leqslant
-        \dim_{\mathbb{K}}V_0
+        \dim_{\bbk }V_0
         \leqslant
-        \dim_{\mathbb{K}}V
+        \dim_{\bbk }V
     \]
-    特别地，非平凡子空间取到严格不等号.\begin{proof}
-        由\cref{thm:基扩张定理}基扩张定理，这是显然的.仅证明：$\dim_{\mathbb{K}}V_0=\dim_{\mathbb{K}}V=n$时$V=V_0$.
+    特别地,非平凡子空间取到严格不等号.\begin{proof}
+        由\cref{thm:基扩张定理}基扩张定理,这是显然的.仅证明:$\dim_{\bbk }V_0=\dim_{\bbk }V=n$时$V=V_0$.
 
-        取$V_0$的一组基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$，则其是$V$中$n$个线性无关的向量，又$\dim_{\mathbb{K}}V=n$，故这是$V$的一组基.
+        取$V_0$的一组基$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$,则其是$V$中$n$个线性无关的向量,又$\dim_{\bbk }V=n$,故这是$V$的一组基.
 
-        又$\forall \bm{\alpha}\in V$，$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_n\bm{\alpha}_n\in V_0$，则$V_0=V$.
+        又$\forall \bm{\alpha}\in V$,$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_n\bm{\alpha}_n\in V_0$,则$V_0=V$.
     \end{proof}
 }
 \thm{子空间的相等}{子空间的相等}{
-    设$V$是$\mathbb{K}$上的线性空间，$V_1,V_2$是$V$的两个子空间，则
+    设$V$是$\bbk $上的线性空间,$V_1,V_2$是$V$的两个子空间,则
     \[
         V_1=V_2 \iff
         \dim V_1=
@@ -84,7 +84,7 @@
 }
 \subsection{交空间与和空间}
 \dfn{交空间与和空间}{交空间与和空间}{
-    设$V_1,V_2\subseteq V$，定义它们的交为集合的交
+    设$V_1,V_2\subseteq V$,定义它们的交为集合的交
     \[
         V_1 \cap V_2
         = \left\{
@@ -101,7 +101,7 @@
         \bm{\beta} \in V_2
         \right\}
     \]
-    且二者均是$V$的子空间即交空间、和空间，但
+    且二者均是$V$的子空间即交空间、和空间,但
     \[
         V_1\cup V_2 =\left\{
         \bm{\alpha} |
@@ -109,14 +109,14 @@
         \bm{\alpha} \in V_2
         \right\}
     \]
-    不是$V$的子空间（一般来说）.\begin{proof}
-        先证交空间，设$\bm{\alpha},\bm{\beta}\in V_1\cap V_2$，则
-        $\bm{\alpha}+\bm{\beta}\in V_1$且$\bm{\alpha}+\bm{\beta}\in V_2$，故
-        $\bm{\alpha}+\bm{\beta}\in V_1\cap V_2$.$\forall k \in\mathbb{K}$，
-        $\bm{\alpha}\in V_1\cap V_2$，均有$k\bm{\alpha}\in V_1$且
-        $k\bm{\alpha}\in V_2$，故$k\bm{\alpha}\in V_1\cap V_2.$
+    不是$V$的子空间(一般来说).\begin{proof}
+        先证交空间,设$\bm{\alpha},\bm{\beta}\in V_1\cap V_2$,则
+        $\bm{\alpha}+\bm{\beta}\in V_1$且$\bm{\alpha}+\bm{\beta}\in V_2$,故
+        $\bm{\alpha}+\bm{\beta}\in V_1\cap V_2$.$\forall k \in\bbk $,
+        $\bm{\alpha}\in V_1\cap V_2$,均有$k\bm{\alpha}\in V_1$且
+        $k\bm{\alpha}\in V_2$,故$k\bm{\alpha}\in V_1\cap V_2.$
 
-        再证和空间，设$\bm{\alpha},\bm{\beta}\in V_1+V_2$，且
+        再证和空间,设$\bm{\alpha},\bm{\beta}\in V_1+V_2$,且
         \begin{align*}
              & \bm{\alpha}=\bm{\alpha}_1+\bm{\alpha}_2,\bm{\alpha}_1\in V_1,\bm{\alpha}_2\in V_2 \\
              & \bm{\beta}=\bm{\beta}_1+\bm{\beta}_2,\bm{\beta}_1\in V_1,\bm{\beta}_2\in V_2
@@ -126,14 +126,14 @@
             \bm{\alpha}+\bm{\beta}=\left(\bm{\alpha}_1+\bm{\beta}_1\right)+
             \left(\bm{\alpha}_2+\bm{\beta}_2\right)\in V_1+V_2
         \]
-        考虑$\forall k \in \mathbb{K}$，$k\bm{\alpha}=k\bm{\alpha}_1+k\bm{\alpha}_2\in V_1+V_2$.
+        考虑$\forall k \in \bbk $,$k\bm{\alpha}=k\bm{\alpha}_1+k\bm{\alpha}_2\in V_1+V_2$.
     \end{proof}
 }
 \clm{}{}{
-    两个线性空间的交空间不可能为空，因为至少包含零元，也就是说，下限就是零子空间$0=\left\{\bm{0}\right\}$.
+    两个线性空间的交空间不可能为空,因为至少包含零元,也就是说,下限就是零子空间$0=\left\{\bm{0}\right\}$.
 }
 \cor{}{多个子空间的交空间与和空间}{
-    设$V_1,V_2,\cdots,V_m$均为$V$的子空间，则它们的交空间
+    设$V_1,V_2,\cdots,V_m$均为$V$的子空间,则它们的交空间
     \[
         V_1 \cap V_2\cap\cdots \cap V_m
         = \left\{
@@ -161,8 +161,8 @@
 \subsection{张成的子空间}
 \dfn{张成的子空间}{张成的子空间}{
     设$S$为$V_{
-                \mathbb{K}
-            }$的非空子集，记$L\left(S\right)$为$S$中所有可能的线性组合构成的集合即
+                \bbk
+            }$的非空子集,记$L\left(S\right)$为$S$中所有可能的线性组合构成的集合即
     \[
         L\left(S\right)
         =
@@ -173,7 +173,7 @@
         \Bigg |
         \begin{matrix}
             \lambda _1,\lambda_2,\cdots,
-            \lambda _m \in \mathbb{K} \\
+            \lambda _m \in \bbk \\
             \bm{\alpha}_1,\bm{\alpha}_2,\cdots,
             \bm{\alpha}_m \in S
         \end{matrix}
@@ -183,15 +183,15 @@
         \right)
         \right\}
     \]
-    其在加法、数乘下封闭，是$V$的一个子空间，称为由$S$生成/张成的子空间.有时也记作$\Span\left(S\right)$.
+    其在加法、数乘下封闭,是$V$的一个子空间,称为由$S$生成/张成的子空间.有时也记作$\Span\left(S\right)$.
 }
 \pro{}{张成的子空间的性质}{
-    $S$为$V_{\mathbb{K}}$的子集,$L\left(S\right)$是$S$张成的子空间，则
-    \begin{enumerate}[label=\arabic*）]
+    $S$为$V_{\bbk }$的子集,$L\left(S\right)$是$S$张成的子空间,则
+    \begin{enumerate}[label=\arabic*)]
         \item $L\left(S\right)$是包含$S$的$V$的最小子空间
         \item 若$S$存在极大无关组$
                   \left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots
-                  ,\bm{\alpha}_r\right\}$，则
+                  ,\bm{\alpha}_r\right\}$,则
               \[
                   L\left(S\right)
                   = L\left(\bm{\alpha}_1,\bm{\alpha}_2,
@@ -206,14 +206,14 @@
                   L\left(S
                   \right)
               $的一组基即\[
-                  \dim_{\mathbb{K}}L\left(S
+                  \dim_{\bbk }L\left(S
                   \right) = \rmr \left(
                   S\right)
               \]
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
-            \item 任取子空间$V_0\supseteq S$，任取$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m\in L\left(S\right)$， $\bm{\alpha}_i\in S$,故$\bm{\alpha}_i\in V_0$，又因为子空间
-                  保持线性组合，于是$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m\in V_0$，于是$L\left(S\right)\subseteq V_0.$
+        \begin{enumerate}[label=\arabic*)]
+            \item 任取子空间$V_0\supseteq S$,任取$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m\in L\left(S\right)$, $\bm{\alpha}_i\in S$,故$\bm{\alpha}_i\in V_0$,又因为子空间
+                  保持线性组合,于是$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m\in V_0$,于是$L\left(S\right)\subseteq V_0.$
             \item 因为
                   \[
                       L\left(S\right)\hookrightarrow S\hookrightarrow
@@ -229,14 +229,14 @@
                   \]
                   且$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r\right\}$是$L\left(S\right)$的一组基.于是
                   \[
-                      \dim_{\mathbb{K}}L\left(S\right)=r=\rmr \left(S\right)
+                      \dim_{\bbk }L\left(S\right)=r=\rmr \left(S\right)
                       \qedhere
                   \]
         \end{enumerate}
     \end{proof}
 }
 \cor{}{并集张成的空间}{
-    若$V_1,V_2,\cdots,V_m$为$V$的子空间，则
+    若$V_1,V_2,\cdots,V_m$为$V$的子空间,则
     \[
         L\left(
         V_1 \cup V_2\cup \cdots \cup
@@ -246,7 +246,7 @@
         + V_m
     \]\begin{proof}
         考虑$\forall \bm{\alpha}=\bm{\alpha}_1+\bm{\alpha}_2+
-            \cdots+\bm{\alpha}_m\in V_1+V_2+\cdots+V_m$，其中$\bm{\alpha}_i\in V_i$，从而
+            \cdots+\bm{\alpha}_m\in V_1+V_2+\cdots+V_m$,其中$\bm{\alpha}_i\in V_i$,从而
         \[
             \bm{\alpha}=\bm{\alpha}_1+\bm{\alpha}_2+
             \cdots+\bm{\alpha}_m\in L\left(
@@ -262,7 +262,7 @@
             V_1 +V_2+\cdots
             + V_m
         \]
-        又因为$V_i\subseteq V_1 + V_2+ \cdots +V_m $，则$\bm{\alpha}_i\in V_1+V_2+\cdots+V_m$，于是
+        又因为$V_i\subseteq V_1 + V_2+ \cdots +V_m $,则$\bm{\alpha}_i\in V_1+V_2+\cdots+V_m$,于是
         \[
             V_1\cup V_2\cup \cdots\cup V_m\subseteq V_1+V_2+\cdots+V_m
         \]
@@ -288,27 +288,27 @@
 }
 \subsection{维数公式}
 \thm{子空间的维数公式}{子空间的维数公式}{
-    设$V_1,V_2$为$V_{\mathbb{K}}$的子空间，则\[
-        \dim_{\mathbb{K}}\left(V_1 +
+    设$V_1,V_2$为$V_{\bbk }$的子空间,则\[
+        \dim_{\bbk }\left(V_1 +
         V_2\right)
         =
-        \dim_{\mathbb{K}}V_1+
-        \dim_{\mathbb{K}}V_2 -
-        \dim_{\mathbb{K}}\left(
+        \dim_{\bbk }V_1+
+        \dim_{\bbk }V_2 -
+        \dim_{\bbk }\left(
         V_1\cap V_2
         \right)
     \]
-    特别地，$V_1 \cap V_2 =0=\left\{
+    特别地,$V_1 \cap V_2 =0=\left\{
         \bm{0}
         \right\}$时\[
-        \dim_{\mathbb{K}}\left(V_1 +
+        \dim_{\bbk }\left(V_1 +
         V_2\right)
         =
-        \dim_{\mathbb{K}}V_1+
-        \dim_{\mathbb{K}}V_2
+        \dim_{\bbk }V_1+
+        \dim_{\bbk }V_2
     \]\begin{proof}
-        设右式依次为$m$、$n$、$r$，取$V_1\cap V_2$的一组基$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r
-            \right\}$，因为$V_1\cap V_2\subseteq V_1$，根据基扩张定理得到$V_1$的一组基\[\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r
+        设右式依次为$m$、$n$、$r$,取$V_1\cap V_2$的一组基$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r
+            \right\}$,因为$V_1\cap V_2\subseteq V_1$,根据基扩张定理得到$V_1$的一组基\[\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r
             ,\bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\beta}_{m-r}\right\}\]同理得到$V_2$的一组基
         \[\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r
             ,\bm{\gamma}_1,\bm{\gamma}_2,\cdots,\bm{\gamma}_{n-r}
@@ -318,7 +318,7 @@
             \bm{\gamma}_1,\bm{\gamma}_2,\cdots,\bm{\gamma}_{n-r}\right\}$是$V_1+V_2$的基即可.
 
         $\forall \bm{v}=\bm{v}_1+\bm{v}_2\in V_1+V_2 ,
-            \bm{v}_1\in V_1,\bm{v}_2\in V_2$，显然，分成两部分分别考虑，容易得出$\bm{v}$是
+            \bm{v}_1\in V_1,\bm{v}_2\in V_2$,显然,分成两部分分别考虑,容易得出$\bm{v}$是
         \[\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r
             ,\bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\beta}_{m-r},
             \bm{\gamma}_1,\bm{\gamma}_2,\cdots,\bm{\gamma}_{n-r}\right\}
@@ -337,7 +337,7 @@
             \bm{\gamma}_2+\cdots+k_{n-r}\bm{\gamma}_{n-r}
             =\bm{0}
         \end{align*}
-        移项，有
+        移项,有
         \begin{align*}
             V_1\ni & \lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_r
             \bm{\alpha}_r
@@ -358,12 +358,12 @@
             \bm{\gamma}_2+\cdots+k_{n-r}\bm{\gamma}_{n-r}
             \right)
         \]
-        移项并由线性无关得$l_1=l_2=\cdots=l_r=k_1=k_2=\cdots=k_{n-r}=0$，代回又得$\lambda_1=\lambda_2=\cdots=\lambda_r=\mu_1=\mu_2=\cdots=\mu_{m-r}=0$.
+        移项并由线性无关得$l_1=l_2=\cdots=l_r=k_1=k_2=\cdots=k_{n-r}=0$,代回又得$\lambda_1=\lambda_2=\cdots=\lambda_r=\mu_1=\mu_2=\cdots=\mu_{m-r}=0$.
     \end{proof}
 }
 \subsection{直和}
 \dfn{直和}{直和}{
-    设$V_1,V_2,\cdots,V_m$为$V$的子空间，若$\forall 1
+    设$V_1,V_2,\cdots,V_m$为$V$的子空间,若$\forall 1
         \leqslant i\leqslant m$\[
         V_i \cap \left(
         V_1 + V_2+\cdots +\widehat{V_i}
@@ -372,16 +372,16 @@
         = 0
     \]则称和$V_1
         +V_2+\cdots +V_m$
-    为直接和，简称直和，记作\[
+    为直接和,简称直和,记作\[
         V_1 \oplus V_2\oplus \cdots
         \oplus V_m
     \]
 }
 \exa{}{}{
-    $m = 2$时，$V_1 + V_2$为直和等价于$V_1 \cap V_2 = 0$，比如$V =\bbr^3 = V_1 \oplus V_{23}$
+    $m = 2$时,$V_1 + V_2$为直和等价于$V_1 \cap V_2 = 0$,比如$V =\bbr^3 = V_1 \oplus V_{23}$
 }
 \exa{}{}{
-    $m \geqslant 3$时$V_i$两两的交为$0$不能保证直和，比如
+    $m \geqslant 3$时$V_i$两两的交为$0$不能保证直和,比如
     \[
         V_1\oplus V_2 \oplus V_3
         \Longleftrightarrow
@@ -392,18 +392,18 @@
         \end{cases*}
     \]
 }
-\clm{}{}{当子空间数大于2，子空间
-    两两的交为零子空间并不能确定直和，直和的条件比两两的交为零子空间要严格得多.
+\clm{}{}{当子空间数大于2,子空间
+    两两的交为零子空间并不能确定直和,直和的条件比两两的交为零子空间要严格得多.
 }
 \exa{}{}{
-    考虑笛卡尔坐标系，$V=\bbr^2$，$V_1:x$轴，$V_2:y$轴，$V_3:y=x$.即使两两的交为零子空间，但
+    考虑笛卡尔坐标系,$V=\bbr^2$,$V_1:x$轴,$V_2:y$轴,$V_3:y=x$.即使两两的交为零子空间,但
     \[
         V_3\cap\left(V_1+V_2\right)=V_3\neq 0
     \]
 }
 \thm{直和的判定}{直和的判定}{
-    若$V_0 = V_1 +V_2+\cdots+V_m$，则下列结论等价
-    \begin{enumerate}[label=\arabic*）]
+    若$V_0 = V_1 +V_2+\cdots+V_m$,则下列结论等价
+    \begin{enumerate}[label=\arabic*)]
         \item $V_0 =V_1\oplus V_2\oplus
                   \cdots\oplus V_m$
         \item $\forall 2\leqslant i\leqslant m,
@@ -413,7 +413,7 @@
         \item $\dim\left( V_1 +V_2+\cdots+V_m\right)= \dim V_1 +\dim V_2+\cdots
                   +\dim V_m$
         \item $V_1,V_2,\cdots,V_m$的各一组基可以拼成$V_0$的一组基
-        \item $V_0$中向量用$V_1,V_2,\cdots,V_m$中向量和表出方式唯一，即若
+        \item $V_0$中向量用$V_1,V_2,\cdots,V_m$中向量和表出方式唯一,即若
               $\bm{\alpha}\in V_0 $且$
                   \bm{\alpha} =
                   \bm{v}_1+\bm{v}_2+\cdots
@@ -424,8 +424,8 @@
                   \in V_i$则$\bm{v}_i = \bm{u}_i
                   \left(
                   1\leqslant i\leqslant m
-                  \right)$，称为分块表
-              示唯一.事实上，这等价于
+                  \right)$,称为分块表
+              示唯一.事实上,这等价于
               零向量表示唯一.
     \end{enumerate}
     \begin{proof}
@@ -444,7 +444,7 @@
         \]
 
         $(2)\Longrightarrow (3)$对$V_m\cap\left(V_1+\cdots+V_{m-1}\right)=0$使用\cref{thm:子空间的维数公式}维数公式
-        得$\dim\left(V_1+\cdots+V_m\right)=\dim\left(V_1+\cdots+V_{m-1}\right)+\dim V_m$，一直如此便得到
+        得$\dim\left(V_1+\cdots+V_m\right)=\dim\left(V_1+\cdots+V_{m-1}\right)+\dim V_m$,一直如此便得到
         \[
             \dim\left( V_1 +V_2+\cdots
             +V_m\right)= \dim V_1 +\dim V_2+\cdots
@@ -452,11 +452,11 @@
         \]
 
         $(3)\Longrightarrow(4)$设
-        $\dim V_i=n_i$，$\dim V_0=n_1+\cdots+n_m
+        $\dim V_i=n_i$,$\dim V_0=n_1+\cdots+n_m
             =n$.取$V_i$基
         $\left\{\bm{e}_{i1},\bm{e}_{i2},\cdots,
             \bm{e}_{in_i}\right\}\left(1\leqslant i \leqslant
-            m\right)$，拼在一起即
+            m\right)$,拼在一起即
         \[
             \left\{
             \bm{e}_{11},\bm{e}_{12},\cdots,\bm{e}_{1n_1},
@@ -471,9 +471,9 @@
             V_1+\cdots+V_m$,其中$\bm{\alpha}_i\in V_i.$
         设$\bm{\alpha}_i=
             \lambda_{i1}\bm{e}_{i1}+\lambda_{i2}\bm{e}_{i2}+\cdots+\lambda_{in_i}
-            \bm{e}_{in_i}\left(1\leqslant i \leqslant m\right)$.容易证明线性组合，以此判定基.
+            \bm{e}_{in_i}\left(1\leqslant i \leqslant m\right)$.容易证明线性组合,以此判定基.
 
-        $(4)\Longrightarrow (5)$，我们先证其与推论等价，由$(5)$推出推论显然.反之
+        $(4)\Longrightarrow (5)$,我们先证其与推论等价,由$(5)$推出推论显然.反之
         \[
             \bm{0}=\left(\bm{v}_1-\bm{u}_1\right)+\left(
             \bm{v}_2-\bm{u}_2
@@ -482,7 +482,7 @@
         由零向量表示唯一立得$\bm{v}_i=\bm{u}_i.$
         于是只需要证明$(4)$推得$(5)$推论.
 
-        设$\bm{0}=\bm{v}_1+\bm{v}_2+\cdots+\bm{v}_m$，其中$\bm{v}_i\in V_i.$因为
+        设$\bm{0}=\bm{v}_1+\bm{v}_2+\cdots+\bm{v}_m$,其中$\bm{v}_i\in V_i.$因为
         $\bm{v}_i=
             \lambda_{i1}\bm{e}_{i1}+\lambda_{i2}\bm{e}_{i2}+\cdots+\lambda_{in_i}
             \bm{e}_{in_i}\left(
@@ -492,7 +492,7 @@
             \bm{0}=\sum_{i=1}^{m}\left(
             \lambda_{i1}\bm{e}_{i1}+\lambda_{i2}\bm{e}_{i2}+\cdots+\lambda_{in_i}
             \bm{e}_{in_i}
-            \right)$，由基的线性无关性得
+            \right)$,由基的线性无关性得
         \[
             \lambda_{ij}=0,\forall 1\leqslant i\leqslant m,1\leqslant j\leqslant n_i
         \]
@@ -500,7 +500,7 @@
 
         最后为该推论推得$(1)$.任取$
             \bm{\alpha}\in V_i\cap \left(V_1+\cdots+V_{i-1}+V_{i+1}+\cdots+
-            V_m\right)$，即$\bm{\alpha}=\bm{\alpha}_1+\cdots+\bm{\alpha}_{i-1}+\bm{\alpha}_{i+1}+\cdots+\bm{\alpha}_m$.即有对零向量分解
+            V_m\right)$,即$\bm{\alpha}=\bm{\alpha}_1+\cdots+\bm{\alpha}_{i-1}+\bm{\alpha}_{i+1}+\cdots+\bm{\alpha}_m$.即有对零向量分解
         \[
             \bm{0}=\bm{\alpha}_1+\cdots
             +\bm{\alpha}_{i-1}+\left(-\bm{\alpha}
@@ -508,7 +508,7 @@
         \]
         则$\bm{\alpha}_1=\cdots=\bm{\alpha}_{i-1}=\bm{\alpha}=
             \bm{\alpha}_{i+1}=\cdots=\bm{\alpha}_m=\bm{0}.$
-        即$\bm{\alpha}=0$，于是
+        即$\bm{\alpha}=0$,于是
         \[
             V_i\cap \left(V_1+\cdots+V_{i-1}+V_{i+1}+\cdots+
             V_m\right)=0\left(1\leqslant i\leqslant

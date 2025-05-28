@@ -2,12 +2,12 @@
 \section{向量组的秩}
 \subsection{向量族与向量组}
 \dfn{向量族与向量组}{向量族与向量组}{
-    在向量空间$V_{\bbk}$中，向量族是$V$中的若干个向量的集合（可能有无穷多个且允许存在重复的元），向量组是$V$中有限个向量的集合.
+    在向量空间$V_{\bbk}$中,向量族是$V$中的若干个向量的集合(可能有无穷多个且允许存在重复的元),向量组是$V$中有限个向量的集合.
 
     向量族或向量组$S$包含的向量个数一般记作$\#S$或者$\left|S\right|$.
 }
 \dfn{极大线性无关组}{极大线性无关组}{
-    设$S$为$V_{\bbk}$中一个向量族，    若其中存在一组向量$\left\{
+    设$S$为$V_{\bbk}$中一个向量族,    若其中存在一组向量$\left\{
         \bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_r
         \right\}$使得
@@ -20,35 +20,35 @@
     则称向量组$\left\{
         \bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_r
-        \right\}$为$S$的一个极大（线性）无关组.
+        \right\}$为$S$的一个极大(线性)无关组.
 }
 \cor{极大无关组的存在性}{极大无关组的存在性}{
     包含非零向量的向量组必有极大无关组.
     \begin{proof}
         对$S$包含的向量个数$k$作归纳.
 
-        $k=1$时，设$S=\left\{\bm{\alpha}\right\}$且$
-            \bm{\alpha}\neq \bm{0}$，那么$\left\{
+        $k=1$时,设$S=\left\{\bm{\alpha}\right\}$且$
+            \bm{\alpha}\neq \bm{0}$,那么$\left\{
             \bm{\alpha}\right\}$就是极大无关组.
 
-        一般地，若$S$中$k$个向量时线性无关的，那么它们即是极大无关组.若是线性相关的，即至少存在一个向量可用其余向量线性表出，不妨设$\bm{\alpha}$可用$S\backslash\left\{\bm{\alpha}\right\}$（含有$k-1$个向量且至少一个非零向量）线性表出.于是$S\backslash \left\{\bm{\alpha}\right\}$存在极大无关组
+        一般地,若$S$中$k$个向量时线性无关的,那么它们即是极大无关组.若是线性相关的,即至少存在一个向量可用其余向量线性表出,不妨设$\bm{\alpha}$可用$S\backslash\left\{\bm{\alpha}\right\}$(含有$k-1$个向量且至少一个非零向量)线性表出.于是$S\backslash \left\{\bm{\alpha}\right\}$存在极大无关组
         $\left\{\bm{\alpha}_1,
-            \bm{\alpha}_2,\cdots,\bm{\alpha}_r\right\}$，那么由线性组合的传递性知$\bm{\alpha}$也可以用向量$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r$线性表出，于是$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r\right\}$就是$S$的极大无关组.
+            \bm{\alpha}_2,\cdots,\bm{\alpha}_r\right\}$,那么由线性组合的传递性知$\bm{\alpha}$也可以用向量$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r$线性表出,于是$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r\right\}$就是$S$的极大无关组.
     \end{proof}
 }
 \lem{}{多少向量组的线性关系的制约}{
-    $A$、$B$两个向量组分别包含$r$、$s$个向量，且$A$中的向量均可由$B$中的向量表示，若$A$中向量线性无关则必有$r\leqslant s$即$\#A \leqslant \#B$.\begin{proof}
+    $A$、$B$两个向量组分别包含$r$、$s$个向量,且$A$中的向量均可由$B$中的向量表示,若$A$中向量线性无关则必有$r\leqslant s$即$\#A \leqslant \#B$.\begin{proof}
         设\begin{align*}
              & A=\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots
             ,\bm{\alpha}_r\right\},\#A=r                                            \\
              & B=\left\{\bm{\beta}_1,\bm{\beta}_2,\cdots,\bm{\beta}_s\right\},\#B=s
         \end{align*}
-        考虑反证法，设$r>s$.设
+        考虑反证法,设$r>s$.设
         \[
             \bm{\alpha}_1=\lambda_1\bm{\beta}_1+\lambda_2\bm{\beta}_2+\cdots+\lambda_s\bm{\beta}_s
         \]
-        因为$A$线性无关则$\bm{\alpha}_1\neq \bm{0}$，于是$\lambda_1,\lambda_2,\cdots,\lambda_s$不全为零.不妨设
-        $\lambda_1\neq 0$，则
+        因为$A$线性无关则$\bm{\alpha}_1\neq \bm{0}$,于是$\lambda_1,\lambda_2,\cdots,\lambda_s$不全为零.不妨设
+        $\lambda_1\neq 0$,则
         \[
             \bm{\beta}_1=\frac{1}{\lambda_1}\bm{\alpha}_1-
             \frac{\lambda_2}{\lambda_1}\bm{\beta}_2-\cdots-
@@ -56,13 +56,13 @@
         \]
 
         因为$A\backslash \left\{\bm{\alpha}_1\right\}$中的向量
-        均可用$B$线性表示，且由上知$B$中的
+        均可用$B$线性表示,且由上知$B$中的
         $\bm{\beta}_1$可用
         $\left\{\bm{\alpha}_1,\bm{\beta}_2,\cdots,\bm{\beta}_s\right\}$
         线性表示.于是$\forall 1<i\leqslant r$,$\bm{\alpha}_i$是
         $\bm{\alpha}_1,\bm{\beta}_2,\cdots,\bm{\beta}_s$的线性组合.
 
-        考虑归纳法，设$\forall k < i \leqslant r$,
+        考虑归纳法,设$\forall k < i \leqslant r$,
         $\bm{\alpha}_i$是
         $\left\{\bm{\alpha}_1,
             \bm{\alpha}_2,\cdots,\bm{\alpha}_k,
@@ -75,9 +75,9 @@
         若$\mu_{k+1}=\cdots=\mu_{s}=0$则
         $\bm{\alpha}_{k+1}$是
         $\bm{\alpha}_1,\bm{\alpha}_2,
-            \cdots,\bm{\alpha}_k$的线性组合，与$A$线性无关
-        矛盾，于是
-        $\mu_{k+1},\cdots,\mu_s$不全为零.不妨设$\mu_{k+1}\neq 0$，则
+            \cdots,\bm{\alpha}_k$的线性组合,与$A$线性无关
+        矛盾,于是
+        $\mu_{k+1},\cdots,\mu_s$不全为零.不妨设$\mu_{k+1}\neq 0$,则
         \begin{align*}
             \bm{\beta}_{k+1} & =
             -\frac{\mu_1}{\mu_{k+1}}\bm{\alpha}_1-
@@ -99,21 +99,21 @@
             \bm{\alpha}_2,\cdots,\bm{\alpha}_k,\bm{\alpha}_{k+1},
             \bm{\beta}_{k+2},\cdots,\bm{\beta}_s\right\}
         \end{align*}
-        于是$\forall s < i \leqslant r$，$\bm{\alpha}_i$是$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_s\right\}$
-        的线性组合，与$A$线性无关矛盾.于是证毕.
+        于是$\forall s < i \leqslant r$,$\bm{\alpha}_i$是$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_s\right\}$
+        的线性组合,与$A$线性无关矛盾.于是证毕.
     \end{proof}
 }
 \clm{}{}{
-    \cref{lem:多少向量组的线性关系的制约}的逆否命题即若多的向量组可以用少的向量组线性表示，则多的向量组一定线性相关.
+    \cref{lem:多少向量组的线性关系的制约}的逆否命题即若多的向量组可以用少的向量组线性表示,则多的向量组一定线性相关.
 }
 \lem{}{相互表出的线性无关向量组的向量个数关系}{
-    设$A$、$B$为线性无关的向量组，且二者包含的向量可以互相表示，那么必有二者所含向量个数相同即$\#A=\#B$.
+    设$A$、$B$为线性无关的向量组,且二者包含的向量可以互相表示,那么必有二者所含向量个数相同即$\#A=\#B$.
     \begin{proof}
         由\cref{lem:多少向量组的线性关系的制约}立得.
     \end{proof}
 }
 \cor{极大无关组的向量个数唯一}{极大无关组的向量个数唯一}{
-    一个向量族极大线性无关组中向量的选取不一定是唯一的，但其中的向量的个数一定是唯一的.\begin{proof}
+    一个向量族极大线性无关组中向量的选取不一定是唯一的,但其中的向量的个数一定是唯一的.\begin{proof}
         由\cref{lem:多少向量组的线性关系的制约}和\cref{lem:相互表出的线性无关向量组的向量个数关系}立得.
     \end{proof}
 }
@@ -123,14 +123,14 @@
     或者$\rank\left(S\right)$.
 }
 \clm{}{}{
-    约定：\begin{itemize}
+    约定:\begin{itemize}
         \item 零向量组的秩为$0$
-        \item 等价（可以互相表出）的向量组的秩相同，称为同秩
+        \item 等价(可以互相表出)的向量组的秩相同,称为同秩
     \end{itemize}
 }
 \subsection{基}
 \rem{}{}{
-    如果$S = V_{\mathbb{K}}$,那么
+    如果$S = V_{\bbk }$,那么
     \[
         \begin{cases*}
             \text{极大无关组——线性空间的基}
@@ -140,15 +140,15 @@
     \]
 }
 \dfn{基}{基}{
-    设$V$是$\mathbb{K}$上的线性空间，若其中存在线性无关的一组向量$\left\{\bm{e}_1,\bm{e}_2
+    设$V$是$\bbk $上的线性空间,若其中存在线性无关的一组向量$\left\{\bm{e}_1,\bm{e}_2
         ,\cdots,\bm{e}_n\right\}$
-    使得$V$中任一向量均可表示为这组向量的线性组合，则称$\left\{
+    使得$V$中任一向量均可表示为这组向量的线性组合,则称$\left\{
         \bm{e}_1,\bm{e}_2,\cdots
         ,\bm{e}_n
-        \right\}$为$V$的一组基，$V$
-    称为$n$维线性空间（具有维数$n$），记作
+        \right\}$为$V$的一组基,$V$
+    称为$n$维线性空间(具有维数$n$),记作
     \[
-        \dim_{\mathbb{K}}V = n
+        \dim_{\bbk }V = n
     \]
     这组基记作
     \[
@@ -157,15 +157,15 @@
         ,\bm{e}_n
         \right\}=
         V /
-        \mathbb{K}
+        \bbk
     \]
-    若不存在这样的有限个向量组成的一组基，那么称$V$是无限维线性空间.
+    若不存在这样的有限个向量组成的一组基,那么称$V$是无限维线性空间.
 }
 \clm{}{}{
-    需要说明的是，虽然我们主要研究有限维线性空间，但无限维线性空间仍然具有基，只是需要修改线性表示和线性无关的定义并使用选择公理或Zorn引理.
+    需要说明的是,虽然我们主要研究有限维线性空间,但无限维线性空间仍然具有基,只是需要修改线性表示和线性无关的定义并使用选择公理或Zorn引理.
 }
 \exa{}{}{
-    \cref{def:n维行（列）向量空间}中的
+    \cref{def:n维行(列)向量空间}中的
     \[
         \dim_{\bbk}\bbk^n
         =\dim_{\bbk}\bbk_n
@@ -174,7 +174,7 @@
 }
 \exa{}{}{
     \[
-        \left\{1,\mathrm{i} = \sqrt{-1}\right\} =
+        \left\{1,\rmi  = \sqrt{-1}\right\} =
         \bbc  /
         \bbr
         \Longrightarrow
@@ -183,13 +183,13 @@
     \]
 }
 \cor{}{超过维数的向量组}{
-    $n$维空间$V_{\mathbb{K}}$中任一包含向量个数多于$n$的向量组一定线性相关.
+    $n$维空间$V_{\bbk }$中任一包含向量个数多于$n$的向量组一定线性相关.
 }
 \thm{基的判定定理}{基的判定定理}{
-    设$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n $是$\mathbb{K}$上的$n$维线性空间$V$中的$n$个向量，若适合下面之一则$\left\{
+    设$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n $是$\bbk $上的$n$维线性空间$V$中的$n$个向量,若适合下面之一则$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
         \right\}$是$V$的一组基
-    \begin{enumerate}[label=\arabic*）]
+    \begin{enumerate}[label=\arabic*)]
         \item $\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$线性无关
         \item $V$中任一向量均可表示为这组向量
               $\left\{
@@ -197,8 +197,8 @@
                   \right\}$的线性组合
     \end{enumerate}
     \begin{proof}
-        \begin{enumerate}[label=\arabic*）]
-            \item $\forall \bm{\alpha}\in V$，$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n,\bm{\alpha}$线性相关，故$\bm{\alpha}$是$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$的线性组合，证毕.
+        \begin{enumerate}[label=\arabic*)]
+            \item $\forall \bm{\alpha}\in V$,$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n,\bm{\alpha}$线性相关,故$\bm{\alpha}$是$\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n$的线性组合,证毕.
             \item 设$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots
                       ,\bm{\alpha}_r\right\}$为$\left\{
                       \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
@@ -209,16 +209,16 @@
                       \left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots
                       ,\bm{\alpha}_r\right\}
                   \]
-                  于是$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r\right\}$是$V$的一组基，$\dim V=r=n$.证毕.\qedhere
+                  于是$\left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_r\right\}$是$V$的一组基,$\dim V=r=n$.证毕.\qedhere
         \end{enumerate}
     \end{proof}
 }
 \thm{基扩张定理}{基扩张定理}{
-设线性空间$V^n_{\mathbb{K}}$中的$m\left(m < n\right)$个线性无关的向量为$\bm{v}_1,\bm{v}_2
+设线性空间$V^n_{\bbk }$中的$m\left(m < n\right)$个线性无关的向量为$\bm{v}_1,\bm{v}_2
     ,\cdots,\bm{v}_m$,$\left\{
     \bm{e}_1,\bm{e}_2,\cdots
     ,\bm{e}_n
-    \right\}$是该空间的一组基，则必定可以从这组基再选出$n - m$个向量来共同组成一组基
+    \right\}$是该空间的一组基,则必定可以从这组基再选出$n - m$个向量来共同组成一组基
 \[
     \left\{\bm{v}_1,\bm{v}_2,
     \cdots,
@@ -229,10 +229,10 @@
     $\bm{v}_1,\bm{v}_2,\cdots,
         \bm{v}_m,\bm{e}_i$线性无关.
 
-    考虑反证法，设$\forall 1
+    考虑反证法,设$\forall 1
         \leqslant i \leqslant n $,
     $\bm{v}_1,\bm{v}_2,\cdots,
-        \bm{v}_m,\bm{e}_i$线性相关，于是$\bm{e}_i$是
+        \bm{v}_m,\bm{e}_i$线性相关,于是$\bm{e}_i$是
     $\bm{v}_1,\bm{v}_2,\cdots,
         \bm{v}_m$的线性组合.即
     \[
@@ -242,10 +242,10 @@
         \right\}
     \]
     且$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}
-    $是线性无关的，于是$n \leqslant m$，矛盾.得证.
+    $是线性无关的,于是$n \leqslant m$,矛盾.得证.
 
     不妨设$\bm{v}_1,\bm{v}_2,\cdots,\bm{v}_m,\bm{e}_1$是线性无关的.
-    \begin{enumerate}[label=\arabic*）]
+    \begin{enumerate}[label=\arabic*)]
         \item $m+1=n$时,这成为一组基
 
         \item $m+1<n$时,仿照上面不断做下去即可\qedhere
@@ -253,8 +253,8 @@
 \end{proof}
 }
 \thm{基扩张定理}{基扩张定理的等价表述}{
-    \begin{enumerate}[label=\arabic*）]
-        \item $n$维线性空间$V_{\mathbb{K}}$中任意$m\left(m < n\right)$个线性无关的向量均可扩张为$V$的一组基
+    \begin{enumerate}[label=\arabic*)]
+        \item $n$维线性空间$V_{\bbk }$中任意$m\left(m < n\right)$个线性无关的向量均可扩张为$V$的一组基
         \item $V$的任一子空间的基均可扩张为$V$的一组基
     \end{enumerate}
 }

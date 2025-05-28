@@ -1,7 +1,7 @@
 \newpage
 \section{初等因子}
 \dfn{准素因子}{准素因子}{
-    设$f\left(\lambda\right)\in\mathbb{K}\left[\lambda\right],p\left(\lambda\right)$为不可约多项式，若$\exists e\in \mathbb{Z}^+\st$\[
+    设$f\left(\lambda\right)\in\bbk \left[\lambda\right],p\left(\lambda\right)$为不可约多项式,若$\exists e\in \mathbb{Z}^+\st$\[
         p\left(\lambda\right)^e\mid f\left(\lambda\right),p\left(\lambda\right)^{e+1}\nmid f\left(\lambda\right)
     \]则称$p\left(
         \lambda
@@ -10,7 +10,7 @@
 \exa{}{}{
     由\cref{thm:标准因式分解}标准因式分解\[
         f\left(\lambda\right)=cp_1\left(\lambda\right)^{e_1}p_2\left(\lambda\right)^{e_2}\cdots p_m\left(\lambda\right)^{e_m}
-    \]其中$c\neq 0,p_i\left(\lambda\right)$为互异的首一不可约多项式，$e_i\geqslant 1\left(
+    \]其中$c\neq 0,p_i\left(\lambda\right)$为互异的首一不可约多项式,$e_i\geqslant 1\left(
         \forall 1\leqslant i\leqslant m
         \right)$.则$f\left(\lambda\right)$的准素因子为
     \[
@@ -18,7 +18,7 @@
     \]因此\cref{thm:标准因式分解}也可以叫做准素分解.
 }
 \lem{}{不变因子的公共因式分解}{
-考虑$\bm{A}\in M_n\left(\mathbb{K}\right)$的非零不变因子为\[d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)\]
+考虑$\bm{A}\in M_n\left(\bbk \right)$的非零不变因子为\[d_1\left(\lambda\right),d_2\left(\lambda\right),\cdots,d_k\left(\lambda\right)\]
 考虑\cref{cor:公共因式分解}公共因式分解
 \[
     d_1\left(\lambda\right)=p_1\left(\lambda\right)^{e_{11}}p_2\left(\lambda\right)^{e_{12}}\cdots p_t\left(\lambda\right)^{e_{1t}}
@@ -40,15 +40,15 @@
     0\leqslant e_{1j}\leqslant e_{2j}\leqslant \cdots\leqslant e_{kj}\]
 }
 \dfn{初等因子}{初等因子}{
-若\cref{lem:不变因子的公共因式分解}中某一个$e_{ij}>0$，则称$p_{j}\left(\lambda\right)^{e_{ij}}$为$\bm{A}$的一个初等因子.
+若\cref{lem:不变因子的公共因式分解}中某一个$e_{ij}>0$,则称$p_{j}\left(\lambda\right)^{e_{ij}}$为$\bm{A}$的一个初等因子.
 
 $\bm{A}$的所有初等因子构成了$\bm{A}$的初等因子组.
 }
 \cor{}{初等因子与准素因子}{
-    等价地，$\bm{A}$的非常数不变因子的准素因子即为$\bm{A}$的初等因子.从而$\bm{A}$的初等因子组就是$\bm{A}$的非常数不变因子的准素因子全体.
+    等价地,$\bm{A}$的非常数不变因子的准素因子即为$\bm{A}$的初等因子.从而$\bm{A}$的初等因子组就是$\bm{A}$的非常数不变因子的准素因子全体.
 }
 \thm{初等因子确定不变因子}{初等因子确定不变因子}{
-给出$\bm{A}$的初等因子组，设其中涉及到的不可约多项式为$p_1\left(\lambda\right),p_2\left(\lambda\right),\cdots,p_t\left(\lambda\right)$，在添加一些不可约多项式的零次幂后，将同一不可约多项式的幂次降幂排列：
+给出$\bm{A}$的初等因子组,设其中涉及到的不可约多项式为$p_1\left(\lambda\right),p_2\left(\lambda\right),\cdots,p_t\left(\lambda\right)$,在添加一些不可约多项式的零次幂后,将同一不可约多项式的幂次降幂排列:
 \[
     \begin{matrix}
         p_1\left(\lambda\right)^{e_{k1}} & p_1\left(\lambda\right)^{e_{k-1,1}} & \cdots & p_1\left(\lambda\right)^{e_{11}} \\
@@ -56,7 +56,7 @@ $\bm{A}$的所有初等因子构成了$\bm{A}$的初等因子组.
         \vdots                           & \vdots                              &        & \vdots                           \\
         p_t\left(\lambda\right)^{e_{kt}} & p_t\left(\lambda\right)^{e_{k-1,t}} & \cdots & p_t\left(\lambda\right)^{e_{1t}}
     \end{matrix}
-\]其中$e_{1j}\leqslant e_{2j}\leqslant \cdots\leqslant e_{kj},\forall 1\leqslant j\leqslant t.$考虑到不变因子的整除关系，令\[
+\]其中$e_{1j}\leqslant e_{2j}\leqslant \cdots\leqslant e_{kj},\forall 1\leqslant j\leqslant t.$考虑到不变因子的整除关系,令\[
     d_k\left(\lambda\right)=p_1\left(\lambda\right)^{e_{k1}}p_2\left(\lambda\right)^{e_{k2}}\cdots p_t\left(\lambda\right)^{e_{kt}}
 \]
 \[
@@ -75,20 +75,20 @@ $\bm{A}$的所有初等因子构成了$\bm{A}$的初等因子组.
     初等因子组是相似关系下的全系不变量.
 }
 \rem{}{}{
-    初等因子依赖于因式分解，后者严重依赖于基域的选取，于是初等因子是依赖于基域的.
+    初等因子依赖于因式分解,后者严重依赖于基域的选取,于是初等因子是依赖于基域的.
 }
 \exa{}{}{
     设$\bm{A}$的不变因子为\[
         1,\cdots,1,\left(\lambda-1\right)\left(\lambda^2+1\right),\left(\lambda-1\right)^2\left(\lambda^2+1\right)\left(\lambda^2-2\right)
-    \]求$\bm{A}$在$\mathbb{Q},\bbr ,\bbc $上的初等因子.\begin{solution}
+    \]求$\bm{A}$在$\bbq  ,\bbr ,\bbc $上的初等因子.\begin{solution}
         \[
-            /\mathbb{Q}:\lambda-1,\left(\lambda-1\right)^2,\lambda^2+1,\lambda^2+1,\lambda^2-2
+            \bbq  :\lambda-1,\left(\lambda-1\right)^2,\lambda^2+1,\lambda^2+1,\lambda^2-2
         \]
         \[
-            /\bbr :\lambda-1,\left(\lambda-1\right)^2,\lambda^2+1,\lambda^2+1,\lambda-\sqrt{2},\lambda+\sqrt{2}
+            \bbr :\lambda-1,\left(\lambda-1\right)^2,\lambda^2+1,\lambda^2+1,\lambda-\sqrt{2},\lambda+\sqrt{2}
         \]
         \[
-            /\bbc :\lambda-1,\left(\lambda-1\right)^2,\lambda-\mathrm{i},\lambda-\mathrm{i},\lambda+\mathrm{i},\lambda+\mathrm{i},\lambda-\sqrt{2},\lambda+\sqrt{2}
+            \bbc :\lambda-1,\left(\lambda-1\right)^2,\lambda-\rmi ,\lambda-\rmi ,\lambda+\rmi ,\lambda+\rmi ,\lambda-\sqrt{2},\lambda+\sqrt{2}
         \]
     \end{solution}
 }
@@ -112,9 +112,9 @@ $\bm{A}$的所有初等因子构成了$\bm{A}$的初等因子组.
 }
 下面简单说明一下下一节对更精细的标准型的构造.
 
-矩阵$\bm{A}$在$\mathbb{K}$上的初等因子为\[
+矩阵$\bm{A}$在$\bbk $上的初等因子为\[
     p_1\left(\lambda\right)^{e_1},p_2\left(\lambda\right)^{e_2},\cdots,p_m\left(\lambda\right)^{e_m}
-\]其中$p_i\left(\lambda\right)$是$\mathbb{K}$上的不可约多项式，$e_i\geqslant 1.$设其不变因子组为\[
+\]其中$p_i\left(\lambda\right)$是$\bbk $上的不可约多项式,$e_i\geqslant 1.$设其不变因子组为\[
     1,\cdots,1,d_1\left(\lambda\right),\cdots,d_k\left(\lambda\right)
 \]则其有理标准型\[
     \bm{F}=\diag \,\left\{
@@ -127,5 +127,5 @@ $\bm{A}$的所有初等因子构成了$\bm{A}$的初等因子组.
     \right\}
 \]然后验证其相似于$\bm{A}$,这就是下一节需要讨论的问题.
 \rem{}{}{
-    上述问题在一般数域上是超出本门课的内容的，于是我们只会讨论在复数域$\bbc $上的情况.
+    上述问题在一般数域上是超出本门课的内容的,于是我们只会讨论在复数域$\bbc $上的情况.
 }

@@ -2,7 +2,7 @@
 \section{分块矩阵}
 \subsection{分块矩阵}
 \dfn{分块矩阵}{分块矩阵}{
-    将矩阵分割为几块，得到一个分块矩阵
+    将矩阵分割为几块,得到一个分块矩阵
     \[
         \bm{A} = \left(\bm{A}_{ij}\right)_
         {r \times s} =
@@ -17,7 +17,7 @@
         \bm{A}_{i1},\bm{A}_{i2},\cdots,\bm{A}_{is}
         \quad \left(i = 1,2,\cdots,r\right)
     \]
-    为第$i$分块行.分块$\bm{A}_{ij}=\left(a_{lk}\right)_{m_i\times n_j},\forall 1\leqslant i\leqslant r,1\leqslant j\leqslant n$，其中
+    为第$i$分块行.分块$\bm{A}_{ij}=\left(a_{lk}\right)_{m_i\times n_j},\forall 1\leqslant i\leqslant r,1\leqslant j\leqslant n$,其中
     \[
         \left(m_1,m_2,\cdots,m_r\right),\left(
         n_1,n_2,\cdots,n_s
@@ -26,37 +26,37 @@
     分别是$\bm{A}$的行、列分块方式.
 }
 \rem{}{}{
-    分块矩阵只是一种表示方式，本质并无变化.
+    分块矩阵只是一种表示方式,本质并无变化.
 }
 \subsection{运算}
 \dfn{分块矩阵的运算}{分块矩阵的运算}{
-    定义分块矩阵相关运算为：
-    \begin{enumerate}[label=（\arabic*）]
-        \item 加法：若$\bm{A} = \left(\bm{A}_{ij}\right)_{
+    定义分块矩阵相关运算为:
+    \begin{enumerate}[label=(\arabic*)]
+        \item 加法:若$\bm{A} = \left(\bm{A}_{ij}\right)_{
                       r \times s
                   }$、$\bm{B} =
                   \left(\bm{B}_{ij}\right)_{
                       r \times s
-                  }$行、列分块方式相同，定义加法
+                  }$行、列分块方式相同,定义加法
               \[
                   \bm{A}+\bm{B} = \left(
                   \bm{A}_{ij} + \bm{B}_{ij}
                   \right)_{r \times s}
               \]
-        \item 数乘：$\bm{A} = \left(\bm{A}_{ij}\right)_{
+        \item 数乘:$\bm{A} = \left(\bm{A}_{ij}\right)_{
                       r \times s
-                  }$，$c \in \bb{R} $，数乘
+                  }$,$c \in \bb{R} $,数乘
               \[
                   c\bm{A} = \left(c\bm{A}_{ij}\right)
                   _{r \times s}
               \]
-        \item 乘法：设$\bm{A} = \left(\bm{A}_{ij}\right)_{
+        \item 乘法:设$\bm{A} = \left(\bm{A}_{ij}\right)_{
                       r \times s
                   }$、$\bm{B} =
                   \left(\bm{B}_{ij}\right)_{
                       s \times k
-                  }$，且$\bm{A}$的列分块方式与
-              $\bm{B}$的行分块方式相同，那么
+                  }$,且$\bm{A}$的列分块方式与
+              $\bm{B}$的行分块方式相同,那么
               \[
                   \bm{AB} = \left(\bm{C}_{ij}
                   \right)_{r \times k}
@@ -67,19 +67,19 @@
                       r \times k
                   }
               \]
-              特别地，如果有形式行向量一样的形式记号即具有行分块
+              特别地,如果有形式行向量一样的形式记号即具有行分块
               $\bm{A} = \left(a_{ij}\right)_{
                       m \times n
                   } = \left(
                   \bm{\alpha }_1,\cdots
                   ,\bm{\alpha }_m
-                  \right)^{\prime}$，列分块
+                  \right)^{\prime}$,列分块
               $\bm{B} = \left(b_{ij}\right)_{
                       n \times p
                   } = \left(
                   \bm{\beta  }_1,\cdots
                   ,\bm{\beta  }_p
-                  \right)$，那么
+                  \right)$,那么
               \[
                   \bm{AB} = \left(\bm{\alpha }_1
                   \bm{B},\cdots,
@@ -89,17 +89,17 @@
                   ,\bm{A}\bm{\beta }_p
                   \right)
               \]
-        \item 转置：设$\bm{A} = \left(\bm{A}_{ij}\right)_{
+        \item 转置:设$\bm{A} = \left(\bm{A}_{ij}\right)_{
                       r \times s
-                  }$，转置为
+                  }$,转置为
               \[
                   \bm{A}^{\prime} = \left(
                   \bm{A}_{ij}
                   \right)_{s \times r}
               \]
-        \item 共轭：设复矩阵$\bm{A} = \left(\bm{A}_{ij}\right)_{
+        \item 共轭:设复矩阵$\bm{A} = \left(\bm{A}_{ij}\right)_{
                       r \times s
-                  }$，共轭为
+                  }$,共轭为
               \[
                   \overline{\bm{A}} =
                   \left(\overline{\bm{A}_{ij}} \right)_{r \times s}
@@ -109,10 +109,10 @@
 \exa{}{}{
     若$\bm{A} = \diag \left\{
         \bm{A}_1,\cdots,\bm{A}_k
-        \right\}$，$
+        \right\}$,$
         \bm{B}= \diag \left\{
         \bm{B}_1,\cdots,\bm{B}_k
-        \right\}$，则
+        \right\}$,则
     \[
         \bm{AB} = \diag \left\{
         \bm{A}_1\bm{B}_1,\cdots
@@ -141,7 +141,7 @@
 }
 \dfn{分块初等矩阵}{分块初等矩阵}{
     类似于\cref{def:初等矩阵}
-    \paragraph{第一类分块初等矩阵}对换$\bm{I}$的第$i$分块行（列）与第$j$分块行（列）得到.
+    \paragraph{第一类分块初等矩阵}对换$\bm{I}$的第$i$分块行(列)与第$j$分块行(列)得到.
     \[
         \bm{P}_{ij} =
         \begin{pmatrix}
@@ -155,8 +155,8 @@
         \end{pmatrix}
     \]
     \paragraph{第二类分块初等矩阵}
-    $ \det\left(\bm{M}\right) \neq 0$下以$\bm{M}$左（右）乘
-    $\bm{I}$的第$i$分块行（列）得到.
+    $ \det\left(\bm{M}\right) \neq 0$下以$\bm{M}$左(右)乘
+    $\bm{I}$的第$i$分块行(列)得到.
     \[
         \bm{P}_i\left(\bm{M}\right) =
         \begin{pmatrix}
@@ -169,8 +169,8 @@
     \]
     % \newpage
     \paragraph{第三类分块初等矩阵}
-    以矩阵$\bm{M}$左（右）乘$\bm{I}$的第$i$分块行（列）后加到第
-    $j$分块行（列）得到.
+    以矩阵$\bm{M}$左(右)乘$\bm{I}$的第$i$分块行(列)后加到第
+    $j$分块行(列)得到.
     \[
         \bm{T}_{ij} \left(\bm{M}\right)=
         \begin{pmatrix}
@@ -210,7 +210,7 @@
 }
 \subsection{分块初等变换}
 \thm{分块初等变换与分块初等矩阵}{分块初等变换与分块初等矩阵}{
-    类似于\cref{thm:初等变换与初等矩阵}，每一种分块初等行（列）变换等价于左（右）乘这种变换对应的分块初等矩阵.
+    类似于\cref{thm:初等变换与初等矩阵},每一种分块初等行(列)变换等价于左(右)乘这种变换对应的分块初等矩阵.
 }
 \cor{}{第三类分块初等变换不改变行列式的值}{
     第三类分块初等变换不会改变矩阵行列式的值.
@@ -247,14 +247,14 @@
             \bm{C} & \bm{D}
         \end{pmatrix}
     \]
-    \begin{enumerate}[label=\arabic*）]
-        \item 若$\bm{A}$可逆，则
+    \begin{enumerate}[label=\arabic*)]
+        \item 若$\bm{A}$可逆,则
               \[
                   \left|\bm{M}\right| = \left|\bm{A}
                   \right|\left|\bm{D} - \bm{C}\bm{A}
                   ^{-1}\bm{B}\right|
               \]
-        \item 若$\bm{D}$可逆，则\[
+        \item 若$\bm{D}$可逆,则\[
                   \left|\bm{M}\right| = \left|
                   \bm{D}
                   \right|\left|
@@ -262,7 +262,7 @@
                   \bm{C}
                   \right|
               \]
-        \item 若$\bm{A}$、$\bm{D}$均可逆，则
+        \item 若$\bm{A}$、$\bm{D}$均可逆,则
               \[
                   \left|\bm{A}
                   \right|\left|\bm{D} - \bm{C}\bm{A}
@@ -349,14 +349,14 @@
     \end{solution}
 }
 \exa{}{}{
-    $\bm{A}$、$\bm{D}$均可逆，求分块矩阵的逆阵
+    $\bm{A}$、$\bm{D}$均可逆,求分块矩阵的逆阵
     \[
         \begin{pmatrix}
             \bm{A} & \bm{B} \\
             \bm{O} & \bm{D}
         \end{pmatrix}
     \] \begin{solution}
-        设$\bm{A}$、$\bm{D}$的阶数分别为$m$、$n$，那么
+        设$\bm{A}$、$\bm{D}$的阶数分别为$m$、$n$,那么
         \begin{align*}
             \begin{pmatrix}
                 \bm{A} & \bm{B} & \bm{I}_m & \bm{O}   \\
@@ -376,7 +376,7 @@
     \end{solution}
 }
 \exa{}{}{
-    设$n$阶方阵$\bm{A}$、$\bm{B}$，求证：
+    设$n$阶方阵$\bm{A}$、$\bm{B}$,求证:
     \[
         \begin{vmatrix}
             \bm{A} & \bm{B} \\
@@ -408,14 +408,14 @@
     \end{proof}
 }
 \exa{}{temp1}{
-    设$n$阶复矩阵$\bm{A}$、$\bm{B}$，求证：
+    设$n$阶复矩阵$\bm{A}$、$\bm{B}$,求证:
     \[
         \begin{vmatrix}
             \bm{A} & -\bm{B} \\
             \bm{B} & \bm{A}
         \end{vmatrix}=\left|
-        \bm{A}+\mathrm{i}\bm{B}
-        \right|\left|\bm{A}-\mathrm{i}\bm{B}\right|
+        \bm{A}+\rmi \bm{B}
+        \right|\left|\bm{A}-\rmi \bm{B}\right|
     \]
     \begin{proof}
         \begin{align*}
@@ -425,21 +425,21 @@
             \end{vmatrix}
              & =
             \begin{vmatrix}
-                \bm{A}+\mathrm{i}\bm{B} & \mathrm{i}\bm{A}-\bm{B} \\
-                \bm{B}                  & \bm{A}
+                \bm{A}+\rmi \bm{B} & \rmi \bm{A}-\bm{B} \\
+                \bm{B}             & \bm{A}
             \end{vmatrix}     \\
              & =\begin{vmatrix}
-                    \bm{A}+\mathrm{i}\bm{B} & \bm{O}                  \\
-                    \bm{B}                  & \bm{A}-\mathrm{i}\bm{B}
+                    \bm{A}+\rmi \bm{B} & \bm{O}             \\
+                    \bm{B}             & \bm{A}-\rmi \bm{B}
                 \end{vmatrix} \\
              & =
-            \left|\bm{A}+\mathrm{i}\bm{B}\right|
-            \left|\bm{A}-\mathrm{i}\bm{B}\right|\qedhere
+            \left|\bm{A}+\rmi \bm{B}\right|
+            \left|\bm{A}-\rmi \bm{B}\right|\qedhere
         \end{align*}
     \end{proof}
 }
 \exa{}{}{
-    设$n$阶方阵$\bm{A}$、$\bm{B}$且$\bm{AB}=\bm{BA}$，求证：
+    设$n$阶方阵$\bm{A}$、$\bm{B}$且$\bm{AB}=\bm{BA}$,求证:
     \[
         \begin{vmatrix}
             \bm{A} & -\bm{B} \\

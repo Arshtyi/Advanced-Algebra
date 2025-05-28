@@ -2,41 +2,41 @@
 \section{整除}
 \subsection{定义}
 \dfn{整除}{整除}{
-    设$f\left(x\right),g\left(x\right)\in \mathbb{K}\left[x\right]$，若存在$h\left(x\right)\in \mathbb{K}\left[x\right]$，\st
+    设$f\left(x\right),g\left(x\right)\in \bbk \left[x\right]$,若存在$h\left(x\right)\in \bbk \left[x\right]$,\st
     \[
         f\left(x\right)=g\left(x\right)h\left(x\right)
     \]
-    则称$g\left(x\right)$是$f\left(x\right)$的因式，或称$g\left(x\right)$可以整除$f\left(x\right)$，或称$f\left(x\right)$可以被$g\left(x\right)$整除，记作$g\left(x\right)\mid f\left(x\right)$；反之则称$g\left(x\right)$不能整除$f\left(x\right)$，或称$f\left(x\right)$不能被$g\left(x\right)$整除，记作 $g\left(x\right)\nmid f\left(x\right)$.
+    则称$g\left(x\right)$是$f\left(x\right)$的因式,或称$g\left(x\right)$可以整除$f\left(x\right)$,或称$f\left(x\right)$可以被$g\left(x\right)$整除,记作$g\left(x\right)\mid f\left(x\right)$；反之则称$g\left(x\right)$不能整除$f\left(x\right)$,或称$f\left(x\right)$不能被$g\left(x\right)$整除,记作 $g\left(x\right)\nmid f\left(x\right)$.
 }
 \clm{}{}{
-    零多项式的因式可以是任一多项式，但任一多项式的因式不能是零多项式.
+    零多项式的因式可以是任一多项式,但任一多项式的因式不能是零多项式.
 }
 \pro{整除的若干性质}{整除的若干性质}{
-    设$f\left(x\right),g\left(x\right),h\left(x\right)\in \mathbb{K}\left[x\right]$，$c\neq 0\in\mathbb{K}$，则\begin{enumerate}[label=\arabic*）]
+    设$f\left(x\right),g\left(x\right),h\left(x\right)\in \bbk \left[x\right]$,$c\neq 0\in\bbk $,则\begin{enumerate}[label=\arabic*)]
         \item 若$f\left(x\right)\mid g\left(x\right)$,则$cf\left(x\right)\mid g\left(x\right)$
         \item $f\left(x\right)\mid f\left(x\right)$
         \item 若$f\left(x\right)\mid g\left(x\right),g\left(x\right)\mid h\left(x\right)$,则$f\left(x\right)\mid h\left(x\right)$
-        \item 若$f\left(x\right)\mid g\left(x\right),f\left(x\right)\mid h\left(x\right)$,则$\forall u\left(x\right),v\left(x\right)\in \mathbb{K}\left[x\right]$，\st
+        \item 若$f\left(x\right)\mid g\left(x\right),f\left(x\right)\mid h\left(x\right)$,则$\forall u\left(x\right),v\left(x\right)\in \bbk \left[x\right]$,\st
               \[
                   f\left(x\right)\mid g\left(x\right)u\left(x\right)+h\left(x\right)v\left(x\right)
               \]
-        \item 若$f\left(x\right)\mid g\left(x\right)$且$g\left(x\right)\mid f\left(x\right)$，则$\exists k\in\mathbb{K}$，\st\[
+        \item 若$f\left(x\right)\mid g\left(x\right)$且$g\left(x\right)\mid f\left(x\right)$,则$\exists k\in\bbk $,\st\[
                   f\left(x\right)=kg\left(x\right)\]
-              此时$f\left(x\right),g\left(x\right)$称为相伴多项式，记作\[f\left(x\right)\sim g\left(x\right)\]
+              此时$f\left(x\right),g\left(x\right)$称为相伴多项式,记作\[f\left(x\right)\sim g\left(x\right)\]
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
+        \begin{enumerate}[label=\arabic*)]
             \item $g\left(x\right)=f\left(x\right)h\left(x\right)=\left(cf\left(x\right)\right)\left(c^{-1}h\left(x\right)\right)$
             \item $f\left(x\right)=1\cdot f\left(x\right)$
             \item 代入即得
-            \item 设$g\left(x\right)=f\left(x\right)p\left(x\right),h\left(x\right)=f\left(x\right)q\left(x\right)$，则
+            \item 设$g\left(x\right)=f\left(x\right)p\left(x\right),h\left(x\right)=f\left(x\right)q\left(x\right)$,则
                   \[
                       g\left(x\right)u\left(x\right)+h\left(x\right)v\left(x\right)=f\left(x\right)\left(p\left(x\right)u\left(x\right)+q\left(x\right)v\left(x\right)\right)
                   \]
-            \item 设$g\left(x\right)=f\left(x\right)p\left(x\right),h\left(x\right)=f\left(x\right)q\left(x\right)$，则
+            \item 设$g\left(x\right)=f\left(x\right)p\left(x\right),h\left(x\right)=f\left(x\right)q\left(x\right)$,则
                   \[
                       f\left(x\right)=f\left(x\right)p\left(x\right)q\left(x\right)
                   \]
-                  $f\left(x\right)=0$显然成立.$f\left(x\right)\neq 0$时，两边取次数
+                  $f\left(x\right)=0$显然成立.$f\left(x\right)\neq 0$时,两边取次数
                   \[
                       \deg f\left(x\right)=\deg f\left(x\right)+\deg \left(p\left(x\right)q\left(x\right)\right)
                   \]
@@ -46,28 +46,28 @@
     \end{proof}
 }
 \dfn{相伴多项式}{相伴多项式}{
-    若$f\left(x\right)\mid g\left(x\right)$且$g\left(x\right)\mid f\left(x\right)$，则
-    此时$f\left(x\right),g\left(x\right)$称为相伴多项式，记作\[f\left(x\right)\sim
+    若$f\left(x\right)\mid g\left(x\right)$且$g\left(x\right)\mid f\left(x\right)$,则
+    此时$f\left(x\right),g\left(x\right)$称为相伴多项式,记作\[f\left(x\right)\sim
         g\left(x\right)\]
 }
 \subsection{带余除法}
 \thm{带余除法}{带余除法}{
-    设多项式$f\left(x\right),g\left(x\right)\in \mathbb{K}\left[x\right],g\left(x\right)\neq 0$，则必定存在唯一的$q\left(x\right),r\left(x\right)\in \mathbb{K}\left[x\right]$，\st
+    设多项式$f\left(x\right),g\left(x\right)\in \bbk \left[x\right],g\left(x\right)\neq 0$,则必定存在唯一的$q\left(x\right),r\left(x\right)\in \bbk \left[x\right]$,\st
     \[
         f\left(x\right)=g\left(x\right)q\left(x\right)+r\left(x\right)
     \]
     且有$\deg r\left(x\right)<\deg g\left(x\right)$.\begin{proof}
-        先证存在性.若$\deg f\left(x\right)<\deg g\left(x\right)$，则$q\left(x\right)=0,r\left(x\right)=f\left(x\right)$.
+        先证存在性.若$\deg f\left(x\right)<\deg g\left(x\right)$,则$q\left(x\right)=0,r\left(x\right)=f\left(x\right)$.
 
-        以下设$\deg f\left(x\right)\geqslant \deg g\left(x\right)\geqslant 0$，考虑对$\deg f\left(x\right)$归纳.
-        其一，若$\deg f\left(x\right)=\deg g\left(x\right)=0$，即$f\left(x\right)=a\neq 0,g\left(x\right)=b\neq 0$，则$q\left(x\right)=ab^{-1},r\left(x\right)=0$符合.
+        以下设$\deg f\left(x\right)\geqslant \deg g\left(x\right)\geqslant 0$,考虑对$\deg f\left(x\right)$归纳.
+        其一,若$\deg f\left(x\right)=\deg g\left(x\right)=0$,即$f\left(x\right)=a\neq 0,g\left(x\right)=b\neq 0$,则$q\left(x\right)=ab^{-1},r\left(x\right)=0$符合.
 
-        设$\deg f\left(x\right)<n$时结论成立，来证明$\deg f\left(x\right)=n$的情况.设\begin{align*}
+        设$\deg f\left(x\right)<n$时结论成立,来证明$\deg f\left(x\right)=n$的情况.设\begin{align*}
              & f\left(x\right)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,a_n\neq 0 \\
              & g\left(x\right)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0,b_m\neq 0
         \end{align*}
-        且$n\geqslant m.$设$f_1\left(x\right)=f\left(x\right)-a_nb_m^{-1}x^{n-m}g\left(x\right)$，于是
-        $\deg f_1\left(x\right)<n.$由归纳假设得知存在$q_1\left(x\right),r\left(x\right)$，\st
+        且$n\geqslant m.$设$f_1\left(x\right)=f\left(x\right)-a_nb_m^{-1}x^{n-m}g\left(x\right)$,于是
+        $\deg f_1\left(x\right)<n.$由归纳假设得知存在$q_1\left(x\right),r\left(x\right)$,\st
         \[
             f_1\left(x\right)=g\left(x\right)q_1\left(x\right)+r\left(x\right)
         \]
@@ -77,11 +77,11 @@
         则$q\left(x\right)=a_nb_m^{-1}x^{n-m}+q_1\left(x\right)$.
         存在性证毕.
 
-        下证唯一性.考虑设出两个带余除法，作差即可.即设$f\left(x\right)=g\left(x\right)p\left(x\right)+t\left(x\right)=g\left(x\right)q\left(x\right)+r\left(x\right)$.
+        下证唯一性.考虑设出两个带余除法,作差即可.即设$f\left(x\right)=g\left(x\right)p\left(x\right)+t\left(x\right)=g\left(x\right)q\left(x\right)+r\left(x\right)$.
         于是\[
             g\left(x\right)\left(p\left(x\right)-q\left(x\right)\right)=t\left(x\right)-r\left(x\right)
         \]
-        设$p\left(x\right)\neq q\left(x\right)$，对上式两边取次数
+        设$p\left(x\right)\neq q\left(x\right)$,对上式两边取次数
         得$LHS = \deg g\left(x\right)+\deg \left(p\left(x\right)-q\left(x\right)\right)\geqslant \deg g\left(x\right)$.
         $RHS=\deg\left(t\left(x\right)-r\left(x\right)\right)\leqslant \max\left\{\deg t\left(x\right),\deg r\left(x\right)\right\}<\deg g\left(x\right)$.矛盾.
     \end{proof}

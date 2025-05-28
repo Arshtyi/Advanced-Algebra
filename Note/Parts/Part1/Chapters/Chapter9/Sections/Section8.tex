@@ -2,17 +2,17 @@
 \section{谱分解与极分解}
 \subsection{谱分解}
 \thm{谱分解定理}{谱分解定理}{
-    设$V$为有限维内积空间，$V$上的线性算子$\bm{\varphi}\in\mathcal{L}\left(V\right)$是\[\begin{cases*}
+    设$V$为有限维内积空间,$V$上的线性算子$\bm{\varphi}\in\call \left(V\right)$是\[\begin{cases*}
             \text{正规算子} & ,$V$是酉空间  \\
             \text{自伴算子} & ,$V$是欧式空间
-        \end{cases*}\]$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的全体不同特征值，对应的特征子空间分别为$V_1,V_2,\cdots,V_k$，则\[
+        \end{cases*}\]$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的全体不同特征值,对应的特征子空间分别为$V_1,V_2,\cdots,V_k$,则\[
         V=V_1\perp V_2\perp\cdots\perp V_k
-    \]设$\bm{E}_i$是从$V$到$V_i$的正交投影算子，则\[
+    \]设$\bm{E}_i$是从$V$到$V_i$的正交投影算子,则\[
         \bm{\varphi}=\lambda_1\bm{E}_1+\lambda_2\bm{E}_2+\cdots+\lambda_k\bm{E}_k
     \]这称为谱分解.\begin{proof}
-        前半部分由\cref{thm:特征子空间确定的正规算子}和\cref{cor:自伴随算子的特征子空间}给出.投影算子的性质由\cref{def:投影变换}给出，并且由\cref{lem:正交投影变换的对称性}知$\bm{E}_i$都是自伴随的.
+        前半部分由\cref{thm:特征子空间确定的正规算子}和\cref{cor:自伴随算子的特征子空间}给出.投影算子的性质由\cref{def:投影变换}给出,并且由\cref{lem:正交投影变换的对称性}知$\bm{E}_i$都是自伴随的.
 
-        下证$\bm{\varphi}\circ\bm{E}_i=\lambda_i\bm{E}_i$.$\forall\bm{v}\in V:\bm{E}_i\left(\bm{v}\right)\in V_i=\mathrm{Ker}\,\left(\bm{\varphi}-\lambda_i\bm{I}_V\right)$即\[
+        下证$\bm{\varphi}\circ\bm{E}_i=\lambda_i\bm{E}_i$.$\forall\bm{v}\in V:\bm{E}_i\left(\bm{v}\right)\in V_i=\Ker \,\left(\bm{\varphi}-\lambda_i\bm{I}_V\right)$即\[
             \left(
             \bm{\varphi}-\lambda_i\bm{I}_V
             \right)\bm{E}_i\left(\bm{v}\right)=\bm{0}\Longrightarrow\bm{\varphi}\bm{E}_i\left(\bm{v}\right)=\lambda_i\bm{E}_i\left(\bm{v}\right)
@@ -20,12 +20,12 @@
     \end{proof}
 }
 \lem{正交投影算子的多项式表达}{正交投影算子的多项式表达}{
-    记号同\cref{thm:谱分解定理}，设$\displaystyle f_j\left(x\right)=\prod_{i\neq j}\frac{x-\lambda_i}{\lambda_j-\lambda_i}:f_j\left(\lambda_i\right)=\delta_{ij}$，则$\bm{E}_j=f_j\left(\bm{\varphi}\right)$.\begin{proof}
-        由\cref{thm:谱分解定理}，考虑\begin{align*}
+    记号同\cref{thm:谱分解定理},设$\displaystyle f_j\left(x\right)=\prod_{i\neq j}\frac{x-\lambda_i}{\lambda_j-\lambda_i}:f_j\left(\lambda_i\right)=\delta_{ij}$,则$\bm{E}_j=f_j\left(\bm{\varphi}\right)$.\begin{proof}
+        由\cref{thm:谱分解定理},考虑\begin{align*}
             \bm{\varphi}^2=\lambda_1^2\bm{E}_1+\lambda_2^2\bm{E}_2+\cdots+\lambda_k^2\bm{E}_k
         \end{align*}于是\[
             \bm{\varphi}^m=\lambda_1^m\bm{E}_1+\lambda_2^m\bm{E}_2+\cdots+\lambda_k^m\bm{E}_k
-        \]设$f\left(x\right)=a_0+a_1x+\cdots+a_{m-1}x^{m-1}+a_mx^m$，则\begin{align*}
+        \]设$f\left(x\right)=a_0+a_1x+\cdots+a_{m-1}x^{m-1}+a_mx^m$,则\begin{align*}
             f\left(\bm{\varphi}\right) & =a_0\bm{I}_V+a_1\bm{\varphi}+\cdots+a_{m-1}\bm{\varphi}^{m-1}+a_m\bm{\varphi}^m \\
                                        & =a_0\left(
             \sum_{i=1}^{k}\bm{E}_i
@@ -44,10 +44,10 @@
     \end{proof}
 }
 \thm{正规伴随的多项式表示}{正规伴随的多项式表示}{
-    设酉空间$V$上的线性算子$\bm{\varphi}$，则$\bm{\varphi}$正规当且仅当$\exists f\left(x\right)\in\mathbb{C}\left[x\right]$使得$\bm{\varphi}^*=f\left(\bm{\varphi}\right)$.\begin{proof}
-        考虑充分性，$\bm{\varphi\varphi}^*=\bm{\varphi}f\left(\bm{\varphi}\right)=f\left(\bm{\varphi}\right)\bm{\varphi}=\bm{\varphi}^*\bm{\varphi}.$
+    设酉空间$V$上的线性算子$\bm{\varphi}$,则$\bm{\varphi}$正规当且仅当$\exists f\left(x\right)\in\bbc \left[x\right]$使得$\bm{\varphi}^*=f\left(\bm{\varphi}\right)$.\begin{proof}
+        考虑充分性,$\bm{\varphi\varphi}^*=\bm{\varphi}f\left(\bm{\varphi}\right)=f\left(\bm{\varphi}\right)\bm{\varphi}=\bm{\varphi}^*\bm{\varphi}.$
 
-        考虑必要性，设正规算子$\bm{\varphi}$，考虑谱分解$\bm{\varphi}=\lambda_1\bm{E}_1+\lambda_2\bm{E}_2+\cdots+\lambda_k\bm{E}_k$,则\[
+        考虑必要性,设正规算子$\bm{\varphi}$,考虑谱分解$\bm{\varphi}=\lambda_1\bm{E}_1+\lambda_2\bm{E}_2+\cdots+\lambda_k\bm{E}_k$,则\[
             \bm{\varphi}^*=\overline{\lambda_1}\bm{E}_1+\overline{\lambda_2}\bm{E}_2+\cdots+\overline{\lambda_k}\bm{E}_k
         \]作\begin{align*}
             f\left(x\right) & =\sum_{j=1}^{k}\overline{\lambda}_jf_j\left(\lambda\right)            \\
@@ -60,27 +60,27 @@
     \end{proof}
 }
 \dfn{正定自伴随算子}{正定自伴随算子}{
-    设有限维内积空间$V$上的自伴随算子$\bm{\varphi}$，若$\forall\bm{0}\neq\bm{\alpha}\in V:$\begin{enumerate}[label=\arabic*）]
-        \item $\left(\bm{\varphi}\left(\bm{\alpha}\right),\bm{\alpha}\right)>0$，则称$\bm{\varphi}$是正定自伴随算子
-        \item $\left(\bm{\varphi}\left(\bm{\alpha}\right),\bm{\alpha}\right)\geqslant0$，则称$\bm{\varphi}$是半正定自伴随算子
+    设有限维内积空间$V$上的自伴随算子$\bm{\varphi}$,若$\forall\bm{0}\neq\bm{\alpha}\in V:$\begin{enumerate}[label=\arabic*)]
+        \item $\left(\bm{\varphi}\left(\bm{\alpha}\right),\bm{\alpha}\right)>0$,则称$\bm{\varphi}$是正定自伴随算子
+        \item $\left(\bm{\varphi}\left(\bm{\alpha}\right),\bm{\alpha}\right)\geqslant0$,则称$\bm{\varphi}$是半正定自伴随算子
     \end{enumerate}
 }
 \exa{}{}{
-    考虑欧式空间$V$，任取标准正交基，自伴随算子$\bm{\varphi}$的表示矩阵为$\bm{A}$，于是$\bm{A}$实对称.设$\bm{0}\neq\bm{\alpha}\in V$的坐标向量$\bm{0}\neq\bm{x}\in\mathbb{R}^n$，则$\bm{\varphi}\left(\bm{\alpha}\right)$的坐标向量为$\bm{Ax}$.于是\[
+    考虑欧式空间$V$,任取标准正交基,自伴随算子$\bm{\varphi}$的表示矩阵为$\bm{A}$,于是$\bm{A}$实对称.设$\bm{0}\neq\bm{\alpha}\in V$的坐标向量$\bm{0}\neq\bm{x}\in\bbr ^n$,则$\bm{\varphi}\left(\bm{\alpha}\right)$的坐标向量为$\bm{Ax}$.于是\[
         \left(
         \bm{\varphi}\left(\bm{\alpha}\right),\bm{\alpha}
         \right)=\left(\bm{Ax}\right)'\bm{x}=\bm{x}'\bm{A}\bm{x}
     \]于是这与实对称阵的正定性等价.
 }
 \thm{自伴随算子正定的等价结论}{自伴随算子正定的等价结论}{
-    设$V$上的自伴随算子$\bm{\varphi}$,则$\bm{\varphi}$正定（半正定）当且仅当$\bm{\varphi}$在任一组（或者某一组）标准正交基下的表示矩阵是正定（半正定）的实对称阵（Hermite阵）.
+    设$V$上的自伴随算子$\bm{\varphi}$,则$\bm{\varphi}$正定(半正定)当且仅当$\bm{\varphi}$在任一组(或者某一组)标准正交基下的表示矩阵是正定(半正定)的实对称阵(Hermite阵).
 }
 \thm{}{利用特征值判定}{
-    设酉空间$V$上的正规算子$\bm{\varphi}$\begin{enumerate}[label=\arabic*）]
-        \item 若$\bm{\varphi}$的特征值全为实数，则$\bm{\varphi}$是自伴随算子
-        \item 若$\bm{\varphi}$的特征值全部大于等于$0$，则$\bm{\varphi}$是半正定自伴随算子
-        \item 若$\bm{\varphi}$的特征值全部大于$0$，则$\bm{\varphi}$是正定自伴随算子
-        \item 若$\bm{\varphi}$的特征值的模长全为$1$，则$\bm{\varphi}$是酉算子
+    设酉空间$V$上的正规算子$\bm{\varphi}$\begin{enumerate}[label=\arabic*)]
+        \item 若$\bm{\varphi}$的特征值全为实数,则$\bm{\varphi}$是自伴随算子
+        \item 若$\bm{\varphi}$的特征值全部大于等于$0$,则$\bm{\varphi}$是半正定自伴随算子
+        \item 若$\bm{\varphi}$的特征值全部大于$0$,则$\bm{\varphi}$是正定自伴随算子
+        \item 若$\bm{\varphi}$的特征值的模长全为$1$,则$\bm{\varphi}$是酉算子
     \end{enumerate}\begin{proof}
         首先有谱分解\[
             \bm{\varphi}=\lambda_1\bm{E}_1+\lambda_2\bm{E}_2+\cdots+\lambda_k\bm{E}_k
@@ -114,30 +114,30 @@
     以上均为等价结论.
 }
 \thm{算子的平方根}{算子的平方根}{
-    设有限维内积空间$V$上的半正定自伴随算子$\bm{\varphi}$，则存在唯一的半正定自伴随算子$\bm{\psi}$使得$\bm{\varphi}=\bm{\psi}^2$，也称$\bm{\psi}$是$\bm{\varphi}$的算术平方根，记作$\bm{\psi}=\bm{\varphi}^{1/2}=\sqrt{\bm{\varphi}}$.\begin{proof}
+    设有限维内积空间$V$上的半正定自伴随算子$\bm{\varphi}$,则存在唯一的半正定自伴随算子$\bm{\psi}$使得$\bm{\varphi}=\bm{\psi}^2$,也称$\bm{\psi}$是$\bm{\varphi}$的算术平方根,记作$\bm{\psi}=\bm{\varphi}^{1/2}=\sqrt{\bm{\varphi}}$.\begin{proof}
         设谱分解\[
             \bm{\varphi}=\lambda_1\bm{E}_1+\lambda_2\bm{E}_2+\cdots+\lambda_k\bm{E}_k
-        \]其中$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的全体不同特征值，对应的特征子空间分别为$V_1,V_2,\cdots,V_k$，$\bm{E}_i$是从$V$到$V_i$的正交投影算子.根据\cref{thm:利用特征值判定},$\forall1\leqslant i\leqslant k:\lambda_i\geqslant0$，于是作$d_i=\sqrt{\lambda_i}:$\[
+        \]其中$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{\varphi}$的全体不同特征值,对应的特征子空间分别为$V_1,V_2,\cdots,V_k$,$\bm{E}_i$是从$V$到$V_i$的正交投影算子.根据\cref{thm:利用特征值判定},$\forall1\leqslant i\leqslant k:\lambda_i\geqslant0$,于是作$d_i=\sqrt{\lambda_i}:$\[
             \bm{\psi}=d_1\bm{E}_1+d_2\bm{E}_2+\cdots+d_k\bm{E}_k
-        \]首先$d_1,d_2,\cdots,d_k$互不相同，是$\bm{\psi}$的全体不同特征值，$V_i=\bm{E}_i\left(V\right)$是$d_i$的特征子空间.于是这是$\bm{\psi}$的谱分解，则$\bm{\psi}$是半正定自伴随算子，且$\bm{\varphi}=\bm{\psi}^2$.于是存在性证毕.
+        \]首先$d_1,d_2,\cdots,d_k$互不相同,是$\bm{\psi}$的全体不同特征值,$V_i=\bm{E}_i\left(V\right)$是$d_i$的特征子空间.于是这是$\bm{\psi}$的谱分解,则$\bm{\psi}$是半正定自伴随算子,且$\bm{\varphi}=\bm{\psi}^2$.于是存在性证毕.
 
-        设另一个半正定自伴随算子$\bm{\theta}$使得$\bm{\varphi}=\bm{\theta}^2$，设其谱分解\[
+        设另一个半正定自伴随算子$\bm{\theta}$使得$\bm{\varphi}=\bm{\theta}^2$,设其谱分解\[
             \bm{\psi}=b_1\bm{F}_1+b_2\bm{F}_2+\cdots+b_r\bm{F}_r
         \]其中$b_1,b_2,\cdots,b_r$且$\forall1\leqslant i\leqslant r:b_i\geqslant0$,$\bm{F}_i$是从$V$到$\bm{F}_i\left(V\right)$上的正交投影算子.于是\[
             b_1^2\bm{F}_1+b_2^2\bm{F}_2+\cdots+b_r^2\bm{F}_r=\lambda_1\bm{E}_1+\lambda_2\bm{E}_2+\cdots+\lambda_k\bm{E}_k
-        \]首先$b_1^2,b_2^2,\cdots,b_r^2$是互不相同的非负实数，且\[
+        \]首先$b_1^2,b_2^2,\cdots,b_r^2$是互不相同的非负实数,且\[
             \bm{\varphi}=b_1^2\bm{F}_1+b_2^2\bm{F}_2+\cdots+b_r^2\bm{F}_r
         \]于是\[
             V=\bm{F}_1\left(V\right)\perp\bm{F}_2\left(V\right)\perp\cdots\perp\bm{F}_r\left(V\right)
-        \]于是$b_1^2,b_2^2,\cdots,b_r^2$是$\bm{\varphi}$的全体不同特征值，于是$k=r$且轮换一定次序后一定有$\forall1\leqslant i\leqslant k=r:b_i^2=\lambda_i\Longrightarrow b_i=\sqrt{\lambda_i}=d_i$.因为对于$\bm{\varphi}$，$\bm{F}_i\left(V\right)$是$b_i^2=\lambda_i$的特征子空间，而$\bm{E}_i$也是$d_i^2=\lambda_i$的特征子空间，于是$\forall1\leqslant i\leqslant k:\bm{F}_i\left(V\right)=\bm{E}_i\left(V\right)$.
+        \]于是$b_1^2,b_2^2,\cdots,b_r^2$是$\bm{\varphi}$的全体不同特征值,于是$k=r$且轮换一定次序后一定有$\forall1\leqslant i\leqslant k=r:b_i^2=\lambda_i\Longrightarrow b_i=\sqrt{\lambda_i}=d_i$.因为对于$\bm{\varphi}$,$\bm{F}_i\left(V\right)$是$b_i^2=\lambda_i$的特征子空间,而$\bm{E}_i$也是$d_i^2=\lambda_i$的特征子空间,于是$\forall1\leqslant i\leqslant k:\bm{F}_i\left(V\right)=\bm{E}_i\left(V\right)$.
 
-        因为$\bm{E}_i:V\longrightarrow\bm{E}_i\left(V\right),\bm{F}_i:V\longrightarrow\bm{F}_i\left(V\right)$，于是$\forall1\leqslant i\leqslant k:\bm{E}_i=\bm{F}_i.$于是$\bm{\theta}=\bm{\psi}$唯一性证毕.
+        因为$\bm{E}_i:V\longrightarrow\bm{E}_i\left(V\right),\bm{F}_i:V\longrightarrow\bm{F}_i\left(V\right)$,于是$\forall1\leqslant i\leqslant k:\bm{E}_i=\bm{F}_i.$于是$\bm{\theta}=\bm{\psi}$唯一性证毕.
     \end{proof}
 }
 \exa{}{}{
     设$\bm{\varphi}=\begin{pmatrix}
             1 & 0 \\0 & -1
-        \end{pmatrix},\bm{E}_1:V\longrightarrow L\left(\bm{e}_1\right),\bm{E}_2:V\longrightarrow L\left(\bm{e}_2\right)$，谱分解\[
+        \end{pmatrix},\bm{E}_1:V\longrightarrow L\left(\bm{e}_1\right),\bm{E}_2:V\longrightarrow L\left(\bm{e}_2\right)$,谱分解\[
         \bm{\varphi}=\bm{E}_1-\bm{E}_2
     \]但是\[
         \bm{\varphi}^2=1^2\cdot\bm{E}_1+\left(-1\right)^2\cdot\bm{E}_2
@@ -146,16 +146,16 @@
     \]
 }
 \cor{半正定实对称/Hermite阵的平方根}{半正定实对称/Hermite阵的平方根}{
-    设$\bm{A}$为半正定实对称/Hermite阵，则存在唯一的半正定实对称/Hermite阵$\bm{B}$使得$\bm{A}=\bm{B}^2$，也称$\bm{B}$是$\bm{A}$的算术平方根，记作$\bm{B}=\bm{A}^{1/2}=\sqrt{\bm{A}}$.
+    设$\bm{A}$为半正定实对称/Hermite阵,则存在唯一的半正定实对称/Hermite阵$\bm{B}$使得$\bm{A}=\bm{B}^2$,也称$\bm{B}$是$\bm{A}$的算术平方根,记作$\bm{B}=\bm{A}^{1/2}=\sqrt{\bm{A}}$.
 }
 \subsection{极分解}
 \thm{极分解定理}{极分解定理}{
-    设有限维内积空间$V$上的线性算子$\bm{\varphi}$，则\[
+    设有限维内积空间$V$上的线性算子$\bm{\varphi}$,则\[
         \bm{\varphi}=\bm{\omega\psi}
-    \]其中$\bm{\omega}$是保持内积的线性算子，$\bm{\psi}$为半正定自伴随算子.并且$\bm{\psi}$由$\bm{\varphi}$唯一确定，若$\bm{\varphi}$可逆，则$\bm{\omega}$也唯一确定.\begin{proof}
-        考虑$\bm{\varphi}^*=\bm{\psi}^*\bm{\omega}^*=\bm{\psi\omega}^*$，由\cref{thm:正交算子、酉算子的判定}知\[
+    \]其中$\bm{\omega}$是保持内积的线性算子,$\bm{\psi}$为半正定自伴随算子.并且$\bm{\psi}$由$\bm{\varphi}$唯一确定,若$\bm{\varphi}$可逆,则$\bm{\omega}$也唯一确定.\begin{proof}
+        考虑$\bm{\varphi}^*=\bm{\psi}^*\bm{\omega}^*=\bm{\psi\omega}^*$,由\cref{thm:正交算子、酉算子的判定}知\[
             \bm{\varphi}^*\bm{\varphi}=\bm{\psi}^2
-        \]根据\cref{thm:算子的平方根}，只要验证$\bm{\varphi}^*\bm{\varphi}$是半正定自伴随算子即可说明$\bm{\psi}$存在且唯一确定.
+        \]根据\cref{thm:算子的平方根},只要验证$\bm{\varphi}^*\bm{\varphi}$是半正定自伴随算子即可说明$\bm{\psi}$存在且唯一确定.
 
         考虑$\forall\bm{\alpha}\in V:$\[
             \left(
@@ -163,7 +163,7 @@
             \right)=\left(
             \bm{\varphi}^*\bm{\varphi}\left(\bm{\alpha}\right),\bm{\varphi}^*\bm{\varphi}\left(\bm{\alpha}\right)
             \right)\geqslant 0
-        \]于是$\bm{\varphi}^*\bm{\varphi}$是半正定算子，同时明显自伴随，则$\bm{\varphi}^*\bm{\varphi}$是半正定自伴随算子，令$\bm{\psi}$是$\bm{\varphi}^*\bm{\varphi}$的算术平方根，是半正定自伴随算子且\[
+        \]于是$\bm{\varphi}^*\bm{\varphi}$是半正定算子,同时明显自伴随,则$\bm{\varphi}^*\bm{\varphi}$是半正定自伴随算子,令$\bm{\psi}$是$\bm{\varphi}^*\bm{\varphi}$的算术平方根,是半正定自伴随算子且\[
             \bm{\psi}^2=\bm{\varphi}^*\bm{\varphi}
         \]
         由\cref{thm:算子的平方根}知$\bm{\psi}$存在且唯一确定.
@@ -200,7 +200,7 @@
             \right)\right\rVert
         \]
 
-        一方面，设$\bm{\varphi}$可逆，此时$\mathrm{Ker}\,\bm{\varphi}=0\Longrightarrow\forall\bm{\alpha}\in\mathrm{Ker}\,\bm{\psi}:\bm{\psi}\left(\bm{\alpha}\right)=\bm{0}\Longrightarrow\bm{\varphi}\left(\bm{\alpha}\right)=\bm{0}\Longrightarrow\bm{\alpha}=\bm{0}\Longrightarrow\mathrm{Ker}\,\bm{\psi}=0\Longrightarrow\bm{\psi}$可逆,此时\[
+        一方面,设$\bm{\varphi}$可逆,此时$\Ker \,\bm{\varphi}=0\Longrightarrow\forall\bm{\alpha}\in\Ker \,\bm{\psi}:\bm{\psi}\left(\bm{\alpha}\right)=\bm{0}\Longrightarrow\bm{\varphi}\left(\bm{\alpha}\right)=\bm{0}\Longrightarrow\bm{\alpha}=\bm{0}\Longrightarrow\Ker \,\bm{\psi}=0\Longrightarrow\bm{\psi}$可逆,此时\[
             \bm{\omega}=\bm{\varphi\psi}^{-1}
         \]唯一确定,下证其保积.\begin{align*}
             \bm{\omega}^* & =\left(\bm{\psi}^{-1}\right)^*\bm{\varphi}^* \\
@@ -209,18 +209,18 @@
             \bm{\omega\omega}^*=\bm{\psi}^{-1}\bm{\varphi}^*\bm{\varphi}\bm{\psi}^{-1}=\bm{\psi}^{-1}\bm{\psi}^2\bm{\psi}^{-1}=\bm{I}_V
         \]于是$\bm{\omega}$是保积算子且由$\bm{\varphi}$唯一确定.
 
-        另一方面，设$\bm{\varphi}$不可逆，由$\forall\bm{\alpha}\in V:$\[
+        另一方面,设$\bm{\varphi}$不可逆,由$\forall\bm{\alpha}\in V:$\[
             \left\lVert\bm{\psi}\left(
             \bm{\alpha}
             \right)\right\rVert=\left\lVert\bm{\varphi}\left(
             \bm{\alpha}
             \right)\right\rVert
-        \]那么一定有$\mathrm{Ker}\,\bm{\psi}=\mathrm{Ker}\,\bm{\varphi}$且不为零空间，由\cref{thm:像空间与核空间的维数公式}维数公式的$\dim \mathrm{Im}\,\bm{\varphi}=\dim \mathrm{Im}\,\bm{\psi}$，此时参考\cref{ex:代数与几何}的构造，我们要考虑$\mathrm{Im}\,\bm{\psi}$到$\mathrm{Im}\,\bm{\varphi}$的保积同构，$\forall\bm{v}\in V:$构造\begin{align*}
-            \bm{\eta}:\mathrm{Im}\,\bm{\psi} & \longrightarrow\mathrm{Im}\,\bm{\varphi}   \\
-            \bm{\psi}\left(\bm{v}\right)     & \longmapsto\bm{\varphi}\left(\bm{v}\right)
-        \end{align*}考虑$\exists\bm{u}\in V:\bm{\psi}\left(\bm{u}\right)=\bm{\varphi}\left(\bm{u}\right)$.若$\bm{\psi}\left(\bm{u}\right)=\bm{\psi}\left(\bm{v}\right)\Longrightarrow\bm{u}-\bm{v}\in\mathrm{Ker}\,\bm{\psi}=\mathrm{Ker}\,\bm{\varphi}\Longrightarrow\bm{\varphi}\left(\bm{u}\right)=\bm{\varphi}\left(\bm{v}\right)$即$\bm{\eta}$的构造与代表元$\bm{v}\in V$的选取是无关的.
+        \]那么一定有$\Ker \,\bm{\psi}=\Ker \,\bm{\varphi}$且不为零空间,由\cref{thm:像空间与核空间的维数公式}维数公式的$\dim \Image \,\bm{\varphi}=\dim \Image \,\bm{\psi}$,此时参考\cref{ex:代数与几何}的构造,我们要考虑$\Image \,\bm{\psi}$到$\Image \,\bm{\varphi}$的保积同构,$\forall\bm{v}\in V:$构造\begin{align*}
+            \bm{\eta}:\Image \,\bm{\psi} & \longrightarrow\Image \,\bm{\varphi}       \\
+            \bm{\psi}\left(\bm{v}\right) & \longmapsto\bm{\varphi}\left(\bm{v}\right)
+        \end{align*}考虑$\exists\bm{u}\in V:\bm{\psi}\left(\bm{u}\right)=\bm{\varphi}\left(\bm{u}\right)$.若$\bm{\psi}\left(\bm{u}\right)=\bm{\psi}\left(\bm{v}\right)\Longrightarrow\bm{u}-\bm{v}\in\Ker \,\bm{\psi}=\Ker \,\bm{\varphi}\Longrightarrow\bm{\varphi}\left(\bm{u}\right)=\bm{\varphi}\left(\bm{v}\right)$即$\bm{\eta}$的构造与代表元$\bm{v}\in V$的选取是无关的.
 
-        此时容易证明$\bm{\varphi}=\bm{\eta\psi}$.并且$\bm{\eta}:\mathrm{Im}\,\bm{\psi}\longrightarrow\mathrm{Im}\,\bm{\varphi}$是满射,考虑到$\dim \mathrm{Im}\,\bm{\varphi}=\dim \mathrm{Im}\,\bm{\psi}$,于是$\bm{\eta}$是单射,即$\bm{\eta}$是线性同构.再由上文,$\forall\bm{v}\in V:$\[
+        此时容易证明$\bm{\varphi}=\bm{\eta\psi}$.并且$\bm{\eta}:\Image \,\bm{\psi}\longrightarrow\Image \,\bm{\varphi}$是满射,考虑到$\dim \Image \,\bm{\varphi}=\dim \Image \,\bm{\psi}$,于是$\bm{\eta}$是单射,即$\bm{\eta}$是线性同构.再由上文,$\forall\bm{v}\in V:$\[
             \left\lVert\bm{\eta}\left(
             \bm{\psi}\left(
                 \bm{v}
@@ -232,7 +232,7 @@
             \right)\right\rVert
         \]于是$\bm{\eta}$保范即保积.
 
-        因为$V=\mathrm{Im}\,\bm{\psi}\perp\mathrm{Im}\,\bm{\psi}^{\perp}=\mathrm{Im}\,\bm{\varphi}\perp\mathrm{Im}\,\bm{\varphi}^{\perp}$，根据\cref{cor:内积空间保积同构的等价条件}知维数相同的$\mathrm{Im}\,\bm{\psi}^{\perp}$与$\mathrm{Im}\,\bm{\varphi}^{\perp}$一定存在保积同构$\bm{\xi}$，作\begin{align*}
+        因为$V=\Image \,\bm{\psi}\perp\Image \,\bm{\psi}^{\perp}=\Image \,\bm{\varphi}\perp\Image \,\bm{\varphi}^{\perp}$,根据\cref{cor:内积空间保积同构的等价条件}知维数相同的$\Image \,\bm{\psi}^{\perp}$与$\Image \,\bm{\varphi}^{\perp}$一定存在保积同构$\bm{\xi}$,作\begin{align*}
             \bm{\omega}:V & \longrightarrow V \\
             \left(
             \bm{\psi}\left(\bm{v}\right),\bm{u}
@@ -256,31 +256,31 @@
     \]
 }
 \cor{极分解定理}{极分解定理}{
-    $\forall\bm{A}\in M_n\left(\mathbb{R}\right):$\[
+    $\forall\bm{A}\in M_n\left(\bbr \right):$\[
         \bm{A}=\bm{OS}=\bm{S}_1\bm{O}
-    \]其中$\bm{O}$是正交阵，$\bm{S},\bm{S}_1$是半正定实对称阵；$\forall\bm{A}\in M_n\left(\mathbb{C}\right):$\[
+    \]其中$\bm{O}$是正交阵,$\bm{S},\bm{S}_1$是半正定实对称阵；$\forall\bm{A}\in M_n\left(\bbc \right):$\[
         \bm{A}=\bm{UH}=\bm{H}_1\bm{U}
-    \]其中$\bm{U}$是酉阵，$\bm{H},\bm{H}_1$是半正定Hermite阵.特别地，$\bm{A}$非异时，分解唯一确定.
+    \]其中$\bm{U}$是酉阵,$\bm{H},\bm{H}_1$是半正定Hermite阵.特别地,$\bm{A}$非异时,分解唯一确定.
 }
 \exa{}{}{
-    设$\bm{A}$为可逆实矩阵，求其$\bm{OS}$分解.\begin{solution}
-        首先$\bm{A}'\bm{A}$正定，然后求正交阵$\bm{P}:$\[
+    设$\bm{A}$为可逆实矩阵,求其$\bm{OS}$分解.\begin{solution}
+        首先$\bm{A}'\bm{A}$正定,然后求正交阵$\bm{P}:$\[
             \bm{P}'\bm{A}'\bm{AP}=\begin{pmatrix}
                 \lambda_1 &           &        &           \\
                           & \lambda_2 &        &           \\
                           &           & \ddots &           \\
                           &           &        & \lambda_n
             \end{pmatrix}
-        \]其中$\lambda_i>0$，那么\[
+        \]其中$\lambda_i>0$,那么\[
             \bm{S}=\bm{P}\begin{pmatrix}
                 \sqrt{\lambda_1} &                  &        &                  \\
                                  & \sqrt{\lambda_2} &        &                  \\
                                  &                  & \ddots &                  \\
                                  &                  &        & \sqrt{\lambda_n}
             \end{pmatrix}\bm{P}'
-        \]满足$\bm{A}'\bm{A}=\bm{S}^2$，然后\[
+        \]满足$\bm{A}'\bm{A}=\bm{S}^2$,然后\[
             \bm{O}=\bm{AS}^{-1}
         \]
     \end{solution}
 }
-在$\bm{A}$不可逆时，作极分解相对繁琐，这时将考虑奇异值分解.
+在$\bm{A}$不可逆时,作极分解相对繁琐,这时将考虑奇异值分解.

@@ -6,7 +6,7 @@
         \bm{e}_1,\bm{e}_2,\cdots,
         \bm{e}_n
         \right\}$为$V_{
-                \mathbb{K}
+                \bbk
             }$的一组基且对于
     $\bm{\alpha}\in V$有
     \[
@@ -22,21 +22,21 @@
     \]
 }
 \dfn{坐标向量}{坐标向量}{
-    固定$V_{\mathbb{K}}$的一组基$\left\{\bm{e}_1,\bm{e}_2,\cdots
-        ,\bm{e}_n\right\}$及其顺序，定义映射$\varphi $
+    固定$V_{\bbk }$的一组基$\left\{\bm{e}_1,\bm{e}_2,\cdots
+        ,\bm{e}_n\right\}$及其顺序,定义映射$\varphi $
     \begin{align*}
         \varphi :
-        V_{\mathbb{K}} &
+        V_{\bbk } &
         \longrightarrow
-        \mathbb{K}^n                                \\
+        \bbk ^n                                \\
         \bm{\alpha} = \sum_{i = 1}
         ^{n}a_i\bm{e}_i
-                       & \longmapsto \begin{pmatrix}
-                                         a_1    \\
-                                         a_2    \\
-                                         \vdots \\
-                                         a_n
-                                     \end{pmatrix}
+                  & \longmapsto \begin{pmatrix}
+                                    a_1    \\
+                                    a_2    \\
+                                    \vdots \\
+                                    a_n
+                                \end{pmatrix}
     \end{align*}
     其中$\left(a_1,a_2,\cdots,a_n\right)^{\prime}$是$\bm{\alpha}$在$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
@@ -44,9 +44,9 @@
 }
 \subsection{同构}
 \dfn{线性同构}{线性同构}{
-设$V_{\mathbb{K}},U_{\mathbb{K}}$，若存在一个双射$\varphi    : V \longrightarrow U$使得
+设$V_{\bbk },U_{\bbk }$,若存在一个双射$\varphi    : V \longrightarrow U$使得
 $\forall \bm{\alpha},\bm{\beta}
-    \in V,k \in \mathbb{K}$,满足
+    \in V,k \in \bbk $,满足
 \[
     \varphi \left(\bm{\alpha}
     +\bm{\beta}
@@ -60,20 +60,20 @@ $\forall \bm{\alpha},\bm{\beta}
     \bm{\alpha}
     \right)
 \]
-即$\varphi $保持了加法和数乘也就是保持了线性组合，则称$\bm{\varphi}:V\longrightarrow U$为（线性）同构,简称$V$同构于$U$，记作$V\cong U$.
+即$\varphi $保持了加法和数乘也就是保持了线性组合,则称$\bm{\varphi}:V\longrightarrow U$为(线性)同构,简称$V$同构于$U$,记作$V\cong U$.
 }
 \thm{同构的存在性}{同构的存在性}{
-$V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
+$V_{\bbk },U_{\bbk }$同构等价于
 \[
-    \dim_{\mathbb{K}}V
-    = \dim_{\mathbb{K}}U
+    \dim_{\bbk }V
+    = \dim_{\bbk }U
 \]
 }
-\thm{}{与标准行（列）向量空间同构}{
-    $\mathbb{K}$上任一$n$维线性空间$V$均与$n$维行（列）向量空间$\bbk^n\left(\mathbb{K}^n\right)$同构.\begin{proof}
-        设$\bm{\alpha}$、$\bm{\beta}\in V$，$\displaystyle
-            \bm{\alpha}=\sum_{i=1}^{n}a_i\bm{e}_i$，$\displaystyle
-            \bm{\beta}=\sum_{i=1}^{n}b_i\bm{e}_i$，则
+\thm{}{与标准行(列)向量空间同构}{
+    $\bbk $上任一$n$维线性空间$V$均与$n$维行(列)向量空间$\bbk^n\left(\bbk ^n\right)$同构.\begin{proof}
+        设$\bm{\alpha}$、$\bm{\beta}\in V$,$\displaystyle
+            \bm{\alpha}=\sum_{i=1}^{n}a_i\bm{e}_i$,$\displaystyle
+            \bm{\beta}=\sum_{i=1}^{n}b_i\bm{e}_i$,则
         \[
             \bm{\varphi}\left(\bm{\alpha}\right)=\begin{pmatrix}
                 a_1 \\a_2\\\vdots\\a_n
@@ -91,7 +91,7 @@ $V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
             \end{pmatrix}=\bm{\varphi}\left(\bm{\alpha}\right)+\bm{\varphi}
             \left(\bm{\beta}\right)
         \]
-        又因为$\displaystyle k\bm{\alpha}=\sum_{i=1}^{n}ka_i\bm{e}_i$，于是
+        又因为$\displaystyle k\bm{\alpha}=\sum_{i=1}^{n}ka_i\bm{e}_i$,于是
         \[
             \bm{\varphi}\left(k\bm{\alpha}\right)=\begin{pmatrix}
                 ka_1 \\ka_2\\\vdots\\ka_n
@@ -102,14 +102,14 @@ $V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
 }
 \thm{同构对线性结构的保持}{同构对线性结构的保持}{
     线性同构保持向量组的线性关系.
-    \begin{enumerate}[label=\arabic*）]
+    \begin{enumerate}[label=\arabic*)]
         \item $\varphi :V \longrightarrow
-                  U$为线性空间的同构，则$
+                  U$为线性空间的同构,则$
                   \varphi \left(\bm{0}\right)
                   = \bm{0}$
-        \item $\varphi$ 将向量的线性组合映射为对应向量的线性组合，将线性相关的向量映射为线性相关的向量，将线性无关的向量映射为线性无关的向量
+        \item $\varphi$ 将向量的线性组合映射为对应向量的线性组合,将线性相关的向量映射为线性相关的向量,将线性无关的向量映射为线性无关的向量
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label=\arabic*）]
+        \begin{enumerate}[label=\arabic*)]
             \item 首先
                   \[
                       \bm{\varphi}\left(\bm{0}+\bm{0}\right)=\bm{\varphi}\left(\bm{0}\right)+\bm{\varphi}\left(
@@ -121,14 +121,14 @@ $V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
                       \left\{\bm{\alpha}\in V\big| \bm{\varphi}\left(\bm{\alpha}\right)=\bm{0}\right\}
                       =\left\{\bm{0}\right\}
                   \]
-            \item 先证线性组合，设$\bm{\beta}=\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m$,则
+            \item 先证线性组合,设$\bm{\beta}=\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m$,则
                   \begin{align*}
                       \bm{\varphi}\left(\bm{\beta}\right) & =\bm{\varphi}\left(\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m\right)                               \\
                                                           & =\lambda_1\bm{\varphi}\left(\bm{\alpha}_1\right)+\lambda_2\bm{\varphi}\left(\bm{\alpha}_2\right)+\cdots+\lambda_m\bm{\varphi}\left(
                       \bm{\alpha}_m\right)
                   \end{align*}
 
-                  然后证明线性相关，设$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m=\bm{0}$，其中$\lambda_i$不全为零，于是
+                  然后证明线性相关,设$\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m=\bm{0}$,其中$\lambda_i$不全为零,于是
                   \begin{align*}
                       \bm{0} & =\bm{\varphi}\left(\bm{0}\right)                                                                                                                 \\
                              & =\bm{\varphi}\left(\lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots+\lambda_m\bm{\alpha}_m\right)                                            \\
@@ -136,7 +136,7 @@ $V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
                       \right)
                   \end{align*}
 
-                  最后是线性无关，设$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m$线性无关，则设
+                  最后是线性无关,设$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m$线性无关,则设
                   \[\lambda_1\bm{\varphi}\left(\bm{\alpha}_1\right)+\lambda_2\bm{\varphi}\left(\bm{\alpha}_2\right)+\cdots+\lambda_m\bm{\varphi}\left(\bm{\alpha}_m
                       \right)=\bm{0}\]即
                   \[
@@ -153,7 +153,7 @@ $V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
                       \lambda_1\bm{\alpha}_1+\lambda_2\bm{\alpha}_2+\cdots
                       +\lambda_m\bm{\alpha}_m=\bm{0}
                   \]
-                  又因为$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m$线性无关，故
+                  又因为$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_m$线性无关,故
                   $\lambda_1=\lambda_2=\cdots=\lambda_m=0.$\qedhere
         \end{enumerate}
     \end{proof}
@@ -161,7 +161,7 @@ $V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
 \thm{}{秩与极大无关组指标的保持}{
     设$\varphi :
         V \longrightarrow
-        \mathbb{K}^n$,$\bm{\alpha}_1,\bm{\alpha}_2
+        \bbk ^n$,$\bm{\alpha}_1,\bm{\alpha}_2
         ,\cdots,\bm{\alpha}_m\in V$,
     作
     \[
@@ -179,7 +179,7 @@ $V_{\mathbb{K}},U_{\mathbb{K}}$同构等价于
                   \right\}$为
               $\left\{\bm{\alpha}_1,\bm{\alpha}_2
                   ,\cdots,\bm{\alpha}_m
-                  \right\}$的极大线性无关组，那么
+                  \right\}$的极大线性无关组,那么
               $\left\{\widetilde{\bm
                       {\alpha}
                   }_{i_1},

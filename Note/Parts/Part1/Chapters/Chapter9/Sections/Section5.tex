@@ -7,7 +7,7 @@
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
             \right\}$和$\left\{
             \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
-            \right\}$，过渡矩阵为$\bm{P}=\left(a_{ij}\right)_{n\times n}$，于是\[
+            \right\}$,过渡矩阵为$\bm{P}=\left(a_{ij}\right)_{n\times n}$,于是\[
             \left(
             \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
             \right)=\left(
@@ -21,16 +21,16 @@
             \sum_{i=1}^{n}a_{ij}\bm{e}_i,\sum_{i=1}^{n}a_{ik}\bm{e}_i
             \right)                                   \\
                         & =\sum_{i=1}^{n}a_{ij}a_{ik}
-        \end{align*}于是$\bm{P}$的$n$个列向量是$\mathbb{R}^n$（标准内积）的一组标准正交基，根据\cref{thm:正交阵的判定}，$\bm{P}$是正交阵.
+        \end{align*}于是$\bm{P}$的$n$个列向量是$\bbr ^n$(标准内积)的一组标准正交基,根据\cref{thm:正交阵的判定},$\bm{P}$是正交阵.
 
-        同理，若$V$是酉空间，则$\bm{P}$是酉阵.
+        同理,若$V$是酉空间,则$\bm{P}$是酉阵.
     \end{proof}
 }
-事实上，若设$\bm{\varphi}\in\mathcal{L}\left(V\right)$在基$\left\{
+事实上,若设$\bm{\varphi}\in\call \left(V\right)$在基$\left\{
     \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
     \right\}$和$\left\{
     \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
-    \right\}$下的表示矩阵分别为$\bm{A}$和$\bm{B}$，根据\cref{thm:不同基下的表示矩阵的关系}即得\[
+    \right\}$下的表示矩阵分别为$\bm{A}$和$\bm{B}$,根据\cref{thm:不同基下的表示矩阵的关系}即得\[
     \bm{B}=\bm{P}^{-1}\bm{A}\bm{P}\xlongequal{\cref{def:正交矩阵、酉矩阵}}\begin{cases*}
         \bm{P}'\bm{A}\bm{P}            & ,$V$是欧式空间 \\
         \overline{\bm{P}}'\bm{A}\bm{P} & ,$V$是酉空间
@@ -38,18 +38,18 @@
 \]
 \dfn{正交相似与酉相似}{正交相似与酉相似}{
     正交相似与酉相似是特殊的相似关系.
-    \begin{enumerate}[label=\arabic*）]
-        \item 设$\bm{A},\bm{B}\in M_n\left(\mathbb{R}\right)$，若存在正交阵$\bm{P}$使得$\bm{B}=\bm{P}'\bm{AP}$，则称$\bm{A},\bm{B}$正交相似.
-        \item 设$\bm{A},\bm{B}\in M_n\left(\mathbb{C}\right)$，若存在酉阵$\bm{P}$使得$\bm{B}=\overline{\bm{P}}'\bm{AP}$，则称$\bm{A},\bm{B}$酉相似.
+    \begin{enumerate}[label=\arabic*)]
+        \item 设$\bm{A},\bm{B}\in M_n\left(\bbr \right)$,若存在正交阵$\bm{P}$使得$\bm{B}=\bm{P}'\bm{AP}$,则称$\bm{A},\bm{B}$正交相似.
+        \item 设$\bm{A},\bm{B}\in M_n\left(\bbc \right)$,若存在酉阵$\bm{P}$使得$\bm{B}=\overline{\bm{P}}'\bm{AP}$,则称$\bm{A},\bm{B}$酉相似.
     \end{enumerate}
 }
-剩余几节内容，我们主要考虑这样一个问题：是否可以找到一组标准正交基，使得某个线性算子在这组基下的表示矩阵尽可能地简单.一般来说这个问题是比较困难的，所以我们主要考虑三类相对简单的线性算子：自伴随算子、复正规算子、实正规算子.
+剩余几节内容,我们主要考虑这样一个问题:是否可以找到一组标准正交基,使得某个线性算子在这组基下的表示矩阵尽可能地简单.一般来说这个问题是比较困难的,所以我们主要考虑三类相对简单的线性算子:自伴随算子、复正规算子、实正规算子.
 \subsection{自伴随算子}
 \dfn{自伴随算子}{自伴随算子}{
-    设$\bm{\varphi}$是内积空间$V$上的线性算子，若$\bm{\varphi}^*=\bm{\varphi}$，则称$\bm{\varphi}$为自伴随算子.特别地，若$V$是欧式空间，则称$\bm{\varphi}$为对称算子；若$V$是酉空间，则称$\bm{\varphi}$为Hermite算子.
+    设$\bm{\varphi}$是内积空间$V$上的线性算子,若$\bm{\varphi}^*=\bm{\varphi}$,则称$\bm{\varphi}$为自伴随算子.特别地,若$V$是欧式空间,则称$\bm{\varphi}$为对称算子；若$V$是酉空间,则称$\bm{\varphi}$为Hermite算子.
 }
 \exa{}{}{
-    设$n$维内积空间$V$的子空间为$U$，则$V=U\oplus U^{\perp}$.设$\bm{E}$为$V$到$U$的正交投影算子，则$\forall\bm{\alpha},\bm{\beta}\in V:$\[
+    设$n$维内积空间$V$的子空间为$U$,则$V=U\oplus U^{\perp}$.设$\bm{E}$为$V$到$U$的正交投影算子,则$\forall\bm{\alpha},\bm{\beta}\in V:$\[
         \left(
         \bm{E}\left(
             \bm{\alpha}
@@ -59,16 +59,16 @@
             \bm{\beta}
             \right)
         \right)
-    \]即$\bm{E}^*=\bm{E}$，故$\bm{E}$是自伴随算子.
+    \]即$\bm{E}^*=\bm{E}$,故$\bm{E}$是自伴随算子.
 }
 \lem{自伴随算子的判定}{自伴随算子的判定}{
-    设$\bm{\varphi}$是$n$维内积空间上的线性算子，则$\bm{\varphi}$是自伴随算子当且仅当$\bm{\varphi}$在任一组（或者某一组）基下的表示矩阵是\[\begin{cases*}
+    设$\bm{\varphi}$是$n$维内积空间上的线性算子,则$\bm{\varphi}$是自伴随算子当且仅当$\bm{\varphi}$在任一组(或者某一组)基下的表示矩阵是\[\begin{cases*}
             \text{实对称阵}              & ,$V$是欧式空间 \\
             \textup{Hermite}\text{阵} & ,$V$是酉空间
         \end{cases*}\]\begin{proof}
         取一组标准正交基$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
-            \right\}$，设$\bm{\varphi}$的表示矩阵为$\bm{A}$，根据\cref{thm:伴随算子的表示矩阵}，$\bm{\varphi}^*$在这组基下的表示矩阵为$\bm{A}'/\overline{\bm{A}}'$.那么因为$\bm{\varphi}^*=\bm{\varphi}$，于是\[
+            \right\}$,设$\bm{\varphi}$的表示矩阵为$\bm{A}$,根据\cref{thm:伴随算子的表示矩阵},$\bm{\varphi}^*$在这组基下的表示矩阵为$\bm{A}'/\overline{\bm{A}}'$.那么因为$\bm{\varphi}^*=\bm{\varphi}$,于是\[
             \bm{A}=\begin{cases*}
                 \bm{A}'            & ,$V$是欧式空间 \\
                 \overline{\bm{A}}' & ,$V$是酉空间
@@ -77,7 +77,7 @@
     \end{proof}
 }
 \lem{自伴随算子的特征值与特征向量}{自伴随算子的特征值与特征向量}{
-    设$\bm{\varphi}$为酉空间$V$上的自伴随算子，则$\bm{\varphi}$的特征值都是实数，且对应不同特征值的特征向量相互正交.\begin{proof}
+    设$\bm{\varphi}$为酉空间$V$上的自伴随算子,则$\bm{\varphi}$的特征值都是实数,且对应不同特征值的特征向量相互正交.\begin{proof}
         任取$\bm{\varphi}$的特征值$\lambda$和对应的特征向量$\bm{\alpha}$即$\bm{\varphi}\left(\bm{\alpha}\right)=\lambda\bm{\alpha}$.容易有\[
             \lambda\left(
             \bm{\alpha},\bm{\alpha}
@@ -88,9 +88,9 @@
             \right)=\overline{\lambda}\left(
             \bm{\alpha},\bm{\alpha}
             \right)
-        \]于是$\lambda=\overline{\lambda}\Longrightarrow\lambda\in\mathbb{R}$.
+        \]于是$\lambda=\overline{\lambda}\Longrightarrow\lambda\in\bbr $.
 
-        另取不同特征值$\mu$，对应的特征向量$\bm{\beta}$，于是\begin{align*}
+        另取不同特征值$\mu$,对应的特征向量$\bm{\beta}$,于是\begin{align*}
             \lambda\left(
             \bm{\alpha},\bm{\beta}
             \right) & =\left(
@@ -103,23 +103,23 @@
     \end{proof}
 }
 \cor{Hermite阵的特征值与特征向量}{Hermite阵的特征值与特征向量}{
-    将\cref{lem:自伴随算子的特征值与特征向量}推到代数角度即得：Hermite阵的特征值都是实数，且对应不同特征值的特征向量相互正交.
+    将\cref{lem:自伴随算子的特征值与特征向量}推到代数角度即得:Hermite阵的特征值都是实数,且对应不同特征值的特征向量相互正交.
 }
 \cor{实对称阵的特征值与特征向量}{实对称阵的特征值与特征向量}{
-    因为实对称阵都是特殊的Hermite阵，故根据\cref{cor:Hermite阵的特征值与特征向量}得：实对称阵的特征值都是实数，且对应不同特征值的特征向量相互正交.
+    因为实对称阵都是特殊的Hermite阵,故根据\cref{cor:Hermite阵的特征值与特征向量}得:实对称阵的特征值都是实数,且对应不同特征值的特征向量相互正交.
 }
 \cor{欧氏空间的自伴随算子的特征值与特征向量}{欧氏空间的自伴随算子的特征值与特征向量}{
-    根据\cref{cor:实对称阵的特征值与特征向量}，设$\bm{\varphi}$是欧式空间$V$上的自伴随算子，则$\bm{\varphi}$的特征值都是实数，且对应不同特征值的特征向量相互正交.
+    根据\cref{cor:实对称阵的特征值与特征向量},设$\bm{\varphi}$是欧式空间$V$上的自伴随算子,则$\bm{\varphi}$的特征值都是实数,且对应不同特征值的特征向量相互正交.
 }
 \thm{}{实对角阵表示矩阵的存在性}{
-    设$n$维内积空间$V$上的自伴随算子$\bm{\varphi}$，则必存在一组标准正交基$\left\{
+    设$n$维内积空间$V$上的自伴随算子$\bm{\varphi}$,则必存在一组标准正交基$\left\{
         \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
-        \right\}$，使得$\bm{\varphi}$在这组基下的表示矩阵是实对角阵.\begin{proof}
+        \right\}$,使得$\bm{\varphi}$在这组基下的表示矩阵是实对角阵.\begin{proof}
         取$\bm{\varphi}$的一个特征值$\lambda_1$和对应的特征向量$\bm{\alpha}\in V$,令$\displaystyle\bm{e}_1=\frac{\bm{\alpha}}{\left\lVert\bm{\alpha}\right\rVert}$即单位特征向量.
 
-        下面对维数进行归纳，$n=1$显然.
+        下面对维数进行归纳,$n=1$显然.
 
-        设维数$\dim V<n$成立，证明$\dim V=n$的情形.令$U=L\left(\bm{e}_1\right)^{\perp},\dim U=n-1$.因为$\bm{e}_1$是特征向量，由\cref{lem:特征子空间是不变子空间}知$L\left(\bm{e}_1\right)$是$\bm{\varphi}$-不变子空间，由$\cref{prop:伴随的不变子空间与特征值}$知$U$是$\bm{\varphi}^*=\bm{\varphi}$-不变子空间.做限制$\bm{\varphi}\mid_{U},\forall\bm{u},\bm{v}\in U\subseteq V:$\[
+        设维数$\dim V<n$成立,证明$\dim V=n$的情形.令$U=L\left(\bm{e}_1\right)^{\perp},\dim U=n-1$.因为$\bm{e}_1$是特征向量,由\cref{lem:特征子空间是不变子空间}知$L\left(\bm{e}_1\right)$是$\bm{\varphi}$-不变子空间,由$\cref{prop:伴随的不变子空间与特征值}$知$U$是$\bm{\varphi}^*=\bm{\varphi}$-不变子空间.做限制$\bm{\varphi}\mid_{U},\forall\bm{u},\bm{v}\in U\subseteq V:$\[
             \left(
             \bm{\varphi}\left(\bm{u}\right),\bm{v}
             \right)=\left(
@@ -135,15 +135,15 @@
                 \bm{v}
                 \right)
             \right)
-        \]于是$\bm{\varphi}\mid_U$为自伴随，根据归纳假设，存在$U$的一组标准正交基$\left\{
+        \]于是$\bm{\varphi}\mid_U$为自伴随,根据归纳假设,存在$U$的一组标准正交基$\left\{
             \bm{e}_2,\bm{e}_3,\cdots,\bm{e}_n
-            \right\}$，使得$\bm{\varphi}\mid_U$在这组基下的表示矩阵是实对角阵$\mathrm{diag}\,\left\{\lambda_2,\lambda_3,\cdots,\lambda_n\right\}$.因为\[
+            \right\}$,使得$\bm{\varphi}\mid_U$在这组基下的表示矩阵是实对角阵$\diag \,\left\{\lambda_2,\lambda_3,\cdots,\lambda_n\right\}$.因为\[
             V=L\left(
             \bm{e}_1
             \right)\oplus U
         \]故$\left\{
             \bm{e}_1,\bm{e}_2,\bm{e}_3,\cdots,\bm{e}_n
-            \right\}$是$V$的一组标准正交基，且$\bm{\varphi}$在这组基下的表示矩阵是\[
+            \right\}$是$V$的一组标准正交基,且$\bm{\varphi}$在这组基下的表示矩阵是\[
             \begin{pmatrix}
                 \lambda_1 &           &        &           \\
                           & \lambda_2 &        &           \\
@@ -154,10 +154,10 @@
     \end{proof}
 }
 \thm{化归实对角阵}{化归实对角阵}{
-    设$\bm{A}$为$n$阶实对称阵（Hermite阵），则存在正交阵（酉阵）$\bm{P}$，使得$\bm{P}'\bm{AP}\left(\overline{\bm{P}}'\bm{AP}\right)$是实对角阵.\begin{proof}
-        构造\[\bm{\varphi}\in\mathcal{L}\left(\mathbb{C}^n\right):\bm{\alpha}\longmapsto\bm{A\alpha}\]取标准内积,这是一个线性算子.注意到$\bm{\varphi}$在标准单位列向量组$\left\{
+    设$\bm{A}$为$n$阶实对称阵(Hermite阵),则存在正交阵(酉阵)$\bm{P}$,使得$\bm{P}'\bm{AP}\left(\overline{\bm{P}}'\bm{AP}\right)$是实对角阵.\begin{proof}
+        构造\[\bm{\varphi}\in\call \left(\bbc ^n\right):\bm{\alpha}\longmapsto\bm{A\alpha}\]取标准内积,这是一个线性算子.注意到$\bm{\varphi}$在标准单位列向量组$\left\{
             \bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n
-            \right\}$下的表示矩阵为$\bm{A}$，是一个\textup{Hermite}阵，于是$\bm{\varphi}$自伴随.根据\cref{thm:实对角阵表示矩阵的存在性}，存在$\mathbb{C}^n$的另外一组标准正交基$\left\{
+            \right\}$下的表示矩阵为$\bm{A}$,是一个\textup{Hermite}阵,于是$\bm{\varphi}$自伴随.根据\cref{thm:实对角阵表示矩阵的存在性},存在$\bbc ^n$的另外一组标准正交基$\left\{
             \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
             \right\}$使得$\bm{\varphi}$在这组基下的表示矩阵为实对角阵$\bm{\varLambda}$即\[
             \left(
@@ -179,14 +179,14 @@
             \right)\bm{\varLambda}
         \]令$\bm{P}=\left(
             \bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n
-            \right)$，根据\cref{thm:酉矩阵的判定},$\bm{P}$为酉阵，于是\[
+            \right)$,根据\cref{thm:酉矩阵的判定},$\bm{P}$为酉阵,于是\[
             \overline{\bm{P}}'\bm{AP}=\bm{\varLambda}\qedhere
         \]
     \end{proof}
 }
 \cor{正交相似和酉相似的全系不变量}{正交相似和酉相似的全系不变量}{
-    实对称阵（Hermite阵）在正交相似（酉相似）下的全系不变量是全体特征值，正交相似（酉相似）标准型就是全体特征值构成的对角阵.\begin{proof}
-        证明实对称阵.首先一定是不变量，下证是全系不变量.
+    实对称阵(Hermite阵)在正交相似(酉相似)下的全系不变量是全体特征值,正交相似(酉相似)标准型就是全体特征值构成的对角阵.\begin{proof}
+        证明实对称阵.首先一定是不变量,下证是全系不变量.
 
         设实对称阵$\bm{A},\bm{B}$的特征值均为$\lambda_1,\lambda_2,\cdots,\lambda_n$.根据\cref{thm:化归实对角阵},存在正交阵$\bm{P},\bm{Q}$使得\[
             \bm{P}'\bm{AP}=\begin{pmatrix}
@@ -200,17 +200,17 @@
                               &               & \ddots &               \\
                               &               &        & \lambda_{i_n}
             \end{pmatrix}
-        \]只要证明这两个对角阵正交相似即可（$\left(i_1,i_2,\cdots,i_n\right)$是$\left(1,2,\cdots,n\right)$的全排列）.注意到合同变换\[
-            \bm{P}_{ij}\mathrm{diag}\,\left\{
+        \]只要证明这两个对角阵正交相似即可($\left(i_1,i_2,\cdots,i_n\right)$是$\left(1,2,\cdots,n\right)$的全排列).注意到合同变换\[
+            \bm{P}_{ij}\diag \,\left\{
             \lambda_1,\lambda_2,\cdots,\lambda_i,\cdots,\lambda_j,\cdots,\lambda_n
-            \right\}\bm{P}_{ij}= \mathrm{diag}\,\left\{
+            \right\}\bm{P}_{ij}= \diag \,\left\{
             \lambda_1,\lambda_2,\cdots,\lambda_j,\cdots,\lambda_i,\cdots,\lambda_n
             \right\}
-        \]也是正交相似变换$\left(\bm{P}_{ij}'\bm{P}_{ij}=\bm{I}_n\right)$.于是若干个这样正交相似变换的复合即将\[\mathrm{diag}\,\left\{
+        \]也是正交相似变换$\left(\bm{P}_{ij}'\bm{P}_{ij}=\bm{I}_n\right)$.于是若干个这样正交相似变换的复合即将\[\diag \,\left\{
             \lambda_{i_1},\lambda_{i_2},\cdots,\lambda_{i_n}
-            \right\}\]变为\[\mathrm{diag}\,\left\{
+            \right\}\]变为\[\diag \,\left\{
             \lambda_1,\lambda_2,\cdots,\lambda_n
-            \right\}\]于是$\bm{A},\bm{B}$正交相似.进一步地，正交相似标准型即\[
+            \right\}\]于是$\bm{A},\bm{B}$正交相似.进一步地,正交相似标准型即\[
             \begin{pmatrix}
                 \lambda_1 &           &        &           \\
                           & \lambda_2 &        &           \\
@@ -225,9 +225,9 @@
 \rem{}{}{
     因为正交相似本身\[
         \bm{B}= \bm{P}'\bm{AP}= \bm{P}^{-1}\bm{AP}
-    \]所以它既是合同变换，也是相似变换.
+    \]所以它既是合同变换,也是相似变换.
 
-    几何地看，$f=\bm{x}'\bm{Ax}$作$\bm{x}=\bm{Cy}$时要保持度量，注意到$\bm{C}$其实是基向量之间的过渡矩阵：\[
+    几何地看,$f=\bm{x}'\bm{Ax}$作$\bm{x}=\bm{Cy}$时要保持度量,注意到$\bm{C}$其实是基向量之间的过渡矩阵:\[
         \left(
         \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
         \right)=\left(
@@ -235,15 +235,15 @@
         \right)\bm{C}
     \]这要求$\left\{
         \bm{f}_1,\bm{f}_2,\cdots,\bm{f}_n
-        \right\}$应当也是一组标准正交基，根据\cref{lem:标准正交基之间的过渡矩阵}，标准正交基之间的过渡矩阵是正交阵，所以$\bm{C}$是正交阵，这就是一种正交相似变换.
+        \right\}$应当也是一组标准正交基,根据\cref{lem:标准正交基之间的过渡矩阵},标准正交基之间的过渡矩阵是正交阵,所以$\bm{C}$是正交阵,这就是一种正交相似变换.
 }
 \cor{}{实二次型的正交相似变换}{
-    设实二次型$f=\bm{x}'\bm{Ax},$实对称阵$\bm{A}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$，则存在正交相似变换$\bm{x}=\bm{Py}$使得$f$化为\[
+    设实二次型$f=\bm{x}'\bm{Ax},$实对称阵$\bm{A}$的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$,则存在正交相似变换$\bm{x}=\bm{Py}$使得$f$化为\[
         \lambda_1y_1^2+\lambda_2y_2^2+\cdots+\lambda_ny_n^2
-    \]它的正惯性指数即正特征值的个数，负惯性指数即负特征值的个数，秩等于非零特征值的个数.
+    \]它的正惯性指数即正特征值的个数,负惯性指数即负特征值的个数,秩等于非零特征值的个数.
 }
 \cor{}{半正定与半负定的确定}{
-    设$n$阶实对称阵$\bm{A}$，则\begin{enumerate}[label=\arabic*）]
+    设$n$阶实对称阵$\bm{A}$,则\begin{enumerate}[label=\arabic*)]
         \item $\bm{A}$正定当且仅当$\bm{A}$的全体特征值都大于$0$
         \item $\bm{A}$半正定当且仅当$\bm{A}$的全体特征值都大于等于$0$
         \item $\bm{A}$负定当且仅当$\bm{A}$的全体特征值都小于$0$
@@ -274,9 +274,9 @@
             \right)^2\left(
             \lambda-8
             \right)
-        \end{align*}于是$\lambda_1=\lambda_2=2,\lambda_3=8$，$\lambda_3=8$对应特征向量$\bm{\alpha}_1=\begin{pmatrix}
+        \end{align*}于是$\lambda_1=\lambda_2=2,\lambda_3=8$,$\lambda_3=8$对应特征向量$\bm{\alpha}_1=\begin{pmatrix}
                 1 \\1\\1
-            \end{pmatrix}$，而$\lambda_1=\lambda_2=2$代入得到线性无关但相互不正交的\[
+            \end{pmatrix}$,而$\lambda_1=\lambda_2=2$代入得到线性无关但相互不正交的\[
             \bm{\alpha}_2=\begin{pmatrix}
                 -1 \\1\\0
             \end{pmatrix},\bm{\alpha}_3=\begin{pmatrix}
@@ -315,12 +315,12 @@
     \end{solution}
 }
 \exa{}{}{
-    $\bm{A}$的特征值为$0,3,3$，$0$对应的特征向量为$\bm{v}_1=\left(1,1,1\right)',3$对应的其中一个特征向量为$\bm{v}_2=\left(-1,1,0\right)'$，求$\bm{A}$.\begin{proof}
+    $\bm{A}$的特征值为$0,3,3$,$0$对应的特征向量为$\bm{v}_1=\left(1,1,1\right)',3$对应的其中一个特征向量为$\bm{v}_2=\left(-1,1,0\right)'$,求$\bm{A}$.\begin{proof}
         设$3$对应的另一个特征向量为$\bm{v}_3=\begin{pmatrix}
                 x_1 \\x_2\\x_3
             \end{pmatrix}$且$\left\{
             \bm{v}_1,\bm{v}_2,\bm{v}_3
-            \right\}$两两正交：\[
+            \right\}$两两正交:\[
             \begin{cases*}
                 x_1+x_2+x_3=0 \\
                 -x_1+x_2=0
@@ -359,9 +359,9 @@
     \end{proof}
 }
 \exa{}{}{
-    设$n$阶实对称阵$\bm{A}:\bm{A}^3=\bm{I}_n$，求证：$\bm{A}=\bm{I}_n$.\begin{proof}
-        任取$\bm{A}$的特征值$\lambda\in\mathbb{R}:\lambda^3=1\Longrightarrow\lambda=1$于是存在正交阵$\bm{P}$使得$\bm{P}'\bm{AP}=\bm{I}_n\Longrightarrow\bm{A}=\bm{I}_n$.
-    \end{proof}事实上，只要给出特征值均为实数即可证明:\[
+    设$n$阶实对称阵$\bm{A}:\bm{A}^3=\bm{I}_n$,求证:$\bm{A}=\bm{I}_n$.\begin{proof}
+        任取$\bm{A}$的特征值$\lambda\in\bbr :\lambda^3=1\Longrightarrow\lambda=1$于是存在正交阵$\bm{P}$使得$\bm{P}'\bm{AP}=\bm{I}_n\Longrightarrow\bm{A}=\bm{I}_n$.
+    \end{proof}事实上,只要给出特征值均为实数即可证明:\[
         \left(
         \bm{A}-a\bm{I}_n
         \right)\left(

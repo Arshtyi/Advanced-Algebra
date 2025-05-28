@@ -2,21 +2,21 @@
 \section{线性映射的运算}
 \subsection{运算}
 \dfn{线性映射全体}{线性映射全体}{
-    设$V_{\mathbb{K}}$、$U_{\mathbb{K}}$，记$\call   \left(V,U\right)$为$V \longrightarrow U$的线性映射全体.
+    设$V_{\bbk }$、$U_{\bbk }$,记$\call   \left(V,U\right)$为$V \longrightarrow U$的线性映射全体.
 }
 \dfn{线性映射的加法与数乘}{线性映射的加法与数乘}{
     $\forall \bm{\varphi},\bm{\psi}
         \in \call   \left(
         V,U
         \right)$
-    ，定义加法
+    ,定义加法
     \[
         \left(\bm{\varphi}+\bm{\psi}\right)
         \left(\bm{\alpha}\right)\coloneqq \bm{\varphi}\left(\bm{\alpha}
         \right)+\bm{\psi}\left(\bm{\alpha}
         \right)
     \]
-    $\forall k \in \mathbb{K}$，定义数乘
+    $\forall k \in \bbk $,定义数乘
     \[
         \left(
         k\cdot \bm{\varphi}
@@ -27,47 +27,47 @@
         \right)
     \]
     容易验证二者均是线性映射且
-    $\bm{\varphi}+\bm{\psi} \in \call  \left(V,U\right)$，$k\bm{\varphi}
+    $\bm{\varphi}+\bm{\psi} \in \call  \left(V,U\right)$,$k\bm{\varphi}
         \in \call   \left(V,U\right)$.
 }
 \thm{}{线性映射全体是线性空间}{
-    $\call   \left(V,U\right)$在\cref{def:线性映射的加法与数乘}的加法和数乘运算下是$\mathbb{K}$上的线性空间.
+    $\call   \left(V,U\right)$在\cref{def:线性映射的加法与数乘}的加法和数乘运算下是$\bbk $上的线性空间.
 
-    特别地，$\call   \left(
-        V,\mathbb{K}
-        \right)$是$V$上的线性函数全体构成的线性空间，称为$V$的共轭空间，记作$V^*$，当$V$维数有限时，$V^*$也称为$V$的对偶空间.
+    特别地,$\call   \left(
+        V,\bbk
+        \right)$是$V$上的线性函数全体构成的线性空间,称为$V$的共轭空间,记作$V^*$,当$V$维数有限时,$V^*$也称为$V$的对偶空间.
 
     $\call
         \left(V,V\right) = \call
         \left(V\right)$为$V$上的线性变换
-    全体构成的线性空间，它可以额外将映射的复合定义为乘法运算.
+    全体构成的线性空间,它可以额外将映射的复合定义为乘法运算.
 }
 \subsection{代数}
 \dfn{代数}{代数}{
-    设$\mathbb{K}$上的线性空间$A$，如果定义一种乘法运算
+    设$\bbk $上的线性空间$A$,如果定义一种乘法运算
     \begin{align*}
         \cdot :
         A \times A       & \longrightarrow A    \\
         \left(a,b\right) & \longmapsto a\cdot b
     \end{align*}
-    若$\forall a,b,c\in A,\forall k \in \mathbb{K}$，满足\begin{enumerate}[label=\arabic*）]
-        \item 结合律：$
+    若$\forall a,b,c\in A,\forall k \in \bbk $,满足\begin{enumerate}[label=\arabic*)]
+        \item 结合律:$
                   \left(a \cdot b\right) \cdot c =
                   a \cdot \left(b \cdot c\right)$
         \item 存在单位元$e \in A $使得
               $e \cdot a = a \cdot e = a$
-        \item 分配律：
+        \item 分配律:
               $a\cdot\left(b+c\right)
                   = a\cdot b +a\cdot c,
                   \left(b + c\right)\cdot a
                   =b \cdot a + c \cdot a$
-        \item 与数乘的相容性：
+        \item 与数乘的相容性:
               $k\left(a\cdot b\right)=
                   \left(ka\right)\cdot b=
                   a\cdot\left(kb\right)
               $
     \end{enumerate}
-    那么称$A$为$\mathbb{K}$上的代数即$\bm{A}$是一个$\mathbb{K}$-代数，单位元$e$称为$A$的恒等元.
+    那么称$A$为$\bbk $上的代数即$\bm{A}$是一个$\bbk $-代数,单位元$e$称为$A$的恒等元.
 }
 \exa{}{}{
     区间$\left[0,1\right]$上的连续函数全体构成的线性空间
@@ -81,28 +81,28 @@
     \]
 }
 \exa{}{}{
-    若$\mathbb{K}_1 \subseteq\mathbb{K}_2$，定义$\mathbb{K}_2$中的乘法是数的乘法，则$\mathbb{K}_2$是$\mathbb{K}_1$-代数.
+    若$\bbk _1 \subseteq\bbk _2$,定义$\bbk _2$中的乘法是数的乘法,则$\bbk _2$是$\bbk _1$-代数.
 }
 \exa{}{}{
     设线性空间$M_n\left(
-        \mathbb{K}
-        \right)$,定义乘法为矩阵的乘法，
-    则$M_n\left(\mathbb{K}\right)$
-    是$\mathbb{K}$-代数.
+        \bbk
+        \right)$,定义乘法为矩阵的乘法,
+    则$M_n\left(\bbk \right)$
+    是$\bbk $-代数.
 }
 \exa{}{}{
-    \cref{def:线性映射全体}提到$\call   \left(V_{\mathbb{K}}
-        \right)$是定义有乘法的，那么它是$\mathbb{K}$-代数.
+    \cref{def:线性映射全体}提到$\call   \left(V_{\bbk }
+        \right)$是定义有乘法的,那么它是$\bbk $-代数.
 }
 \subsection{幂}
 \dfn{线性映射的幂}{线性映射的幂}{
     设$\bm{\varphi}\in \call   \left(
         V
-        \right),\forall n \in \mathbb{Z}^+$，定义幂
+        \right),\forall n \in \mathbb{Z}^+$,定义幂
     \[
         \bm{\varphi}^n = \bm{\varphi} \circ\bm{\varphi}\circ\cdots \circ \bm{\varphi}
     \]
-    且\begin{enumerate}[label=\arabic*）]
+    且\begin{enumerate}[label=\arabic*)]
         \item $\bm{\varphi}^n \circ
                   \bm{\varphi}^m = \bm{\varphi} ^{
                       n + m
@@ -119,9 +119,9 @@
 }
 \cor{}{线性映射的幂的不可交换性}{
     对于$\bm{\varphi},\bm{\psi}\in
-        \call   \left(V\right)$，一般
+        \call   \left(V\right)$,一般
     $\bm{\varphi}\circ \bm{\psi}
-        \neq \bm{\psi} \circ \bm{\varphi}$，故
+        \neq \bm{\psi} \circ \bm{\varphi}$,故
     \[
         \left(
         \bm{\varphi}\circ \bm{\psi}
@@ -136,11 +136,11 @@
 \cor{}{自同构的保持}{
     若$\bm{\varphi},\bm{\psi}
         \in \call   \left(
-        V_{\mathbb{K}}
-        \right)$为自同构，则$\bm{\varphi}\circ\bm{\psi}$
-    是自同构，且$\left(\bm{\varphi \circ\psi}\right)
+        V_{\bbk }
+        \right)$为自同构,则$\bm{\varphi}\circ\bm{\psi}$
+    是自同构,且$\left(\bm{\varphi \circ\psi}\right)
         ^{-1}= \bm{\psi}^{-1}\circ\bm{\varphi}^{-1}$.
-    特别地，$\forall k\neq 0 \in \mathbb{K}$，则$k\cdot \bm{\varphi}$为自同构且
+    特别地,$\forall k\neq 0 \in \bbk $,则$k\cdot \bm{\varphi}$为自同构且
     $\left(k\bm{\varphi}\right)^{-1}=
         k^{-1}\bm{\varphi}^{-1}.$
 }

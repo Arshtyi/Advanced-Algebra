@@ -2,7 +2,7 @@
 \section{Lagrange插值公式}
 \subsection{Lagrange插值公式}
 \thm{}{零多项式刻画}{
-如果$\deg f\left(x\right) \leqslant  n$，且存在
+如果$\deg f\left(x\right) \leqslant  n$,且存在
 $n + 1$个数$b_1,\cdots,b_{n+1}$\st\[
     f\left(b_i\right)  = 0 \quad \left(i = 1,\cdots
     ,n+ 1\right)
@@ -12,14 +12,14 @@ $n + 1$个数$b_1,\cdots,b_{n+1}$\st\[
 }
 \thm{}{多项式相等刻画}{
 如果$\deg f\left(x\right) \leqslant  n,
-    \deg g\left(x\right) \leqslant  n$，且存在$n + 1$个数$b_1,\cdots,b_{n+1}$，使得\[f\left(b_i\right)  = g\left(b_i\right) \quad \left(i = 1,\cdots,n+ 1\right)
+    \deg g\left(x\right) \leqslant  n$,且存在$n + 1$个数$b_1,\cdots,b_{n+1}$,使得\[f\left(b_i\right)  = g\left(b_i\right) \quad \left(i = 1,\cdots,n+ 1\right)
 \]那么有
 \[
     f\left(x\right)\equiv g\left(x\right).
 \]
 }
 \thm{Lagrange插值公式}{Lagrange插值公式}{
-如果多项式$f\left(x\right)$的次数$\deg f\left(x\right) = n$，且存在$n + 1$个数$b_1,b_2,\cdots,b_{n + 1}$，并且已知$f\left(b_i\right)(i = 1,2,\cdots ,$$n + 1)$，那么函数$f\left(x\right)$由下式唯一确定\[
+如果多项式$f\left(x\right)$的次数$\deg f\left(x\right) = n$,且存在$n + 1$个数$b_1,b_2,\cdots,b_{n + 1}$,并且已知$f\left(b_i\right)(i = 1,2,\cdots ,$$n + 1)$,那么函数$f\left(x\right)$由下式唯一确定\[
     f\left(x\right)= \sum_{i = 1}^{n + 1}f\left(b_i\right)\frac{\displaystyle\prod_{j\neq i}\left(x-b_j\right)}{\displaystyle\prod_{j\neq i}\left(b_i-b_j\right)}
 \]
 \begin{proof}
@@ -45,6 +45,6 @@ $n + 1$个数$b_1,\cdots,b_{n+1}$\st\[
                         & =
         \sum_{i = 1}^{n + 1}f\left(b_i\right)\frac{\displaystyle\prod_{j\neq i}\left(x-b_j\right)}{\displaystyle\prod_{j\neq i}\left(b_i-b_j\right)}
     \end{align*}
-    根据\cref{thm:多项式相等刻画}，$f\left(x\right) \equiv g\left(x\right)$.
+    根据\cref{thm:多项式相等刻画},$f\left(x\right) \equiv g\left(x\right)$.
 \end{proof}
 }

@@ -2,41 +2,41 @@
 \section{极小多项式与Cayley-Hamilton定理}
 \subsection{极小多项式}
 设$\bm{A}\in M_n\left(
-    \mathbb{K}
-    \right)$，因为
+    \bbk
+    \right)$,因为
 \[
-    \dim_{\mathbb{K}}M_n\left(
-    \mathbb{K}
+    \dim_{\bbk }M_n\left(
+    \bbk
     \right)=n^2
 \]故$\bm{A}^{n^2},\bm{A}^{n^2-1},\cdots,\bm{A},\bm{I}_n$这$n^2+1$个矩阵必定线性相关.
 
-即存在不全为$0$的数$c_{n^2},c_{n^2-1},\cdots,c_1,c_0\in\mathbb{K}\st$
+即存在不全为$0$的数$c_{n^2},c_{n^2-1},\cdots,c_1,c_0\in\bbk \st$
 \[
     c_{n^2}\bm{A}^{n^2}+c_{n^2-1}\bm{A}^{n^2-1}+\cdots+c_1\bm{A}+c_0\bm{I}_n=\bm{O}
 \]即$\bm{A}$适合多项式$g\left(x\right)=
-    c_{n^2}x^{n^2}+c_{n^2-1}x^{n^2-1}+\cdots+c_1x+c_0\neq 0\in\mathbb{K}\left[x\right].$
+    c_{n^2}x^{n^2}+c_{n^2-1}x^{n^2-1}+\cdots+c_1x+c_0\neq 0\in\bbk \left[x\right].$
 
 定义$S=\left\{
-    f\left(x\right)\in\mathbb{K}\left[x\right]\mid
+    f\left(x\right)\in\bbk \left[x\right]\mid
     f\left(x\right)\neq 0 \textup{且} f\left(\bm{A}\right)=\bm{O}
-    \right\}\neq \varnothing $，则$\displaystyle
-    k=\min_{f\left(x\right)\in S}\deg f\left(x\right)$必定存在，即$\exists h\left(x\right)\in S\st\deg h\left(x\right)=k.$首一化得到$m\left(x\right)$，即有首一多项式$0\neq m\left(x\right)\in \mathbb{K}\left[x\right]\st  m\left(\bm{A}\right)=\bm{O}$且有次数最小性.
+    \right\}\neq \varnothing $,则$\displaystyle
+    k=\min_{f\left(x\right)\in S}\deg f\left(x\right)$必定存在,即$\exists h\left(x\right)\in S\st\deg h\left(x\right)=k.$首一化得到$m\left(x\right)$,即有首一多项式$0\neq m\left(x\right)\in \bbk \left[x\right]\st  m\left(\bm{A}\right)=\bm{O}$且有次数最小性.
 \dfn{极小多项式}{极小多项式}{
     设$\bm{A}\in M_n\left(
-        \mathbb{K}
-        \right),m\left(x\right)\in \mathbb{K}\left[x\right]$为首一多项式且$m\left(\bm{A}\right)=\bm{O}$.若$m\left(x\right)$是$\bm{A}$适合的所有非零多项式中次数最小者，则称为$\bm{A}$的一个极小多项式（最小多项式）.
+        \bbk
+        \right),m\left(x\right)\in \bbk \left[x\right]$为首一多项式且$m\left(\bm{A}\right)=\bm{O}$.若$m\left(x\right)$是$\bm{A}$适合的所有非零多项式中次数最小者,则称为$\bm{A}$的一个极小多项式(最小多项式).
 }
 \clm{极小多项式存在性}{}{
     极小多项式一定存在.
 }
 \lem{}{极小多项式是矩阵适合的多项式的因子}{
-    设$\bm{A}$适合$f\left(x\right)\neq 0$，$m\left(x\right)$是$\bm{A}$的极小多项式则$m\left(x\right)\mid f\left(x\right).$\begin{proof}
-        考虑带余除法$f\left(x\right)=m\left(x\right)q\left(x\right)+r\left(x\right),\deg r\left(x\right)<\deg m\left(x\right)$，考虑反证法，即设$r\left(x\right)\neq 0$，上式代入$\bm{A}$，于是$r\left(\bm{A}\right)=\bm{O}$，这与$m\left(x\right)$的次数最小性矛盾.
+    设$\bm{A}$适合$f\left(x\right)\neq 0$,$m\left(x\right)$是$\bm{A}$的极小多项式则$m\left(x\right)\mid f\left(x\right).$\begin{proof}
+        考虑带余除法$f\left(x\right)=m\left(x\right)q\left(x\right)+r\left(x\right),\deg r\left(x\right)<\deg m\left(x\right)$,考虑反证法,即设$r\left(x\right)\neq 0$,上式代入$\bm{A}$,于是$r\left(\bm{A}\right)=\bm{O}$,这与$m\left(x\right)$的次数最小性矛盾.
     \end{proof}
 }
 \lem{极小多项式唯一}{极小多项式唯一}{
-    设$\bm{A}\in M_n\left(\mathbb{K}\right)$，其极小多项式存在且唯一.\begin{proof}
-        设$m\left(x\right),g\left(x\right)$均为$\bm{A}$的极小多项式，只需证$m\left(x\right)=g\left(x\right)$.事实上，$m\left(x\right)\mid g\left(x\right),g\left(x\right)\mid m\left(x\right)$即$\exists 0\neq c\in\mathbb{K}\st g\left(x\right)=cm\left(x\right)$但极小多项式均首一于是$c=1$.
+    设$\bm{A}\in M_n\left(\bbk \right)$,其极小多项式存在且唯一.\begin{proof}
+        设$m\left(x\right),g\left(x\right)$均为$\bm{A}$的极小多项式,只需证$m\left(x\right)=g\left(x\right)$.事实上,$m\left(x\right)\mid g\left(x\right),g\left(x\right)\mid m\left(x\right)$即$\exists 0\neq c\in\bbk \st g\left(x\right)=cm\left(x\right)$但极小多项式均首一于是$c=1$.
     \end{proof}
 }
 \exa{}{}{
@@ -45,14 +45,14 @@
 \exa{}{}{
     考虑矩阵$\bm{A}=\begin{bmatrix}
             0 & 1 \\0 & 0
-        \end{bmatrix}$其满足$\bm{A}^2=\bm{O}$即$\bm{A}$适合多项式$f\left(x\right)=x^2$，故其极小多项式为必定整除$f\left(x\right)=x^2$即$m\left(x\right)=x$或$m\left(x\right)=x^2$于是$m\left(x\right)=x^2.$
+        \end{bmatrix}$其满足$\bm{A}^2=\bm{O}$即$\bm{A}$适合多项式$f\left(x\right)=x^2$,故其极小多项式为必定整除$f\left(x\right)=x^2$即$m\left(x\right)=x$或$m\left(x\right)=x^2$于是$m\left(x\right)=x^2.$
 }
 \lem{极小多项式在相似关系下不改变}{极小多项式在相似关系下不改变}{
     相似矩阵具有相同的极小多项式.\begin{proof}
-        设$\bm{B}=\bm{P}^{-1}\bm{AP}$，$\bm{A}$的极小多项式为$m\left(x\right)$，$\bm{B}$的极小多项式为$g\left(x\right)$，则考虑到相似关系与多项式的相容有
+        设$\bm{B}=\bm{P}^{-1}\bm{AP}$,$\bm{A}$的极小多项式为$m\left(x\right)$,$\bm{B}$的极小多项式为$g\left(x\right)$,则考虑到相似关系与多项式的相容有
         \[
             g\left(\bm{A}\right)=g\left(\bm{P}\bm{BP}^{-1}\right)=\bm{P}g\left(\bm{B}\right)\bm{P}^{-1}=\bm{O}
-        \]于是$m\left(x\right)\mid g\left(x\right)$，同理得证.
+        \]于是$m\left(x\right)\mid g\left(x\right)$,同理得证.
     \end{proof}
 }
 \lem{分块对角矩阵的极小多项式}{分块对角矩阵的极小多项式}{
@@ -67,13 +67,13 @@
     \]
     其中$\bm{A}_i\left(
         1\leqslant i\leqslant k
-        \right)$为方阵，则$\bm{A}$的极小多项式为诸$\bm{A}_i$的极小多项式的最小公倍式即
+        \right)$为方阵,则$\bm{A}$的极小多项式为诸$\bm{A}_i$的极小多项式的最小公倍式即
     \[\left[
             m_1\left(x\right),m_2\left(x\right),\cdots,m_k\left(x\right)
             \right]\]其中$m_i\left(x\right)$为$\bm{A}_i$的极小多项式.\begin{proof}
         令$g\left(x\right)=\left[
                 m_1\left(x\right),m_2\left(x\right),\cdots,m_k\left(x\right)
-                \right]$只需证$m\left(x\right)=g\left(x\right)$.显然$m_i\left(x\right)\mid g\left(x\right)$，于是$g\left(\bm{A}_i\right)=\bm{O}$.因为\[
+                \right]$只需证$m\left(x\right)=g\left(x\right)$.显然$m_i\left(x\right)\mid g\left(x\right)$,于是$g\left(\bm{A}_i\right)=\bm{O}$.因为\[
             g\left(\bm{A}\right)=\begin{bmatrix}
                 g\left(\bm{A}_1\right) &                        &        &                        \\
                                        & g\left(\bm{A}_2\right) &        &                        \\
@@ -96,7 +96,7 @@
 }
 \exa{}{极小多项式无重根等价于可对角化}{
     设$\bm{A}$的全体不同特征值$\lambda_1,
-        \lambda_2,\cdots,\lambda_k$,证明：若$\bm{A}$可对角化，则其极小多项式为
+        \lambda_2,\cdots,\lambda_k$,证明:若$\bm{A}$可对角化,则其极小多项式为
     $m\left(x\right)=\left(
         x-\lambda_1
         \right)\left(
@@ -112,7 +112,7 @@
                                 &                 & \ddots &                 \\
                                 &                 &        & \lambda_k\bm{I}
             \end{pmatrix}=\bm{B}
-        \]于是$\bm{A}$的极小多项式也为$\bm{B}$的极小多项式，而由上命题知后者等于\[\left[
+        \]于是$\bm{A}$的极小多项式也为$\bm{B}$的极小多项式,而由上命题知后者等于\[\left[
                 x-\lambda_1,x-\lambda_2,\cdots,x-\lambda_k
                 \right]=\left(
             x-\lambda_1
@@ -126,20 +126,20 @@
     \end{proof}
 }
 \clm{}{}{
-    于是可对角化的矩阵的特征值一定是极小多项式的根.事实上，对于任一矩阵也是如此.
+    于是可对角化的矩阵的特征值一定是极小多项式的根.事实上,对于任一矩阵也是如此.
 
-    后续会证明：若矩阵的极小多项式无重根，则矩阵一定可对角化. 即一个矩阵可对角化当且仅当其极小多项式无重根.
+    后续会证明:若矩阵的极小多项式无重根,则矩阵一定可对角化. 即一个矩阵可对角化当且仅当其极小多项式无重根.
 }
 \lem{}{特征值是极小多项式的根}{
     设$\bm{A}\in M_n\left(
-        \mathbb{K}
-        \right)$的极小多项式为$m\left(x\right)$,$\lambda_0$是$\bm{A}$的一个特征值，则
+        \bbk
+        \right)$的极小多项式为$m\left(x\right)$,$\lambda_0$是$\bm{A}$的一个特征值,则
     \[
         \left(
         x-\lambda_0
         \right)\mid m\left(x\right)
     \]\begin{proof}
-        因为$m\left(\bm{A}\right)=\bm{O}$，因为一个矩阵适合一个多项式则其特征值均适合该多项式即$m\left(\lambda_0\right)=0$.由\cref{thm:余数定理}余数定理立得.
+        因为$m\left(\bm{A}\right)=\bm{O}$,因为一个矩阵适合一个多项式则其特征值均适合该多项式即$m\left(\lambda_0\right)=0$.由\cref{thm:余数定理}余数定理立得.
     \end{proof}
 }
 \subsection{Cayley-Hamilton定理}
@@ -163,7 +163,7 @@
     $即上三角阵$\bm{A}$适合自己的特征多项式$f\left(\lambda\right)=\left(\lambda-\lambda_1\right)
         \left(\lambda-\lambda_2\right)\cdots\left(\lambda-\lambda_n\right).
     $\begin{proof}
-        取标准单位列向量，于是
+        取标准单位列向量,于是
         \[
             \bm{Ae}_1=\lambda_1\bm{e}_1,\bm{Ae}_2=a_{12}\bm{e}_1+\lambda_2\bm{e}_2,\cdots,\bm{Ae}_n=a_{1n}\bm{e}_1+a_{2n}\bm{e}_2+\cdots+\lambda_n\bm{e}_n
         \]要证明
@@ -186,7 +186,7 @@
             \cdots\left(
             \bm{A}-\lambda_n\bm{I}_n
             \right)\bm{e}_i=\bm{0},\forall 1\leqslant i\leqslant n
-        \]甚至，只要证明
+        \]甚至,只要证明
         \[
             \left(
             \bm{A}-\lambda_1\bm{I}_n
@@ -195,10 +195,10 @@
             \right)\cdots\left(
             \bm{A}-\lambda_i\bm{I}_i
             \right)\bm{e}_i=\bm{0},\forall 1\leqslant i\leqslant n
-        \]即可（这是因为我们有$f\left(\bm{A}\right)g\left(\bm{A}\right)=g\left(\bm{A}\right)f\left(\bm{A}\right)$）.
+        \]即可(这是因为我们有$f\left(\bm{A}\right)g\left(\bm{A}\right)=g\left(\bm{A}\right)f\left(\bm{A}\right)$).
 
-        于是考虑归纳法证明，对$i$进行归纳，一方面$i=1$时，显然$\left(\bm{A}-\lambda_1\bm{I}_n
-            \right)\bm{e}_1=\bm{0}$.设$i$时结论成立，则证$\left(\bm{A}-\lambda_1\bm{I}_n
+        于是考虑归纳法证明,对$i$进行归纳,一方面$i=1$时,显然$\left(\bm{A}-\lambda_1\bm{I}_n
+            \right)\bm{e}_1=\bm{0}$.设$i$时结论成立,则证$\left(\bm{A}-\lambda_1\bm{I}_n
             \right)
             \left(
             \bm{A}-\lambda_2\bm{I}_n
@@ -218,16 +218,16 @@
             a_{1i}\bm{e}_1+a_{2i}\bm{e}_2+\cdots+a_{i-1,i}\bm{e}_{i-1}
             \right)
         \end{align*}
-        展开后由归纳假设知上式等于$\bm{0}$，故得证.
+        展开后由归纳假设知上式等于$\bm{0}$,故得证.
     \end{proof}
 }
 \thm{Cayley-Hamilton定理}{Cayley-Hamilton定理}{
     设$\bm{A}\in M_n\left(
-        \mathbb{K}
-        \right)$，$f\left(\lambda\right)=\left|
+        \bbk
+        \right)$,$f\left(\lambda\right)=\left|
         \lambda\bm{I}_n-\bm{A}
-        \right|$为其特征多项式，则$f\left(\bm{A}\right)=\bm{O}$.\begin{proof}
-        矩阵运算是否为零矩阵与域无关，于是扩张到$\bbc .$因为任一方阵均复相似于一个上三角阵，于是存在非异阵$\bm{P}\st$
+        \right|$为其特征多项式,则$f\left(\bm{A}\right)=\bm{O}$.\begin{proof}
+        矩阵运算是否为零矩阵与域无关,于是扩张到$\bbc .$因为任一方阵均复相似于一个上三角阵,于是存在非异阵$\bm{P}\st$
         \[
             \bm{B}=\bm{P}^{-1}\bm{AP}=\begin{pmatrix}
                 \lambda_1 & a_{12}    & \cdots & a_{1n}    \\
@@ -243,22 +243,22 @@
             \right)\cdots\left(
             \lambda-\lambda_n
             \right)
-        \]由上知$f\left(\bm{B}\right)=\bm{O}$，考虑相似关系与多项式相容.
+        \]由上知$f\left(\bm{B}\right)=\bm{O}$,考虑相似关系与多项式相容.
     \end{proof}
 }
 \cor{}{特征多项式与极小多项式}{
-    设$\bm{A}\in M_n\left(\mathbb{K}\right)$的特征多项式是$f\left(\lambda\right)$，极小多项式是$m\left(\lambda\right)$，则
-    \begin{enumerate}[label = \arabic*）]
-        \item $m\left(\lambda\right)\mid f\left(x\right)$，特别地，$\deg m\left(\lambda\right)\leqslant n$
-        \item $f\left(\lambda\right),m\left(\lambda\right)$有相同的根（不计重数）
+    设$\bm{A}\in M_n\left(\bbk \right)$的特征多项式是$f\left(\lambda\right)$,极小多项式是$m\left(\lambda\right)$,则
+    \begin{enumerate}[label = \arabic*)]
+        \item $m\left(\lambda\right)\mid f\left(x\right)$,特别地,$\deg m\left(\lambda\right)\leqslant n$
+        \item $f\left(\lambda\right),m\left(\lambda\right)$有相同的根(不计重数)
         \item $f\left(\lambda\right)\mid m\left(\lambda\right)^n$
     \end{enumerate}\begin{proof}
-        \begin{enumerate}[label = \arabic*）]
-            \item 由\cref{thm:Cayley-Hamilton定理}Cayley-Hamilton定理知矩阵适合自己的特征多项式，由极小多项式的定义得证.
-            \item 因为特征值均为极小多项式的根，结合上一推论得证.
+        \begin{enumerate}[label = \arabic*)]
+            \item 由\cref{thm:Cayley-Hamilton定理}Cayley-Hamilton定理知矩阵适合自己的特征多项式,由极小多项式的定义得证.
+            \item 因为特征值均为极小多项式的根,结合上一推论得证.
             \item 设特征多项式\[f\left(\lambda\right)=\left(\lambda-\lambda_1\right)^{m_1}
                       \left(\lambda-\lambda_2\right)^{m_2}\cdots\left(\lambda-\lambda_k\right)^{m_k}
-                  \]其中$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{A}$的全体不同特征值，$m_1,m_2,\cdots,m_k$是对应的代数重数.于是极小多项式$m\left(\lambda\right)=\left(
+                  \]其中$\lambda_1,\lambda_2,\cdots,\lambda_k$是$\bm{A}$的全体不同特征值,$m_1,m_2,\cdots,m_k$是对应的代数重数.于是极小多项式$m\left(\lambda\right)=\left(
                       \lambda-\lambda_1
                       \right)^{r_1}
                       \left(
@@ -274,7 +274,7 @@
 \exa{}{}{
     设矩阵$\bm{A}$有$n$个不同的特征值$\lambda_1,\lambda_2,\cdots,\lambda_n$.
 
-    一方面，$f\left(\lambda\right)
+    一方面,$f\left(\lambda\right)
         =\left(
         \lambda-\lambda_1
         \right)\left(
@@ -283,23 +283,23 @@
         \lambda-\lambda_n
         \right)$.
 
-    另一方面，$m\left(\lambda\right)=\left(
+    另一方面,$m\left(\lambda\right)=\left(
         \lambda-\lambda_1
         \right)\left(
         \lambda-\lambda_2
         \right)\cdots\left(
         \lambda-\lambda_n
-        \right)$，故$f\left(\lambda\right)=m\left(\lambda\right)$.
+        \right)$,故$f\left(\lambda\right)=m\left(\lambda\right)$.
 }
 \exa{}{}{
-    设$\bm{A}=c\bm{I}_n$，显然$f\left(\lambda\right)=m\left(\lambda\right)^n.$
+    设$\bm{A}=c\bm{I}_n$,显然$f\left(\lambda\right)=m\left(\lambda\right)^n.$
 }
 \cor{几何意义的Cayley-Hamilton定理}{几何意义的Cayley-Hamilton定理}{
-    设$\bm{\varphi}\in \call  \left(V_{\mathbb{K}}^n\right)$，其特征多项式$f\left(\lambda\right)=\left|
+    设$\bm{\varphi}\in \call  \left(V_{\bbk }^n\right)$,其特征多项式$f\left(\lambda\right)=\left|
         \lambda\bm{I}_V-\bm{\varphi}
-        \right|$，则$f\left(\bm{\varphi}\right)=\bm{0}.$
+        \right|$,则$f\left(\bm{\varphi}\right)=\bm{0}.$
 }
-我们曾提到过，不可对角化的矩阵远远没有可对角化的矩阵来得多，并且可以用可对角化的矩阵取去逼近不可对角化的矩阵.
+我们曾提到过,不可对角化的矩阵远远没有可对角化的矩阵来得多,并且可以用可对角化的矩阵取去逼近不可对角化的矩阵.
 \exa{}{}{
     设$\bm{A}=\begin{pmatrix}
             a_{11} & a_{12} \\
@@ -337,17 +337,17 @@
         \right)'
     \end{align*}显然线性同构.
 
-    也就是说，若上述矩阵$\bm{A}$不可对角化，其对应的$\bbc ^4$中的点$\left(
+    也就是说,若上述矩阵$\bm{A}$不可对角化,其对应的$\bbc ^4$中的点$\left(
         a_{11},a_{12},a_{21},a_{22}
         \right)$必定是$f$的零点即$f\left(
         a_{11},a_{12},a_{21},a_{22}
         \right)=0.$
 
-    从拓扑的角度看，不可对角化的点落在某一个超平面内，我们可以从该平面之外的某一个点（其一定邻域内的点均是可对角化的）逼近该点.
+    从拓扑的角度看,不可对角化的点落在某一个超平面内,我们可以从该平面之外的某一个点(其一定邻域内的点均是可对角化的)逼近该点.
 }
 基于上述分析,可以给出\cref{thm:Cayley-Hamilton定理}Cayley-Hamilton定理的另一种证明.
 \begin{proof}
-    先证可对角化的矩阵，设
+    先证可对角化的矩阵,设
     \[
         \bm{\varLambda}=
         \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
@@ -387,7 +387,7 @@
         = & \bm{O}
     \end{align*}于是$f\left(\bm{A}\right)=\bm{O}.$
 
-    考虑任意性，设$\bm{A}\in M_n\left(\mathbb{K}\right)$，设非异阵$\bm{P}$使得
+    考虑任意性,设$\bm{A}\in M_n\left(\bbk \right)$,设非异阵$\bm{P}$使得
     \[
         \bm{P}^{-1}\bm{AP}=\begin{pmatrix}
             \lambda_1 & *         & \cdots & *         \\
@@ -395,7 +395,7 @@
                       &           & \ddots & \vdots    \\
                       &           &        & \lambda_n
         \end{pmatrix}
-    \]$\exists c_1,c_2,\cdots,c_n\in\mathbb{K}\st\forall 0<t\ll 1,\lambda_1+c_1t,
+    \]$\exists c_1,c_2,\cdots,c_n\in\bbk \st\forall 0<t\ll 1,\lambda_1+c_1t,
         \lambda_2+c_2t,\cdots,\lambda_n+c_nt$
     互不相同.然后构造
     \[
@@ -406,7 +406,7 @@
                            &                & \ddots & \vdots         \\
                            &                &        & \lambda_n+c_nt
         \end{pmatrix}\bm{P}^{-1}
-    \]当$0<t\ll 1$时其特征值互不相同则必定可对角化，特别地，$t=0$时$\bm{A}_0=\bm{A}.$考虑其特征多项式
+    \]当$0<t\ll 1$时其特征值互不相同则必定可对角化,特别地,$t=0$时$\bm{A}_0=\bm{A}.$考虑其特征多项式
     \[
         \left(
         \bm{A}_t-\left(\lambda_1+c_1t\right)\bm{I}_n
@@ -414,7 +414,7 @@
         \bm{A}_t-\left(\lambda_n+c_nt\right)\bm{I}_n
         \right)=\bm{O},\forall 0<t\ll 1
     \]
-    考虑到连续性，令$t\to 0$则
+    考虑到连续性,令$t\to 0$则
     \[
         \left(
         \bm{A}-\lambda_1\bm{I}_n

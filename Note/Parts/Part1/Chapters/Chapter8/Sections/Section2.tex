@@ -5,7 +5,7 @@
     \left(
     \sum_{i=1}^{n}x_i
     \right)^2=\sum_{i=1}^{n}x_i^2+2\sum_{1\leqslant i<j\leqslant n}x_ix_j
-\]\begin{enumerate}[label=\arabic*）]
+\]\begin{enumerate}[label=\arabic*)]
     \item 先将含$x_1$的所有项凑成完全平方消去$x_1$
     \item 剩余项中将含$x_2$的所有项凑成完全平方消去$x_2$
     \item 重复上述过程直到所有的项都凑成完全平方
@@ -45,7 +45,7 @@
 \rem{}{}{
     配方法得到的过渡矩阵一定是一个非异的上三角矩阵.
 
-    有时，那些一眼显然得到的配方结果得到的可能并不是非异上三角阵，这表明结果是错误的.
+    有时,那些一眼显然得到的配方结果得到的可能并不是非异上三角阵,这表明结果是错误的.
 }
 \exa{}{}{
     \begin{align*}
@@ -65,14 +65,14 @@
             1 & 0  & 1 \\
             0 & 1  & 1
         \end{pmatrix}
-    \]是奇异阵，这种变换是错误的.
+    \]是奇异阵,这种变换是错误的.
 }
 \exa{}{}{
     \begin{align*}
         f\left(
         x_1,x_2,x_3,x_4
         \right)=2x_1x_2-x_1x_3+x_1x_4-x_2x_3+x_2x_4-2x_3x_4
-    \end{align*}不含平方项，考虑\[
+    \end{align*}不含平方项,考虑\[
         \begin{cases*}
             x_1=y_1+y_2 \\
             x_2=y_1-y_2 \\
@@ -122,14 +122,14 @@
 }
 \subsection{初等变换法}
 此法的理论基础即\cref{cor:合同变换与对称初等变换}.
-\begin{enumerate}[label=\arabic*）]
+\begin{enumerate}[label=\arabic*)]
     \item 对矩阵\[\left(\begin{array}{c:c}
                       \bm{A} & \bm{I}
                   \end{array}\right)\]
-          实施初等行变换，再对左边矩阵实施对称的初等列变换，直到左边矩阵化为对角阵$\bm{\varLambda}$，此时右边矩阵即为所求的过渡矩阵$\bm{C}$的转置.
+          实施初等行变换,再对左边矩阵实施对称的初等列变换,直到左边矩阵化为对角阵$\bm{\varLambda}$,此时右边矩阵即为所求的过渡矩阵$\bm{C}$的转置.
 \end{enumerate}
 \rem{}{}{
-    特别地，若$\bm{A}$的$\left(1,1\right)$元为零，上述过程中首先利用同样方法将$\bm{A}$的$\left(1,1\right)$化为非零.
+    特别地,若$\bm{A}$的$\left(1,1\right)$元为零,上述过程中首先利用同样方法将$\bm{A}$的$\left(1,1\right)$化为非零.
 }
 \exa{}{}{
     考虑二次型\[

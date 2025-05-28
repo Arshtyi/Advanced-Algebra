@@ -3,7 +3,7 @@
 \subsection{二元连续函数}
 我们需要二元连续函数的一些相关知识作为铺垫.
 \dfn{连续}{连续}{
-    设$f\left(x,y\right)$是$\bbr ^2$上的函数， 则$f\left(x,y\right)$在$\left(x_0,y_0\right)$连续定义为$\forall \epsilon >0,\exists \delta >0,\forall \left(x,y\right)\in O_{\left(x_0,y_0\right),\delta}$
+    设$f\left(x,y\right)$是$\bbr ^2$上的函数, 则$f\left(x,y\right)$在$\left(x_0,y_0\right)$连续定义为$\forall \epsilon >0,\exists \delta >0,\forall \left(x,y\right)\in O_{\left(x_0,y_0\right),\delta}$
     \[
         \left|f\left(x,y\right)-f\left(x_0,y_0\right)\right|<\epsilon
     \]
@@ -17,16 +17,16 @@
         x_0\right)^2+\left(y-y_0\right)^2\leqslant r^2
         \right\}$上取到最大值和最小值.
 }
-在承认该命题的前提下,我们来证明代数学基本定理（其有多种等价表述，证明思路同样多样）.
+在承认该命题的前提下,我们来证明代数学基本定理(其有多种等价表述,证明思路同样多样).
 \subsection{代数学基本定理}
 \thm{代数学基本定理}{代数学基本定理}{
-    任何次数大于等于$1$的复系数多项式至少有一个复根.或者说，复数域上的不可约多项式只能是一次的.\begin{proof}
+    任何次数大于等于$1$的复系数多项式至少有一个复根.或者说,复数域上的不可约多项式只能是一次的.\begin{proof}
         设\[f\left(z\right)=a_nz^n+a_{n-1}z^{n-1}+\cdots+a_1z+a_0\in\bbc \left[z\right],a_n\neq 0,n\geqslant 1\]
 
-        第一步，证明：$\exists z_0\in\bbc $\,\textup{s.t.}$\forall z\in\bbc ,
+        第一步,证明:$\exists z_0\in\bbc $\st$\forall z\in\bbc ,
             \left|f\left(z\right)\right|\geqslant \left|f\left(z_0\right)\right|$.
-        设$z=x+y\mathrm{i},x,y\in\bbr $，则$f\left(z\right)=f\left(x+y\mathrm{i}\right)=
-            P\left(x,y\right)+Q\left(x,y\right)\mathrm{i}$，其中$P\left(x,y\right),Q\left(x,y\right)$是二元多项式.那么\[
+        设$z=x+y\rmi ,x,y\in\bbr $,则$f\left(z\right)=f\left(x+y\rmi \right)=
+            P\left(x,y\right)+Q\left(x,y\right)\rmi $,其中$P\left(x,y\right),Q\left(x,y\right)$是二元多项式.那么\[
             \left|f\left(z\right)\right|
             =\sqrt{P\left(x,y\right)^2+
                 Q\left(x,y\right)^2}\]
@@ -52,15 +52,15 @@
                 \right)
             \right)
         \end{align*}
-        $\left|z\right|\to \infty$时，上式\[
+        $\left|z\right|\to \infty$时,上式\[
             \geqslant \frac{1}{2}\left|a_n\right|\left|z\right|^n\to
             \infty\]
 
         任取$z_1\in\bbc ,\exists R\in\bbr ,\st\left|f\left(z\right)\right|\geqslant \left|f\left(z_1\right)\right|\left(
-            \left|z\right|>R\right)$，由二元连续函数的性质知，
+            \left|z\right|>R\right)$,由二元连续函数的性质知,
         $\left|f\left(z\right)\right|$在闭圆盘
         $D=\left\{z\mid \left|z\right|\leqslant R\right\}$
-        取得最小值.不妨设为$z_0$，即
+        取得最小值.不妨设为$z_0$,即
         \[
             \left|f\left(z\right)\right|\geqslant \left|f\left(z_0\right)\right|,\forall z\in
             D
@@ -69,11 +69,11 @@
             \right)$在$z_0$取
         到最小值.
 
-        第二步，证明$f\left(z_0\right)=0.$考虑反证法，设$f\left(z_0\right)\neq 0.$ 作一微小摄动$z=z_0+h$，则
+        第二步,证明$f\left(z_0\right)=0.$考虑反证法,设$f\left(z_0\right)\neq 0.$ 作一微小摄动$z=z_0+h$,则
         \[
             f\left(z_0+h\right)=b_nh^n+b_{n-1}h^{n-1}+\cdots+b_1h+b_0
         \]
-        其中，$b_n=a_n\neq 0,b_0=f\left(z_0\right)\neq 0.$则
+        其中,$b_n=a_n\neq 0,b_0=f\left(z_0\right)\neq 0.$则
         \begin{align*}
             \frac{f\left(z_0+h\right)}{f\left(z_0\right)} & =1+\frac{b_1}{f\left(z_0\right)}h+
             \cdots+\frac{b_{n-1}}{f\left(z_0\right)}h^{n-1}+\frac{b_n}{f\left(z_0\right)}h^n     \\
@@ -102,13 +102,13 @@
     \end{proof}
 }
 \cor{代数学基本定理的等价命题}{代数学基本定理的等价命题}{
-    设$n\geqslant 1$,则下列结论等价\begin{enumerate}[label=\arabic*）]
+    设$n\geqslant 1$,则下列结论等价\begin{enumerate}[label=\arabic*)]
         \item 任一$n$次复系数多项式至少有一个复根
         \item 复数域上的不可约多项式都是一次多项式
         \item 任一复系数多项式都是一次多项式的乘积
-        \item 任一$n$次复系数多项式恰好有$n$个复根（计重数）
+        \item 任一$n$次复系数多项式恰好有$n$个复根(计重数)
     \end{enumerate}\begin{proof}
-        $(1)\Longrightarrow (2)$设$p\left(x\right)$在$\bbc $不可约，设$p\left(b\right)=0$则由前文知$\left(x-b\right)|p\left(x\right)\Longrightarrow p\left(x\right)=\left(x-b\right)q\left(x\right)\Longrightarrow q\left(x\right)=c\neq 0.$
+        $(1)\Longrightarrow (2)$设$p\left(x\right)$在$\bbc $不可约,设$p\left(b\right)=0$则由前文知$\left(x-b\right)|p\left(x\right)\Longrightarrow p\left(x\right)=\left(x-b\right)q\left(x\right)\Longrightarrow q\left(x\right)=c\neq 0.$
 
         $(2)\Longrightarrow (3)$由因式分解定理立得.
 
@@ -117,7 +117,7 @@
 }
 \subsection{Vieta定理}
 \thm{Vieta定理}{Vieta定理}{
-设$f\left(x\right)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n\in\mathbb{K}\left[x
+设$f\left(x\right)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n\in\bbk \left[x
         \right]$且其复根为$x_1,x_2,\cdots,x_n$,则
 \[
     \sum_{i=1}^{n}x_i=-\frac{a_1}{a_0},
@@ -166,15 +166,15 @@
 于是问题转为对形如
 $f\left(x\right)=x^3+px+q=0$的方程的解的讨论.
 
-\begin{enumerate}[label=\arabic*）]
+\begin{enumerate}[label=\arabic*)]
     \item $q=0$时$x_1=0,x_2=\sqrt{-p},x_3=-\sqrt{-p}.p=0$时$x_1=\sqrt[3]{-q},x_2=\sqrt[3]{-q}\omega,x_3=\sqrt[3]{-q}\omega^2.$其中$\omega$为三次单位根
           \[
-              \omega ^3=1,\omega = -\frac{1}{2}+\frac{\sqrt{3}}{2}\mathrm{i}
+              \omega ^3=1,\omega = -\frac{1}{2}+\frac{\sqrt{3}}{2}\rmi
           \]
           因此解的形式也可以是
           $x_i=\sqrt[3]{-q}\omega^i\left(i=1,2,3
               \right)$.
-    \item 考虑$p\neq 0,q\neq 0$.引$x=u+v$，则
+    \item 考虑$p\neq 0,q\neq 0$.引$x=u+v$,则
           \[
               x^3-3uvx-\left(u^3+v^3\right)=0
           \]
@@ -198,7 +198,7 @@ $f\left(x\right)=x^3+px+q=0$的方程的解的讨论.
                   x_3=\omega^2 \sqrt[3]{-\cfrac{q}{2}+\sqrt{\Delta}}+\omega\sqrt[3]{-\cfrac{q}{2}-\sqrt{\Delta}}
               \end{cases*}
           \]
-          此式称为Cardano（卡尔达诺公式）
+          此式称为Cardano(卡尔达诺公式)
 \end{enumerate}
 
 \subsubsection{一元四次方程——Ferrari解法}
@@ -221,18 +221,18 @@ $f\left(x\right)=x^3+px+q=0$的方程的解的讨论.
 \[
     b^2-4\left(u-a\right)\left(\frac{u^2}{4}-c\right)=0
 \]
-称为预解式.解出$u$后（考虑到对称性，此三次方程的根取其一即可）得\[
+称为预解式.解出$u$后(考虑到对称性,此三次方程的根取其一即可)得\[
     \left(x^2+\frac{u}{2}\right)^2=
     \left(
     \sqrt{u-a}x-\frac{b}{2\sqrt{u-a}}
     \right)^2
 \]
-得到两个二次方程，求解即可.
+得到两个二次方程,求解即可.
 
-这一求解方法被称为Ferrari（费拉里
-）解法.
+这一求解方法被称为Ferrari(费拉里
+)解法.
 \subsubsection{更高次方程}
-数学家们早期发现高于四次的方程没有一般形式的根式解，但无法证明.这一结论在19世纪30年代被天才数学家Galois（伽罗瓦）证明.即五次及以上的方程没有求根公式，但并非不可解.
+数学家们早期发现高于四次的方程没有一般形式的根式解,但无法证明.这一结论在19世纪30年代被天才数学家Galois(伽罗瓦)证明.即五次及以上的方程没有求根公式,但并非不可解.
 
-对于具体的一个方程，Galois也给出了一套判定，即一个多项式的根可以以根式形式表示，等价于
+对于具体的一个方程,Galois也给出了一套判定,即一个多项式的根可以以根式形式表示,等价于
 这个多项式的Galois群是可解群.

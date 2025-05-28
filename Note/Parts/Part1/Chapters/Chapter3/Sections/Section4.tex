@@ -2,17 +2,17 @@
 \section{向量的线性关系}
 \subsection{线性表示}
 \dfn{线性表示}{线性表示}{
-    设$\bb{K}$上的线性空间$V$，$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+    设$\bb{K}$上的线性空间$V$,$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_n \in
-        V_{\bbk}$，如果存在$
-        k_1,k_2,\cdots,k_n \in \bbk$，使得
+        V_{\bbk}$,如果存在$
+        k_1,k_2,\cdots,k_n \in \bbk$,使得
     \[
         \bm{\beta} =
         k_1\bm{\alpha}_1+\cdots+
         k_n\bm{\alpha}_n
     \]
     称$\bm{\beta}$是$\bm{\alpha}_1,
-        \bm{\alpha}_2,\cdots,\bm{\alpha}_n$的线性组合，或者说$\bm{\beta}$可以用$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n$线性表示/表出.记作
+        \bm{\alpha}_2,\cdots,\bm{\alpha}_n$的线性组合,或者说$\bm{\beta}$可以用$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n$线性表示/表出.记作
     \[
         \bm{\beta}\hookrightarrow \left\{\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n\right\}
     \]
@@ -24,7 +24,7 @@
         \quad
         \left(1\leqslant i\leqslant n\right)
     \]
-    （其中$1$位于第$i$位）构成的向量组$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$称为$\bbk$上的标准单位行向量组.显然任一$n$维行向量$\bm{\alpha}=
+    (其中$1$位于第$i$位)构成的向量组$\left\{\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_n\right\}$称为$\bbk$上的标准单位行向量组.显然任一$n$维行向量$\bm{\alpha}=
         \left(a_1,a_2,\cdots,a_n\right)$都可用其表示
     \[
         \bm{\alpha}=a_1\bm{e}_1+a_2\bm{e}_2+\cdots+a_n\bm{e}_n
@@ -32,22 +32,22 @@
 }
 \subsection{线性相关与线性无关}
 \dfn{线性相关}{线性相关}{
-    设$\bbk$上的线性空间$V$，    $\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+    设$\bbk$上的线性空间$V$,    $\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_n \in
-        V_{\bbk}$，若存在不全为零的$k_1,k_2,\cdots,k_n \in\bbk$使得\[
+        V_{\bbk}$,若存在不全为零的$k_1,k_2,\cdots,k_n \in\bbk$使得\[
         k_1\bm{\alpha}_1+k_2\bm{\alpha}_2+\cdots
         +k_n\bm{\alpha}_n = \bm{0}
     \]
     称$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_n $是线性相关的；反之若不存在这样的一组
-    $k_1,k_2,\cdots,k_n\in\bbk$（或者说只有可能是$k_1=k_2=\cdots=k_n=0$），则称
+    $k_1,k_2,\cdots,k_n\in\bbk$(或者说只有可能是$k_1=k_2=\cdots=k_n=0$),则称
     $\bm{\alpha}_1,\bm{\alpha}_2,\cdots,\bm{\alpha}_n $是线性无关的.
 }
 \clm{}{}{
     向量的线性关系取决于基域的选取.
 }
 \exa{}{}{
-    $\bbr \subseteq\bbc$，易证$\left\{1,\mathrm{i}\right\}$在$\bbr$线性无关，在$\bbc$线性相关.
+    $\bbr \subseteq\bbc$,易证$\left\{1,\rmi \right\}$在$\bbr$线性无关,在$\bbc$线性相关.
 }
 \lem{}{含有零向量的向量组一定线性相关}{
     包含$\bm{0}$的向量组一定线性相关.
@@ -61,14 +61,14 @@
     \]
 }
 \thm{}{大小向量组线性关系的约束}{
-    $n > m > s$，如果$\left\{\bm{\alpha}_1
+    $n > m > s$,如果$\left\{\bm{\alpha}_1
         ,\bm{\alpha}_2,\cdots,\bm{\alpha}_m\right\}$线
-    性相关，那么$\left\{\bm{\alpha}_1,\bm{\alpha}_2,
+    性相关,那么$\left\{\bm{\alpha}_1,\bm{\alpha}_2,
         \cdots,\bm{\alpha}_m,\cdots,
         \bm{\alpha}_n\right\}$也线性相关；
     如果$\left\{\bm{\alpha}_1,\bm{\alpha}_2
-        ,\cdots,\bm{\alpha}_m\right\}$，线
-    性无关，那么$\left\{\bm{\alpha}_1,\bm{\alpha}_2,
+        ,\cdots,\bm{\alpha}_m\right\}$,线
+    性无关,那么$\left\{\bm{\alpha}_1,\bm{\alpha}_2,
         \cdots,\bm{\alpha}_s\right\}$也
     线性无关.
 }
@@ -86,10 +86,10 @@
 \cor{}{加入线性无关的向量组的向量的线性关系}{
     设$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_n,\bm{\beta}
-        \in  V_{\bbk}$，且$\bm{\alpha}_1,\bm{\alpha}_2,\cdots
-        ,\bm{\alpha}_n$是线性无关的，那么一定有要么$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+        \in  V_{\bbk}$,且$\bm{\alpha}_1,\bm{\alpha}_2,\cdots
+        ,\bm{\alpha}_n$是线性无关的,那么一定有要么$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_n,\bm{\beta}
-    $线性无关，要么$\bm{\beta}$ 是$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
+    $线性无关,要么$\bm{\beta}$ 是$\bm{\alpha}_1,\bm{\alpha}_2,\cdots,
         \bm{\alpha}_n$的线性组合.
 }
 \thm{线性表示唯一}{线性表示唯一}{
@@ -112,7 +112,7 @@
         \bm{\beta}_n
         \right\}$、$C =
         \left\{\bm{\gamma}_1,\bm{\gamma}_2,\cdots
-        ,\bm{\gamma}_p\right\}$，若$B$中的向量均为$A$中的向量的线性组合且$C$中的向量均为$B$中的向量的线性组合，那么$C$中的向量均可用$A$中的向量线性表示.即若
+        ,\bm{\gamma}_p\right\}$,若$B$中的向量均为$A$中的向量的线性组合且$C$中的向量均为$B$中的向量的线性组合,那么$C$中的向量均可用$A$中的向量线性表示.即若
     \[
         C\hookrightarrow B \hookrightarrow A
     \]
@@ -139,7 +139,7 @@
     $\overrightarrow{OB} = \left(b_1
         ,b_2\right)
     $线性无关等价于
-    $\bigtriangleup OAB$非退化，这时
+    $\bigtriangleup OAB$非退化,这时
     \[
         S_{\bigtriangleup OAB} =
         \frac{\left|\overrightarrow{OA}
@@ -167,7 +167,7 @@
         ,b_2,b_3\right)
     $、$
         \overrightarrow{OC} =
-        \left(c_1,c_2,c_3\right) $线性无关等价于四面体$ OABC$非退化  （或者说该平行六面体非退化），这时
+        \left(c_1,c_2,c_3\right) $线性无关等价于四面体$ OABC$非退化  (或者说该平行六面体非退化),这时
     \[
         \begin{vmatrix}
             a_1 & a_2 & a_3 \\
@@ -194,5 +194,5 @@
         \end{vmatrix}
         \neq 0
     \]
-    即是矩阵可逆，也就是满秩.反之则是缺秩，对应线性相关.
+    即是矩阵可逆,也就是满秩.反之则是缺秩,对应线性相关.
 }

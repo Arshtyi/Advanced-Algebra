@@ -104,7 +104,7 @@
 }
 \subsection{加和}
 \exa{}{加和}{
-证明：设
+证明:设
 \[
     \left|\bm{A}\right|
     =\begin{vmatrix}
@@ -199,7 +199,7 @@ $\left|\bm{A}\left(0\right)\right|$中的
             -a     & -a     & \cdots & -a     & x_n
         \end{vmatrix}
     \]
-    的行列式极其方便，考虑$t=\pm a$，
+    的行列式极其方便,考虑$t=\pm a$,
     容易得到
     \[
         \left|\bm{A}\right|=\frac{1}{2}
@@ -210,7 +210,7 @@ $\left|\bm{A}\left(0\right)\right|$中的
 \exa{}{}{
 设行列式
 $\left|\bm{A}\right|
-    =\left(a_{ij}\right)_n$，证明：
+    =\left(a_{ij}\right)_n$,证明:
 \[
     \begin{vmatrix}
         a_{11} & a_{12} & \cdots & a_{1n} & x_1    \\
@@ -222,10 +222,10 @@ $\left|\bm{A}\right|
     z\left|\bm{A}\right|
     -\sum_{i=1}^{n}\sum_{j=1}^{n}A_{ij}x_iy_j
 \]\begin{proof}
-    将行列式按最后一列展开，
+    将行列式按最后一列展开,
     容易证明第$i$项$\left(1\leqslant i\leqslant n\right)$
-    为$\displaystyle -\sum_{j=1}^{n}A_{ij}x_iy_j$，且最后一项为
-    $z\left|\bm{A}\right|$，证毕.
+    为$\displaystyle -\sum_{j=1}^{n}A_{ij}x_iy_j$,且最后一项为
+    $z\left|\bm{A}\right|$,证毕.
 \end{proof}
 }
 \subsection{Cauchy行列式}
@@ -248,7 +248,7 @@ $\left|\bm{A}\right|
             \cdots                    & \left(a_n+b_n\right)^{-1}
         \end{vmatrix}
     \]\begin{solution}
-        记$D_n=\left|\bm{A}\right|$，用其余列减去第$n$列，提公因子后其余行减去第$n$行，再提公因子
+        记$D_n=\left|\bm{A}\right|$,用其余列减去第$n$列,提公因子后其余行减去第$n$行,再提公因子
         \begin{align*}
             D_n & =
             \begin{vmatrix}
@@ -379,7 +379,7 @@ $\left|\bm{A}\right|
 \]
 令$b_i=1,c_j=-1\left(
     1\leqslant i,j\leqslant n-1
-    \right)$得到的行列式与连分数相关，记
+    \right)$得到的行列式与连分数相关,记
 \[
     \left(a_1a_2\cdots a_n\right)=
     \begin{vmatrix}
@@ -408,7 +408,7 @@ $\left|\bm{A}\right|
 }
 \subsection{行列式函数的导数}
 \exa{}{}{
-    设$f_{ij}\left(x\right)$是可导函数，记
+    设$f_{ij}\left(x\right)$是可导函数,记
     \[
         F\left(x\right)=
         \begin{vmatrix}
@@ -418,7 +418,7 @@ $\left|\bm{A}\right|
             f_{n1}\left(x\right) & f_{n2}\left(x\right) & \cdots & f_{nn}\left(x\right)
         \end{vmatrix}
     \]
-    证明：
+    证明:
     \[
         \frac{\rmd}{\rmd x}F\left(x\right)
         =
@@ -435,7 +435,7 @@ $\left|\bm{A}\right|
             f_{n1}\left(x\right) & f_{n2}\left(x\right) & \cdots & \dfrac{\rmd}{\rmd x}f_{ni}\left(x\right) & \cdots & f_{nn}\left(x\right)
         \end{vmatrix}
     \]\begin{proof}
-        考虑数学归纳法，对阶数$n$归纳，$n=1$时显然成立.设结论对$n-1$阶行列式成立，将行列式展开
+        考虑数学归纳法,对阶数$n$归纳,$n=1$时显然成立.设结论对$n-1$阶行列式成立,将行列式展开
         \[
             F\left(x\right)
             =
@@ -444,7 +444,7 @@ $\left|\bm{A}\right|
             +f_{21}\left(x\right)A_{21}\left(x\right)+
             \cdots+f_{n1}\left(x\right)A_{n1}\left(x\right)
         \]
-        其中$A_{i1}$是$f_{i1}\left(x\right)$的代数余子式，两端求导并记$A_{ij}^k\left(x\right)$是对$A_{ij}\left(x\right)$第$k$列元素求导后得到的行列式，则
+        其中$A_{i1}$是$f_{i1}\left(x\right)$的代数余子式,两端求导并记$A_{ij}^k\left(x\right)$是对$A_{ij}\left(x\right)$第$k$列元素求导后得到的行列式,则
         \begin{align*}
             \frac{\rmd }{\rmd x}F\left(x\right)
              & =\frac{\rmd }{\rmd x}\left(
@@ -462,7 +462,7 @@ $\left|\bm{A}\right|
             \sum_{i=1}^{n}f_{i1}\left(x\right)A_{i1}^k\left(x
             \right)=F_{k+1}\left(x\right)\left(
             1\leqslant k\leqslant n-1
-            \right)$，故
+            \right)$,故
         \[
             \frac{\rmd }{\rmd x}F\left(x\right)
             =
@@ -470,7 +470,7 @@ $\left|\bm{A}\right|
             \right)+\cdots+F_n\left(x\right)
             \qedhere
         \]
-        利用组合定义也可证明：
+        利用组合定义也可证明:
         \[
             F\left(x\right)=
             \sum_{\left(k_1,k_2,\cdots,k_n\right)\in
