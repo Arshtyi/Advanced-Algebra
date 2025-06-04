@@ -3,6 +3,9 @@ name: Auto Compile and Release
 on:
     push:
         branches: [main]
+        paths:
+            - "Note/**"
+            - "Answer/**"
 
 jobs:
     build:
