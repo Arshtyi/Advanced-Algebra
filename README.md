@@ -11,4 +11,4 @@ Non-commercial reproduction or personal use is permitted (please provide attribu
 # Contact Me
 
 -   QQ: 640006128
--   Email: arshtyi_trantor@outlook.com
+-   Email: arshtyi@foxmail.com

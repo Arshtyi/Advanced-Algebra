@@ -8,10 +8,4 @@
 *.synctex
 *.blg
 *.synctex(busy)
-
-# temp
-temp.tex
-Answer/
 AdvancedAlgebra.pdf
-Book/
-Additional/
